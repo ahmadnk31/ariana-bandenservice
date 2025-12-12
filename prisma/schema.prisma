@@ -1,0 +1,81 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Tire {
+  id        String @id @default(cuid())
+  name      String
+  slug      String @unique @default(cuid())
+  brand     String
+  season    String // summer, winter, all-season (renamed from type for clarity)
+  condition String @default("new") // new, used
+
+  // Size components (e.g., 225/45 R17 = width 225, aspectRatio 45, rimSize 17)
+  size        String // Full size string like "225/45 R17"
+  width       Int? // Tire width in mm (e.g., 225)
+  aspectRatio Int? // Aspect ratio percentage (e.g., 45)
+  rimSize     Int? // Rim diameter in inches (e.g., 17)
+
+  // Tire specifications
+  loadIndex   String? // Load index (e.g., "91")
+  speedRating String? // Speed rating (e.g., "W", "Y", "V")
+  dot         String? // DOT marking / production date
+
+  price       Float
+  description String? // Optional product description
+  features    String // JSON array stored as string
+
+  // Inventory
+  stock   Int     @default(0)
+  inStock Boolean @default(true)
+
+  images    TireImage[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model TireImage {
+  id        String   @id @default(cuid())
+  url       String
+  key       String // S3 key for deletion
+  order     Int      @default(0)
+  tire      Tire     @relation(fields: [tireId], references: [id], onDelete: Cascade)
+  tireId    String
+  createdAt DateTime @default(now())
+}
+
+model Contact {
+  id           String  @id @default(cuid())
+  firstName    String
+  lastName     String
+  email        String
+  phone        String?
+  service      String?
+  message      String
+  status       String  @default("unread") // unread, read, replied
+  replyMessage String? // Last reply content
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id          String  @id @default(cuid())
+  name        String
+  description String
+  price       Float?
+  duration    String?
+  icon        String?
+  active      Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
