@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 
 interface Service {
     id: string;
@@ -13,6 +14,7 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ services = [], initialService = "" }: ContactFormProps) {
+    const t = useTranslations('Contact');
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
@@ -54,7 +56,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
                 message: "",
             });
         } catch (err) {
-            setError(err instanceof Error ? err.message : "Failed to send message");
+            setError(err instanceof Error ? err.message : t('error'));
         } finally {
             setLoading(false);
         }
@@ -64,15 +66,15 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
         return (
             <div className="p-8 rounded-lg border border-green-500/50 bg-green-500/10 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500 mx-auto mb-4"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
+                <h3 className="text-xl font-bold mb-2">{t('messageSentTitle')}</h3>
                 <p className="text-muted-foreground mb-4">
-                    Thank you for contacting us. We&apos;ll get back to you as soon as possible.
+                    {t('thankYouMessage')}
                 </p>
                 <button
                     onClick={() => setSuccess(false)}
                     className="text-primary hover:underline"
                 >
-                    Send another message
+                    {t('sendAnother')}
                 </button>
             </div>
         );
@@ -83,7 +85,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
             <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                     <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-                        First Name *
+                        {t('firstName')} *
                     </label>
                     <input
                         type="text"
@@ -97,7 +99,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
                 </div>
                 <div>
                     <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-                        Last Name *
+                        {t('lastName')} *
                     </label>
                     <input
                         type="text"
@@ -112,7 +114,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
             </div>
             <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email *
+                    {t('email')} *
                 </label>
                 <input
                     type="email"
@@ -126,7 +128,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
             </div>
             <div>
                 <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                    Phone (optional)
+                    {t('phoneOptional')}
                 </label>
                 <input
                     type="tel"
@@ -139,7 +141,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
             </div>
             <div>
                 <label htmlFor="service" className="block text-sm font-medium mb-2">
-                    Service Interested In
+                    {t('service')}
                 </label>
                 <select
                     id="service"
@@ -147,7 +149,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                 >
-                    <option value="">Select a service</option>
+                    <option value="">{t('selectService')}</option>
                     {services.length > 0 ? (
                         services.map((service) => (
                             <option key={service.id} value={service.name}>
@@ -169,7 +171,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
             </div>
             <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message *
+                    {t('message')} *
                 </label>
                 <textarea
                     id="message"
@@ -189,7 +191,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
                 disabled={loading}
                 className="w-full h-12 rounded-md bg-primary text-primary-foreground font-medium shadow transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:opacity-50"
             >
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? t('sending') : t('submit')}
             </button>
         </form>
     );

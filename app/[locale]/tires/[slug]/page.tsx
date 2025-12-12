@@ -5,6 +5,7 @@ import Footer from "@/app/components/Footer";
 import ProductGallery from "@/app/components/ProductGallery";
 import Link from "next/link";
 import TireCard from "@/app/components/TireCard";
+import { getTranslations } from "next-intl/server";
 
 interface ProductPageProps {
     params: Promise<{ slug: string }>;
@@ -21,6 +22,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
     if (!tire) {
         notFound();
     }
+
+    const t = await getTranslations("Tires");
 
     // Fetch related tires: same brand OR same size, excluding current tire
     const relatedTires = await prisma.tire.findMany({
@@ -46,9 +49,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
     const features = JSON.parse(tire.features) as string[];
 
     const seasonLabels: Record<string, string> = {
-        summer: "Summer",
-        winter: "Winter",
-        "all-season": "All-Season",
+        summer: t('seasonSummer'),
+        winter: t('seasonWinter'),
+        "all-season": t('seasonAllSeason'),
     };
 
     return (
@@ -59,7 +62,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <div className="container mx-auto px-4 py-6">
                     <Link href="/tires" className="text-sm text-muted-foreground hover:text-primary flex items-center gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        Back to Tires
+                        {t('backToTires')}
                     </Link>
                 </div>
 
@@ -80,18 +83,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
                             <div className="flex flex-wrap items-center gap-4 mb-6">
                                 {tire.condition === "used" && (
                                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-amber-500 text-white uppercase tracking-wider shadow-sm">
-                                        Second Hand
+                                        {t('secondHand')}
                                     </span>
                                 )}
                                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-muted">
                                     {seasonLabels[tire.season] || tire.season}
                                 </span>
                                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-muted">
-                                    Size: {tire.size}
+                                    {t('size')}: {tire.size}
                                 </span>
                                 {(tire.loadIndex || tire.speedRating) && (
                                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-muted">
-                                        {tire.loadIndex}{tire.speedRating}
+                                        {t('loadIndex')}: {tire.loadIndex}{tire.speedRating}
                                     </span>
                                 )}
                             </div>
@@ -107,7 +110,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                 {tire.description ? (
                                     <p>{tire.description}</p>
                                 ) : (
-                                    <p>No description available for this tire.</p>
+                                    <p>{t('noDescription')}</p>
                                 )}
                             </div>
 
@@ -131,10 +134,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                         : "bg-muted text-muted-foreground cursor-not-allowed"
                                         }`}
                                 >
-                                    {tire.inStock ? "Inquire / Order Now" : "Notify Me When Available"}
+                                    {tire.inStock ? t('inquireOrderNow') : t('notifyMeWhenAvailable')}
                                 </a>
                                 <p className="text-xs text-muted-foreground mt-3 text-center md:text-left">
-                                    Please contact us to confirm availability and schedule fitting.
+                                    {t('pleaseContactUs')}
                                 </p>
                             </div>
                         </div>
@@ -145,7 +148,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 {relatedTires.length > 0 && (
                     <section className="bg-muted py-16">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-2xl font-bold mb-8">Related Products</h2>
+                            <h2 className="text-2xl font-bold mb-8">{t('relatedProducts')}</h2>
                             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {relatedTires.map((relatedTire) => (
                                     <TireCard

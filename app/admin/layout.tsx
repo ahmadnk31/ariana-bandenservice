@@ -1,6 +1,18 @@
 import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
 import AdminShell from "../components/AdminShell";
+import { Outfit } from "next/font/google";
+import "../globals.css";
+
+const outfit = Outfit({
+    subsets: ["latin"],
+    variable: "--font-outfit",
+});
+
+export const metadata = {
+    title: "Admin | Ariana Bandenservice",
+    description: "Admin Dashboard",
+};
 
 export default async function AdminLayout({
     children,
@@ -9,24 +21,20 @@ export default async function AdminLayout({
 }) {
     const authenticated = await isAuthenticated();
 
-    // Check if we're on the login page (simple check based on path not possible in layout w/o headers, 
-    // but auth check handles redirection anyway if protected)
-
-    // We only render the shell if authenticated, otherwise we assume it's login or public 
-    // actually layout wraps login too... 
-    // If unauthenticated, we probably shouldn't show the shell?
-    // But the previous code didn't show sidebar if !authenticated.
-
     return (
-        <div className="min-h-screen bg-muted/30">
-            {authenticated ? (
-                <AdminShell>{children}</AdminShell>
-            ) : (
-                <main className="min-h-screen flex items-center justify-center">
-                    {children}
-                </main>
-            )}
-        </div>
+        <html lang="en">
+            <body className={`${outfit.variable} antialiased font-sans`}>
+                <div className="min-h-screen bg-muted/30">
+                    {authenticated ? (
+                        <AdminShell>{children}</AdminShell>
+                    ) : (
+                        <main className="min-h-screen flex items-center justify-center">
+                            {children}
+                        </main>
+                    )}
+                </div>
+            </body>
+        </html>
     );
 }
 
