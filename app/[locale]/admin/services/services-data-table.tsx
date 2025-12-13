@@ -32,6 +32,9 @@ export const columns: ColumnDef<ServiceRow>[] = [
                 </span>
             )
         },
+        filterFn: (row, id, value) => {
+            return String(row.getValue(id)) === value
+        },
     },
     {
         accessorKey: "name",
@@ -80,6 +83,11 @@ export function ServicesDataTable({ data }: ServicesDataTableProps) {
             data={data}
             searchKey="name"
             searchPlaceholder="Search services..."
+            filterColumn="active"
+            filterOptions={[
+                { label: "Active", value: "true" },
+                { label: "Inactive", value: "false" },
+            ]}
         />
     )
 }
