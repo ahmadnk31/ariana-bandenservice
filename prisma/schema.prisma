@@ -37,9 +37,10 @@ model Tire {
   stock   Int     @default(0)
   inStock Boolean @default(true)
 
-  images    TireImage[]
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
+  images     TireImage[]
+  orderItems OrderItem[]
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
 }
 
 model TireImage {
@@ -78,4 +79,58 @@ model Service {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+// E-commerce models for checkout
+model Order {
+  id          String @id @default(cuid())
+  orderNumber String @unique
+  status      String @default("pending") // pending, paid, shipped, delivered, cancelled
+
+  // Customer Info
+  email String
+  phone String?
+
+  // Shipping Address
+  shippingAddress ShippingAddress?
+
+  // Shipping Details
+  shippingCarrier String? // "dhl" or "gls"
+  shippingMethod  String? // e.g., "express", "standard"
+  shippingCost    Float   @default(0)
+  trackingNumber  String?
+
+  // Payment
+  stripeSessionId String? @unique
+  stripePaymentId String?
+
+  // Totals
+  subtotal Float
+  total    Float
+
+  items     OrderItem[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model OrderItem {
+  id       String @id @default(cuid())
+  order    Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId  String
+  tire     Tire   @relation(fields: [tireId], references: [id])
+  tireId   String
+  quantity Int
+  price    Float // Price at time of purchase
+}
+
+model ShippingAddress {
+  id         String @id @default(cuid())
+  order      Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId    String @unique
+  firstName  String
+  lastName   String
+  street     String
+  city       String
+  postalCode String
+  country    String @default("BE")
 }

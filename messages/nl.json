@@ -84,7 +84,9 @@
         "viewDetails": "Bekijk Details",
         "inquire": "Aanvragen",
         "notifyMe": "Houd mij op de hoogte",
-        "secondHand": "Tweedehands"
+        "secondHand": "Tweedehands",
+        "noDescription": "Geen beschrijving beschikbaar",
+        "addToCart": "Toevoegen"
     },
     "Contact": {
         "title": "Neem Contact Op",
@@ -134,5 +136,49 @@
         "serviceText": "Onze team van gecertificeerde technici is besteed om u te helpen met het beste mogelijke dienst om u veilig en veilig te houden op de weg.",
         "contact": "Contact",
         "contactText": "Als u vragen of zorgen heeft, laat het ons niet onthouden. We zijn hier om u te helpen op elke stap van het proces."
+    },
+    "Cart": {
+        "title": "Winkelwagen",
+        "close": "Winkelwagen sluiten",
+        "empty": "Uw winkelwagen is leeg",
+        "emptySubtitle": "Voeg banden toe om te beginnen",
+        "subtotal": "Subtotaal",
+        "shippingNote": "Verzendkosten worden berekend bij afrekenen",
+        "checkout": "Doorgaan naar Afrekenen",
+        "addToCart": "Toevoegen aan Winkelwagen",
+        "added": "Toegevoegd!",
+        "outOfStock": "Niet op Voorraad",
+        "remove": "Verwijder item",
+        "decrease": "Verminder aantal",
+        "increase": "Verhoog aantal"
+    },
+    "Checkout": {
+        "title": "Afrekenen",
+        "orderSummary": "Besteloverzicht",
+        "shippingAddress": "Verzendadres",
+        "shippingMethod": "Verzendmethode",
+        "firstName": "Voornaam",
+        "lastName": "Achternaam",
+        "email": "E-mail",
+        "phone": "Telefoon (optioneel)",
+        "street": "Straat en Huisnummer",
+        "city": "Stad",
+        "postalCode": "Postcode",
+        "country": "Land",
+        "subtotal": "Subtotaal",
+        "shipping": "Verzending",
+        "total": "Totaal",
+        "payNow": "Nu Betalen",
+        "processing": "Verwerken...",
+        "deliveryDays": "{days} werkdagen",
+        "emptyCart": "Uw winkelwagen is leeg",
+        "backToShop": "Terug naar Winkel",
+        "successTitle": "Bestelling Bevestigd!",
+        "successMessage": "Bedankt voor uw bestelling. U ontvangt binnenkort een bevestigingsmail.",
+        "orderNumber": "Bestelnummer",
+        "continueShopping": "Verder Winkelen",
+        "cancelTitle": "Betaling Geannuleerd",
+        "cancelMessage": "Uw betaling is geannuleerd. Uw winkelwagen items zijn nog steeds opgeslagen.",
+        "tryAgain": "Opnieuw Proberen"
     }
 }

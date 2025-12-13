@@ -4,6 +4,8 @@ import Image from "next/image";
 import { Link } from "@/src/i18n/routing";
 import { useState } from "react";
 import { useTranslations } from 'next-intl';
+import { useCart } from './CartContext';
+import { ShoppingCart } from 'lucide-react';
 
 interface TireImage {
     id: string;
@@ -48,6 +50,7 @@ export default function TireCard({
     description
 }: TireCardProps) {
     const t = useTranslations('Tires');
+    const { addToCart } = useCart();
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const seasonLabels: Record<string, string> = {
@@ -183,15 +186,34 @@ export default function TireCard({
                         <p className="text-[10px] text-green-600">{t('stockCount', { count: stock })}</p>
                     )}
                 </div>
-                <Link
-                    href="/contact"
-                    className={`inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium shadow transition-colors ${inStock
-                        ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                        : "bg-muted text-muted-foreground cursor-not-allowed"
-                        }`}
-                >
-                    {inStock ? t('inquire') : t('notifyMe')}
-                </Link>
+                {inStock ? (
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            addToCart({
+                                id,
+                                name,
+                                slug,
+                                brand,
+                                size,
+                                price,
+                                stock,
+                                image: images[0]?.url,
+                            });
+                        }}
+                        className="inline-flex h-8 items-center justify-center gap-2 rounded-md px-3 text-xs font-medium shadow transition-colors bg-primary text-primary-foreground hover:bg-primary/90"
+                    >
+                        <ShoppingCart className="w-3.5 h-3.5" />
+                        {t('addToCart')}
+                    </button>
+                ) : (
+                    <Link
+                        href="/contact"
+                        className="inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium shadow transition-colors bg-muted text-muted-foreground cursor-not-allowed"
+                    >
+                        {t('notifyMe')}
+                    </Link>
+                )}
             </div>
         </div>
     );

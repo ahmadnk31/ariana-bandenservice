@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import { Outfit } from "next/font/google";
 import "../globals.css";
 import type { Metadata } from 'next';
+import { CartProvider } from '../components/CartContext';
+import CartDrawer from '../components/CartDrawer';
 
 const outfit = Outfit({
     subsets: ["latin"],
@@ -40,9 +42,13 @@ export default async function LocaleLayout({
         <html lang={locale}>
             <body className={`${outfit.variable} antialiased font-sans`}>
                 <NextIntlClientProvider messages={messages}>
-                    {children}
+                    <CartProvider>
+                        {children}
+                        <CartDrawer />
+                    </CartProvider>
                 </NextIntlClientProvider>
             </body>
         </html>
     );
 }
+
