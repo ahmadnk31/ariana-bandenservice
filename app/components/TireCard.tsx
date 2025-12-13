@@ -76,9 +76,9 @@ export default function TireCard({
     };
 
     return (
-        <div className="p-4 rounded-lg border border-muted hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col group relative">
+        <div className="p-6 rounded-lg border border-muted hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col group relative">
             {/* Image Carousel */}
-            <div className="relative w-full h-36 bg-muted rounded-md mb-3 overflow-hidden">
+            <div className="relative w-full h-48 bg-muted rounded-md mb-4 overflow-hidden">
                 <Link href={`/tires/${slug}`}>
                     {images.length > 0 ? (
                         <div className="w-full h-full relative">
@@ -148,7 +148,7 @@ export default function TireCard({
             </div>
 
             {/* Season Badge */}
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mb-3">
                 <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-medium ${seasonColors[season] || "bg-gray-500/10 text-gray-600"}`}>
                     {seasonLabels[season] || season}
                 </span>
@@ -162,14 +162,14 @@ export default function TireCard({
             {/* Brand & Name */}
             <p className="text-xs text-muted-foreground">{brand}</p>
             <Link href={`/tires/${slug}`} className="block group-hover:text-primary transition-colors">
-                <h3 className="text-base font-bold mb-1 leading-tight">{name}</h3>
+                <h3 className="text-base font-bold mb-2 leading-tight">{name}</h3>
             </Link>
 
             {/* Size */}
-            <p className="text-xs text-muted-foreground mb-3">{t('size')}: {size}</p>
+            <p className="text-xs text-muted-foreground mb-4">{t('size')}: {size}</p>
 
             {/* Features */}
-            <ul className="text-xs text-muted-foreground mb-3 space-y-1 flex-1">
+            <ul className="text-xs text-muted-foreground mb-4 space-y-1 flex-1">
                 {features.slice(0, 3).map((feature, index) => (
                     <li key={index} className="flex items-center gap-1.5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -179,7 +179,7 @@ export default function TireCard({
             </ul>
 
             {/* Price & CTA */}
-            <div className="flex items-center justify-between mt-auto pt-3 border-t border-muted">
+            <div className="flex items-center justify-between mt-auto pt-4 border-t border-muted">
                 <div>
                     <span className="text-xl font-bold">€{price}</span>
                     {stock > 0 && (

@@ -83,7 +83,7 @@ export function DataTable<TData, TValue>({
                             }
                             className="h-10 px-3 rounded-md border border-muted bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                         >
-                            <option value="all">All Conditions</option>
+                            <option value="all">All</option>
                             {filterOptions.map((option) => (
                                 <option key={option.value} value={option.value}>
                                     {option.label}
