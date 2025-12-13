@@ -7,7 +7,16 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 export default function CartDrawer() {
-    const { items, isOpen, closeCart, removeFromCart, updateQuantity, subtotal, cartCount } = useCart();
+    const {
+        items,
+        isOpen,
+        closeCart,
+        removeFromCart,
+        incrementQuantity,
+        decrementQuantity,
+        subtotal,
+        cartCount
+    } = useCart();
     const t = useTranslations('Cart');
 
     if (!isOpen) return null;
@@ -52,69 +61,86 @@ export default function CartDrawer() {
                         </div>
                     ) : (
                         <ul className="space-y-4">
-                            {items.map(item => (
-                                <li key={item.id} className="flex gap-4 p-3 bg-muted/30 rounded-lg">
-                                    {/* Image */}
-                                    <div className="w-20 h-20 bg-muted rounded-md overflow-hidden flex-shrink-0">
-                                        {item.image ? (
-                                            <Image
-                                                src={item.image}
-                                                alt={item.name}
-                                                width={80}
-                                                height={80}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        ) : (
-                                            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                                                <ShoppingCart className="w-8 h-8 opacity-30" />
-                                            </div>
-                                        )}
-                                    </div>
+                            {items.map(item => {
+                                const increment = item.incrementBy || 2;
+                                const canDecrement = item.quantity > increment;
+                                const canIncrement = item.quantity + increment <= item.stock;
 
-                                    {/* Details */}
-                                    <div className="flex-1 min-w-0">
-                                        <Link
-                                            href={`/tires/${item.slug}`}
-                                            className="font-medium text-sm hover:text-primary line-clamp-1"
-                                            onClick={closeCart}
-                                        >
-                                            {item.name}
-                                        </Link>
-                                        <p className="text-xs text-muted-foreground mt-0.5">
-                                            {item.brand} • {item.size}
-                                        </p>
-                                        <p className="font-semibold mt-1">€{item.price.toFixed(2)}</p>
-
-                                        {/* Quantity Controls */}
-                                        <div className="flex items-center gap-2 mt-2">
-                                            <button
-                                                onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                                disabled={item.quantity === 1}
-                                                className="w-7 h-7 flex items-center justify-center bg-muted rounded hover:bg-muted/80 transition-colors"
-                                                aria-label={t('decrease')}
-                                            >
-                                                <Minus className="w-3 h-3" />
-                                            </button>
-                                            <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
-                                            <button
-                                                onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                                disabled={item.quantity >= item.stock}
-                                                className="w-7 h-7 flex items-center justify-center bg-muted rounded hover:bg-muted/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                                                aria-label={t('increase')}
-                                            >
-                                                <Plus className="w-3 h-3" />
-                                            </button>
-                                            <button
-                                                onClick={() => removeFromCart(item.id)}
-                                                className="ml-auto p-1.5 text-muted-foreground hover:text-destructive transition-colors"
-                                                aria-label={t('remove')}
-                                            >
-                                                <Trash2 className="w-4 h-4" />
-                                            </button>
+                                return (
+                                    <li key={item.id} className="flex gap-4 p-3 bg-muted/30 rounded-lg">
+                                        {/* Image */}
+                                        <div className="w-20 h-20 bg-muted rounded-md overflow-hidden flex-shrink-0">
+                                            {item.image ? (
+                                                <Image
+                                                    src={item.image}
+                                                    alt={item.name}
+                                                    width={80}
+                                                    height={80}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                                                    <ShoppingCart className="w-8 h-8 opacity-30" />
+                                                </div>
+                                            )}
                                         </div>
-                                    </div>
-                                </li>
-                            ))}
+
+                                        {/* Details */}
+                                        <div className="flex-1 min-w-0">
+                                            <Link
+                                                href={`/tires/${item.slug}`}
+                                                className="font-medium text-sm hover:text-primary line-clamp-1"
+                                                onClick={closeCart}
+                                            >
+                                                {item.name}
+                                            </Link>
+                                            <p className="text-xs text-muted-foreground mt-0.5">
+                                                {item.brand} • {item.size}
+                                            </p>
+                                            <p className="font-semibold mt-1">€{item.price.toFixed(2)}</p>
+
+                                            {/* Quantity Controls */}
+                                            <div className="flex items-center gap-2 mt-2">
+                                                <button
+                                                    onClick={() => decrementQuantity(item.id)}
+                                                    disabled={!canDecrement}
+                                                    className="w-7 h-7 flex items-center justify-center bg-muted rounded hover:bg-muted/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                                    aria-label={t('decrease')}
+                                                    title={`-${increment}`}
+                                                >
+                                                    <Minus className="w-3 h-3" />
+                                                </button>
+                                                <span className="w-8 text-center text-sm font-medium">
+                                                    {item.quantity}
+                                                </span>
+                                                <button
+                                                    onClick={() => incrementQuantity(item.id)}
+                                                    disabled={!canIncrement}
+                                                    className="w-7 h-7 flex items-center justify-center bg-muted rounded hover:bg-muted/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                                    aria-label={t('increase')}
+                                                    title={`+${increment}`}
+                                                >
+                                                    <Plus className="w-3 h-3" />
+                                                </button>
+                                                <button
+                                                    onClick={() => removeFromCart(item.id)}
+                                                    className="ml-auto p-1.5 text-muted-foreground hover:text-destructive transition-colors"
+                                                    aria-label={t('remove')}
+                                                >
+                                                    <Trash2 className="w-4 h-4" />
+                                                </button>
+                                            </div>
+
+                                            {/* Increment indicator */}
+                                            {increment > 1 && (
+                                                <p className="text-xs text-muted-foreground mt-1">
+                                                    {t('incrementBy', { count: increment }) || `Increments of ${increment}`}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     )}
                 </div>

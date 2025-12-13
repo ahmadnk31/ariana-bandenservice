@@ -12,6 +12,7 @@ export interface CartItem {
     quantity: number;
     image?: string;
     stock: number;
+    incrementBy?: number; // Default: 2 for tires, can be 1 or 4
 }
 
 interface CartContextType {
@@ -19,12 +20,15 @@ interface CartContextType {
     addToCart: (item: Omit<CartItem, 'quantity'>, quantity?: number) => void;
     removeFromCart: (itemId: string) => void;
     updateQuantity: (itemId: string, quantity: number) => void;
+    incrementQuantity: (itemId: string) => void;
+    decrementQuantity: (itemId: string) => void;
     clearCart: () => void;
     cartCount: number;
     subtotal: number;
     isOpen: boolean;
     openCart: () => void;
     closeCart: () => void;
+    toggleCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -41,9 +45,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
         const stored = localStorage.getItem(CART_STORAGE_KEY);
         if (stored) {
             try {
-                setItems(JSON.parse(stored));
+                const parsedItems = JSON.parse(stored);
+                setItems(parsedItems);
             } catch (e) {
                 console.error('Failed to parse cart from localStorage', e);
+                localStorage.removeItem(CART_STORAGE_KEY);
             }
         }
         setIsLoaded(true);
@@ -56,49 +62,108 @@ export function CartProvider({ children }: { children: ReactNode }) {
         }
     }, [items, isLoaded]);
 
-    const addToCart = useCallback((item: Omit<CartItem, 'quantity'>, quantity: number = 1) => {
+    // Add item to cart
+    const addToCart = useCallback((item: Omit<CartItem, 'quantity'>, quantity?: number) => {
         setItems(current => {
             const existing = current.find(i => i.id === item.id);
+            const increment = item.incrementBy || 2; // Default to 2 for tires
+            const addQuantity = quantity !== undefined ? quantity : increment;
+
             if (existing) {
-                // Don't exceed stock
-                const newQuantity = Math.min(existing.quantity + quantity, item.stock);
+                // Check if we can add more
+                if (existing.quantity >= item.stock) {
+                    return current; // Already at stock limit
+                }
+
+                // Add by increment amount, respecting stock
+                const newQuantity = Math.min(existing.quantity + addQuantity, item.stock);
+
+                setIsOpen(true);
                 return current.map(i =>
                     i.id === item.id ? { ...i, quantity: newQuantity } : i
                 );
             }
-            return [...current, { ...item, quantity: Math.min(quantity, item.stock) }];
+
+            // New item - start with specified quantity or increment amount
+            const initialQuantity = Math.min(addQuantity, item.stock);
+            setIsOpen(true);
+            return [...current, { ...item, quantity: initialQuantity }];
         });
-        setIsOpen(true);
     }, []);
 
+    // Remove item from cart
     const removeFromCart = useCallback((itemId: string) => {
         setItems(current => current.filter(i => i.id !== itemId));
     }, []);
 
+    // Update quantity directly (for manual input)
     const updateQuantity = useCallback((itemId: string, quantity: number) => {
         if (quantity <= 0) {
             removeFromCart(itemId);
             return;
         }
+
         setItems(current =>
             current.map(item => {
                 if (item.id === itemId) {
-                    return { ...item, quantity: Math.min(quantity, item.stock) };
+                    const newQuantity = Math.min(quantity, item.stock);
+                    return { ...item, quantity: newQuantity };
                 }
                 return item;
             })
         );
     }, [removeFromCart]);
 
-    const clearCart = useCallback(() => {
-        setItems([]);
+    // Increment quantity by incrementBy value
+    const incrementQuantity = useCallback((itemId: string) => {
+        setItems(current =>
+            current.map(item => {
+                if (item.id === itemId) {
+                    const increment = item.incrementBy || 2; // Default to 2 for tires
+                    const newQuantity = Math.min(item.quantity + increment, item.stock);
+                    return { ...item, quantity: newQuantity };
+                }
+                return item;
+            })
+        );
     }, []);
 
+    // Decrement quantity by incrementBy value
+    const decrementQuantity = useCallback((itemId: string) => {
+        setItems(current => {
+            return current
+                .map(item => {
+                    if (item.id === itemId) {
+                        const increment = item.incrementBy || 2; // Default to 2 for tires
+                        const newQuantity = item.quantity - increment;
+
+                        // Remove item if quantity would be 0 or negative
+                        if (newQuantity <= 0) {
+                            return null;
+                        }
+
+                        return { ...item, quantity: newQuantity };
+                    }
+                    return item;
+                })
+                .filter((item): item is CartItem => item !== null);
+        });
+    }, []);
+
+    // Clear entire cart
+    const clearCart = useCallback(() => {
+        setItems([]);
+        setIsOpen(false);
+    }, []);
+
+    // Calculate totals
     const cartCount = items.reduce((sum, item) => sum + item.quantity, 0);
     const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
+    // Cart drawer controls
     const openCart = useCallback(() => setIsOpen(true), []);
     const closeCart = useCallback(() => setIsOpen(false), []);
+    const toggleCart = useCallback(() => setIsOpen(prev => !prev), []);
 
     return (
         <CartContext.Provider
@@ -107,12 +172,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
                 addToCart,
                 removeFromCart,
                 updateQuantity,
+                incrementQuantity,
+                decrementQuantity,
                 clearCart,
                 cartCount,
                 subtotal,
                 isOpen,
                 openCart,
                 closeCart,
+                toggleCart,
             }}
         >
             {children}

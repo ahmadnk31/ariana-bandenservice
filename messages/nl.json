@@ -150,7 +150,9 @@
         "outOfStock": "Niet op Voorraad",
         "remove": "Verwijder item",
         "decrease": "Verminder aantal",
-        "increase": "Verhoog aantal"
+        "increase": "Verhoog aantal",
+        "incrementBy": "Verhoog aantal met {count}",
+        "decrementBy": "Verlaag aantal met {count}"
     },
     "Checkout": {
         "title": "Afrekenen",

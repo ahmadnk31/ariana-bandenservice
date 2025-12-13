@@ -152,7 +152,9 @@
         "outOfStock": "Out of Stock",
         "remove": "Remove item",
         "decrease": "Decrease quantity",
-        "increase": "Increase quantity"
+        "increase": "Increase quantity",
+        "incrementBy": "Increment by {count}",
+        "decrementBy": "Decrement by {count}"
     },
     "Checkout": {
         "title": "Checkout",
