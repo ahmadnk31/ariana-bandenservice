@@ -84,7 +84,9 @@
         "viewDetails": "View Details",
         "inquire": "Inquire",
         "notifyMe": "Notify Me",
-        "secondHand": "Second Hand"
+        "secondHand": "Second Hand",
+        "noDescription": "No description available",
+        "addToCart": "Add to Cart"
     },
     "Contact": {
         "title": "Contact Us",
@@ -136,5 +138,49 @@
         "serviceText": "Our team of certified technicians is dedicated to providing you with the best possible service to keep you safe and secure on the road.",
         "contact": "Contact",
         "contactText": "If you have any questions or concerns, please don't hesitate to contact us. We are here to help you every step of the way."
+    },
+    "Cart": {
+        "title": "Shopping Cart",
+        "close": "Close cart",
+        "empty": "Your cart is empty",
+        "emptySubtitle": "Add some tires to get started",
+        "subtotal": "Subtotal",
+        "shippingNote": "Shipping calculated at checkout",
+        "checkout": "Proceed to Checkout",
+        "addToCart": "Add to Cart",
+        "added": "Added!",
+        "outOfStock": "Out of Stock",
+        "remove": "Remove item",
+        "decrease": "Decrease quantity",
+        "increase": "Increase quantity"
+    },
+    "Checkout": {
+        "title": "Checkout",
+        "orderSummary": "Order Summary",
+        "shippingAddress": "Shipping Address",
+        "shippingMethod": "Shipping Method",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "phone": "Phone (optional)",
+        "street": "Street Address",
+        "city": "City",
+        "postalCode": "Postal Code",
+        "country": "Country",
+        "subtotal": "Subtotal",
+        "shipping": "Shipping",
+        "total": "Total",
+        "payNow": "Pay Now",
+        "processing": "Processing...",
+        "deliveryDays": "{days} business days",
+        "emptyCart": "Your cart is empty",
+        "backToShop": "Back to Shop",
+        "successTitle": "Order Confirmed!",
+        "successMessage": "Thank you for your order. You will receive a confirmation email shortly.",
+        "orderNumber": "Order Number",
+        "continueShopping": "Continue Shopping",
+        "cancelTitle": "Payment Cancelled",
+        "cancelMessage": "Your payment was cancelled. Your cart items are still saved.",
+        "tryAgain": "Try Again"
     }
 }

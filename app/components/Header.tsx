@@ -6,6 +6,7 @@ import Image from "next/image";
 import SearchOverlay from "./SearchOverlay";
 import { useTranslations } from 'next-intl';
 import { Link } from "@/src/i18n/routing";
+import CartButton from "./CartButton";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,6 +48,9 @@ export default function Header() {
                             {t('contact')}
                         </Link>
                     </nav>
+
+                    {/* Cart Button */}
+                    <CartButton />
 
                     <div className="md:hidden">
                         <SearchOverlay triggerType="icon" />

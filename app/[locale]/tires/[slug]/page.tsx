@@ -6,6 +6,7 @@ import ProductGallery from "@/app/components/ProductGallery";
 import Link from "next/link";
 import TireCard from "@/app/components/TireCard";
 import { getTranslations } from "next-intl/server";
+import ProductAddToCart from "@/app/components/ProductAddToCart";
 
 interface ProductPageProps {
     params: Promise<{ slug: string }>;
@@ -127,18 +128,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
                             </div>
 
                             <div className="mt-auto">
-                                <a
-                                    href="/contact"
-                                    className={`w-full md:w-auto inline-flex items-center justify-center px-8 py-3 rounded-md text-base font-medium transition-colors ${tire.inStock
-                                        ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                                        : "bg-muted text-muted-foreground cursor-not-allowed"
-                                        }`}
-                                >
-                                    {tire.inStock ? t('inquireOrderNow') : t('notifyMeWhenAvailable')}
-                                </a>
-                                <p className="text-xs text-muted-foreground mt-3 text-center md:text-left">
-                                    {t('pleaseContactUs')}
-                                </p>
+                                <ProductAddToCart
+                                    tire={{
+                                        id: tire.id,
+                                        name: tire.name,
+                                        slug: tire.slug,
+                                        brand: tire.brand,
+                                        size: tire.size,
+                                        price: tire.price,
+                                        stock: tire.stock,
+                                        image: tire.images[0]?.url,
+                                    }}
+                                />
                             </div>
                         </div>
                     </div>
