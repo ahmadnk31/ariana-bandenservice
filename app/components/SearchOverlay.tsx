@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 interface SearchResult {
     id: string;
@@ -27,6 +28,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
     const [mounted, setMounted] = useState(false);
     const router = useRouter();
     const inputRef = useRef<HTMLInputElement>(null);
+    const t = useTranslations('SearchOverlay');
 
     useEffect(() => {
         setMounted(true);
@@ -100,7 +102,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                     className="hidden md:flex items-center w-64 h-9 px-3 rounded-md border border-input bg-muted/50 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span className="flex-1 text-left">Search tires...</span>
+                    <span className="flex-1 text-left">{t('searchPlaceholder')}</span>
 
                 </button>
             ) : (
@@ -128,7 +130,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                             <input
                                 ref={inputRef}
                                 type="text"
-                                placeholder="Search tires by name, brand, or size..."
+                                placeholder={t('searchPlaceholder')}
                                 className="flex-1 bg-transparent border-none text-lg outline-none placeholder:text-muted-foreground"
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
@@ -147,7 +149,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                 onClick={() => setIsOpen(false)}
                                 className="ml-4 px-2 py-1 text-xs font-medium bg-muted text-muted-foreground rounded hover:bg-muted/80"
                             >
-                                ESC
+                                {t('close')}
                             </button>
                         </form>
 
@@ -155,7 +157,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                         {(results.length > 0 || loading) && (
                             <div className="max-h-[60vh] overflow-y-auto p-2">
                                 {loading ? (
-                                    <div className="p-4 text-center text-muted-foreground">Searching...</div>
+                                    <div className="p-4 text-center text-muted-foreground">{t('loading')}</div>
                                 ) : (
                                     <>
                                         {results.map((result) => (
@@ -177,7 +179,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                                         <h4 className="font-medium truncate group-hover:text-primary transition-colors">{result.name}</h4>
                                                         {result.condition === 'used' && (
                                                             <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-500 text-white uppercase tracking-wider shrink-0">
-                                                                Used
+                                                                {t('used')}
                                                             </span>
                                                         )}
                                                     </div>
@@ -193,7 +195,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
 
                         {query && results.length === 0 && !loading && (
                             <div className="p-8 text-center text-muted-foreground">
-                                No results found for &quot;{query}&quot;
+                                {t('noResults')}
                             </div>
                         )}
                     </div>

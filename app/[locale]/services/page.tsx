@@ -1,8 +1,10 @@
 import { prisma } from "@/lib/db";
 import { Metadata } from "next";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 import { Wrench, Disc, Timer, Layers, Settings, Search, Clock, Euro } from "lucide-react";
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/src/i18n/routing';
 
 export const metadata: Metadata = {
     title: "Services | Ariana Bandenservice",
@@ -21,6 +23,7 @@ const IconMap: Record<string, any> = {
 };
 
 export default async function ServicesPage() {
+    const t = await getTranslations('Services');
     const services = await prisma.service.findMany({
         where: { active: true },
         orderBy: { name: "asc" },
@@ -34,10 +37,10 @@ export default async function ServicesPage() {
                 <section className="py-16 bg-muted">
                     <div className="container mx-auto px-4">
                         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-                            Our <span className="text-primary">Services</span>
+                            {t('title')}
                         </h1>
                         <p className="text-xl text-muted-foreground max-w-2xl">
-                            Professional tire services by certified technicians. Quality workmanship and fast turnaround times.
+                            {t('subtitle')}
                         </p>
                     </div>
                 </section>
@@ -68,7 +71,7 @@ export default async function ServicesPage() {
                                                 {service.price && (
                                                     <span className="flex items-center mr-6 text-primary">
                                                         <Euro size={16} className="mr-1.5" />
-                                                        From €{service.price}
+                                                        {t('from')} €{service.price}
                                                     </span>
                                                 )}
                                                 {service.duration && (
@@ -78,12 +81,12 @@ export default async function ServicesPage() {
                                                     </span>
                                                 )}
                                             </div>
-                                            <a
+                                            <Link
                                                 href={`/contact?service=${encodeURIComponent(service.name)}`}
                                                 className="mt-6 w-full inline-flex items-center justify-center rounded-md bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 transition-colors"
                                             >
-                                                Book Now
-                                            </a>
+                                                {t('bookNow')}
+                                            </Link>
                                         </div>
                                     );
                                 })
@@ -95,16 +98,16 @@ export default async function ServicesPage() {
                 {/* CTA */}
                 <section className="py-16 bg-muted">
                     <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-3xl font-bold mb-4">Ready to book a service?</h2>
+                        <h2 className="text-3xl font-bold mb-4">{t('contactText')}</h2>
                         <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                            Contact us today to schedule an appointment or get a quote for your tire needs.
+                            {t('contactDescription')}
                         </p>
-                        <a
+                        <Link
                             href="/contact"
                             className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
                         >
-                            Contact Us
-                        </a>
+                            {t('contactButton')}
+                        </Link>
                     </div>
                 </section>
             </main>

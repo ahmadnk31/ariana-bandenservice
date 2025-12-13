@@ -1,12 +1,15 @@
 "use client";
 
-import Link from "next/link";
+
 import { useState } from "react";
 import Image from "next/image";
 import SearchOverlay from "./SearchOverlay";
+import { useTranslations } from 'next-intl';
+import { Link } from "@/src/i18n/routing";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const t = useTranslations('Header');
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -32,16 +35,16 @@ export default function Header() {
                 <div className="flex-1 flex items-center justify-end gap-6">
                     <nav className="hidden md:flex gap-6">
                         <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
-                            Home
+                            {t('home')}
                         </Link>
                         <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">
-                            Services
+                            {t('services')}
                         </Link>
                         <Link href="/tires" className="text-sm font-medium hover:text-primary transition-colors">
-                            Tires
+                            {t('tires')}
                         </Link>
                         <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
-                            Contact
+                            {t('contact')}
                         </Link>
                     </nav>
 
@@ -75,28 +78,28 @@ export default function Header() {
                         className="text-sm font-medium hover:text-primary transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        Home
+                        {t('home')}
                     </Link>
                     <Link
                         href="/services"
                         className="text-sm font-medium hover:text-primary transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        Services
+                        {t('services')}
                     </Link>
                     <Link
                         href="/tires"
                         className="text-sm font-medium hover:text-primary transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        Tires
+                        {t('tires')}
                     </Link>
                     <Link
                         href="/contact"
                         className="text-sm font-medium hover:text-primary transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        Contact
+                        {t('contact')}
                     </Link>
                 </nav>
             </div>

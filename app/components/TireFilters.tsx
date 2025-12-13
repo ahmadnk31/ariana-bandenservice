@@ -1,8 +1,10 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "@/src/i18n/routing";
+import { useSearchParams } from "next/navigation";
 import { useState, useCallback, useEffect } from "react";
 import TireCard from "./TireCard";
+import { useTranslations } from 'next-intl';
 
 interface TireImage {
     id: string;
@@ -54,7 +56,9 @@ interface TireFiltersProps {
 }
 
 export default function TireFilters({ tires, currentPage, totalPages, initialFilters }: TireFiltersProps) {
+    const t = useTranslations('Tires');
     const router = useRouter();
+    const pathname = usePathname();
     const searchParams = useSearchParams();
     const [filters, setFilters] = useState<FilterState>(initialFilters);
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
@@ -67,8 +71,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
     const updateParams = useCallback((newFilters: Partial<FilterState>) => {
         const params = new URLSearchParams(searchParams.toString());
 
-        // Merge new filters with current params (but we prefer to rebuild from state + updates usually, 
-        // here we map from the argument directly which is cleaner for individual updates)
+        // Merge new filters with current params
         const updated = { ...filters, ...newFilters };
 
         // Helper to set or delete param
@@ -125,28 +128,28 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                         className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md font-medium"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-                        {mobileFiltersOpen ? "Hide Filters" : "Show Filters"}
+                        {mobileFiltersOpen ? t('filters') : t('filters')}
                     </button>
                 </div>
 
                 {/* Sidebar Filters */}
                 <aside className={`w-full lg:w-64 flex-shrink-0 space-y-8 ${mobileFiltersOpen ? "block" : "hidden lg:block"}`}>
                     <div className="flex items-center justify-between">
-                        <h2 className="text-lg font-bold">Filters</h2>
+                        <h2 className="text-lg font-bold">{t('filters')}</h2>
                         <button onClick={clearFilters} className="text-sm text-muted-foreground hover:text-primary underline">
-                            Clear All
+                            {t('clearAll')}
                         </button>
                     </div>
 
                     {/* Search */}
                     <div className="space-y-3">
-                        <label className="text-sm font-medium">Search</label>
+                        <label className="text-sm font-medium">{t('searchPlaceholder')}</label>
                         <div className="relative">
                             <input
                                 type="text"
                                 value={filters.search}
                                 onChange={(e) => handleFilterChange("search", e.target.value)}
-                                placeholder="Search tires..."
+                                placeholder={t('searchPlaceholder')}
                                 className="w-full pl-9 pr-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                             />
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute left-3 top-2.5 text-muted-foreground"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -155,7 +158,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
 
                     {/* Condition */}
                     <div className="space-y-3">
-                        <label className="text-sm font-medium">Condition</label>
+                        <label className="text-sm font-medium">{t('condition')}</label>
                         <div className="flex flex-col gap-2">
                             {["all", "new", "used"].map((opt) => (
                                 <label key={opt} className="flex items-center gap-2 cursor-pointer">
@@ -166,7 +169,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                                         onChange={() => handleFilterChange("condition", opt)}
                                         className="text-primary focus:ring-primary"
                                     />
-                                    <span className="text-sm capitalize">{opt}</span>
+                                    <span className="text-sm capitalize">{t(`conditions.${opt}` as any)}</span>
                                 </label>
                             ))}
                         </div>
@@ -174,7 +177,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
 
                     {/* Season */}
                     <div className="space-y-3">
-                        <label className="text-sm font-medium">Season</label>
+                        <label className="text-sm font-medium">{t('season')}</label>
                         <div className="flex flex-col gap-2">
                             {["all", "summer", "winter", "all-season"].map((opt) => (
                                 <label key={opt} className="flex items-center gap-2 cursor-pointer">
@@ -185,7 +188,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                                         onChange={() => handleFilterChange("season", opt)}
                                         className="text-primary focus:ring-primary"
                                     />
-                                    <span className="text-sm capitalize">{opt === "all-season" ? "All-Season" : opt}</span>
+                                    <span className="text-sm capitalize">{t(`seasons.${opt}` as any)}</span>
                                 </label>
                             ))}
                         </div>
@@ -193,11 +196,11 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
 
                     {/* Price Range */}
                     <div className="space-y-3">
-                        <label className="text-sm font-medium">Price Range (€)</label>
+                        <label className="text-sm font-medium">{t('price')} (€)</label>
                         <div className="flex items-center gap-2">
                             <input
                                 type="number"
-                                placeholder="Min"
+                                placeholder={t('min')}
                                 value={filters.minPrice || ""}
                                 onChange={(e) => handleFilterChange("minPrice", e.target.value ? Number(e.target.value) : null)}
                                 className="w-full px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
@@ -205,7 +208,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                             <span className="text-muted-foreground">-</span>
                             <input
                                 type="number"
-                                placeholder="Max"
+                                placeholder={t('max')}
                                 value={filters.maxPrice || ""}
                                 onChange={(e) => handleFilterChange("maxPrice", e.target.value ? Number(e.target.value) : null)}
                                 className="w-full px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
@@ -215,11 +218,11 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
 
                     {/* Dimensions */}
                     <div className="space-y-3">
-                        <label className="text-sm font-medium">Dimensions</label>
+                        <label className="text-sm font-medium">{t('dimensions')}</label>
                         <div className="grid grid-cols-3 gap-2">
                             <input
                                 type="number"
-                                placeholder="Width"
+                                placeholder={t('width')}
                                 value={filters.width || ""}
                                 onChange={(e) => handleFilterChange("width", e.target.value ? Number(e.target.value) : null)}
                                 className="px-2 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
@@ -227,7 +230,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                             />
                             <input
                                 type="number"
-                                placeholder="Ratio"
+                                placeholder={t('ratio')}
                                 value={filters.aspectRatio || ""}
                                 onChange={(e) => handleFilterChange("aspectRatio", e.target.value ? Number(e.target.value) : null)}
                                 className="px-2 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
@@ -235,7 +238,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                             />
                             <input
                                 type="number"
-                                placeholder="Rim"
+                                placeholder={t('rim')}
                                 value={filters.rimSize || ""}
                                 onChange={(e) => handleFilterChange("rimSize", e.target.value ? Number(e.target.value) : null)}
                                 className="px-2 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
@@ -244,9 +247,9 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                         </div>
                     </div>
 
-                    {/* Brand (Simple Text Input for now, could be checkboxes if we fetch brands) */}
+                    {/* Brand */}
                     <div className="space-y-3">
-                        <label className="text-sm font-medium">Brand</label>
+                        <label className="text-sm font-medium">{t('brand')}</label>
                         <input
                             type="text"
                             placeholder="e.g. Michelin"
@@ -258,18 +261,18 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
 
                     {/* Specs */}
                     <div className="space-y-3">
-                        <label className="text-sm font-medium">Specs</label>
+                        <label className="text-sm font-medium">{t('specs')}</label>
                         <div className="grid grid-cols-2 gap-2">
                             <input
                                 type="text"
-                                placeholder="Load Idx"
+                                placeholder={t('loadIndex')}
                                 value={filters.loadIndex === "all" ? "" : filters.loadIndex}
                                 onChange={(e) => handleFilterChange("loadIndex", e.target.value || "all")}
                                 className="px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                             />
                             <input
                                 type="text"
-                                placeholder="Speed"
+                                placeholder={t('speedRating')}
                                 value={filters.speedRating === "all" ? "" : filters.speedRating}
                                 onChange={(e) => handleFilterChange("speedRating", e.target.value || "all")}
                                 className="px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
@@ -283,9 +286,8 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                 <div className="flex-1">
                     <div className="mb-6 flex items-center justify-between">
                         <p className="text-sm text-muted-foreground">
-                            Found <strong>{tires.length}</strong> results (Total pages: {totalPages})
+                            {t('foundResults', { count: tires.length })} ({t('totalPages', { count: totalPages })})
                         </p>
-                        {/* Sort could go here */}
                     </div>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -296,8 +298,8 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
 
                     {tires.length === 0 && (
                         <div className="text-center py-20 bg-muted/30 rounded-lg border border-muted border-dashed">
-                            <p className="text-muted-foreground">No tires found matching your criteria.</p>
-                            <button onClick={clearFilters} className="mt-2 text-primary hover:underline">Clear all filters</button>
+                            <p className="text-muted-foreground">{t('noResults')}</p>
+                            <button onClick={clearFilters} className="mt-2 text-primary hover:underline">{t('clearFilters')}</button>
                         </div>
                     )}
 

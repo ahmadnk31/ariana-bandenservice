@@ -1,7 +1,7 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { prisma } from "@/lib/db";
-import TireFilters from "../components/TireFilters";
+import TireFilters from "../../components/TireFilters";
 
 export const dynamic = "force-dynamic";
 

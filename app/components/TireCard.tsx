@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/src/i18n/routing";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 
 interface TireImage {
     id: string;
@@ -46,12 +47,13 @@ export default function TireCard({
     inStock = true,
     description
 }: TireCardProps) {
+    const t = useTranslations('Tires');
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const seasonLabels: Record<string, string> = {
-        summer: "Summer",
-        winter: "Winter",
-        "all-season": "All-Season",
+        summer: t('seasons.summer'),
+        winter: t('seasons.winter'),
+        "all-season": t('seasons.all-season'),
     };
 
     const seasonColors: Record<string, string> = {
@@ -99,7 +101,7 @@ export default function TireCard({
 
                 {condition === "used" && (
                     <div className="absolute top-2 left-2 px-2 py-0.5 bg-yellow-500 text-white text-[10px] font-bold uppercase tracking-wider rounded z-10 shadow-sm">
-                        Second Hand
+                        {t('secondHand')}
                     </div>
                 )}
 
@@ -137,7 +139,7 @@ export default function TireCard({
                 {/* Stock Badge */}
                 {!inStock && (
                     <div className="absolute top-2 right-2 px-2 py-0.5 bg-red-500 text-white text-[10px] font-medium rounded z-10">
-                        Out of Stock
+                        {t('outOfStock')}
                     </div>
                 )}
             </div>
@@ -161,7 +163,7 @@ export default function TireCard({
             </Link>
 
             {/* Size */}
-            <p className="text-xs text-muted-foreground mb-3">Size: {size}</p>
+            <p className="text-xs text-muted-foreground mb-3">{t('size')}: {size}</p>
 
             {/* Features */}
             <ul className="text-xs text-muted-foreground mb-3 space-y-1 flex-1">
@@ -178,18 +180,18 @@ export default function TireCard({
                 <div>
                     <span className="text-xl font-bold">€{price}</span>
                     {stock > 0 && (
-                        <p className="text-[10px] text-green-600">{stock} in stock</p>
+                        <p className="text-[10px] text-green-600">{t('stockCount', { count: stock })}</p>
                     )}
                 </div>
-                <a
+                <Link
                     href="/contact"
                     className={`inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium shadow transition-colors ${inStock
                         ? "bg-primary text-primary-foreground hover:bg-primary/90"
                         : "bg-muted text-muted-foreground cursor-not-allowed"
                         }`}
                 >
-                    {inStock ? "Inquire" : "Notify Me"}
-                </a>
+                    {inStock ? t('inquire') : t('notifyMe')}
+                </Link>
             </div>
         </div>
     );
