@@ -5,7 +5,7 @@
 
 :root {
   /* Primary - Professional Blue */
-  --primary: oklch(0.45 0.2 250);
+  --primary: #00205B;
   --primary-foreground: oklch(0.98 0 0);
 
   /* Muted - Light Gray */
@@ -42,7 +42,7 @@
   /* Border/Input/Ring */
   --border: oklch(0.90 0 0);
   --input: oklch(0.90 0 0);
-  --ring: oklch(0.45 0.2 250);
+  --ring: #00205B;
 
   /* Charts */
   --chart-1: oklch(0.55 0.2 250);
@@ -54,12 +54,12 @@
   /* Sidebar */
   --sidebar: oklch(0.98 0 0);
   --sidebar-foreground: oklch(0.15 0 0);
-  --sidebar-primary: oklch(0.45 0.2 250);
+  --sidebar-primary: #00205B;
   --sidebar-primary-foreground: oklch(0.98 0 0);
   --sidebar-accent: oklch(0.96 0 0);
   --sidebar-accent-foreground: oklch(0.2 0 0);
   --sidebar-border: oklch(0.90 0 0);
-  --sidebar-ring: oklch(0.45 0.2 250);
+  --sidebar-ring: #00205B;
 }
 
 @theme inline {

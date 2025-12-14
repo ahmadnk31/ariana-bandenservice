@@ -61,7 +61,7 @@ export default function TireCard({
 
     const seasonColors: Record<string, string> = {
         summer: "bg-amber-500/10 text-amber-600",
-        winter: "bg-blue-500/10 text-blue-600",
+        winter: "bg-primary/10 text-primary",
         "all-season": "bg-green-500/10 text-green-600",
     };
 

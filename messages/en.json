@@ -185,5 +185,42 @@
         "cancelTitle": "Payment Cancelled",
         "cancelMessage": "Your payment was cancelled. Your cart items are still saved.",
         "tryAgain": "Try Again"
+    },
+    "FAQ": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about our services using tires.",
+        "questions": {
+            "services": "Our Services",
+            "services_text": "• Sales of used and new tires\n• Summer, winter, and 4-season tires\n• Mounting and balancing included\n• All sizes from 13” to 21” (profile 5mm – 8mm)\n• Van/C-tires available\n• Top brands like: Michelin, Goodyear, Continental, Bridgestone, Pirelli, etc.",
+            "prices_used": "Used Tire Prices",
+            "prices_used_text": "Prices include mounting and balancing:\n\n• 13”: €25 – €30\n• 14”: €30 – €35\n• 15”: €35 – €40\n• 16”: €40 – €45\n• 17”: €40 – €50\n• 18”: €40 – €55\n• 19”: €50 – €60\n• 20”: €60 – €70\n• 21”: €60 – €70\n• C-tires / Van: €40 – €50",
+            "prices_new": "New Tire Starting Prices",
+            "prices_new_text": "Prices are per piece, including mounting & balancing:\n\n• 13”: €55\n• 14”: €60\n• 15”: €70\n• 16”: €75\n• 17”: €80\n• 18”: €85\n• 19”: €90\n• 20”: €100",
+            "hours": "Opening Hours",
+            "hours_text": "• Monday to Saturday: 09:00 – 18:00\n• Sunday: 10:00 – 16:00 (appointment only, call 0466 19 56 22)",
+            "why_us": "Why Choose Ariana Tire Service?",
+            "why_us_text": "✅ Cheapest tire prices in the region\n✅ Fast service – done while you wait\n✅ Quality tires from top brands\n✅ Mounting and balancing included\n✅ Large stock in all sizes",
+            "contact": "Contact & Location",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gent)\n📞 GSM: +32 466 19 56 22\n📧 Email: contact@arianabandenservice.be\n📘 Facebook: Ariana Bandenservice",
+            "openingHours": "Opening Hours",
+            "openingHoursText": "Monday - Friday: 9:00 AM - 5:00 PM",
+            "openingHoursText2": "Saturday - Sunday: Closed",
+            "visitUs": "Visit us",
+            "visitUsText": "Ghent, Belgium",
+            "payment": "Which payment methods do you accept?",
+            "payment_text": "We accept all major credit cards, including Visa, Mastercard, and American Express.",
+            "replacement": "When should I replace my tires?",
+            "replacement_text": "Legally the minimum tread depth is 1.6mm, but for safety we recommend replacement at 3mm (summer) or 4mm (winter). Also check for cracks, bulges, or aging (older than 6-10 years).",
+            "seasonal": "What is the difference between summer, winter, and all-season tires?",
+            "seasonal_text": "• Summer tires: Optimal above 7°C, harder compound for grip on dry/wet roads.\n• Winter tires: Essential below 7°C, deeper tread and softer rubber for grip on snow/ice.\n• All-season tires: A compromise for moderate climates, suitable year-round but performance is less than specialized tires in extremes.",
+            "balancing_alignment": "What is the difference between balancing and alignment?",
+            "balancing_alignment_text": "• Balancing: Ensures the wheel rolls smoothly without vibration at speed (done with every tire change).\n• Alignment: Ensures wheels are straight relative to the car for driving straight and even tire wear (needed if pulling to one side or after suspension repair).",
+            "tpms": "What is TPMS and can you service it?",
+            "tpms_text": "TPMS (Tire Pressure Monitoring System) monitors your tire pressure. We can install, reset, and replace TPMS sensors when batteries are depleted.",
+            "repair": "Can you repair a flat tire?",
+            "repair_text": "Yes, often. If the puncture is in the tread and not too large, we use a professional plug/patch. Sidewall damage often cannot be safely repaired.",
+            "recycling": "What happens to my old tires?",
+            "recycling_text": "We dispose of your old tires in an environmentally friendly way through certified recycling partners (Recytyre), so the rubber can be reused."
+        }
     }
 }

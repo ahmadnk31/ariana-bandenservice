@@ -20,6 +20,9 @@ export default function Footer() {
                         <li>Dendermondsesteenweg 428,9040 {t('address')}</li>
                         <li>+32 466 19 56 22</li>
                         <li>info@arianabandenservice.be</li>
+                        <li>
+                            <a href="/faq" className="hover:text-primary transition-colors">FAQ</a>
+                        </li>
                     </ul>
                 </div>
                 <div>

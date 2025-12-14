@@ -184,5 +184,42 @@
         "cancelTitle": "Betaling Geannuleerd",
         "cancelMessage": "Uw betaling is geannuleerd. Uw winkelwagen items zijn nog steeds opgeslagen.",
         "tryAgain": "Opnieuw Proberen"
+    },
+    "FAQ": {
+        "title": "Veelgestelde Vragen",
+        "subtitle": "Alles wat u moet weten over onze diensten en banden.",
+        "questions": {
+            "services": "Onze Diensten",
+            "services_text": "• Verkoop van tweedehands en nieuwe banden\n• Zomer-, winter- en 4-seizoenenbanden\n• Montage en balanceren inbegrepen\n• Alle maten van 13” tot 21” (profiel 5mm – 8mm)\n• Camionette/C-banden beschikbaar\n• Bekende merken zoals: Michelin, Goodyear, Continental, Bridgestone, Pirelli, enz.",
+            "prices_used": "Prijzen Tweedehands Banden",
+            "prices_used_text": "Prijzen zijn inclusief montage en balanceren:\n\n• 13”: €25 – €30\n• 14”: €30 – €35\n• 15”: €35 – €40\n• 16”: €40 – €45\n• 17”: €40 – €50\n• 18”: €40 – €55\n• 19”: €50 – €60\n• 20”: €60 – €70\n• 21”: €60 – €70\n• C-banden / Camionette: €40 – €50",
+            "prices_new": "Vanafprijzen Nieuwe Banden",
+            "prices_new_text": "Prijzen zijn per stuk, inclusief montage & balanceren:\n\n• 13”: €55\n• 14”: €60\n• 15”: €70\n• 16”: €75\n• 17”: €80\n• 18”: €85\n• 19”: €90\n• 20”: €100",
+            "hours": "Openingsuren",
+            "hours_text": "• Maandag t.e.m. zaterdag: 09:00 – 18:00\n• Zondag: 10:00 – 16:00 (enkel op afspraak, call 0466 19 56 22)",
+            "why_us": "Waarom kiezen voor Ariana Banden Service?",
+            "why_us_text": "✅ De goedkoopste bandenprijzen in de regio\n✅ Snelle service – direct klaar terwijl je wacht\n✅ Kwaliteitsbanden van topmerken\n✅ Montage en balanceren inbegrepen\n✅ Grote voorraad in alle maten",
+            "contact": "Contact & Locatie",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gent)\n📞 GSM: +32 466 19 56 22\n📧 E-mail: contact@arianabandenservice.be\n📘 Facebook: Ariana Bandenservice",
+            "payment": "Betaling",
+            "payment_text": "We accepteren alle grote creditcards, inclusief Visa, Mastercard en American Express.",
+            "openingHours": "Openingstijden",
+            "openingHoursText": "Maandag - Zaterdag: 9:00 - 18:00",
+            "openingHoursText2": "Zondag: Gepakt",
+            "visitUs": "Bezoek ons",
+            "visitUsText": "Gent, België",
+            "replacement": "Wanneer moet ik mijn banden vervangen?",
+            "replacement_text": "Wettelijk is de minimale profieldiepte 1,6 mm, maar voor veiligheid raden we vervanging aan bij 3 mm (zomer) of 4 mm (winter). Let ook op scheurtjes, bulten of veroudering (ouder dan 6-10 jaar).",
+            "seasonal": "Wat is het verschil tussen zomer-, winter- en 4-seizoenenbanden?",
+            "seasonal_text": "• Zomerbanden: Optimaal bij >7°C, hardere compound voor grip op droog/nat wegdek.\n• Winterbanden: Noodzakelijk bij <7°C, dieper profiel en zachter rubber voor grip op sneeuw/ijs.\n• 4-Seizoenenbanden: Een compromis voor gematigde klimaten, geschikt voor het hele jaar maar minder presterend in extremen.",
+            "balancing_alignment": "Wat is het verschil tussen balanceren en uitlijnen?",
+            "balancing_alignment_text": "• Balanceren: Zorgt dat het wiel soepel rolt zonder trillingen bij hogere snelheden (wordt gedaan bij elke bandenwissel).\n• Uitlijnen: Zorgt dat de wielen recht onder de auto staan voor rechtuit rijden en gelijkmatige bandenslijtage (nodig bij scheef trekken of na ophanging reparatie).",
+            "tpms": "Wat is TPMS en kunnen jullie dit servicen?",
+            "tpms_text": "TPMS (Tire Pressure Monitoring System) controleert uw bandenspanning. Wij kunnen TPMS-sensoren installeren, resetten en vervangen als batterijen leeg zijn.",
+            "repair": "Kunnen jullie een lekke band repareren?",
+            "repair_text": "Ja, vaak wel. Als het lek in het loopvlak zit en niet te groot is, plaatsen we een professionele plug/paraplu. Schade aan de wang (zijkant) mag om veiligheidsredenen vaak niet gerepareerd worden.",
+            "recycling": "Wat gebeurt er met mijn oude banden?",
+            "recycling_text": "Wij voeren uw oude banden milieuvriendelijk af via erkende recyclagepartners (Recytyre), zodat het rubber hergebruikt kan worden."
+        }
     }
 }
