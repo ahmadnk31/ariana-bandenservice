@@ -48,7 +48,7 @@ export default async function ServicesPage() {
                 {/* Services Grid */}
                 <section className="py-16 bg-background">
                     <div className="container mx-auto px-4">
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                             {services.length === 0 ? (
                                 <div className="col-span-full text-center py-12">
                                     <p className="text-xl text-muted-foreground">No services are currently listed. Please contact us for inquiries.</p>
@@ -60,7 +60,7 @@ export default async function ServicesPage() {
                                     return (
                                         <div
                                             key={service.id}
-                                            className="p-8 rounded-lg border border-muted hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col"
+                                            className="p-6 rounded-lg border border-muted hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col"
                                         >
                                             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
                                                 <IconComponent size={32} />

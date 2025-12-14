@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { prisma } from "@/lib/db";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -10,6 +11,42 @@ import ProductAddToCart from "@/app/components/ProductAddToCart";
 
 interface ProductPageProps {
     params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const tire = await prisma.tire.findUnique({
+        where: { slug },
+        include: { images: { orderBy: { order: "asc" } } },
+    });
+
+    if (!tire) {
+        return {
+            title: "Tire Not Found",
+            description: "The requested tire could not be found.",
+        };
+    }
+
+    const title = `${tire.name} | Ariana Bandenservice`;
+    const description = `Buy ${tire.brand} ${tire.name} (${tire.size}) - ${tire.season} tire. Price: €${tire.price}. Professional fitting available.`;
+    const images = tire.images.map(img => img.url);
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            images: images.length > 0 ? images : ["/banden-service/android-chrome-512x512.png"],
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: images.length > 0 ? images : ["/banden-service/android-chrome-512x512.png"],
+        },
+    };
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {

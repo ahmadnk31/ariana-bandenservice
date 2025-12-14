@@ -136,7 +136,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
-                    placeholder="+31 6 12345678"
+                    placeholder="+32 6 12345678"
                 />
             </div>
             <div>
@@ -180,7 +180,7 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
                     rows={5}
                     required
                     className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none"
-                    placeholder="Tell us about your needs..."
+                    placeholder={t('messagePlaceholder')}
                 ></textarea>
             </div>
             {error && (

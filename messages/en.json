@@ -16,7 +16,7 @@
     },
     "Footer": {
         "about": "About Us",
-        "aboutText": "Ariana Bandenservice is your trusted partner for all tire-related needs. We provide quality service and products.",
+        "aboutText": "Ariana Bandenservice is a tire service and auto repair shop in Gent Sint-Amandsberg, Belgium. We offer professional tire services and auto repair by certified technicians.",
         "quickLinks": "Quick Links",
         "contact": "Contact Info",
         "address": "Ghent, Belgium",
@@ -114,7 +114,8 @@
         "openingHoursText": "Monday - Friday: 9:00 AM - 5:00 PM",
         "openingHoursText2": "Saturday - Sunday: Closed",
         "visitUs": "Visit us",
-        "visitUsText": "Ghent, Belgium"
+        "visitUsText": "Ghent, Belgium",
+        "messagePlaceholder": "Tell us about your needs..."
     },
     "Common": {
         "loading": "Loading...",
