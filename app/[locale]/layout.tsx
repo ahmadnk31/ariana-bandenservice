@@ -16,16 +16,16 @@ const outfit = Outfit({
 
 
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://banden-ariana.vercel.app"),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://arianabandenservice.be"),
     title: {
-        default: "Ariana Bandenservice | Premium Tire Shop",
+        default: "Ariana Bandenservice | Bandencentrale Gent",
         template: "%s | Ariana Bandenservice",
     },
-    description: "Professional tire services in Amsterdam. Quality tire fitting, balancing, alignment, and repair. Top brands at competitive prices.",
+    description: "Professionele bandenservice en autoreparatie in Gent. Kwaliteit bandenmontage, uitlijning, balanceren en reparatie. Topmerken tegen scherpe prijzen.",
     openGraph: {
-        title: "Ariana Bandenservice | Premium Tire Shop",
-        description: "Professional tire services in Amsterdam. Quality tire fitting, balancing, alignment, and repair.",
-        url: "https://banden-ariana.vercel.app",
+        title: "Ariana Bandenservice | Bandencentrale Gent",
+        description: "Professionele bandenservice en autoreparatie in Gent. Kwaliteit bandenmontage, uitlijning, balanceren en reparatie.",
+        url: "https://arianabandenservice.be",
         siteName: "Ariana Bandenservice",
         locale: "nl_NL",
         type: "website",
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Ariana Bandenservice | Premium Tire Shop",
-        description: "Professional tire services in Amsterdam. Top brands at competitive prices.",
+        title: "Ariana Bandenservice | Bandencentrale Gent",
+        description: "Professionele bandenservice en autoreparatie in Gent. Topmerken tegen scherpe prijzen.",
         images: ["/banden-service/android-chrome-512x512.png"],
     },
     icons: {
@@ -89,8 +89,8 @@ export default async function LocaleLayout({
         "@context": "https://schema.org",
         "@type": ["AutoRepair", "TireShop"],
         "name": "Ariana Bandenservice",
-        "image": "https://banden-ariana.vercel.app/banden-service/android-chrome-512x512.png",
-        "description": "Professional tire services and auto repair in Gent. Quality tire fitting, balancing, alignment, and repair.",
+        "image": "https://arianabandenservice.be/banden-service/android-chrome-512x512.png",
+        "description": "Professionele bandenservice en autoservice in Gent. Kwaliteit bandenmontage, uitlijning, balanceren en reparatie.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Dendermondsesteenweg 428",
@@ -103,7 +103,7 @@ export default async function LocaleLayout({
             "latitude": "51.0667",
             "longitude": "3.7667"
         },
-        "url": "https://banden-ariana.vercel.app",
+        "url": "https://arianabandenservice.be",
         "telephone": "+32466195622",
         "priceRange": "$$"
     };

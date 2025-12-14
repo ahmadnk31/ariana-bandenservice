@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Footer() {
     const t = useTranslations('Footer');
@@ -34,8 +35,9 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-            <div className="container mx-auto px-4 mt-8 pt-8 border-t border-muted/50 text-center text-muted-foreground">
+            <div className="container mx-auto px-4 mt-8 pt-8 border-t border-muted/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
                 <p>&copy; {new Date().getFullYear()} Ariana Bandenservice. {t('rights')}</p>
+                <LanguageSwitcher />
             </div>
         </footer>
     );
