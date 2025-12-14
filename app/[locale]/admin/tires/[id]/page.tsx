@@ -4,6 +4,17 @@ import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import ImageDropzone from "@/app/components/ImageDropzone";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 interface UploadedImage {
     url: string;
@@ -153,7 +164,6 @@ export default function EditTirePage() {
     };
 
     const handleDelete = async () => {
-        if (!confirm("Are you sure you want to delete this tire?")) return;
 
         setDeleting(true);
         setError("");
@@ -164,13 +174,14 @@ export default function EditTirePage() {
             });
 
             if (!res.ok) {
-                throw new Error("Failed to delete tire");
+                const data = await res.json();
+                throw new Error(data.error || "Failed to delete tire");
             }
 
             router.push("/admin/tires");
             router.refresh();
-        } catch {
-            setError("Failed to delete tire");
+        } catch (err: any) {
+            setError(err.message || "Failed to delete tire");
         } finally {
             setDeleting(false);
         }
@@ -196,13 +207,32 @@ export default function EditTirePage() {
                     </Link>
                     <h1 className="text-3xl font-bold">Edit Tire</h1>
                 </div>
-                <button
-                    onClick={handleDelete}
-                    disabled={deleting}
-                    className="inline-flex h-10 items-center justify-center rounded-md bg-red-500 px-4 text-sm font-medium text-white shadow transition-colors hover:bg-red-600 disabled:opacity-50"
-                >
-                    {deleting ? "Deleting..." : "Delete Tire"}
-                </button>
+
+                <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                        <button
+                            disabled={deleting}
+                            className="inline-flex h-10 items-center justify-center rounded-md bg-red-500 px-4 text-sm font-medium text-white shadow transition-colors hover:bg-red-600 disabled:opacity-50"
+                        >
+                            {deleting ? "Deleting..." : "Delete Tire"}
+                        </button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                            <AlertDialogDescription>
+                                This action cannot be undone. This will permanently delete the tire and remove its data from our servers.
+                                If this tire is part of any existing orders, those orders will retain their historical data but will show "Deleted Product".
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                            <AlertDialogCancel>Cancel</AlertDialogCancel>
+                            <AlertDialogAction onClick={handleDelete} className="bg-red-500 hover:bg-red-600">
+                                Delete
+                            </AlertDialogAction>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialog>
             </div>
 
             <form onSubmit={handleSubmit} className="max-w-2xl space-y-6">

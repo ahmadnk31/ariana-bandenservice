@@ -2,6 +2,17 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 interface ServiceFormProps {
     initialData?: {
@@ -19,6 +30,7 @@ interface ServiceFormProps {
 export default function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+    const [deleting, setDeleting] = useState(false);
     const [error, setError] = useState("");
     const [formData, setFormData] = useState({
         name: initialData?.name || "",
@@ -58,6 +70,28 @@ export default function ServiceForm({ initialData, isEdit = false }: ServiceForm
             setError(err instanceof Error ? err.message : "Something went wrong");
         } finally {
             setLoading(false);
+        }
+    };
+
+    const handleDelete = async () => {
+        setDeleting(true);
+        setError("");
+
+        try {
+            const res = await fetch(`/api/services/${initialData?.id}`, {
+                method: "DELETE",
+            });
+
+            if (!res.ok) {
+                const data = await res.json();
+                throw new Error(data.error || "Failed to delete service");
+            }
+
+            router.push("/admin/services");
+            router.refresh();
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Something went wrong");
+            setDeleting(false);
         }
     };
 
@@ -145,6 +179,36 @@ export default function ServiceForm({ initialData, isEdit = false }: ServiceForm
                     Cancel
                 </button>
             </div>
+
+            {isEdit && (
+                <div className="pt-6 border-t border-muted">
+                    <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                            <button
+                                type="button"
+                                disabled={deleting}
+                                className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-red-500 text-white hover:bg-red-600 h-10 px-4 py-2"
+                            >
+                                {deleting ? "Deleting..." : "Delete Service"}
+                            </button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                            <AlertDialogHeader>
+                                <AlertDialogTitle>Delete Service?</AlertDialogTitle>
+                                <AlertDialogDescription>
+                                    This action cannot be undone. This will permanently remove the service from your website.
+                                </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                <AlertDialogAction onClick={handleDelete} className="bg-red-500 hover:bg-red-600">
+                                    Delete
+                                </AlertDialogAction>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+                    </AlertDialog>
+                </div>
+            )}
         </form>
     );
 }

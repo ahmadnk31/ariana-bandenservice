@@ -122,31 +122,38 @@ export async function DELETE(
     try {
         const { id } = await params;
 
-        // Get tire with images to delete from S3
-        const tire = await prisma.tire.findUnique({
+        // 1. First try to delete from DB (this validates constraints like foreign keys)
+        // We include images so we know which keys to delete from S3 afterwards
+        const deletedTire = await prisma.tire.delete({
             where: { id },
             include: { images: true },
         });
 
-        if (!tire) {
-            return NextResponse.json({ error: "Tire not found" }, { status: 404 });
-        }
-
-        // Delete images from S3
-        for (const img of tire.images) {
+        // 2. If DB delete succeeded, now we can safely delete from S3
+        // We run these in parallel and don't block the response deeply, 
+        // though we await them to ensure we log errors.
+        const deletePromises = deletedTire.images.map(async (img) => {
             try {
                 await deleteImage(img.key);
             } catch (e) {
-                console.error("Failed to delete image from S3:", e);
+                console.error(`Failed to delete image ${img.key} from S3:`, e);
+                // We don't throw here to ensure other cleanup continues
             }
-        }
+        });
 
-        // Delete tire (cascade will delete images from DB)
-        await prisma.tire.delete({ where: { id } });
+        await Promise.all(deletePromises);
 
         return NextResponse.json({ success: true });
-    } catch (error) {
+    } catch (error: any) {
         console.error("Failed to delete tire:", error);
+
+        if (error.code === 'P2003') {
+            return NextResponse.json(
+                { error: "Cannot delete tire because it is associated with existing orders. Please verify your data." },
+                { status: 400 }
+            );
+        }
+
         return NextResponse.json(
             { error: "Failed to delete tire" },
             { status: 500 }
