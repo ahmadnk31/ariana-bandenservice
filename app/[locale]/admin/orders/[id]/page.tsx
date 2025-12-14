@@ -65,18 +65,22 @@ export default async function OrderDetailPage({ params }: OrderDetailPageProps) 
                             {order.items.map((item) => (
                                 <div key={item.id} className="flex gap-4 p-4 bg-muted/30 rounded-lg">
                                     <div className="w-16 h-16 bg-muted rounded-md overflow-hidden flex-shrink-0">
-                                        {item.tire.images[0] && (
+                                        {item.tire?.images?.[0] ? (
                                             <img
                                                 src={item.tire.images[0].url}
                                                 alt={item.tire.name}
                                                 className="w-full h-full object-cover"
                                             />
+                                        ) : (
+                                            <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                                                <Package className="w-8 h-8 text-gray-300" />
+                                            </div>
                                         )}
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <p className="font-medium">{item.tire.name}</p>
+                                        <p className="font-medium">{item.tire?.name || "Deleted Product"}</p>
                                         <p className="text-sm text-muted-foreground">
-                                            {item.tire.brand} • {item.tire.size}
+                                            {item.tire ? `${item.tire.brand} • ${item.tire.size}` : "Details unavailable"}
                                         </p>
                                         <p className="text-sm">Qty: {item.quantity}</p>
                                     </div>

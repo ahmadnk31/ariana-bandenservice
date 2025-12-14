@@ -2,6 +2,17 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 interface ServiceFormProps {
     initialData?: {
@@ -19,6 +30,7 @@ interface ServiceFormProps {
 export default function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+    const [deleting, setDeleting] = useState(false);
     const [error, setError] = useState("");
     const [formData, setFormData] = useState({
         name: initialData?.name || "",
