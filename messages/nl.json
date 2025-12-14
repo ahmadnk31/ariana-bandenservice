@@ -16,7 +16,7 @@
     },
     "Footer": {
         "about": "Over Ons",
-        "aboutText": "Ariana Bandenservice is uw betrouwbare partner voor al uw bandenbehoeften. Wij leveren kwaliteitsservice en producten.",
+        "aboutText": "Ariana Bandenservice is een bandenservice in Gent Sint-Amandsberg, België. We bieden professionele bandenservice en auto reparatie door gecertificeerde monteurs.",
         "quickLinks": "Snelle Links",
         "contact": "Contact Info",
         "address": "Gent, België",
@@ -112,7 +112,9 @@
         "openingHours": "openingstijden",
         "openingHoursText": "Maandag - Zaterdag: 9:00 - 18:00",
         "openingHoursText2": "Zondag: Gepakt",
-        "visitUs": "Ons bezoeken"
+        "visitUs": "Ons bezoeken",
+        "visitUsText": "Gent, België",
+        "messagePlaceholder": "Vertel ons wat je nodig hebt..."
     },
     "Common": {
         "loading": "Laden...",
