@@ -13,62 +13,83 @@ const outfit = Outfit({
     subsets: ["latin"],
     variable: "--font-outfit",
 });
-
-
-
-export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://arianabandenservice.be"),
-    title: {
-        default: "Ariana Bandenservice | Bandencentrale Gent",
-        template: "%s | Ariana Bandenservice",
-    },
-    description: "Professionele bandenservice en autoreparatie in Gent. Kwaliteit bandenmontage, uitlijning, balanceren en reparatie. Topmerken tegen scherpe prijzen.",
-    openGraph: {
-        title: "Ariana Bandenservice | Bandencentrale Gent",
-        description: "Professionele bandenservice en autoreparatie in Gent. Kwaliteit bandenmontage, uitlijning, balanceren en reparatie.",
-        url: "https://arianabandenservice.be",
-        siteName: "Ariana Bandenservice",
-        locale: "nl_NL",
-        type: "website",
-        images: [
-            {
-                url: "/banden-service/android-chrome-512x512.png",
-                width: 512,
-                height: 512,
-                alt: "Ariana Bandenservice Logo",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Ariana Bandenservice | Bandencentrale Gent",
-        description: "Professionele bandenservice en autoreparatie in Gent. Topmerken tegen scherpe prijzen.",
-        images: ["/banden-service/android-chrome-512x512.png"],
-    },
-    icons: {
-        icon: "/banden-service/favicon.ico",
-        shortcut: "/banden-service/favicon-16x16.png",
-        apple: "/banden-service/apple-touch-icon.png",
-    },
-    keywords: [
-        "bandenservice", "autoservice", "bandencentrale", "banden kopen", "wieluitlijning",
-        "tire service", "car repair", "tire shop", "Gent", "Sint-Amandsberg", "9040",
-        "autobanden", "winterbanden", "zomerbanden", "tweedehands banden"
-    ],
-    alternates: {
-        languages: {
-            'en': '/en',
-            'nl': '/nl',
-        },
-    },
-    category: 'automotive',
-    other: {
-        "geo.region": "BE-VOV",
-        "geo.placename": "Sint-Amandsberg",
-        "geo.position": "51.0667;3.7667",
-        "ICBM": "51.0667, 3.7667"
-    }
+// Locale mapping for OpenGraph
+const localeMap: Record<string, string> = {
+    en: 'en_GB',
+    nl: 'nl_NL',
+    fr: 'fr_FR',
+    es: 'es_ES',
+    tr: 'tr_TR',
+    pl: 'pl_PL',
+    gr: 'el_GR',
+    ar: 'ar_SA',
+    fa: 'fa_IR',
+    uk: 'uk_UA',
 };
+
+const supportedLocales = ['en', 'nl', 'fr', 'es', 'tr', 'pl', 'gr', 'ar', 'fa', 'uk'];
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+
+    // Load messages for the locale
+    const messages = (await import(`../../messages/${locale}.json`)).default;
+    const metadata = messages.Metadata || {};
+
+    const title = metadata.title || "Ariana Bandenservice | Bandencentrale Gent";
+    const description = metadata.description || "Professionele bandenservice en autoreparatie in Gent.";
+    const ogDescription = metadata.ogDescription || description;
+    const keywords = metadata.keywords || "";
+
+    return {
+        metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://arianabandenservice.be"),
+        title: {
+            default: title,
+            template: "%s | Ariana Bandenservice",
+        },
+        description,
+        openGraph: {
+            title,
+            description: ogDescription,
+            url: `https://arianabandenservice.be/${locale}`,
+            siteName: "Ariana Bandenservice",
+            locale: localeMap[locale] || 'nl_NL',
+            type: "website",
+            images: [
+                {
+                    url: "/banden-service/android-chrome-512x512.png",
+                    width: 512,
+                    height: 512,
+                    alt: "Ariana Bandenservice Logo",
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description: ogDescription,
+            images: ["/banden-service/android-chrome-512x512.png"],
+        },
+        icons: {
+            icon: "/banden-service/favicon.ico",
+            shortcut: "/banden-service/favicon-16x16.png",
+            apple: "/banden-service/apple-touch-icon.png",
+        },
+        keywords: keywords.split(',').map((k: string) => k.trim()),
+        alternates: {
+            languages: Object.fromEntries(
+                supportedLocales.map(loc => [loc, `/${loc}`])
+            ),
+        },
+        category: 'automotive',
+        other: {
+            "geo.region": "BE-VOV",
+            "geo.placename": "Sint-Amandsberg",
+            "geo.position": "51.0667;3.7667",
+            "ICBM": "51.0667, 3.7667"
+        }
+    };
+}
 
 export default async function LocaleLayout({
     children,
@@ -80,7 +101,7 @@ export default async function LocaleLayout({
     const { locale } = await params;
 
     // Verify locale
-    if (!['en', 'nl'].includes(locale as any)) {
+    if (!supportedLocales.includes(locale)) {
         notFound();
     }
 
@@ -109,8 +130,12 @@ export default async function LocaleLayout({
         "priceRange": "$$"
     };
 
+    // RTL languages
+    const rtlLocales = ['ar', 'fa'];
+    const dir = rtlLocales.includes(locale) ? 'rtl' : 'ltr';
+
     return (
-        <html lang={locale}>
+        <html lang={locale} dir={dir}>
             <head>
                 <script
                     type="application/ld+json"

@@ -5,10 +5,16 @@ import Footer from "../../components/Footer";
 import ContactForm from "../../components/ContactForm";
 import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-    title: "Contact | Ariana Bandenservice",
-    description: "Get in touch with Ariana Bandenservice. Book an appointment or request a quote for tire services.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const messages = (await import(`../../../messages/${locale}.json`)).default;
+    const metadata = messages.Metadata || {};
+
+    return {
+        title: metadata.contactTitle || "Contact | Ariana Bandenservice",
+        description: metadata.contactDescription || "Get in touch with Ariana Bandenservice. Book an appointment or request a quote for tire services.",
+    };
+}
 
 export default async function ContactPage({
     searchParams,

@@ -190,6 +190,8 @@
     "FAQ": {
         "title": "Frequently Asked Questions",
         "subtitle": "Everything you need to know about our services using tires.",
+        "contactText": "If you have any further questions, please don't hesitate to contact us.",
+        "contactButton": "Contact",
         "questions": {
             "services": "Our Services",
             "services_text": "• Sales of used and new tires\n• Summer, winter, and 4-season tires\n• Mounting and balancing included\n• All sizes from 13” to 21” (profile 5mm – 8mm)\n• Van/C-tires available\n• Top brands like: Michelin, Goodyear, Continental, Bridgestone, Pirelli, etc.",
@@ -198,14 +200,14 @@
             "prices_new": "New Tire Starting Prices",
             "prices_new_text": "Prices are per piece, including mounting & balancing:\n\n• 13”: €55\n• 14”: €60\n• 15”: €70\n• 16”: €75\n• 17”: €80\n• 18”: €85\n• 19”: €90\n• 20”: €100",
             "hours": "Opening Hours",
-            "hours_text": "• Monday to Saturday: 09:00 – 18:00\n• Sunday: 10:00 – 16:00 (appointment only, call 0466 19 56 22)",
+            "hours_text": "• Monday to Saturday: 09:00 – 18:00\n• Sunday: 10:00 – 18:00 (appointment only, call 0466 19 56 22)",
             "why_us": "Why Choose Ariana Tire Service?",
             "why_us_text": "✅ Cheapest tire prices in the region\n✅ Fast service – done while you wait\n✅ Quality tires from top brands\n✅ Mounting and balancing included\n✅ Large stock in all sizes",
             "contact": "Contact & Location",
             "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gent)\n📞 GSM: +32 466 19 56 22\n📧 Email: contact@arianabandenservice.be\n📘 Facebook: Ariana Bandenservice",
             "openingHours": "Opening Hours",
-            "openingHoursText": "Monday - Friday: 9:00 AM - 5:00 PM",
-            "openingHoursText2": "Saturday - Sunday: Closed",
+            "openingHoursText": "Monday - Saturday: 9:00 AM - 6:00 PM",
+            "openingHoursText2": "Sunday: 10:00 AM - 6:00 PM (appointment only, call 0466 19 56 22)",
             "visitUs": "Visit us",
             "visitUsText": "Ghent, Belgium",
             "payment": "Which payment methods do you accept?",
@@ -223,5 +225,19 @@
             "recycling": "What happens to my old tires?",
             "recycling_text": "We dispose of your old tires in an environmentally friendly way through certified recycling partners (Recytyre), so the rubber can be reused."
         }
+    },
+    "Metadata": {
+        "title": "Ariana Bandenservice | Tire Center Ghent",
+        "description": "Professional tire service and car repair in Ghent. Quality tire fitting, alignment, balancing and repair. Top brands at competitive prices.",
+        "ogDescription": "Professional tire service and car repair in Ghent. Quality tire fitting, alignment, balancing and repair.",
+        "keywords": "tire service, car repair, tire shop, wheel alignment, tire fitting, tire balancing, car inspection, auto repair, garage, tire service near me, garage near me, tire center Ghent, auto garage Sint-Amandsberg, tires East Flanders, tire service 9040, winter tires, summer tires, all season tires, 4 season tires, used tires, new tires, cheap tires, local tire service, reliable garage, fast service, professional fitting, fair price, personal service, family business, Ghent, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, tire shop Belgium",
+        "tiresTitle": "Tires | Ariana Bandenservice",
+        "tiresDescription": "Browse our selection of premium tires from top brands. Winter, summer and all-season tires at competitive prices.",
+        "servicesTitle": "Services | Ariana Bandenservice",
+        "servicesDescription": "Professional tire services including fitting, balancing, wheel alignment, and puncture repair.",
+        "contactTitle": "Contact | Ariana Bandenservice",
+        "contactDescription": "Get in touch with Ariana Bandenservice. Book an appointment or request a quote for tire services.",
+        "faqTitle": "FAQ | Ariana Bandenservice",
+        "faqDescription": "Frequently asked questions about our tire services, prices, opening hours and more."
     }
 }

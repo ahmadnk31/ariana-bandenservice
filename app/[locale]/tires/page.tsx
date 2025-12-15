@@ -2,13 +2,20 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { prisma } from "@/lib/db";
 import TireFilters from "../../components/TireFilters";
+import type { Metadata } from 'next';
 
 export const dynamic = "force-dynamic";
 
-export const metadata = {
-    title: "Tires",
-    description: "Browse our selection of premium tires from top brands.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const messages = (await import(`../../../messages/${locale}.json`)).default;
+    const metadata = messages.Metadata || {};
+
+    return {
+        title: metadata.tiresTitle || "Tires | Ariana Bandenservice",
+        description: metadata.tiresDescription || "Browse our selection of premium tires from top brands.",
+    };
+}
 
 interface TiresPageProps {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
