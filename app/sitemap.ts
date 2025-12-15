@@ -2,7 +2,11 @@ import type { MetadataRoute } from 'next'
 import { prisma } from '@/lib/db'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be'
+    let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be'
+    // Ensure baseUrl starts with https://
+    if (!baseUrl.startsWith('http://') && !baseUrl.startsWith('https://')) {
+        baseUrl = `https://${baseUrl}`
+    }
     const locales = ['en', 'nl']
 
     // Get all tires for product pages

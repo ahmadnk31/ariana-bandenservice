@@ -6,6 +6,7 @@ import Script from "next/script";
 import "../globals.css";
 import type { Metadata } from 'next';
 import { CartProvider } from '../components/CartContext';
+import { Analytics } from "@vercel/analytics/next"
 import CartDrawer from '../components/CartDrawer';
 
 const outfit = Outfit({
@@ -121,6 +122,7 @@ export default async function LocaleLayout({
                     <CartProvider>
                         {children}
                         <CartDrawer />
+                        <Analytics />
                     </CartProvider>
                 </NextIntlClientProvider>
                 <Script id="tawk-to" strategy="afterInteractive">
