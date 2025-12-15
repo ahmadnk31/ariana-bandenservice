@@ -7,7 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (!baseUrl.startsWith('http://') && !baseUrl.startsWith('https://')) {
         baseUrl = `https://${baseUrl}`
     }
-    const locales = ['en', 'nl']
+    const locales = ['en', 'nl', 'fr', 'es', 'tr', 'pl', 'gr', 'ar', 'fa', 'uk']
 
     // Get all tires for product pages
     const tires = await prisma.tire.findMany({

@@ -1,9 +1,21 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import type { Metadata } from 'next';
 
-export default function FAQPage() {
-    const t = useTranslations('FAQ');
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const messages = (await import(`../../../messages/${locale}.json`)).default;
+    const metadata = messages.Metadata || {};
+
+    return {
+        title: metadata.faqTitle || "FAQ | Ariana Bandenservice",
+        description: metadata.faqDescription || "Frequently asked questions about our tire services, prices, opening hours and more.",
+    };
+}
+
+export default async function FAQPage() {
+    const t = await getTranslations('FAQ');
 
     const sections = [
         'services',
@@ -46,9 +58,11 @@ export default function FAQPage() {
                     </div>
 
                     <div className="mt-16 text-center bg-muted/30 p-8 rounded-lg">
-                        <h2 className="text-2xl font-bold mb-4">Still have questions?</h2>
+                        <h2 className="text-2xl font-bold mb-4">
+                            {t('contactText')}
+                        </h2>
                         <a href="/contact" className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors">
-                            Contact Us
+                            {t('contactButton')}
                         </a>
                     </div>
                 </div>

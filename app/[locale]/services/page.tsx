@@ -6,10 +6,16 @@ import { Wrench, Disc, Timer, Layers, Settings, Search, Clock, Euro } from "luci
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/src/i18n/routing';
 
-export const metadata: Metadata = {
-    title: "Services | Ariana Bandenservice",
-    description: "Professional tire services including fitting, balancing, wheel alignment, and puncture repair.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const messages = (await import(`../../../messages/${locale}.json`)).default;
+    const metadata = messages.Metadata || {};
+
+    return {
+        title: metadata.servicesTitle || "Services | Ariana Bandenservice",
+        description: metadata.servicesDescription || "Professional tire services including fitting, balancing, wheel alignment, and puncture repair.",
+    };
+}
 
 // Map icon strings to Lucide components
 const IconMap: Record<string, any> = {
