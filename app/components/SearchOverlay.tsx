@@ -25,9 +25,13 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
     const [query, setQuery] = useState("");
     const [results, setResults] = useState<SearchResult[]>([]);
     const [loading, setLoading] = useState(false);
+    const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
+    const [loadingMore, setLoadingMore] = useState(false);
     const [mounted, setMounted] = useState(false);
     const router = useRouter();
     const inputRef = useRef<HTMLInputElement>(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
     const t = useTranslations('SearchOverlay');
 
     useEffect(() => {
@@ -61,17 +65,19 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
         return () => { document.body.style.overflow = ""; };
     }, [isOpen]);
 
-    // Simple debounce effect
+    // Initial search
     useEffect(() => {
         const timer = setTimeout(async () => {
             if (query.length > 2) {
                 setLoading(true);
+                setPage(1);
+                setHasMore(true);
                 try {
-                    // We'll need an API route for this realtime search
-                    const res = await fetch(`/api/tires/search?q=${encodeURIComponent(query)}`);
+                    const res = await fetch(`/api/tires/search?q=${encodeURIComponent(query)}&page=1&limit=10`);
                     if (res.ok) {
                         const data = await res.json();
                         setResults(data);
+                        if (data.length < 10) setHasMore(false);
                     }
                 } catch (error) {
                     console.error("Search failed", error);
@@ -80,11 +86,46 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                 }
             } else {
                 setResults([]);
+                setHasMore(false);
             }
         }, 300);
 
         return () => clearTimeout(timer);
     }, [query]);
+
+    // Load more results
+    const loadMore = async () => {
+        if (!hasMore || loadingMore || loading) return;
+
+        setLoadingMore(true);
+        const nextPage = page + 1;
+        try {
+            const res = await fetch(`/api/tires/search?q=${encodeURIComponent(query)}&page=${nextPage}&limit=10`);
+            if (res.ok) {
+                const data = await res.json();
+                if (data.length === 0) {
+                    setHasMore(false);
+                } else {
+                    setResults(prev => [...prev, ...data]);
+                    setPage(nextPage);
+                    if (data.length < 10) setHasMore(false);
+                }
+            }
+        } catch (error) {
+            console.error("Failed to load more", error);
+        } finally {
+            setLoadingMore(false);
+        }
+    };
+
+    // Scroll listener for infinite scroll
+    const handleScroll = () => {
+        if (!scrollContainerRef.current) return;
+        const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
+        if (scrollHeight - scrollTop <= clientHeight + 50) {
+            loadMore();
+        }
+    };
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
@@ -124,7 +165,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                     />
 
                     {/* Search Container */}
-                    <div className="relative w-full max-w-2xl bg-card border border-muted rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+                    <div className="relative w-full max-w-2xl max-h-[85vh] md:max-h-[600px] bg-card border border-muted rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col">
                         <form onSubmit={handleSearch} className="flex items-center border-b border-muted p-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground mr-3"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                             <input
@@ -155,7 +196,11 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
 
                         {/* Results */}
                         {(results.length > 0 || loading) && (
-                            <div className="max-h-[60vh] overflow-y-auto p-2">
+                            <div
+                                ref={scrollContainerRef}
+                                onScroll={handleScroll}
+                                className="flex-1 min-h-0 overflow-y-auto p-2 scrollbar-thin scrollbar-thumb-muted"
+                            >
                                 {loading ? (
                                     <div className="p-4 text-center text-muted-foreground">{t('loading')}</div>
                                 ) : (
@@ -188,6 +233,11 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                                 <div className="font-bold">€{result.price}</div>
                                             </Link>
                                         ))}
+                                        {loadingMore && (
+                                            <div className="p-4 text-center text-muted-foreground animate-pulse">
+                                                {t('loading')}...
+                                            </div>
+                                        )}
                                     </>
                                 )}
                             </div>

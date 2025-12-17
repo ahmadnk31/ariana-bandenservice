@@ -53,20 +53,19 @@ interface TireFiltersProps {
     currentPage: number;
     totalPages: number;
     initialFilters: FilterState;
+    priceRange: { min: number; max: number };
 }
 
-export default function TireFilters({ tires, currentPage, totalPages, initialFilters }: TireFiltersProps) {
+import { DualRangeSlider } from "./ui/DualRangeSlider";
+
+export default function TireFilters({ tires, currentPage, totalPages, initialFilters, priceRange }: TireFiltersProps) {
     const t = useTranslations('Tires');
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const [filters, setFilters] = useState<FilterState>(initialFilters);
+    const [localFilters, setLocalFilters] = useState<FilterState>(initialFilters);
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-
-    // Debounce search and price updates
-    useEffect(() => {
-        setFilters(initialFilters);
-    }, [initialFilters]);
 
     const updateParams = useCallback((newFilters: Partial<FilterState>) => {
         const params = new URLSearchParams(searchParams.toString());
@@ -104,8 +103,45 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
         setFilters(updated as FilterState);
     }, [filters, router, searchParams]);
 
+    // Debounce search and price updates
+    // Sync local state when external filters change (e.g. from SearchOverlay or URL)
+    useEffect(() => {
+        setFilters(initialFilters);
+        setLocalFilters(initialFilters);
+    }, [initialFilters]);
+
+    // Debounce state updates to URL
+    useEffect(() => {
+        // Skip debouncing for clicks (Season, Condition) because they already trigger immediate updateParams
+        // This effect mainly handles debouncing for typing fields
+        const timer = setTimeout(() => {
+            // Check if any "typing" fields actually changed relative to filters
+            const typingFields: (keyof FilterState)[] = ['search', 'brand', 'minPrice', 'maxPrice', 'width', 'aspectRatio', 'rimSize', 'loadIndex', 'speedRating'];
+            const hasChanged = typingFields.some(field => localFilters[field] !== filters[field]);
+
+            if (hasChanged) {
+                updateParams(localFilters);
+            }
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, [localFilters, filters, updateParams]);
+
     const handleFilterChange = (key: keyof FilterState, value: any) => {
-        updateParams({ [key]: value });
+        handleMultipleFiltersChange({ [key]: value });
+    };
+
+    const handleMultipleFiltersChange = (updates: Partial<FilterState>) => {
+        setLocalFilters(prev => {
+            const updated = { ...prev, ...updates };
+
+            // Immediate update for selection-based filters (radio, select)
+            if (updates.season || updates.condition) {
+                updateParams(updated);
+            }
+
+            return updated;
+        });
     };
 
     const handlePageChange = (page: number) => {
@@ -147,7 +183,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                         <div className="relative">
                             <input
                                 type="text"
-                                value={filters.search}
+                                value={localFilters.search}
                                 onChange={(e) => handleFilterChange("search", e.target.value)}
                                 placeholder={t('searchPlaceholder')}
                                 className="w-full pl-9 pr-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
@@ -165,7 +201,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                                     <input
                                         type="radio"
                                         name="condition"
-                                        checked={filters.condition === opt}
+                                        checked={localFilters.condition === opt}
                                         onChange={() => handleFilterChange("condition", opt)}
                                         className="text-primary focus:ring-primary"
                                     />
@@ -184,7 +220,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                                     <input
                                         type="radio"
                                         name="season"
-                                        checked={filters.season === opt}
+                                        checked={localFilters.season === opt}
                                         onChange={() => handleFilterChange("season", opt)}
                                         className="text-primary focus:ring-primary"
                                     />
@@ -195,24 +231,37 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                     </div>
 
                     {/* Price Range */}
-                    <div className="space-y-3">
+                    <div className="space-y-6">
                         <label className="text-sm font-medium">{t('price')} (€)</label>
-                        <div className="flex items-center gap-2">
-                            <input
-                                type="number"
-                                placeholder={t('min')}
-                                value={filters.minPrice || ""}
-                                onChange={(e) => handleFilterChange("minPrice", e.target.value ? Number(e.target.value) : null)}
-                                className="w-full px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
+                        <div className="px-2 pt-6 pb-2">
+                            <DualRangeSlider
+                                value={[
+                                    localFilters.minPrice ?? priceRange.min,
+                                    localFilters.maxPrice ?? priceRange.max
+                                ]}
+                                min={priceRange.min}
+                                max={priceRange.max === priceRange.min ? priceRange.min + 100 : priceRange.max}
+                                step={1}
+                                labels={[t('min'), t('max')]}
+                                onValueChange={(values) => {
+                                    handleMultipleFiltersChange({
+                                        minPrice: values[0],
+                                        maxPrice: values[1]
+                                    });
+                                }}
+                                minStepsBetweenThumbs={1}
+                                label={(value) => `€${value}`}
+                                labelPosition="top"
                             />
+                        </div>
+                        <div className="flex items-center gap-2 pt-2">
+                            <div className="flex-1 p-2 text-xs border border-muted rounded bg-muted/30 text-center">
+                                {t('min')}: €{localFilters.minPrice ?? priceRange.min}
+                            </div>
                             <span className="text-muted-foreground">-</span>
-                            <input
-                                type="number"
-                                placeholder={t('max')}
-                                value={filters.maxPrice || ""}
-                                onChange={(e) => handleFilterChange("maxPrice", e.target.value ? Number(e.target.value) : null)}
-                                className="w-full px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
-                            />
+                            <div className="flex-1 p-2 text-xs border border-muted rounded bg-muted/30 text-center">
+                                {t('max')}: €{localFilters.maxPrice ?? priceRange.max}
+                            </div>
                         </div>
                     </div>
 
@@ -223,7 +272,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                             <input
                                 type="number"
                                 placeholder={t('width')}
-                                value={filters.width || ""}
+                                value={localFilters.width || ""}
                                 onChange={(e) => handleFilterChange("width", e.target.value ? Number(e.target.value) : null)}
                                 className="px-2 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                                 title="Width (mm)"
@@ -231,7 +280,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                             <input
                                 type="number"
                                 placeholder={t('ratio')}
-                                value={filters.aspectRatio || ""}
+                                value={localFilters.aspectRatio || ""}
                                 onChange={(e) => handleFilterChange("aspectRatio", e.target.value ? Number(e.target.value) : null)}
                                 className="px-2 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                                 title="Aspect Ratio"
@@ -239,7 +288,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                             <input
                                 type="number"
                                 placeholder={t('rim')}
-                                value={filters.rimSize || ""}
+                                value={localFilters.rimSize || ""}
                                 onChange={(e) => handleFilterChange("rimSize", e.target.value ? Number(e.target.value) : null)}
                                 className="px-2 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                                 title="Rim Size (inch)"
@@ -253,7 +302,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                         <input
                             type="text"
                             placeholder="e.g. Michelin"
-                            value={filters.brand === "all" ? "" : filters.brand}
+                            value={localFilters.brand === "all" ? "" : localFilters.brand}
                             onChange={(e) => handleFilterChange("brand", e.target.value || "all")}
                             className="w-full px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                         />
@@ -266,14 +315,14 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                             <input
                                 type="text"
                                 placeholder={t('loadIndex')}
-                                value={filters.loadIndex === "all" ? "" : filters.loadIndex}
+                                value={localFilters.loadIndex === "all" ? "" : localFilters.loadIndex}
                                 onChange={(e) => handleFilterChange("loadIndex", e.target.value || "all")}
                                 className="px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                             />
                             <input
                                 type="text"
                                 placeholder={t('speedRating')}
-                                value={filters.speedRating === "all" ? "" : filters.speedRating}
+                                value={localFilters.speedRating === "all" ? "" : localFilters.speedRating}
                                 onChange={(e) => handleFilterChange("speedRating", e.target.value || "all")}
                                 className="px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                             />

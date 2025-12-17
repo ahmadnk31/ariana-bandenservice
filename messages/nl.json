@@ -125,7 +125,8 @@
         "close": "ESC",
         "searchPlaceholder": "Zoek banden...",
         "noResults": "Geen banden gevonden die aan uw criteria voldoen.",
-        "loading": "Laden..."
+        "loading": "Laden...",
+        "used": "Tweedehands"
     },
     "Home": {
         "quality": "Kwaliteit",
@@ -239,5 +240,8 @@
         "contactDescription": "Neem contact op met Ariana Bandenservice. Maak een afspraak of vraag een offerte aan voor bandendiensten.",
         "faqTitle": "Veelgestelde Vragen | Ariana Bandenservice",
         "faqDescription": "Veelgestelde vragen over onze bandendiensten, prijzen, openingstijden en meer."
+    },
+    "DevBanner": {
+        "message": "We bevinden ons nog in de ontwikkelingsfase. Alle banden zijn niet echt; het is alleen voor demonstratiedoeleinden. Echte banden komen eraan."
     }
 }

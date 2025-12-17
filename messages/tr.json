@@ -126,7 +126,8 @@
         "close": "ESC",
         "searchPlaceholder": "Lastik ara...",
         "noResults": "Kriterlerinize uygun lastik bulunamadı.",
-        "loading": "Yükleniyor..."
+        "loading": "Yükleniyor...",
+        "used": "İkinci El"
     },
     "Home": {
         "quality": "Kalite",
@@ -240,5 +241,8 @@
         "contactDescription": "Ariana Bandenservice ile iletişime geçin. Lastik hizmetleri için randevu alın veya teklif isteyin.",
         "faqTitle": "SSS | Ariana Bandenservice",
         "faqDescription": "Lastik hizmetlerimiz, fiyatlarımız, çalışma saatlerimiz ve daha fazlası hakkında sık sorulan sorular."
+    },
+    "DevBanner": {
+        "message": "Hala geliştirme aşamasındayız. Tüm lastikler gerçek değildir; sadece demo amaçlıdır. Gerçek lastikler yakında gelecek."
     }
 }

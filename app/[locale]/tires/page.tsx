@@ -93,8 +93,8 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
     // Let's do a quick grouping to get available options if needed, 
     // but for now let's stick to the main query to keep it fast.
 
-    // Parallel fetch: get total count and paginated data
-    const [totalCount, tires] = await Promise.all([
+    // Parallel fetch: get total count, paginated data, and absolute price range for filters
+    const [totalCount, tires, priceRange] = await Promise.all([
         prisma.tire.count({ where }),
         prisma.tire.findMany({
             where,
@@ -103,6 +103,10 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
             include: { images: { orderBy: { order: "asc" } } },
             orderBy: { createdAt: "desc" },
         }),
+        prisma.tire.aggregate({
+            _min: { price: true },
+            _max: { price: true },
+        })
     ]);
 
     const totalPages = Math.ceil(totalCount / itemsPerPage);
@@ -132,6 +136,10 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
                         rimSize,
                         loadIndex,
                         speedRating
+                    }}
+                    priceRange={{
+                        min: priceRange._min.price || 0,
+                        max: priceRange._max.price || 1000
                     }}
                 />
             </main>

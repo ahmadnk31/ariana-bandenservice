@@ -126,7 +126,8 @@
         "close": "ESC",
         "searchPlaceholder": "Buscar neumáticos...",
         "noResults": "No se encontraron neumáticos que coincidan con tus criterios.",
-        "loading": "Cargando..."
+        "loading": "Cargando...",
+        "used": "Usado"
     },
     "Home": {
         "quality": "Calidad",
@@ -240,5 +241,8 @@
         "contactDescription": "Contacta con Ariana Bandenservice. Reserva una cita o solicita un presupuesto para servicios de neumáticos.",
         "faqTitle": "FAQ | Ariana Bandenservice",
         "faqDescription": "Preguntas frecuentes sobre nuestros servicios de neumáticos, precios, horarios y más."
+    },
+    "DevBanner": {
+        "message": "Todavía estamos en modo de desarrollo. Todos los neumáticos no son reales; es solo para fines de demostración. Los neumáticos reales llegarán pronto."
     }
 }
