@@ -86,7 +86,8 @@
         "notifyMe": "Повідомити мене",
         "secondHand": "Вживані",
         "noDescription": "Опис відсутній",
-        "addToCart": "Додати до кошика"
+        "addToCart": "Додати до кошика",
+        "relatedProducts": "Пов'язані товари"
     },
     "Contact": {
         "title": "Зв’яжіться з нами",

@@ -86,7 +86,8 @@
         "notifyMe": "Ειδοποίησέ με",
         "secondHand": "Μεταχειρισμένα",
         "noDescription": "Χωρίς περιγραφή",
-        "addToCart": "Προσθήκη στο καλάθι"
+        "addToCart": "Προσθήκη στο καλάθι",
+        "relatedProducts": "Παραλλήλα"
     },
     "Contact": {
         "title": "Επικοινωνήστε μαζί μας",
