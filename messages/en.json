@@ -86,7 +86,8 @@
         "notifyMe": "Notify Me",
         "secondHand": "Second Hand",
         "noDescription": "No description available",
-        "addToCart": "Add to Cart"
+        "addToCart": "Add to Cart",
+        "relatedProducts": "Related Products"
     },
     "Contact": {
         "title": "Contact Us",

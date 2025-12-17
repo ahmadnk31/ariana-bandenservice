@@ -76,7 +76,7 @@ export default function TireCard({
     };
 
     return (
-        <div className="p-4 rounded-lg border border-muted hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col group relative">
+        <div className="p-4 rounded-lg border border-muted bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col group relative">
             {/* Image Carousel */}
             <div className="relative w-full h-48 bg-muted rounded-md mb-4 overflow-hidden">
                 <Link href={`/tires/${slug}`}>

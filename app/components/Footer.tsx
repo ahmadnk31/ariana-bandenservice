@@ -1,10 +1,16 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Footer() {
     const t = useTranslations('Footer');
+    const [year, setYear] = useState<number | null>(null);
+
+    useEffect(() => {
+        setYear(new Date().getFullYear());
+    }, []);
 
     return (
         <footer className="border-t border-muted bg-muted/50 py-12">
@@ -36,7 +42,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="container mx-auto px-4 mt-8 pt-8 border-t border-muted/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
-                <p>&copy; {new Date().getFullYear()} Ariana Bandenservice. {t('rights')}</p>
+                <p>&copy; {year || 2025} Ariana Bandenservice. {t('rights')}</p>
                 <LanguageSwitcher />
             </div>
         </footer>

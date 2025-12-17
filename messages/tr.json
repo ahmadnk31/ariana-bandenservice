@@ -86,7 +86,8 @@
         "notifyMe": "Haber Ver",
         "secondHand": "İkinci El",
         "noDescription": "Açıklama mevcut değil",
-        "addToCart": "Sepete Ekle"
+        "addToCart": "Sepete Ekle",
+        "relatedProducts": "İlgili Ürünler"
     },
     "Contact": {
         "title": "Bize Ulaşın",

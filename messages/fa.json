@@ -86,7 +86,8 @@
         "notifyMe": "اطلاع بده",
         "secondHand": "دست‌دوم",
         "noDescription": "توضیحی موجود نیست",
-        "addToCart": "افزودن به سبد"
+        "addToCart": "افزودن به سبد",
+        "relatedProducts": "محصولات مرتبط"
     },
     "Contact": {
         "title": "تماس با ما",

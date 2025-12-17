@@ -86,7 +86,8 @@
         "notifyMe": "Houd mij op de hoogte",
         "secondHand": "Tweedehands",
         "noDescription": "Geen beschrijving beschikbaar",
-        "addToCart": "Toevoegen"
+        "addToCart": "Toevoegen",
+        "relatedProducts": "Gerelateerde producten"
     },
     "Contact": {
         "title": "Neem Contact Op",
