@@ -8,12 +8,13 @@ import type { Metadata } from 'next';
 import { CartProvider } from '../components/CartContext';
 import { Analytics } from "@vercel/analytics/next"
 import CartDrawer from '../components/CartDrawer';
+import DevBanner from '../components/DevBanner';
 
 const outfit = Outfit({
     subsets: ["latin"],
     variable: "--font-outfit",
 });
-// Locale mapping for OpenGraph
+
 const localeMap: Record<string, string> = {
     en: 'en_GB',
     nl: 'nl_NL',
@@ -31,14 +32,11 @@ const supportedLocales = ['en', 'nl', 'fr', 'es', 'tr', 'pl', 'gr', 'ar', 'fa', 
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
-
-    // Load messages for the locale
     const messages = (await import(`../../messages/${locale}.json`)).default;
     const metadata = messages.Metadata || {};
 
     const title = metadata.title || "Ariana Bandenservice | Bandencentrale Gent";
     const description = metadata.description || "Professionele bandenservice en autoreparatie in Gent.";
-    const ogDescription = metadata.ogDescription || description;
     const keywords = metadata.keywords || "";
 
     return {
@@ -50,24 +48,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         description,
         openGraph: {
             title,
-            description: ogDescription,
+            description,
             url: `https://arianabandenservice.be/${locale}`,
             siteName: "Ariana Bandenservice",
             locale: localeMap[locale] || 'nl_NL',
             type: "website",
-            images: [
-                {
-                    url: "/banden-service/android-chrome-512x512.png",
-                    width: 512,
-                    height: 512,
-                    alt: "Ariana Bandenservice Logo",
-                },
-            ],
+            images: [{ url: "/banden-service/android-chrome-512x512.png", width: 512, height: 512, alt: "Ariana Bandenservice Logo" }],
         },
         twitter: {
             card: "summary_large_image",
             title,
-            description: ogDescription,
+            description,
             images: ["/banden-service/android-chrome-512x512.png"],
         },
         icons: {
@@ -76,18 +67,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             apple: "/banden-service/apple-touch-icon.png",
         },
         keywords: keywords.split(',').map((k: string) => k.trim()),
-        alternates: {
-            languages: Object.fromEntries(
-                supportedLocales.map(loc => [loc, `/${loc}`])
-            ),
-        },
-        category: 'automotive',
-        other: {
-            "geo.region": "BE-VOV",
-            "geo.placename": "Sint-Amandsberg",
-            "geo.position": "51.0667;3.7667",
-            "ICBM": "51.0667, 3.7667"
-        }
     };
 }
 
@@ -99,52 +78,15 @@ export default async function LocaleLayout({
     params: Promise<{ locale: string }>;
 }) {
     const { locale } = await params;
-
-    // Verify locale
-    if (!supportedLocales.includes(locale)) {
-        notFound();
-    }
-
+    if (!supportedLocales.includes(locale)) notFound();
     const messages = await getMessages();
 
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": ["AutoRepair", "TireShop"],
-        "name": "Ariana Bandenservice",
-        "image": "https://arianabandenservice.be/banden-service/android-chrome-512x512.png",
-        "description": "Professionele bandenservice en autoservice in Gent. Kwaliteit bandenmontage, uitlijning, balanceren en reparatie.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Dendermondsesteenweg 428",
-            "addressLocality": "Sint-Amandsberg",
-            "postalCode": "9040",
-            "addressCountry": "BE"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "51.0667",
-            "longitude": "3.7667"
-        },
-        "url": "https://arianabandenservice.be",
-        "telephone": "+32466195622",
-        "priceRange": "$$"
-    };
-
-    // RTL languages
-    const rtlLocales = ['ar', 'fa'];
-    const dir = rtlLocales.includes(locale) ? 'rtl' : 'ltr';
-
     return (
-        <html lang={locale} dir={dir}>
-            <head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
-            </head>
+        <html lang={locale} dir={['ar', 'fa'].includes(locale) ? 'rtl' : 'ltr'}>
             <body className={`${outfit.variable} antialiased font-sans`}>
                 <NextIntlClientProvider messages={messages}>
                     <CartProvider>
+                        <DevBanner />
                         {children}
                         <CartDrawer />
                         <Analytics />

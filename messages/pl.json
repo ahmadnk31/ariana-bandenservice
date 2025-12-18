@@ -126,7 +126,8 @@
         "close": "ESC",
         "searchPlaceholder": "Szukaj opon...",
         "noResults": "Nie znaleziono opon spełniających Twoje kryteria.",
-        "loading": "Ładowanie..."
+        "loading": "Ładowanie...",
+        "used": "Używane"
     },
     "Home": {
         "quality": "Jakość",
@@ -240,5 +241,8 @@
         "contactDescription": "Skontaktuj się z Ariana Bandenservice. Umów wizytę lub poproś o wycenę usług oponiarskich.",
         "faqTitle": "FAQ | Ariana Bandenservice",
         "faqDescription": "Najczęściej zadawane pytania dotyczące naszych usług oponiarskich, cen, godzin otwarcia i więcej."
+    },
+    "DevBanner": {
+        "message": "Nadal jesteśmy w trybie programowania. Wszystkie opony nie są prawdziwe; służą wyłącznie do celów demonstracyjnych. Prawdziwe opony wkrótce."
     }
 }

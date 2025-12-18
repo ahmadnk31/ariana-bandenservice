@@ -5,6 +5,9 @@ import { prisma } from "@/lib/db";
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const query = searchParams.get("q");
+    const page = parseInt(searchParams.get("page") || "1");
+    const limit = parseInt(searchParams.get("limit") || "10");
+    const skip = (page - 1) * limit;
 
     if (!query) {
         return NextResponse.json([]);
@@ -19,7 +22,8 @@ export async function GET(request: Request) {
                     { size: { contains: query, mode: "insensitive" } },
                 ],
             },
-            take: 5,
+            skip,
+            take: limit,
             select: {
                 id: true,
                 name: true,

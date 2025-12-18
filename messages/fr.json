@@ -126,7 +126,8 @@
         "close": "ESC",
         "searchPlaceholder": "Rechercher des pneus...",
         "noResults": "Aucun pneu ne correspond à vos critères.",
-        "loading": "Chargement..."
+        "loading": "Chargement...",
+        "used": "D'occasion"
     },
     "Home": {
         "quality": "Qualité",
@@ -240,5 +241,8 @@
         "contactDescription": "Contactez Ariana Bandenservice. Prenez rendez-vous ou demandez un devis pour nos services de pneus.",
         "faqTitle": "FAQ | Ariana Bandenservice",
         "faqDescription": "Questions fréquemment posées sur nos services de pneus, prix, horaires d'ouverture et plus encore."
+    },
+    "DevBanner": {
+        "message": "Nous sommes encore en mode développement. Tous les pneus ne sont pas réels ; c'est uniquement à des fins de démonstration. Les vrais pneus arrivent bientôt."
     }
 }

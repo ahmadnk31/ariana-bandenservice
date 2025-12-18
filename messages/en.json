@@ -126,7 +126,8 @@
         "close": "ESC",
         "searchPlaceholder": "Search tires...",
         "noResults": "No tires found matching your criteria.",
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "used": "Used"
     },
     "Home": {
         "quality": "Quality",
@@ -240,5 +241,8 @@
         "contactDescription": "Get in touch with Ariana Bandenservice. Book an appointment or request a quote for tire services.",
         "faqTitle": "FAQ | Ariana Bandenservice",
         "faqDescription": "Frequently asked questions about our tire services, prices, opening hours and more."
+    },
+    "DevBanner": {
+        "message": "We are in development mode. All tires are not real; it is only for demo purposes. Real tires will arrive soon."
     }
 }
