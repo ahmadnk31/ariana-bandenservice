@@ -141,7 +141,14 @@
         "service": "Service",
         "serviceText": "Notre équipe de techniciens certifiés est dédiée à vous fournir le meilleur service possible pour vous garder en sécurité sur la route.",
         "contact": "Contact",
-        "contactText": "Si vous avez des questions ou des préoccupations, n’hésitez pas à nous contacter. Nous sommes là pour vous accompagner à chaque étape."
+        "contactText": "Si vous avez des questions ou des préoccupations, n’hésitez pas à nous contacter. Nous sommes là pour vous accompagner à chaque étape.",
+        "reviews": {
+            "title": "Approuvé par nos clients",
+            "subtitle": "Découvrez ce que nos clients satisfaits disent de nos services.",
+            "googleTrusted": "Google Approuvé",
+            "viewAll": "Voir tous les avis sur Google",
+            "postedOnGoogle": "Publié sur Google"
+        }
     },
     "Cart": {
         "title": "Panier",
@@ -244,5 +251,13 @@
     },
     "DevBanner": {
         "message": "Nous sommes encore en mode développement. Tous les pneus ne sont pas réels ; c'est uniquement à des fins de démonstration. Les vrais pneus arrivent bientôt."
+    },
+    "Feedback": {
+        "question": "Aimez-vous notre service ?",
+        "placeholder": "Parlez-nous de votre expérience...",
+        "submit": "Envoyer",
+        "loading": "Chargement",
+        "success": "Votre avis a été reçu !",
+        "thanks": "Merci pour votre aide."
     }
 }

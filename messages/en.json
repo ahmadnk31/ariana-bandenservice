@@ -251,5 +251,13 @@
     },
     "DevBanner": {
         "message": "We are in development mode. All tires are not real; it is only for demo purposes. Real tires will arrive soon."
+    },
+    "Feedback": {
+        "question": "Like our service?",
+        "placeholder": "Tell us about your experience...",
+        "submit": "Submit",
+        "loading": "Loading",
+        "success": "Your feedback has been received!",
+        "thanks": "Thank you for your help."
     }
 }

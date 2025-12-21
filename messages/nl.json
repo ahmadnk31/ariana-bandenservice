@@ -250,5 +250,13 @@
     },
     "DevBanner": {
         "message": "We bevinden ons nog in de ontwikkelingsfase. Alle banden zijn niet echt; het is alleen voor demonstratiedoeleinden. Echte banden komen eraan."
+    },
+    "Feedback": {
+        "question": "Vind je onze service leuk?",
+        "placeholder": "Vertel ons over je ervaring...",
+        "submit": "Verzenden",
+        "loading": "Laden",
+        "success": "Je feedback is ontvangen!",
+        "thanks": "Bedankt voor je hulp."
     }
 }

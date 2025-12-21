@@ -134,3 +134,10 @@ model ShippingAddress {
   postalCode String
   country    String @default("BE")
 }
+
+model Feedback {
+  id        String   @id @default(cuid())
+  happiness Int
+  feedback  String?
+  createdAt DateTime @default(now())
+}
