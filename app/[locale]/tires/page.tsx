@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import { prisma } from "@/lib/db";
 import TireFilters from "../../components/TireFilters";
 import type { Metadata } from 'next';
+import { parseTireSize } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -80,11 +81,22 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
 
     // Search filter
     if (search) {
-        where.OR = [
+        const parsedSize = parseTireSize(search);
+        const orConditions: any[] = [
             { name: { contains: search, mode: "insensitive" } },
             { brand: { contains: search, mode: "insensitive" } },
             { size: { contains: search, mode: "insensitive" } },
         ];
+
+        if (parsedSize) {
+            const sizeFields: any = {};
+            if (parsedSize.width) sizeFields.width = parsedSize.width;
+            if (parsedSize.aspectRatio) sizeFields.aspectRatio = parsedSize.aspectRatio;
+            if (parsedSize.rimSize) sizeFields.rimSize = parsedSize.rimSize;
+            orConditions.push(sizeFields);
+        }
+
+        where.OR = orConditions;
     }
 
     // Get unique values for filters (optional optimization: cache this or do separate query)

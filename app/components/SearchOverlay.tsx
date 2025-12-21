@@ -11,6 +11,7 @@ interface SearchResult {
     name: string;
     slug: string;
     brand: string;
+    size: string;
     condition?: string;
     price: number;
     image?: string;
@@ -228,7 +229,9 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                                             </span>
                                                         )}
                                                     </div>
-                                                    <p className="text-sm text-muted-foreground">{result.brand}</p>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        {result.brand} <span className="mx-1.5 opacity-50">•</span> {result.size}
+                                                    </p>
                                                 </div>
                                                 <div className="font-bold">€{result.price}</div>
                                             </Link>
