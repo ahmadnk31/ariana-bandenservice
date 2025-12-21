@@ -140,7 +140,14 @@
         "service": "Service",
         "serviceText": "Onze team van gecertificeerde technici is besteed om u te helpen met het beste mogelijke dienst om u veilig en veilig te houden op de weg.",
         "contact": "Contact",
-        "contactText": "Als u vragen of zorgen heeft, laat het ons niet onthouden. We zijn hier om u te helpen op elke stap van het proces."
+        "contactText": "Als u vragen of zorgen heeft, laat het ons niet onthouden. We zijn hier om u te helpen op elke stap van het proces.",
+        "reviews": {
+            "title": "Vertrouwd door Onze Klanten",
+            "subtitle": "Bekijk wat onze tevreden klanten te zeggen hebben over onze service.",
+            "googleTrusted": "Google Trusted",
+            "viewAll": "Bekijk alle reviews op Google",
+            "postedOnGoogle": "Gepost op Google"
+        }
     },
     "Cart": {
         "title": "Winkelwagen",
