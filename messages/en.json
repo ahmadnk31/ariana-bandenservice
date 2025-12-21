@@ -141,7 +141,14 @@
         "service": "Service",
         "serviceText": "Our team of certified technicians is dedicated to providing you with the best possible service to keep you safe and secure on the road.",
         "contact": "Contact",
-        "contactText": "If you have any questions or concerns, please don't hesitate to contact us. We are here to help you every step of the way."
+        "contactText": "If you have any questions or concerns, please don't hesitate to contact us. We are here to help you every step of the way.",
+        "reviews": {
+            "title": "Trusted by Our Customers",
+            "subtitle": "See what our satisfied customers have to say about our verified service.",
+            "googleTrusted": "Google Trusted",
+            "viewAll": "View all reviews on Google",
+            "postedOnGoogle": "Posted on Google"
+        }
     },
     "Cart": {
         "title": "Shopping Cart",
