@@ -9,6 +9,7 @@ import { CartProvider } from '../components/CartContext';
 import { Analytics } from "@vercel/analytics/next"
 import CartDrawer from '../components/CartDrawer';
 import DevBanner from '../components/DevBanner';
+import { getAlternateLanguages } from "@/lib/utils";
 
 const outfit = Outfit({
     subsets: ["latin"],
@@ -67,6 +68,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             apple: "/banden-service/apple-touch-icon.png",
         },
         keywords: keywords.split(',').map((k: string) => k.trim()),
+        alternates: {
+            canonical: `/${locale}`,
+            languages: getAlternateLanguages(''),
+        },
     };
 }
 

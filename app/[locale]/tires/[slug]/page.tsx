@@ -8,13 +8,14 @@ import Link from "next/link";
 import TireCard from "@/app/components/TireCard";
 import { getTranslations } from "next-intl/server";
 import ProductAddToCart from "@/app/components/ProductAddToCart";
+import { getAlternateLanguages } from "@/lib/utils";
 
 interface ProductPageProps {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ slug: string; locale: string }>;
 }
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
-    const { slug } = await params;
+    const { slug, locale } = await params;
     const tire = await prisma.tire.findUnique({
         where: { slug },
         include: { images: { orderBy: { order: "asc" } } },
@@ -45,6 +46,10 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
             title,
             description,
             images: images.length > 0 ? images : ["/banden-service/android-chrome-512x512.png"],
+        },
+        alternates: {
+            canonical: `/${locale}/tires/${slug}`,
+            languages: getAlternateLanguages(`/tires/${slug}`),
         },
     };
 }

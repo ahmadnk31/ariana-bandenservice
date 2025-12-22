@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db";
 import { Metadata } from "next";
+import { getAlternateLanguages } from "@/lib/utils";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { Wrench, Disc, Timer, Layers, Settings, Search, Clock, Euro } from "lucide-react";
@@ -14,6 +15,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     return {
         title: metadata.servicesTitle || "Services | Ariana Bandenservice",
         description: metadata.servicesDescription || "Professional tire services including fitting, balancing, wheel alignment, and puncture repair.",
+        alternates: {
+            canonical: `/${locale}/services`,
+            languages: getAlternateLanguages('/services'),
+        },
     };
 }
 

@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db";
 import { Metadata } from "next";
+import { getAlternateLanguages } from "@/lib/utils";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ContactForm from "../../components/ContactForm";
@@ -13,6 +14,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     return {
         title: metadata.contactTitle || "Contact | Ariana Bandenservice",
         description: metadata.contactDescription || "Get in touch with Ariana Bandenservice. Book an appointment or request a quote for tire services.",
+        alternates: {
+            canonical: `/${locale}/contact`,
+            languages: getAlternateLanguages('/contact'),
+        },
     };
 }
 
