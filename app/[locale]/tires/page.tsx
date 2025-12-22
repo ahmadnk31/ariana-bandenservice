@@ -3,7 +3,7 @@ import Footer from "../../components/Footer";
 import { prisma } from "@/lib/db";
 import TireFilters from "../../components/TireFilters";
 import type { Metadata } from 'next';
-import { parseTireSize } from "@/lib/utils";
+import { parseTireSize, getAlternateLanguages } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +15,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     return {
         title: metadata.tiresTitle || "Tires | Ariana Bandenservice",
         description: metadata.tiresDescription || "Browse our selection of premium tires from top brands.",
+        alternates: {
+            canonical: `/${locale}/tires`,
+            languages: getAlternateLanguages('/tires'),
+        },
     };
 }
 

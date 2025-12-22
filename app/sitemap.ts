@@ -14,12 +14,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         select: { slug: true, updatedAt: true },
     })
 
-    // Get all active services
-    const services = await prisma.service.findMany({
-        where: { active: true },
-        select: { id: true, updatedAt: true },
-    })
-
     // Static pages
     const staticPages = [
         '',
@@ -51,18 +45,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 lastModified: tire.updatedAt,
                 changeFrequency: 'weekly',
                 priority: 0.9,
-            })
-        }
-    }
-
-    // Add service detail pages for each locale
-    for (const locale of locales) {
-        for (const service of services) {
-            sitemap.push({
-                url: `${baseUrl}/${locale}/services/${service.id}`,
-                lastModified: service.updatedAt,
-                changeFrequency: 'monthly',
-                priority: 0.7,
             })
         }
     }

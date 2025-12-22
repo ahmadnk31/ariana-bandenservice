@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { getAlternateLanguages } from "@/lib/utils";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import type { Metadata } from 'next';
@@ -10,7 +11,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
     return {
         title: metadata.faqTitle || "FAQ | Ariana Bandenservice",
-        description: metadata.faqDescription || "Frequently asked questions about our tire services, prices, opening hours and more.",
+        description: metadata.faqDescription || "Frequently asked questions about our tire services, pricing, opening hours, and more.",
+        alternates: {
+            canonical: `/${locale}/faq`,
+            languages: getAlternateLanguages('/faq'),
+        },
     };
 }
 
