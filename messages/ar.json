@@ -86,7 +86,16 @@
         "notifyMe": "أعلمني",
         "secondHand": "مستعمل",
         "noDescription": "لا يوجد وصف",
-        "addToCart": "أضف إلى السلة"
+        "addToCart": "أضف إلى السلة",
+        "requestStock": "طلب توفر المنتج",
+        "stockRequestSuccess": "لقد تم إرسال طلبك! سنخطرك بمجرد توفر الإطار في المخزون.",
+        "stockRequestTitle": "اطلب هذا الإطار",
+        "stockRequestSubtitle": "هذا الإطار غير متوفر حاليًا. يرجى ملء بياناتك وسنقوم بتوفيره في أقرب وقت ممكن.",
+        "name": "الاسم",
+        "phone": "الهاتف (اختياري)",
+        "email": "البريد الإلكتروني",
+        "submitRequest": "إرسال الطلب",
+        "sending": "جاري الارسال..."
     },
     "Contact": {
         "title": "اتصل بنا",

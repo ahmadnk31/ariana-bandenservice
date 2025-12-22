@@ -87,6 +87,15 @@
         "secondHand": "دست‌دوم",
         "noDescription": "توضیحی موجود نیست",
         "addToCart": "افزودن به سبد",
+        "requestStock": "درخواست موجودی",
+        "stockRequestSuccess": "درخواست شما ثبت شد! به محض موجود شدن لاستیک به شما اطلاع می‌دهیم.",
+        "stockRequestTitle": "درخواست این لاستیک",
+        "stockRequestSubtitle": "این لاستیک در حال حاضر موجود نیست. اطلاعات خود را وارد کنید تا در اسرع وقت آن را موجود کنیم.",
+        "name": "نام",
+        "phone": "تلفن (اختیاری)",
+        "email": "ایمیل",
+        "submitRequest": "ثبت درخواست",
+        "sending": "در حال ارسال...",
         "relatedProducts": "محصولات مرتبط"
     },
     "Contact": {

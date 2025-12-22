@@ -87,6 +87,15 @@
         "secondHand": "Segunda mano",
         "noDescription": "No hay descripción disponible",
         "addToCart": "Añadir al carrito",
+        "requestStock": "Solicitar Stock",
+        "stockRequestSuccess": "¡Tu solicitud ha sido enviada! Te avisaremos cuando el neumático vuelva a estar en stock.",
+        "stockRequestTitle": "Solicitar este neumático",
+        "stockRequestSubtitle": "Este neumático está agotado actualmente. Completa tus datos y lo traeremos de vuelta lo antes posible.",
+        "name": "Nombre",
+        "phone": "Teléfono (opcional)",
+        "email": "Correo electrónico",
+        "submitRequest": "Enviar solicitud",
+        "sending": "Enviando...",
         "relatedProducts": "Productos relacionados"
     },
     "Contact": {

@@ -87,6 +87,15 @@
         "secondHand": "Używane",
         "noDescription": "Brak opisu",
         "addToCart": "Dodaj do koszyka",
+        "requestStock": "Poproś o dostawę",
+        "stockRequestSuccess": "Twoja prośba została wysłana! Powiadomimy Cię, gdy opona będzie ponownie dostępna.",
+        "stockRequestTitle": "Poproś o tę oponę",
+        "stockRequestSubtitle": "Ta opona jest obecnie niedostępna. Podaj swoje dane, a sprowadzimy ją jak najszybciej.",
+        "name": "Imię i nazwisko",
+        "phone": "Telefon (opcjonalnie)",
+        "email": "Email",
+        "submitRequest": "Wyślij prośbę",
+        "sending": "Wysyłanie...",
         "relatedProducts": "Powiązane produkty"
     },
     "Contact": {

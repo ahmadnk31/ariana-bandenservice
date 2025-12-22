@@ -87,6 +87,15 @@
         "secondHand": "İkinci El",
         "noDescription": "Açıklama mevcut değil",
         "addToCart": "Sepete Ekle",
+        "requestStock": "Stok İste",
+        "stockRequestSuccess": "İsteğiniz gönderildi! Lastik tekrar stoklara girdiğinde sizi bilgilendireceğiz.",
+        "stockRequestTitle": "Bu Lastiği İste",
+        "stockRequestSubtitle": "Bu lastik şu anda stokta yok. Lütfen bilgilerinizi doldurun, en kısa sürede temin edeceğiz.",
+        "name": "İsim",
+        "phone": "Telefon (isteğe bağlı)",
+        "email": "E-posta",
+        "submitRequest": "İsteği Gönder",
+        "sending": "Gönderiliyor...",
         "relatedProducts": "İlgili Ürünler"
     },
     "Contact": {

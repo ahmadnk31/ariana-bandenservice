@@ -87,7 +87,16 @@
         "secondHand": "Second Hand",
         "noDescription": "No description available",
         "addToCart": "Add to Cart",
-        "relatedProducts": "Related Products"
+        "relatedProducts": "Related Products",
+        "requestStock": "Request Stock",
+        "stockRequestSuccess": "Your request has been submitted! We will let you know once the tire is back in stock.",
+        "stockRequestTitle": "Request this tire",
+        "stockRequestSubtitle": "This tire is currently out of stock. Fill in your details and we'll bring it back as soon as possible.",
+        "name": "Name",
+        "phone": "Phone (optional)",
+        "email": "Email",
+        "submitRequest": "Submit Request",
+        "sending": "Sending..."
     },
     "Contact": {
         "title": "Contact Us",

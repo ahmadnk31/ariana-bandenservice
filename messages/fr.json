@@ -87,6 +87,15 @@
         "secondHand": "Seconde main",
         "noDescription": "Aucune description disponible",
         "addToCart": "Ajouter au panier",
+        "requestStock": "Demander du stock",
+        "stockRequestSuccess": "Votre demande a été envoyée ! Nous vous tiendrons informé dès que le pneu sera de nouveau en stock.",
+        "stockRequestTitle": "Demander ce pneu",
+        "stockRequestSubtitle": "Ce pneu est actuellement en rupture de stock. Remplissez vos coordonnées et nous le ramènerons dès que possible.",
+        "name": "Nom",
+        "phone": "Téléphone (optionnel)",
+        "email": "E-mail",
+        "submitRequest": "Envoyer la demande",
+        "sending": "Envoi en cours...",
         "relatedProducts": "Produits associés"
     },
     "Contact": {

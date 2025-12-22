@@ -354,36 +354,68 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
 
                     {/* Pagination */}
                     {totalPages > 1 && (
-                        <div className="flex justify-center items-center gap-2 mt-12">
+                        <div className="flex flex-wrap justify-center items-center gap-2 mt-12 pb-8">
                             <button
                                 onClick={() => handlePageChange(currentPage - 1)}
                                 disabled={currentPage === 1}
-                                className="p-2 rounded-md border border-muted hover:bg-muted transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="h-10 px-3 rounded-md border border-muted hover:bg-muted transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1 text-sm font-medium"
                                 aria-label="Previous page"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                <span className="hidden sm:inline">Prev</span>
                             </button>
 
-                            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                                <button
-                                    key={page}
-                                    onClick={() => handlePageChange(page)}
-                                    className={`w-10 h-10 rounded-md text-sm font-medium transition-colors ${currentPage === page
-                                        ? "bg-primary text-primary-foreground"
-                                        : "border border-muted hover:bg-muted"
-                                        }`}
-                                >
-                                    {page}
-                                </button>
-                            ))}
+                            {/* Mobile: Show simple current/total */}
+                            <div className="flex sm:hidden items-center px-4 text-sm font-medium border border-muted rounded-md h-10 bg-muted/20">
+                                {currentPage} / {totalPages}
+                            </div>
+
+                            {/* Desktop/Tablet Pagination */}
+                            <div className="hidden sm:flex items-center gap-2">
+                                {(() => {
+                                    const pages = [];
+                                    const delta = 1; // Number of pages either side of current
+
+                                    for (let i = 1; i <= totalPages; i++) {
+                                        if (
+                                            i === 1 ||
+                                            i === totalPages ||
+                                            (i >= currentPage - delta && i <= currentPage + delta)
+                                        ) {
+                                            if (pages.length > 0 && i - pages[pages.length - 1] > 1) {
+                                                pages.push(-1); // -1 represents dots
+                                            }
+                                            pages.push(i);
+                                        }
+                                    }
+
+                                    return pages.map((page, index) => (
+                                        page === -1 ? (
+                                            <span key={`dots-${index}`} className="w-10 h-10 flex items-center justify-center text-muted-foreground">...</span>
+                                        ) : (
+                                            <button
+                                                key={page}
+                                                onClick={() => handlePageChange(page)}
+                                                className={`w-10 h-10 rounded-md text-sm font-medium transition-colors ${currentPage === page
+                                                    ? "bg-primary text-primary-foreground"
+                                                    : "border border-muted hover:bg-muted"
+                                                    }`}
+                                            >
+                                                {page}
+                                            </button>
+                                        )
+                                    ));
+                                })()}
+                            </div>
 
                             <button
                                 onClick={() => handlePageChange(currentPage + 1)}
                                 disabled={currentPage === totalPages}
-                                className="p-2 rounded-md border border-muted hover:bg-muted transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="h-10 px-3 rounded-md border border-muted hover:bg-muted transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1 text-sm font-medium"
                                 aria-label="Next page"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                <span className="hidden sm:inline">Next</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                             </button>
                         </div>
                     )}

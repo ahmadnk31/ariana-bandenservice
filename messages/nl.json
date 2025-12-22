@@ -87,7 +87,16 @@
         "secondHand": "Tweedehands",
         "noDescription": "Geen beschrijving beschikbaar",
         "addToCart": "Toevoegen",
-        "relatedProducts": "Gerelateerde producten"
+        "relatedProducts": "Gerelateerde producten",
+        "requestStock": "Vraag Voorraad Aan",
+        "stockRequestSuccess": "Uw aanvraag is ingediend! We laten het u weten zodra de band weer op voorraad is.",
+        "stockRequestTitle": "Vraag deze band aan",
+        "stockRequestSubtitle": "Deze band is momenteel niet op voorraad. Vul uw gegevens in en wij brengen deze zo snel mogelijk weer op voorraad.",
+        "name": "Naam",
+        "phone": "Telefoon (optioneel)",
+        "email": "E-mail",
+        "submitRequest": "Inzenden",
+        "sending": "Versturen..."
     },
     "Contact": {
         "title": "Neem Contact Op",
