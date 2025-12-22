@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useTranslations } from 'next-intl';
 import { useCart } from './CartContext';
 import { ShoppingCart } from 'lucide-react';
+import StockRequestModal from "./StockRequestModal";
 
 interface TireImage {
     id: string;
@@ -52,6 +53,7 @@ export default function TireCard({
     const t = useTranslations('Tires');
     const { addToCart } = useCart();
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
 
     const seasonLabels: Record<string, string> = {
         summer: t('seasons.summer'),
@@ -186,7 +188,7 @@ export default function TireCard({
                         <p className="text-[10px] text-green-600">{t('stockCount', { count: stock })}</p>
                     )}
                 </div>
-                {inStock ? (
+                {stock > 0 ? (
                     <button
                         onClick={(e) => {
                             e.preventDefault();
@@ -207,14 +209,25 @@ export default function TireCard({
                         {t('addToCart')}
                     </button>
                 ) : (
-                    <Link
-                        href="/contact"
-                        className="inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium shadow transition-colors bg-muted text-muted-foreground cursor-not-allowed"
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsRequestModalOpen(true);
+                        }}
+                        className="inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium shadow transition-colors bg-primary text-primary-foreground hover:bg-primary/90"
                     >
-                        {t('notifyMe')}
-                    </Link>
+                        {t('requestStock')}
+                    </button>
                 )}
             </div>
+
+            {isRequestModalOpen && (
+                <StockRequestModal
+                    tireId={id}
+                    tireName={name}
+                    onClose={() => setIsRequestModalOpen(false)}
+                />
+            )}
         </div>
     );
 }

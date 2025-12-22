@@ -37,10 +37,11 @@ model Tire {
   stock   Int     @default(0)
   inStock Boolean @default(true)
 
-  images     TireImage[]
-  orderItems OrderItem[]
-  createdAt  DateTime    @default(now())
-  updatedAt  DateTime    @updatedAt
+  images        TireImage[]
+  orderItems    OrderItem[]
+  stockRequests StockRequest[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
 }
 
 model TireImage {
@@ -133,4 +134,23 @@ model ShippingAddress {
   city       String
   postalCode String
   country    String @default("BE")
+}
+
+model Feedback {
+  id        String   @id @default(cuid())
+  happiness Int
+  feedback  String?
+  createdAt DateTime @default(now())
+}
+
+model StockRequest {
+  id        String   @id @default(cuid())
+  tireId    String
+  tire      Tire     @relation(fields: [tireId], references: [id], onDelete: Cascade)
+  email     String
+  name      String?
+  phone     String?
+  status    String   @default("pending") // pending, resolved
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

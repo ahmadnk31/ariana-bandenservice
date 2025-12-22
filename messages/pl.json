@@ -87,6 +87,15 @@
         "secondHand": "Używane",
         "noDescription": "Brak opisu",
         "addToCart": "Dodaj do koszyka",
+        "requestStock": "Poproś o dostawę",
+        "stockRequestSuccess": "Twoja prośba została wysłana! Powiadomimy Cię, gdy opona będzie ponownie dostępna.",
+        "stockRequestTitle": "Poproś o tę oponę",
+        "stockRequestSubtitle": "Ta opona jest obecnie niedostępna. Podaj swoje dane, a sprowadzimy ją jak najszybciej.",
+        "name": "Imię i nazwisko",
+        "phone": "Telefon (opcjonalnie)",
+        "email": "Email",
+        "submitRequest": "Wyślij prośbę",
+        "sending": "Wysyłanie...",
         "relatedProducts": "Powiązane produkty"
     },
     "Contact": {
@@ -141,7 +150,14 @@
         "service": "Obsługa",
         "serviceText": "Nasz zespół certyfikowanych techników dokłada wszelkich starań, aby zapewnić Ci najwyższy poziom obsługi i bezpieczeństwo na drodze.",
         "contact": "Kontakt",
-        "contactText": "Jeśli masz pytania lub wątpliwości, skontaktuj się z nami. Jesteśmy tu, aby pomóc na każdym etapie."
+        "contactText": "Jeśli masz pytania lub wątpliwości, skontaktuj się z nami. Jesteśmy tu, aby pomóc na każdym etapie.",
+        "reviews": {
+            "title": "Zaufali nam nasi klienci",
+            "subtitle": "Zobacz, co nasi zadowoleni klienci mają do powiedzenia na temat naszej usługi.",
+            "googleTrusted": "Zaufane przez Google",
+            "viewAll": "Zobacz wszystkie opinie w Google",
+            "postedOnGoogle": "Opublikowano w Google"
+        }
     },
     "Cart": {
         "title": "Koszyk",
@@ -244,5 +260,13 @@
     },
     "DevBanner": {
         "message": "Nadal jesteśmy w trybie programowania. Wszystkie opony nie są prawdziwe; służą wyłącznie do celów demonstracyjnych. Prawdziwe opony wkrótce."
+    },
+    "Feedback": {
+        "question": "Czy podoba Ci się nasza usługa?",
+        "placeholder": "Opowiedz nam o swoich wrażeniach...",
+        "submit": "Wyślij",
+        "loading": "Ładowanie",
+        "success": "Twoja opinia została odebrana!",
+        "thanks": "Dziękujemy za pomoc."
     }
 }

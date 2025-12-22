@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { isAuthenticated } from "@/lib/auth";
 import { deleteImage } from "@/lib/s3";
+import { sendBackInStockEmail } from "@/lib/email";
 
 export async function GET(
     request: NextRequest,
@@ -99,6 +100,44 @@ export async function PUT(
             },
             include: { images: true },
         });
+
+        // Notify users if tire is back in stock
+        if (existingTire.stock === 0 && tire.stock > 0) {
+            try {
+                const stockRequests = await prisma.stockRequest.findMany({
+                    where: {
+                        tireId: id,
+                        status: "pending",
+                    },
+                });
+
+                if (stockRequests.length > 0) {
+                    // Send emails
+                    await Promise.all(
+                        stockRequests.map((request) =>
+                            sendBackInStockEmail({
+                                email: request.email,
+                                name: request.name,
+                                tireName: tire.name,
+                                slug: tire.slug,
+                            })
+                        )
+                    );
+
+                    // Update requests status to resolved
+                    await prisma.stockRequest.updateMany({
+                        where: {
+                            id: { in: stockRequests.map((r) => r.id) },
+                        },
+                        data: {
+                            status: "resolved",
+                        },
+                    });
+                }
+            } catch (notifyError) {
+                console.error("Failed to notify users about back-in-stock:", notifyError);
+            }
+        }
 
         return NextResponse.json(tire);
     } catch (error) {

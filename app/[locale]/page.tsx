@@ -4,6 +4,7 @@ import Hero from "@/app/components/Hero";
 import Footer from "@/app/components/Footer";
 import TireCard from "@/app/components/TireCard";
 import ReviewsSection from "@/app/components/ReviewsSection";
+
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/src/i18n/routing';
 
@@ -92,6 +93,8 @@ export default async function Home() {
 
         {/* Reviews Section */}
         <ReviewsSection />
+
+
       </main>
       <Footer />
     </div>

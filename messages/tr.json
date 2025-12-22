@@ -87,6 +87,15 @@
         "secondHand": "İkinci El",
         "noDescription": "Açıklama mevcut değil",
         "addToCart": "Sepete Ekle",
+        "requestStock": "Stok İste",
+        "stockRequestSuccess": "İsteğiniz gönderildi! Lastik tekrar stoklara girdiğinde sizi bilgilendireceğiz.",
+        "stockRequestTitle": "Bu Lastiği İste",
+        "stockRequestSubtitle": "Bu lastik şu anda stokta yok. Lütfen bilgilerinizi doldurun, en kısa sürede temin edeceğiz.",
+        "name": "İsim",
+        "phone": "Telefon (isteğe bağlı)",
+        "email": "E-posta",
+        "submitRequest": "İsteği Gönder",
+        "sending": "Gönderiliyor...",
         "relatedProducts": "İlgili Ürünler"
     },
     "Contact": {
@@ -141,7 +150,14 @@
         "service": "Hizmet",
         "serviceText": "Sertifikalı teknisyenlerden oluşan ekibimiz, yolda güvenliğiniz için en iyi hizmeti sunmaya adanmıştır.",
         "contact": "İletişim",
-        "contactText": "Herhangi bir sorunuz veya endişeniz varsa bizimle iletişime geçmekten çekinmeyin. Her adımda yanınızdayız."
+        "contactText": "Herhangi bir sorunuz veya endişeniz varsa bizimle iletişime geçmekten çekinmeyin. Her adımda yanınızdayız.",
+        "reviews": {
+            "title": "Müşterilerimiz Tarafından Güvenilen",
+            "subtitle": "Memnun müşterilerimizin hizmetimiz hakkında neler söylediğini görün.",
+            "googleTrusted": "Google Güvenilir",
+            "viewAll": "Google'daki tüm yorumları görüntüle",
+            "postedOnGoogle": "Google'da yayınlandı"
+        }
     },
     "Cart": {
         "title": "Alışveriş Sepeti",
@@ -244,5 +260,13 @@
     },
     "DevBanner": {
         "message": "Hala geliştirme aşamasındayız. Tüm lastikler gerçek değildir; sadece demo amaçlıdır. Gerçek lastikler yakında gelecek."
+    },
+    "Feedback": {
+        "question": "Hizmetimizi beğendiniz mi?",
+        "placeholder": "Deneyiminizi bize anlatın...",
+        "submit": "Gönder",
+        "loading": "Yükleniyor",
+        "success": "Geri bildiriminiz alındı!",
+        "thanks": "Yardımınız için teşekkürler."
     }
 }

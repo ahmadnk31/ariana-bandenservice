@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
+import { Feedback } from './Feedback';
 
 export default function Footer() {
     const t = useTranslations('Footer');
@@ -14,7 +15,7 @@ export default function Footer() {
 
     return (
         <footer className="border-t border-muted bg-muted/50 py-12">
-            <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm">
+            <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm border-b border-muted/50 pb-8">
                 <div>
                     <h3 className="font-bold text-lg mb-4">Ariana Bandenservice</h3>
                     <p className="text-muted-foreground">
@@ -37,12 +38,14 @@ export default function Footer() {
                     <ul className="space-y-2 text-muted-foreground">
                         <li>{t('openingHoursText')}</li>
                         <li>{t('openingHoursText2')}</li>
-
                     </ul>
                 </div>
             </div>
-            <div className="container mx-auto px-4 mt-8 pt-8 border-t border-muted/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
-                <p>&copy; {year || 2025} Ariana Bandenservice. {t('rights')}</p>
+            <div className="container mx-auto px-4 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
+                <div className="flex flex-col items-center sm:items-start gap-4">
+                    <p>&copy; {year || 2025} Ariana Bandenservice. {t('rights')}</p>
+                    <Feedback />
+                </div>
                 <LanguageSwitcher />
             </div>
         </footer>

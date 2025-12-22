@@ -87,7 +87,16 @@
         "secondHand": "Tweedehands",
         "noDescription": "Geen beschrijving beschikbaar",
         "addToCart": "Toevoegen",
-        "relatedProducts": "Gerelateerde producten"
+        "relatedProducts": "Gerelateerde producten",
+        "requestStock": "Vraag Voorraad Aan",
+        "stockRequestSuccess": "Uw aanvraag is ingediend! We laten het u weten zodra de band weer op voorraad is.",
+        "stockRequestTitle": "Vraag deze band aan",
+        "stockRequestSubtitle": "Deze band is momenteel niet op voorraad. Vul uw gegevens in en wij brengen deze zo snel mogelijk weer op voorraad.",
+        "name": "Naam",
+        "phone": "Telefoon (optioneel)",
+        "email": "E-mail",
+        "submitRequest": "Inzenden",
+        "sending": "Versturen..."
     },
     "Contact": {
         "title": "Neem Contact Op",
@@ -235,10 +244,10 @@
         }
     },
     "Metadata": {
-        "title": "Ariana Bandenservice | Bandencentrale Gent",
+        "title": "Ariana bandenservice | Gent bandenservice",
         "description": "Professionele bandenservice en autoreparatie in Gent. Kwaliteit bandenmontage, uitlijning, balanceren en reparatie. Topmerken tegen scherpe prijzen.",
         "ogDescription": "Professionele bandenservice en autoreparatie in Gent. Kwaliteit bandenmontage, uitlijning, balanceren en reparatie.",
-        "keywords": "bandenservice, autoservice, bandencentrale, banden kopen, wieluitlijning, bandenmontage, banden balanceren, APK keuring, autoreparatie, garage, bandenservice in uw buurt, garage in de buurt, bandencentrale Gent, autogarage Sint-Amandsberg, banden Oost-Vlaanderen, bandenservice 9040, winterbanden, zomerbanden, all season banden, 4 seizoenen banden, tweedehands banden, nieuwe banden, occasie banden, goedkope banden, lokale bandenservice, betrouwbare garage, snelle service, vakkundige montage, eerlijke prijs, persoonlijke service, familiebedrijf, Gent, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, autobanden in uw buurt, banden in de buurt, banden in Gent, banden in Sint-Amandsberg, banden in Destelbergen, banden in Lochristi, banden in Gentbrugge, banden in Ledeberg, banden in Oostakker, banden in Wondelgem, banden in Mariakerke, banden in Drongen, banden in België",
+        "keywords": "bandenservice, autoservice, bandencentrale, banden kopen, wieluitlijning, bandenmontage, banden balanceren, APK keuring, autoreparatie, garage, bandenservice in uw buurt, garage in de buurt, bandencentrale Gent, autogarage Sint-Amandsberg, banden Oost-Vlaanderen, bandenservice 9040, winterbanden, zomerbanden, all season banden, 4 seizoenen banden, tweedehands banden, nieuwe banden, occasie banden, goedkope banden, lokale bandenservice, betrouwbare garage, snelle service, vakkundige montage, eerlijke prijs, persoonlijke service, familiebedrijf, Gent, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, autobanden in uw buurt, banden in de buurt, banden in Gent, banden in Sint-Amandsberg, banden in Destelbergen, banden in Lochristi, banden in Gentbrugge, banden in Ledeberg, banden in Oostakker, banden in Wondelgem, banden in Mariakerke, banden in Drongen, banden in België, in your area, near me, next to me, tyreshop, bandenwinkel, autobandenwinkel, autobanden winkel, bandencentrale, autobandencentrale, gent bandenservice, tyre shop",
         "tiresTitle": "Banden | Ariana Bandenservice",
         "tiresDescription": "Bekijk onze selectie premium banden van topmerken. Winter-, zomer- en all-seasonbanden tegen scherpe prijzen.",
         "servicesTitle": "Diensten | Ariana Bandenservice",
@@ -250,5 +259,13 @@
     },
     "DevBanner": {
         "message": "We bevinden ons nog in de ontwikkelingsfase. Alle banden zijn niet echt; het is alleen voor demonstratiedoeleinden. Echte banden komen eraan."
+    },
+    "Feedback": {
+        "question": "Vind je onze service leuk?",
+        "placeholder": "Vertel ons over je ervaring...",
+        "submit": "Verzenden",
+        "loading": "Laden",
+        "success": "Je feedback is ontvangen!",
+        "thanks": "Bedankt voor je hulp."
     }
 }

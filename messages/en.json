@@ -87,7 +87,16 @@
         "secondHand": "Second Hand",
         "noDescription": "No description available",
         "addToCart": "Add to Cart",
-        "relatedProducts": "Related Products"
+        "relatedProducts": "Related Products",
+        "requestStock": "Request Stock",
+        "stockRequestSuccess": "Your request has been submitted! We will let you know once the tire is back in stock.",
+        "stockRequestTitle": "Request this tire",
+        "stockRequestSubtitle": "This tire is currently out of stock. Fill in your details and we'll bring it back as soon as possible.",
+        "name": "Name",
+        "phone": "Phone (optional)",
+        "email": "Email",
+        "submitRequest": "Submit Request",
+        "sending": "Sending..."
     },
     "Contact": {
         "title": "Contact Us",
@@ -236,10 +245,10 @@
         }
     },
     "Metadata": {
-        "title": "Ariana Bandenservice | Tire Center Ghent",
+        "title": "Ariana bandenservice | Gent bandenservice",
         "description": "Professional tire service and car repair in Ghent. Quality tire fitting, alignment, balancing and repair. Top brands at competitive prices.",
         "ogDescription": "Professional tire service and car repair in Ghent. Quality tire fitting, alignment, balancing and repair.",
-        "keywords": "tire service, car repair, tire shop, wheel alignment, tire fitting, tire balancing, car inspection, auto repair, garage, tire service near me, garage near me, tire center Ghent, auto garage Sint-Amandsberg, tires East Flanders, tire service 9040, winter tires, summer tires, all season tires, 4 season tires, used tires, new tires, cheap tires, local tire service, reliable garage, fast service, professional fitting, fair price, personal service, family business, Ghent, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, tire shop Belgium",
+        "keywords": "tire service, car repair, tire shop, wheel alignment, tire fitting, tire balancing, car inspection, auto repair, garage, tire service near me, garage near me, tire center Ghent, auto garage Sint-Amandsberg, tires East Flanders, tire service 9040, winter tires, summer tires, all season tires, 4 season tires, used tires, new tires, cheap tires, local tire service, reliable garage, fast service, professional fitting, fair price, personal service, family business, Ghent, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, tire shop Belgium, in your area, tyreshop near me, tyreshop next to me, tyreshop, bandenwinkel, autobandenwinkel, autobanden winkel, bandencentrale, autobandencentrale, gent bandenservice, tyre shop",
         "tiresTitle": "Tires | Ariana Bandenservice",
         "tiresDescription": "Browse our selection of premium tires from top brands. Winter, summer and all-season tires at competitive prices.",
         "servicesTitle": "Services | Ariana Bandenservice",
@@ -251,5 +260,13 @@
     },
     "DevBanner": {
         "message": "We are in development mode. All tires are not real; it is only for demo purposes. Real tires will arrive soon."
+    },
+    "Feedback": {
+        "question": "Like our service?",
+        "placeholder": "Tell us about your experience...",
+        "submit": "Submit",
+        "loading": "Loading",
+        "success": "Your feedback has been received!",
+        "thanks": "Thank you for your help."
     }
 }

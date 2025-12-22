@@ -87,6 +87,15 @@
         "secondHand": "Segunda mano",
         "noDescription": "No hay descripción disponible",
         "addToCart": "Añadir al carrito",
+        "requestStock": "Solicitar Stock",
+        "stockRequestSuccess": "¡Tu solicitud ha sido enviada! Te avisaremos cuando el neumático vuelva a estar en stock.",
+        "stockRequestTitle": "Solicitar este neumático",
+        "stockRequestSubtitle": "Este neumático está agotado actualmente. Completa tus datos y lo traeremos de vuelta lo antes posible.",
+        "name": "Nombre",
+        "phone": "Teléfono (opcional)",
+        "email": "Correo electrónico",
+        "submitRequest": "Enviar solicitud",
+        "sending": "Enviando...",
         "relatedProducts": "Productos relacionados"
     },
     "Contact": {
@@ -141,7 +150,14 @@
         "service": "Servicio",
         "serviceText": "Nuestro equipo de técnicos certificados está dedicado a brindarte el mejor servicio posible para mantenerte seguro en la carretera.",
         "contact": "Contacto",
-        "contactText": "Si tienes alguna pregunta o inquietud, no dudes en contactarnos. Estamos aquí para ayudarte en cada paso."
+        "contactText": "Si tienes alguna pregunta o inquietud, no dudes en contactarnos. Estamos aquí para ayudarte en cada paso.",
+        "reviews": {
+            "title": "Con la confianza de nuestros clientes",
+            "subtitle": "Vea lo que dicen nuestros clientes satisfechos sobre nuestro servicio.",
+            "googleTrusted": "Google de confianza",
+            "viewAll": "Ver todas las reseñas en Google",
+            "postedOnGoogle": "Publicado en Google"
+        }
     },
     "Cart": {
         "title": "Carrito de compras",
@@ -244,5 +260,13 @@
     },
     "DevBanner": {
         "message": "Todavía estamos en modo de desarrollo. Todos los neumáticos no son reales; es solo para fines de demostración. Los neumáticos reales llegarán pronto."
+    },
+    "Feedback": {
+        "question": "¿Le gusta nuestro servicio?",
+        "placeholder": "Cuéntenos su experiencia...",
+        "submit": "Enviar",
+        "loading": "Cargando",
+        "success": "¡Su comentario ha sido recibido!",
+        "thanks": "Gracias por su ayuda."
     }
 }
