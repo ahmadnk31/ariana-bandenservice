@@ -169,7 +169,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                 </div>
 
                 {/* Sidebar Filters */}
-                <aside className={`w-full lg:w-64 flex-shrink-0 space-y-8 ${mobileFiltersOpen ? "block" : "hidden lg:block"}`}>
+                <aside className={`w-full lg:w-64 flex-shrink-0 space-y-8 lg:sticky lg:top-8 lg:self-start ${mobileFiltersOpen ? "block" : "hidden lg:block"}`}>
                     <div className="flex items-center justify-between">
                         <h2 className="text-lg font-bold">{t('filters')}</h2>
                         <button onClick={clearFilters} className="text-sm text-muted-foreground hover:text-primary underline">

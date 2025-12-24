@@ -29,7 +29,7 @@ interface TiresPageProps {
 export default async function TiresPage({ searchParams }: TiresPageProps) {
     const params = await searchParams;
     const page = Number(params.page) || 1;
-    const itemsPerPage = 2;
+    const itemsPerPage = 20;
 
     // Filters
     const season = (params.season as string) || "all";
