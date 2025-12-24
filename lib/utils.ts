@@ -51,7 +51,7 @@ export function parseTireSize(query: string) {
 }
 
 export function getAlternateLanguages(path: string = '') {
-  const locales = ['en', 'nl', 'fr', 'es', 'tr', 'pl', 'gr', 'ar', 'fa', 'uk'];
+  const locales = ['en', 'nl', 'fr', 'es', 'tr', 'pl', 'gr', 'ar', 'fa', 'uk', 'de', 'it'];
   const languages: Record<string, string> = {};
 
   locales.forEach(locale => {
