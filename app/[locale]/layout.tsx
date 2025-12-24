@@ -20,6 +20,8 @@ const localeMap: Record<string, string> = {
     en: 'en_GB',
     nl: 'nl_NL',
     fr: 'fr_FR',
+    de: 'de_DE',
+    it: 'it_IT',
     es: 'es_ES',
     tr: 'tr_TR',
     pl: 'pl_PL',
@@ -29,7 +31,7 @@ const localeMap: Record<string, string> = {
     uk: 'uk_UA',
 };
 
-const supportedLocales = ['en', 'nl', 'fr', 'es', 'tr', 'pl', 'gr', 'ar', 'fa', 'uk'];
+const supportedLocales = ['en', 'nl', 'fr', 'de', 'it', 'es', 'tr', 'pl', 'gr', 'ar', 'fa', 'uk'];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;

@@ -7,6 +7,8 @@ const locales = [
     { code: "en", label: "English", flag: "🇬🇧" },
     { code: "nl", label: "Nederlands", flag: "🇳🇱" },
     { code: "fr", label: "Français", flag: "🇫🇷" },
+    { code: "de", label: "Deutsch", flag: "🇩🇪" },
+    { code: "it", label: "Italiano", flag: "🇮🇹" },
     { code: "es", label: "Español", flag: "🇪🇸" },
     { code: "tr", label: "Türkçe", flag: "🇹🇷" },
     { code: "pl", label: "Polski", flag: "🇵🇱" },
@@ -67,8 +69,8 @@ export default function LanguageSwitcher() {
                             key={locale.code}
                             onClick={() => switchLocale(locale.code)}
                             className={`w-full flex items-center gap-3 px-3 py-2 text-sm transition-colors ${currentLocale === locale.code
-                                    ? "bg-primary text-primary-foreground"
-                                    : "hover:bg-muted"
+                                ? "bg-primary text-primary-foreground"
+                                : "hover:bg-muted"
                                 }`}
                         >
                             <span className="text-lg">{locale.flag}</span>
