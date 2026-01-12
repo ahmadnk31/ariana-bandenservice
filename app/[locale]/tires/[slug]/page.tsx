@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         };
     }
 
-    const title = `${tire.name} | Ariana Bandenservice`;
+    const title = `${tire.name} | Gent bandenservice`;
     const description = `Buy ${tire.brand} ${tire.name} (${tire.size}) - ${tire.season} tire. Price: €${tire.price}. Professional fitting available.`;
     const images = tire.images.map(img => img.url);
 

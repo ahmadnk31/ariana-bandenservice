@@ -2,7 +2,7 @@ import { isAuthenticated } from "@/lib/auth";
 import AdminShell from "../../components/AdminShell";
 
 export const metadata = {
-    title: "Admin | Ariana Bandenservice",
+    title: "Admin | Gent bandenservice",
     description: "Admin Dashboard",
 };
 

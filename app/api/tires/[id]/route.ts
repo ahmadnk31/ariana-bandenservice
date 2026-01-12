@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { isAuthenticated } from "@/lib/auth";
-import { deleteImage } from "@/lib/s3";
+
 import { sendBackInStockEmail } from "@/lib/email";
 
 export async function GET(
@@ -59,14 +59,14 @@ export async function PUT(
         const newImageKeys = new Set(data.images?.map((img: { key: string }) => img.key) || []);
         const imagesToDelete = existingTire.images.filter((img) => !newImageKeys.has(img.key));
 
-        // Delete removed images from S3
-        for (const img of imagesToDelete) {
-            try {
-                await deleteImage(img.key);
-            } catch (e) {
-                console.error("Failed to delete image from S3:", e);
-            }
-        }
+        // Delete removed images (logic removed for migration)
+        // for (const img of imagesToDelete) {
+        //     try {
+        //         await deleteImage(img.key);
+        //     } catch (e) {
+        //         console.error("Failed to delete image from S3:", e);
+        //     }
+        // }
 
         // Delete all existing images from DB and recreate
         await prisma.tireImage.deleteMany({ where: { tireId: id } });
@@ -169,18 +169,17 @@ export async function DELETE(
         });
 
         // 2. If DB delete succeeded, now we can safely delete from S3
-        // We run these in parallel and don't block the response deeply, 
-        // though we await them to ensure we log errors.
-        const deletePromises = deletedTire.images.map(async (img) => {
-            try {
-                await deleteImage(img.key);
-            } catch (e) {
-                console.error(`Failed to delete image ${img.key} from S3:`, e);
-                // We don't throw here to ensure other cleanup continues
-            }
-        });
+        // Logic removed for migration
+        // const deletePromises = deletedTire.images.map(async (img) => {
+        //     try {
+        //         await deleteImage(img.key);
+        //     } catch (e) {
+        //         console.error(`Failed to delete image ${img.key} from S3:`, e);
+        //         // We don't throw here to ensure other cleanup continues
+        //     }
+        // });
 
-        await Promise.all(deletePromises);
+        // await Promise.all(deletePromises);
 
         return NextResponse.json({ success: true });
     } catch (error: any) {

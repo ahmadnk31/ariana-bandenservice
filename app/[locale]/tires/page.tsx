@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const metadata = messages.Metadata || {};
 
     return {
-        title: metadata.tiresTitle || "Tires | Ariana Bandenservice",
+        title: metadata.tiresTitle || "Tires | Gent bandenservice",
         description: metadata.tiresDescription || "Browse our selection of premium tires from top brands.",
         alternates: {
             canonical: `/${locale}/tires`,

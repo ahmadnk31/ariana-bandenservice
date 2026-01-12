@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const messages = (await import(`../../messages/${locale}.json`)).default;
     const metadata = messages.Metadata || {};
 
-    const title = metadata.title || "Ariana Bandenservice | Bandencentrale Gent";
+    const title = metadata.title || "Gent Bandenservice | Bandencentrale Gent";
     const description = metadata.description || "Professionele bandenservice en autoreparatie in Gent.";
     const keywords = metadata.keywords || "";
 
@@ -46,17 +46,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://arianabandenservice.be"),
         title: {
             default: title,
-            template: "%s | Ariana Bandenservice",
+            template: "%s | Gent Bandenservice",
         },
         description,
         openGraph: {
             title,
             description,
             url: `https://arianabandenservice.be/${locale}`,
-            siteName: "Ariana Bandenservice",
+            siteName: "Gent Bandenservice",
             locale: localeMap[locale] || 'nl_NL',
             type: "website",
-            images: [{ url: "/banden-service/android-chrome-512x512.png", width: 512, height: 512, alt: "Ariana Bandenservice Logo" }],
+            images: [{ url: "/banden-service/android-chrome-512x512.png", width: 512, height: 512, alt: "Gent Bandenservice Logo" }],
         },
         twitter: {
             card: "summary_large_image",
@@ -93,7 +93,7 @@ export default async function LocaleLayout({
             <body className={`${outfit.variable} antialiased font-sans`}>
                 <NextIntlClientProvider messages={messages}>
                     <CartProvider>
-                        <DevBanner />
+
                         {children}
                         <CartDrawer />
                         <Analytics />

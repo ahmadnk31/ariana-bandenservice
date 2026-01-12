@@ -2,6 +2,7 @@
 
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
+import { useUploadThing } from "@/lib/uploadthing";
 
 interface UploadedImage {
     url: string;
@@ -23,41 +24,31 @@ export default function ImageDropzone({
     setUploading,
     onError,
 }: ImageDropzoneProps) {
+    const { startUpload } = useUploadThing("imageUploader", {
+        onClientUploadComplete: (res) => {
+            const newImages = res.map((file) => ({
+                url: file.url,
+                key: file.key,
+            }));
+            onImagesChange([...images, ...newImages]);
+            setUploading(false);
+        },
+        onUploadError: (error: Error) => {
+            onError(`Upload failed: ${error.message}`);
+            setUploading(false);
+        },
+        onUploadBegin: () => {
+            setUploading(true);
+            onError("");
+        },
+    });
+
     const onDrop = useCallback(
         async (acceptedFiles: File[]) => {
             if (acceptedFiles.length === 0) return;
-
-            setUploading(true);
-            onError("");
-
-            try {
-                const newImages: UploadedImage[] = [];
-
-                for (const file of acceptedFiles) {
-                    const formData = new FormData();
-                    formData.append("file", file);
-
-                    const res = await fetch("/api/upload", {
-                        method: "POST",
-                        body: formData,
-                    });
-
-                    if (!res.ok) {
-                        throw new Error("Failed to upload image");
-                    }
-
-                    const data = await res.json();
-                    newImages.push({ url: data.url, key: data.key });
-                }
-
-                onImagesChange([...images, ...newImages]);
-            } catch {
-                onError("Failed to upload image");
-            } finally {
-                setUploading(false);
-            }
+            await startUpload(acceptedFiles);
         },
-        [images, onImagesChange, setUploading, onError]
+        [startUpload]
     );
 
     const removeImage = (index: number) => {
@@ -114,8 +105,8 @@ export default function ImageDropzone({
             <div
                 {...getRootProps()}
                 className={`flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${isDragActive
-                        ? "border-primary bg-primary/5"
-                        : "border-muted hover:bg-muted/50"
+                    ? "border-primary bg-primary/5"
+                    : "border-muted hover:bg-muted/50"
                     } ${uploading ? "opacity-50 cursor-not-allowed" : ""}`}
             >
                 <input {...getInputProps()} />
