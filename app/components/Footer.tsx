@@ -17,7 +17,7 @@ export default function Footer() {
         <footer className="border-t border-muted bg-muted/50 py-12">
             <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm border-b border-muted/50 pb-8">
                 <div>
-                    <h3 className="font-bold text-lg mb-4">Ariana Bandenservice</h3>
+                    <h3 className="font-bold text-lg mb-4">Gent bandenservice</h3>
                     <p className="text-muted-foreground">
                         {t('aboutText')}
                     </p>
@@ -43,7 +43,7 @@ export default function Footer() {
             </div>
             <div className="container mx-auto px-4 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
                 <div className="flex flex-col items-center sm:items-start gap-4">
-                    <p>&copy; {year || 2025} Ariana Bandenservice. {t('rights')}</p>
+                    <p>&copy; {year || 2025} Gent bandenservice. {t('rights')}</p>
                     <Feedback />
                 </div>
                 <LanguageSwitcher />

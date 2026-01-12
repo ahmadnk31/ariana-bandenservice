@@ -26,12 +26,12 @@ export default function ContactReplyEmail({
     return (
         <Html>
             <Head />
-            <Preview>Response to your inquiry from Ariana Bandenservice</Preview>
+            <Preview>Response to your inquiry from Gent bandenservice</Preview>
             <Tailwind>
                 <Body className="bg-white my-auto mx-auto font-sans">
                     <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] max-w-[465px]">
                         <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-                            Ariana Bandenservice
+                            Gent bandenservice
                         </Heading>
                         <Text className="text-black text-[14px] leading-[24px]">
                             Hello {customerName},
@@ -49,7 +49,7 @@ export default function ContactReplyEmail({
                         <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
                         <Text className="text-[#666666] text-[12px] leading-[24px]">
                             Best regards,<br />
-                            The Ariana Bandenservice Team
+                            The Gent bandenservice Team
                         </Text>
                     </Container>
                 </Body>

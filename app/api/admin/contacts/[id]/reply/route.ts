@@ -33,9 +33,9 @@ export async function POST(
 
         // Send Email
         await resend.emails.send({
-            from: "Ariana Bandenservice <onboarding@resend.dev>", // Update domain in prod
+            from: "Gent bandenservice <onboarding@resend.dev>", // Update domain in prod
             to: [contact.email],
-            subject: "Re: Your inquiry to Ariana Bandenservice",
+            subject: "Re: Your inquiry to Gent bandenservice",
             react: ContactReplyEmail({
                 customerName: contact.firstName,
                 adminMessage: message,

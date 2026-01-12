@@ -21,7 +21,7 @@ interface StockRequestData {
 export async function sendContactEmail(data: ContactFormData): Promise<{ success: boolean; error?: string }> {
     try {
         await resend.emails.send({
-            from: "Ariana Bandenservice <onboarding@resend.dev>", // Update with your verified domain
+            from: "Gent bandenservice <onboarding@resend.dev>", // Update with your verified domain
             to: ["info@arianabandenservice.com"], // Update with your email
             replyTo: data.email,
             subject: `New Contact Form: ${data.firstName} ${data.lastName}`,
@@ -46,7 +46,7 @@ export async function sendContactEmail(data: ContactFormData): Promise<{ success
 export async function sendStockRequestEmail(data: StockRequestData): Promise<{ success: boolean; error?: string }> {
     try {
         await resend.emails.send({
-            from: "Ariana Bandenservice <onboarding@resend.dev>",
+            from: "Gent bandenservice <onboarding@resend.dev>",
             to: ["info@arianabandenservice.com"],
             replyTo: data.email,
             subject: `New Stock Request: ${data.tireName}`,
@@ -70,7 +70,7 @@ export async function sendStockRequestEmail(data: StockRequestData): Promise<{ s
 export async function sendStockRequestConfirmationEmail(data: StockRequestData): Promise<{ success: boolean; error?: string }> {
     try {
         await resend.emails.send({
-            from: "Ariana Bandenservice <onboarding@resend.dev>",
+            from: "Gent bandenservice <onboarding@resend.dev>",
             to: [data.email],
             subject: `Bevestiging voorraad aanvraag: ${data.tireName}`,
             html: `
@@ -83,7 +83,7 @@ export async function sendStockRequestConfirmationEmail(data: StockRequestData):
           </div>
           <p>We doen ons best om deze band zo snel mogelijk weer op voorraad te krijgen. Zodra de band beschikbaar is, laten we het je direct weten via dit e-mailadres.</p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
-          <p style="font-size: 0.9em; color: #666;">Met vriendelijke groet,<br /><strong>Ariana Bandenservice</strong></p>
+          <p style="font-size: 0.9em; color: #666;">Met vriendelijke groet,<br /><strong>Gent bandenservice</strong></p>
         </div>
       `,
         });
@@ -100,7 +100,7 @@ export async function sendBackInStockEmail(data: { email: string; name?: string 
         const tireUrl = `https://arianabandenservice.com/tires/${data.slug}`; // Update with your actual domain
 
         await resend.emails.send({
-            from: "Ariana Bandenservice <onboarding@resend.dev>",
+            from: "Gent bandenservice <onboarding@resend.dev>",
             to: [data.email],
             subject: `Goed nieuws! De ${data.tireName} is weer op voorraad`,
             html: `
@@ -117,7 +117,7 @@ export async function sendBackInStockEmail(data: { email: string; name?: string 
           </div>
           <p>Wacht niet te lang, want de voorraad kan snel gaan.</p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
-          <p style="font-size: 0.9em; color: #666;">Met vriendelijke groet,<br /><strong>Ariana Bandenservice</strong></p>
+          <p style="font-size: 0.9em; color: #666;">Met vriendelijke groet,<br /><strong>Gent bandenservice</strong></p>
         </div>
       `,
         });

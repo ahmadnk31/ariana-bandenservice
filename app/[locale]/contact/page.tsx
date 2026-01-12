@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const metadata = messages.Metadata || {};
 
     return {
-        title: metadata.contactTitle || "Contact | Ariana Bandenservice",
-        description: metadata.contactDescription || "Get in touch with Ariana Bandenservice. Book an appointment or request a quote for tire services.",
+        title: metadata.contactTitle || "Contact | Gent bandenservice",
+        description: metadata.contactDescription || "Get in touch with Gent bandenservice. Book an appointment or request a quote for tire services.",
         alternates: {
             canonical: `/${locale}/contact`,
             languages: getAlternateLanguages('/contact'),

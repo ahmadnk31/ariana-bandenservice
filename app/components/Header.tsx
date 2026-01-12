@@ -20,7 +20,7 @@ export default function Header() {
                     <Link href="/" className="flex items-center gap-2">
                         <Image src="/icon.png" alt="Logo" width={50} height={50} />
                         <span className="text-xl hidden lg:block font-bold uppercase tracking-wider text-foreground">
-                            Ariana <span className="text-primary">Bandenservice</span>
+                            Gent <span className="text-primary">bandenservice</span>
                         </span>
                     </Link>
                 </div>
