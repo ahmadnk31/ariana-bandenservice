@@ -75,6 +75,7 @@ export async function PUT(
             where: { id },
             data: {
                 name: data.name,
+                barcode: data.barcode || null,
                 brand: data.brand,
                 season: data.season,
                 condition: data.condition,

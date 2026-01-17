@@ -52,6 +52,7 @@ export async function POST(request: NextRequest) {
             data: {
                 name: data.name,
                 slug,
+                barcode: data.barcode || null,
                 brand: data.brand,
                 season: data.season,
                 condition: data.condition || "new",

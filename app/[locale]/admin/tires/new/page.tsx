@@ -18,6 +18,7 @@ export default function NewTirePage() {
     const [images, setImages] = useState<UploadedImage[]>([]);
     const [formData, setFormData] = useState({
         name: "",
+        barcode: "",
         brand: "",
         season: "summer",
         condition: "new",
@@ -67,11 +68,12 @@ export default function NewTirePage() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     ...formData,
+                    stock: parseInt(formData.stock) || 0,
                     price: parseFloat(formData.price),
+                    barcode: formData.barcode || null,
                     width: formData.width ? parseInt(formData.width) : null,
                     aspectRatio: formData.aspectRatio ? parseInt(formData.aspectRatio) : null,
                     rimSize: formData.rimSize ? parseInt(formData.rimSize) : null,
-                    stock: parseInt(formData.stock) || 0,
                     features: formData.features.filter((f) => f.trim() !== ""),
                     images,
                 }),
@@ -119,6 +121,19 @@ export default function NewTirePage() {
                                 className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                                 placeholder="Pilot Sport 5"
                                 required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="barcode" className="block text-sm font-medium mb-2">
+                                Barcode (EAN/UPC)
+                            </label>
+                            <input
+                                type="text"
+                                id="barcode"
+                                value={formData.barcode}
+                                onChange={(e) => setFormData((prev) => ({ ...prev, barcode: e.target.value }))}
+                                className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                placeholder="12345678"
                             />
                         </div>
                         <div>
