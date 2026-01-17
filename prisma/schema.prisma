@@ -11,12 +11,13 @@ datasource db {
 }
 
 model Tire {
-  id        String @id @default(cuid())
+  id        String  @id @default(cuid())
   name      String
-  slug      String @unique @default(cuid())
+  slug      String  @unique @default(cuid())
+  barcode   String? @unique
   brand     String
   season    String // summer, winter, all-season (renamed from type for clarity)
-  condition String @default("new") // new, used
+  condition String  @default("new") // new, used
 
   // Size components (e.g., 225/45 R17 = width 225, aspectRatio 45, rimSize 17)
   size        String // Full size string like "225/45 R17"

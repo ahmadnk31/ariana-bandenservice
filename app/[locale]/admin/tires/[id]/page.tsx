@@ -24,6 +24,7 @@ interface UploadedImage {
 interface TireData {
     id: string;
     name: string;
+    barcode: string | null;
     brand: string;
     season: string;
     condition?: string;
@@ -55,6 +56,7 @@ export default function EditTirePage() {
     const [images, setImages] = useState<UploadedImage[]>([]);
     const [formData, setFormData] = useState({
         name: "",
+        barcode: "",
         brand: "",
         season: "summer",
         condition: "new",
@@ -81,6 +83,7 @@ export default function EditTirePage() {
 
                 setFormData({
                     name: data.name,
+                    barcode: data.barcode || "",
                     brand: data.brand,
                     season: data.season,
                     condition: data.condition || "new",
@@ -141,6 +144,7 @@ export default function EditTirePage() {
                 body: JSON.stringify({
                     ...formData,
                     price: parseFloat(formData.price),
+                    barcode: formData.barcode || null,
                     width: formData.width ? parseInt(formData.width) : null,
                     aspectRatio: formData.aspectRatio ? parseInt(formData.aspectRatio) : null,
                     rimSize: formData.rimSize ? parseInt(formData.rimSize) : null,
@@ -252,6 +256,20 @@ export default function EditTirePage() {
                                 className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                                 placeholder="Pilot Sport 5"
                                 required
+                            />
+                        </div>
+
+                        <div>
+                            <label htmlFor="barcode" className="block text-sm font-medium mb-2">
+                                Barcode (EAN/UPC)
+                            </label>
+                            <input
+                                type="text"
+                                id="barcode"
+                                value={formData.barcode}
+                                onChange={(e) => setFormData((prev) => ({ ...prev, barcode: e.target.value }))}
+                                className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                placeholder="12345678"
                             />
                         </div>
                         <div>
@@ -514,9 +532,11 @@ export default function EditTirePage() {
                     />
                 </div>
 
-                {error && (
-                    <p className="text-sm text-red-500">{error}</p>
-                )}
+                {
+                    error && (
+                        <p className="text-sm text-red-500">{error}</p>
+                    )
+                }
 
                 <div className="flex gap-4">
                     <button
@@ -533,7 +553,7 @@ export default function EditTirePage() {
                         Cancel
                     </Link>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 }

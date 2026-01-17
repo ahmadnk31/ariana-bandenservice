@@ -20,6 +20,7 @@ export default async function TiresPage() {
     const tiresData: TireRow[] = tires.map((tire) => ({
         id: tire.id,
         name: tire.name,
+        barcode: tire.barcode,
         brand: tire.brand,
         season: tire.season,
         condition: tire.condition, // Add

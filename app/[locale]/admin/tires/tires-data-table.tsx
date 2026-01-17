@@ -3,6 +3,19 @@
 import { ColumnDef } from "@tanstack/react-table"
 import Link from "next/link"
 import { DataTable } from "@/components/ui/data-table"
+import Barcode from "react-barcode"
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import { useState } from "react"
 
 interface TireImage {
     id: string
@@ -14,6 +27,7 @@ interface TireImage {
 export interface TireRow {
     id: string
     name: string
+    barcode: string | null
     brand: string
     season: string
     condition?: string
@@ -62,6 +76,12 @@ export const columns: ColumnDef<TireRow>[] = [
                 </div>
             )
         },
+    },
+    {
+        accessorKey: "barcode",
+        header: "Barcode",
+        cell: ({ row }) => <span className="font-mono text-xs">{row.getValue("barcode") || "—"}</span>,
+        meta: { className: "hidden md:table-cell" },
     },
     {
         accessorKey: "name",
@@ -235,6 +255,87 @@ export const columns: ColumnDef<TireRow>[] = [
                             <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
                         </svg>
                     </Link>
+                    <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                            <button
+                                className="p-2 rounded-md hover:bg-muted transition-colors"
+                                title="Print Barcode"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2z" />
+                                    <path d="M7 15h2" /><path d="M7 11h2" /><path d="M7 7h2" />
+                                    <path d="M11 15h2" /><path d="M11 11h2" /><path d="M11 7h2" />
+                                    <path d="M15 15h2" /><path d="M15 11h2" /><path d="M15 7h2" />
+                                </svg>
+                            </button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                            <AlertDialogHeader>
+                                <AlertDialogTitle>Print Barcode</AlertDialogTitle>
+                                <AlertDialogDescription>
+                                    Barcode for {tire.name}
+                                </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <div className="flex flex-col items-center justify-center py-4 bg-white text-black text-center" id={`barcode-${tire.id}`}>
+
+                                <div className="flex space-x-4 justify-between bg-white text-black">
+                                    <div style={{ fontSize: '18px', fontWeight: 'bold' }}>{tire.size}</div>
+                                    <div style={{ fontSize: '18px', fontWeight: 'bold' }}>€{tire.price}</div>
+                                </div>
+
+                                <Barcode value={tire.barcode || tire.name} width={1.5} height={50} fontSize={14} />
+                            </div>
+                            <AlertDialogFooter>
+                                <AlertDialogCancel>Close</AlertDialogCancel>
+                                <button
+                                    className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        const printContent = document.getElementById(`barcode-${tire.id}`)?.innerHTML;
+                                        if (printContent) {
+                                            const win = window.open('', '', 'height=500,width=500');
+                                            if (win) {
+                                                win.document.write(`
+                                                    <html>
+                                                        <head>
+                                                            <title>Print Barcode</title>
+                                                            <style>
+                                                                @page { size: auto; margin: 0; }
+                                                                body {
+                                                                    display: flex;
+                                                                    flex-direction: column;
+                                                                    justify-content: center;
+                                                                    align-items: center;
+                                                                    height: 100vh;
+                                                                    margin: 0;
+                                                                    font-family: sans-serif;
+                                                                }
+                                                                svg { max-width: 100%; height: auto; }
+                                                            </style>
+                                                        </head>
+                                                        <body>
+                                                            ${printContent}
+                                                            <script>
+                                                                window.onload = function() {
+                                                                    window.print();
+                                                                    window.onafterprint = function() {
+                                                                        window.close();
+                                                                    }
+                                                                }
+                                                            </script>
+                                                        </body>
+                                                    </html>
+                                                `);
+                                                win.document.close();
+                                            }
+                                        }
+                                    }}
+                                >
+                                    Print
+                                </button>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+                    </AlertDialog>
                 </div>
             )
         },
@@ -246,17 +347,37 @@ interface TiresDataTableProps {
 }
 
 export function TiresDataTable({ data }: TiresDataTableProps) {
+    const [searchKey, setSearchKey] = useState<"name" | "barcode">("name")
+
     return (
-        <DataTable
-            columns={columns}
-            data={data}
-            searchKey="name"
-            searchPlaceholder="Search tires..."
-            filterColumn="condition"
-            filterOptions={[
-                { label: "New", value: "new" },
-                { label: "Used", value: "used" },
-            ]}
-        />
+        <div className="space-y-4">
+            <div className="flex justify-end">
+                <div className="flex items-center space-x-2">
+                    <button
+                        onClick={() => setSearchKey("name")}
+                        className={`px-3 py-1 text-sm rounded-md transition-colors ${searchKey === "name" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}
+                    >
+                        Search by Name
+                    </button>
+                    <button
+                        onClick={() => setSearchKey("barcode")}
+                        className={`px-3 py-1 text-sm rounded-md transition-colors ${searchKey === "barcode" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}
+                    >
+                        Search by Barcode
+                    </button>
+                </div>
+            </div>
+            <DataTable
+                columns={columns}
+                data={data}
+                searchKey={searchKey}
+                searchPlaceholder={`Search ${searchKey}...`}
+                filterColumn="condition"
+                filterOptions={[
+                    { label: "New", value: "new" },
+                    { label: "Used", value: "used" },
+                ]}
+            />
+        </div>
     )
 }
