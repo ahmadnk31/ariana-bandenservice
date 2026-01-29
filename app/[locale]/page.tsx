@@ -7,8 +7,22 @@ import ReviewsSection from "@/app/components/ReviewsSection";
 
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/src/i18n/routing';
+import { Metadata } from "next";
 
 export const revalidate = 0; // Ensure fresh data for "New" section
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: `/${locale}`,
+    }
+  };
+}
 
 export default async function Home() {
   const t = await getTranslations('Home');

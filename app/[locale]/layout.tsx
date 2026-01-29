@@ -71,7 +71,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         },
         keywords: keywords.split(',').map((k: string) => k.trim()),
         alternates: {
-            canonical: `/${locale}`,
             languages: getAlternateLanguages(''),
         },
     };
@@ -88,8 +87,54 @@ export default async function LocaleLayout({
     if (!supportedLocales.includes(locale)) notFound();
     const messages = await getMessages();
 
+    // JSON-LD Structured Data for LocalBusiness
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Gent Bandenservice",
+        "image": "https://arianabandenservice.be/banden-service/android-chrome-512x512.png",
+        "@id": "https://arianabandenservice.be",
+        "url": "https://arianabandenservice.be",
+        "telephone": "+32 466 19 56 22",
+        "email": "contact@arianabandenservice.be",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dendermondsesteenweg 428",
+            "addressLocality": "Sint-Amandsberg",
+            "postalCode": "9040",
+            "addressCountry": "BE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.0566,
+            "longitude": 3.7663
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+            }
+        ],
+        "priceRange": "$$"
+    };
+
     return (
         <html lang={locale} dir={['ar', 'fa'].includes(locale) ? 'rtl' : 'ltr'}>
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+            </head>
             <body className={`${outfit.variable} antialiased font-sans`}>
                 <NextIntlClientProvider messages={messages}>
                     <CartProvider>

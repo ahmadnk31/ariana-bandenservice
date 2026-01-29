@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const metadata = messages.Metadata || {};
 
     return {
-        title: metadata.faqTitle || "FAQ | Gent bandenservice",
+        title: metadata.faqTitle || "FAQ",
         description: metadata.faqDescription || "Frequently asked questions about our tire services, pricing, opening hours, and more.",
         alternates: {
             canonical: `/${locale}/faq`,
