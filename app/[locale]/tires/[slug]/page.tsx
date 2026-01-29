@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-    const { slug } = await params;
+    const { slug, locale } = await params;
 
     const tire = await prisma.tire.findUnique({
         where: { slug },
@@ -97,8 +97,68 @@ export default async function ProductPage({ params }: ProductPageProps) {
         "all-season": t('seasonAllSeason'),
     };
 
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be';
+
+    // Product JSON-LD
+    const productJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": tire.name,
+        "image": tire.images.length > 0 ? tire.images.map(img => img.url) : [`${baseUrl}/banden-service/android-chrome-512x512.png`],
+        "description": tire.description || `${tire.brand} ${tire.name} (${tire.size}) - ${seasonLabels[tire.season] || tire.season} tire`,
+        "brand": {
+            "@type": "Brand",
+            "name": tire.brand
+        },
+        "sku": tire.id,
+        "offers": {
+            "@type": "Offer",
+            "url": `${baseUrl}/${locale}/tires/${tire.slug}`,
+            "priceCurrency": "EUR",
+            "price": tire.price.toFixed(2),
+            "availability": tire.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Gent Bandenservice"
+            }
+        }
+    };
+
+    // Breadcrumb JSON-LD
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": `${baseUrl}/${locale}`
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": t('backToTires').replace('← ', ''),
+                "item": `${baseUrl}/${locale}/tires`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": tire.name
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+            />
             <Header />
             <main className="flex-1 bg-background">
                 {/* Breadcrumb / Back Link */}
