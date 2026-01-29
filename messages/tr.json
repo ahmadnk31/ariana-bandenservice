@@ -5,14 +5,15 @@
         "tires": "Lastikler",
         "contact": "İletişim",
         "admin": "Admin",
-        "searchPlaceholder": "Lastik ara..."
+        "searchPlaceholder": "Lastik ara...",
+        "blog": "blog"
     },
     "Hero": {
-        "title1": "Güvenle yol almaya devam edin",
-        "title2": "Güvenlik",
-        "title3": "Stil",
-        "subtitle": "Tüm araç tipleri için profesyonel montaj, balans ve rot ayarı.",
-        "cta": "Randevu Al"
+        "title1": "Lastik Merkezi",
+        "title2": "Gent",
+        "title3": "2020'den Beri",
+        "subtitle": "Montaj dahil lastik alın 25€'dan. Gent'in en ucuz lastik merkezi. Pts-Cmt 9-18 açık.",
+        "cta": "Lastikleri Gör"
     },
     "Footer": {
         "about": "Hakkımızda",
@@ -245,28 +246,42 @@
         }
     },
     "Metadata": {
-        "title": "Gent bandenservice | Lastik Merkezi Gent",
-        "description": "Gent'te profesyonel lastik servisi ve araba tamiri. Kaliteli lastik montajı, rot ayarı, balans ve tamir. En iyi markalar uygun fiyatlarla.",
-        "ogDescription": "Gent'te profesyonel lastik servisi ve araba tamiri. Kaliteli lastik montajı, rot ayarı, balans ve tamir.",
-        "keywords": "lastik servisi, araba tamiri, lastik merkezi, lastik satın al, rot ayarı, lastik montajı, lastik balans, muayene, oto tamir, garaj, yakınımdaki lastik servisi, yakınımdaki garaj, Gent lastik merkezi, Sint-Amandsberg oto garaj, Doğu Flanders lastik, kış lastiği, yaz lastiği, dört mevsim lastik, ikinci el lastik, yeni lastik, ucuz lastik, yerel lastik servisi, güvenilir garaj, hızlı servis, profesyonel montaj, uygun fiyat, kişisel hizmet, aile işletmesi, Gent, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Belçika",
-        "tiresTitle": "Lastikler | Gent bandenservice",
-        "tiresDescription": "En iyi markalardan premium lastik seçkimizi keşfedin. Kış, yaz ve dört mevsim lastikler uygun fiyatlarla.",
-        "servicesTitle": "Hizmetler | Gent bandenservice",
-        "servicesDescription": "Montaj, balans, rot ayarı ve patlak lastik tamiri dahil profesyonel lastik hizmetleri.",
-        "contactTitle": "İletişim | Gent bandenservice",
-        "contactDescription": "Gent bandenservice ile iletişime geçin. Lastik hizmetleri için randevu alın veya teklif isteyin.",
-        "faqTitle": "SSS | Gent bandenservice",
-        "faqDescription": "Lastik hizmetlerimiz, fiyatlarımız, çalışma saatlerimiz ve daha fazlası hakkında sık sorulan sorular."
+        "title": "Lastik Merkezi Gent | Montaj Dahil Lastik Alın",
+        "description": "✓ Gent'in en ucuz lastik merkezi! Yeni ve ikinci el lastikler 25€'dan montaj dahil. Pts-Cmt 9-18, Pazar randevu ile. ☎ +32 466 19 56 22",
+        "ogDescription": "Lastik Merkezi Gent - Yeni ve ikinci el lastikler. Montaj, balans ve rot ayarı dahil. En iyi fiyatlar!",
+        "keywords": "lastik merkezi gent, lastik satın al, lastik montajı, rot ayarı, lastik merkezi belçika, ikinci el lastik, yeni lastik, ucuz lastik, kış lastiği, yaz lastiği, Sint-Amandsberg",
+        "tiresTitle": "Lastik Al | Yeni ve İkinci El",
+        "tiresDescription": "Gent'te lastik mi arıyorsunuz? Kış, yaz ve dört mevsim lastiklerimizi görün. Montaj dahil. 25€'dan başlayan fiyatlar.",
+        "servicesTitle": "Lastik Servisleri | Montaj ve Rot Ayarı",
+        "servicesDescription": "Gent'te profesyonel lastik montajı, balans ve rot ayarı. Hızlı servis, uygun fiyatlar. Cumartesi açığız!",
+        "contactTitle": "İletişim | Lastik Merkezi Gent",
+        "contactDescription": "Bize ulaşın. Arayın: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "SSS | Fiyatlar ve Çalışma Saatleri",
+        "faqDescription": "Lastik fiyatları, çalışma saatleri, montaj ve daha fazlası hakkında SSS. Lastik merkezi pazar açık mı? Evet, randevu ile!"
     },
     "DevBanner": {
         "message": "Hala geliştirme aşamasındayız. Tüm lastikler gerçek değildir; sadece demo amaçlıdır. Gerçek lastikler yakında gelecek."
     },
     "Feedback": {
         "question": "Hizmetimizi beğendiniz mi?",
-        "placeholder": "Deneyiminizi bize anlatın...",
+        "placeholder": "Deneyiminizi anlatın...",
         "submit": "Gönder",
         "loading": "Yükleniyor",
         "success": "Geri bildiriminiz alındı!",
         "thanks": "Yardımınız için teşekkürler."
+    },
+    "Blog": {
+        "pageTitle": "Blogumuz | Gent Bandenservice",
+        "pageDescription": "Gent Bandenservice'deki en son haberleri, ipuçlarını ve araba lastikleri ve bakımı hakkındaki bilgileri okuyun.",
+        "badge": "Blog",
+        "title": "Haberler & İpuçları",
+        "subtitle": "En son gelişmelerden haberdar olun ve lastikleriniz için faydalı ipuçları alın.",
+        "allCategories": "Tüm Kategoriler",
+        "noPosts": "Yazı bulunamadı",
+        "noPostsDescription": "Bu kategoride şu anda blog yazısı bulunmamaktadır.",
+        "readTime": "okuma süresi",
+        "backToBlog": "Blog'a Dön",
+        "share": "Bu yazıyı paylaş",
+        "relatedPosts": "İlgili Yazılar"
     }
 }

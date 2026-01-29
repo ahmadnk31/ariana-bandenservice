@@ -5,14 +5,15 @@
         "tires": "Neumáticos",
         "contact": "Contacto",
         "admin": "Admin",
-        "searchPlaceholder": "Buscar neumáticos..."
+        "searchPlaceholder": "Buscar neumáticos...",
+        "blog": "Blog"
     },
     "Hero": {
-        "title1": "Sigue rodando con",
-        "title2": "Seguridad",
-        "title3": "Estilo",
-        "subtitle": "Montaje, equilibrado y alineación profesional para todo tipo de vehículos.",
-        "cta": "Reservar cita"
+        "title1": "Centro de Neumáticos",
+        "title2": "Gante",
+        "title3": "Desde 2020",
+        "subtitle": "Compra neumáticos con montaje desde 25€. El centro de neumáticos más barato de Gante. Abierto lun-sáb 9-18h.",
+        "cta": "Ver Neumáticos"
     },
     "Footer": {
         "about": "Sobre nosotros",
@@ -245,18 +246,18 @@
         }
     },
     "Metadata": {
-        "title": "Gent bandenservice | Centro de Neumáticos Gante",
-        "description": "Servicio profesional de neumáticos y reparación de automóviles en Gante. Montaje, alineación, equilibrado y reparación de calidad. Mejores marcas a precios competitivos.",
-        "ogDescription": "Servicio profesional de neumáticos y reparación de automóviles en Gante. Montaje, alineación, equilibrado y reparación de calidad.",
-        "keywords": "servicio neumáticos, reparación auto, centro neumáticos, comprar neumáticos, alineación, montaje neumáticos, equilibrado, inspección técnica, taller, servicio neumáticos cerca, taller cerca, centro neumáticos Gante, taller Sint-Amandsberg, neumáticos Flandes Oriental, neumáticos invierno, neumáticos verano, neumáticos 4 estaciones, neumáticos usados, neumáticos nuevos, neumáticos baratos, servicio local, taller fiable, servicio rápido, montaje profesional, precio justo, servicio personalizado, negocio familiar, Gante, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Bélgica",
-        "tiresTitle": "Neumáticos | Gent bandenservice",
-        "tiresDescription": "Descubre nuestra selección de neumáticos premium de las mejores marcas. Neumáticos de invierno, verano y 4 estaciones a precios competitivos.",
-        "servicesTitle": "Servicios | Gent bandenservice",
-        "servicesDescription": "Servicios profesionales de neumáticos incluyendo montaje, equilibrado, alineación y reparación de pinchazos.",
-        "contactTitle": "Contacto | Gent bandenservice",
-        "contactDescription": "Contacta con Gent bandenservice. Reserva una cita o solicita un presupuesto para servicios de neumáticos.",
-        "faqTitle": "FAQ | Gent bandenservice",
-        "faqDescription": "Preguntas frecuentes sobre nuestros servicios de neumáticos, precios, horarios y más."
+        "title": "Centro Neumáticos Gante | Comprar Neumáticos con Montaje",
+        "description": "✓ El centro de neumáticos más barato de Gante! Neumáticos nuevos y usados desde 25€ montaje incl. Abierto lun-sáb 9-18h, domingos con cita. ☎ +32 466 19 56 22",
+        "ogDescription": "Centro Neumáticos Gante - Neumáticos nuevos y usados. Montaje, equilibrado y alineación incluidos. ¡Mejores precios!",
+        "keywords": "centro neumáticos gante, comprar neumáticos, montaje neumáticos, alineación, centro neumáticos bélgica, neumáticos usados, neumáticos nuevos, neumáticos baratos, neumáticos invierno, neumáticos verano, Sint-Amandsberg",
+        "tiresTitle": "Comprar Neumáticos | Nuevos y Usados",
+        "tiresDescription": "¿Comprar neumáticos en Gante? Descubre nuestros neumáticos de invierno, verano y 4 estaciones. Montaje incluido. Desde 25€.",
+        "servicesTitle": "Servicios Neumáticos | Montaje y Alineación",
+        "servicesDescription": "Montaje de neumáticos profesional, equilibrado y alineación en Gante. Servicio rápido, buenos precios. ¡Abiertos sábados!",
+        "contactTitle": "Contacto | Centro Neumáticos Gante",
+        "contactDescription": "Contáctanos. Llama al +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "FAQ | Precios y Horarios",
+        "faqDescription": "FAQ sobre precios de neumáticos, horarios, montaje y más. ¿Centro de neumáticos abierto domingo? ¡Sí, con cita!"
     },
     "DevBanner": {
         "message": "Todavía estamos en modo de desarrollo. Todos los neumáticos no son reales; es solo para fines de demostración. Los neumáticos reales llegarán pronto."
@@ -268,5 +269,19 @@
         "loading": "Cargando",
         "success": "¡Su comentario ha sido recibido!",
         "thanks": "Gracias por su ayuda."
+    },
+    "Blog": {
+        "pageTitle": "Nuestro Blog | Gent Bandenservice",
+        "pageDescription": "Lea las últimas noticias, consejos e información sobre neumáticos y mantenimiento en Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Noticias y Consejos",
+        "subtitle": "Manténgase informado sobre las últimas novedades y reciba consejos útiles para sus neumáticos.",
+        "allCategories": "Todas las categorías",
+        "noPosts": "No se encontraron publicaciones",
+        "noPostsDescription": "Actualmente no hay publicaciones de blog en esta categoría.",
+        "readTime": "tiempo de lectura",
+        "backToBlog": "Volver al Blog",
+        "share": "Compartir esta publicación",
+        "relatedPosts": "Publicaciones relacionadas"
     }
 }

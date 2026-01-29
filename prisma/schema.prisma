@@ -155,3 +155,66 @@ model StockRequest {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// Blog models
+model BlogPost {
+  id     String @id @default(cuid())
+  slug   String @unique
+  locale String @default("nl") // en, nl, fr, de, it, es, tr, pl, gr, ar, fa, uk
+
+  title   String
+  excerpt String? // Short description for SEO/cards
+  content String // HTML content from Tiptap
+
+  coverImage    String? // Main featured image URL
+  coverImageKey String? // UploadThing key for deletion
+
+  status      String    @default("draft") // draft, published, archived
+  publishedAt DateTime?
+
+  // SEO fields
+  metaTitle       String?
+  metaDescription String?
+
+  // Author (optional, for future expansion)
+  author String?
+
+  // Relations
+  category   BlogCategory? @relation(fields: [categoryId], references: [id])
+  categoryId String?
+  images     BlogImage[]
+
+  // Reading time in minutes (calculated on save)
+  readingTime Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([locale, status])
+  @@index([slug])
+  @@index([publishedAt])
+}
+
+model BlogCategory {
+  id          String     @id @default(cuid())
+  slug        String     @unique
+  name        String
+  description String?
+  posts       BlogPost[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BlogImage {
+  id    String  @id @default(cuid())
+  url   String
+  key   String // UploadThing key for deletion
+  alt   String?
+  order Int     @default(0)
+
+  post   BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String
+
+  createdAt DateTime @default(now())
+}

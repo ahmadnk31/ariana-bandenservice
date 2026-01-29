@@ -5,14 +5,15 @@
         "tires": "Reifen",
         "contact": "Kontakt",
         "admin": "Admin",
-        "searchPlaceholder": "Reifen suchen..."
+        "searchPlaceholder": "Reifen suchen...",
+        "blog": "Blog"
     },
     "Hero": {
-        "title1": "Sicher Unterwegs mit",
-        "title2": "Sicherheit",
-        "title3": "Stil",
-        "subtitle": "Professionelle Montage, Auswuchten und Ausrichtung für alle Fahrzeugtypen.",
-        "cta": "Termin buchen"
+        "title1": "Reifencenter",
+        "title2": "Gent",
+        "title3": "Seit 2020",
+        "subtitle": "Reifen kaufen inkl. Montage ab 25€. Günstigstes Reifencenter in Gent. Offen Mo-Sa 9-18h.",
+        "cta": "Reifen Ansehen"
     },
     "Footer": {
         "about": "Über uns",
@@ -245,18 +246,18 @@
         }
     },
     "Metadata": {
-        "title": "Gent bandenservice | Gent Reifenservice",
-        "description": "Professioneller Reifenservice und Autowerkstatt in Gent. Qualitätsreifenmontage, Spureinstellung, Auswuchten und Reparatur. Top-Marken zu wettbewerbsfähigen Preisen.",
-        "ogDescription": "Professioneller Reifenservice und Autowerkstatt in Gent. Qualitätsreifenmontage, Spureinstellung, Auswuchten und Reparatur.",
-        "keywords": "Reifenservice, Autoreparatur, Reifengeschäft, Spureinstellung, Reifenmontage, Reifenauswuchten, Autowerkstatt, Reifen in meiner Nähe, Reifencenter Gent, Autowerkstatt Sint-Amandsberg, Reifen Ostflandern, Reifenservice 9040, Winterreifen, Sommerreifen, Ganzjahresreifen, gebrauchte Reifen, neue Reifen, günstige Reifen, lokaler Reifenservice, zuverlässige Werkstatt, schneller Service, professionelle Montage, fairer Preis, persönlicher Service, Familienbetrieb, Gent, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, Reifengeschäft Belgien",
-        "tiresTitle": "Reifen | Gent bandenservice",
-        "tiresDescription": "Durchsuchen Sie unsere Auswahl an Premium-Reifen von Top-Marken. Winter-, Sommer- und Ganzjahresreifen zu wettbewerbsfähigen Preisen.",
-        "servicesTitle": "Dienstleistungen | Gent bandenservice",
-        "servicesDescription": "Professionelle Reifenservices einschließlich Montage, Auswuchten, Spureinstellung und Pannenreparatur.",
-        "contactTitle": "Kontakt | Gent bandenservice",
-        "contactDescription": "Nehmen Sie Kontakt mit Gent bandenservice auf. Buchen Sie einen Termin oder fordern Sie ein Angebot für Reifenservices an.",
-        "faqTitle": "FAQ | Gent bandenservice",
-        "faqDescription": "Häufig gestellte Fragen zu unseren Reifenservices, Preisen, Öffnungszeiten und mehr."
+        "title": "Reifencenter Gent | Reifen Kaufen mit Montage",
+        "description": "✓ Günstigstes Reifencenter in Gent! Neu- & Gebrauchtreifen ab 25€ inkl. Montage. Offen Mo-Sa 9-18h, Sonntag nach Vereinbarung. ☎ +32 466 19 56 22",
+        "ogDescription": "Reifencenter Gent - Neue & gebrauchte Reifen. Montage, Auswuchten & Spureinstellung inklusive. Beste Preise!",
+        "keywords": "reifencenter gent, reifen kaufen, reifenmontage, spureinstellung, reifencenter belgien, gebrauchte reifen, neue reifen, günstige reifen, winterreifen, sommerreifen, ganzjahresreifen, Sint-Amandsberg, reifencenter sonntag offen",
+        "tiresTitle": "Reifen Kaufen | Neu & Gebraucht",
+        "tiresDescription": "Reifen kaufen in Gent? Sehen Sie unsere Winter-, Sommer- & Ganzjahresreifen. Montage inklusive. Ab 25€ pro Reifen.",
+        "servicesTitle": "Reifenservice | Montage & Spureinstellung",
+        "servicesDescription": "Professionelle Reifenmontage, Auswuchten und Spureinstellung in Gent. Schneller Service, gute Preise. Samstags offen!",
+        "contactTitle": "Kontakt | Reifencenter Gent",
+        "contactDescription": "Kontaktieren Sie unser Reifencenter in Gent. Rufen Sie an: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "FAQ | Preise & Öffnungszeiten",
+        "faqDescription": "FAQ zu Reifenpreisen, Öffnungszeiten, Montage und mehr. Reifencenter Sonntag offen? Ja, nach Vereinbarung!"
     },
     "DevBanner": {
         "message": "Wir befinden uns im Entwicklungsmodus. Alle Reifen sind nicht echt; sie dienen nur zu Demonstrationszwecken. Echte Reifen kommen bald."
@@ -268,5 +269,19 @@
         "loading": "Laden",
         "success": "Ihr Feedback wurde erhalten!",
         "thanks": "Vielen Dank für Ihre Hilfe."
+    },
+    "Blog": {
+        "pageTitle": "Unser Blog | Gent Bandenservice",
+        "pageDescription": "Lesen Sie die neuesten Nachrichten, Tipps und Informationen über Autobanden und Wartung bei Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Nachrichten & Tipps",
+        "subtitle": "Bleiben Sie über die neuesten Entwicklungen informiert und erhalten Sie hilfreiche Tipps für Ihre Reifen.",
+        "allCategories": "Alle Kategorien",
+        "noPosts": "Keine Beiträge gefunden",
+        "noPostsDescription": "In dieser Kategorie gibt es derzeit keine Blogbeiträge.",
+        "readTime": "Lesezeit",
+        "backToBlog": "Zurück zum Blog",
+        "share": "Diesen Beitrag teilen",
+        "relatedPosts": "Ähnliche Beiträge"
     }
 }

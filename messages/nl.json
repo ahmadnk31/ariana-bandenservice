@@ -5,14 +5,15 @@
         "tires": "Banden",
         "contact": "Contact",
         "admin": "Admin",
-        "searchPlaceholder": "Zoek banden..."
+        "searchPlaceholder": "Zoek banden...",
+        "blog": "Blog"
     },
     "Hero": {
-        "title1": "Blijf Rijden",
-        "title2": "Met veiligheid",
-        "title3": "Met style",
-        "subtitle": "Professionele montage, balancering en uitlijning voor alle voertuigen.",
-        "cta": "Afspraak Maken"
+        "title1": "Bandencentrale",
+        "title2": "Gent",
+        "title3": "Sinds 2020",
+        "subtitle": "Autobanden kopen met montage vanaf €25. Goedkoopste bandencentrale in Gent en omstreken. Open ma-za 9-18u.",
+        "cta": "Banden Bekijken"
     },
     "Footer": {
         "about": "Over Ons",
@@ -244,18 +245,18 @@
         }
     },
     "Metadata": {
-        "title": "Bandencentrale Gent | Banden & Autoservice Sint-Amandsberg",
-        "description": "Gent Bandencentrale - De goedkoopste bandencentrale in Gent en Sint-Amandsberg. Nieuwe & tweedehands banden, montage en balancering inbegrepen. ☎ 0466 19 56 22",
-        "ogDescription": "Professionele bandenservice en autoreparatie in Gent. Kwaliteit bandenmontage, uitlijning, balanceren en reparatie.",
-        "keywords": "bandenservice, autoservice, bandencentrale, banden kopen, wieluitlijning, bandenmontage, banden balanceren, APK keuring, autoreparatie, garage, bandenservice in uw buurt, garage in de buurt, bandencentrale Gent, autogarage Sint-Amandsberg, banden Oost-Vlaanderen, bandenservice 9040, winterbanden, zomerbanden, all season banden, 4 seizoenen banden, tweedehands banden, nieuwe banden, occasie banden, goedkope banden, lokale bandenservice, betrouwbare garage, snelle service, vakkundige montage, eerlijke prijs, persoonlijke service, familiebedrijf, Gent, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, autobanden in uw buurt, banden in de buurt, banden in Gent, banden in Sint-Amandsberg, banden in Destelbergen, banden in Lochristi, banden in Gentbrugge, banden in Ledeberg, banden in Oostakker, banden in Wondelgem, banden in Mariakerke, banden in Drongen, banden in België, in your area, near me, next to me, tyreshop, bandenwinkel, autobandenwinkel, autobanden winkel, bandencentrale, autobandencentrale, gent bandenservice, tyre shop,Oostakker bandencentrale, bandencentrale Sint-Amandsberg",
-        "tiresTitle": "Banden Aanbod",
-        "tiresDescription": "Bekijk onze selectie premium banden van topmerken. Winter-, zomer- en all-seasonbanden tegen scherpe prijzen.",
-        "servicesTitle": "Diensten",
-        "servicesDescription": "Professionele bandendiensten waaronder montage, balanceren, wieluitlijning en lekke band reparatie.",
-        "contactTitle": "Contact",
-        "contactDescription": "Neem contact op met Gent bandenservice. Maak een afspraak of vraag een offerte aan voor bandendiensten.",
-        "faqTitle": "Veelgestelde Vragen",
-        "faqDescription": "Veelgestelde vragen over onze bandendiensten, prijzen, openingstijden en meer."
+        "title": "Bandencentrale Gent | Autobanden Kopen & Monteren",
+        "description": "✓ Goedkoopste bandencentrale in Gent! Banden kopen incl. montage vanaf €25. Open ma-za 9-18u, zondag op afspraak. ☎ 0466 19 56 22 Sint-Amandsberg",
+        "ogDescription": "Bandencentrale Gent - Nieuwe & tweedehands autobanden. Montage, balanceren en uitlijning inbegrepen. De goedkoopste in de buurt!",
+        "keywords": "bandencentrale, bandencentrale gent, autobanden, banden gent, bandencentrale in de buurt, bandencentrale sint amandsberg, autobanden gent, banden kopen, banden monteren, goedkope banden, tweedehands banden, bandenservice, bandencentrale open zondag, garage gent, banden wisselen, winterbanden, zomerbanden, all season banden, wieluitlijning, bandenmontage, gent bandencentrale, ariana bandenservice, ariana bandencentrale, bandencentrale dendermondsesteenweg, bandencentrale oost-vlaanderen, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, goedkoopste bandencentrale, banden vervangen, autogarage gent",
+        "tiresTitle": "Autobanden Kopen | Nieuwe & Tweedehands",
+        "tiresDescription": "Autobanden kopen in Gent? Bekijk ons aanbod winterbanden, zomerbanden & all-season. Montage inbegrepen. Vanaf €25 per band.",
+        "servicesTitle": "Bandendiensten | Montage & Uitlijning",
+        "servicesDescription": "Professionele bandenmontage, balanceren en wieluitlijning in Gent. Snelle service, scherpe prijzen. Ook open op zaterdag!",
+        "contactTitle": "Contact | Bandencentrale Gent",
+        "contactDescription": "Bandencentrale Gent contacteren? Bel 0466 19 56 22 of kom langs. Dendermondsesteenweg 428, Sint-Amandsberg. Ma-Za 9-18u.",
+        "faqTitle": "Veelgestelde Vragen | Prijzen & Openingsuren",
+        "faqDescription": "FAQ over bandenprijzen, openingsuren, montage en meer. Bandencentrale open op zondag? Ja, op afspraak!"
     },
     "DevBanner": {
         "message": "We bevinden ons nog in de ontwikkelingsfase. Alle banden zijn niet echt; het is alleen voor demonstratiedoeleinden. Echte banden komen eraan."
@@ -267,5 +268,19 @@
         "loading": "Laden",
         "success": "Je feedback is ontvangen!",
         "thanks": "Bedankt voor je hulp."
+    },
+    "Blog": {
+        "pageTitle": "Onze Blog | Gent Bandenservice",
+        "pageDescription": "Lees het laatste nieuws, tips en informatie over autobanden en onderhoud bij Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Nieuws & Tips",
+        "subtitle": "Blijf op de hoogte van de laatste ontwikkelingen en krijg handige tips voor uw banden.",
+        "allCategories": "Alle Categorieën",
+        "noPosts": "Geen berichten gevonden",
+        "noPostsDescription": "Er zijn momenteel geen blogberichten in deze categorie.",
+        "readTime": "leestijd",
+        "backToBlog": "Terug naar Blog",
+        "share": "Deel dit bericht",
+        "relatedPosts": "Gerelateerde Berichten"
     }
 }
