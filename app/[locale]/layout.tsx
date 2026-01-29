@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const messages = (await import(`../../messages/${locale}.json`)).default;
     const metadata = messages.Metadata || {};
 
-    const title = metadata.title || "Gent Bandenservice | Bandencentrale Gent";
+    const title = metadata.title || "Gent Bandenservice | Gent Bandencentrale";
     const description = metadata.description || "Professionele bandenservice en autoreparatie in Gent.";
     const keywords = metadata.keywords || "";
 

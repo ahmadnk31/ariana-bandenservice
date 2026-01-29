@@ -38,8 +38,26 @@ export default async function FAQPage() {
         'contact'
     ];
 
+    // Build FAQ JSON-LD
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": sections.map(section => ({
+            "@type": "Question",
+            "name": t(`questions.${section}`),
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": t(`questions.${section}_text`)
+            }
+        }))
+    };
+
     return (
         <div className="flex flex-col min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
             <Header />
             <main className="flex-1 bg-background py-16">
                 <div className="container mx-auto px-4 max-w-3xl">
