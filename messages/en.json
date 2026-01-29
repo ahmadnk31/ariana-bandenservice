@@ -5,14 +5,15 @@
         "tires": "Tires",
         "contact": "Contact",
         "admin": "Admin",
-        "searchPlaceholder": "Search tires..."
+        "searchPlaceholder": "Search tires...",
+        "blog": "Blog"
     },
     "Hero": {
-        "title1": "Keep Rolling with",
-        "title2": "Safety",
-        "title3": "Style",
-        "subtitle": "Professional fitting, balancing, and alignment for all vehicle types.",
-        "cta": "Book Appointment"
+        "title1": "Tire Center",
+        "title2": "Ghent",
+        "title3": "Since 2020",
+        "subtitle": "Buy tires with fitting from €25. Cheapest tire shop in Ghent. Open Mon-Sat 9-18h.",
+        "cta": "View Tires"
     },
     "Footer": {
         "about": "About Us",
@@ -245,18 +246,18 @@
         }
     },
     "Metadata": {
-        "title": "Gent bandenservice | Gent bandenservice",
-        "description": "Professional tire service and car repair in Ghent. Quality tire fitting, alignment, balancing and repair. Top brands at competitive prices.",
-        "ogDescription": "Professional tire service and car repair in Ghent. Quality tire fitting, alignment, balancing and repair.",
-        "keywords": "tire service, car repair, tire shop, wheel alignment, tire fitting, tire balancing, car inspection, auto repair, garage, tire service near me, garage near me, tire center Ghent, auto garage Sint-Amandsberg, tires East Flanders, tire service 9040, winter tires, summer tires, all season tires, 4 season tires, used tires, new tires, cheap tires, local tire service, reliable garage, fast service, professional fitting, fair price, personal service, family business, Ghent, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, tire shop Belgium, in your area, tyreshop near me, tyreshop next to me, tyreshop, bandenwinkel, autobandenwinkel, autobanden winkel, bandencentrale, autobandencentrale, gent bandenservice, tyre shop",
-        "tiresTitle": "Tires | Gent bandenservice",
-        "tiresDescription": "Browse our selection of premium tires from top brands. Winter, summer and all-season tires at competitive prices.",
-        "servicesTitle": "Services | Gent bandenservice",
-        "servicesDescription": "Professional tire services including fitting, balancing, wheel alignment, and puncture repair.",
-        "contactTitle": "Contact | Gent bandenservice",
-        "contactDescription": "Get in touch with Gent bandenservice. Book an appointment or request a quote for tire services.",
-        "faqTitle": "FAQ | Gent bandenservice",
-        "faqDescription": "Frequently asked questions about our tire services, prices, opening hours and more."
+        "title": "Tire Shop Ghent | Buy Tires & Fitting Included",
+        "description": "✓ Cheapest tire center in Ghent! New & used tires from €25 incl. fitting. Open Mon-Sat 9-18h, Sunday by appointment. ☎ +32 466 19 56 22",
+        "ogDescription": "Tire Shop Ghent - New & used tires. Fitting, balancing & alignment included. Best prices in town!",
+        "keywords": "tire shop ghent, tyre center, buy tires, tire fitting, wheel alignment, tire center near me, tire shop belgium, used tires ghent, new tires, cheap tires, tire service, winter tires, summer tires, all season tires, Sint-Amandsberg, tire shop open sunday",
+        "tiresTitle": "Buy Tires | New & Used",
+        "tiresDescription": "Buy tires in Ghent? View our winter, summer & all-season tires. Fitting included. From €25 per tire.",
+        "servicesTitle": "Tire Services | Fitting & Alignment",
+        "servicesDescription": "Professional tire fitting, balancing and wheel alignment in Ghent. Fast service, great prices. Open Saturdays!",
+        "contactTitle": "Contact | Tire Shop Ghent",
+        "contactDescription": "Contact our tire shop in Ghent. Call +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "FAQ | Prices & Opening Hours",
+        "faqDescription": "FAQ about tire prices, opening hours, fitting and more. Tire shop open Sunday? Yes, by appointment!"
     },
     "DevBanner": {
         "message": "We are in development mode. All tires are not real; it is only for demo purposes. Real tires will arrive soon."
@@ -268,5 +269,19 @@
         "loading": "Loading",
         "success": "Your feedback has been received!",
         "thanks": "Thank you for your help."
+    },
+    "Blog": {
+        "pageTitle": "Our Blog | Gent Bandenservice",
+        "pageDescription": "Read the latest news, tips, and information about car tires and maintenance at Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "News & Tips",
+        "subtitle": "Stay informed about the latest developments and get helpful tips for your tires.",
+        "allCategories": "All Categories",
+        "noPosts": "No posts found",
+        "noPostsDescription": "There are currently no blog posts in this category.",
+        "readTime": "read time",
+        "backToBlog": "Back to Blog",
+        "share": "Share this post",
+        "relatedPosts": "Related Posts"
     }
 }

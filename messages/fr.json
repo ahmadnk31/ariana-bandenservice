@@ -5,14 +5,15 @@
         "tires": "Pneus",
         "contact": "Contact",
         "admin": "Admin",
-        "searchPlaceholder": "Rechercher des pneus..."
+        "searchPlaceholder": "Rechercher des pneus...",
+        "blog": "blog"
     },
     "Hero": {
-        "title1": "Continuez à rouler avec",
-        "title2": "Sécurité",
-        "title3": "Style",
-        "subtitle": "Montage, équilibrage et alignement professionnels pour tous types de véhicules.",
-        "cta": "Prendre rendez-vous"
+        "title1": "Centre Pneus",
+        "title2": "Gand",
+        "title3": "Depuis 2020",
+        "subtitle": "Achetez des pneus avec montage dès 25€. Le centre de pneus le moins cher à Gand. Ouvert lun-sam 9h-18h.",
+        "cta": "Voir les Pneus"
     },
     "Footer": {
         "about": "À propos de nous",
@@ -245,18 +246,18 @@
         }
     },
     "Metadata": {
-        "title": "Gent bandenservice | Centre de Pneus Gand",
-        "description": "Service de pneus et réparation automobile professionnels à Gand. Montage, alignement, équilibrage et réparation de qualité. Grandes marques à prix compétitifs.",
-        "ogDescription": "Service de pneus et réparation automobile professionnels à Gand. Montage, alignement, équilibrage et réparation de qualité.",
-        "keywords": "service pneus, réparation auto, centre pneus, acheter pneus, parallélisme, montage pneus, équilibrage pneus, contrôle technique, garage, service pneus près de chez moi, garage près de chez moi, centre pneus Gand, garage auto Sint-Amandsberg, pneus Flandre orientale, pneus hiver, pneus été, pneus 4 saisons, pneus occasion, pneus neufs, pneus pas cher, service pneus local, garage fiable, service rapide, montage professionnel, prix honnête, service personnalisé, entreprise familiale, Gand, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, pneus Belgique",
-        "tiresTitle": "Pneus | Gent bandenservice",
-        "tiresDescription": "Découvrez notre sélection de pneus premium des meilleures marques. Pneus hiver, été et 4 saisons à prix compétitifs.",
-        "servicesTitle": "Services | Gent bandenservice",
-        "servicesDescription": "Services de pneus professionnels comprenant le montage, l'équilibrage, le parallélisme et la réparation de crevaisons.",
-        "contactTitle": "Contact | Gent bandenservice",
-        "contactDescription": "Contactez Gent bandenservice. Prenez rendez-vous ou demandez un devis pour nos services de pneus.",
-        "faqTitle": "FAQ | Gent bandenservice",
-        "faqDescription": "Questions fréquemment posées sur nos services de pneus, prix, horaires d'ouverture et plus encore."
+        "title": "Centre Pneus Gand | Acheter Pneus avec Montage",
+        "description": "✓ Centre pneus le moins cher à Gand! Pneus neufs & occasion dès 25€ montage inclus. Ouvert lun-sam 9h-18h, dimanche sur RDV. ☎ +32 466 19 56 22",
+        "ogDescription": "Centre Pneus Gand - Pneus neufs & occasion. Montage, équilibrage et parallélisme inclus. Meilleurs prix!",
+        "keywords": "centre pneus gand, pneus gand, acheter pneus, montage pneus, parallélisme, centre pneus belgique, pneus occasion, pneus neufs, pneus pas cher, pneus hiver, pneus été, pneus 4 saisons, Sint-Amandsberg, centre pneus ouvert dimanche",
+        "tiresTitle": "Acheter Pneus | Neufs & Occasion",
+        "tiresDescription": "Acheter des pneus à Gand? Découvrez nos pneus hiver, été et 4 saisons. Montage inclus. Dès 25€ par pneu.",
+        "servicesTitle": "Services Pneus | Montage & Parallélisme",
+        "servicesDescription": "Montage de pneus professionnel, équilibrage et parallélisme à Gand. Service rapide, bons prix. Ouvert le samedi!",
+        "contactTitle": "Contact | Centre Pneus Gand",
+        "contactDescription": "Contactez notre centre pneus à Gand. Appelez +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "FAQ | Prix & Horaires",
+        "faqDescription": "FAQ sur les prix des pneus, horaires, montage et plus. Centre pneus ouvert dimanche? Oui, sur rendez-vous!"
     },
     "DevBanner": {
         "message": "Nous sommes encore en mode développement. Tous les pneus ne sont pas réels ; c'est uniquement à des fins de démonstration. Les vrais pneus arrivent bientôt."
@@ -268,5 +269,19 @@
         "loading": "Chargement",
         "success": "Votre avis a été reçu !",
         "thanks": "Merci pour votre aide."
+    },
+    "Blog": {
+        "pageTitle": "Notre Blog | Gent Bandenservice",
+        "pageDescription": "Lisez les dernières nouvelles, conseils et informations sur les pneus et l'entretien chez Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Actualités & Conseils",
+        "subtitle": "Restez informé des derniers développements et obtenez des conseils utiles pour vos pneus.",
+        "allCategories": "Toutes les catégories",
+        "noPosts": "Aucun article trouvé",
+        "noPostsDescription": "Il n'y a actuellement aucun article de blog dans cette catégorie.",
+        "readTime": "temps de lecture",
+        "backToBlog": "Retour au Blog",
+        "share": "Partager ce post",
+        "relatedPosts": "Articles connexes"
     }
 }

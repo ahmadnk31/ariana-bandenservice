@@ -5,14 +5,15 @@
         "tires": "Opony",
         "contact": "Kontakt",
         "admin": "Admin",
-        "searchPlaceholder": "Szukaj opon..."
+        "searchPlaceholder": "Szukaj opon...",
+        "blog": "Blog"
     },
     "Hero": {
-        "title1": "Jedź dalej z",
-        "title2": "Bezpieczeństwem",
-        "title3": "Stylem",
-        "subtitle": "Profesjonalny montaż, wyważanie i geometria kół dla wszystkich typów pojazdów.",
-        "cta": "Umów wizytę"
+        "title1": "Centrum Opon",
+        "title2": "Gandawa",
+        "title3": "Od 2020",
+        "subtitle": "Kup opony z montażem od 25€. Najtańsze centrum opon w Gandawie. Pn-Sb 9-18.",
+        "cta": "Zobacz Opony"
     },
     "Footer": {
         "about": "O nas",
@@ -245,18 +246,18 @@
         }
     },
     "Metadata": {
-        "title": "Gent bandenservice | Centrum Opon Gandawa",
-        "description": "Profesjonalny serwis opon i naprawa samochodów w Gandawie. Jakościowy montaż, wyważanie, geometria i naprawa opon. Najlepsze marki w konkurencyjnych cenach.",
-        "ogDescription": "Profesjonalny serwis opon i naprawa samochodów w Gandawie. Jakościowy montaż, wyważanie, geometria i naprawa opon.",
-        "keywords": "serwis opon, naprawa samochodów, centrum opon, kupić opony, geometria kół, montaż opon, wyważanie opon, przegląd techniczny, warsztat, serwis opon w pobliżu, warsztat w pobliżu, centrum opon Gandawa, warsztat Sint-Amandsberg, opony Flandria Wschodnia, opony zimowe, opony letnie, opony całoroczne, opony używane, opony nowe, tanie opony, lokalny serwis opon, zaufany warsztat, szybki serwis, profesjonalny montaż, uczciwa cena, indywidualna obsługa, firma rodzinna, Gandawa, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Belgia",
-        "tiresTitle": "Opony | Gent bandenservice",
-        "tiresDescription": "Odkryj naszą ofertę premium opon od najlepszych marek. Opony zimowe, letnie i całoroczne w konkurencyjnych cenach.",
-        "servicesTitle": "Usługi | Gent bandenservice",
-        "servicesDescription": "Profesjonalne usługi oponiarskie obejmujące montaż, wyważanie, geometrię kół i naprawę przebić.",
-        "contactTitle": "Kontakt | Gent bandenservice",
-        "contactDescription": "Skontaktuj się z Gent bandenservice. Umów wizytę lub poproś o wycenę usług oponiarskich.",
-        "faqTitle": "FAQ | Gent bandenservice",
-        "faqDescription": "Najczęściej zadawane pytania dotyczące naszych usług oponiarskich, cen, godzin otwarcia i więcej."
+        "title": "Centrum Opon Gandawa | Kup Opony z Montażem",
+        "description": "✓ Najtańsze centrum opon w Gandawie! Nowe i używane opony od 25€ z montażem. Pn-Sb 9-18, niedziela po umówieniu. ☎ +32 466 19 56 22",
+        "ogDescription": "Centrum Opon Gandawa - Nowe i używane opony. Montaż, wyważanie i geometria w cenie. Najlepsze ceny!",
+        "keywords": "centrum opon gandawa, kup opony, montaż opon, geometria kół, centrum opon belgia, opony używane, opony nowe, opony tanie, opony zimowe, opony letnie, Sint-Amandsberg",
+        "tiresTitle": "Kup Opony | Nowe i Używane",
+        "tiresDescription": "Kupujesz opony w Gandawie? Zobacz nasze opony zimowe, letnie i całoroczne. Montaż w cenie. Od 25€.",
+        "servicesTitle": "Serwis Opon | Montaż i Geometria",
+        "servicesDescription": "Profesjonalny montaż opon, wyważanie i geometria w Gandawie. Szybki serwis, świetne ceny. Otwarte w soboty!",
+        "contactTitle": "Kontakt | Centrum Opon Gandawa",
+        "contactDescription": "Skontaktuj się z nami. Zadzwoń: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "FAQ | Ceny i Godziny",
+        "faqDescription": "FAQ o cenach opon, godzinach, montażu i więcej. Centrum opon czynne w niedzielę? Tak, po umówieniu!"
     },
     "DevBanner": {
         "message": "Nadal jesteśmy w trybie programowania. Wszystkie opony nie są prawdziwe; służą wyłącznie do celów demonstracyjnych. Prawdziwe opony wkrótce."
@@ -268,5 +269,19 @@
         "loading": "Ładowanie",
         "success": "Twoja opinia została odebrana!",
         "thanks": "Dziękujemy za pomoc."
+    },
+    "Blog": {
+        "pageTitle": "Nasz Blog | Gent Bandenservice",
+        "pageDescription": "Przeczytaj najnowsze wiadomości, porady i informacje o oponach samochodowych i konserwacji w Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Nowości i Porady",
+        "subtitle": "Bądź na bieżąco z najnowszymi informacjami i uzyskaj pomocne wskazówki dotyczące opon.",
+        "allCategories": "Wszystkie kategorie",
+        "noPosts": "Nie znaleziono wpisów",
+        "noPostsDescription": "Obecnie nie ma żadnych wpisów na blogu w tej kategorii.",
+        "readTime": "czas czytania",
+        "backToBlog": "Powrót do Bloga",
+        "share": "Udostępnij ten wpis",
+        "relatedPosts": "Powiązane wpisy"
     }
 }
