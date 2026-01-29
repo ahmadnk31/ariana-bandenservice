@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Outfit } from "next/font/google";
+import { Outfit, Inter } from "next/font/google";
 import Script from "next/script";
 import "../globals.css";
 import type { Metadata } from 'next';
@@ -14,6 +14,11 @@ import { getAlternateLanguages } from "@/lib/utils";
 const outfit = Outfit({
     subsets: ["latin"],
     variable: "--font-outfit",
+});
+
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
 });
 
 const localeMap: Record<string, string> = {
@@ -135,7 +140,7 @@ export default async function LocaleLayout({
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
             </head>
-            <body className={`${outfit.variable} antialiased font-sans`}>
+            <body className={`${outfit.variable} ${inter.variable} antialiased font-sans`}>
                 <NextIntlClientProvider messages={messages}>
                     <CartProvider>
 
