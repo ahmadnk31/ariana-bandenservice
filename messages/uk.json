@@ -23,8 +23,8 @@
         "address": "Гент, Бельгія",
         "rights": "Усі права захищені.",
         "openingHours": "Години роботи",
-        "openingHoursText": "Понеділок – П’ятниця: 9:00 – 18:00",
-        "openingHoursText2": "Субота – Неділя: 10:00 – 18:00",
+        "openingHoursText": "Понеділок – Субота: 9:00 – 18:00",
+        "openingHoursText2": "Неділя: За домовленістю",
         "visitUs": "Завітайте до нас",
         "visitUsText": "Гент, Бельгія"
     },
