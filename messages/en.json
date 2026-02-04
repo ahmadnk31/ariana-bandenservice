@@ -13,7 +13,8 @@
         "title2": "Ghent",
         "title3": "Since 2020",
         "subtitle": "Buy tires with fitting from €25. Cheapest tire shop in Ghent. Open Mon-Sat 9-18h.",
-        "cta": "View Tires"
+        "cta": "View Tires",
+        "contact": "Contact Us"
     },
     "Footer": {
         "about": "About Us",
@@ -23,8 +24,8 @@
         "address": "Ghent, Belgium",
         "rights": "All rights reserved.",
         "openingHours": "Opening Hours",
-        "openingHoursText": "Monday - Friday: 9:00 AM - 5:00 PM",
-        "openingHoursText2": "Saturday - Sunday: Closed",
+        "openingHoursText": "Monday - Saturday: 9:00 AM - 6:00 PM",
+        "openingHoursText2": "Sunday: On Appointment",
         "visitUs": "Visit us",
         "visitUsText": "Ghent, Belgium"
     },
@@ -87,6 +88,7 @@
         "notifyMe": "Notify Me",
         "secondHand": "Second Hand",
         "noDescription": "No description available",
+        "noImageAvailable": "No Image Available",
         "addToCart": "Add to Cart",
         "relatedProducts": "Related Products",
         "requestStock": "Request Stock",

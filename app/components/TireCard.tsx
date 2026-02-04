@@ -94,12 +94,14 @@ export default function TireCard({
                             {/* Overlay to ensure clickability if needed, mostly img is fine */}
                         </div>
                     ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-muted">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground/50">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
+                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+                            <Image
+                                src="/tire-placeholder.svg"
+                                alt="Tire placeholder"
+                                width={200}
+                                height={200}
+                                className="w-full h-full object-contain opacity-60"
+                            />
                         </div>
                     )}
                 </Link>
