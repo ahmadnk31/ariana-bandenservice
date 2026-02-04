@@ -480,7 +480,7 @@ interface TiresDataTableProps {
 }
 
 export function TiresDataTable({ data }: TiresDataTableProps) {
-    const [searchKey, setSearchKey] = useState<"name" | "barcode">("name")
+    const [searchKey, setSearchKey] = useState<"name" | "barcode" | "size">("name")
 
     return (
         <div className="space-y-4">
@@ -497,6 +497,12 @@ export function TiresDataTable({ data }: TiresDataTableProps) {
                         className={`px-3 py-1 text-sm rounded-md transition-colors ${searchKey === "barcode" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}
                     >
                         Search by Barcode
+                    </button>
+                    <button
+                        onClick={() => setSearchKey("size")}
+                        className={`px-3 py-1 text-sm rounded-md transition-colors ${searchKey === "size" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}
+                    >
+                        Search by Size
                     </button>
                 </div>
             </div>
