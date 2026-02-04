@@ -269,21 +269,35 @@ export const columns: ColumnDef<TireRow>[] = [
                                 </svg>
                             </button>
                         </AlertDialogTrigger>
-                        <AlertDialogContent>
+                        <AlertDialogContent className="max-w-md">
                             <AlertDialogHeader>
                                 <AlertDialogTitle>Print Barcode</AlertDialogTitle>
                                 <AlertDialogDescription>
                                     Barcode for {tire.name}
                                 </AlertDialogDescription>
                             </AlertDialogHeader>
-                            <div className="flex flex-col items-center justify-center py-4 bg-white text-black text-center" id={`barcode-${tire.id}`}>
+                            <div className="flex flex-col items-center justify-center py-4 bg-white text-black text-center min-w-0" id={`barcode-${tire.id}`}>
 
-                                <div className="flex space-x-4 justify-between bg-white text-black">
-                                    <div style={{ fontSize: '18px', fontWeight: 'bold' }}>{tire.size}</div>
-                                    <div style={{ fontSize: '18px', fontWeight: 'bold' }}>€{tire.price}</div>
+                                <div className="flex space-x-4 justify-between bg-white text-black w-full max-w-full px-2">
+                                    <div className="text-sm md:text-lg font-bold truncate">{tire.size}</div>
+                                    <div className="text-sm md:text-lg font-bold">€{tire.price}</div>
                                 </div>
 
-                                <Barcode value={tire.barcode || tire.name} width={1.5} height={50} fontSize={14} />
+                                <div className="w-full max-w-full overflow-auto flex justify-center">
+                                    <div className="inline-block min-w-0">
+                                        <Barcode 
+                                            value={tire.barcode || tire.name} 
+                                            width={1} 
+                                            height={35} 
+                                            fontSize={10} 
+                                            displayValue={true}
+                                            background="white"
+                                            lineColor="black"
+                                            margin={5}
+                                            textMargin={2}
+                                        />
+                                    </div>
+                                </div>
                             </div>
                             <AlertDialogFooter>
                                 <AlertDialogCancel>Close</AlertDialogCancel>
@@ -291,37 +305,156 @@ export const columns: ColumnDef<TireRow>[] = [
                                     className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2"
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        const printContent = document.getElementById(`barcode-${tire.id}`)?.innerHTML;
-                                        if (printContent) {
-                                            const win = window.open('', '', 'height=500,width=500');
+                                        const barcodeElement = document.getElementById(`barcode-${tire.id}`);
+                                        if (barcodeElement) {
+                                            // Extract just the barcode SVG and info
+                                            const sizeText = tire.size;
+                                            const priceText = `€${tire.price}`;
+                                            const barcodeValue = tire.barcode || tire.name;
+                                            
+                                            const win = window.open('', '', 'width=400,height=200');
                                             if (win) {
                                                 win.document.write(`
                                                     <html>
                                                         <head>
-                                                            <title>Print Barcode</title>
+                                                            <title>Barcode - ${tire.name}</title>
                                                             <style>
-                                                                @page { size: auto; margin: 0; }
+                                                                @page { 
+                                                                    size: auto; 
+                                                                    margin: 5mm; 
+                                                                }
+                                                                * {
+                                                                    box-sizing: border-box;
+                                                                    margin: 0;
+                                                                    padding: 0;
+                                                                }
                                                                 body {
+                                                                    font-family: Arial, sans-serif;
+                                                                    background: white;
+                                                                    padding: 10px;
                                                                     display: flex;
                                                                     flex-direction: column;
-                                                                    justify-content: center;
                                                                     align-items: center;
-                                                                    height: 100vh;
-                                                                    margin: 0;
-                                                                    font-family: sans-serif;
+                                                                    justify-content: center;
+                                                                    min-height: 100vh;
                                                                 }
-                                                                svg { max-width: 100%; height: auto; }
+                                                                .label {
+                                                                    width: 100%;
+                                                                    max-width: 250px;
+                                                                    text-align: center;
+                                                                    background: white;
+                                                                    border: 1px solid #000;
+                                                                    padding: 8px;
+                                                                }
+                                                                .info-row {
+                                                                    display: flex;
+                                                                    justify-content: space-between;
+                                                                    align-items: center;
+                                                                    margin-bottom: 3px;
+                                                                    font-size: 11px;
+                                                                    font-weight: bold;
+                                                                    color: black;
+                                                                    width: 100%;
+                                                                    padding: 0 5px;
+                                                                }
+                                                                .info-row span:first-child {
+                                                                    margin-right: auto;
+                                                                }
+                                                                .info-row span:last-child {
+                                                                    margin-left: auto;
+                                                                }
+                                                                .barcode-wrapper {
+                                                                    width: 100%;
+                                                                    overflow: hidden;
+                                                                    display: flex;
+                                                                    justify-content: center;
+                                                                }
+                                                                svg { 
+                                                                    max-width: 100% !important; 
+                                                                    height: auto !important;
+                                                                    display: block;
+                                                                    margin: 0 auto;
+                                                                    image-rendering: -webkit-optimize-contrast;
+                                                                    image-rendering: crisp-edges;
+                                                                    shape-rendering: crispEdges;
+                                                                }
+                                                                @media print {
+                                                                    @page {
+                                                                        size: 4in 2in;
+                                                                        margin: 0.1in;
+                                                                    }
+                                                                    body {
+                                                                        -webkit-print-color-adjust: exact;
+                                                                        color-adjust: exact;
+                                                                        padding: 0;
+                                                                        margin: 0;
+                                                                        width: 100%;
+                                                                        height: 100%;
+                                                                    }
+                                                                    .label {
+                                                                        border: 1px solid #000;
+                                                                        box-shadow: none;
+                                                                        width: 3.8in;
+                                                                        max-width: 3.8in;
+                                                                        padding: 0.05in;
+                                                                        margin: 0;
+                                                                        page-break-inside: avoid;
+                                                                        display: flex;
+                                                                        flex-direction: column;
+                                                                        align-items: center;
+                                                                        justify-content: center;
+                                                                    }
+                                                                    .barcode-wrapper {
+                                                                        width: 3.6in;
+                                                                        max-width: 3.6in;
+                                                                        overflow: hidden;
+                                                                        display: flex;
+                                                                        justify-content: center;
+                                                                    }
+                                                                    svg {
+                                                                        max-width: 3.4in !important;
+                                                                        width: 3.4in !important;
+                                                                        height: auto !important;
+                                                                        image-rendering: -webkit-optimize-contrast !important;
+                                                                        image-rendering: crisp-edges !important;
+                                                                        shape-rendering: crispEdges !important;
+                                                                        print-color-adjust: exact !important;
+                                                                    }
+                                                                }
                                                             </style>
+                                                            <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
                                                         </head>
                                                         <body>
-                                                            ${printContent}
+                                                            <div class="label">
+                                                                <div class="info-row">
+                                                                    <span>${sizeText}</span>
+                                                                    <span>${priceText}</span>
+                                                                </div>
+                                                                <div class="barcode-wrapper">
+                                                                    <svg id="barcode"></svg>
+                                                                </div>
+                                                            </div>
                                                             <script>
-                                                                window.onload = function() {
+                                                                JsBarcode("#barcode", "${barcodeValue}", {
+                                                                    format: "CODE128",
+                                                                    width: 2,
+                                                                    height: 40,
+                                                                    fontSize: 10,
+                                                                    background: "white",
+                                                                    lineColor: "black",
+                                                                    margin: 4,
+                                                                    displayValue: true,
+                                                                    textMargin: 1,
+                                                                    textPosition: "bottom",
+                                                                    xmlDocument: document
+                                                                });
+                                                                
+                                                                setTimeout(() => {
                                                                     window.print();
                                                                     window.onafterprint = function() {
                                                                         window.close();
                                                                     }
-                                                                }
+                                                                }, 500);
                                                             </script>
                                                         </body>
                                                     </html>
