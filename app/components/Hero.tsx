@@ -5,8 +5,7 @@ import { Link } from '@/src/i18n/routing';
 
 export default function Hero() {
     const t = useTranslations('Hero');
-    const tServices = useTranslations('Services');
-    const tTires = useTranslations('Tires');
+    const tHeader = useTranslations('Header');
 
     return (
         <section className="relative py-20 md:py-32 overflow-hidden bg-muted">
@@ -19,11 +18,11 @@ export default function Hero() {
                         {t('subtitle')}
                     </p>
                     <div className="flex gap-4">
-                        <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+                        <Link href="/tires" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
                             {t('cta')}
                         </Link>
-                        <Link href="/tires" className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
-                            {tTires('title')}
+                        <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+                            {tHeader('contact')}
                         </Link>
                     </div>
                 </div>

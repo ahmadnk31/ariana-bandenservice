@@ -18,12 +18,14 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
 
     if (!images || images.length === 0) {
         return (
-            <div className="aspect-square w-full bg-muted rounded-lg flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground/50">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <circle cx="12" cy="12" r="6"></circle>
-                    <circle cx="12" cy="12" r="2"></circle>
-                </svg>
+            <div className="aspect-square w-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
+                <Image
+                    src="/tire-placeholder.svg"
+                    alt="Tire placeholder"
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-contain p-8 opacity-60"
+                />
             </div>
         );
     }

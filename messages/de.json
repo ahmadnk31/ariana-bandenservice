@@ -13,7 +13,8 @@
         "title2": "Gent",
         "title3": "Seit 2020",
         "subtitle": "Reifen kaufen inkl. Montage ab 25€. Günstigstes Reifencenter in Gent. Offen Mo-Sa 9-18h.",
-        "cta": "Reifen Ansehen"
+        "cta": "Reifen Ansehen",
+        "contact": "Kontaktieren Sie uns"
     },
     "Footer": {
         "about": "Über uns",
@@ -87,6 +88,7 @@
         "notifyMe": "Benachrichtigen",
         "secondHand": "Gebraucht",
         "noDescription": "Keine Beschreibung verfügbar",
+        "noImageAvailable": "Kein Bild verfügbar",
         "addToCart": "In den Warenkorb",
         "relatedProducts": "Ähnliche Produkte",
         "requestStock": "Lagerbestand anfragen",

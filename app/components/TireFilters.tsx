@@ -103,6 +103,22 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
         setFilters(updated as FilterState);
     }, [filters, router, searchParams]);
 
+    // Handle immediate updates for selection-based filters
+    useEffect(() => {
+        // Only update URL for selection-based changes (not search/price which are debounced)
+        const hasSelectionChange = localFilters.season !== filters.season || 
+                                 localFilters.condition !== filters.condition ||
+                                 localFilters.width !== filters.width ||
+                                 localFilters.aspectRatio !== filters.aspectRatio ||
+                                 localFilters.rimSize !== filters.rimSize ||
+                                 localFilters.loadIndex !== filters.loadIndex ||
+                                 localFilters.speedRating !== filters.speedRating;
+
+        if (hasSelectionChange) {
+            updateParams(localFilters);
+        }
+    }, [localFilters.season, localFilters.condition, localFilters.width, localFilters.aspectRatio, localFilters.rimSize, localFilters.loadIndex, localFilters.speedRating, updateParams]);
+
     // Debounce search and price updates
     // Sync local state when external filters change (e.g. from SearchOverlay or URL)
     useEffect(() => {
@@ -132,16 +148,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
     };
 
     const handleMultipleFiltersChange = (updates: Partial<FilterState>) => {
-        setLocalFilters(prev => {
-            const updated = { ...prev, ...updates };
-
-            // Immediate update for selection-based filters (radio, select)
-            if (updates.season || updates.condition) {
-                updateParams(updated);
-            }
-
-            return updated;
-        });
+        setLocalFilters(prev => ({ ...prev, ...updates }));
     };
 
     const handlePageChange = (page: number) => {
