@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useDropzone } from "react-dropzone";
 import { useUploadThing } from "@/lib/uploadthing";
 
@@ -24,6 +24,8 @@ export default function ImageDropzone({
     setUploading,
     onError,
 }: ImageDropzoneProps) {
+    const dropzoneRef = useRef<HTMLDivElement>(null);
+    
     const { startUpload } = useUploadThing("imageUploader", {
         onClientUploadComplete: (res) => {
             const newImages = res.map((file) => ({
@@ -43,13 +45,72 @@ export default function ImageDropzone({
         },
     });
 
-    const onDrop = useCallback(
-        async (acceptedFiles: File[]) => {
-            if (acceptedFiles.length === 0) return;
-            await startUpload(acceptedFiles);
+    const handleFilesUpload = useCallback(
+        async (files: File[]) => {
+            if (files.length === 0) return;
+            await startUpload(files);
         },
         [startUpload]
     );
+
+    const onDrop = useCallback(
+        async (acceptedFiles: File[]) => {
+            await handleFilesUpload(acceptedFiles);
+        },
+        [handleFilesUpload]
+    );
+
+    // Handle clipboard paste events
+    const handlePaste = useCallback(
+        async (event: ClipboardEvent) => {
+            const items = event.clipboardData?.items;
+            if (!items) return;
+
+            const imageFiles: File[] = [];
+            
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                
+                // Check if the item is an image
+                if (item.type.startsWith('image/')) {
+                    const file = item.getAsFile();
+                    if (file) {
+                        imageFiles.push(file);
+                    }
+                }
+            }
+
+            if (imageFiles.length > 0) {
+                event.preventDefault();
+                await handleFilesUpload(imageFiles);
+            }
+        },
+        [handleFilesUpload]
+    );
+
+    // Add event listeners for paste when component mounts
+    useEffect(() => {
+        const handleGlobalPaste = (event: ClipboardEvent) => {
+            // Only handle paste if the dropzone is focused or if no input element is focused
+            const activeElement = document.activeElement;
+            const isInputFocused = activeElement && (
+                activeElement.tagName === 'INPUT' || 
+                activeElement.tagName === 'TEXTAREA' || 
+                activeElement.contentEditable === 'true'
+            );
+
+            if (!isInputFocused || dropzoneRef.current?.contains(activeElement)) {
+                handlePaste(event);
+            }
+        };
+
+        // Add paste event listener to document
+        document.addEventListener('paste', handleGlobalPaste);
+        
+        return () => {
+            document.removeEventListener('paste', handleGlobalPaste);
+        };
+    }, [handlePaste]);
 
     const removeImage = (index: number) => {
         onImagesChange(images.filter((_, i) => i !== index));
@@ -104,10 +165,12 @@ export default function ImageDropzone({
 
             <div
                 {...getRootProps()}
+                ref={dropzoneRef}
                 className={`flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${isDragActive
                     ? "border-primary bg-primary/5"
                     : "border-muted hover:bg-muted/50"
                     } ${uploading ? "opacity-50 cursor-not-allowed" : ""}`}
+                tabIndex={0} // Make dropzone focusable for paste events
             >
                 <input {...getInputProps()} />
                 <div className="flex flex-col items-center justify-center">
@@ -156,7 +219,7 @@ export default function ImageDropzone({
                                 <line x1="12" y1="3" x2="12" y2="15"></line>
                             </svg>
                             <p className="text-sm text-muted-foreground">
-                                <span className="font-medium text-primary">Click to upload</span> or drag and drop
+                                <span className="font-medium text-primary">Click to upload</span>, drag and drop, or <span className="font-medium text-primary">paste</span>
                             </p>
                             <p className="text-xs text-muted-foreground mt-1">
                                 PNG, JPG, GIF, WEBP
