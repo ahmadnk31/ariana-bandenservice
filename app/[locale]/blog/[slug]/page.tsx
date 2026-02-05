@@ -112,6 +112,9 @@ export default async function BlogPostPage({
         }).format(new Date(post.publishedAt))
         : null;
 
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be';
+    const shareUrl = `${baseUrl}/${locale}/blog/${slug}`;
+
     // JSON-LD structured data
     const jsonLd = {
         '@context': 'https://schema.org',
@@ -151,9 +154,6 @@ export default async function BlogPostPage({
         inLanguage: post.locale,
         url: shareUrl,
     };
-
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be';
-    const shareUrl = `${baseUrl}/${locale}/blog/${slug}`;
 
     // Breadcrumb JSON-LD
     const breadcrumbJsonLd = {
