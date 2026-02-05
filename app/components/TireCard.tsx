@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Link } from "@/src/i18n/routing";
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { useTranslations } from 'next-intl';
 import { useCart } from './CartContext';
 import { ShoppingCart } from 'lucide-react';
@@ -54,6 +54,13 @@ export default function TireCard({
     const { addToCart } = useCart();
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    
+    // Touch handling for swipe gestures
+    const touchStartX = useRef<number>(0);
+    const touchEndX = useRef<number>(0);
+    const isDragging = useRef<boolean>(false);
+    const carouselRef = useRef<HTMLDivElement>(null);
 
     const seasonLabels: Record<string, string> = {
         summer: t('seasons.summer'),
@@ -67,40 +74,128 @@ export default function TireCard({
         "all-season": "bg-green-500/10 text-green-600",
     };
 
-    const nextImage = (e: React.MouseEvent) => {
-        e.preventDefault(); // Prevent link click
+    const nextImage = useCallback((e?: React.MouseEvent) => {
+        if (e) e.preventDefault(); // Prevent link click
+        if (isTransitioning) return; // Prevent rapid clicking
+        
+        setIsTransitioning(true);
         setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    };
+        
+        // Reset transition state after animation
+        setTimeout(() => setIsTransitioning(false), 300);
+    }, [images.length, isTransitioning]);
 
-    const prevImage = (e: React.MouseEvent) => {
-        e.preventDefault(); // Prevent link click
+    const prevImage = useCallback((e?: React.MouseEvent) => {
+        if (e) e.preventDefault(); // Prevent link click
+        if (isTransitioning) return; // Prevent rapid clicking
+        
+        setIsTransitioning(true);
         setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-    };
+        
+        // Reset transition state after animation
+        setTimeout(() => setIsTransitioning(false), 300);
+    }, [images.length, isTransitioning]);
+
+    // Touch event handlers
+    const handleTouchStart = useCallback((e: React.TouchEvent) => {
+        if (images.length <= 1) return;
+        touchStartX.current = e.touches[0].clientX;
+        isDragging.current = false;
+    }, [images.length]);
+
+    const handleTouchMove = useCallback((e: React.TouchEvent) => {
+        if (images.length <= 1) return;
+        touchEndX.current = e.touches[0].clientX;
+        
+        // Calculate distance moved
+        const distance = Math.abs(touchStartX.current - touchEndX.current);
+        
+        // Mark as dragging if moved more than 10px
+        if (distance > 10) {
+            isDragging.current = true;
+        }
+    }, [images.length]);
+
+    const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+        if (images.length <= 1 || !isDragging.current) return;
+        
+        const swipeThreshold = 50; // Minimum distance for a swipe
+        const swipeDistance = touchStartX.current - touchEndX.current;
+
+        if (Math.abs(swipeDistance) > swipeThreshold) {
+            e.preventDefault(); // Prevent link navigation
+            
+            if (swipeDistance > 0) {
+                // Swiped left - next image
+                nextImage();
+            } else {
+                // Swiped right - previous image
+                prevImage();
+            }
+        }
+        
+        // Reset touch state
+        isDragging.current = false;
+        touchStartX.current = 0;
+        touchEndX.current = 0;
+    }, [images.length, nextImage, prevImage]);
+
+    // Handle clicks - prevent navigation if we were dragging
+    const handleCarouselClick = useCallback((e: React.MouseEvent) => {
+        if (isDragging.current) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    }, []);
 
     return (
         <div className="p-4 rounded-lg border border-muted bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col group relative">
             {/* Image Carousel */}
-            <div className="relative w-full h-48 bg-muted rounded-md mb-4 overflow-hidden">
+            <div 
+                ref={carouselRef}
+                className="relative w-full h-48 bg-transparent rounded-md mb-4 overflow-hidden select-none"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                onClick={handleCarouselClick}
+            >
                 <Link href={`/tires/${slug}`}>
                     {images.length > 0 ? (
                         <div className="w-full h-full relative">
-                            <Image
-                                src={images[currentImageIndex].url}
-                                alt={`${name} - Image ${currentImageIndex + 1}`}
-                                width={500}
-                                height={500}
-                                className="w-full h-full object-contain aspect-square transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
-                            />
-                            {/* Overlay to ensure clickability if needed, mostly img is fine */}
+                            <div className="w-full h-full relative">
+                                {images.map((image, index) => (
+                                    <div
+                                        key={image.id}
+                                        className={`absolute inset-0 w-full h-full transition-all duration-300 ease-in-out ${
+                                            index === currentImageIndex 
+                                                ? 'opacity-100 scale-100 translate-x-0' 
+                                                : index < currentImageIndex
+                                                    ? 'opacity-0 scale-95 -translate-x-full'
+                                                    : 'opacity-0 scale-95 translate-x-full'
+                                        }`}
+                                    >
+                                        <Image
+                                            src={image.url}
+                                            alt={`${name} - Image ${index + 1}`}
+                                            width={500}
+                                            height={500}
+                                            className="w-full h-full object-contain aspect-square transition-transform duration-500 group-hover:scale-105"
+                                            draggable={false}
+                                            priority={index === 0}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     ) : (
-                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+                        <div className="w-full h-full flex flex-col items-center justify-center bg-transparent">
                             <Image
                                 src="/tire-placeholder.svg"
                                 alt="Tire placeholder"
                                 width={200}
                                 height={200}
-                                className="w-full h-full object-contain opacity-60"
+                                className="w-full h-full object-contain opacity-30"
+                                draggable={false}
                             />
                         </div>
                     )}
@@ -116,15 +211,17 @@ export default function TireCard({
                     <>
                         <button
                             onClick={prevImage}
-                            className="absolute left-2 top-1/2 -translate-y-1/2 p-1 rounded-full bg-background/80 hover:bg-background transition-colors z-10 opacity-0 group-hover:opacity-100"
+                            className="absolute left-2 top-1/2 -translate-y-1/2 p-1 rounded-full bg-background/80 hover:bg-background transition-all duration-200 z-10 opacity-0 group-hover:opacity-100 disabled:opacity-50"
                             aria-label="Previous image"
+                            disabled={isTransitioning}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         </button>
                         <button
                             onClick={nextImage}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-full bg-background/80 hover:bg-background transition-colors z-10 opacity-0 group-hover:opacity-100"
+                            className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-full bg-background/80 hover:bg-background transition-all duration-200 z-10 opacity-0 group-hover:opacity-100 disabled:opacity-50"
                             aria-label="Next image"
+                            disabled={isTransitioning}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                         </button>
@@ -133,10 +230,19 @@ export default function TireCard({
                             {images.map((_, index) => (
                                 <button
                                     key={index}
-                                    onClick={(e) => { e.preventDefault(); setCurrentImageIndex(index); }}
-                                    className={`w-1.5 h-1.5 rounded-full transition-colors ${index === currentImageIndex ? "bg-primary" : "bg-background/60"
-                                        }`}
+                                    onClick={(e) => { 
+                                        e.preventDefault(); 
+                                        if (!isTransitioning) {
+                                            setIsTransitioning(true);
+                                            setCurrentImageIndex(index);
+                                            setTimeout(() => setIsTransitioning(false), 300);
+                                        }
+                                    }}
+                                    className={`w-1.5 h-1.5 rounded-full transition-all duration-200 disabled:opacity-50 ${
+                                        index === currentImageIndex ? "bg-primary scale-125" : "bg-background/60 hover:bg-background/80"
+                                    }`}
                                     aria-label={`Go to image ${index + 1}`}
+                                    disabled={isTransitioning}
                                 />
                             ))}
                         </div>
