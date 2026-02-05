@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, useRef, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { useUploadThing } from "@/lib/uploadthing";
 import { Image as ImageIcon, Loader2, X, Upload } from "lucide-react";
@@ -17,6 +17,7 @@ export default function CoverImageDropzone({
     onRemove,
 }: CoverImageDropzoneProps) {
     const [isUploading, setIsUploading] = useState(false);
+    const dropzoneRef = useRef<HTMLDivElement>(null);
 
     const { startUpload } = useUploadThing("imageUploader", {
         onClientUploadComplete: (res) => {
@@ -34,13 +35,77 @@ export default function CoverImageDropzone({
         },
     });
 
-    const onDrop = useCallback(
-        async (acceptedFiles: File[]) => {
-            if (acceptedFiles.length === 0) return;
-            await startUpload(acceptedFiles);
+    const handleFilesUpload = useCallback(
+        async (files: File[]) => {
+            if (files.length === 0) return;
+            await startUpload(files);
         },
         [startUpload]
     );
+
+    const onDrop = useCallback(
+        async (acceptedFiles: File[]) => {
+            await handleFilesUpload(acceptedFiles);
+        },
+        [handleFilesUpload]
+    );
+
+    // Handle clipboard paste events
+    const handlePaste = useCallback(
+        async (event: ClipboardEvent) => {
+            const items = event.clipboardData?.items;
+            if (!items) return;
+
+            const imageFiles: File[] = [];
+            
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                
+                // Check if the item is an image
+                if (item.type.startsWith('image/')) {
+                    const file = item.getAsFile();
+                    if (file) {
+                        imageFiles.push(file);
+                        break; // Only take the first image for cover image
+                    }
+                }
+            }
+
+            if (imageFiles.length > 0) {
+                event.preventDefault();
+                await handleFilesUpload(imageFiles);
+            }
+        },
+        [handleFilesUpload]
+    );
+
+    // Add event listeners for paste when component mounts
+    useEffect(() => {
+        const handleGlobalPaste = (event: ClipboardEvent) => {
+            // Don't handle paste if the image modal is open
+            const imageModal = document.querySelector('[data-modal="image"]');
+            if (imageModal) return;
+
+            // Only handle paste if the dropzone is focused or if no input element is focused
+            const activeElement = document.activeElement;
+            const isInputFocused = activeElement && (
+                activeElement.tagName === 'INPUT' || 
+                activeElement.tagName === 'TEXTAREA' || 
+                (activeElement as HTMLElement).contentEditable === 'true'
+            );
+
+            if (!isInputFocused || dropzoneRef.current?.contains(activeElement)) {
+                handlePaste(event);
+            }
+        };
+
+        // Add paste event listener to document
+        document.addEventListener('paste', handleGlobalPaste);
+        
+        return () => {
+            document.removeEventListener('paste', handleGlobalPaste);
+        };
+    }, [handlePaste]);
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
@@ -70,6 +135,7 @@ export default function CoverImageDropzone({
     return (
         <div
             {...getRootProps()}
+            ref={dropzoneRef}
             className={`relative aspect-video flex flex-col items-center justify-center rounded-lg border-2 border-dashed transition-all cursor-pointer
                 ${isDragActive
                     ? "border-primary bg-primary/5 scale-[0.99]"
@@ -77,6 +143,7 @@ export default function CoverImageDropzone({
                 }
                 ${isUploading ? "opacity-50 cursor-not-allowed" : ""}
             `}
+            tabIndex={0}
         >
             <input {...getInputProps()} />
 
@@ -92,7 +159,7 @@ export default function CoverImageDropzone({
                             {isDragActive ? <Upload className="w-6 h-6" /> : <ImageIcon className="w-6 h-6" />}
                         </div>
                         <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                            {isDragActive ? "Drop to upload" : "Click or drag cover image"}
+                            {isDragActive ? "Drop to upload" : "Click, drag, or paste cover image"}
                         </p>
                         <p className="text-xs text-gray-500 mt-1">
                             Recommended: 1600x900px

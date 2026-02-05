@@ -15,20 +15,70 @@ export async function generateMetadata({
 }: {
     params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-    const { slug } = await params;
+    const { locale, slug } = await params;
     const post = await getBlogPost(slug);
 
     if (!post) return { title: 'Not Found' };
 
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be';
+    const postUrl = `${baseUrl}/${locale}/blog/${slug}`;
+    const defaultImage = `${baseUrl}/banden-service/android-chrome-512x512.png`;
+    
+    // Ensure we have proper image URLs
+    const imageUrl = post.coverImage || defaultImage;
+    const title = post.metaTitle || post.title;
+    const description = post.metaDescription || post.excerpt || `Read about ${post.title} on Gent Bandenservice blog.`;
+
     return {
-        title: post.metaTitle || post.title,
-        description: post.metaDescription || post.excerpt,
+        title,
+        description,
+        authors: [{ name: post.author || 'Gent Bandenservice' }],
+        category: post.category?.name,
+        keywords: post.category?.name ? [post.category.name, 'tires', 'automotive', 'Gent'] : undefined,
         openGraph: {
-            title: post.metaTitle || post.title,
-            description: post.metaDescription || post.excerpt || '',
-            images: post.coverImage ? [post.coverImage] : [],
+            title,
+            description,
+            url: postUrl,
+            siteName: 'Gent Bandenservice',
+            images: [
+                {
+                    url: imageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
+            locale,
             type: 'article',
             publishedTime: post.publishedAt?.toISOString(),
+            modifiedTime: post.updatedAt?.toISOString(),
+            authors: [post.author || 'Gent Bandenservice'],
+            section: post.category?.name,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: [imageUrl],
+            creator: '@gentbandenservice',
+            site: '@gentbandenservice',
+        },
+        alternates: {
+            canonical: postUrl,
+            languages: {
+                'en': `${baseUrl}/en/blog/${slug}`,
+                'nl': `${baseUrl}/nl/blog/${slug}`,
+                'fr': `${baseUrl}/fr/blog/${slug}`,
+                'de': `${baseUrl}/de/blog/${slug}`,
+            },
+        },
+        robots: {
+            index: post.status === 'published',
+            follow: post.status === 'published',
+            googleBot: {
+                index: post.status === 'published',
+                follow: post.status === 'published',
+            },
         },
     };
 }
@@ -66,23 +116,40 @@ export default async function BlogPostPage({
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
+        '@id': shareUrl,
         headline: post.title,
-        description: post.excerpt,
-        image: post.coverImage,
+        description: post.excerpt || post.metaDescription,
+        image: post.coverImage ? {
+            '@type': 'ImageObject',
+            url: post.coverImage,
+            width: 1200,
+            height: 630,
+        } : undefined,
         datePublished: post.publishedAt?.toISOString(),
         dateModified: post.updatedAt.toISOString(),
         author: {
-            '@type': 'Organization',
-            name: 'Gent Bandenservice',
+            '@type': 'Person',
+            name: post.author || 'Gent Bandenservice',
         },
         publisher: {
             '@type': 'Organization',
             name: 'Gent Bandenservice',
+            url: baseUrl,
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://arianabandenservice.be/logo.png',
+                url: `${baseUrl}/banden-service/android-chrome-512x512.png`,
+                width: 512,
+                height: 512,
             },
         },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': shareUrl,
+        },
+        articleSection: post.category?.name,
+        keywords: post.category?.name,
+        inLanguage: post.locale,
+        url: shareUrl,
     };
 
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be';
