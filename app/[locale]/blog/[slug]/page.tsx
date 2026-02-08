@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import { getBlogPost, getPublishedBlogPosts } from '@/app/actions/blog';
+import { getBlogPost, getPublishedBlogPosts, incrementBlogPostView } from '@/app/actions/blog';
 import BlogPostContent from '@/app/components/blog/BlogPostContent';
 import BlogCard from '@/app/components/blog/BlogCard';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Clock, Calendar, Tag, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, Tag, Share2, Facebook, Twitter, Linkedin, Eye } from 'lucide-react';
 
 export async function generateMetadata({
     params,
@@ -95,6 +95,9 @@ export default async function BlogPostPage({
     if (!post || post.status !== 'published') {
         notFound();
     }
+
+    // Increment view count (fire and forget)
+    incrementBlogPostView(slug);
 
     // Get related posts
     const { posts: relatedPosts } = await getPublishedBlogPosts({
@@ -238,6 +241,10 @@ export default async function BlogPostPage({
                                             <Clock className="w-4 h-4" />
                                             {post.readingTime} min {t('readTime')}
                                         </span>
+                                        <span className="flex items-center gap-1">
+                                            <Eye className="w-4 h-4" />
+                                            {(post.viewCount || 0).toLocaleString()} {t('views')}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -266,6 +273,10 @@ export default async function BlogPostPage({
                                         <span className="flex items-center gap-1">
                                             <Clock className="w-4 h-4" />
                                             {post.readingTime} min {t('readTime')}
+                                        </span>
+                                        <span className="flex items-center gap-1">
+                                            <Eye className="w-4 h-4" />
+                                            {(post.viewCount || 0).toLocaleString()} {t('views')}
                                         </span>
                                     </div>
                                 </div>

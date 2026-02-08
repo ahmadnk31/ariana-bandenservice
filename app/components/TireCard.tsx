@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Link } from "@/src/i18n/routing";
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useTranslations } from 'next-intl';
 import { useCart } from './CartContext';
 import { ShoppingCart } from 'lucide-react';
@@ -55,6 +55,8 @@ export default function TireCard({
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
     
     // Touch handling for swipe gestures
     const touchStartX = useRef<number>(0);
@@ -148,8 +150,50 @@ export default function TireCard({
         }
     }, []);
 
+    // Auto-cycling effect for hover
+    useEffect(() => {
+        if (isHovered && images.length > 1 && !isTransitioning) {
+            intervalRef.current = setInterval(() => {
+                setCurrentImageIndex((prev) => (prev + 1) % images.length);
+            }, 1500); // Change image every 1.5 seconds
+        } else {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+                intervalRef.current = null;
+            }
+        }
+
+        return () => {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+                intervalRef.current = null;
+            }
+        };
+    }, [isHovered, images.length, isTransitioning]);
+
+    // Hover handlers
+    const handleMouseEnter = useCallback(() => {
+        if (images.length > 1) {
+            setIsHovered(true);
+        }
+    }, [images.length]);
+
+    const handleMouseLeave = useCallback(() => {
+        setIsHovered(false);
+        // Reset to first image when hover ends
+        if (images.length > 1) {
+            setTimeout(() => {
+                setCurrentImageIndex(0);
+            }, 200);
+        }
+    }, [images.length]);
+
     return (
-        <div className="p-4 rounded-lg border border-muted bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col group relative">
+        <div 
+            className="p-4 rounded-lg border border-muted bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col group relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             {/* Image Carousel */}
             <div 
                 ref={carouselRef}
@@ -210,7 +254,10 @@ export default function TireCard({
                 {images.length > 1 && (
                     <>
                         <button
-                            onClick={prevImage}
+                            onClick={(e) => {
+                                prevImage(e);
+                                setIsHovered(false); // Stop auto-cycling when manually navigating
+                            }}
                             className="absolute left-2 top-1/2 -translate-y-1/2 p-1 rounded-full bg-background/80 hover:bg-background transition-all duration-200 z-10 opacity-0 group-hover:opacity-100 disabled:opacity-50"
                             aria-label="Previous image"
                             disabled={isTransitioning}
@@ -218,7 +265,10 @@ export default function TireCard({
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         </button>
                         <button
-                            onClick={nextImage}
+                            onClick={(e) => {
+                                nextImage(e);
+                                setIsHovered(false); // Stop auto-cycling when manually navigating
+                            }}
                             className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-full bg-background/80 hover:bg-background transition-all duration-200 z-10 opacity-0 group-hover:opacity-100 disabled:opacity-50"
                             aria-label="Next image"
                             disabled={isTransitioning}
@@ -235,6 +285,7 @@ export default function TireCard({
                                         if (!isTransitioning) {
                                             setIsTransitioning(true);
                                             setCurrentImageIndex(index);
+                                            setIsHovered(false); // Stop auto-cycling when manually selecting
                                             setTimeout(() => setIsTransitioning(false), 300);
                                         }
                                     }}

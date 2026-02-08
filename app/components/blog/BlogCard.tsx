@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Clock, Calendar, ChevronRight } from 'lucide-react';
+import { Clock, Calendar, ChevronRight, Eye } from 'lucide-react';
 
 interface BlogCardProps {
     slug: string;
@@ -9,6 +9,7 @@ interface BlogCardProps {
     coverImage?: string | null;
     publishedAt?: Date | null;
     readingTime: number;
+    viewCount?: number;
     category?: { name: string; slug: string } | null;
     locale: string;
 }
@@ -20,6 +21,7 @@ export default function BlogCard({
     coverImage,
     publishedAt,
     readingTime,
+    viewCount = 0,
     category,
     locale,
 }: BlogCardProps) {
@@ -68,6 +70,12 @@ export default function BlogCard({
                         <Clock className="w-4 h-4" />
                         {readingTime} min
                     </span>
+                    {viewCount > 0 && (
+                        <span className="flex items-center gap-1">
+                            <Eye className="w-4 h-4" />
+                            {viewCount.toLocaleString()}
+                        </span>
+                    )}
                 </div>
 
                 {/* Title */}

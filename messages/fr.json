@@ -281,6 +281,7 @@
         "noPosts": "Aucun article trouvé",
         "noPostsDescription": "Il n'y a actuellement aucun article de blog dans cette catégorie.",
         "readTime": "temps de lecture",
+        "views": "vues",
         "backToBlog": "Retour au Blog",
         "share": "Partager ce post",
         "relatedPosts": "Articles connexes"
