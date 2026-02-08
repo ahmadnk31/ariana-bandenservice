@@ -280,8 +280,7 @@
         "allCategories": "Tüm Kategoriler",
         "noPosts": "Yazı bulunamadı",
         "noPostsDescription": "Bu kategoride şu anda blog yazısı bulunmamaktadır.",
-        "readTime": "okuma süresi",
-        "backToBlog": "Blog'a Dön",
+        "readTime": "okuma süresi",        "views": "görüntülenme",        "backToBlog": "Blog'a Dön",
         "share": "Bu yazıyı paylaş",
         "relatedPosts": "İlgili Yazılar"
     }

@@ -187,6 +187,10 @@ model BlogPost {
   // Reading time in minutes (calculated on save)
   readingTime Int @default(0)
 
+  // View tracking
+  viewCount Int @default(0)
+  lastViewedAt DateTime?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

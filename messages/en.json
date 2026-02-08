@@ -282,6 +282,7 @@
         "noPosts": "No posts found",
         "noPostsDescription": "There are currently no blog posts in this category.",
         "readTime": "read time",
+        "views": "views",
         "backToBlog": "Back to Blog",
         "share": "Share this post",
         "relatedPosts": "Related Posts"

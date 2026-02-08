@@ -208,8 +208,28 @@ export async function getPublishedBlogPosts({
 export async function getBlogPost(slug: string) {
     return prisma.blogPost.findUnique({
         where: { slug },
-        include: { category: true, images: true },
+        include: { 
+            category: true, 
+            images: true 
+        }
     });
+}
+
+export async function incrementBlogPostView(slug: string) {
+    try {
+        await prisma.blogPost.update({
+            where: { slug },
+            data: {
+                viewCount: {
+                    increment: 1,
+                },
+                lastViewedAt: new Date(),
+            },
+        });
+    } catch (error) {
+        // Silently fail if post doesn't exist or update fails
+        console.error('Failed to increment view count:', error);
+    }
 }
 
 export async function getBlogPostById(id: string) {
