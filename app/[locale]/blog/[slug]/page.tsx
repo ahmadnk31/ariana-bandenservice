@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { getBlogPost, getPublishedBlogPosts, incrementBlogPostView } from '@/app/actions/blog';
 import BlogPostContent from '@/app/components/blog/BlogPostContent';
 import BlogCard from '@/app/components/blog/BlogCard';
+import ViewTracker from '@/app/components/blog/ViewTracker';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Image from 'next/image';
@@ -96,9 +97,6 @@ export default async function BlogPostPage({
         notFound();
     }
 
-    // Increment view count (fire and forget)
-    incrementBlogPostView(slug);
-
     // Get related posts
     const { posts: relatedPosts } = await getPublishedBlogPosts({
         locale: post.locale,
@@ -185,6 +183,7 @@ export default async function BlogPostPage({
 
     return (
         <>
+            <ViewTracker slug={slug} />
             <Header />
             <script
                 type="application/ld+json"

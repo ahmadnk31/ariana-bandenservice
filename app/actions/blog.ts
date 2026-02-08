@@ -217,13 +217,17 @@ export async function getBlogPost(slug: string) {
 
 export async function incrementBlogPostView(slug: string) {
     try {
+        // Get current time
+        const now = new Date();
+        
+        // Update the post view count and last viewed time
         await prisma.blogPost.update({
             where: { slug },
             data: {
                 viewCount: {
                     increment: 1,
                 },
-                lastViewedAt: new Date(),
+                lastViewedAt: now,
             },
         });
     } catch (error) {
