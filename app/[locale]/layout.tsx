@@ -2,14 +2,13 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Outfit, Inter } from "next/font/google";
-import Script from "next/script";
 import "../globals.css";
 import type { Metadata } from 'next';
 import { CartProvider } from '../components/CartContext';
-import { Analytics } from "@vercel/analytics/next"
 import CartDrawer from '../components/CartDrawer';
 import DevBanner from '../components/DevBanner';
 import { getAlternateLanguages } from "@/lib/utils";
+import CookieConsent from '../components/CookieConsent';
 
 const outfit = Outfit({
     subsets: ["latin"],
@@ -146,22 +145,9 @@ export default async function LocaleLayout({
 
                         {children}
                         <CartDrawer />
-                        <Analytics />
+                        <CookieConsent />
                     </CartProvider>
                 </NextIntlClientProvider>
-                <Script id="tawk-to" strategy="afterInteractive">
-                    {`
-                        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-                        (function(){
-                        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-                        s1.async=true;
-                        s1.src='https://embed.tawk.to/693f1f214f7afe19760b416b/1jcf936kq';
-                        s1.charset='UTF-8';
-                        s1.setAttribute('crossorigin','*');
-                        s0.parentNode.insertBefore(s1,s0);
-                        })();
-                    `}
-                </Script>
             </body>
         </html>
     );

@@ -7,6 +7,7 @@ import { Feedback } from './Feedback';
 
 export default function Footer() {
     const t = useTranslations('Footer');
+    const cookieT = useTranslations('Cookie');
     const [year, setYear] = useState<number | null>(null);
 
     useEffect(() => {
@@ -44,6 +45,21 @@ export default function Footer() {
             <div className="container mx-auto px-4 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
                 <div className="flex flex-col items-center sm:items-start gap-4">
                     <p>&copy; {year || 2025} Gent bandenservice. {t('rights')}</p>
+                    <div className="flex gap-4 text-xs">
+                        <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
+                        <span>•</span>
+                        <a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a>
+                        <span>•</span>
+                        <a href="/cookies" className="hover:text-primary transition-colors">{cookieT('policy')}</a>
+                        <span>•</span>
+                        <button
+                            type="button"
+                            onClick={() => window.dispatchEvent(new Event('cookie-consent-open'))}
+                            className="hover:text-primary transition-colors"
+                        >
+                            {cookieT('manage')}
+                        </button>
+                    </div>
                     <Feedback />
                 </div>
                 <LanguageSwitcher />
