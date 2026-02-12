@@ -258,7 +258,13 @@
         "contactTitle": "Contact | Bandencentrale Gent",
         "contactDescription": "Bandencentrale Gent contacteren? Bel 0466 19 56 22 of kom langs. Dendermondsesteenweg 428, Sint-Amandsberg. Ma-Za 9-18u.",
         "faqTitle": "Veelgestelde Vragen | Prijzen & Openingsuren",
-        "faqDescription": "FAQ over bandenprijzen, openingsuren, montage en meer. Bandencentrale open op zondag? Ja, op afspraak!"
+        "faqDescription": "FAQ over bandenprijzen, openingsuren, montage en meer. Bandencentrale open op zondag? Ja, op afspraak!",
+        "privacyTitle": "Privacybeleid | Gent Bandenservice",
+        "privacyDescription": "Privacybeleid van Gent bandenservice. Leer hoe we uw persoonlijke informatie verzamelen, gebruiken en beschermen.",
+        "termsTitle": "Servicevoorwaarden | Gent Bandenservice",
+        "termsDescription": "Servicevoorwaarden van Gent bandenservice. Lees onze algemene voorwaarden voor het gebruik van onze bandendiensten.",
+        "cookiesTitle": "Cookiebeleid | Gent Bandenservice",
+        "cookiesDescription": "Lees hoe Gent bandenservice cookies gebruikt en hoe u uw voorkeuren beheert."
     },
     "DevBanner": {
         "message": "We bevinden ons nog in de ontwikkelingsfase. Alle banden zijn niet echt; het is alleen voor demonstratiedoeleinden. Echte banden komen eraan."
@@ -285,5 +291,162 @@
         "backToBlog": "Terug naar Blog",
         "share": "Deel dit bericht",
         "relatedPosts": "Gerelateerde Berichten"
+    },
+    "Privacy": {
+        "title": "Privacybeleid",
+        "subtitle": "Hoe we uw persoonlijke informatie verzamelen, gebruiken en beschermen",
+        "dataCollection": {
+            "title": "Informatie die we verzamelen",
+            "content": "We verzamelen verschillende soorten informatie om onze diensten te bieden en te verbeteren:",
+            "personalInfo": "Persoonlijke identificatiegegevens (naam, contactgegevens)",
+            "contactInfo": "Contactinformatie (e-mailadres, telefoonnummer, adres)",
+            "vehicleInfo": "Voertuiginformatie (merk, model, jaar, bandenspecificaties)",
+            "serviceInfo": "Servicegeschiedenis en voorkeuren"
+        },
+        "dataUsage": {
+            "title": "Hoe we uw informatie gebruiken",
+            "content": "We gebruiken de informatie die we verzamelen voor de volgende doeleinden:",
+            "provideServices": "Om onze bandendiensten te leveren en te onderhouden",
+            "processBookings": "Om afspraken en serviceboekingen te verwerken",
+            "communication": "Om met u te communiceren over diensten en afspraken",
+            "improve": "Om onze diensten en klantervaring te verbeteren"
+        },
+        "dataSharing": {
+            "title": "Informatie delen",
+            "content": "We verkopen, verhandelen of overdragen uw persoonlijke informatie niet aan derden zonder uw toestemming, behalve zoals beschreven in dit privacybeleid of zoals vereist door de wet."
+        },
+        "dataSecurity": {
+            "title": "Gegevensbeveiliging",
+            "content": "We implementeren passende beveiligingsmaatregelen om uw persoonlijke informatie te beschermen tegen ongeautoriseerde toegang, wijziging, openbaarmaking of vernietiging."
+        },
+        "userRights": {
+            "title": "Uw rechten",
+            "content": "Onder de AVG en toepasselijke privacywetten heeft u de volgende rechten:",
+            "access": "Het recht om toegang te krijgen tot uw persoonlijke gegevens",
+            "rectification": "Het recht om onjuiste persoonlijke gegevens te rectificeren",
+            "erasure": "Het recht op verwijdering ('recht op vergetelheid')",
+            "portability": "Het recht op gegevensportabiliteit",
+            "objection": "Het recht om bezwaar te maken tegen verwerking"
+        },
+        "cookies": {
+            "title": "Cookies",
+            "content": "We gebruiken cookies om uw browse-ervaring te verbeteren en websiteverkeer te analyseren. U kunt uw cookie-voorkeuren beheren via uw browserinstellingen."
+        },
+        "contact": {
+            "title": "Contact opnemen",
+            "content": "Als u vragen heeft over dit privacybeleid, neem dan contact met ons op:",
+            "email": "E-mail: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Beleidsupdates",
+            "content": "We kunnen dit privacybeleid van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van eventuele wijzigingen door het nieuwe beleid op deze pagina te plaatsen."
+        },
+        "lastUpdated": "Laatst bijgewerkt",
+        "lastUpdatedDate": "12 februari 2026"
+    },
+    "Terms": {
+        "title": "Servicevoorwaarden",
+        "subtitle": "Voorwaarden voor het gebruik van onze bandendiensten",
+        "acceptance": {
+            "title": "Acceptatie van voorwaarden",
+            "content": "Door gebruik te maken van onze diensten, gaat u akkoord met deze servicevoorwaarden. Als u niet akkoord gaat met deze voorwaarden, gebruik dan onze diensten niet."
+        },
+        "services": {
+            "title": "Onze diensten",
+            "content": "Gent Bandenservice biedt de volgende bandengerelateerde diensten:",
+            "tireInstallation": "Bandeninstallatie en montage",
+            "tireRepair": "Bandenreparatie en reparatie",
+            "wheelBalancing": "Wielbaleancering",
+            "wheelAlignment": "Wieluitlijning",
+            "tireSales": "Verkoop van nieuwe en gebruikte banden"
+        },
+        "booking": {
+            "title": "Afspraken en boekingen",
+            "content": "Alle diensten moeten vooraf worden geboekt. We behouden ons het recht voor om afspraken te herplannen vanwege onvoorziene omstandigheden.",
+            "cancellation": "Annuleringen moeten minimaal 24 uur van tevoren worden gedaan. Late annuleringen kunnen kosten met zich meebrengen."
+        },
+        "payment": {
+            "title": "Betalingsvoorwaarden",
+            "content": "Betaling is verschuldigd bij voltooiing van de diensten, tenzij schriftelijk anders overeengekomen.",
+            "methods": "We accepteren contant geld, betaalkaarten, creditcards en bankoverschrijvingen."
+        },
+        "warranty": {
+            "title": "Garantie",
+            "content": "Alle diensten worden geleverd met onze standaardgarantie tegen gebreken in vakmanschap.",
+            "tires": "Bandengaranties worden verstrekt door de fabrikant en zijn onderworpen aan hun voorwaarden.",
+            "services": "Servicegaranties dekken gebreken in ons vakmanschap gedurende een periode van 30 dagen na voltooiing van de service."
+        },
+        "liability": {
+            "title": "Beperking van aansprakelijkheid",
+            "content": "Onze aansprakelijkheid is beperkt tot de kosten van de verleende diensten. We zijn niet verantwoordelijk voor gevolgschade.",
+            "limitation": "We raden regelmatige bandeninspecties en onderhoud aan voor optimale veiligheid en prestaties."
+        },
+        "intellectualProperty": {
+            "title": "Intellectueel eigendom",
+            "content": "Alle inhoud op onze website en materialen is eigendom van Gent Bandenservice en wordt beschermd door toepasselijke intellectuele eigendomswetten."
+        },
+        "privacy": {
+            "title": "Privacy",
+            "content": "Uw privacy is belangrijk voor ons. Raadpleeg ons privacybeleid om te begrijpen hoe we uw informatie verzamelen en gebruiken."
+        },
+        "termination": {
+            "title": "Beëindiging",
+            "content": "We behouden ons het recht voor om service te weigeren aan iedereen om welke reden dan ook naar ons eigen goeddunken."
+        },
+        "changes": {
+            "title": "Wijzigingen in voorwaarden",
+            "content": "We behouden ons het recht voor om deze voorwaarden op elk moment te wijzigen. Wijzigingen worden op onze website geplaatst en treden onmiddellijk in werking."
+        },
+        "governing": {
+            "title": "Toepasselijk recht",
+            "content": "Deze voorwaarden worden beheerst door Belgische wetgeving en eventuele geschillen worden opgelost door Belgische rechtbanken."
+        },
+        "contact": {
+            "title": "Contactinformatie",
+            "content": "Voor vragen over deze servicevoorwaarden, neem contact met ons op:",
+            "email": "E-mail: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Laatst bijgewerkt",
+        "lastUpdatedDate": "12 februari 2026"
+    },
+    "CookiePolicy": {
+        "title": "Cookiebeleid",
+        "subtitle": "Hoe we cookies en vergelijkbare technologieen gebruiken",
+        "what": {
+            "title": "Wat zijn cookies?",
+            "content": "Cookies zijn kleine tekstbestanden op uw apparaat om voorkeuren te onthouden en de site te verbeteren."
+        },
+        "types": {
+            "title": "Soorten cookies die we gebruiken",
+            "essential": "Essentiele cookies voor basisfunctionaliteit.",
+            "analytics": "Analytics-cookies om het gebruik te begrijpen.",
+            "support": "Supportcookies voor chat en ondersteuning."
+        },
+        "manage": {
+            "title": "Cookies beheren",
+            "content": "U kunt niet-essentiele cookies accepteren of weigeren in de banner en uw keuze altijd wijzigen via de footer."
+        },
+        "thirdParty": {
+            "title": "Cookies van derden",
+            "content": "Sommige functies (analytics, chat) kunnen eigen cookies plaatsen. Deze worden alleen gebruikt na toestemming."
+        },
+        "updates": {
+            "title": "Updates",
+            "content": "We kunnen dit beleid van tijd tot tijd bijwerken."
+        },
+        "contact": {
+            "title": "Contact",
+            "content": "Vragen over cookies? Email info@gentbandenservice.be."
+        },
+        "lastUpdated": "Laatst bijgewerkt",
+        "lastUpdatedDate": "13 februari 2026"
+    },
+    "Cookie": {
+        "title": "We gebruiken cookies",
+        "description": "We gebruiken cookies om uw ervaring te verbeteren en het gebruik van de site te meten. U kunt niet-essentiële cookies accepteren of weigeren.",
+        "accept": "Accepteren",
+        "reject": "Weigeren",
+        "manage": "Cookies beheren",
+        "policy": "Cookiebeleid"
     }
 }

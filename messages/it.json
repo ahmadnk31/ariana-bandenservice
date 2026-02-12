@@ -257,7 +257,13 @@
         "contactTitle": "Contatti | Centro Pneumatici Gent",
         "contactDescription": "Contattaci. Chiama +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
         "faqTitle": "FAQ | Prezzi e Orari",
-        "faqDescription": "FAQ su prezzi pneumatici, orari, montaggio e altro. Centro pneumatici aperto domenica? Sì, su appuntamento!"
+        "faqDescription": "FAQ su prezzi pneumatici, orari, montaggio e altro. Centro pneumatici aperto domenica? Sì, su appuntamento!",
+        "privacyTitle": "Informativa sulla Privacy | Gent Bandenservice",
+        "privacyDescription": "Informativa sulla privacy di Gent bandenservice. Scopri come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali.",
+        "termsTitle": "Termini di Servizio | Gent Bandenservice",
+        "termsDescription": "Termini di servizio di Gent bandenservice. Leggi i nostri termini e condizioni per l'utilizzo dei nostri servizi pneumatici.",
+        "cookiesTitle": "Informativa sui cookie | Gent Bandenservice",
+        "cookiesDescription": "Scopri come Gent bandenservice utilizza i cookie e come gestire le tue preferenze."
     },
     "DevBanner": {
         "message": "Siamo in modalità sviluppo. Tutti i pneumatici non sono reali; sono solo a scopo dimostrativo. I pneumatici reali arriveranno presto."
@@ -284,5 +290,162 @@
         "backToBlog": "Torna al Blog",
         "share": "Condividi questo post",
         "relatedPosts": "Post correlati"
+    },
+    "Privacy": {
+        "title": "Informativa sulla Privacy",
+        "subtitle": "Come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali",
+        "dataCollection": {
+            "title": "Informazioni che raccogliamo",
+            "content": "Raccogliamo vari tipi di informazioni per fornire e migliorare i nostri servizi:",
+            "personalInfo": "Informazioni di identificazione personale (nome, dettagli di contatto)",
+            "contactInfo": "Informazioni di contatto (indirizzo email, numero di telefono, indirizzo)",
+            "vehicleInfo": "Informazioni sul veicolo (marca, modello, anno, specifiche pneumatici)",
+            "serviceInfo": "Cronologia servizi e preferenze"
+        },
+        "dataUsage": {
+            "title": "Come utilizziamo le tue informazioni",
+            "content": "Utilizziamo le informazioni che raccogliamo per i seguenti scopi:",
+            "provideServices": "Per fornire e mantenere i nostri servizi pneumatici",
+            "processBookings": "Per elaborare appuntamenti e prenotazioni di servizi",
+            "communication": "Per comunicare con te riguardo servizi e appuntamenti",
+            "improve": "Per migliorare i nostri servizi e l'esperienza del cliente"
+        },
+        "dataSharing": {
+            "title": "Condivisione delle informazioni",
+            "content": "Non vendiamo, scambiamo o trasferiamo le tue informazioni personali a terzi senza il tuo consenso, eccetto come descritto in questa informativa sulla privacy o come richiesto dalla legge."
+        },
+        "dataSecurity": {
+            "title": "Sicurezza dei dati",
+            "content": "Implementiamo misure di sicurezza appropriate per proteggere le tue informazioni personali da accesso, alterazione, divulgazione o distruzione non autorizzati."
+        },
+        "userRights": {
+            "title": "I tuoi diritti",
+            "content": "Sotto il GDPR e le leggi sulla privacy applicabili, hai i seguenti diritti:",
+            "access": "Il diritto di accedere ai tuoi dati personali",
+            "rectification": "Il diritto di rettificare dati personali inesatti",
+            "erasure": "Il diritto alla cancellazione ('diritto all'oblio')",
+            "portability": "Il diritto alla portabilità dei dati",
+            "objection": "Il diritto di opporsi al trattamento"
+        },
+        "cookies": {
+            "title": "Cookies",
+            "content": "Utilizziamo i cookies per migliorare la tua esperienza di navigazione e analizzare il traffico del sito web. Puoi gestire le tue preferenze sui cookies tramite le impostazioni del tuo browser."
+        },
+        "contact": {
+            "title": "Contattaci",
+            "content": "Se hai domande su questa Informativa sulla Privacy, contattaci:",
+            "email": "Email: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Aggiornamenti della politica",
+            "content": "Potremmo aggiornare questa Informativa sulla Privacy di tanto in tanto. Ti notificheremo eventuali cambiamenti pubblicando la nuova politica su questa pagina."
+        },
+        "lastUpdated": "Ultimo aggiornamento",
+        "lastUpdatedDate": "12 febbraio 2026"
+    },
+    "Terms": {
+        "title": "Termini di Servizio",
+        "subtitle": "Termini e condizioni per l'utilizzo dei nostri servizi pneumatici",
+        "acceptance": {
+            "title": "Accettazione dei termini",
+            "content": "Utilizzando i nostri servizi, accetti di essere vincolato da questi Termini di Servizio. Se non accetti questi termini, per favore non utilizzare i nostri servizi."
+        },
+        "services": {
+            "title": "I nostri servizi",
+            "content": "Gent Bandenservice fornisce i seguenti servizi relativi ai pneumatici:",
+            "tireInstallation": "Installazione e montaggio pneumatici",
+            "tireRepair": "Riparazione e toppa pneumatici",
+            "wheelBalancing": "Servizi di equilibratura ruote",
+            "wheelAlignment": "Servizi di allineamento ruote",
+            "tireSales": "Vendita pneumatici nuovi e usati"
+        },
+        "booking": {
+            "title": "Appuntamenti e prenotazioni",
+            "content": "Tutti i servizi devono essere prenotati in anticipo. Ci riserviamo il diritto di riprogrammare gli appuntamenti a causa di circostanze impreviste.",
+            "cancellation": "Le cancellazioni devono essere effettuate almeno 24 ore in anticipo. Le cancellazioni tardive possono comportare addebiti."
+        },
+        "payment": {
+            "title": "Termini di pagamento",
+            "content": "Il pagamento è dovuto al completamento dei servizi salvo diverso accordo scritto.",
+            "methods": "Accettiamo contanti, carte di debito, carte di credito e bonifici bancari."
+        },
+        "warranty": {
+            "title": "Garanzia",
+            "content": "Tutti i servizi sono coperti dalla nostra garanzia standard contro difetti di lavorazione.",
+            "tires": "Le garanzie dei pneumatici sono fornite dal produttore e soggette ai loro termini e condizioni.",
+            "services": "Le garanzie del servizio coprono difetti nella nostra lavorazione per un periodo di 30 giorni dal completamento del servizio."
+        },
+        "liability": {
+            "title": "Limitazione di responsabilità",
+            "content": "La nostra responsabilità è limitata al costo dei servizi forniti. Non siamo responsabili per danni consequenziali.",
+            "limitation": "Raccomandiamo ispezioni regolari dei pneumatici e manutenzione per prestazioni e sicurezza ottimali."
+        },
+        "intellectualProperty": {
+            "title": "Proprietà intellettuale",
+            "content": "Tutti i contenuti del nostro sito web e materiali sono di proprietà di Gent Bandenservice e protetti dalle leggi applicabili sulla proprietà intellettuale."
+        },
+        "privacy": {
+            "title": "Privacy",
+            "content": "La tua privacy è importante per noi. Consulta la nostra Informativa sulla Privacy per capire come raccogliamo e utilizziamo le tue informazioni."
+        },
+        "termination": {
+            "title": "Termine",
+            "content": "Ci riserviamo il diritto di rifiutare il servizio a chiunque per qualsiasi motivo a nostra sola discrezione."
+        },
+        "changes": {
+            "title": "Modifiche ai termini",
+            "content": "Ci riserviamo il diritto di modificare questi termini in qualsiasi momento. Le modifiche saranno pubblicate sul nostro sito web e avranno effetto immediato."
+        },
+        "governing": {
+            "title": "Legge applicabile",
+            "content": "Questi termini sono regolati dalla legge belga e qualsiasi controversia sarà risolta nei tribunali belgi."
+        },
+        "contact": {
+            "title": "Informazioni di contatto",
+            "content": "Per domande su questi Termini di Servizio, contattaci:",
+            "email": "Email: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Ultimo aggiornamento",
+        "lastUpdatedDate": "12 febbraio 2026"
+    },
+    "CookiePolicy": {
+        "title": "Informativa sui cookie",
+        "subtitle": "Come utilizziamo i cookie e tecnologie simili",
+        "what": {
+            "title": "Cosa sono i cookie?",
+            "content": "I cookie sono piccoli file di testo memorizzati sul tuo dispositivo per ricordare le preferenze e migliorare il sito."
+        },
+        "types": {
+            "title": "Tipi di cookie che utilizziamo",
+            "essential": "Cookie essenziali per le funzionalita di base.",
+            "analytics": "Cookie analitici per comprendere l'uso del sito.",
+            "support": "Cookie di supporto per chat e strumenti di assistenza."
+        },
+        "manage": {
+            "title": "Gestione dei cookie",
+            "content": "Puoi accettare o rifiutare i cookie non essenziali nel banner e modificare la tua scelta in qualsiasi momento nel footer."
+        },
+        "thirdParty": {
+            "title": "Cookie di terze parti",
+            "content": "Alcune funzioni (analisi, chat) possono impostare i propri cookie. Vengono utilizzati solo dopo il consenso."
+        },
+        "updates": {
+            "title": "Aggiornamenti",
+            "content": "Possiamo aggiornare questa informativa di tanto in tanto."
+        },
+        "contact": {
+            "title": "Contatto",
+            "content": "Domande sui cookie? Scrivi a info@gentbandenservice.be."
+        },
+        "lastUpdated": "Ultimo aggiornamento",
+        "lastUpdatedDate": "13 febbraio 2026"
+    },
+    "Cookie": {
+        "title": "Usiamo i cookie",
+        "description": "Usiamo i cookie per migliorare la tua esperienza e misurare l'uso del sito. Puoi accettare o rifiutare i cookie non essenziali.",
+        "accept": "Accetta",
+        "reject": "Rifiuta",
+        "manage": "Gestisci cookie",
+        "policy": "Informativa sui cookie"
     }
 }

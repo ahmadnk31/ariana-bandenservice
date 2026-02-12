@@ -259,7 +259,13 @@
         "contactTitle": "Kontakt | Reifencenter Gent",
         "contactDescription": "Kontaktieren Sie unser Reifencenter in Gent. Rufen Sie an: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
         "faqTitle": "FAQ | Preise & Öffnungszeiten",
-        "faqDescription": "FAQ zu Reifenpreisen, Öffnungszeiten, Montage und mehr. Reifencenter Sonntag offen? Ja, nach Vereinbarung!"
+        "faqDescription": "FAQ zu Reifenpreisen, Öffnungszeiten, Montage und mehr. Reifencenter Sonntag offen? Ja, nach Vereinbarung!",
+        "privacyTitle": "Datenschutzerklärung | Gent Bandenservice",
+        "privacyDescription": "Datenschutzerklärung von Gent bandenservice. Erfahren Sie, wie wir Ihre persönlichen Daten sammeln, verwenden und schützen.",
+        "termsTitle": "Nutzungsbedingungen | Gent Bandenservice",
+        "termsDescription": "Nutzungsbedingungen von Gent bandenservice. Lesen Sie unsere Allgemeinen Geschäftsbedingungen für die Nutzung unserer Reifendienstleistungen.",
+        "cookiesTitle": "Cookie-Richtlinie | Gent Bandenservice",
+        "cookiesDescription": "Erfahren Sie, wie Gent bandenservice Cookies verwendet und wie Sie Ihre Einstellungen verwalten."
     },
     "DevBanner": {
         "message": "Wir befinden uns im Entwicklungsmodus. Alle Reifen sind nicht echt; sie dienen nur zu Demonstrationszwecken. Echte Reifen kommen bald."
@@ -285,6 +291,162 @@
         "views": "Aufrufe",
         "backToBlog": "Zurück zum Blog",
         "share": "Diesen Beitrag teilen",
-        "relatedPosts": "Ähnliche Beiträge"
+        "relatedPosts": "Ähnliche Beiträge"    },
+    "Privacy": {
+        "title": "Datenschutzerklärung",
+        "subtitle": "Wie wir Ihre persönlichen Daten sammeln, verwenden und schützen",
+        "dataCollection": {
+            "title": "Informationen, die wir sammeln",
+            "content": "Wir sammeln verschiedene Arten von Informationen, um unsere Dienstleistungen bereitzustellen und zu verbessern:",
+            "personalInfo": "Persönliche Identifikationsdaten (Name, Kontaktdaten)",
+            "contactInfo": "Kontaktinformationen (E-Mail-Adresse, Telefonnummer, Adresse)",
+            "vehicleInfo": "Fahrzeuginformationen (Marke, Modell, Jahr, Reifenspezifikationen)",
+            "serviceInfo": "Service-Historie und Präferenzen"
+        },
+        "dataUsage": {
+            "title": "Wie wir Ihre Informationen verwenden",
+            "content": "Wir verwenden die von uns gesammelten Informationen für folgende Zwecke:",
+            "provideServices": "Zur Bereitstellung und Wartung unserer Reifendienstleistungen",
+            "processBookings": "Zur Bearbeitung von Terminen und Servicebuchungen",
+            "communication": "Zur Kommunikation über Dienstleistungen und Termine",
+            "improve": "Zur Verbesserung unserer Dienstleistungen und Kundenerfahrung"
+        },
+        "dataSharing": {
+            "title": "Informationsaustausch",
+            "content": "Wir verkaufen, handeln oder übertragen Ihre persönlichen Daten nicht ohne Ihre Zustimmung an Dritte, außer wie in dieser Datenschutzerklärung beschrieben oder gesetzlich vorgeschrieben."
+        },
+        "dataSecurity": {
+            "title": "Datensicherheit",
+            "content": "Wir implementieren angemessene Sicherheitsmaßnahmen zum Schutz Ihrer persönlichen Daten vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung."
+        },
+        "userRights": {
+            "title": "Ihre Rechte",
+            "content": "Unter der DSGVO und anwendbaren Datenschutzgesetzen haben Sie folgende Rechte:",
+            "access": "Das Recht auf Zugang zu Ihren personenbezogenen Daten",
+            "rectification": "Das Recht auf Berichtigung unrichtiger personenbezogener Daten",
+            "erasure": "Das Recht auf Löschung ('Recht auf Vergessenwerden')",
+            "portability": "Das Recht auf Datenübertragbarkeit",
+            "objection": "Das Recht auf Widerspruch gegen die Verarbeitung"
+        },
+        "cookies": {
+            "title": "Cookies",
+            "content": "Wir verwenden Cookies, um Ihr Browser-Erlebnis zu verbessern und Website-Traffic zu analysieren. Sie können Ihre Cookie-Präferenzen über Ihre Browser-Einstellungen verwalten."
+        },
+        "contact": {
+            "title": "Kontaktieren Sie uns",
+            "content": "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte:",
+            "email": "E-Mail: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Richtlinien-Updates",
+            "content": "Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir werden Sie über Änderungen informieren, indem wir die neue Richtlinie auf dieser Seite veröffentlichen."
+        },
+        "lastUpdated": "Zuletzt aktualisiert",
+        "lastUpdatedDate": "12. Februar 2026"
+    },
+    "Terms": {
+        "title": "Nutzungsbedingungen",
+        "subtitle": "Bedingungen für die Nutzung unserer Reifendienstleistungen",
+        "acceptance": {
+            "title": "Annahme der Bedingungen",
+            "content": "Durch die Nutzung unserer Dienstleistungen erklären Sie sich mit diesen Nutzungsbedingungen einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, nutzen Sie bitte unsere Dienstleistungen nicht."
+        },
+        "services": {
+            "title": "Unsere Dienstleistungen",
+            "content": "Gent Bandenservice bietet folgende reifenbezogene Dienstleistungen:",
+            "tireInstallation": "Reifeninstallation und -montage",
+            "tireRepair": "Reifenreparatur und -flicken",
+            "wheelBalancing": "Radauswuchtung",
+            "wheelAlignment": "Radausrichtung",
+            "tireSales": "Verkauf neuer und gebrauchter Reifen"
+        },
+        "booking": {
+            "title": "Termine und Buchungen",
+            "content": "Alle Dienstleistungen müssen im Voraus gebucht werden. Wir behalten uns das Recht vor, Termine aufgrund unvorhergesehener Umstände zu verschieben.",
+            "cancellation": "Stornierungen müssen mindestens 24 Stunden im Voraus erfolgen. Späte Stornierungen können Gebühren verursachen."
+        },
+        "payment": {
+            "title": "Zahlungsbedingungen",
+            "content": "Die Zahlung ist bei Abschluss der Dienstleistungen fällig, sofern nicht anders schriftlich vereinbart.",
+            "methods": "Wir akzeptieren Bargeld, Debitkarten, Kreditkarten und Banküberweisungen."
+        },
+        "warranty": {
+            "title": "Garantie",
+            "content": "Alle Dienstleistungen sind mit unserer Standardgarantie gegen Mängel in der Verarbeitung abgedeckt.",
+            "tires": "Reifengarantien werden vom Hersteller bereitgestellt und unterliegen deren Geschäftsbedingungen.",
+            "services": "Servicegarantien decken Mängel in unserer Verarbeitung für einen Zeitraum von 30 Tagen nach Serviceabschluss ab."
+        },
+        "liability": {
+            "title": "Haftungsbeschränkung",
+            "content": "Unsere Haftung ist auf die Kosten der erbrachten Dienstleistungen beschränkt. Wir sind nicht verantwortlich für Folgeschäden.",
+            "limitation": "Wir empfehlen regelmäßige Reifeninspektionen und -wartung für optimale Sicherheit und Leistung."
+        },
+        "intellectualProperty": {
+            "title": "Geistiges Eigentum",
+            "content": "Alle Inhalte auf unserer Website und in unseren Materialien sind Eigentum von Gent Bandenservice und werden durch anwendbare Gesetze zum geistigen Eigentum geschützt."
+        },
+        "privacy": {
+            "title": "Datenschutz",
+            "content": "Ihr Datenschutz ist uns wichtig. Bitte lesen Sie unsere Datenschutzerklärung, um zu verstehen, wie wir Ihre Informationen sammeln und verwenden."
+        },
+        "termination": {
+            "title": "Kündigung",
+            "content": "Wir behalten uns das Recht vor, jedem aus beliebigem Grund nach unserem alleinigen Ermessen die Dienstleistung zu verweigern."
+        },
+        "changes": {
+            "title": "Änderungen der Bedingungen",
+            "content": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Änderungen werden auf unserer Website veröffentlicht und treten sofort in Kraft."
+        },
+        "governing": {
+            "title": "Geltendes Recht",
+            "content": "Diese Bedingungen unterliegen belgischem Recht und alle Streitigkeiten werden vor belgischen Gerichten beigelegt."
+        },
+        "contact": {
+            "title": "Kontaktinformationen",
+            "content": "Für Fragen zu diesen Nutzungsbedingungen kontaktieren Sie uns bitte:",
+            "email": "E-Mail: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Zuletzt aktualisiert",
+        "lastUpdatedDate": "12. Februar 2026"
+    },
+    "CookiePolicy": {
+        "title": "Cookie-Richtlinie",
+        "subtitle": "Wie wir Cookies und ähnliche Technologien verwenden",
+        "what": {
+            "title": "Was sind Cookies?",
+            "content": "Cookies sind kleine Textdateien auf Ihrem Gerät, um Einstellungen zu speichern und die Website zu verbessern."
+        },
+        "types": {
+            "title": "Arten von Cookies, die wir verwenden",
+            "essential": "Essenzielle Cookies für die Grundfunktionalität.",
+            "analytics": "Analyse-Cookies, um die Nutzung der Website zu verstehen.",
+            "support": "Support-Cookies für Chat und Support-Tools."
+        },
+        "manage": {
+            "title": "Cookies verwalten",
+            "content": "Sie können nicht notwendige Cookies im Banner akzeptieren oder ablehnen und Ihre Auswahl jederzeit in der Fußzeile ändern."
+        },
+        "thirdParty": {
+            "title": "Cookies von Drittanbietern",
+            "content": "Einige Funktionen (Analyse, Chat) können eigene Cookies setzen. Diese werden nur nach Einwilligung verwendet."
+        },
+        "updates": {
+            "title": "Updates",
+            "content": "Wir können diese Richtlinie von Zeit zu Zeit aktualisieren."
+        },
+        "contact": {
+            "title": "Kontakt",
+            "content": "Fragen zu Cookies? Schreiben Sie an info@gentbandenservice.be."
+        },
+        "lastUpdated": "Zuletzt aktualisiert",
+        "lastUpdatedDate": "13. Februar 2026"
+    },
+    "Cookie": {
+        "title": "Wir verwenden Cookies",
+        "description": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und die Nutzung der Website zu messen. Sie können nicht notwendige Cookies akzeptieren oder ablehnen.",
+        "accept": "Akzeptieren",
+        "reject": "Ablehnen",
+        "manage": "Cookies verwalten",
+        "policy": "Cookie-Richtlinie"
     }
 }

@@ -259,7 +259,13 @@
         "contactTitle": "Contact | Tire Shop Ghent",
         "contactDescription": "Contact our tire shop in Ghent. Call +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
         "faqTitle": "FAQ | Prices & Opening Hours",
-        "faqDescription": "FAQ about tire prices, opening hours, fitting and more. Tire shop open Sunday? Yes, by appointment!"
+        "faqDescription": "FAQ about tire prices, opening hours, fitting and more. Tire shop open Sunday? Yes, by appointment!",
+        "privacyTitle": "Privacy Policy | Gent Bandenservice",
+        "privacyDescription": "Privacy policy for Gent bandenservice. Learn how we collect, use, and protect your personal information.",
+        "termsTitle": "Terms of Service | Gent Bandenservice",
+        "termsDescription": "Terms of service for Gent bandenservice. Read our terms and conditions for using our tire services.",
+        "cookiesTitle": "Cookie Policy | Gent Bandenservice",
+        "cookiesDescription": "Learn how Gent bandenservice uses cookies and how you can manage your preferences."
     },
     "DevBanner": {
         "message": "We are in development mode. All tires are not real; it is only for demo purposes. Real tires will arrive soon."
@@ -286,5 +292,162 @@
         "backToBlog": "Back to Blog",
         "share": "Share this post",
         "relatedPosts": "Related Posts"
+    },
+    "Privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "How we collect, use, and protect your personal information",
+        "dataCollection": {
+            "title": "Information We Collect",
+            "content": "We collect various types of information to provide and improve our services:",
+            "personalInfo": "Personal identification information (name, contact details)",
+            "contactInfo": "Contact information (email address, phone number, address)",
+            "vehicleInfo": "Vehicle information (make, model, year, tire specifications)",
+            "serviceInfo": "Service history and preferences"
+        },
+        "dataUsage": {
+            "title": "How We Use Your Information",
+            "content": "We use the information we collect for the following purposes:",
+            "provideServices": "To provide and maintain our tire services",
+            "processBookings": "To process appointments and service bookings",
+            "communication": "To communicate with you about services and appointments",
+            "improve": "To improve our services and customer experience"
+        },
+        "dataSharing": {
+            "title": "Information Sharing",
+            "content": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this privacy policy or as required by law."
+        },
+        "dataSecurity": {
+            "title": "Data Security",
+            "content": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+        },
+        "userRights": {
+            "title": "Your Rights",
+            "content": "Under GDPR and applicable privacy laws, you have the following rights:",
+            "access": "The right to access your personal data",
+            "rectification": "The right to rectify inaccurate personal data",
+            "erasure": "The right to erasure ('right to be forgotten')",
+            "portability": "The right to data portability",
+            "objection": "The right to object to processing"
+        },
+        "cookies": {
+            "title": "Cookies",
+            "content": "We use cookies to enhance your browsing experience and analyze website traffic. You can manage your cookie preferences through your browser settings."
+        },
+        "contact": {
+            "title": "Contact Us",
+            "content": "If you have any questions about this Privacy Policy, please contact us:",
+            "email": "Email: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Policy Updates",
+            "content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page."
+        },
+        "lastUpdated": "Last updated",
+        "lastUpdatedDate": "February 12, 2026"
+    },
+    "Terms": {
+        "title": "Terms of Service",
+        "subtitle": "Terms and conditions for using our tire services",
+        "acceptance": {
+            "title": "Acceptance of Terms",
+            "content": "By using our services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."
+        },
+        "services": {
+            "title": "Our Services",
+            "content": "Gent Bandenservice provides the following tire-related services:",
+            "tireInstallation": "Tire installation and mounting",
+            "tireRepair": "Tire repair and patching",
+            "wheelBalancing": "Wheel balancing services",
+            "wheelAlignment": "Wheel alignment services",
+            "tireSales": "New and used tire sales"
+        },
+        "booking": {
+            "title": "Appointments and Bookings",
+            "content": "All services must be booked in advance. We reserve the right to reschedule appointments due to unforeseen circumstances.",
+            "cancellation": "Cancellations must be made at least 24 hours in advance. Late cancellations may incur charges."
+        },
+        "payment": {
+            "title": "Payment Terms",
+            "content": "Payment is due upon completion of services unless otherwise agreed upon in writing.",
+            "methods": "We accept cash, debit cards, credit cards, and bank transfers."
+        },
+        "warranty": {
+            "title": "Warranty",
+            "content": "All services come with our standard warranty against defects in workmanship.",
+            "tires": "Tire warranties are provided by the manufacturer and subject to their terms and conditions.",
+            "services": "Service warranties cover defects in our workmanship for a period of 30 days from service completion."
+        },
+        "liability": {
+            "title": "Limitation of Liability",
+            "content": "Our liability is limited to the cost of the services provided. We are not responsible for consequential damages.",
+            "limitation": "We recommend regular tire inspections and maintenance for optimal safety and performance."
+        },
+        "intellectualProperty": {
+            "title": "Intellectual Property",
+            "content": "All content on our website and materials is owned by Gent Bandenservice and protected by applicable intellectual property laws."
+        },
+        "privacy": {
+            "title": "Privacy",
+            "content": "Your privacy is important to us. Please review our Privacy Policy to understand how we collect and use your information."
+        },
+        "termination": {
+            "title": "Termination",
+            "content": "We reserve the right to refuse service to anyone for any reason at our sole discretion."
+        },
+        "changes": {
+            "title": "Changes to Terms",
+            "content": "We reserve the right to modify these terms at any time. Changes will be posted on our website and take effect immediately."
+        },
+        "governing": {
+            "title": "Governing Law",
+            "content": "These terms are governed by Belgian law and any disputes will be resolved in Belgian courts."
+        },
+        "contact": {
+            "title": "Contact Information",
+            "content": "For questions about these Terms of Service, please contact us:",
+            "email": "Email: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Last updated",
+        "lastUpdatedDate": "February 12, 2026"
+    },
+    "CookiePolicy": {
+        "title": "Cookie Policy",
+        "subtitle": "How we use cookies and similar technologies",
+        "what": {
+            "title": "What are cookies?",
+            "content": "Cookies are small text files stored on your device to remember preferences and improve the site."
+        },
+        "types": {
+            "title": "Types of cookies we use",
+            "essential": "Essential cookies for core functionality.",
+            "analytics": "Analytics cookies to understand site usage.",
+            "support": "Support cookies for chat and support tools."
+        },
+        "manage": {
+            "title": "Managing cookies",
+            "content": "You can accept or reject non-essential cookies in the banner and change your choice anytime in the footer."
+        },
+        "thirdParty": {
+            "title": "Third-party cookies",
+            "content": "Some features (analytics, chat) may set their own cookies. They are used only after consent."
+        },
+        "updates": {
+            "title": "Updates",
+            "content": "We may update this policy from time to time."
+        },
+        "contact": {
+            "title": "Contact",
+            "content": "Questions about cookies? Email info@gentbandenservice.be."
+        },
+        "lastUpdated": "Last updated",
+        "lastUpdatedDate": "February 13, 2026"
+    },
+    "Cookie": {
+        "title": "We use cookies",
+        "description": "We use cookies to improve your experience and to measure site usage. You can accept or reject non-essential cookies.",
+        "accept": "Accept",
+        "reject": "Reject",
+        "manage": "Manage cookies",
+        "policy": "Cookie policy"
     }
 }

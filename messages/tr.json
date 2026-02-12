@@ -258,7 +258,9 @@
         "contactTitle": "İletişim | Lastik Merkezi Gent",
         "contactDescription": "Bize ulaşın. Arayın: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
         "faqTitle": "SSS | Fiyatlar ve Çalışma Saatleri",
-        "faqDescription": "Lastik fiyatları, çalışma saatleri, montaj ve daha fazlası hakkında SSS. Lastik merkezi pazar açık mı? Evet, randevu ile!"
+        "faqDescription": "Lastik fiyatları, çalışma saatleri, montaj ve daha fazlası hakkında SSS. Lastik merkezi pazar açık mı? Evet, randevu ile!",
+        "cookiesTitle": "Cerez Politikasi | Gent Bandenservice",
+        "cookiesDescription": "Gent bandenservice'in cerezleri nasil kullandigini ve tercihlerinizi nasil yoneteceginizi ogrenin."
     },
     "DevBanner": {
         "message": "Hala geliştirme aşamasındayız. Tüm lastikler gerçek değildir; sadece demo amaçlıdır. Gerçek lastikler yakında gelecek."
@@ -280,8 +282,167 @@
         "allCategories": "Tüm Kategoriler",
         "noPosts": "Yazı bulunamadı",
         "noPostsDescription": "Bu kategoride şu anda blog yazısı bulunmamaktadır.",
-        "readTime": "okuma süresi",        "views": "görüntülenme",        "backToBlog": "Blog'a Dön",
+        "readTime": "okuma süresi",
+        "views": "görüntülenme",
+        "backToBlog": "Blog'a Dön",
         "share": "Bu yazıyı paylaş",
         "relatedPosts": "İlgili Yazılar"
+    },
+    "Privacy": {
+        "title": "Gizlilik Politikası",
+        "subtitle": "Kişisel bilgilerinizi nasıl topladığımız, kullandığımız ve koruduğumuz",
+        "dataCollection": {
+            "title": "Topladığımız bilgiler",
+            "content": "Hizmetlerimizi sağlamak ve geliştirmek için çeşitli tür bilgiler topluyoruz:",
+            "personalInfo": "Kişisel kimlik bilgileri (ad, iletişim bilgileri)",
+            "contactInfo": "İletişim bilgileri (e-posta adresi, telefon numarası, adres)",
+            "vehicleInfo": "Araç bilgileri (marka, model, yıl, lastik özellikleri)",
+            "serviceInfo": "Hizmet geçmişi ve tercihler"
+        },
+        "dataUsage": {
+            "title": "Bilgilerinizi nasıl kullanıyoruz",
+            "content": "Topladığımız bilgileri aşağıdaki amaçlarla kullanıyoruz:",
+            "provideServices": "Lastik hizmetlerimizi sağlamak ve sürdürmek için",
+            "processBookings": "Randevuları ve hizmet rezervasyonlarını işlemek için",
+            "communication": "Hizmetler ve randevular hakkında sizinle iletişim kurmak için",
+            "improve": "Hizmetlerimizi ve müşteri deneyimini geliştirmek için"
+        },
+        "dataSharing": {
+            "title": "Bilgi paylaşımı",
+            "content": "Bu gizlilik politikasında açıklanan durumlar veya yasaların gerektirdiği durumlar dışında, kişisel bilgilerinizi sizin onayınız olmadan üçüncü şahıslara satmaz, takaslamaz veya aktarmayız."
+        },
+        "dataSecurity": {
+            "title": "Veri güvenliği",
+            "content": "Kişisel bilgilerinizi yetkisiz erişim, değiştirme, açıklama veya imha edilmeye karşı korumak için uygun güvenlik önlemlerini alıyoruz."
+        },
+        "userRights": {
+            "title": "Haklarınız",
+            "content": "GDPR ve geçerli gizlilik yasaları altında aşağıdaki haklarınız vardır:",
+            "access": "Kişisel verilerinize erişim hakkı",
+            "rectification": "Yanlış kişisel verileri düzelttirme hakkı",
+            "erasure": "Silme hakkı ('unutulma hakkı')",
+            "portability": "Veri taşınabilirliği hakkı",
+            "objection": "İşlemeye itiraz hakkı"
+        },
+        "cookies": {
+            "title": "Cookieler",
+            "content": "Tarayıcı deneyiminizi geliştirmek ve web sitesi trafiğini analiz etmek için çerezler kullanıyoruz. Cookie tercihlerinizi tarayıcı ayarlarınız aracılığıyla yönetebilirsiniz."
+        },
+        "contact": {
+            "title": "Bize ulaşın",
+            "content": "Bu Gizlilik Politikası hakkında sorularınız varsa, lütfen bizimle iletişime geçin:",
+            "email": "E-posta: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Politika güncellemeleri",
+            "content": "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Yeni politikayı bu sayfada yayumlayarak tüm değişiklikleri size bildireceğiz."
+        },
+        "lastUpdated": "Son güncelleme",
+        "lastUpdatedDate": "12 Şubat 2026"
+    },
+    "Terms": {
+        "title": "Hizmet Şartları",
+        "subtitle": "Lastik hizmetlerimizi kullanmak için şartlar ve koşullar",
+        "acceptance": {
+            "title": "Şartların kabul edilmesi",
+            "content": "Hizmetlerimizi kullanarak bu Hizmet Şartlarına bağlı olmayı kabul edersiniz. Bu şartları kabul etmiyorsanız, lütfen hizmetlerimizi kullanmayın."
+        },
+        "services": {
+            "title": "Hizmetlerimiz",
+            "content": "Gent Bandenservice aşağıdaki lastik ile ilgili hizmetleri sağlar:",
+            "tireInstallation": "Lastik kurulumu ve montajı",
+            "tireRepair": "Lastik onarımı ve yamalama",
+            "wheelBalancing": "Tekerlek balans hizmetleri",
+            "wheelAlignment": "Tekerlek ayar hizmetleri",
+            "tireSales": "Yeni ve ikinci el lastik satışı"
+        },
+        "booking": {
+            "title": "Randevular ve rezervasyonlar",
+            "content": "Tüm hizmetler önceden rezerve edilmelidir. Önceden görülemeyecek durumlar nedeniyle randevuları yeniden planlamayı hak olarak saklı tutuyoruz.",
+            "cancellation": "İptaller en az 24 saat önceden yapılmalıdır. Geç iptaller ücrete tabi olabilir."
+        },
+        "payment": {
+            "title": "Ödeme şartları",
+            "content": "Yazılı olarak aksi kararlaştırılmadıkça ödeme hizmetlerin tamamlanması üzerine vadelidir.",
+            "methods": "Nakit, banka kartı, kredi kartı ve banka havalesini kabul ediyoruz."
+        },
+        "warranty": {
+            "title": "Garanti",
+            "content": "Tüm hizmetler işçilik hatalarına karşı standart garantimizle gelir.",
+            "tires": "Lastik garantileri üretici tarafından sağlanır ve onların şart ve koşullarına tabidir.",
+            "services": "Hizmet garantileri, hizmet tamamlanmasından itibaren 30 gün boyunca işçiliğimizdeki hataları kapsar."
+        },
+        "liability": {
+            "title": "Sorumluluk sınırı",
+            "content": "Sorumluluğumuz sağlanan hizmetlerin maliyetiyle sınırlıdır. Sonuç zararlardan sorumlu değiliz.",
+            "limitation": "Optimum güvenlik ve performans için düzenli lastik kontrolleri ve bakımını öneriyoruz."
+        },
+        "intellectualProperty": {
+            "title": "Fikri mülkiyet",
+            "content": "Web sitemizdeki tüm içerik ve materyaller Gent Bandenservice'in mülkiyetindedir ve geçerli fikri mülkiyet yasalarıyla korunur."
+        },
+        "privacy": {
+            "title": "Gizlilik",
+            "content": "Gizliliğiniz bizim için önemlidir. Bilgilerinizi nasıl topladığımız ve kullandığımızı anlamak için lütfen Gizlilik Politikamızı inceleyin."
+        },
+        "termination": {
+            "title": "Fesih",
+            "content": "Herhangi bir nedenle tek taraflı kendi takdirimizle herhangi birine hizmet vermeyi reddetme hakkını saklı tutuyoruz."
+        },
+        "changes": {
+            "title": "Şartlarda değişiklikler",
+            "content": "Bu şartları istediğimiz zaman değiştirme hakkını saklı tutuyoruz. Değişiklikler web sitemizde yayınlanacak ve hemen yürürlüğe girecektir."
+        },
+        "governing": {
+            "title": "Geçerli hukuk",
+            "content": "Bu şartlar Belçika hukuku tarafından yönetilir ve tüm anlaşmazlıklar Belçika mahkemelerinde çözülür."
+        },
+        "contact": {
+            "title": "İletişim bilgileri",
+            "content": "Bu Hizmet Şartları hakkında sorularınız için lütfen bizimle iletişime geçin:",
+            "email": "E-posta: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Son güncelleme",
+        "lastUpdatedDate": "12 Şubat 2026"
+    },
+    "CookiePolicy": {
+        "title": "Cerez Politikasi",
+        "subtitle": "Cerezleri ve benzer teknolojileri nasil kullaniyoruz",
+        "what": {
+            "title": "Cerez nedir?",
+            "content": "Cerezler, tercihleri hatirlamak ve siteyi iyilestirmek icin cihazinizda saklanan kucuk metin dosyalaridir."
+        },
+        "types": {
+            "title": "Kullandigimiz cerez turleri",
+            "essential": "Temel islevler icin gerekli cerezler.",
+            "analytics": "Site kullanimini anlamak icin analiz cerezleri.",
+            "support": "Sohbet ve destek araclari icin destek cerezleri."
+        },
+        "manage": {
+            "title": "Cerezleri yonetme",
+            "content": "Gerekli olmayan cerezleri afiste kabul edebilir veya reddedebilir, seciminizi alt bilgiden istediginiz zaman degistirebilirsiniz."
+        },
+        "thirdParty": {
+            "title": "Ucuncu taraf cerezleri",
+            "content": "Bazi ozellikler (analiz, sohbet) kendi cerezlerini ayarlayabilir. Yalnizca onaydan sonra kullanilir."
+        },
+        "updates": {
+            "title": "Guncellemeler",
+            "content": "Bu politikayi zaman zaman guncelleyebiliriz."
+        },
+        "contact": {
+            "title": "Iletisim",
+            "content": "Cerezlerle ilgili sorular? info@gentbandenservice.be adresine yazin."
+        },
+        "lastUpdated": "Son guncelleme",
+        "lastUpdatedDate": "13 Subat 2026"
+    },
+    "Cookie": {
+        "title": "Çerezler kullanıyoruz",
+        "description": "Tarayıcı deneyiminizi iyileştirmek ve site kullanımını ölçmek için çerezler kullanıyoruz. Gerekli olmayan çerezleri kabul edebilir veya reddedebilirsiniz.",
+        "accept": "Kabul et",
+        "reject": "Reddet",
+        "manage": "Çerezleri yönet",
+        "policy": "Çerez politikası"
     }
 }

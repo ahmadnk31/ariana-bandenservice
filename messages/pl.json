@@ -258,7 +258,9 @@
         "contactTitle": "Kontakt | Centrum Opon Gandawa",
         "contactDescription": "Skontaktuj się z nami. Zadzwoń: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
         "faqTitle": "FAQ | Ceny i Godziny",
-        "faqDescription": "FAQ o cenach opon, godzinach, montażu i więcej. Centrum opon czynne w niedzielę? Tak, po umówieniu!"
+        "faqDescription": "FAQ o cenach opon, godzinach, montażu i więcej. Centrum opon czynne w niedzielę? Tak, po umówieniu!",
+        "cookiesTitle": "Polityka plików cookie | Gent Bandenservice",
+        "cookiesDescription": "Dowiedz się, jak Gent bandenservice używa plików cookie i jak zarządzać preferencjami."
     },
     "DevBanner": {
         "message": "Nadal jesteśmy w trybie programowania. Wszystkie opony nie są prawdziwe; służą wyłącznie do celów demonstracyjnych. Prawdziwe opony wkrótce."
@@ -284,6 +286,162 @@
         "views": "wyświetleń",
         "backToBlog": "Powrót do Bloga",
         "share": "Udostępnij ten wpis",
-        "relatedPosts": "Powiązane wpisy"
+        "relatedPosts": "Powiązane wpisy"    },
+    "Privacy": {
+        "title": "Polityka Prywatności",
+        "subtitle": "Jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe",
+        "dataCollection": {
+            "title": "Informacje, które zbieramy",
+            "content": "Zbieramy różne typy informacji, aby świadczyć i usprawniać nasze usługi:",
+            "personalInfo": "Dane identyfikacyjne (imię, dane kontaktowe)",
+            "contactInfo": "Informacje kontaktowe (adres e-mail, numer telefonu, adres)",
+            "vehicleInfo": "Informacje o pojeździe (marka, model, rok, specyfikacje opon)",
+            "serviceInfo": "Historia usług i preferencje"
+        },
+        "dataUsage": {
+            "title": "Jak używamy Twoich informacji",
+            "content": "Wykorzystujemy zbierane informacje w następujących celach:",
+            "provideServices": "W celu świadczenia i utrzymania naszych usług oponiarskich",
+            "processBookings": "W celu przetwarzania wizyt i rezerwacji usług",
+            "communication": "W celu komunikacji z Tobą na temat usług i wizyt",
+            "improve": "W celu usprawnienia naszych usług i doświadczenia klientów"
+        },
+        "dataSharing": {
+            "title": "Udostępnianie informacji",
+            "content": "Nie sprzedajemy, nie wymieniamy ani nie przekazujemy Twoich danych osobowych stronom trzecim bez Twojej zgody, z wyjątkiem sytuacji opisanych w tej polityce prywatności lub wymaganych przez prawo."
+        },
+        "dataSecurity": {
+            "title": "Bezpieczeństwo danych",
+            "content": "Wdrażamy odpowiednie środki bezpieczeństwa, aby chronić Twoje dane osobowe przed nieautoryzowanym dostępem, zmianami, ujawnieniem lub zniszczeniem."
+        },
+        "userRights": {
+            "title": "Twoje prawa",
+            "content": "Zgodnie z RODO i obowiązującymi prawami o prywatności, masz następujące prawa:",
+            "access": "Prawo dostępu do Twoich danych osobowych",
+            "rectification": "Prawo do sprostowania nieprawidłowych danych osobowych",
+            "erasure": "Prawo do usunięcia ('prawo do zapomnienia')",
+            "portability": "Prawo do przenošenia danych",
+            "objection": "Prawo do sprzeciwu wobec przetwarzania"
+        },
+        "cookies": {
+            "title": "Pliki cookie",
+            "content": "Używamy plików cookie, aby poprawić Twoje doświadczenie przeglądania i analizować ruch na stronie. Możesz zarządzać preferencjami plików cookie poprzez ustawienia przeglądarki."
+        },
+        "contact": {
+            "title": "Skontaktuj się z nami",
+            "content": "Jeśli masz pytania dotyczące tej Polityki Prywatności, skontaktuj się z nami:",
+            "email": "E-mail: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Aktualizacje polityki",
+            "content": "Możemy okresowo aktualizować tę Politykę Prywatności. Powiadomimy Cię o wszelkich zmianach publikując nową politykę na tej stronie."
+        },
+        "lastUpdated": "Ostatnia aktualizacja",
+        "lastUpdatedDate": "12 lutego 2026"
+    },
+    "Terms": {
+        "title": "Warunki Usługi",
+        "subtitle": "Warunki korzystania z naszych usług oponiarskich",
+        "acceptance": {
+            "title": "Akceptacja warunków",
+            "content": "Korzystając z naszych usług, zgadzasz się na te Warunki Usługi. Jeśli nie zgadzasz się z tymi warunkami, nie korzystaj z naszych usług."
+        },
+        "services": {
+            "title": "Nasze usługi",
+            "content": "Gent Bandenservice świadczy następujące usługi związane z oponami:",
+            "tireInstallation": "Montaż i instalacja opon",
+            "tireRepair": "Naprawa i łatanie opon",
+            "wheelBalancing": "Usługi wyważania kół",
+            "wheelAlignment": "Usługi geometrii kół",
+            "tireSales": "Sprzedaż nowych i używanych opon"
+        },
+        "booking": {
+            "title": "Wizyty i rezerwacje",
+            "content": "Wszystkie usługi muszą być zarezerwowane z wyprzedzeniem. Zastrzegamy sobie prawo do przenieśienia wizyt z powodu nieprzewidzianych okoliczności.",
+            "cancellation": "Anulowania muszą być dokonane co najmniej 24 godziny wcześniej. Późne anulowania mogą wiązać się z opłatami."
+        },
+        "payment": {
+            "title": "Warunki płatności",
+            "content": "Płatność należy się po zakończeniu usług, chyba że uzgodniono inaczej na piśmie.",
+            "methods": "Akceptujemy gotówkę, karty debetowe, karty kredytowe i przelewy bankowe."
+        },
+        "warranty": {
+            "title": "Gwarancja",
+            "content": "Wszystkie usługi objęte są naszą standardową gwarancją na wady wykonania.",
+            "tires": "Gwarancje na opony są udzielane przez producenta i podlegają ich warunkom.",
+            "services": "Gwarancje usług obejmują wady naszego wykonania przez okres 30 dni od zakończenia usługi."
+        },
+        "liability": {
+            "title": "Ograniczenie odpowiedzialności",
+            "content": "Nasza odpowiedzialność jest ograniczona do kosztów świadczonych usług. Nie odpowiadamy za szkody wtórne.",
+            "limitation": "Zalecamy regularne kontrole opon i konserwację dla optymalnego bezpieczeństwa i wydajności."
+        },
+        "intellectualProperty": {
+            "title": "Własność intelektualna",
+            "content": "Cała zawartość naszej strony internetowej i materiałów jest własnością Gent Bandenservice i chroniona odpowiednimi prawami własności intelektualnej."
+        },
+        "privacy": {
+            "title": "Prywatność",
+            "content": "Twoja prywatność jest dla nas ważna. Zapoznaj się z naszą Polityką Prywatności, aby zrozumieć, jak zbieramy i wykorzystujemy Twoje informacje."
+        },
+        "termination": {
+            "title": "Rozerwanie",
+            "content": "Zastrzegamy sobie prawo do odmowy usługi każdemu z dowolnego powodu według naszego uznania."
+        },
+        "changes": {
+            "title": "Zmiany warunków",
+            "content": "Zastrzegamy sobie prawo do modyfikacji tych warunków w dowolnym momencie. Zmiany zostaną opublikowane na naszej stronie i wejdą w życie natychmiast."
+        },
+        "governing": {
+            "title": "Prawo obowiązujące",
+            "content": "Te warunki podlegają prawu belgijskiemu i wszelkie spory będą rozstrzygane w sądach belgijskich."
+        },
+        "contact": {
+            "title": "Informacje kontaktowe",
+            "content": "W przypadku pytań dotyczących tych Warunków Usługi, skontaktuj się z nami:",
+            "email": "E-mail: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Ostatnia aktualizacja",
+        "lastUpdatedDate": "12 lutego 2026"
+    },
+    "CookiePolicy": {
+        "title": "Polityka plików cookie",
+        "subtitle": "Jak używamy plików cookie i podobnych technologii",
+        "what": {
+            "title": "Czym są pliki cookie?",
+            "content": "Pliki cookie to małe pliki tekstowe przechowywane na Twoim urządzeniu, aby zapamiętywać preferencje i ulepszać witrynę."
+        },
+        "types": {
+            "title": "Rodzaje plików cookie, których używamy",
+            "essential": "Niezbędne pliki cookie dla podstawowej funkcjonalności.",
+            "analytics": "Pliki analityczne, aby zrozumieć użycie witryny.",
+            "support": "Pliki cookie wsparcia dla czatu i narzędzi pomocy."
+        },
+        "manage": {
+            "title": "Zarządzanie plikami cookie",
+            "content": "Możesz zaakceptować lub odrzucić niekonieczne pliki cookie w banerze i zmienić wybór w stopce."
+        },
+        "thirdParty": {
+            "title": "Pliki cookie stron trzecich",
+            "content": "Niektóre funkcje (analityka, czat) mogą ustawiać własne pliki cookie. Są używane tylko po zgodzie."
+        },
+        "updates": {
+            "title": "Aktualizacje",
+            "content": "Możemy od czasu do czasu aktualizować tę politykę."
+        },
+        "contact": {
+            "title": "Kontakt",
+            "content": "Pytania o pliki cookie? Napisz na info@gentbandenservice.be."
+        },
+        "lastUpdated": "Ostatnia aktualizacja",
+        "lastUpdatedDate": "13 lutego 2026"
+    },
+    "Cookie": {
+        "title": "Używamy plików cookie",
+        "description": "Używamy plików cookie, aby poprawić Twoje doświadczenie i mierzyć użycie strony. Możesz zaakceptować lub odrzucić niekonieczne pliki cookie.",
+        "accept": "Akceptuj",
+        "reject": "Odrzuć",
+        "manage": "Zarządzaj plikami cookie",
+        "policy": "Polityka plików cookie"
     }
 }
