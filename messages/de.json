@@ -1,0 +1,452 @@
+{
+    "Header": {
+        "home": "Startseite",
+        "services": "Dienstleistungen",
+        "tires": "Reifen",
+        "contact": "Kontakt",
+        "admin": "Admin",
+        "searchPlaceholder": "Reifen suchen...",
+        "blog": "Blog"
+    },
+    "Hero": {
+        "title1": "Reifencenter",
+        "title2": "Gent",
+        "title3": "Seit 2020",
+        "subtitle": "Reifen kaufen inkl. Montage ab 25€. Günstigstes Reifencenter in Gent. Offen Mo-Sa 9-18h.",
+        "cta": "Reifen Ansehen",
+        "contact": "Kontaktieren Sie uns"
+    },
+    "Footer": {
+        "about": "Über uns",
+        "aboutText": "Gent bandenservice ist ein Reifenservice und Autowerkstatt in Gent Sint-Amandsberg, Belgien. Wir bieten professionelle Reifendienste und Autoreparaturen durch zertifizierte Techniker.",
+        "quickLinks": "Schnelllinks",
+        "contact": "Kontaktinfo",
+        "address": "Gent, Belgien",
+        "rights": "Alle Rechte vorbehalten.",
+        "openingHours": "Öffnungszeiten",
+        "openingHoursText": "Montag - Samstag: 9:00 - 18:00 Uhr",
+        "openingHoursText2": "Sonntag: Nach Vereinbarung",
+        "visitUs": "Besuchen Sie uns",
+        "visitUsText": "Gent, Belgien"
+    },
+    "Services": {
+        "title": "Unsere Dienstleistungen",
+        "subtitle": "Professionelle Reifenservices von zertifizierten Technikern.",
+        "bookNow": "Jetzt buchen",
+        "from": "Ab",
+        "contactText": "Bereit loszulegen?",
+        "contactDescription": "Buchen Sie jetzt Ihren Reifenservice und starten Sie Ihre Reise zu einer besseren Fahrt.",
+        "contactButton": "Jetzt buchen"
+    },
+    "Tires": {
+        "title": "Unsere Reifenauswahl",
+        "subtitle": "Durchsuchen Sie unser breites Sortiment an neuen und gebrauchten Reifen.",
+        "filters": "Filter",
+        "clearAll": "Alle löschen",
+        "price": "Preis",
+        "min": "Min",
+        "max": "Max",
+        "brand": "Marke",
+        "size": "Größe",
+        "dimensions": "Abmessungen",
+        "width": "Breite",
+        "ratio": "Verhältnis",
+        "rim": "Felge",
+        "season": "Saison",
+        "seasonWinter": "Winter",
+        "seasonSummer": "Sommer",
+        "seasonAllSeason": "Ganzjahres",
+        "seasons": {
+            "all": "Alle",
+            "summer": "Sommer",
+            "winter": "Winter",
+            "all-season": "Ganzjahres"
+        },
+        "condition": "Zustand",
+        "conditions": {
+            "all": "Alle",
+            "new": "Neu",
+            "used": "Gebraucht"
+        },
+        "specs": "Spezifikationen",
+        "loadIndex": "Last-Idx",
+        "speedRating": "Geschw.",
+        "inquireOrderNow": "Jetzt anfragen",
+        "notifyMeWhenAvailable": "Benachrichtigen wenn verfügbar",
+        "pleaseContactUs": "Bitte kontaktieren Sie uns",
+        "backToTires": "Zurück zu Reifen",
+        "searchPlaceholder": "Reifen suchen...",
+        "foundResults": "{count} Ergebnisse gefunden",
+        "totalPages": "Seiten insgesamt: {count}",
+        "noResults": "Keine Reifen gefunden, die Ihren Kriterien entsprechen.",
+        "clearFilters": "Alle Filter löschen",
+        "inStock": "Auf Lager",
+        "stockCount": "{count} auf Lager",
+        "outOfStock": "Nicht auf Lager",
+        "viewDetails": "Details anzeigen",
+        "inquire": "Anfragen",
+        "notifyMe": "Benachrichtigen",
+        "secondHand": "Gebraucht",
+        "noDescription": "Keine Beschreibung verfügbar",
+        "noImageAvailable": "Kein Bild verfügbar",
+        "addToCart": "In den Warenkorb",
+        "relatedProducts": "Ähnliche Produkte",
+        "requestStock": "Lagerbestand anfragen",
+        "stockRequestSuccess": "Ihre Anfrage wurde gesendet! Wir informieren Sie, sobald der Reifen wieder auf Lager ist.",
+        "stockRequestTitle": "Diesen Reifen anfragen",
+        "stockRequestSubtitle": "Dieser Reifen ist derzeit nicht auf Lager. Füllen Sie Ihre Daten aus und wir beschaffen ihn so schnell wie möglich.",
+        "name": "Name",
+        "phone": "Telefon (optional)",
+        "email": "E-Mail",
+        "submitRequest": "Anfrage senden",
+        "sending": "Wird gesendet..."
+    },
+    "Contact": {
+        "title": "Kontaktieren Sie uns",
+        "subtitle": "Haben Sie Fragen oder möchten Sie einen Termin buchen? Wir sind hier, um zu helfen.",
+        "formTitle": "Senden Sie uns eine Nachricht",
+        "firstName": "Vorname",
+        "lastName": "Nachname",
+        "email": "E-Mail",
+        "phone": "Telefon",
+        "phoneOptional": "Telefon (optional)",
+        "service": "Gewünschte Dienstleistung",
+        "selectService": "Dienstleistung auswählen",
+        "message": "Nachricht",
+        "submit": "Nachricht senden",
+        "sending": "Wird gesendet...",
+        "success": "Nachricht erfolgreich gesendet!",
+        "messageSentTitle": "Nachricht gesendet!",
+        "thankYouMessage": "Vielen Dank für Ihre Kontaktaufnahme. Wir werden uns so schnell wie möglich bei Ihnen melden.",
+        "sendAnother": "Weitere Nachricht senden",
+        "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+        "inquireOrderNow": "Jetzt anfragen",
+        "address": "Adresse",
+        "addressText": "Gent, Belgien",
+        "openingHours": "Öffnungszeiten",
+        "openingHoursText": "Montag - Freitag: 9:00 - 17:00 Uhr",
+        "openingHoursText2": "Samstag - Sonntag: Geschlossen",
+        "visitUs": "Besuchen Sie uns",
+        "visitUsText": "Gent, Belgien",
+        "messagePlaceholder": "Erzählen Sie uns von Ihren Bedürfnissen..."
+    },
+    "Common": {
+        "loading": "Laden...",
+        "back": "Zurück"
+    },
+    "SearchOverlay": {
+        "close": "ESC",
+        "searchPlaceholder": "Reifen suchen...",
+        "noResults": "Keine Reifen gefunden, die Ihren Kriterien entsprechen.",
+        "loading": "Laden...",
+        "used": "Gebraucht"
+    },
+    "Home": {
+        "quality": "Qualität",
+        "title": "Neueste Reifen",
+        "subtitle": "Durchsuchen Sie unser breites Sortiment an neuen und gebrauchten Reifen.",
+        "noResults": "Keine Reifen gefunden, die Ihren Kriterien entsprechen. Wir arbeiten daran, mehr Reifen zu unserer Kollektion hinzuzufügen.",
+        "viewDetails": "Details anzeigen",
+        "qualityText": "Wir bieten Produkte und Dienstleistungen höchster Qualität, um Ihre Sicherheit und Zufriedenheit zu gewährleisten.",
+        "experience": "Erfahrung",
+        "experienceText": "Mit jahrelanger Erfahrung in der Reifenbranche verfügen wir über das Wissen und die Expertise, um Ihnen den bestmöglichen Service zu bieten.",
+        "service": "Service",
+        "serviceText": "Unser Team zertifizierter Techniker ist bestrebt, Ihnen den bestmöglichen Service zu bieten, damit Sie sicher auf der Straße unterwegs sind.",
+        "contact": "Kontakt",
+        "contactText": "Bei Fragen oder Anliegen zögern Sie nicht, uns zu kontaktieren. Wir sind hier, um Ihnen bei jedem Schritt zu helfen.",
+        "reviews": {
+            "title": "Vertraut von unseren Kunden",
+            "subtitle": "Sehen Sie, was unsere zufriedenen Kunden über unseren geprüften Service sagen.",
+            "googleTrusted": "Google Verifiziert",
+            "viewAll": "Alle Bewertungen auf Google anzeigen",
+            "postedOnGoogle": "Auf Google veröffentlicht"
+        }
+    },
+    "Cart": {
+        "title": "Warenkorb",
+        "close": "Warenkorb schließen",
+        "empty": "Ihr Warenkorb ist leer",
+        "emptySubtitle": "Fügen Sie einige Reifen hinzu, um loszulegen",
+        "subtotal": "Zwischensumme",
+        "shippingNote": "Versand wird an der Kasse berechnet",
+        "checkout": "Zur Kasse",
+        "addToCart": "In den Warenkorb",
+        "added": "Hinzugefügt!",
+        "outOfStock": "Nicht auf Lager",
+        "remove": "Artikel entfernen",
+        "decrease": "Menge verringern",
+        "increase": "Menge erhöhen",
+        "incrementBy": "Um {count} erhöhen",
+        "decrementBy": "Um {count} verringern"
+    },
+    "Checkout": {
+        "title": "Kasse",
+        "orderSummary": "Bestellübersicht",
+        "shippingAddress": "Lieferadresse",
+        "shippingMethod": "Versandmethode",
+        "firstName": "Vorname",
+        "lastName": "Nachname",
+        "email": "E-Mail",
+        "phone": "Telefon (optional)",
+        "street": "Straße",
+        "city": "Stadt",
+        "postalCode": "Postleitzahl",
+        "country": "Land",
+        "subtotal": "Zwischensumme",
+        "shipping": "Versand",
+        "total": "Gesamt",
+        "payNow": "Jetzt bezahlen",
+        "processing": "Verarbeitung...",
+        "deliveryDays": "{days} Werktage",
+        "emptyCart": "Ihr Warenkorb ist leer",
+        "backToShop": "Zurück zum Shop",
+        "successTitle": "Bestellung bestätigt!",
+        "successMessage": "Vielen Dank für Ihre Bestellung. Sie erhalten in Kürze eine Bestätigungs-E-Mail.",
+        "orderNumber": "Bestellnummer",
+        "continueShopping": "Weiter einkaufen",
+        "cancelTitle": "Zahlung abgebrochen",
+        "cancelMessage": "Ihre Zahlung wurde abgebrochen. Ihre Warenkorbartikel sind noch gespeichert.",
+        "tryAgain": "Erneut versuchen"
+    },
+    "FAQ": {
+        "title": "Häufig gestellte Fragen",
+        "subtitle": "Alles, was Sie über unsere Dienstleistungen rund um Reifen wissen müssen.",
+        "contactText": "Bei weiteren Fragen zögern Sie nicht, uns zu kontaktieren.",
+        "contactButton": "Kontakt",
+        "questions": {
+            "services": "Unsere Dienstleistungen",
+            "services_text": "• Verkauf von gebrauchten und neuen Reifen\n• Sommer-, Winter- und Ganzjahresreifen\n• Montage und Auswuchten inklusive\n• Alle Größen von 13\" bis 21\" (Profil 5mm – 8mm)\n• Van/C-Reifen verfügbar\n• Top-Marken wie: Michelin, Goodyear, Continental, Bridgestone, Pirelli, etc.",
+            "prices_used": "Gebrauchte Reifenpreise",
+            "prices_used_text": "Preise inkl. Montage und Auswuchten:\n\n• 13\": €25 – €30\n• 14\": €30 – €35\n• 15\": €35 – €40\n• 16\": €40 – €45\n• 17\": €40 – €50\n• 18\": €40 – €55\n• 19\": €50 – €60\n• 20\": €60 – €70\n• 21\": €60 – €70\n• C-Reifen / Van: €40 – €50",
+            "prices_new": "Neue Reifen Startpreise",
+            "prices_new_text": "Preise pro Stück, inkl. Montage & Auswuchten:\n\n• 13\": €55\n• 14\": €60\n• 15\": €70\n• 16\": €75\n• 17\": €80\n• 18\": €85\n• 19\": €90\n• 20\": €100",
+            "hours": "Öffnungszeiten",
+            "hours_text": "• Montag bis Samstag: 09:00 – 18:00\n• Sonntag: 10:00 – 18:00 (nur mit Termin, Tel. 0466 19 56 22)",
+            "why_us": "Warum Gent Reifenservice wählen?",
+            "why_us_text": "✅ Günstigste Reifenpreise in der Region\n✅ Schneller Service – erledigt während Sie warten\n✅ Qualitätsreifen von Top-Marken\n✅ Montage und Auswuchten inklusive\n✅ Großes Lager in allen Größen",
+            "contact": "Kontakt & Standort",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gent)\n📞 Mobil: +32 466 19 56 22\n📧 E-Mail: contact@arianabandenservice.be\n📘 Facebook: Gent bandenservice",
+            "openingHours": "Öffnungszeiten",
+            "openingHoursText": "Montag - Samstag: 9:00 - 18:00 Uhr",
+            "openingHoursText2": "Sonntag: 10:00 - 18:00 Uhr (nur mit Termin, Tel. 0466 19 56 22)",
+            "visitUs": "Besuchen Sie uns",
+            "visitUsText": "Gent, Belgien",
+            "payment": "Welche Zahlungsmethoden akzeptieren Sie?",
+            "payment_text": "Wir akzeptieren alle gängigen Kreditkarten, einschließlich Visa, Mastercard und American Express.",
+            "replacement": "Wann sollte ich meine Reifen wechseln?",
+            "replacement_text": "Gesetzlich beträgt die Mindestprofiltiefe 1,6mm, aber für die Sicherheit empfehlen wir einen Wechsel bei 3mm (Sommer) oder 4mm (Winter). Prüfen Sie auch auf Risse, Beulen oder Alterung (älter als 6-10 Jahre).",
+            "seasonal": "Was ist der Unterschied zwischen Sommer-, Winter- und Ganzjahresreifen?",
+            "seasonal_text": "• Sommerreifen: Optimal über 7°C, härtere Mischung für Grip auf trockenen/nassen Straßen.\n• Winterreifen: Unverzichtbar unter 7°C, tieferes Profil und weicherer Gummi für Grip auf Schnee/Eis.\n• Ganzjahresreifen: Ein Kompromiss für gemäßigte Klimazonen, ganzjährig geeignet, aber die Leistung ist geringer als bei spezialisierten Reifen unter extremen Bedingungen.",
+            "balancing_alignment": "Was ist der Unterschied zwischen Auswuchten und Spureinstellung?",
+            "balancing_alignment_text": "• Auswuchten: Stellt sicher, dass das Rad bei Geschwindigkeit ohne Vibration rollt (wird bei jedem Reifenwechsel durchgeführt).\n• Spureinstellung: Stellt sicher, dass die Räder gerade zum Auto stehen, für Geradeausfahrt und gleichmäßigen Reifenverschleiß (nötig bei Ziehen zur Seite oder nach Fahrwerksreparatur).",
+            "tpms": "Was ist TPMS und können Sie es warten?",
+            "tpms_text": "TPMS (Reifendruckkontrollsystem) überwacht Ihren Reifendruck. Wir können TPMS-Sensoren installieren, zurücksetzen und ersetzen, wenn die Batterien erschöpft sind.",
+            "repair": "Können Sie einen platten Reifen reparieren?",
+            "repair_text": "Ja, oft. Wenn die Einstichstelle im Profil und nicht zu groß ist, verwenden wir einen professionellen Stopfen/Patch. Seitenwandschäden können oft nicht sicher repariert werden.",
+            "recycling": "Was passiert mit meinen alten Reifen?",
+            "recycling_text": "Wir entsorgen Ihre alten Reifen umweltfreundlich über zertifizierte Recyclingpartner (Recytyre), damit der Gummi wiederverwendet werden kann."
+        }
+    },
+    "Metadata": {
+        "title": "Reifencenter Gent | Reifen Kaufen mit Montage",
+        "description": "✓ Günstigstes Reifencenter in Gent! Neu- & Gebrauchtreifen ab 25€ inkl. Montage. Offen Mo-Sa 9-18h, Sonntag nach Vereinbarung. ☎ +32 466 19 56 22",
+        "ogDescription": "Reifencenter Gent - Neue & gebrauchte Reifen. Montage, Auswuchten & Spureinstellung inklusive. Beste Preise!",
+        "keywords": "reifencenter gent, reifen kaufen, reifenmontage, spureinstellung, reifencenter belgien, gebrauchte reifen, neue reifen, günstige reifen, winterreifen, sommerreifen, ganzjahresreifen, Sint-Amandsberg, reifencenter sonntag offen",
+        "tiresTitle": "Reifen Kaufen | Neu & Gebraucht",
+        "tiresDescription": "Reifen kaufen in Gent? Sehen Sie unsere Winter-, Sommer- & Ganzjahresreifen. Montage inklusive. Ab 25€ pro Reifen.",
+        "servicesTitle": "Reifenservice | Montage & Spureinstellung",
+        "servicesDescription": "Professionelle Reifenmontage, Auswuchten und Spureinstellung in Gent. Schneller Service, gute Preise. Samstags offen!",
+        "contactTitle": "Kontakt | Reifencenter Gent",
+        "contactDescription": "Kontaktieren Sie unser Reifencenter in Gent. Rufen Sie an: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "FAQ | Preise & Öffnungszeiten",
+        "faqDescription": "FAQ zu Reifenpreisen, Öffnungszeiten, Montage und mehr. Reifencenter Sonntag offen? Ja, nach Vereinbarung!",
+        "privacyTitle": "Datenschutzerklärung | Gent Bandenservice",
+        "privacyDescription": "Datenschutzerklärung von Gent bandenservice. Erfahren Sie, wie wir Ihre persönlichen Daten sammeln, verwenden und schützen.",
+        "termsTitle": "Nutzungsbedingungen | Gent Bandenservice",
+        "termsDescription": "Nutzungsbedingungen von Gent bandenservice. Lesen Sie unsere Allgemeinen Geschäftsbedingungen für die Nutzung unserer Reifendienstleistungen.",
+        "cookiesTitle": "Cookie-Richtlinie | Gent Bandenservice",
+        "cookiesDescription": "Erfahren Sie, wie Gent bandenservice Cookies verwendet und wie Sie Ihre Einstellungen verwalten."
+    },
+    "DevBanner": {
+        "message": "Wir befinden uns im Entwicklungsmodus. Alle Reifen sind nicht echt; sie dienen nur zu Demonstrationszwecken. Echte Reifen kommen bald."
+    },
+    "Feedback": {
+        "question": "Gefällt Ihnen unser Service?",
+        "placeholder": "Erzählen Sie uns von Ihrer Erfahrung...",
+        "submit": "Absenden",
+        "loading": "Laden",
+        "success": "Ihr Feedback wurde erhalten!",
+        "thanks": "Vielen Dank für Ihre Hilfe."
+    },
+    "Blog": {
+        "pageTitle": "Unser Blog | Gent Bandenservice",
+        "pageDescription": "Lesen Sie die neuesten Nachrichten, Tipps und Informationen über Autobanden und Wartung bei Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Nachrichten & Tipps",
+        "subtitle": "Bleiben Sie über die neuesten Entwicklungen informiert und erhalten Sie hilfreiche Tipps für Ihre Reifen.",
+        "allCategories": "Alle Kategorien",
+        "noPosts": "Keine Beiträge gefunden",
+        "noPostsDescription": "In dieser Kategorie gibt es derzeit keine Blogbeiträge.",
+        "readTime": "Lesezeit",
+        "views": "Aufrufe",
+        "backToBlog": "Zurück zum Blog",
+        "share": "Diesen Beitrag teilen",
+        "relatedPosts": "Ähnliche Beiträge"    },
+    "Privacy": {
+        "title": "Datenschutzerklärung",
+        "subtitle": "Wie wir Ihre persönlichen Daten sammeln, verwenden und schützen",
+        "dataCollection": {
+            "title": "Informationen, die wir sammeln",
+            "content": "Wir sammeln verschiedene Arten von Informationen, um unsere Dienstleistungen bereitzustellen und zu verbessern:",
+            "personalInfo": "Persönliche Identifikationsdaten (Name, Kontaktdaten)",
+            "contactInfo": "Kontaktinformationen (E-Mail-Adresse, Telefonnummer, Adresse)",
+            "vehicleInfo": "Fahrzeuginformationen (Marke, Modell, Jahr, Reifenspezifikationen)",
+            "serviceInfo": "Service-Historie und Präferenzen"
+        },
+        "dataUsage": {
+            "title": "Wie wir Ihre Informationen verwenden",
+            "content": "Wir verwenden die von uns gesammelten Informationen für folgende Zwecke:",
+            "provideServices": "Zur Bereitstellung und Wartung unserer Reifendienstleistungen",
+            "processBookings": "Zur Bearbeitung von Terminen und Servicebuchungen",
+            "communication": "Zur Kommunikation über Dienstleistungen und Termine",
+            "improve": "Zur Verbesserung unserer Dienstleistungen und Kundenerfahrung"
+        },
+        "dataSharing": {
+            "title": "Informationsaustausch",
+            "content": "Wir verkaufen, handeln oder übertragen Ihre persönlichen Daten nicht ohne Ihre Zustimmung an Dritte, außer wie in dieser Datenschutzerklärung beschrieben oder gesetzlich vorgeschrieben."
+        },
+        "dataSecurity": {
+            "title": "Datensicherheit",
+            "content": "Wir implementieren angemessene Sicherheitsmaßnahmen zum Schutz Ihrer persönlichen Daten vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung."
+        },
+        "userRights": {
+            "title": "Ihre Rechte",
+            "content": "Unter der DSGVO und anwendbaren Datenschutzgesetzen haben Sie folgende Rechte:",
+            "access": "Das Recht auf Zugang zu Ihren personenbezogenen Daten",
+            "rectification": "Das Recht auf Berichtigung unrichtiger personenbezogener Daten",
+            "erasure": "Das Recht auf Löschung ('Recht auf Vergessenwerden')",
+            "portability": "Das Recht auf Datenübertragbarkeit",
+            "objection": "Das Recht auf Widerspruch gegen die Verarbeitung"
+        },
+        "cookies": {
+            "title": "Cookies",
+            "content": "Wir verwenden Cookies, um Ihr Browser-Erlebnis zu verbessern und Website-Traffic zu analysieren. Sie können Ihre Cookie-Präferenzen über Ihre Browser-Einstellungen verwalten."
+        },
+        "contact": {
+            "title": "Kontaktieren Sie uns",
+            "content": "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte:",
+            "email": "E-Mail: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Richtlinien-Updates",
+            "content": "Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir werden Sie über Änderungen informieren, indem wir die neue Richtlinie auf dieser Seite veröffentlichen."
+        },
+        "lastUpdated": "Zuletzt aktualisiert",
+        "lastUpdatedDate": "12. Februar 2026"
+    },
+    "Terms": {
+        "title": "Nutzungsbedingungen",
+        "subtitle": "Bedingungen für die Nutzung unserer Reifendienstleistungen",
+        "acceptance": {
+            "title": "Annahme der Bedingungen",
+            "content": "Durch die Nutzung unserer Dienstleistungen erklären Sie sich mit diesen Nutzungsbedingungen einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, nutzen Sie bitte unsere Dienstleistungen nicht."
+        },
+        "services": {
+            "title": "Unsere Dienstleistungen",
+            "content": "Gent Bandenservice bietet folgende reifenbezogene Dienstleistungen:",
+            "tireInstallation": "Reifeninstallation und -montage",
+            "tireRepair": "Reifenreparatur und -flicken",
+            "wheelBalancing": "Radauswuchtung",
+            "wheelAlignment": "Radausrichtung",
+            "tireSales": "Verkauf neuer und gebrauchter Reifen"
+        },
+        "booking": {
+            "title": "Termine und Buchungen",
+            "content": "Alle Dienstleistungen müssen im Voraus gebucht werden. Wir behalten uns das Recht vor, Termine aufgrund unvorhergesehener Umstände zu verschieben.",
+            "cancellation": "Stornierungen müssen mindestens 24 Stunden im Voraus erfolgen. Späte Stornierungen können Gebühren verursachen."
+        },
+        "payment": {
+            "title": "Zahlungsbedingungen",
+            "content": "Die Zahlung ist bei Abschluss der Dienstleistungen fällig, sofern nicht anders schriftlich vereinbart.",
+            "methods": "Wir akzeptieren Bargeld, Debitkarten, Kreditkarten und Banküberweisungen."
+        },
+        "warranty": {
+            "title": "Garantie",
+            "content": "Alle Dienstleistungen sind mit unserer Standardgarantie gegen Mängel in der Verarbeitung abgedeckt.",
+            "tires": "Reifengarantien werden vom Hersteller bereitgestellt und unterliegen deren Geschäftsbedingungen.",
+            "services": "Servicegarantien decken Mängel in unserer Verarbeitung für einen Zeitraum von 30 Tagen nach Serviceabschluss ab."
+        },
+        "liability": {
+            "title": "Haftungsbeschränkung",
+            "content": "Unsere Haftung ist auf die Kosten der erbrachten Dienstleistungen beschränkt. Wir sind nicht verantwortlich für Folgeschäden.",
+            "limitation": "Wir empfehlen regelmäßige Reifeninspektionen und -wartung für optimale Sicherheit und Leistung."
+        },
+        "intellectualProperty": {
+            "title": "Geistiges Eigentum",
+            "content": "Alle Inhalte auf unserer Website und in unseren Materialien sind Eigentum von Gent Bandenservice und werden durch anwendbare Gesetze zum geistigen Eigentum geschützt."
+        },
+        "privacy": {
+            "title": "Datenschutz",
+            "content": "Ihr Datenschutz ist uns wichtig. Bitte lesen Sie unsere Datenschutzerklärung, um zu verstehen, wie wir Ihre Informationen sammeln und verwenden."
+        },
+        "termination": {
+            "title": "Kündigung",
+            "content": "Wir behalten uns das Recht vor, jedem aus beliebigem Grund nach unserem alleinigen Ermessen die Dienstleistung zu verweigern."
+        },
+        "changes": {
+            "title": "Änderungen der Bedingungen",
+            "content": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Änderungen werden auf unserer Website veröffentlicht und treten sofort in Kraft."
+        },
+        "governing": {
+            "title": "Geltendes Recht",
+            "content": "Diese Bedingungen unterliegen belgischem Recht und alle Streitigkeiten werden vor belgischen Gerichten beigelegt."
+        },
+        "contact": {
+            "title": "Kontaktinformationen",
+            "content": "Für Fragen zu diesen Nutzungsbedingungen kontaktieren Sie uns bitte:",
+            "email": "E-Mail: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Zuletzt aktualisiert",
+        "lastUpdatedDate": "12. Februar 2026"
+    },
+    "CookiePolicy": {
+        "title": "Cookie-Richtlinie",
+        "subtitle": "Wie wir Cookies und ähnliche Technologien verwenden",
+        "what": {
+            "title": "Was sind Cookies?",
+            "content": "Cookies sind kleine Textdateien auf Ihrem Gerät, um Einstellungen zu speichern und die Website zu verbessern."
+        },
+        "types": {
+            "title": "Arten von Cookies, die wir verwenden",
+            "essential": "Essenzielle Cookies für die Grundfunktionalität.",
+            "analytics": "Analyse-Cookies, um die Nutzung der Website zu verstehen.",
+            "support": "Support-Cookies für Chat und Support-Tools."
+        },
+        "manage": {
+            "title": "Cookies verwalten",
+            "content": "Sie können nicht notwendige Cookies im Banner akzeptieren oder ablehnen und Ihre Auswahl jederzeit in der Fußzeile ändern."
+        },
+        "thirdParty": {
+            "title": "Cookies von Drittanbietern",
+            "content": "Einige Funktionen (Analyse, Chat) können eigene Cookies setzen. Diese werden nur nach Einwilligung verwendet."
+        },
+        "updates": {
+            "title": "Updates",
+            "content": "Wir können diese Richtlinie von Zeit zu Zeit aktualisieren."
+        },
+        "contact": {
+            "title": "Kontakt",
+            "content": "Fragen zu Cookies? Schreiben Sie an info@gentbandenservice.be."
+        },
+        "lastUpdated": "Zuletzt aktualisiert",
+        "lastUpdatedDate": "13. Februar 2026"
+    },
+    "Cookie": {
+        "title": "Wir verwenden Cookies",
+        "description": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und die Nutzung der Website zu messen. Sie können nicht notwendige Cookies akzeptieren oder ablehnen.",
+        "accept": "Akzeptieren",
+        "reject": "Ablehnen",
+        "manage": "Cookies verwalten",
+        "policy": "Cookie-Richtlinie"
+    }
+}

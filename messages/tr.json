@@ -1,0 +1,448 @@
+{
+    "Header": {
+        "home": "Ana Sayfa",
+        "services": "Hizmetler",
+        "tires": "Lastikler",
+        "contact": "İletişim",
+        "admin": "Admin",
+        "searchPlaceholder": "Lastik ara...",
+        "blog": "blog"
+    },
+    "Hero": {
+        "title1": "Lastik Merkezi",
+        "title2": "Gent",
+        "title3": "2020'den Beri",
+        "subtitle": "Montaj dahil lastik alın 25€'dan. Gent'in en ucuz lastik merkezi. Pts-Cmt 9-18 açık.",
+        "cta": "Lastikleri Gör",
+        "contact": "Bize Ulaşın"
+    },
+    "Footer": {
+        "about": "Hakkımızda",
+        "aboutText": "Gent bandenservice, Belçika Gent Sint-Amandsberg’de bulunan bir lastik servisi ve oto tamir atölyesidir. Sertifikalı teknisyenler tarafından profesyonel lastik ve araç tamir hizmetleri sunuyoruz.",
+        "quickLinks": "Hızlı Bağlantılar",
+        "contact": "İletişim Bilgileri",
+        "address": "Gent, Belçika",
+        "rights": "Tüm hakları saklıdır.",
+        "openingHours": "Çalışma Saatleri",
+        "openingHoursText": "Pazartesi - Cuma: 09:00 - 18:00",
+        "openingHoursText2": "Cumartesi - Pazar: Kapalı",
+        "visitUs": "Bizi ziyaret edin",
+        "visitUsText": "Gent, Belçika"
+    },
+    "Services": {
+        "title": "Hizmetlerimiz",
+        "subtitle": "Sertifikalı teknisyenler tarafından profesyonel lastik hizmetleri.",
+        "bookNow": "Hemen Rezervasyon Yap",
+        "from": "Başlangıç",
+        "contactText": "Başlamaya hazır mısınız?",
+        "contactDescription": "Lastik servisinizi şimdi ayırtın ve daha iyi bir sürüşe doğru yola çıkın.",
+        "contactButton": "Hemen Rezervasyon Yap"
+    },
+    "Tires": {
+        "title": "Lastik Seçimimiz",
+        "subtitle": "Yeni ve ikinci el lastiklerden oluşan geniş yelpazemizi inceleyin.",
+        "filters": "Filtreler",
+        "clearAll": "Tümünü Temizle",
+        "price": "Fiyat",
+        "min": "Min",
+        "max": "Maks",
+        "brand": "Marka",
+        "size": "Ebat",
+        "dimensions": "Ölçüler",
+        "width": "Genişlik",
+        "ratio": "Oran",
+        "rim": "Jant",
+        "season": "Mevsim",
+        "seasonWinter": "Kış",
+        "seasonSummer": "Yaz",
+        "seasonAllSeason": "Dört Mevsim",
+        "seasons": {
+            "all": "Tümü",
+            "summer": "Yaz",
+            "winter": "Kış",
+            "all-season": "Dört Mevsim"
+        },
+        "condition": "Durum",
+        "conditions": {
+            "all": "Tümü",
+            "new": "Yeni",
+            "used": "İkinci El"
+        },
+        "specs": "Özellikler",
+        "loadIndex": "Yük Endeksi",
+        "speedRating": "Hız",
+        "inquireOrderNow": "Bilgi Al / Şimdi Sipariş Ver",
+        "notifyMeWhenAvailable": "Stokta Olunca Haber Ver",
+        "pleaseContactUs": "Lütfen bizimle iletişime geçin",
+        "backToTires": "Lastiklere Dön",
+        "searchPlaceholder": "Lastik ara...",
+        "foundResults": "{count} sonuç bulundu",
+        "totalPages": "Toplam sayfa: {count}",
+        "noResults": "Kriterlerinize uygun lastik bulunamadı.",
+        "clearFilters": "Tüm filtreleri temizle",
+        "inStock": "Stokta",
+        "stockCount": "{count} adet stokta",
+        "outOfStock": "Stokta Yok",
+        "viewDetails": "Detayları Gör",
+        "inquire": "Bilgi Al",
+        "notifyMe": "Haber Ver",
+        "secondHand": "İkinci El",
+        "noDescription": "Açıklama mevcut değil",
+        "addToCart": "Sepete Ekle",
+        "requestStock": "Stok İste",
+        "stockRequestSuccess": "İsteğiniz gönderildi! Lastik tekrar stoklara girdiğinde sizi bilgilendireceğiz.",
+        "stockRequestTitle": "Bu Lastiği İste",
+        "stockRequestSubtitle": "Bu lastik şu anda stokta yok. Lütfen bilgilerinizi doldurun, en kısa sürede temin edeceğiz.",
+        "name": "İsim",
+        "phone": "Telefon (isteğe bağlı)",
+        "email": "E-posta",
+        "submitRequest": "İsteği Gönder",
+        "sending": "Gönderiliyor...",
+        "relatedProducts": "İlgili Ürünler"
+    },
+    "Contact": {
+        "title": "Bize Ulaşın",
+        "subtitle": "Sorularınız mı var veya randevu mu almak istiyorsunuz? Yardımcı olmaktan memnuniyet duyarız.",
+        "formTitle": "Bize mesaj gönderin",
+        "firstName": "Ad",
+        "lastName": "Soyad",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "phoneOptional": "Telefon (isteğe bağlı)",
+        "service": "İlgilendiğiniz Hizmet",
+        "selectService": "Bir hizmet seçin",
+        "message": "Mesaj",
+        "submit": "Mesaj Gönder",
+        "sending": "Gönderiliyor...",
+        "success": "Mesaj başarıyla gönderildi!",
+        "messageSentTitle": "Mesaj Gönderildi!",
+        "thankYouMessage": "Bizimle iletişime geçtiğiniz için teşekkür ederiz. En kısa sürede size dönüş yapacağız.",
+        "sendAnother": "Başka bir mesaj gönder",
+        "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+        "inquireOrderNow": "Bilgi Al / Şimdi Sipariş Ver",
+        "address": "Adres",
+        "addressText": "Gent, Belçika",
+        "openingHours": "Çalışma Saatleri",
+        "openingHoursText": "Pazartesi - Cuma: 09:00 - 17:00",
+        "openingHoursText2": "Cumartesi - Pazar: Kapalı",
+        "visitUs": "Bizi ziyaret edin",
+        "visitUsText": "Gent, Belçika",
+        "messagePlaceholder": "İhtiyaçlarınızı bize anlatın..."
+    },
+    "Common": {
+        "loading": "Yükleniyor...",
+        "back": "Geri"
+    },
+    "SearchOverlay": {
+        "close": "ESC",
+        "searchPlaceholder": "Lastik ara...",
+        "noResults": "Kriterlerinize uygun lastik bulunamadı.",
+        "loading": "Yükleniyor...",
+        "used": "İkinci El"
+    },
+    "Home": {
+        "quality": "Kalite",
+        "title": "Yeni Eklenen Lastikler",
+        "subtitle": "Yeni ve ikinci el lastiklerden oluşan geniş yelpazemizi inceleyin.",
+        "noResults": "Kriterlerinize uygun lastik bulunamadı. Koleksiyonumuza daha fazla lastik eklemek için çalışıyoruz.",
+        "viewDetails": "Detayları Gör",
+        "qualityText": "Güvenliğiniz ve memnuniyetiniz için en yüksek kalitede ürün ve hizmetler sunuyoruz.",
+        "experience": "Deneyim",
+        "experienceText": "Lastik sektöründeki yılların verdiği deneyimle, size en iyi hizmeti sunacak bilgi ve uzmanlığa sahibiz.",
+        "service": "Hizmet",
+        "serviceText": "Sertifikalı teknisyenlerden oluşan ekibimiz, yolda güvenliğiniz için en iyi hizmeti sunmaya adanmıştır.",
+        "contact": "İletişim",
+        "contactText": "Herhangi bir sorunuz veya endişeniz varsa bizimle iletişime geçmekten çekinmeyin. Her adımda yanınızdayız.",
+        "reviews": {
+            "title": "Müşterilerimiz Tarafından Güvenilen",
+            "subtitle": "Memnun müşterilerimizin hizmetimiz hakkında neler söylediğini görün.",
+            "googleTrusted": "Google Güvenilir",
+            "viewAll": "Google'daki tüm yorumları görüntüle",
+            "postedOnGoogle": "Google'da yayınlandı"
+        }
+    },
+    "Cart": {
+        "title": "Alışveriş Sepeti",
+        "close": "Sepeti kapat",
+        "empty": "Sepetiniz boş",
+        "emptySubtitle": "Başlamak için sepete lastik ekleyin",
+        "subtotal": "Ara Toplam",
+        "shippingNote": "Kargo ücreti ödeme sırasında hesaplanır",
+        "checkout": "Ödemeye Geç",
+        "addToCart": "Sepete Ekle",
+        "added": "Eklendi!",
+        "outOfStock": "Stokta Yok",
+        "remove": "Ürünü kaldır",
+        "decrease": "Adedi azalt",
+        "increase": "Adedi artır",
+        "incrementBy": "{count} artır",
+        "decrementBy": "{count} azalt"
+    },
+    "Checkout": {
+        "title": "Ödeme",
+        "orderSummary": "Sipariş Özeti",
+        "shippingAddress": "Teslimat Adresi",
+        "shippingMethod": "Kargo Yöntemi",
+        "firstName": "Ad",
+        "lastName": "Soyad",
+        "email": "E-posta",
+        "phone": "Telefon (isteğe bağlı)",
+        "street": "Adres",
+        "city": "Şehir",
+        "postalCode": "Posta Kodu",
+        "country": "Ülke",
+        "subtotal": "Ara Toplam",
+        "shipping": "Kargo",
+        "total": "Toplam",
+        "payNow": "Şimdi Öde",
+        "processing": "İşleniyor...",
+        "deliveryDays": "{days} iş günü",
+        "emptyCart": "Sepetiniz boş",
+        "backToShop": "Mağazaya Dön",
+        "successTitle": "Sipariş Onaylandı!",
+        "successMessage": "Siparişiniz için teşekkür ederiz. Kısa süre içinde bir onay e-postası alacaksınız.",
+        "orderNumber": "Sipariş Numarası",
+        "continueShopping": "Alışverişe Devam Et",
+        "cancelTitle": "Ödeme İptal Edildi",
+        "cancelMessage": "Ödemeniz iptal edildi. Sepetinizdeki ürünler kaydedildi.",
+        "tryAgain": "Tekrar Dene"
+    },
+    "FAQ": {
+        "title": "Sıkça Sorulan Sorular",
+        "subtitle": "Lastik hizmetlerimiz hakkında bilmeniz gereken her şey.",
+        "contactText": "Daha fazla sorunuz mu var? Bizimle iletişime geçmekten çekinmeyin.",
+        "contactButton": "Bize Ulaşın",
+        "questions": {
+            "services": "Hizmetlerimiz",
+            "services_text": "• Yeni ve ikinci el lastik satışı\n• Yaz, kış ve dört mevsim lastikler\n• Montaj ve balans dahil\n• 13” - 21” arası tüm ebatlar (profil 5mm – 8mm)\n• Van / C tipi lastikler mevcut\n• Michelin, Goodyear, Continental, Bridgestone, Pirelli gibi önde gelen markalar",
+            "prices_used": "İkinci El Lastik Fiyatları",
+            "prices_used_text": "Fiyatlara montaj ve balans dahildir:\n\n• 13”: 25 € – 30 €\n• 14”: 30 € – 35 €\n• 15”: 35 € – 40 €\n• 16”: 40 € – 45 €\n• 17”: 40 € – 50 €\n• 18”: 40 € – 55 €\n• 19”: 50 € – 60 €\n• 20”: 60 € – 70 €\n• 21”: 60 € – 70 €\n• C tipi / Van lastikleri: 40 € – 50 €",
+            "prices_new": "Yeni Lastik Başlangıç Fiyatları",
+            "prices_new_text": "Parça başı fiyatlar, montaj ve balans dahildir:\n\n• 13”: 55 €\n• 14”: 60 €\n• 15”: 70 €\n• 16”: 75 €\n• 17”: 80 €\n• 18”: 85 €\n• 19”: 90 €\n• 20”: 100 €",
+            "hours": "Çalışma Saatleri",
+            "hours_text": "• Pazartesi - Cumartesi: 09:00 – 18:00\n• Pazar: 10:00 – 16:00 (sadece randevu ile, 0466 19 56 22)",
+            "why_us": "Neden Gent bandenservice?",
+            "why_us_text": "✅ Bölgedeki en uygun lastik fiyatları\n✅ Hızlı servis – siz beklerken\n✅ En iyi markalardan kaliteli lastikler\n✅ Montaj ve balans dahil\n✅ Tüm ebatlarda geniş stok",
+            "contact": "İletişim ve Konum",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gent)\n📞 GSM: +32 466 19 56 22\n📧 E-posta: contact@arianabandenservice.be\n📘 Facebook: Gent bandenservice",
+            "openingHours": "Çalışma Saatleri",
+            "openingHoursText": "Pazartesi - Cumartesi - : 09:00 - 18:00",
+            "openingHoursText2": "Pazar: 10:00 – 18:00 (sadece randevu ile, 0466 19 56 22)",
+            "visitUs": "Bizi ziyaret edin",
+            "visitUsText": "Gent, Belçika",
+            "payment": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+            "payment_text": "Visa, Mastercard ve American Express dahil olmak üzere tüm büyük kredi kartlarını kabul ediyoruz.",
+            "replacement": "Lastiklerimi ne zaman değiştirmeliyim?",
+            "replacement_text": "Yasal minimum diş derinliği 1,6 mm’dir; ancak güvenlik için yaz lastiklerinde 3 mm, kış lastiklerinde 4 mm’de değişim önerilir. Ayrıca çatlak, şişkinlik ve yaşlanmayı (6–10 yıl) kontrol edin.",
+            "seasonal": "Yaz, kış ve dört mevsim lastikler arasındaki fark nedir?",
+            "seasonal_text": "• Yaz lastikleri: 7°C üzeri için idealdir, kuru ve ıslak zeminde daha iyi tutuş sağlar.\n• Kış lastikleri: 7°C altı için gereklidir, kar ve buzda tutuş için daha yumuşak hamur ve derin diş yapısına sahiptir.\n• Dört mevsim lastikler: Ilıman iklimler için bir uzlaşmadır, yıl boyu kullanılabilir ancak ekstrem koşullarda performansı daha düşüktür.",
+            "balancing_alignment": "Balans ve rot ayarı arasındaki fark nedir?",
+            "balancing_alignment_text": "• Balans: Yüksek hızda titreşimsiz ve düzgün dönüş sağlar (her lastik değişiminde yapılır).\n• Rot ayarı: Aracın düz gitmesini ve lastiklerin eşit aşınmasını sağlar.",
+            "tpms": "TPMS nedir ve servis veriyor musunuz?",
+            "tpms_text": "TPMS (Lastik Basınç İzleme Sistemi), lastik basıncını takip eder. TPMS sensörlerinin montajını, sıfırlanmasını ve pil bittiğinde değişimini yapıyoruz.",
+            "repair": "Patlak lastik tamiri yapıyor musunuz?",
+            "repair_text": "Evet, çoğu durumda. Delik sırt kısmındaysa ve çok büyük değilse profesyonel tamir uygularız. Yanak hasarları genellikle güvenli şekilde tamir edilemez.",
+            "recycling": "Eski lastiklerime ne oluyor?",
+            "recycling_text": "Eski lastiklerinizi, kauçuğun yeniden kullanılabilmesi için sertifikalı geri dönüşüm ortakları (Recytyre) aracılığıyla çevre dostu şekilde bertaraf ediyoruz."
+        }
+    },
+    "Metadata": {
+        "title": "Lastik Merkezi Gent | Montaj Dahil Lastik Alın",
+        "description": "✓ Gent'in en ucuz lastik merkezi! Yeni ve ikinci el lastikler 25€'dan montaj dahil. Pts-Cmt 9-18, Pazar randevu ile. ☎ +32 466 19 56 22",
+        "ogDescription": "Lastik Merkezi Gent - Yeni ve ikinci el lastikler. Montaj, balans ve rot ayarı dahil. En iyi fiyatlar!",
+        "keywords": "lastik merkezi gent, lastik satın al, lastik montajı, rot ayarı, lastik merkezi belçika, ikinci el lastik, yeni lastik, ucuz lastik, kış lastiği, yaz lastiği, Sint-Amandsberg",
+        "tiresTitle": "Lastik Al | Yeni ve İkinci El",
+        "tiresDescription": "Gent'te lastik mi arıyorsunuz? Kış, yaz ve dört mevsim lastiklerimizi görün. Montaj dahil. 25€'dan başlayan fiyatlar.",
+        "servicesTitle": "Lastik Servisleri | Montaj ve Rot Ayarı",
+        "servicesDescription": "Gent'te profesyonel lastik montajı, balans ve rot ayarı. Hızlı servis, uygun fiyatlar. Cumartesi açığız!",
+        "contactTitle": "İletişim | Lastik Merkezi Gent",
+        "contactDescription": "Bize ulaşın. Arayın: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "SSS | Fiyatlar ve Çalışma Saatleri",
+        "faqDescription": "Lastik fiyatları, çalışma saatleri, montaj ve daha fazlası hakkında SSS. Lastik merkezi pazar açık mı? Evet, randevu ile!",
+        "cookiesTitle": "Cerez Politikasi | Gent Bandenservice",
+        "cookiesDescription": "Gent bandenservice'in cerezleri nasil kullandigini ve tercihlerinizi nasil yoneteceginizi ogrenin."
+    },
+    "DevBanner": {
+        "message": "Hala geliştirme aşamasındayız. Tüm lastikler gerçek değildir; sadece demo amaçlıdır. Gerçek lastikler yakında gelecek."
+    },
+    "Feedback": {
+        "question": "Hizmetimizi beğendiniz mi?",
+        "placeholder": "Deneyiminizi anlatın...",
+        "submit": "Gönder",
+        "loading": "Yükleniyor",
+        "success": "Geri bildiriminiz alındı!",
+        "thanks": "Yardımınız için teşekkürler."
+    },
+    "Blog": {
+        "pageTitle": "Blogumuz | Gent Bandenservice",
+        "pageDescription": "Gent Bandenservice'deki en son haberleri, ipuçlarını ve araba lastikleri ve bakımı hakkındaki bilgileri okuyun.",
+        "badge": "Blog",
+        "title": "Haberler & İpuçları",
+        "subtitle": "En son gelişmelerden haberdar olun ve lastikleriniz için faydalı ipuçları alın.",
+        "allCategories": "Tüm Kategoriler",
+        "noPosts": "Yazı bulunamadı",
+        "noPostsDescription": "Bu kategoride şu anda blog yazısı bulunmamaktadır.",
+        "readTime": "okuma süresi",
+        "views": "görüntülenme",
+        "backToBlog": "Blog'a Dön",
+        "share": "Bu yazıyı paylaş",
+        "relatedPosts": "İlgili Yazılar"
+    },
+    "Privacy": {
+        "title": "Gizlilik Politikası",
+        "subtitle": "Kişisel bilgilerinizi nasıl topladığımız, kullandığımız ve koruduğumuz",
+        "dataCollection": {
+            "title": "Topladığımız bilgiler",
+            "content": "Hizmetlerimizi sağlamak ve geliştirmek için çeşitli tür bilgiler topluyoruz:",
+            "personalInfo": "Kişisel kimlik bilgileri (ad, iletişim bilgileri)",
+            "contactInfo": "İletişim bilgileri (e-posta adresi, telefon numarası, adres)",
+            "vehicleInfo": "Araç bilgileri (marka, model, yıl, lastik özellikleri)",
+            "serviceInfo": "Hizmet geçmişi ve tercihler"
+        },
+        "dataUsage": {
+            "title": "Bilgilerinizi nasıl kullanıyoruz",
+            "content": "Topladığımız bilgileri aşağıdaki amaçlarla kullanıyoruz:",
+            "provideServices": "Lastik hizmetlerimizi sağlamak ve sürdürmek için",
+            "processBookings": "Randevuları ve hizmet rezervasyonlarını işlemek için",
+            "communication": "Hizmetler ve randevular hakkında sizinle iletişim kurmak için",
+            "improve": "Hizmetlerimizi ve müşteri deneyimini geliştirmek için"
+        },
+        "dataSharing": {
+            "title": "Bilgi paylaşımı",
+            "content": "Bu gizlilik politikasında açıklanan durumlar veya yasaların gerektirdiği durumlar dışında, kişisel bilgilerinizi sizin onayınız olmadan üçüncü şahıslara satmaz, takaslamaz veya aktarmayız."
+        },
+        "dataSecurity": {
+            "title": "Veri güvenliği",
+            "content": "Kişisel bilgilerinizi yetkisiz erişim, değiştirme, açıklama veya imha edilmeye karşı korumak için uygun güvenlik önlemlerini alıyoruz."
+        },
+        "userRights": {
+            "title": "Haklarınız",
+            "content": "GDPR ve geçerli gizlilik yasaları altında aşağıdaki haklarınız vardır:",
+            "access": "Kişisel verilerinize erişim hakkı",
+            "rectification": "Yanlış kişisel verileri düzelttirme hakkı",
+            "erasure": "Silme hakkı ('unutulma hakkı')",
+            "portability": "Veri taşınabilirliği hakkı",
+            "objection": "İşlemeye itiraz hakkı"
+        },
+        "cookies": {
+            "title": "Cookieler",
+            "content": "Tarayıcı deneyiminizi geliştirmek ve web sitesi trafiğini analiz etmek için çerezler kullanıyoruz. Cookie tercihlerinizi tarayıcı ayarlarınız aracılığıyla yönetebilirsiniz."
+        },
+        "contact": {
+            "title": "Bize ulaşın",
+            "content": "Bu Gizlilik Politikası hakkında sorularınız varsa, lütfen bizimle iletişime geçin:",
+            "email": "E-posta: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Politika güncellemeleri",
+            "content": "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Yeni politikayı bu sayfada yayumlayarak tüm değişiklikleri size bildireceğiz."
+        },
+        "lastUpdated": "Son güncelleme",
+        "lastUpdatedDate": "12 Şubat 2026"
+    },
+    "Terms": {
+        "title": "Hizmet Şartları",
+        "subtitle": "Lastik hizmetlerimizi kullanmak için şartlar ve koşullar",
+        "acceptance": {
+            "title": "Şartların kabul edilmesi",
+            "content": "Hizmetlerimizi kullanarak bu Hizmet Şartlarına bağlı olmayı kabul edersiniz. Bu şartları kabul etmiyorsanız, lütfen hizmetlerimizi kullanmayın."
+        },
+        "services": {
+            "title": "Hizmetlerimiz",
+            "content": "Gent Bandenservice aşağıdaki lastik ile ilgili hizmetleri sağlar:",
+            "tireInstallation": "Lastik kurulumu ve montajı",
+            "tireRepair": "Lastik onarımı ve yamalama",
+            "wheelBalancing": "Tekerlek balans hizmetleri",
+            "wheelAlignment": "Tekerlek ayar hizmetleri",
+            "tireSales": "Yeni ve ikinci el lastik satışı"
+        },
+        "booking": {
+            "title": "Randevular ve rezervasyonlar",
+            "content": "Tüm hizmetler önceden rezerve edilmelidir. Önceden görülemeyecek durumlar nedeniyle randevuları yeniden planlamayı hak olarak saklı tutuyoruz.",
+            "cancellation": "İptaller en az 24 saat önceden yapılmalıdır. Geç iptaller ücrete tabi olabilir."
+        },
+        "payment": {
+            "title": "Ödeme şartları",
+            "content": "Yazılı olarak aksi kararlaştırılmadıkça ödeme hizmetlerin tamamlanması üzerine vadelidir.",
+            "methods": "Nakit, banka kartı, kredi kartı ve banka havalesini kabul ediyoruz."
+        },
+        "warranty": {
+            "title": "Garanti",
+            "content": "Tüm hizmetler işçilik hatalarına karşı standart garantimizle gelir.",
+            "tires": "Lastik garantileri üretici tarafından sağlanır ve onların şart ve koşullarına tabidir.",
+            "services": "Hizmet garantileri, hizmet tamamlanmasından itibaren 30 gün boyunca işçiliğimizdeki hataları kapsar."
+        },
+        "liability": {
+            "title": "Sorumluluk sınırı",
+            "content": "Sorumluluğumuz sağlanan hizmetlerin maliyetiyle sınırlıdır. Sonuç zararlardan sorumlu değiliz.",
+            "limitation": "Optimum güvenlik ve performans için düzenli lastik kontrolleri ve bakımını öneriyoruz."
+        },
+        "intellectualProperty": {
+            "title": "Fikri mülkiyet",
+            "content": "Web sitemizdeki tüm içerik ve materyaller Gent Bandenservice'in mülkiyetindedir ve geçerli fikri mülkiyet yasalarıyla korunur."
+        },
+        "privacy": {
+            "title": "Gizlilik",
+            "content": "Gizliliğiniz bizim için önemlidir. Bilgilerinizi nasıl topladığımız ve kullandığımızı anlamak için lütfen Gizlilik Politikamızı inceleyin."
+        },
+        "termination": {
+            "title": "Fesih",
+            "content": "Herhangi bir nedenle tek taraflı kendi takdirimizle herhangi birine hizmet vermeyi reddetme hakkını saklı tutuyoruz."
+        },
+        "changes": {
+            "title": "Şartlarda değişiklikler",
+            "content": "Bu şartları istediğimiz zaman değiştirme hakkını saklı tutuyoruz. Değişiklikler web sitemizde yayınlanacak ve hemen yürürlüğe girecektir."
+        },
+        "governing": {
+            "title": "Geçerli hukuk",
+            "content": "Bu şartlar Belçika hukuku tarafından yönetilir ve tüm anlaşmazlıklar Belçika mahkemelerinde çözülür."
+        },
+        "contact": {
+            "title": "İletişim bilgileri",
+            "content": "Bu Hizmet Şartları hakkında sorularınız için lütfen bizimle iletişime geçin:",
+            "email": "E-posta: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Son güncelleme",
+        "lastUpdatedDate": "12 Şubat 2026"
+    },
+    "CookiePolicy": {
+        "title": "Cerez Politikasi",
+        "subtitle": "Cerezleri ve benzer teknolojileri nasil kullaniyoruz",
+        "what": {
+            "title": "Cerez nedir?",
+            "content": "Cerezler, tercihleri hatirlamak ve siteyi iyilestirmek icin cihazinizda saklanan kucuk metin dosyalaridir."
+        },
+        "types": {
+            "title": "Kullandigimiz cerez turleri",
+            "essential": "Temel islevler icin gerekli cerezler.",
+            "analytics": "Site kullanimini anlamak icin analiz cerezleri.",
+            "support": "Sohbet ve destek araclari icin destek cerezleri."
+        },
+        "manage": {
+            "title": "Cerezleri yonetme",
+            "content": "Gerekli olmayan cerezleri afiste kabul edebilir veya reddedebilir, seciminizi alt bilgiden istediginiz zaman degistirebilirsiniz."
+        },
+        "thirdParty": {
+            "title": "Ucuncu taraf cerezleri",
+            "content": "Bazi ozellikler (analiz, sohbet) kendi cerezlerini ayarlayabilir. Yalnizca onaydan sonra kullanilir."
+        },
+        "updates": {
+            "title": "Guncellemeler",
+            "content": "Bu politikayi zaman zaman guncelleyebiliriz."
+        },
+        "contact": {
+            "title": "Iletisim",
+            "content": "Cerezlerle ilgili sorular? info@gentbandenservice.be adresine yazin."
+        },
+        "lastUpdated": "Son guncelleme",
+        "lastUpdatedDate": "13 Subat 2026"
+    },
+    "Cookie": {
+        "title": "Çerezler kullanıyoruz",
+        "description": "Tarayıcı deneyiminizi iyileştirmek ve site kullanımını ölçmek için çerezler kullanıyoruz. Gerekli olmayan çerezleri kabul edebilir veya reddedebilirsiniz.",
+        "accept": "Kabul et",
+        "reject": "Reddet",
+        "manage": "Çerezleri yönet",
+        "policy": "Çerez politikası"
+    }
+}

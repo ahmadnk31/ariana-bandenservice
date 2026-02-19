@@ -1,0 +1,452 @@
+{
+    "Header": {
+        "home": "Inicio",
+        "services": "Servicios",
+        "tires": "Neumáticos",
+        "contact": "Contacto",
+        "admin": "Admin",
+        "searchPlaceholder": "Buscar neumáticos...",
+        "blog": "Blog"
+    },
+    "Hero": {
+        "title1": "Centro de Neumáticos",
+        "title2": "Gante",
+        "title3": "Desde 2020",
+        "subtitle": "Compra neumáticos con montaje desde 25€. El centro de neumáticos más barato de Gante. Abierto lun-sáb 9-18h.",
+        "cta": "Ver Neumáticos",
+        "contact": "Contáctanos"
+    },
+    "Footer": {
+        "about": "Sobre nosotros",
+        "aboutText": "Gent bandenservice es un servicio de neumáticos y taller de reparación de automóviles en Gante Sint-Amandsberg, Bélgica. Ofrecemos servicios profesionales de neumáticos y reparación de vehículos realizados por técnicos certificados.",
+        "quickLinks": "Enlaces rápidos",
+        "contact": "Información de contacto",
+        "address": "Gante, Bélgica",
+        "rights": "Todos los derechos reservados.",
+        "openingHours": "Horario de apertura",
+        "openingHoursText": "Lunes - Viernes: 9:00 - 17:00",
+        "openingHoursText2": "Sábado - Domingo: Cerrado",
+        "visitUs": "Visítanos",
+        "visitUsText": "Gante, Bélgica"
+    },
+    "Services": {
+        "title": "Nuestros servicios",
+        "subtitle": "Servicios profesionales de neumáticos realizados por técnicos certificados.",
+        "bookNow": "Reservar ahora",
+        "from": "Desde",
+        "contactText": "¿Listo para empezar?",
+        "contactDescription": "Reserva tu servicio de neumáticos ahora y comienza tu camino hacia una mejor conducción.",
+        "contactButton": "Reservar ahora"
+    },
+    "Tires": {
+        "title": "Nuestra selección de neumáticos",
+        "subtitle": "Explora nuestra amplia gama de neumáticos nuevos y usados.",
+        "filters": "Filtros",
+        "clearAll": "Limpiar todo",
+        "price": "Precio",
+        "min": "Mín",
+        "max": "Máx",
+        "brand": "Marca",
+        "size": "Tamaño",
+        "dimensions": "Dimensiones",
+        "width": "Ancho",
+        "ratio": "Perfil",
+        "rim": "Llanta",
+        "season": "Temporada",
+        "seasonWinter": "Invierno",
+        "seasonSummer": "Verano",
+        "seasonAllSeason": "Todas las estaciones",
+        "seasons": {
+            "all": "Todas",
+            "summer": "Verano",
+            "winter": "Invierno",
+            "all-season": "Todas las estaciones"
+        },
+        "condition": "Estado",
+        "conditions": {
+            "all": "Todos",
+            "new": "Nuevo",
+            "used": "Usado"
+        },
+        "specs": "Especificaciones",
+        "loadIndex": "Índice de carga",
+        "speedRating": "Velocidad",
+        "inquireOrderNow": "Consultar / Pedir ahora",
+        "notifyMeWhenAvailable": "Avisarme cuando esté disponible",
+        "pleaseContactUs": "Por favor contáctanos",
+        "backToTires": "Volver a neumáticos",
+        "searchPlaceholder": "Buscar neumáticos...",
+        "foundResults": "{count} resultados encontrados",
+        "totalPages": "Total de páginas: {count}",
+        "noResults": "No se encontraron neumáticos que coincidan con tus criterios.",
+        "clearFilters": "Limpiar todos los filtros",
+        "inStock": "En stock",
+        "stockCount": "{count} en stock",
+        "outOfStock": "Agotado",
+        "viewDetails": "Ver detalles",
+        "inquire": "Consultar",
+        "notifyMe": "Avisarme",
+        "secondHand": "Segunda mano",
+        "noDescription": "No hay descripción disponible",
+        "addToCart": "Añadir al carrito",
+        "requestStock": "Solicitar Stock",
+        "stockRequestSuccess": "¡Tu solicitud ha sido enviada! Te avisaremos cuando el neumático vuelva a estar en stock.",
+        "stockRequestTitle": "Solicitar este neumático",
+        "stockRequestSubtitle": "Este neumático está agotado actualmente. Completa tus datos y lo traeremos de vuelta lo antes posible.",
+        "name": "Nombre",
+        "phone": "Teléfono (opcional)",
+        "email": "Correo electrónico",
+        "submitRequest": "Enviar solicitud",
+        "sending": "Enviando...",
+        "relatedProducts": "Productos relacionados"
+    },
+    "Contact": {
+        "title": "Contáctanos",
+        "subtitle": "¿Tienes preguntas o quieres reservar una cita? Estamos aquí para ayudarte.",
+        "formTitle": "Envíanos un mensaje",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "phoneOptional": "Teléfono (opcional)",
+        "service": "Servicio de interés",
+        "selectService": "Selecciona un servicio",
+        "message": "Mensaje",
+        "submit": "Enviar mensaje",
+        "sending": "Enviando...",
+        "success": "¡Mensaje enviado con éxito!",
+        "messageSentTitle": "¡Mensaje enviado!",
+        "thankYouMessage": "Gracias por contactarnos. Nos pondremos en contacto contigo lo antes posible.",
+        "sendAnother": "Enviar otro mensaje",
+        "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+        "inquireOrderNow": "Consultar / Pedir ahora",
+        "address": "Dirección",
+        "addressText": "Gante, Bélgica",
+        "openingHours": "Horario de apertura",
+        "openingHoursText": "Lunes - Viernes: 9:00 - 17:00",
+        "openingHoursText2": "Sábado - Domingo: Cerrado",
+        "visitUs": "Visítanos",
+        "visitUsText": "Gante, Bélgica",
+        "messagePlaceholder": "Cuéntanos sobre tus necesidades..."
+    },
+    "Common": {
+        "loading": "Cargando...",
+        "back": "Volver"
+    },
+    "SearchOverlay": {
+        "close": "ESC",
+        "searchPlaceholder": "Buscar neumáticos...",
+        "noResults": "No se encontraron neumáticos que coincidan con tus criterios.",
+        "loading": "Cargando...",
+        "used": "Usado"
+    },
+    "Home": {
+        "quality": "Calidad",
+        "title": "Neumáticos recientes",
+        "subtitle": "Explora nuestra amplia gama de neumáticos nuevos y usados.",
+        "noResults": "No se encontraron neumáticos que coincidan con tus criterios. Estamos trabajando para añadir más neumáticos a nuestra colección.",
+        "viewDetails": "Ver detalles",
+        "qualityText": "Ofrecemos productos y servicios de la más alta calidad para garantizar tu seguridad y satisfacción.",
+        "experience": "Experiencia",
+        "experienceText": "Con años de experiencia en la industria de los neumáticos, tenemos el conocimiento y la experiencia para ofrecerte el mejor servicio posible.",
+        "service": "Servicio",
+        "serviceText": "Nuestro equipo de técnicos certificados está dedicado a brindarte el mejor servicio posible para mantenerte seguro en la carretera.",
+        "contact": "Contacto",
+        "contactText": "Si tienes alguna pregunta o inquietud, no dudes en contactarnos. Estamos aquí para ayudarte en cada paso.",
+        "reviews": {
+            "title": "Con la confianza de nuestros clientes",
+            "subtitle": "Vea lo que dicen nuestros clientes satisfechos sobre nuestro servicio.",
+            "googleTrusted": "Google de confianza",
+            "viewAll": "Ver todas las reseñas en Google",
+            "postedOnGoogle": "Publicado en Google"
+        }
+    },
+    "Cart": {
+        "title": "Carrito de compras",
+        "close": "Cerrar carrito",
+        "empty": "Tu carrito está vacío",
+        "emptySubtitle": "Añade algunos neumáticos para comenzar",
+        "subtotal": "Subtotal",
+        "shippingNote": "El envío se calcula en el pago",
+        "checkout": "Proceder al pago",
+        "addToCart": "Añadir al carrito",
+        "added": "¡Añadido!",
+        "outOfStock": "Agotado",
+        "remove": "Eliminar artículo",
+        "decrease": "Disminuir cantidad",
+        "increase": "Aumentar cantidad",
+        "incrementBy": "Aumentar en {count}",
+        "decrementBy": "Disminuir en {count}"
+    },
+    "Checkout": {
+        "title": "Pago",
+        "orderSummary": "Resumen del pedido",
+        "shippingAddress": "Dirección de envío",
+        "shippingMethod": "Método de envío",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo electrónico",
+        "phone": "Teléfono (opcional)",
+        "street": "Dirección",
+        "city": "Ciudad",
+        "postalCode": "Código postal",
+        "country": "País",
+        "subtotal": "Subtotal",
+        "shipping": "Envío",
+        "total": "Total",
+        "payNow": "Pagar ahora",
+        "processing": "Procesando...",
+        "deliveryDays": "{days} días laborables",
+        "emptyCart": "Tu carrito está vacío",
+        "backToShop": "Volver a la tienda",
+        "successTitle": "¡Pedido confirmado!",
+        "successMessage": "Gracias por tu pedido. Recibirás un correo de confirmación en breve.",
+        "orderNumber": "Número de pedido",
+        "continueShopping": "Seguir comprando",
+        "cancelTitle": "Pago cancelado",
+        "cancelMessage": "Tu pago fue cancelado. Los artículos de tu carrito siguen guardados.",
+        "tryAgain": "Intentar de nuevo"
+    },
+    "FAQ": {
+        "title": "Preguntas frecuentes",
+        "subtitle": "Todo lo que necesitas saber sobre nuestros servicios de neumáticos.",
+        "contactText": "¿Tienes más preguntas? Contáctanos.",
+        "contactButton": "Contáctanos",
+        "questions": {
+            "services": "Nuestros servicios",
+            "services_text": "• Venta de neumáticos nuevos y usados\n• Neumáticos de verano, invierno y 4 estaciones\n• Montaje y equilibrado incluidos\n• Todas las medidas de 13” a 21” (perfil 5mm – 8mm)\n• Neumáticos para furgonetas / C disponibles\n• Marcas líderes como: Michelin, Goodyear, Continental, Bridgestone, Pirelli, etc.",
+            "prices_used": "Precios de neumáticos usados",
+            "prices_used_text": "Los precios incluyen montaje y equilibrado:\n\n• 13”: 25 € – 30 €\n• 14”: 30 € – 35 €\n• 15”: 35 € – 40 €\n• 16”: 40 € – 45 €\n• 17”: 40 € – 50 €\n• 18”: 40 € – 55 €\n• 19”: 50 € – 60 €\n• 20”: 60 € – 70 €\n• 21”: 60 € – 70 €\n• Neumáticos C / furgonetas: 40 € – 50 €",
+            "prices_new": "Precios iniciales de neumáticos nuevos",
+            "prices_new_text": "Precios por unidad, montaje y equilibrado incluidos:\n\n• 13”: 55 €\n• 14”: 60 €\n• 15”: 70 €\n• 16”: 75 €\n• 17”: 80 €\n• 18”: 85 €\n• 19”: 90 €\n• 20”: 100 €",
+            "hours": "Horario de apertura",
+            "hours_text": "• Lunes a sábado: 09:00 – 18:00\n• Domingo: 10:00 – 16:00 (solo con cita previa, llamar al 0466 19 56 22)",
+            "why_us": "¿Por qué elegir Gent bandenservice?",
+            "why_us_text": "✅ Los precios de neumáticos más bajos de la región\n✅ Servicio rápido – realizado mientras esperas\n✅ Neumáticos de calidad de las mejores marcas\n✅ Montaje y equilibrado incluidos\n✅ Gran stock en todas las medidas",
+            "contact": "Contacto y ubicación",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gante)\n📞 Móvil: +32 466 19 56 22\n📧 Email: contact@arianabandenservice.be\n📘 Facebook: Gent bandenservice",
+            "openingHours": "Horario de apertura",
+            "openingHoursText": "Lunes - Viernes: 9:00 - 17:00",
+            "openingHoursText2": "Sábado - Domingo: Cerrado",
+            "visitUs": "Visítanos",
+            "visitUsText": "Gante, Bélgica",
+            "payment": "¿Qué métodos de pago aceptan?",
+            "payment_text": "Aceptamos todas las principales tarjetas de crédito, incluyendo Visa, Mastercard y American Express.",
+            "replacement": "¿Cuándo debo reemplazar mis neumáticos?",
+            "replacement_text": "La profundidad mínima legal es de 1,6 mm, pero por seguridad recomendamos reemplazarlos a 3 mm (verano) o 4 mm (invierno). También revisa grietas, deformaciones o envejecimiento (más de 6–10 años).",
+            "seasonal": "¿Cuál es la diferencia entre neumáticos de verano, invierno y todas las estaciones?",
+            "seasonal_text": "• Neumáticos de verano: óptimos por encima de 7°C, compuesto más duro para mejor agarre en seco y mojado.\n• Neumáticos de invierno: esenciales por debajo de 7°C, dibujo más profundo y goma más blanda para agarre en nieve y hielo.\n• Neumáticos para todas las estaciones: compromiso para climas moderados, utilizables todo el año pero con menor rendimiento en condiciones extremas.",
+            "balancing_alignment": "¿Cuál es la diferencia entre equilibrado y alineación?",
+            "balancing_alignment_text": "• Equilibrado: garantiza una rotación suave sin vibraciones a velocidad (se realiza en cada cambio de neumáticos).\n• Alineación: asegura que las ruedas estén correctamente alineadas para una conducción recta y un desgaste uniforme.",
+            "tpms": "¿Qué es el TPMS y pueden darle servicio?",
+            "tpms_text": "El TPMS (Sistema de Monitoreo de Presión de Neumáticos) controla la presión de los neumáticos. Podemos instalar, reiniciar y reemplazar sensores TPMS cuando se agotan las baterías.",
+            "repair": "¿Pueden reparar un neumático pinchado?",
+            "repair_text": "Sí, en muchos casos. Si el pinchazo está en la banda de rodadura y no es demasiado grande, usamos una reparación profesional. Los daños en el flanco generalmente no se pueden reparar de forma segura.",
+            "recycling": "¿Qué pasa con mis neumáticos viejos?",
+            "recycling_text": "Desechamos tus neumáticos viejos de manera ecológica a través de socios de reciclaje certificados (Recytyre), para que el caucho pueda reutilizarse."
+        }
+    },
+    "Metadata": {
+        "title": "Centro Neumáticos Gante | Comprar Neumáticos con Montaje",
+        "description": "✓ El centro de neumáticos más barato de Gante! Neumáticos nuevos y usados desde 25€ montaje incl. Abierto lun-sáb 9-18h, domingos con cita. ☎ +32 466 19 56 22",
+        "ogDescription": "Centro Neumáticos Gante - Neumáticos nuevos y usados. Montaje, equilibrado y alineación incluidos. ¡Mejores precios!",
+        "keywords": "centro neumáticos gante, comprar neumáticos, montaje neumáticos, alineación, centro neumáticos bélgica, neumáticos usados, neumáticos nuevos, neumáticos baratos, neumáticos invierno, neumáticos verano, Sint-Amandsberg",
+        "tiresTitle": "Comprar Neumáticos | Nuevos y Usados",
+        "tiresDescription": "¿Comprar neumáticos en Gante? Descubre nuestros neumáticos de invierno, verano y 4 estaciones. Montaje incluido. Desde 25€.",
+        "servicesTitle": "Servicios Neumáticos | Montaje y Alineación",
+        "servicesDescription": "Montaje de neumáticos profesional, equilibrado y alineación en Gante. Servicio rápido, buenos precios. ¡Abiertos sábados!",
+        "contactTitle": "Contacto | Centro Neumáticos Gante",
+        "contactDescription": "Contáctanos. Llama al +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "FAQ | Precios y Horarios",
+        "faqDescription": "FAQ sobre precios de neumáticos, horarios, montaje y más. ¿Centro de neumáticos abierto domingo? ¡Sí, con cita!",
+        "privacyTitle": "Política de Privacidad | Gent Bandenservice",
+        "privacyDescription": "Política de privacidad de Gent bandenservice. Aprenda cómo recopilamos, utilizamos y protegemos su información personal.",
+        "termsTitle": "Términos de Servicio | Gent Bandenservice",
+        "termsDescription": "Términos de servicio de Gent bandenservice. Lea nuestros términos y condiciones para el uso de nuestros servicios de neumáticos.",
+        "cookiesTitle": "Política de Cookies | Gent Bandenservice",
+        "cookiesDescription": "Aprenda cómo Gent bandenservice usa cookies y cómo puede gestionar sus preferencias."
+    },
+    "DevBanner": {
+        "message": "Todavía estamos en modo de desarrollo. Todos los neumáticos no son reales; es solo para fines de demostración. Los neumáticos reales llegarán pronto."
+    },
+    "Feedback": {
+        "question": "¿Le gusta nuestro servicio?",
+        "placeholder": "Cuéntenos su experiencia...",
+        "submit": "Enviar",
+        "loading": "Cargando",
+        "success": "¡Su comentario ha sido recibido!",
+        "thanks": "Gracias por su ayuda."
+    },
+    "Blog": {
+        "pageTitle": "Nuestro Blog | Gent Bandenservice",
+        "pageDescription": "Lea las últimas noticias, consejos e información sobre neumáticos y mantenimiento en Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Noticias y Consejos",
+        "subtitle": "Manténgase informado sobre las últimas novedades y reciba consejos útiles para sus neumáticos.",
+        "allCategories": "Todas las categorías",
+        "noPosts": "No se encontraron publicaciones",
+        "noPostsDescription": "Actualmente no hay publicaciones de blog en esta categoría.",
+        "readTime": "tiempo de lectura",
+        "views": "vistas",
+        "backToBlog": "Volver al Blog",
+        "share": "Compartir esta publicación",
+        "relatedPosts": "Publicaciones relacionadas"
+    },
+    "Privacy": {
+        "title": "Política de Privacidad",
+        "subtitle": "Cómo recopilamos, usamos y protegemos su información personal",
+        "dataCollection": {
+            "title": "Información que recopilamos",
+            "content": "Recopilamos varios tipos de información para brindar y mejorar nuestros servicios:",
+            "personalInfo": "Información de identificación personal (nombre, datos de contacto)",
+            "contactInfo": "Información de contacto (dirección de correo electrónico, número de teléfono, dirección)",
+            "vehicleInfo": "Información del vehículo (marca, modelo, año, especificaciones de neumáticos)",
+            "serviceInfo": "Historial de servicios y preferencias"
+        },
+        "dataUsage": {
+            "title": "Cómo usamos su información",
+            "content": "Utilizamos la información que recopilamos para los siguientes propósitos:",
+            "provideServices": "Para proporcionar y mantener nuestros servicios de neumáticos",
+            "processBookings": "Para procesar citas y reservas de servicios",
+            "communication": "Para comunicarnos con usted sobre servicios y citas",
+            "improve": "Para mejorar nuestros servicios y la experiencia del cliente"
+        },
+        "dataSharing": {
+            "title": "Intercambio de información",
+            "content": "No vendemos, comerciamos o transferimos su información personal a terceros sin su consentimiento, excepto como se describe en esta política de privacidad o según lo exija la ley."
+        },
+        "dataSecurity": {
+            "title": "Seguridad de datos",
+            "content": "Implementamos medidas de seguridad apropiadas para proteger su información personal contra el acceso, alteración, divulgación o destrucción no autorizados."
+        },
+        "userRights": {
+            "title": "Sus derechos",
+            "content": "Bajo el RGPD y las leyes de privacidad aplicables, tiene los siguientes derechos:",
+            "access": "El derecho a acceder a sus datos personales",
+            "rectification": "El derecho a rectificar datos personales inexactos",
+            "erasure": "El derecho al borrado ('derecho al olvido')",
+            "portability": "El derecho a la portabilidad de datos",
+            "objection": "El derecho a oponerse al procesamiento"
+        },
+        "cookies": {
+            "title": "Cookies",
+            "content": "Utilizamos cookies para mejorar su experiencia de navegación y analizar el tráfico del sitio web. Puede gestionar sus preferencias de cookies a través de la configuración de su navegador."
+        },
+        "contact": {
+            "title": "Contáctenos",
+            "content": "Si tiene alguna pregunta sobre esta Política de Privacidad, comuníquese con nosotros:",
+            "email": "Correo electrónico: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Actualizaciones de política",
+            "content": "Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificaremos sobre cualquier cambio publicando la nueva política en esta página."
+        },
+        "lastUpdated": "Última actualización",
+        "lastUpdatedDate": "12 de febrero de 2026"
+    },
+    "Terms": {
+        "title": "Términos de Servicio",
+        "subtitle": "Términos y condiciones para usar nuestros servicios de neumáticos",
+        "acceptance": {
+            "title": "Aceptación de términos",
+            "content": "Al usar nuestros servicios, acepta estar sujeto a estos Términos de Servicio. Si no está de acuerdo con estos términos, por favor no use nuestros servicios."
+        },
+        "services": {
+            "title": "Nuestros servicios",
+            "content": "Gent Bandenservice proporciona los siguientes servicios relacionados con neumáticos:",
+            "tireInstallation": "Instalación y montaje de neumáticos",
+            "tireRepair": "Reparación y parchado de neumáticos",
+            "wheelBalancing": "Servicios de balanceo de ruedas",
+            "wheelAlignment": "Servicios de alineación de ruedas",
+            "tireSales": "Venta de neumáticos nuevos y usados"
+        },
+        "booking": {
+            "title": "Citas y reservas",
+            "content": "Todos los servicios deben reservarse con anticipación. Nos reservamos el derecho de reprogramar citas debido a circunstancias imprevistas.",
+            "cancellation": "Las cancelaciones deben hacerse con al menos 24 horas de anticipación. Las cancelaciones tardías pueden incurrir en cargos."
+        },
+        "payment": {
+            "title": "Términos de pago",
+            "content": "El pago vence al completar los servicios a menos que se acuerde lo contrario por escrito.",
+            "methods": "Aceptamos efectivo, tarjetas de débito, tarjetas de crédito y transferencias bancarias."
+        },
+        "warranty": {
+            "title": "Garantía",
+            "content": "Todos los servicios vienen con nuestra garantía estándar contra defectos en la mano de obra.",
+            "tires": "Las garantías de neumáticos son proporcionadas por el fabricante y están sujetas a sus términos y condiciones.",
+            "services": "Las garantías de servicio cubren defectos en nuestra mano de obra por un período de 30 días desde la finalización del servicio."
+        },
+        "liability": {
+            "title": "Limitación de responsabilidad",
+            "content": "Nuestra responsabilidad se limita al costo de los servicios proporcionados. No somos responsables de daños consecuentes.",
+            "limitation": "Recomendamos inspecciones regulares de neumáticos y mantenimiento para un rendimiento y seguridad óptimos."
+        },
+        "intellectualProperty": {
+            "title": "Propiedad intelectual",
+            "content": "Todo el contenido de nuestro sitio web y materiales es propiedad de Gent Bandenservice y está protegido por las leyes de propiedad intelectual aplicables."
+        },
+        "privacy": {
+            "title": "Privacidad",
+            "content": "Su privacidad es importante para nosotros. Por favor revise nuestra Política de Privacidad para entender cómo recopilamos y usamos su información."
+        },
+        "termination": {
+            "title": "Terminación",
+            "content": "Nos reservamos el derecho de rechazar el servicio a cualquier persona por cualquier motivo a nuestra sola discreción."
+        },
+        "changes": {
+            "title": "Cambios en los términos",
+            "content": "Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios se publicarán en nuestro sitio web y entrarán en vigor inmediatamente."
+        },
+        "governing": {
+            "title": "Ley aplicable",
+            "content": "Estos términos se rigen por la ley belga y cualquier disputa se resolverá en los tribunales belgas."
+        },
+        "contact": {
+            "title": "Información de contacto",
+            "content": "Para preguntas sobre estos Términos de Servicio, comuníquese con nosotros:",
+            "email": "Correo electrónico: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Última actualización",
+        "lastUpdatedDate": "12 de febrero de 2026"
+    },
+    "CookiePolicy": {
+        "title": "Política de Cookies",
+        "subtitle": "Cómo usamos cookies y tecnologías similares",
+        "what": {
+            "title": "¿Qué son las cookies?",
+            "content": "Las cookies son pequeños archivos de texto almacenados en su dispositivo para recordar preferencias y mejorar el sitio."
+        },
+        "types": {
+            "title": "Tipos de cookies que usamos",
+            "essential": "Cookies esenciales para la funcionalidad básica.",
+            "analytics": "Cookies de análisis para comprender el uso del sitio.",
+            "support": "Cookies de soporte para chat y herramientas de atención."
+        },
+        "manage": {
+            "title": "Gestionar cookies",
+            "content": "Puede aceptar o rechazar cookies no esenciales en el banner y cambiar su elección en cualquier momento en el pie de página."
+        },
+        "thirdParty": {
+            "title": "Cookies de terceros",
+            "content": "Algunas funciones (analítica, chat) pueden establecer sus propias cookies. Solo se usan después del consentimiento."
+        },
+        "updates": {
+            "title": "Actualizaciones",
+            "content": "Podemos actualizar esta política de vez en cuando."
+        },
+        "contact": {
+            "title": "Contacto",
+            "content": "¿Preguntas sobre cookies? Envíe un correo a info@gentbandenservice.be."
+        },
+        "lastUpdated": "Última actualización",
+        "lastUpdatedDate": "13 de febrero de 2026"
+    },
+    "Cookie": {
+        "title": "Usamos cookies",
+        "description": "Usamos cookies para mejorar su experiencia y medir el uso del sitio. Puede aceptar o rechazar las cookies no esenciales.",
+        "accept": "Aceptar",
+        "reject": "Rechazar",
+        "manage": "Administrar cookies",
+        "policy": "Política de cookies"
+    }
+}

@@ -1,0 +1,451 @@
+{
+    "Header": {
+        "home": "Accueil",
+        "services": "Services",
+        "tires": "Pneus",
+        "contact": "Contact",
+        "admin": "Admin",
+        "searchPlaceholder": "Rechercher des pneus...",
+        "blog": "blog"
+    },
+    "Hero": {
+        "title1": "Centre Pneus",
+        "title2": "Gand",
+        "title3": "Depuis 2020",
+        "subtitle": "Achetez des pneus avec montage dès 25€. Le centre de pneus le moins cher à Gand. Ouvert lun-sam 9h-18h.",
+        "cta": "Voir les Pneus",
+        "contact": "Contactez-Nous"
+    },
+    "Footer": {
+        "about": "À propos de nous",
+        "aboutText": "Gent bandenservice est un service de pneus et un atelier de réparation automobile situé à Gand Sint-Amandsberg, Belgique. Nous proposons des services professionnels de pneus et de réparation automobile assurés par des techniciens certifiés.",
+        "quickLinks": "Liens rapides",
+        "contact": "Informations de contact",
+        "address": "Gand, Belgique",
+        "rights": "Tous droits réservés.",
+        "openingHours": "Heures d’ouverture",
+        "openingHoursText": "Lundi - Vendredi : 9h00 - 18h00",
+        "openingHoursText2": "Samedi : 9h00 - 16h00",
+        "visitUs": "Nous rendre visite",
+        "visitUsText": "Gand, Belgique"
+    },
+    "Services": {
+        "title": "Nos services",
+        "subtitle": "Services professionnels de pneus par des techniciens certifiés.",
+        "bookNow": "Réserver maintenant",
+        "from": "À partir de",
+        "contactText": "Prêt à commencer ?",
+        "contactDescription": "Réservez votre service de pneus dès maintenant et commencez votre trajet vers une meilleure conduite.",
+        "contactButton": "Réserver maintenant"
+    },
+    "Tires": {
+        "title": "Notre sélection de pneus",
+        "subtitle": "Découvrez notre large gamme de pneus neufs et d’occasion.",
+        "filters": "Filtres",
+        "clearAll": "Tout effacer",
+        "price": "Prix",
+        "min": "Min",
+        "max": "Max",
+        "brand": "Marque",
+        "size": "Taille",
+        "dimensions": "Dimensions",
+        "width": "Largeur",
+        "ratio": "Ratio",
+        "rim": "Jante",
+        "season": "Saison",
+        "seasonWinter": "Hiver",
+        "seasonSummer": "Été",
+        "seasonAllSeason": "Toutes saisons",
+        "seasons": {
+            "all": "Toutes",
+            "summer": "Été",
+            "winter": "Hiver",
+            "all-season": "Toutes saisons"
+        },
+        "condition": "État",
+        "conditions": {
+            "all": "Tous",
+            "new": "Neuf",
+            "used": "Occasion"
+        },
+        "specs": "Caractéristiques",
+        "loadIndex": "Indice de charge",
+        "speedRating": "Vitesse",
+        "inquireOrderNow": "Demander / Commander maintenant",
+        "notifyMeWhenAvailable": "Me prévenir lorsqu’il est disponible",
+        "pleaseContactUs": "Veuillez nous contacter",
+        "backToTires": "Retour aux pneus",
+        "searchPlaceholder": "Rechercher des pneus...",
+        "foundResults": "{count} résultats trouvés",
+        "totalPages": "Nombre total de pages : {count}",
+        "noResults": "Aucun pneu ne correspond à vos critères.",
+        "clearFilters": "Effacer tous les filtres",
+        "inStock": "En stock",
+        "stockCount": "{count} en stock",
+        "outOfStock": "Rupture de stock",
+        "viewDetails": "Voir les détails",
+        "inquire": "Demander",
+        "notifyMe": "Me prévenir",
+        "secondHand": "Seconde main",
+        "noDescription": "Aucune description disponible",
+        "addToCart": "Ajouter au panier",
+        "requestStock": "Demander du stock",
+        "stockRequestSuccess": "Votre demande a été envoyée ! Nous vous tiendrons informé dès que le pneu sera de nouveau en stock.",
+        "stockRequestTitle": "Demander ce pneu",
+        "stockRequestSubtitle": "Ce pneu est actuellement en rupture de stock. Remplissez vos coordonnées et nous le ramènerons dès que possible.",
+        "name": "Nom",
+        "phone": "Téléphone (optionnel)",
+        "email": "E-mail",
+        "submitRequest": "Envoyer la demande",
+        "sending": "Envoi en cours...",
+        "relatedProducts": "Produits associés"
+    },
+    "Contact": {
+        "title": "Contactez-nous",
+        "subtitle": "Des questions ou envie de prendre rendez-vous ? Nous sommes là pour vous aider.",
+        "formTitle": "Envoyez-nous un message",
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "phoneOptional": "Téléphone (optionnel)",
+        "service": "Service souhaité",
+        "selectService": "Sélectionnez un service",
+        "message": "Message",
+        "submit": "Envoyer le message",
+        "sending": "Envoi en cours...",
+        "success": "Message envoyé avec succès !",
+        "messageSentTitle": "Message envoyé !",
+        "thankYouMessage": "Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.",
+        "sendAnother": "Envoyer un autre message",
+        "error": "Une erreur est survenue. Veuillez réessayer.",
+        "inquireOrderNow": "Demander / Commander maintenant",
+        "address": "Adresse",
+        "addressText": "Gand, Belgique",
+        "openingHours": "Heures d’ouverture",
+        "openingHoursText": "Lundi - Vendredi : 9h00 - 17h00",
+        "openingHoursText2": "Samedi - Dimanche : Fermé",
+        "visitUs": "Nous rendre visite",
+        "visitUsText": "Gand, Belgique",
+        "messagePlaceholder": "Parlez-nous de vos besoins..."
+    },
+    "Common": {
+        "loading": "Chargement...",
+        "back": "Retour"
+    },
+    "SearchOverlay": {
+        "close": "ESC",
+        "searchPlaceholder": "Rechercher des pneus...",
+        "noResults": "Aucun pneu ne correspond à vos critères.",
+        "loading": "Chargement...",
+        "used": "D'occasion"
+    },
+    "Home": {
+        "quality": "Qualité",
+        "title": "Pneus récents",
+        "subtitle": "Découvrez notre large gamme de pneus neufs et d’occasion.",
+        "noResults": "Aucun pneu ne correspond à vos critères. Nous travaillons à ajouter davantage de pneus à notre collection.",
+        "viewDetails": "Voir les détails",
+        "qualityText": "Nous offrons des produits et services de la plus haute qualité pour garantir votre sécurité et votre satisfaction.",
+        "experience": "Expérience",
+        "experienceText": "Avec des années d’expérience dans l’industrie du pneu, nous avons les connaissances et l’expertise pour vous offrir le meilleur service possible.",
+        "service": "Service",
+        "serviceText": "Notre équipe de techniciens certifiés est dédiée à vous fournir le meilleur service possible pour vous garder en sécurité sur la route.",
+        "contact": "Contact",
+        "contactText": "Si vous avez des questions ou des préoccupations, n’hésitez pas à nous contacter. Nous sommes là pour vous accompagner à chaque étape.",
+        "reviews": {
+            "title": "Approuvé par nos clients",
+            "subtitle": "Découvrez ce que nos clients satisfaits disent de nos services.",
+            "googleTrusted": "Google Approuvé",
+            "viewAll": "Voir tous les avis sur Google",
+            "postedOnGoogle": "Publié sur Google"
+        }
+    },
+    "Cart": {
+        "title": "Panier",
+        "close": "Fermer le panier",
+        "empty": "Votre panier est vide",
+        "emptySubtitle": "Ajoutez des pneus pour commencer",
+        "subtotal": "Sous-total",
+        "shippingNote": "Frais de livraison calculés à la caisse",
+        "checkout": "Passer à la caisse",
+        "addToCart": "Ajouter au panier",
+        "added": "Ajouté !",
+        "outOfStock": "Rupture de stock",
+        "remove": "Supprimer l’article",
+        "decrease": "Diminuer la quantité",
+        "increase": "Augmenter la quantité",
+        "incrementBy": "Augmenter de {count}",
+        "decrementBy": "Diminuer de {count}"
+    },
+    "Checkout": {
+        "title": "Paiement",
+        "orderSummary": "Récapitulatif de la commande",
+        "shippingAddress": "Adresse de livraison",
+        "shippingMethod": "Mode de livraison",
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "E-mail",
+        "phone": "Téléphone (optionnel)",
+        "street": "Adresse",
+        "city": "Ville",
+        "postalCode": "Code postal",
+        "country": "Pays",
+        "subtotal": "Sous-total",
+        "shipping": "Livraison",
+        "total": "Total",
+        "payNow": "Payer maintenant",
+        "processing": "Traitement en cours...",
+        "deliveryDays": "{days} jours ouvrables",
+        "emptyCart": "Votre panier est vide",
+        "backToShop": "Retour à la boutique",
+        "successTitle": "Commande confirmée !",
+        "successMessage": "Merci pour votre commande. Vous recevrez bientôt un e-mail de confirmation.",
+        "orderNumber": "Numéro de commande",
+        "continueShopping": "Continuer les achats",
+        "cancelTitle": "Paiement annulé",
+        "cancelMessage": "Votre paiement a été annulé. Les articles de votre panier sont toujours enregistrés.",
+        "tryAgain": "Réessayer"
+    },
+    "FAQ": {
+        "title": "Foire aux questions",
+        "subtitle": "Tout ce que vous devez savoir sur nos services de pneus.",
+        "contactText": "Si vous avez des questions, n'hésitez pas à nous contacter.",
+        "contactButton": "Nous contacter",
+        "questions": {
+            "services": "Nos services",
+            "services_text": "• Vente de pneus neufs et d’occasion\n• Pneus été, hiver et 4 saisons\n• Montage et équilibrage inclus\n• Toutes tailles de 13” à 21” (profil 5mm – 8mm)\n• Pneus utilitaires / C disponibles\n• Grandes marques : Michelin, Goodyear, Continental, Bridgestone, Pirelli, etc.",
+            "prices_used": "Prix des pneus d’occasion",
+            "prices_used_text": "Les prix incluent le montage et l’équilibrage :\n\n• 13” : 25 € – 30 €\n• 14” : 30 € – 35 €\n• 15” : 35 € – 40 €\n• 16” : 40 € – 45 €\n• 17” : 40 € – 50 €\n• 18” : 40 € – 55 €\n• 19” : 50 € – 60 €\n• 20” : 60 € – 70 €\n• 21” : 60 € – 70 €\n• Pneus C / utilitaires : 40 € – 50 €",
+            "prices_new": "Prix de départ des pneus neufs",
+            "prices_new_text": "Prix par pièce, montage et équilibrage inclus :\n\n• 13” : 55 €\n• 14” : 60 €\n• 15” : 70 €\n• 16” : 75 €\n• 17” : 80 €\n• 18” : 85 €\n• 19” : 90 €\n• 20” : 100 €",
+            "hours": "Heures d’ouverture",
+            "hours_text": "• Lundi à samedi : 09h00 – 18h00\n• Dimanche : 10h00 – 16h00 (sur rendez-vous uniquement, appelez le 0466 19 56 22)",
+            "why_us": "Pourquoi choisir Gent bandenservice ?",
+            "why_us_text": "✅ Les pneus les moins chers de la région\n✅ Service rapide – effectué pendant que vous attendez\n✅ Pneus de qualité des meilleures marques\n✅ Montage et équilibrage inclus\n✅ Grand stock dans toutes les tailles",
+            "contact": "Contact & localisation",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gand)\n📞 GSM : +32 466 19 56 22\n📧 E-mail : contact@arianabandenservice.be\n📘 Facebook : Gent bandenservice",
+            "openingHours": "Heures d’ouverture",
+            "openingHoursText": "Lundi - Samedi : 9h00 - 18h00",
+            "openingHoursText2": "Dimanche : 10h00 - 18h00",
+            "visitUs": "Nous rendre visite",
+            "visitUsText": "Gand, Belgique",
+            "payment": "Quels moyens de paiement acceptez-vous ?",
+            "payment_text": "Nous acceptons toutes les principales cartes de crédit, y compris Visa, Mastercard et American Express.",
+            "replacement": "Quand dois-je remplacer mes pneus ?",
+            "replacement_text": "La profondeur minimale légale est de 1,6 mm, mais pour plus de sécurité, nous recommandons un remplacement à 3 mm (été) ou 4 mm (hiver). Vérifiez également les fissures, les hernies ou le vieillissement (plus de 6 à 10 ans).",
+            "seasonal": "Quelle est la différence entre les pneus été, hiver et toutes saisons ?",
+            "seasonal_text": "• Pneus été : optimaux au-dessus de 7°C, gomme plus dure pour une meilleure adhérence sur route sèche ou mouillée.\n• Pneus hiver : essentiels en dessous de 7°C, sculpture plus profonde et gomme plus tendre pour l’adhérence sur neige et glace.\n• Pneus toutes saisons : compromis pour climats modérés, utilisables toute l’année mais moins performants dans des conditions extrêmes.",
+            "balancing_alignment": "Quelle est la différence entre l’équilibrage et le parallélisme ?",
+            "balancing_alignment_text": "• Équilibrage : garantit une rotation fluide sans vibrations à vitesse élevée (effectué à chaque changement de pneu).\n• Parallélisme : assure que les roues sont correctement alignées pour une conduite droite et une usure uniforme des pneus.",
+            "tpms": "Qu’est-ce que le TPMS et pouvez-vous l’entretenir ?",
+            "tpms_text": "Le TPMS (système de surveillance de la pression des pneus) contrôle la pression de vos pneus. Nous pouvons installer, réinitialiser et remplacer les capteurs TPMS lorsque les batteries sont épuisées.",
+            "repair": "Pouvez-vous réparer un pneu crevé ?",
+            "repair_text": "Oui, dans de nombreux cas. Si la perforation se situe dans la bande de roulement et n’est pas trop grande, nous utilisons une réparation professionnelle. Les dommages sur le flanc ne peuvent généralement pas être réparés en toute sécurité.",
+            "recycling": "Que deviennent mes anciens pneus ?",
+            "recycling_text": "Nous éliminons vos anciens pneus de manière écologique via des partenaires de recyclage certifiés (Recytyre), afin que le caoutchouc puisse être réutilisé."
+        }
+    },
+    "Metadata": {
+        "title": "Centre Pneus Gand | Acheter Pneus avec Montage",
+        "description": "✓ Centre pneus le moins cher à Gand! Pneus neufs & occasion dès 25€ montage inclus. Ouvert lun-sam 9h-18h, dimanche sur RDV. ☎ +32 466 19 56 22",
+        "ogDescription": "Centre Pneus Gand - Pneus neufs & occasion. Montage, équilibrage et parallélisme inclus. Meilleurs prix!",
+        "keywords": "centre pneus gand, pneus gand, acheter pneus, montage pneus, parallélisme, centre pneus belgique, pneus occasion, pneus neufs, pneus pas cher, pneus hiver, pneus été, pneus 4 saisons, Sint-Amandsberg, centre pneus ouvert dimanche",
+        "tiresTitle": "Acheter Pneus | Neufs & Occasion",
+        "tiresDescription": "Acheter des pneus à Gand? Découvrez nos pneus hiver, été et 4 saisons. Montage inclus. Dès 25€ par pneu.",
+        "servicesTitle": "Services Pneus | Montage & Parallélisme",
+        "servicesDescription": "Montage de pneus professionnel, équilibrage et parallélisme à Gand. Service rapide, bons prix. Ouvert le samedi!",
+        "contactTitle": "Contact | Centre Pneus Gand",
+        "contactDescription": "Contactez notre centre pneus à Gand. Appelez +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "FAQ | Prix & Horaires",
+        "faqDescription": "FAQ sur les prix des pneus, horaires, montage et plus. Centre pneus ouvert dimanche? Oui, sur rendez-vous!",
+        "privacyTitle": "Politique de Confidentialité | Gent Bandenservice",
+        "privacyDescription": "Politique de confidentialité de Gent bandenservice. Découvrez comment nous collectons, utilisons et protégeons vos informations personnelles.",
+        "termsTitle": "Conditions d'Utilisation | Gent Bandenservice",
+        "termsDescription": "Conditions d'utilisation de Gent bandenservice. Lisez nos termes et conditions pour l'utilisation de nos services de pneumatiques.",
+        "cookiesTitle": "Politique des cookies | Gent Bandenservice",
+        "cookiesDescription": "Découvrez comment Gent bandenservice utilise les cookies et comment gérer vos préférences."
+    },
+    "DevBanner": {
+        "message": "Nous sommes encore en mode développement. Tous les pneus ne sont pas réels ; c'est uniquement à des fins de démonstration. Les vrais pneus arrivent bientôt."
+    },
+    "Feedback": {
+        "question": "Aimez-vous notre service ?",
+        "placeholder": "Parlez-nous de votre expérience...",
+        "submit": "Envoyer",
+        "loading": "Chargement",
+        "success": "Votre avis a été reçu !",
+        "thanks": "Merci pour votre aide."
+    },
+    "Blog": {
+        "pageTitle": "Notre Blog | Gent Bandenservice",
+        "pageDescription": "Lisez les dernières nouvelles, conseils et informations sur les pneus et l'entretien chez Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Actualités & Conseils",
+        "subtitle": "Restez informé des derniers développements et obtenez des conseils utiles pour vos pneus.",
+        "allCategories": "Toutes les catégories",
+        "noPosts": "Aucun article trouvé",
+        "noPostsDescription": "Il n'y a actuellement aucun article de blog dans cette catégorie.",
+        "readTime": "temps de lecture",
+        "views": "vues",
+        "backToBlog": "Retour au Blog",
+        "share": "Partager ce post",
+        "relatedPosts": "Articles connexes"    },
+    "Privacy": {
+        "title": "Politique de Confidentialité",
+        "subtitle": "Comment nous collectons, utilisons et protégeons vos informations personnelles",
+        "dataCollection": {
+            "title": "Informations que nous collectons",
+            "content": "Nous collectons différents types d'informations pour fournir et améliorer nos services :",
+            "personalInfo": "Informations d'identification personnelle (nom, coordonnées)",
+            "contactInfo": "Informations de contact (adresse e-mail, numéro de téléphone, adresse)",
+            "vehicleInfo": "Informations sur le véhicule (marque, modèle, année, spécifications des pneus)",
+            "serviceInfo": "Historique des services et préférences"
+        },
+        "dataUsage": {
+            "title": "Comment nous utilisons vos informations",
+            "content": "Nous utilisons les informations que nous collectons aux fins suivantes :",
+            "provideServices": "Pour fournir et maintenir nos services de pneumatiques",
+            "processBookings": "Pour traiter les rendez-vous et les réservations de services",
+            "communication": "Pour communiquer avec vous concernant les services et les rendez-vous",
+            "improve": "Pour améliorer nos services et l'expérience client"
+        },
+        "dataSharing": {
+            "title": "Partage d'informations",
+            "content": "Nous ne vendons, n'échangeons ni ne transférons vos informations personnelles à des tiers sans votre consentement, sauf comme décrit dans cette politique de confidentialité ou comme requis par la loi."
+        },
+        "dataSecurity": {
+            "title": "Sécurité des données",
+            "content": "Nous mettons en place des mesures de sécurité appropriées pour protéger vos informations personnelles contre l'accès, la modification, la divulgation ou la destruction non autorisés."
+        },
+        "userRights": {
+            "title": "Vos droits",
+            "content": "Sous le RGPD et les lois de confidentialité applicables, vous avez les droits suivants :",
+            "access": "Le droit d'accéder à vos données personnelles",
+            "rectification": "Le droit de rectifier des données personnelles inexactes",
+            "erasure": "Le droit à l'effacement ('droit à l'oubli')",
+            "portability": "Le droit à la portabilité des données",
+            "objection": "Le droit de s'opposer au traitement"
+        },
+        "cookies": {
+            "title": "Cookies",
+            "content": "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser le trafic du site web. Vous pouvez gérer vos préférences de cookies via les paramètres de votre navigateur."
+        },
+        "contact": {
+            "title": "Nous contacter",
+            "content": "Si vous avez des questions concernant cette Politique de Confidentialité, veuillez nous contacter :",
+            "email": "E-mail : info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Mises à jour de la politique",
+            "content": "Nous pouvons mettre à jour cette Politique de Confidentialité de temps à autre. Nous vous informerons de tout changement en publiant la nouvelle politique sur cette page."
+        },
+        "lastUpdated": "Dernière mise à jour",
+        "lastUpdatedDate": "12 février 2026"
+    },
+    "Terms": {
+        "title": "Conditions d'Utilisation",
+        "subtitle": "Termes et conditions pour l'utilisation de nos services de pneumatiques",
+        "acceptance": {
+            "title": "Acceptation des conditions",
+            "content": "En utilisant nos services, vous acceptez d'être lié par ces Conditions d'Utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services."
+        },
+        "services": {
+            "title": "Nos services",
+            "content": "Gent Bandenservice fournit les services liés aux pneumatiques suivants :",
+            "tireInstallation": "Installation et montage de pneus",
+            "tireRepair": "Réparation et rustinage de pneus",
+            "wheelBalancing": "Services d'équilibrage des roues",
+            "wheelAlignment": "Services d'alignement des roues",
+            "tireSales": "Vente de pneus neufs et d'occasion"
+        },
+        "booking": {
+            "title": "Rendez-vous et réservations",
+            "content": "Tous les services doivent être réservés à l'avance. Nous nous réservons le droit de reprogrammer les rendez-vous en cas de circonstances imprévues.",
+            "cancellation": "Les annulations doivent être faites au moins 24 heures à l'avance. Les annulations tardives peuvent entraîner des frais."
+        },
+        "payment": {
+            "title": "Conditions de paiement",
+            "content": "Le paiement est dû à la fin des services sauf accord contraire par écrit.",
+            "methods": "Nous acceptons les espèces, les cartes de débit, les cartes de crédit et les virements bancaires."
+        },
+        "warranty": {
+            "title": "Garantie",
+            "content": "Tous les services sont couverts par notre garantie standard contre les défauts de fabrication.",
+            "tires": "Les garanties de pneus sont fournies par le fabricant et soumises à leurs termes et conditions.",
+            "services": "Les garanties de service couvrent les défauts de notre fabrication pendant une période de 30 jours après l'achèvement du service."
+        },
+        "liability": {
+            "title": "Limitation de responsabilité",
+            "content": "Notre responsabilité est limitée au coût des services fournis. Nous ne sommes pas responsables des dommages consécutifs.",
+            "limitation": "Nous recommandons des inspections régulières des pneus et un entretien pour une sécurité et des performances optimales."
+        },
+        "intellectualProperty": {
+            "title": "Propriété intellectuelle",
+            "content": "Tout le contenu de notre site web et nos matériaux appartient à Gent Bandenservice et est protégé par les lois applicables sur la propriété intellectuelle."
+        },
+        "privacy": {
+            "title": "Confidentialité",
+            "content": "Votre vie privée est importante pour nous. Veuillez consulter notre Politique de Confidentialité pour comprendre comment nous collectons et utilisons vos informations."
+        },
+        "termination": {
+            "title": "Résiliation",
+            "content": "Nous nous réservons le droit de refuser le service à quiconque pour quelque raison que ce soit à notre seule discrétion."
+        },
+        "changes": {
+            "title": "Modifications des conditions",
+            "content": "Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications seront publiées sur notre site web et prendront effet immédiatement."
+        },
+        "governing": {
+            "title": "Droit applicable",
+            "content": "Ces conditions sont régies par le droit belge et tout litige sera résolu devant les tribunaux belges."
+        },
+        "contact": {
+            "title": "Informations de contact",
+            "content": "Pour des questions concernant ces Conditions d'Utilisation, veuillez nous contacter :",
+            "email": "E-mail : info@gentbandenservice.be"
+        },
+        "lastUpdated": "Dernière mise à jour",
+        "lastUpdatedDate": "12 février 2026"
+    },
+    "CookiePolicy": {
+        "title": "Politique des cookies",
+        "subtitle": "Comment nous utilisons les cookies et technologies similaires",
+        "what": {
+            "title": "Que sont les cookies ?",
+            "content": "Les cookies sont de petits fichiers texte stockés sur votre appareil pour mémoriser les préférences et améliorer le site."
+        },
+        "types": {
+            "title": "Types de cookies que nous utilisons",
+            "essential": "Cookies essentiels pour les fonctionnalités de base.",
+            "analytics": "Cookies d'analyse pour comprendre l'utilisation du site.",
+            "support": "Cookies de support pour le chat et les outils d'assistance."
+        },
+        "manage": {
+            "title": "Gérer les cookies",
+            "content": "Vous pouvez accepter ou refuser les cookies non essentiels dans la bannière et modifier votre choix à tout moment dans le pied de page."
+        },
+        "thirdParty": {
+            "title": "Cookies tiers",
+            "content": "Certaines fonctionnalités (analyse, chat) peuvent déposer leurs propres cookies. Ils ne sont utilisés qu'après consentement."
+        },
+        "updates": {
+            "title": "Mises à jour",
+            "content": "Nous pouvons mettre à jour cette politique de temps à autre."
+        },
+        "contact": {
+            "title": "Contact",
+            "content": "Des questions sur les cookies ? Écrivez à info@gentbandenservice.be."
+        },
+        "lastUpdated": "Dernière mise à jour",
+        "lastUpdatedDate": "13 février 2026"
+    },
+    "Cookie": {
+        "title": "Nous utilisons des cookies",
+        "description": "Nous utilisons des cookies pour améliorer votre expérience et mesurer l'utilisation du site. Vous pouvez accepter ou refuser les cookies non essentiels.",
+        "accept": "Accepter",
+        "reject": "Refuser",
+        "manage": "Gérer les cookies",
+        "policy": "Politique des cookies"
+    }
+}

@@ -1,0 +1,447 @@
+{
+    "Header": {
+        "home": "Strona główna",
+        "services": "Usługi",
+        "tires": "Opony",
+        "contact": "Kontakt",
+        "admin": "Admin",
+        "searchPlaceholder": "Szukaj opon...",
+        "blog": "Blog"
+    },
+    "Hero": {
+        "title1": "Centrum Opon",
+        "title2": "Gandawa",
+        "title3": "Od 2020",
+        "subtitle": "Kup opony z montażem od 25€. Najtańsze centrum opon w Gandawie. Pn-Sb 9-18.",
+        "cta": "Zobacz Opony",
+        "contact": "Skontaktuj się z nami"
+    },
+    "Footer": {
+        "about": "O nas",
+        "aboutText": "Gent bandenservice to serwis opon i warsztat samochodowy w Gandawie Sint-Amandsberg, Belgia. Oferujemy profesjonalne usługi oponiarskie i naprawy samochodowe wykonywane przez certyfikowanych techników.",
+        "quickLinks": "Szybkie linki",
+        "contact": "Informacje kontaktowe",
+        "address": "Gandawa, Belgia",
+        "rights": "Wszelkie prawa zastrzeżone.",
+        "openingHours": "Godziny otwarcia",
+        "openingHoursText": "Poniedziałek - Piątek: 9:00 - 18:00",
+        "openingHoursText2": "Sobota - Niedziela: Zamknięte",
+        "visitUs": "Odwiedź nas",
+        "visitUsText": "Gandawa, Belgia"
+    },
+    "Services": {
+        "title": "Nasze usługi",
+        "subtitle": "Profesjonalne usługi oponiarskie świadczone przez certyfikowanych techników.",
+        "bookNow": "Zarezerwuj teraz",
+        "from": "Od",
+        "contactText": "Gotowy, aby zacząć?",
+        "contactDescription": "Zarezerwuj usługę oponiarską już teraz i ciesz się lepszą jazdą.",
+        "contactButton": "Zarezerwuj teraz"
+    },
+    "Tires": {
+        "title": "Nasza oferta opon",
+        "subtitle": "Przeglądaj szeroką ofertę nowych i używanych opon.",
+        "filters": "Filtry",
+        "clearAll": "Wyczyść wszystko",
+        "price": "Cena",
+        "min": "Min",
+        "max": "Maks",
+        "brand": "Marka",
+        "size": "Rozmiar",
+        "dimensions": "Wymiary",
+        "width": "Szerokość",
+        "ratio": "Profil",
+        "rim": "Felga",
+        "season": "Sezon",
+        "seasonWinter": "Zima",
+        "seasonSummer": "Lato",
+        "seasonAllSeason": "Całoroczne",
+        "seasons": {
+            "all": "Wszystkie",
+            "summer": "Lato",
+            "winter": "Zima",
+            "all-season": "Całoroczne"
+        },
+        "condition": "Stan",
+        "conditions": {
+            "all": "Wszystkie",
+            "new": "Nowe",
+            "used": "Używane"
+        },
+        "specs": "Specyfikacja",
+        "loadIndex": "Indeks nośności",
+        "speedRating": "Prędkość",
+        "inquireOrderNow": "Zapytaj / Zamów teraz",
+        "notifyMeWhenAvailable": "Powiadom mnie, gdy dostępne",
+        "pleaseContactUs": "Prosimy o kontakt",
+        "backToTires": "Powrót do opon",
+        "searchPlaceholder": "Szukaj opon...",
+        "foundResults": "Znaleziono {count} wyników",
+        "totalPages": "Łączna liczba stron: {count}",
+        "noResults": "Nie znaleziono opon spełniających Twoje kryteria.",
+        "clearFilters": "Wyczyść wszystkie filtry",
+        "inStock": "Dostępne",
+        "stockCount": "{count} w magazynie",
+        "outOfStock": "Brak w magazynie",
+        "viewDetails": "Zobacz szczegóły",
+        "inquire": "Zapytaj",
+        "notifyMe": "Powiadom mnie",
+        "secondHand": "Używane",
+        "noDescription": "Brak opisu",
+        "addToCart": "Dodaj do koszyka",
+        "requestStock": "Poproś o dostawę",
+        "stockRequestSuccess": "Twoja prośba została wysłana! Powiadomimy Cię, gdy opona będzie ponownie dostępna.",
+        "stockRequestTitle": "Poproś o tę oponę",
+        "stockRequestSubtitle": "Ta opona jest obecnie niedostępna. Podaj swoje dane, a sprowadzimy ją jak najszybciej.",
+        "name": "Imię i nazwisko",
+        "phone": "Telefon (opcjonalnie)",
+        "email": "Email",
+        "submitRequest": "Wyślij prośbę",
+        "sending": "Wysyłanie...",
+        "relatedProducts": "Powiązane produkty"
+    },
+    "Contact": {
+        "title": "Skontaktuj się z nami",
+        "subtitle": "Masz pytania lub chcesz umówić wizytę? Jesteśmy tu, aby pomóc.",
+        "formTitle": "Wyślij nam wiadomość",
+        "firstName": "Imię",
+        "lastName": "Nazwisko",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "phoneOptional": "Telefon (opcjonalnie)",
+        "service": "Interesująca usługa",
+        "selectService": "Wybierz usługę",
+        "message": "Wiadomość",
+        "submit": "Wyślij wiadomość",
+        "sending": "Wysyłanie...",
+        "success": "Wiadomość wysłana pomyślnie!",
+        "messageSentTitle": "Wiadomość wysłana!",
+        "thankYouMessage": "Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.",
+        "sendAnother": "Wyślij kolejną wiadomość",
+        "error": "Coś poszło nie tak. Spróbuj ponownie.",
+        "inquireOrderNow": "Zapytaj / Zamów teraz",
+        "address": "Adres",
+        "addressText": "Gandawa, Belgia",
+        "openingHours": "Godziny otwarcia",
+        "openingHoursText": "Poniedziałek - Piątek: 9:00 - 17:00",
+        "openingHoursText2": "Sobota - Niedziela: Zamknięte",
+        "visitUs": "Odwiedź nas",
+        "visitUsText": "Gandawa, Belgia",
+        "messagePlaceholder": "Opisz swoje potrzeby..."
+    },
+    "Common": {
+        "loading": "Ładowanie...",
+        "back": "Wstecz"
+    },
+    "SearchOverlay": {
+        "close": "ESC",
+        "searchPlaceholder": "Szukaj opon...",
+        "noResults": "Nie znaleziono opon spełniających Twoje kryteria.",
+        "loading": "Ładowanie...",
+        "used": "Używane"
+    },
+    "Home": {
+        "quality": "Jakość",
+        "title": "Najnowsze opony",
+        "subtitle": "Przeglądaj szeroką ofertę nowych i używanych opon.",
+        "noResults": "Nie znaleziono opon spełniających Twoje kryteria. Pracujemy nad dodaniem kolejnych opon do naszej oferty.",
+        "viewDetails": "Zobacz szczegóły",
+        "qualityText": "Oferujemy produkty i usługi najwyższej jakości, aby zapewnić Twoje bezpieczeństwo i satysfakcję.",
+        "experience": "Doświadczenie",
+        "experienceText": "Dzięki wieloletniemu doświadczeniu w branży oponiarskiej posiadamy wiedzę i kompetencje, aby zapewnić Ci najlepszą możliwą obsługę.",
+        "service": "Obsługa",
+        "serviceText": "Nasz zespół certyfikowanych techników dokłada wszelkich starań, aby zapewnić Ci najwyższy poziom obsługi i bezpieczeństwo na drodze.",
+        "contact": "Kontakt",
+        "contactText": "Jeśli masz pytania lub wątpliwości, skontaktuj się z nami. Jesteśmy tu, aby pomóc na każdym etapie.",
+        "reviews": {
+            "title": "Zaufali nam nasi klienci",
+            "subtitle": "Zobacz, co nasi zadowoleni klienci mają do powiedzenia na temat naszej usługi.",
+            "googleTrusted": "Zaufane przez Google",
+            "viewAll": "Zobacz wszystkie opinie w Google",
+            "postedOnGoogle": "Opublikowano w Google"
+        }
+    },
+    "Cart": {
+        "title": "Koszyk",
+        "close": "Zamknij koszyk",
+        "empty": "Twój koszyk jest pusty",
+        "emptySubtitle": "Dodaj opony, aby rozpocząć",
+        "subtotal": "Suma częściowa",
+        "shippingNote": "Koszt wysyłki obliczany przy kasie",
+        "checkout": "Przejdź do kasy",
+        "addToCart": "Dodaj do koszyka",
+        "added": "Dodano!",
+        "outOfStock": "Brak w magazynie",
+        "remove": "Usuń produkt",
+        "decrease": "Zmniejsz ilość",
+        "increase": "Zwiększ ilość",
+        "incrementBy": "Zwiększ o {count}",
+        "decrementBy": "Zmniejsz o {count}"
+    },
+    "Checkout": {
+        "title": "Płatność",
+        "orderSummary": "Podsumowanie zamówienia",
+        "shippingAddress": "Adres dostawy",
+        "shippingMethod": "Metoda dostawy",
+        "firstName": "Imię",
+        "lastName": "Nazwisko",
+        "email": "E-mail",
+        "phone": "Telefon (opcjonalnie)",
+        "street": "Adres",
+        "city": "Miasto",
+        "postalCode": "Kod pocztowy",
+        "country": "Kraj",
+        "subtotal": "Suma częściowa",
+        "shipping": "Wysyłka",
+        "total": "Razem",
+        "payNow": "Zapłać teraz",
+        "processing": "Przetwarzanie...",
+        "deliveryDays": "{days} dni roboczych",
+        "emptyCart": "Twój koszyk jest pusty",
+        "backToShop": "Powrót do sklepu",
+        "successTitle": "Zamówienie potwierdzone!",
+        "successMessage": "Dziękujemy za zamówienie. Wkrótce otrzymasz e-mail z potwierdzeniem.",
+        "orderNumber": "Numer zamówienia",
+        "continueShopping": "Kontynuuj zakupy",
+        "cancelTitle": "Płatność anulowana",
+        "cancelMessage": "Twoja płatność została anulowana. Produkty w koszyku zostały zapisane.",
+        "tryAgain": "Spróbuj ponownie"
+    },
+    "FAQ": {
+        "title": "Najczęściej zadawane pytania",
+        "subtitle": "Wszystko, co musisz wiedzieć o naszych usługach oponiarskich.",
+        "contactButton": "Skontaktuj się z nami",
+        "contactText": "Nie znalazłeś odpowiedzi na swoje pytanie? Skontaktuj się z nami!",
+        "questions": {
+            "services": "Nasze usługi",
+            "services_text": "• Sprzedaż nowych i używanych opon\n• Opony letnie, zimowe i całoroczne\n• Montaż i wyważanie w cenie\n• Wszystkie rozmiary od 13” do 21” (bieżnik 5–8 mm)\n• Opony do vanów / typu C dostępne\n• Topowe marki: Michelin, Goodyear, Continental, Bridgestone, Pirelli itd.",
+            "prices_used": "Ceny opon używanych",
+            "prices_used_text": "Ceny zawierają montaż i wyważanie:\n\n• 13”: 25 € – 30 €\n• 14”: 30 € – 35 €\n• 15”: 35 € – 40 €\n• 16”: 40 € – 45 €\n• 17”: 40 € – 50 €\n• 18”: 40 € – 55 €\n• 19”: 50 € – 60 €\n• 20”: 60 € – 70 €\n• 21”: 60 € – 70 €\n• Opony C / van: 40 € – 50 €",
+            "prices_new": "Ceny początkowe opon nowych",
+            "prices_new_text": "Ceny za sztukę, montaż i wyważanie w cenie:\n\n• 13”: 55 €\n• 14”: 60 €\n• 15”: 70 €\n• 16”: 75 €\n• 17”: 80 €\n• 18”: 85 €\n• 19”: 90 €\n• 20”: 100 €",
+            "hours": "Godziny otwarcia",
+            "hours_text": "• Poniedziałek - Sobota: 09:00 – 18:00\n• Niedziela: 10:00 – 18:00 (tylko po wcześniejszym umówieniu, tel. 0466 19 56 22)",
+            "why_us": "Dlaczego Gent bandenservice?",
+            "why_us_text": "✅ Najniższe ceny opon w regionie\n✅ Szybka obsługa – na poczekaniu\n✅ Wysokiej jakości opony topowych marek\n✅ Montaż i wyważanie w cenie\n✅ Duży magazyn we wszystkich rozmiarach",
+            "contact": "Kontakt i lokalizacja",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gandawa)\n📞 GSM: +32 466 19 56 22\n📧 E-mail: contact@arianabandenservice.be\n📘 Facebook: Gent bandenservice",
+            "openingHours": "Godziny otwarcia",
+            "openingHoursText": "Poniedziałek - Piątek: 9:00 - 17:00",
+            "openingHoursText2": "Sobota - Niedziela: Zamknięte",
+            "visitUs": "Odwiedź nas",
+            "visitUsText": "Gandawa, Belgia",
+            "payment": "Jakie metody płatności akceptujecie?",
+            "payment_text": "Akceptujemy wszystkie główne karty kredytowe, w tym Visa, Mastercard i American Express.",
+            "replacement": "Kiedy należy wymienić opony?",
+            "replacement_text": "Minimalna dopuszczalna głębokość bieżnika to 1,6 mm, jednak dla bezpieczeństwa zalecamy wymianę przy 3 mm (lato) lub 4 mm (zima). Sprawdź również pęknięcia, wybrzuszenia i wiek opon (6–10 lat).",
+            "seasonal": "Jaka jest różnica między oponami letnimi, zimowymi i całorocznymi?",
+            "seasonal_text": "• Opony letnie: optymalne powyżej 7°C, twardsza mieszanka zapewniająca przyczepność na suchej i mokrej nawierzchni.\n• Opony zimowe: niezbędne poniżej 7°C, głębszy bieżnik i miększa guma dla lepszej przyczepności na śniegu i lodzie.\n• Opony całoroczne: kompromis dla umiarkowanego klimatu, nadają się do jazdy przez cały rok, ale są mniej wydajne w skrajnych warunkach.",
+            "balancing_alignment": "Jaka jest różnica między wyważaniem a geometrią?",
+            "balancing_alignment_text": "• Wyważanie: zapewnia płynną jazdę bez drgań przy wyższych prędkościach (wykonywane przy każdej wymianie opon).\n• Geometria: zapewnia prawidłowe ustawienie kół, jazdę na wprost i równomierne zużycie opon.",
+            "tpms": "Czym jest TPMS i czy oferujecie jego serwis?",
+            "tpms_text": "TPMS (system monitorowania ciśnienia w oponach) kontroluje ciśnienie w oponach. Montujemy, resetujemy i wymieniamy czujniki TPMS po wyczerpaniu baterii.",
+            "repair": "Czy naprawiacie przebite opony?",
+            "repair_text": "Tak, w wielu przypadkach. Jeśli uszkodzenie znajduje się na bieżniku i nie jest zbyt duże, stosujemy profesjonalną naprawę. Uszkodzenia boków opony zazwyczaj nie mogą być bezpiecznie naprawione.",
+            "recycling": "Co dzieje się z moimi starymi oponami?",
+            "recycling_text": "Utylizujemy stare opony w sposób przyjazny dla środowiska poprzez certyfikowanych partnerów recyklingowych (Recytyre), dzięki czemu guma może zostać ponownie wykorzystana."
+        }
+    },
+    "Metadata": {
+        "title": "Centrum Opon Gandawa | Kup Opony z Montażem",
+        "description": "✓ Najtańsze centrum opon w Gandawie! Nowe i używane opony od 25€ z montażem. Pn-Sb 9-18, niedziela po umówieniu. ☎ +32 466 19 56 22",
+        "ogDescription": "Centrum Opon Gandawa - Nowe i używane opony. Montaż, wyważanie i geometria w cenie. Najlepsze ceny!",
+        "keywords": "centrum opon gandawa, kup opony, montaż opon, geometria kół, centrum opon belgia, opony używane, opony nowe, opony tanie, opony zimowe, opony letnie, Sint-Amandsberg",
+        "tiresTitle": "Kup Opony | Nowe i Używane",
+        "tiresDescription": "Kupujesz opony w Gandawie? Zobacz nasze opony zimowe, letnie i całoroczne. Montaż w cenie. Od 25€.",
+        "servicesTitle": "Serwis Opon | Montaż i Geometria",
+        "servicesDescription": "Profesjonalny montaż opon, wyważanie i geometria w Gandawie. Szybki serwis, świetne ceny. Otwarte w soboty!",
+        "contactTitle": "Kontakt | Centrum Opon Gandawa",
+        "contactDescription": "Skontaktuj się z nami. Zadzwoń: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
+        "faqTitle": "FAQ | Ceny i Godziny",
+        "faqDescription": "FAQ o cenach opon, godzinach, montażu i więcej. Centrum opon czynne w niedzielę? Tak, po umówieniu!",
+        "cookiesTitle": "Polityka plików cookie | Gent Bandenservice",
+        "cookiesDescription": "Dowiedz się, jak Gent bandenservice używa plików cookie i jak zarządzać preferencjami."
+    },
+    "DevBanner": {
+        "message": "Nadal jesteśmy w trybie programowania. Wszystkie opony nie są prawdziwe; służą wyłącznie do celów demonstracyjnych. Prawdziwe opony wkrótce."
+    },
+    "Feedback": {
+        "question": "Czy podoba Ci się nasza usługa?",
+        "placeholder": "Opowiedz nam o swoich wrażeniach...",
+        "submit": "Wyślij",
+        "loading": "Ładowanie",
+        "success": "Twoja opinia została odebrana!",
+        "thanks": "Dziękujemy za pomoc."
+    },
+    "Blog": {
+        "pageTitle": "Nasz Blog | Gent Bandenservice",
+        "pageDescription": "Przeczytaj najnowsze wiadomości, porady i informacje o oponach samochodowych i konserwacji w Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Nowości i Porady",
+        "subtitle": "Bądź na bieżąco z najnowszymi informacjami i uzyskaj pomocne wskazówki dotyczące opon.",
+        "allCategories": "Wszystkie kategorie",
+        "noPosts": "Nie znaleziono wpisów",
+        "noPostsDescription": "Obecnie nie ma żadnych wpisów na blogu w tej kategorii.",
+        "readTime": "czas czytania",
+        "views": "wyświetleń",
+        "backToBlog": "Powrót do Bloga",
+        "share": "Udostępnij ten wpis",
+        "relatedPosts": "Powiązane wpisy"    },
+    "Privacy": {
+        "title": "Polityka Prywatności",
+        "subtitle": "Jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe",
+        "dataCollection": {
+            "title": "Informacje, które zbieramy",
+            "content": "Zbieramy różne typy informacji, aby świadczyć i usprawniać nasze usługi:",
+            "personalInfo": "Dane identyfikacyjne (imię, dane kontaktowe)",
+            "contactInfo": "Informacje kontaktowe (adres e-mail, numer telefonu, adres)",
+            "vehicleInfo": "Informacje o pojeździe (marka, model, rok, specyfikacje opon)",
+            "serviceInfo": "Historia usług i preferencje"
+        },
+        "dataUsage": {
+            "title": "Jak używamy Twoich informacji",
+            "content": "Wykorzystujemy zbierane informacje w następujących celach:",
+            "provideServices": "W celu świadczenia i utrzymania naszych usług oponiarskich",
+            "processBookings": "W celu przetwarzania wizyt i rezerwacji usług",
+            "communication": "W celu komunikacji z Tobą na temat usług i wizyt",
+            "improve": "W celu usprawnienia naszych usług i doświadczenia klientów"
+        },
+        "dataSharing": {
+            "title": "Udostępnianie informacji",
+            "content": "Nie sprzedajemy, nie wymieniamy ani nie przekazujemy Twoich danych osobowych stronom trzecim bez Twojej zgody, z wyjątkiem sytuacji opisanych w tej polityce prywatności lub wymaganych przez prawo."
+        },
+        "dataSecurity": {
+            "title": "Bezpieczeństwo danych",
+            "content": "Wdrażamy odpowiednie środki bezpieczeństwa, aby chronić Twoje dane osobowe przed nieautoryzowanym dostępem, zmianami, ujawnieniem lub zniszczeniem."
+        },
+        "userRights": {
+            "title": "Twoje prawa",
+            "content": "Zgodnie z RODO i obowiązującymi prawami o prywatności, masz następujące prawa:",
+            "access": "Prawo dostępu do Twoich danych osobowych",
+            "rectification": "Prawo do sprostowania nieprawidłowych danych osobowych",
+            "erasure": "Prawo do usunięcia ('prawo do zapomnienia')",
+            "portability": "Prawo do przenošenia danych",
+            "objection": "Prawo do sprzeciwu wobec przetwarzania"
+        },
+        "cookies": {
+            "title": "Pliki cookie",
+            "content": "Używamy plików cookie, aby poprawić Twoje doświadczenie przeglądania i analizować ruch na stronie. Możesz zarządzać preferencjami plików cookie poprzez ustawienia przeglądarki."
+        },
+        "contact": {
+            "title": "Skontaktuj się z nami",
+            "content": "Jeśli masz pytania dotyczące tej Polityki Prywatności, skontaktuj się z nami:",
+            "email": "E-mail: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Aktualizacje polityki",
+            "content": "Możemy okresowo aktualizować tę Politykę Prywatności. Powiadomimy Cię o wszelkich zmianach publikując nową politykę na tej stronie."
+        },
+        "lastUpdated": "Ostatnia aktualizacja",
+        "lastUpdatedDate": "12 lutego 2026"
+    },
+    "Terms": {
+        "title": "Warunki Usługi",
+        "subtitle": "Warunki korzystania z naszych usług oponiarskich",
+        "acceptance": {
+            "title": "Akceptacja warunków",
+            "content": "Korzystając z naszych usług, zgadzasz się na te Warunki Usługi. Jeśli nie zgadzasz się z tymi warunkami, nie korzystaj z naszych usług."
+        },
+        "services": {
+            "title": "Nasze usługi",
+            "content": "Gent Bandenservice świadczy następujące usługi związane z oponami:",
+            "tireInstallation": "Montaż i instalacja opon",
+            "tireRepair": "Naprawa i łatanie opon",
+            "wheelBalancing": "Usługi wyważania kół",
+            "wheelAlignment": "Usługi geometrii kół",
+            "tireSales": "Sprzedaż nowych i używanych opon"
+        },
+        "booking": {
+            "title": "Wizyty i rezerwacje",
+            "content": "Wszystkie usługi muszą być zarezerwowane z wyprzedzeniem. Zastrzegamy sobie prawo do przenieśienia wizyt z powodu nieprzewidzianych okoliczności.",
+            "cancellation": "Anulowania muszą być dokonane co najmniej 24 godziny wcześniej. Późne anulowania mogą wiązać się z opłatami."
+        },
+        "payment": {
+            "title": "Warunki płatności",
+            "content": "Płatność należy się po zakończeniu usług, chyba że uzgodniono inaczej na piśmie.",
+            "methods": "Akceptujemy gotówkę, karty debetowe, karty kredytowe i przelewy bankowe."
+        },
+        "warranty": {
+            "title": "Gwarancja",
+            "content": "Wszystkie usługi objęte są naszą standardową gwarancją na wady wykonania.",
+            "tires": "Gwarancje na opony są udzielane przez producenta i podlegają ich warunkom.",
+            "services": "Gwarancje usług obejmują wady naszego wykonania przez okres 30 dni od zakończenia usługi."
+        },
+        "liability": {
+            "title": "Ograniczenie odpowiedzialności",
+            "content": "Nasza odpowiedzialność jest ograniczona do kosztów świadczonych usług. Nie odpowiadamy za szkody wtórne.",
+            "limitation": "Zalecamy regularne kontrole opon i konserwację dla optymalnego bezpieczeństwa i wydajności."
+        },
+        "intellectualProperty": {
+            "title": "Własność intelektualna",
+            "content": "Cała zawartość naszej strony internetowej i materiałów jest własnością Gent Bandenservice i chroniona odpowiednimi prawami własności intelektualnej."
+        },
+        "privacy": {
+            "title": "Prywatność",
+            "content": "Twoja prywatność jest dla nas ważna. Zapoznaj się z naszą Polityką Prywatności, aby zrozumieć, jak zbieramy i wykorzystujemy Twoje informacje."
+        },
+        "termination": {
+            "title": "Rozerwanie",
+            "content": "Zastrzegamy sobie prawo do odmowy usługi każdemu z dowolnego powodu według naszego uznania."
+        },
+        "changes": {
+            "title": "Zmiany warunków",
+            "content": "Zastrzegamy sobie prawo do modyfikacji tych warunków w dowolnym momencie. Zmiany zostaną opublikowane na naszej stronie i wejdą w życie natychmiast."
+        },
+        "governing": {
+            "title": "Prawo obowiązujące",
+            "content": "Te warunki podlegają prawu belgijskiemu i wszelkie spory będą rozstrzygane w sądach belgijskich."
+        },
+        "contact": {
+            "title": "Informacje kontaktowe",
+            "content": "W przypadku pytań dotyczących tych Warunków Usługi, skontaktuj się z nami:",
+            "email": "E-mail: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Ostatnia aktualizacja",
+        "lastUpdatedDate": "12 lutego 2026"
+    },
+    "CookiePolicy": {
+        "title": "Polityka plików cookie",
+        "subtitle": "Jak używamy plików cookie i podobnych technologii",
+        "what": {
+            "title": "Czym są pliki cookie?",
+            "content": "Pliki cookie to małe pliki tekstowe przechowywane na Twoim urządzeniu, aby zapamiętywać preferencje i ulepszać witrynę."
+        },
+        "types": {
+            "title": "Rodzaje plików cookie, których używamy",
+            "essential": "Niezbędne pliki cookie dla podstawowej funkcjonalności.",
+            "analytics": "Pliki analityczne, aby zrozumieć użycie witryny.",
+            "support": "Pliki cookie wsparcia dla czatu i narzędzi pomocy."
+        },
+        "manage": {
+            "title": "Zarządzanie plikami cookie",
+            "content": "Możesz zaakceptować lub odrzucić niekonieczne pliki cookie w banerze i zmienić wybór w stopce."
+        },
+        "thirdParty": {
+            "title": "Pliki cookie stron trzecich",
+            "content": "Niektóre funkcje (analityka, czat) mogą ustawiać własne pliki cookie. Są używane tylko po zgodzie."
+        },
+        "updates": {
+            "title": "Aktualizacje",
+            "content": "Możemy od czasu do czasu aktualizować tę politykę."
+        },
+        "contact": {
+            "title": "Kontakt",
+            "content": "Pytania o pliki cookie? Napisz na info@gentbandenservice.be."
+        },
+        "lastUpdated": "Ostatnia aktualizacja",
+        "lastUpdatedDate": "13 lutego 2026"
+    },
+    "Cookie": {
+        "title": "Używamy plików cookie",
+        "description": "Używamy plików cookie, aby poprawić Twoje doświadczenie i mierzyć użycie strony. Możesz zaakceptować lub odrzucić niekonieczne pliki cookie.",
+        "accept": "Akceptuj",
+        "reject": "Odrzuć",
+        "manage": "Zarządzaj plikami cookie",
+        "policy": "Polityka plików cookie"
+    }
+}

@@ -1,0 +1,452 @@
+{
+    "Header": {
+        "home": "Home",
+        "services": "Diensten",
+        "tires": "Banden",
+        "contact": "Contact",
+        "admin": "Admin",
+        "searchPlaceholder": "Zoek banden...",
+        "blog": "Blog"
+    },
+    "Hero": {
+        "title1": "Bandencentrale",
+        "title2": "Gent",
+        "title3": "Sinds 2020",
+        "subtitle": "Autobanden kopen met montage vanaf €25. Goedkoopste bandencentrale in Gent en omstreken. Open ma-za 9-18u.",
+        "cta": "Banden Bekijken",
+        "contact": "Contacteer Ons"
+    },
+    "Footer": {
+        "about": "Over Ons",
+        "aboutText": "Gent bandenservice is een bandencentrale in Gent en omstreken zoals Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, Merelbeke, Melle, Sint-Denijs-Westrem, Zwijnaarde, en heel Vlaanderen. We bieden professionele bandenservice en auto reparatie door gecertificeerde monteurs.",
+        "quickLinks": "Snelle Links",
+        "contact": "Contact Info",
+        "address": "Gent, België",
+        "rights": "Alle rechten voorbehouden.",
+        "openingHours": "openingstijden",
+        "openingHoursText": "Maandag - Zaterdag: 9:00 - 18:00",
+        "openingHoursText2": "Zondag: Enkel op afspraak",
+        "visitUs": "Ons bezoeken",
+        "visitUsText": "Gent, België"
+    },
+    "Services": {
+        "title": "Onze Diensten",
+        "subtitle": "Professionele bandenservice door gecertificeerde monteurs.",
+        "bookNow": "Boek Nu",
+        "from": "Vanaf",
+        "contactText": "Klaar om te beginnen?",
+        "contactDescription": "Boek nu en begin met een betere reis.",
+        "contactButton": "Contacteer ons"
+    },
+    "Tires": {
+        "title": "Ons Bandenaanbod",
+        "subtitle": "Bekijk ons ruime assortiment nieuwe en gebruikte banden.",
+        "filters": "Filters",
+        "clearAll": "Alles wissen",
+        "price": "Prijs",
+        "min": "Min",
+        "max": "Max",
+        "brand": "Merk",
+        "size": "Maat",
+        "dimensions": "Afmetingen",
+        "width": "Breedte",
+        "ratio": "Ratio",
+        "rim": "Inch",
+        "season": "Seizoen",
+        "seasonSummer": "Zomer",
+        "seasonWinter": "Winter",
+        "seasonAllSeason": "4-Seizoenen",
+        "seasons": {
+            "all": "Alle",
+            "summer": "Zomer",
+            "winter": "Winter",
+            "all-season": "4-Seizoenen"
+        },
+        "condition": "Staat",
+        "conditions": {
+            "all": "Alle",
+            "new": "Nieuw",
+            "used": "Gebruikt"
+        },
+        "specs": "Specificaties",
+        "pleaseContactUs": "Neem contact op met ons",
+        "inquireOrderNow": "Bestel nu",
+        "backToTires": "Terug naar banden",
+        "inquiryNow": "Neem contact op met ons",
+        "loadIndex": "Draagvermogen",
+        "speedRating": "Snelheid",
+        "searchPlaceholder": "Zoek banden...",
+        "foundResults": "{count} resultaten gevonden",
+        "totalPages": "Totaal pagina's: {count}",
+        "noResults": "Geen banden gevonden die aan uw criteria voldoen.",
+        "clearFilters": "Wis alle filters",
+        "inStock": "Op Voorraad",
+        "stockCount": "{count} op voorraad",
+        "outOfStock": "Niet op Voorraad",
+        "viewDetails": "Bekijk Details",
+        "inquire": "Aanvragen",
+        "notifyMe": "Houd mij op de hoogte",
+        "secondHand": "Tweedehands",
+        "noDescription": "Geen beschrijving beschikbaar",
+        "noImageAvailable": "Geen afbeelding beschikbaar",
+        "addToCart": "Toevoegen",
+        "relatedProducts": "Gerelateerde producten",
+        "requestStock": "Vraag Voorraad Aan",
+        "stockRequestSuccess": "Uw aanvraag is ingediend! We laten het u weten zodra de band weer op voorraad is.",
+        "stockRequestTitle": "Vraag deze band aan",
+        "stockRequestSubtitle": "Deze band is momenteel niet op voorraad. Vul uw gegevens in en wij brengen deze zo snel mogelijk weer op voorraad.",
+        "name": "Naam",
+        "phone": "Telefoon (optioneel)",
+        "email": "E-mail",
+        "submitRequest": "Inzenden",
+        "sending": "Versturen..."
+    },
+    "Contact": {
+        "title": "Neem Contact Op",
+        "subtitle": "Heeft u vragen of wilt u een afspraak maken? Wij helpen u graag.",
+        "formTitle": "Stuur ons een bericht",
+        "firstName": "Voornaam",
+        "lastName": "Achternaam",
+        "email": "E-mail",
+        "phone": "Telefoon",
+        "phoneOptional": "Telefoon (optioneel)",
+        "service": "Dienst",
+        "selectService": "Selecteer een dienst",
+        "message": "Bericht",
+        "submit": "Verstuur Bericht",
+        "sending": "Versturen...",
+        "success": "Bericht succesvol verzonden!",
+        "messageSentTitle": "Bericht Verzonden!",
+        "thankYouMessage": "Bedankt voor uw bericht. We nemen zo snel mogelijk contact met u op.",
+        "sendAnother": "Stuur nog een bericht",
+        "error": "Er is iets misgegaan. Probeer het opnieuw.",
+        "address": "adres",
+        "addressText": "Gent, België",
+        "openingHours": "openingstijden",
+        "openingHoursText": "Maandag - Zaterdag: 9:00 - 18:00",
+        "openingHoursText2": "Zondag: Enkel op afspraak",
+        "visitUs": "Ons bezoeken",
+        "visitUsText": "Gent, België",
+        "messagePlaceholder": "Vertel ons wat je nodig hebt..."
+    },
+    "Common": {
+        "loading": "Laden...",
+        "back": "Terug"
+    },
+    "SearchOverlay": {
+        "close": "ESC",
+        "searchPlaceholder": "Zoek banden...",
+        "noResults": "Geen banden gevonden die aan uw criteria voldoen.",
+        "loading": "Laden...",
+        "used": "Tweedehands"
+    },
+    "Home": {
+        "quality": "Kwaliteit",
+        "viewDetails": "Bekijk Details",
+        "title": "Recente banden",
+        "noResults": "Geen banden gevonden die aan uw criteria voldoen.",
+        "subtitle": "Bekijk onze breed assortiment nieuwe en gebruikte banden.",
+        "qualityText": "We bieden de hoogste kwaliteit producten en diensten om uw veiligheid en tevredenheid te waarborgen.",
+        "experience": "Ervaring",
+        "experienceText": "Met jaren ervaring in de bandenindustrie hebben we de kennis en expertise om u te helpen met het beste mogelijke dienst.",
+        "service": "Service",
+        "serviceText": "Onze team van gecertificeerde technici is besteed om u te helpen met het beste mogelijke dienst om u veilig en veilig te houden op de weg.",
+        "contact": "Contact",
+        "contactText": "Als u vragen of zorgen heeft, laat het ons niet onthouden. We zijn hier om u te helpen op elke stap van het proces.",
+        "reviews": {
+            "title": "Vertrouwd door Onze Klanten",
+            "subtitle": "Bekijk wat onze tevreden klanten te zeggen hebben over onze service.",
+            "googleTrusted": "Google Trusted",
+            "viewAll": "Bekijk alle reviews op Google",
+            "postedOnGoogle": "Gepost op Google"
+        }
+    },
+    "Cart": {
+        "title": "Winkelwagen",
+        "close": "Winkelwagen sluiten",
+        "empty": "Uw winkelwagen is leeg",
+        "emptySubtitle": "Voeg banden toe om te beginnen",
+        "subtotal": "Subtotaal",
+        "shippingNote": "Verzendkosten worden berekend bij afrekenen",
+        "checkout": "Doorgaan naar Afrekenen",
+        "addToCart": "Toevoegen aan Winkelwagen",
+        "added": "Toegevoegd!",
+        "outOfStock": "Niet op Voorraad",
+        "remove": "Verwijder item",
+        "decrease": "Verminder aantal",
+        "increase": "Verhoog aantal",
+        "incrementBy": "Verhoog aantal met {count}",
+        "decrementBy": "Verlaag aantal met {count}"
+    },
+    "Checkout": {
+        "title": "Afrekenen",
+        "orderSummary": "Besteloverzicht",
+        "shippingAddress": "Verzendadres",
+        "shippingMethod": "Verzendmethode",
+        "firstName": "Voornaam",
+        "lastName": "Achternaam",
+        "email": "E-mail",
+        "phone": "Telefoon (optioneel)",
+        "street": "Straat en Huisnummer",
+        "city": "Stad",
+        "postalCode": "Postcode",
+        "country": "Land",
+        "subtotal": "Subtotaal",
+        "shipping": "Verzending",
+        "total": "Totaal",
+        "payNow": "Nu Betalen",
+        "processing": "Verwerken...",
+        "deliveryDays": "{days} werkdagen",
+        "emptyCart": "Uw winkelwagen is leeg",
+        "backToShop": "Terug naar Winkel",
+        "successTitle": "Bestelling Bevestigd!",
+        "successMessage": "Bedankt voor uw bestelling. U ontvangt binnenkort een bevestigingsmail.",
+        "orderNumber": "Bestelnummer",
+        "continueShopping": "Verder Winkelen",
+        "cancelTitle": "Betaling Geannuleerd",
+        "cancelMessage": "Uw betaling is geannuleerd. Uw winkelwagen items zijn nog steeds opgeslagen.",
+        "tryAgain": "Opnieuw Proberen"
+    },
+    "FAQ": {
+        "title": "Veelgestelde Vragen",
+        "subtitle": "Alles wat u moet weten over onze diensten en banden.",
+        "contactText": "Klaar om te beginnen?",
+        "contactButton": "Contacteer ons",
+        "questions": {
+            "services": "Onze Diensten",
+            "services_text": "• Verkoop van tweedehands en nieuwe banden\n• Zomer-, winter- en 4-seizoenenbanden\n• Montage en balanceren inbegrepen\n• Alle maten van 13” tot 21” (profiel 5mm – 8mm)\n• Camionette/C-banden beschikbaar\n• Bekende merken zoals: Michelin, Goodyear, Continental, Bridgestone, Pirelli, enz.",
+            "prices_used": "Prijzen Tweedehands Banden",
+            "prices_used_text": "Prijzen zijn inclusief montage en balanceren:\n\n• 13”: €25 – €30\n• 14”: €30 – €35\n• 15”: €35 – €40\n• 16”: €40 – €45\n• 17”: €40 – €50\n• 18”: €40 – €55\n• 19”: €50 – €60\n• 20”: €60 – €70\n• 21”: €60 – €70\n• C-banden / Camionette: €40 – €50",
+            "prices_new": "Vanafprijzen Nieuwe Banden",
+            "prices_new_text": "Prijzen zijn per stuk, inclusief montage & balanceren:\n\n• 13”: €55\n• 14”: €60\n• 15”: €70\n• 16”: €75\n• 17”: €80\n• 18”: €85\n• 19”: €90\n• 20”: €100",
+            "hours": "Openingsuren",
+            "hours_text": "• Maandag t.e.m. zaterdag: 09:00 – 18:00\n• Zondag: 10:00 – 16:00 (enkel op afspraak, call 0466 19 56 22)",
+            "why_us": "Waarom kiezen voor Gent bandenservice?",
+            "why_us_text": "✅ De goedkoopste bandenprijzen in de regio\n✅ Snelle service – direct klaar terwijl je wacht\n✅ Kwaliteitsbanden van topmerken\n✅ Montage en balanceren inbegrepen\n✅ Grote voorraad in alle maten",
+            "contact": "Contact & Locatie",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gent)\n📞 GSM: +32 466 19 56 22\n📧 E-mail: contact@arianabandenservice.be\n📘 Facebook: Gent bandenservice",
+            "payment": "Betaling",
+            "payment_text": "We accepteren alle grote creditcards, inclusief Visa, Mastercard en American Express.",
+            "openingHours": "Openingstijden",
+            "openingHoursText": "Maandag - Zaterdag: 9:00 - 18:00",
+            "openingHoursText2": "Zondag: Gepakt",
+            "visitUs": "Bezoek ons",
+            "visitUsText": "Gent, België",
+            "replacement": "Wanneer moet ik mijn banden vervangen?",
+            "replacement_text": "Wettelijk is de minimale profieldiepte 1,6 mm, maar voor veiligheid raden we vervanging aan bij 3 mm (zomer) of 4 mm (winter). Let ook op scheurtjes, bulten of veroudering (ouder dan 6-10 jaar).",
+            "seasonal": "Wat is het verschil tussen zomer-, winter- en 4-seizoenenbanden?",
+            "seasonal_text": "• Zomerbanden: Optimaal bij >7°C, hardere compound voor grip op droog/nat wegdek.\n• Winterbanden: Noodzakelijk bij <7°C, dieper profiel en zachter rubber voor grip op sneeuw/ijs.\n• 4-Seizoenenbanden: Een compromis voor gematigde klimaten, geschikt voor het hele jaar maar minder presterend in extremen.",
+            "balancing_alignment": "Wat is het verschil tussen balanceren en uitlijnen?",
+            "balancing_alignment_text": "• Balanceren: Zorgt dat het wiel soepel rolt zonder trillingen bij hogere snelheden (wordt gedaan bij elke bandenwissel).\n• Uitlijnen: Zorgt dat de wielen recht onder de auto staan voor rechtuit rijden en gelijkmatige bandenslijtage (nodig bij scheef trekken of na ophanging reparatie).",
+            "tpms": "Wat is TPMS en kunnen jullie dit servicen?",
+            "tpms_text": "TPMS (Tire Pressure Monitoring System) controleert uw bandenspanning. Wij kunnen TPMS-sensoren installeren, resetten en vervangen als batterijen leeg zijn.",
+            "repair": "Kunnen jullie een lekke band repareren?",
+            "repair_text": "Ja, vaak wel. Als het lek in het loopvlak zit en niet te groot is, plaatsen we een professionele plug/paraplu. Schade aan de wang (zijkant) mag om veiligheidsredenen vaak niet gerepareerd worden.",
+            "recycling": "Wat gebeurt er met mijn oude banden?",
+            "recycling_text": "Wij voeren uw oude banden milieuvriendelijk af via erkende recyclagepartners (Recytyre), zodat het rubber hergebruikt kan worden."
+        }
+    },
+    "Metadata": {
+        "title": "Bandencentrale Gent | Autobanden Kopen & Monteren",
+        "description": "✓ Goedkoopste bandencentrale in Gent! Banden kopen incl. montage vanaf €25. Open ma-za 9-18u, zondag op afspraak. ☎ 0466 19 56 22 Sint-Amandsberg",
+        "ogDescription": "Bandencentrale Gent - Nieuwe & tweedehands autobanden. Montage, balanceren en uitlijning inbegrepen. De goedkoopste in de buurt!",
+        "keywords": "bandencentrale, bandencentrale gent, autobanden, banden gent, bandencentrale in de buurt, bandencentrale sint amandsberg, autobanden gent, banden kopen, banden monteren, goedkope banden, tweedehands banden, bandenservice, bandencentrale open zondag, garage gent, banden wisselen, winterbanden, zomerbanden, all season banden, wieluitlijning, bandenmontage, gent bandencentrale, ariana bandenservice, ariana bandencentrale, bandencentrale dendermondsesteenweg, bandencentrale oost-vlaanderen, Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, goedkoopste bandencentrale, banden vervangen, autogarage gent",
+        "tiresTitle": "Autobanden Kopen | Nieuwe & Tweedehands",
+        "tiresDescription": "Autobanden kopen in Gent? Bekijk ons aanbod winterbanden, zomerbanden & all-season. Montage inbegrepen. Vanaf €25 per band.",
+        "servicesTitle": "Bandendiensten | Montage & Uitlijning",
+        "servicesDescription": "Professionele bandenmontage, balanceren en wieluitlijning in Gent. Snelle service, scherpe prijzen. Ook open op zaterdag!",
+        "contactTitle": "Contact | Bandencentrale Gent",
+        "contactDescription": "Bandencentrale Gent contacteren? Bel 0466 19 56 22 of kom langs. Dendermondsesteenweg 428, Sint-Amandsberg. Ma-Za 9-18u.",
+        "faqTitle": "Veelgestelde Vragen | Prijzen & Openingsuren",
+        "faqDescription": "FAQ over bandenprijzen, openingsuren, montage en meer. Bandencentrale open op zondag? Ja, op afspraak!",
+        "privacyTitle": "Privacybeleid | Gent Bandenservice",
+        "privacyDescription": "Privacybeleid van Gent bandenservice. Leer hoe we uw persoonlijke informatie verzamelen, gebruiken en beschermen.",
+        "termsTitle": "Servicevoorwaarden | Gent Bandenservice",
+        "termsDescription": "Servicevoorwaarden van Gent bandenservice. Lees onze algemene voorwaarden voor het gebruik van onze bandendiensten.",
+        "cookiesTitle": "Cookiebeleid | Gent Bandenservice",
+        "cookiesDescription": "Lees hoe Gent bandenservice cookies gebruikt en hoe u uw voorkeuren beheert."
+    },
+    "DevBanner": {
+        "message": "We bevinden ons nog in de ontwikkelingsfase. Alle banden zijn niet echt; het is alleen voor demonstratiedoeleinden. Echte banden komen eraan."
+    },
+    "Feedback": {
+        "question": "Vind je onze service leuk?",
+        "placeholder": "Vertel ons over je ervaring...",
+        "submit": "Verzenden",
+        "loading": "Laden",
+        "success": "Je feedback is ontvangen!",
+        "thanks": "Bedankt voor je hulp."
+    },
+    "Blog": {
+        "pageTitle": "Onze Blog | Gent Bandenservice",
+        "pageDescription": "Lees het laatste nieuws, tips en informatie over autobanden en onderhoud bij Gent Bandenservice.",
+        "badge": "Blog",
+        "title": "Nieuws & Tips",
+        "subtitle": "Blijf op de hoogte van de laatste ontwikkelingen en krijg handige tips voor uw banden.",
+        "allCategories": "Alle Categorieën",
+        "noPosts": "Geen berichten gevonden",
+        "noPostsDescription": "Er zijn momenteel geen blogberichten in deze categorie.",
+        "readTime": "leestijd",
+        "views": "weergaven",
+        "backToBlog": "Terug naar Blog",
+        "share": "Deel dit bericht",
+        "relatedPosts": "Gerelateerde Berichten"
+    },
+    "Privacy": {
+        "title": "Privacybeleid",
+        "subtitle": "Hoe we uw persoonlijke informatie verzamelen, gebruiken en beschermen",
+        "dataCollection": {
+            "title": "Informatie die we verzamelen",
+            "content": "We verzamelen verschillende soorten informatie om onze diensten te bieden en te verbeteren:",
+            "personalInfo": "Persoonlijke identificatiegegevens (naam, contactgegevens)",
+            "contactInfo": "Contactinformatie (e-mailadres, telefoonnummer, adres)",
+            "vehicleInfo": "Voertuiginformatie (merk, model, jaar, bandenspecificaties)",
+            "serviceInfo": "Servicegeschiedenis en voorkeuren"
+        },
+        "dataUsage": {
+            "title": "Hoe we uw informatie gebruiken",
+            "content": "We gebruiken de informatie die we verzamelen voor de volgende doeleinden:",
+            "provideServices": "Om onze bandendiensten te leveren en te onderhouden",
+            "processBookings": "Om afspraken en serviceboekingen te verwerken",
+            "communication": "Om met u te communiceren over diensten en afspraken",
+            "improve": "Om onze diensten en klantervaring te verbeteren"
+        },
+        "dataSharing": {
+            "title": "Informatie delen",
+            "content": "We verkopen, verhandelen of overdragen uw persoonlijke informatie niet aan derden zonder uw toestemming, behalve zoals beschreven in dit privacybeleid of zoals vereist door de wet."
+        },
+        "dataSecurity": {
+            "title": "Gegevensbeveiliging",
+            "content": "We implementeren passende beveiligingsmaatregelen om uw persoonlijke informatie te beschermen tegen ongeautoriseerde toegang, wijziging, openbaarmaking of vernietiging."
+        },
+        "userRights": {
+            "title": "Uw rechten",
+            "content": "Onder de AVG en toepasselijke privacywetten heeft u de volgende rechten:",
+            "access": "Het recht om toegang te krijgen tot uw persoonlijke gegevens",
+            "rectification": "Het recht om onjuiste persoonlijke gegevens te rectificeren",
+            "erasure": "Het recht op verwijdering ('recht op vergetelheid')",
+            "portability": "Het recht op gegevensportabiliteit",
+            "objection": "Het recht om bezwaar te maken tegen verwerking"
+        },
+        "cookies": {
+            "title": "Cookies",
+            "content": "We gebruiken cookies om uw browse-ervaring te verbeteren en websiteverkeer te analyseren. U kunt uw cookie-voorkeuren beheren via uw browserinstellingen."
+        },
+        "contact": {
+            "title": "Contact opnemen",
+            "content": "Als u vragen heeft over dit privacybeleid, neem dan contact met ons op:",
+            "email": "E-mail: info@gentbandenservice.be"
+        },
+        "updates": {
+            "title": "Beleidsupdates",
+            "content": "We kunnen dit privacybeleid van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van eventuele wijzigingen door het nieuwe beleid op deze pagina te plaatsen."
+        },
+        "lastUpdated": "Laatst bijgewerkt",
+        "lastUpdatedDate": "12 februari 2026"
+    },
+    "Terms": {
+        "title": "Servicevoorwaarden",
+        "subtitle": "Voorwaarden voor het gebruik van onze bandendiensten",
+        "acceptance": {
+            "title": "Acceptatie van voorwaarden",
+            "content": "Door gebruik te maken van onze diensten, gaat u akkoord met deze servicevoorwaarden. Als u niet akkoord gaat met deze voorwaarden, gebruik dan onze diensten niet."
+        },
+        "services": {
+            "title": "Onze diensten",
+            "content": "Gent Bandenservice biedt de volgende bandengerelateerde diensten:",
+            "tireInstallation": "Bandeninstallatie en montage",
+            "tireRepair": "Bandenreparatie en reparatie",
+            "wheelBalancing": "Wielbaleancering",
+            "wheelAlignment": "Wieluitlijning",
+            "tireSales": "Verkoop van nieuwe en gebruikte banden"
+        },
+        "booking": {
+            "title": "Afspraken en boekingen",
+            "content": "Alle diensten moeten vooraf worden geboekt. We behouden ons het recht voor om afspraken te herplannen vanwege onvoorziene omstandigheden.",
+            "cancellation": "Annuleringen moeten minimaal 24 uur van tevoren worden gedaan. Late annuleringen kunnen kosten met zich meebrengen."
+        },
+        "payment": {
+            "title": "Betalingsvoorwaarden",
+            "content": "Betaling is verschuldigd bij voltooiing van de diensten, tenzij schriftelijk anders overeengekomen.",
+            "methods": "We accepteren contant geld, betaalkaarten, creditcards en bankoverschrijvingen."
+        },
+        "warranty": {
+            "title": "Garantie",
+            "content": "Alle diensten worden geleverd met onze standaardgarantie tegen gebreken in vakmanschap.",
+            "tires": "Bandengaranties worden verstrekt door de fabrikant en zijn onderworpen aan hun voorwaarden.",
+            "services": "Servicegaranties dekken gebreken in ons vakmanschap gedurende een periode van 30 dagen na voltooiing van de service."
+        },
+        "liability": {
+            "title": "Beperking van aansprakelijkheid",
+            "content": "Onze aansprakelijkheid is beperkt tot de kosten van de verleende diensten. We zijn niet verantwoordelijk voor gevolgschade.",
+            "limitation": "We raden regelmatige bandeninspecties en onderhoud aan voor optimale veiligheid en prestaties."
+        },
+        "intellectualProperty": {
+            "title": "Intellectueel eigendom",
+            "content": "Alle inhoud op onze website en materialen is eigendom van Gent Bandenservice en wordt beschermd door toepasselijke intellectuele eigendomswetten."
+        },
+        "privacy": {
+            "title": "Privacy",
+            "content": "Uw privacy is belangrijk voor ons. Raadpleeg ons privacybeleid om te begrijpen hoe we uw informatie verzamelen en gebruiken."
+        },
+        "termination": {
+            "title": "Beëindiging",
+            "content": "We behouden ons het recht voor om service te weigeren aan iedereen om welke reden dan ook naar ons eigen goeddunken."
+        },
+        "changes": {
+            "title": "Wijzigingen in voorwaarden",
+            "content": "We behouden ons het recht voor om deze voorwaarden op elk moment te wijzigen. Wijzigingen worden op onze website geplaatst en treden onmiddellijk in werking."
+        },
+        "governing": {
+            "title": "Toepasselijk recht",
+            "content": "Deze voorwaarden worden beheerst door Belgische wetgeving en eventuele geschillen worden opgelost door Belgische rechtbanken."
+        },
+        "contact": {
+            "title": "Contactinformatie",
+            "content": "Voor vragen over deze servicevoorwaarden, neem contact met ons op:",
+            "email": "E-mail: info@gentbandenservice.be"
+        },
+        "lastUpdated": "Laatst bijgewerkt",
+        "lastUpdatedDate": "12 februari 2026"
+    },
+    "CookiePolicy": {
+        "title": "Cookiebeleid",
+        "subtitle": "Hoe we cookies en vergelijkbare technologieen gebruiken",
+        "what": {
+            "title": "Wat zijn cookies?",
+            "content": "Cookies zijn kleine tekstbestanden op uw apparaat om voorkeuren te onthouden en de site te verbeteren."
+        },
+        "types": {
+            "title": "Soorten cookies die we gebruiken",
+            "essential": "Essentiele cookies voor basisfunctionaliteit.",
+            "analytics": "Analytics-cookies om het gebruik te begrijpen.",
+            "support": "Supportcookies voor chat en ondersteuning."
+        },
+        "manage": {
+            "title": "Cookies beheren",
+            "content": "U kunt niet-essentiele cookies accepteren of weigeren in de banner en uw keuze altijd wijzigen via de footer."
+        },
+        "thirdParty": {
+            "title": "Cookies van derden",
+            "content": "Sommige functies (analytics, chat) kunnen eigen cookies plaatsen. Deze worden alleen gebruikt na toestemming."
+        },
+        "updates": {
+            "title": "Updates",
+            "content": "We kunnen dit beleid van tijd tot tijd bijwerken."
+        },
+        "contact": {
+            "title": "Contact",
+            "content": "Vragen over cookies? Email info@gentbandenservice.be."
+        },
+        "lastUpdated": "Laatst bijgewerkt",
+        "lastUpdatedDate": "13 februari 2026"
+    },
+    "Cookie": {
+        "title": "We gebruiken cookies",
+        "description": "We gebruiken cookies om uw ervaring te verbeteren en het gebruik van de site te meten. U kunt niet-essentiële cookies accepteren of weigeren.",
+        "accept": "Accepteren",
+        "reject": "Weigeren",
+        "manage": "Cookies beheren",
+        "policy": "Cookiebeleid"
+    }
+}
