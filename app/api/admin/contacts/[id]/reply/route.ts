@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { isAuthenticated } from "@/lib/auth";
-import { Resend } from "resend";
-import ContactReplyEmail from "@/app/emails/ContactReplyEmail";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendContactReplyEmail } from "@/lib/email";
 
 export async function POST(
     request: NextRequest,
@@ -32,16 +29,16 @@ export async function POST(
         }
 
         // Send Email
-        await resend.emails.send({
-            from: "Gent bandenservice <onboarding@resend.dev>", // Update domain in prod
-            to: [contact.email],
-            subject: "Re: Your inquiry to Gent bandenservice",
-            react: ContactReplyEmail({
-                customerName: contact.firstName,
-                adminMessage: message,
-                originalMessage: contact.message,
-            }),
+        const result = await sendContactReplyEmail({
+            customerName: contact.firstName,
+            customerEmail: contact.email,
+            adminMessage: message,
+            originalMessage: contact.message,
         });
+
+        if (!result.success) {
+            return NextResponse.json({ error: result.error }, { status: 500 });
+        }
 
         // Update DB
         await prisma.contact.update({
