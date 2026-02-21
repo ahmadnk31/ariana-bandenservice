@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const keywords = metadata.keywords || "";
 
     return {
-        metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://arianabandenservice.be"),
+        metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be"),
         title: {
             default: title,
             template: "%s | Gent Bandenservice",
@@ -56,22 +56,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         openGraph: {
             title,
             description,
-            url: `https://arianabandenservice.be/${locale}`,
+            url: `https://gentbandenservice.be/${locale}`,
             siteName: "Gent Bandenservice",
             locale: localeMap[locale] || 'nl_NL',
             type: "website",
-            images: [{ url: "/banden-service/android-chrome-512x512.png", width: 512, height: 512, alt: "Gent Bandenservice Logo" }],
+            images: [{ url: "/gentbandenservice/android-chrome-512x512.png", width: 512, height: 512, alt: "Gent Bandenservice Logo" }],
         },
         twitter: {
             card: "summary_large_image",
             title,
             description,
-            images: ["/banden-service/android-chrome-512x512.png"],
+            images: ["/gentbandenservice/android-chrome-512x512.png"],
         },
         icons: {
-            icon: "/banden-service/favicon.ico",
-            shortcut: "/banden-service/favicon-16x16.png",
-            apple: "/banden-service/apple-touch-icon.png",
+            icon: "/gentbandenservice/favicon.ico",
+            shortcut: "/gentbandenservice/favicon-16x16.png",
+            apple: "/gentbandenservice/apple-touch-icon.png",
         },
         keywords: keywords.split(',').map((k: string) => k.trim()),
         alternates: {
@@ -96,11 +96,11 @@ export default async function LocaleLayout({
         "@context": "https://schema.org",
         "@type": "AutoRepair",
         "name": "Gent Bandenservice",
-        "image": "https://arianabandenservice.be/banden-service/android-chrome-512x512.png",
-        "@id": "https://arianabandenservice.be",
-        "url": "https://arianabandenservice.be",
+        "image": "https://gentbandenservice.be/gentbandenservice/android-chrome-512x512.png",
+        "@id": "https://gentbandenservice.be",
+        "url": "https://gentbandenservice.be",
         "telephone": "+32 466 19 56 22",
-        "email": "contact@arianabandenservice.be",
+        "email": "contact@gentbandenservice.be",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Dendermondsesteenweg 428",
