@@ -34,7 +34,7 @@ export default function ContactReplyEmail({
                 <Container style={container}>
                     {/* Header */}
                     <Section style={header}>
-                        <img src="https://www.arianabandenservice.be/arianabandenservice/android-chrome-192x192.png" alt="Gent bandenservice" width={48} height={48} style={headerLogo} />
+                        <img src="https://gentbandenservice.be/gentbandenservice/android-chrome-192x192.png" alt="Gent bandenservice" width={48} height={48} style={headerLogo} />
                         <Heading style={headerTitle}>Gent bandenservice</Heading>
                     </Section>
 

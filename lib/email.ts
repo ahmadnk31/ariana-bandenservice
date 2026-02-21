@@ -3,7 +3,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 const fromAddress = process.env.FROM_EMAIL || "contact@gentbandenservice.be";
 const fromEmail = `Gent bandenservice <${fromAddress}>`;
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.gentbandenservice.be";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://gentbandenservice.be";
 
 interface ContactFormData {
     firstName: string;
@@ -40,7 +40,7 @@ function emailLayout(content: string, preheader?: string): string {
           <!-- Header -->
           <tr>
             <td style="background-color:#18181b;padding:24px 32px;border-radius:12px 12px 0 0;text-align:center;">
-              <img src="${siteUrl}/arianabandenservice/android-chrome-192x192.png" alt="Gent bandenservice" width="48" height="48" style="display:block;margin:0 auto 12px;border-radius:8px;" />
+              <img src="${siteUrl}/gentbandenservice/android-chrome-192x192.png" alt="Gent bandenservice" width="48" height="48" style="display:block;margin:0 auto 12px;border-radius:8px;" />
               <h1 style="margin:0;font-size:22px;font-weight:700;color:#ffffff;letter-spacing:-0.5px;">
                 Gent bandenservice
               </h1>

@@ -97,7 +97,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         "all-season": t('seasonAllSeason'),
     };
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
 
     // Product JSON-LD
     const productJsonLd = {
