@@ -1,6 +1,6 @@
 
 import { NextRequest, NextResponse } from "next/server";
-import { sendContactEmail } from "@/lib/email";
+import { sendContactEmail, sendContactConfirmationEmail } from "@/lib/email";
 
 import { prisma } from "@/lib/db";
 
@@ -42,6 +42,13 @@ export async function POST(request: NextRequest) {
                 { error: result.error },
                 { status: 500 }
             );
+        }
+
+        // Send confirmation email to customer
+        try {
+            await sendContactConfirmationEmail(data);
+        } catch (confirmError) {
+            console.error("Failed to send contact confirmation email:", confirmError);
         }
 
         return NextResponse.json({ success: true });
