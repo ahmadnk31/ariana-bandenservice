@@ -98,8 +98,8 @@ export default async function ContactPage({
                                         <div>
                                             <h3 className="font-bold mb-1">E-mail</h3>
                                             <p className="text-muted-foreground">
-                                                <a href="mailto:info@arianabandenservice.be" className="hover:text-primary transition-colors">
-                                                    info@arianabandenservice.be
+                                                <a href="mailto:info@gentbandenservice.be" className="hover:text-primary transition-colors">
+                                                    info@gentbandenservice.be
                                                 </a>
                                             </p>
                                         </div>
