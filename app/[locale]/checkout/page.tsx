@@ -9,6 +9,7 @@ import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 import { ShoppingCart, Truck, CreditCard, ArrowLeft, Package, Store } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
+import Price from '@/app/components/Price';
 
 interface ShippingRate {
     id: string;
@@ -407,7 +408,7 @@ export default function CheckoutPage() {
                                                     {rate.price === 0 ? (
                                                         <p className="font-bold text-green-600">FREE</p>
                                                     ) : (
-                                                        <p className="font-semibold">€{rate.price.toFixed(2)}</p>
+                                                        <p className="font-semibold"><Price amount={rate.price} size="base" /></p>
                                                     )}
                                                     {rate.carrier !== 'pickup' && (
                                                         <p className="text-sm text-muted-foreground">{rate.deliveryDays} days</p>
@@ -452,7 +453,7 @@ export default function CheckoutPage() {
                                                     <p className="text-xs text-muted-foreground">{item.size}</p>
                                                     <p className="text-xs text-muted-foreground">Qty: {item.quantity}</p>
                                                 </div>
-                                                <p className="font-medium text-sm">€{(item.price * item.quantity).toFixed(2)}</p>
+                                                <Price amount={item.price * item.quantity} size="sm" />
                                             </div>
                                         ))}
                                     </div>
@@ -462,11 +463,11 @@ export default function CheckoutPage() {
                                     <div className="space-y-2 text-sm">
                                         <div className="flex justify-between">
                                             <span className="text-muted-foreground">{t('subtotal')}</span>
-                                            <span>€{subtotal.toFixed(2)}</span>
+                                            <Price amount={subtotal} size="sm" />
                                         </div>
                                         <div className="flex justify-between">
                                             <span className="text-muted-foreground">{t('shipping')}</span>
-                                            <span>€{shippingCost.toFixed(2)}</span>
+                                            <Price amount={shippingCost} size="sm" />
                                         </div>
                                     </div>
 
@@ -474,7 +475,7 @@ export default function CheckoutPage() {
 
                                     <div className="flex justify-between text-lg font-bold mb-6">
                                         <span>{t('total')}</span>
-                                        <span>€{total.toFixed(2)}</span>
+                                        <Price amount={total} size="lg" />
                                     </div>
 
                                     <button

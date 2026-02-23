@@ -5,6 +5,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { Wrench, Disc, Timer, Layers, Settings, Search, Clock, Euro } from "lucide-react";
 import { getTranslations } from 'next-intl/server';
+import Price from '@/app/components/Price';
 import { Link } from '@/src/i18n/routing';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -82,7 +83,7 @@ export default async function ServicesPage() {
                                                 {service.price && (
                                                     <span className="flex items-center mr-6 text-primary">
                                                         <Euro size={16} className="mr-1.5" />
-                                                        {t('from')} €{service.price}
+                                                        {t('from')} <Price amount={Number(service.price)} size="sm" />
                                                     </span>
                                                 )}
                                                 {service.duration && (

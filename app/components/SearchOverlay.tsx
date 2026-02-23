@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTranslations } from 'next-intl';
+import Price from '@/app/components/Price';
 
 interface SearchResult {
     id: string;
@@ -233,7 +234,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                                         {result.brand} <span className="mx-1.5 opacity-50">•</span> {result.size}
                                                     </p>
                                                 </div>
-                                                <div className="font-bold">€{result.price}</div>
+                                                <div><Price amount={result.price} size="base" /></div>
                                             </Link>
                                         ))}
                                         {loadingMore && (
