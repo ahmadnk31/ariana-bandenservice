@@ -98,7 +98,15 @@
         "email": "Email",
         "submitRequest": "Wyślij prośbę",
         "sending": "Wysyłanie...",
-        "relatedProducts": "Powiązane produkty"
+        "relatedProducts": "Powiązane produkty",
+        "freeMontageBalance": "Montaż + wyważanie gratis",
+        "lowStock": "Tylko {count} sztuk na stanie!",
+        "peopleViewing": "{count} osób ogląda to teraz",
+        "soldRecently": "Sprzedano {count}x w ostatniej godzinie",
+        "lastChance": "Ostatnia szansa",
+        "hurryUp": "Pospiesz się – prawie wyprzedane",
+        "popularItem": "Popularny produkt",
+        "keyFeatures": "Kluczowe cechy"
     },
     "Contact": {
         "title": "Skontaktuj się z nami",

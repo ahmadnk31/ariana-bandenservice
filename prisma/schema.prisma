@@ -222,3 +222,33 @@ model BlogImage {
 
   createdAt DateTime @default(now())
 }
+
+// Abandoned checkout recovery
+model AbandonedCheckout {
+  id    String @id @default(cuid())
+  email String
+
+  // Customer info
+  firstName  String?
+  lastName   String?
+  phone      String?
+  street     String?
+  city       String?
+  postalCode String?
+  country    String  @default("BE")
+
+  // Cart snapshot (JSON)
+  cartItems String // JSON array of cart items
+  subtotal  Float  @default(0)
+
+  // Recovery tracking
+  emailSent   Boolean   @default(false)
+  emailSentAt DateTime?
+  recovered   Boolean   @default(false) // true if they completed checkout
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([emailSent, createdAt])
+}

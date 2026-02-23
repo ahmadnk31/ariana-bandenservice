@@ -98,7 +98,15 @@
         "email": "E-posta",
         "submitRequest": "İsteği Gönder",
         "sending": "Gönderiliyor...",
-        "relatedProducts": "İlgili Ürünler"
+        "relatedProducts": "İlgili Ürünler",
+        "freeMontageBalance": "Montaj + balans ücretsiz",
+        "lowStock": "Stokta sadece {count} adet kaldı!",
+        "peopleViewing": "Şu anda {count} kişi bunu görüntülüyor",
+        "soldRecently": "Son bir saat içinde {count}x satıldı",
+        "lastChance": "Son şans",
+        "hurryUp": "Acele edin – neredeyse tükendi",
+        "popularItem": "Popüler ürün",
+        "keyFeatures": "Temel Özellikler"
     },
     "Contact": {
         "title": "Bize Ulaşın",

@@ -99,7 +99,15 @@
         "phone": "Phone (optional)",
         "email": "Email",
         "submitRequest": "Submit Request",
-        "sending": "Sending..."
+        "sending": "Sending...",
+        "freeMontageBalance": "Mounting + balancing free",
+        "lowStock": "Only {count} left in stock!",
+        "peopleViewing": "{count} people are viewing this right now",
+        "soldRecently": "Sold {count}x in the last hour",
+        "lastChance": "Last chance",
+        "hurryUp": "Hurry up – almost sold out",
+        "popularItem": "Popular item",
+        "keyFeatures": "Key Features"
     },
     "Contact": {
         "title": "Contact Us",

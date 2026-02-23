@@ -98,7 +98,15 @@
         "email": "Email",
         "submitRequest": "Υποβολή Αιτήματος",
         "sending": "Αποστολή...",
-        "relatedProducts": "Παραλλήλα"
+        "relatedProducts": "Παραλλήλα",
+        "freeMontageBalance": "Τοποθέτηση + ζυγοστάθμιση δωρεάν",
+        "lowStock": "Μόνο {count} σε απόθεμα!",
+        "peopleViewing": "{count} άτομα βλέπουν αυτό τώρα",
+        "soldRecently": "Πωλήθηκε {count}x την τελευταία ώρα",
+        "lastChance": "Τελευταία ευκαιρία",
+        "hurryUp": "Βιαστείτε – σχεδόν εξαντλημένο",
+        "popularItem": "Δημοφιλές προϊόν",
+        "keyFeatures": "Βασικά χαρακτηριστικά"
     },
     "Contact": {
         "title": "Επικοινωνήστε μαζί μας",

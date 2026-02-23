@@ -99,7 +99,15 @@
         "phone": "Telefon (optional)",
         "email": "E-Mail",
         "submitRequest": "Anfrage senden",
-        "sending": "Wird gesendet..."
+        "sending": "Wird gesendet...",
+        "freeMontageBalance": "Montage + Auswuchten gratis",
+        "lowStock": "Nur noch {count} auf Lager!",
+        "peopleViewing": "{count} Personen sehen sich das gerade an",
+        "soldRecently": "{count}x in der letzten Stunde verkauft",
+        "lastChance": "Letzte Chance",
+        "hurryUp": "Beeilen Sie sich – fast ausverkauft",
+        "popularItem": "Beliebter Artikel",
+        "keyFeatures": "Hauptmerkmale"
     },
     "Contact": {
         "title": "Kontaktieren Sie uns",

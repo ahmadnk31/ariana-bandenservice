@@ -93,6 +93,20 @@ export async function POST(request: NextRequest) {
             }
 
             console.log('Order created:', order.orderNumber);
+
+            // Mark any abandoned checkout for this email as recovered
+            const customerEmail = session.customer_email || metadata.email;
+            if (customerEmail) {
+                await prisma.abandonedCheckout.updateMany({
+                    where: {
+                        email: customerEmail,
+                        recovered: false,
+                    },
+                    data: {
+                        recovered: true,
+                    },
+                });
+            }
         } catch (error) {
             console.error('Failed to create order:', error);
             return NextResponse.json(

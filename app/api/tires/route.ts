@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { isAuthenticated } from "@/lib/auth";
+import { processPendingAbandonedEmails } from "@/lib/abandoned-checkout";
 
 export async function GET() {
     try {
@@ -14,6 +15,9 @@ export async function GET() {
             ...tire,
             features: JSON.parse(tire.features),
         }));
+
+        // Fire-and-forget: process any pending abandoned checkout emails on common traffic
+        processPendingAbandonedEmails();
 
         return NextResponse.json(tiresWithParsedFeatures);
     } catch (error) {

@@ -97,7 +97,15 @@
         "phone": "الهاتف (اختياري)",
         "email": "البريد الإلكتروني",
         "submitRequest": "إرسال الطلب",
-        "sending": "جاري الارسال..."
+        "sending": "جاري الارسال...",
+        "freeMontageBalance": "التركيب + الموازنة مجاناً",
+        "lowStock": "باقي {count} فقط في المخزون!",
+        "peopleViewing": "{count} شخص يشاهدون هذا الآن",
+        "soldRecently": "تم بيع {count}x في الساعة الأخيرة",
+        "lastChance": "فرصة أخيرة",
+        "hurryUp": "أسرع – يكاد ينفد",
+        "popularItem": "منتج شائع",
+        "keyFeatures": "الميزات الرئيسية"
     },
     "Contact": {
         "title": "اتصل بنا",

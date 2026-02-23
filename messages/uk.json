@@ -98,7 +98,15 @@
         "email": "Електронна пошта",
         "submitRequest": "Надіслати запит",
         "sending": "Надсилання...",
-        "relatedProducts": "Пов'язані товари"
+        "relatedProducts": "Пов'язані товари",
+        "freeMontageBalance": "Монтаж + балансування безкоштовно",
+        "lowStock": "Залишилося лише {count} на складі!",
+        "peopleViewing": "{count} людей переглядають це зараз",
+        "soldRecently": "Продано {count}x за останню годину",
+        "lastChance": "Останній шанс",
+        "hurryUp": "Поспішіть – майже розпродано",
+        "popularItem": "Популярний товар",
+        "keyFeatures": "Ключові характеристики"
     },
     "Contact": {
         "title": "Зв’яжіться з нами",
