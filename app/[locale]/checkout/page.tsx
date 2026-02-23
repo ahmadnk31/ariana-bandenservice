@@ -8,6 +8,7 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 import { ShoppingCart, Truck, CreditCard, ArrowLeft, Package, Store } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 
 interface ShippingRate {
     id: string;
@@ -20,11 +21,13 @@ interface ShippingRate {
 }
 
 export default function CheckoutPage() {
-    const { items, subtotal, clearCart } = useCart();
+    const { items, subtotal, clearCart, addToCart } = useCart();
     const t = useTranslations('Checkout');
+    const searchParams = useSearchParams();
     const [shippingRates, setShippingRates] = useState<ShippingRate[]>([]);
     const [selectedRate, setSelectedRate] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isRecovering, setIsRecovering] = useState(false);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -35,6 +38,42 @@ export default function CheckoutPage() {
         postalCode: '',
         country: 'BE',
     });
+
+    // Recover abandoned checkout if ?recover=ID is in the URL
+    const recoveredRef = useRef(false);
+    useEffect(() => {
+        const recoverId = searchParams.get('recover');
+        if (!recoverId || recoveredRef.current) return;
+        recoveredRef.current = true;
+        setIsRecovering(true);
+
+        fetch(`/api/checkout/recover?id=${recoverId}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.cartItems && data.cartItems.length > 0) {
+                    // Clear existing cart and add recovered items
+                    clearCart();
+                    for (const item of data.cartItems) {
+                        addToCart({
+                            id: item.id,
+                            name: item.name,
+                            slug: item.slug,
+                            brand: item.brand,
+                            size: item.size,
+                            price: item.price,
+                            image: item.image,
+                            stock: item.stock,
+                            incrementBy: 1,
+                        }, item.quantity);
+                    }
+                }
+                if (data.formData) {
+                    setFormData(data.formData);
+                }
+            })
+            .catch(() => {})
+            .finally(() => setIsRecovering(false));
+    }, [searchParams, clearCart, addToCart]);
 
     // Total tire count across all cart items
     const tireCount = items.reduce((sum, item) => sum + item.quantity, 0);
@@ -175,6 +214,21 @@ export default function CheckoutPage() {
             setIsLoading(false);
         }
     };
+
+    if (isRecovering) {
+        return (
+            <div className="min-h-screen flex flex-col">
+                <Header />
+                <main className="flex-1 flex items-center justify-center">
+                    <div className="text-center">
+                        <div className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto mb-4" />
+                        <p className="text-muted-foreground">Je winkelwagen wordt hersteld...</p>
+                    </div>
+                </main>
+                <Footer />
+            </div>
+        );
+    }
 
     if (items.length === 0) {
         return (

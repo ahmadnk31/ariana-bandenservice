@@ -3,7 +3,8 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 const fromAddress = process.env.FROM_EMAIL || "sales@gentbandenservice.be";
 const fromEmail = `Gent bandenservice <${fromAddress}>`;
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://gentbandenservice.be";
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://gentbandenservice.be";
+const siteUrl = rawSiteUrl.startsWith("http") ? rawSiteUrl : `https://${rawSiteUrl}`;
 
 interface ContactFormData {
     firstName: string;
@@ -285,11 +286,12 @@ interface AbandonedCartItem {
 export async function sendAbandonedCheckoutEmail(data: {
     email: string;
     firstName?: string | null;
+    checkoutId: string;
     cartItems: AbandonedCartItem[];
     subtotal: number;
 }): Promise<{ success: boolean; error?: string }> {
     try {
-        const checkoutUrl = `${siteUrl}/checkout`;
+        const checkoutUrl = `${siteUrl}/nl/checkout?recover=${data.checkoutId}`;
         const customerName = data.firstName || "Klant";
 
         // Build cart items HTML
