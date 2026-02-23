@@ -1,6 +1,7 @@
 'use client';
 
 import { useCart } from './CartContext';
+import Price from './Price';
 import { X, Minus, Plus, ShoppingCart, Trash2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -97,7 +98,7 @@ export default function CartDrawer() {
                                             <p className="text-xs text-muted-foreground mt-0.5">
                                                 {item.brand} • {item.size}
                                             </p>
-                                            <p className="font-semibold mt-1">€{item.price.toFixed(2)}</p>
+                                            <p className="font-semibold mt-1"><Price amount={item.price} size="base" /></p>
 
                                             {/* Quantity Controls */}
                                             <div className="flex items-center gap-2 mt-2">
@@ -150,7 +151,7 @@ export default function CartDrawer() {
                     <div className="border-t p-4 space-y-4">
                         <div className="flex justify-between items-center">
                             <span className="text-muted-foreground">{t('subtotal')}</span>
-                            <span className="text-xl font-bold">€{subtotal.toFixed(2)}</span>
+                            <Price amount={subtotal} size="lg" />
                         </div>
                         <p className="text-xs text-muted-foreground">{t('shippingNote')}</p>
                         <Link

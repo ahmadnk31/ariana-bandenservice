@@ -5,6 +5,7 @@ import { Link } from "@/src/i18n/routing";
 import { useState, useRef, useCallback, useEffect } from "react";
 import { useTranslations } from 'next-intl';
 import { useCart } from './CartContext';
+import Price from './Price';
 import { ShoppingCart, Flame } from 'lucide-react';
 import StockRequestModal from "./StockRequestModal";
 
@@ -362,7 +363,7 @@ export default function TireCard({
             {/* Price & CTA */}
             <div className="flex items-center justify-between mt-auto pt-4 border-t border-muted">
                 <div>
-                    <span className="text-xl font-bold">€{price}</span>
+                    <Price amount={price} size="lg" />
                     <p className="text-[10px] text-green-600 font-medium">{t('freeMontageBalance')}</p>
                     {stock > 0 && stock <= 5 && (
                         <p className="text-[10px] text-orange-600 font-semibold flex items-center gap-0.5 animate-pulse">

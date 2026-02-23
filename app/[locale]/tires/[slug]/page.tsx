@@ -9,6 +9,7 @@ import TireCard from "@/app/components/TireCard";
 import { getTranslations } from "next-intl/server";
 import ProductAddToCart from "@/app/components/ProductAddToCart";
 import SocialProofBadge from "@/app/components/SocialProofBadge";
+import Price from "@/app/components/Price";
 import { getAlternateLanguages } from "@/lib/utils";
 
 interface ProductPageProps {
@@ -31,7 +32,11 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
     const title = `${tire.name} | Gent bandenservice`;
     const description = `Buy ${tire.brand} ${tire.name} (${tire.size}) - ${tire.season} tire. Price: €${tire.price}. Professional fitting available.`;
-    const images = tire.images.map(img => img.url);
+    const siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be";
+    const fallbackImage = `${siteUrl}/gentbandenservice/android-chrome-512x512.png`;
+    const ogImages = tire.images.length > 0
+        ? tire.images.map(img => img.url.startsWith("http") ? img.url : `${siteUrl}${img.url}`)
+        : [fallbackImage];
 
     return {
         title,
@@ -39,14 +44,15 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         openGraph: {
             title,
             description,
-            images: images.length > 0 ? images : ["/banden-service/android-chrome-512x512.png"],
+            images: ogImages,
             type: "website",
+            url: `${siteUrl}/${locale}/tires/${slug}`,
         },
         twitter: {
             card: "summary_large_image",
             title,
             description,
-            images: images.length > 0 ? images : ["/banden-service/android-chrome-512x512.png"],
+            images: ogImages,
         },
         alternates: {
             canonical: `/${locale}/tires/${slug}`,
@@ -204,7 +210,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                             </div>
 
                             <div className="text-3xl font-bold mb-4">
-                                €{tire.price.toFixed(2)}
+                                <Price amount={tire.price} size="xl" />
                                 {tire.stock > 0 && <span className="text-sm font-normal text-muted-foreground ml-3">({tire.stock} in stock)</span>}
                             </div>
 
