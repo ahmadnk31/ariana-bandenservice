@@ -286,11 +286,12 @@ interface AbandonedCartItem {
 export async function sendAbandonedCheckoutEmail(data: {
     email: string;
     firstName?: string | null;
+    checkoutId: string;
     cartItems: AbandonedCartItem[];
     subtotal: number;
 }): Promise<{ success: boolean; error?: string }> {
     try {
-        const checkoutUrl = `${siteUrl}/nl/checkout`;
+        const checkoutUrl = `${siteUrl}/nl/checkout?recover=${data.checkoutId}`;
         const customerName = data.firstName || "Klant";
 
         // Build cart items HTML

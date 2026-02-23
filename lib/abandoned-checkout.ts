@@ -83,6 +83,7 @@ export async function processPendingAbandonedEmails() {
                 const result = await sendAbandonedCheckoutEmail({
                     email: checkout.email,
                     firstName: checkout.firstName,
+                    checkoutId: checkout.id,
                     cartItems,
                     subtotal,
                 });
