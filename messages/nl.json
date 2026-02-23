@@ -99,7 +99,15 @@
         "phone": "Telefoon (optioneel)",
         "email": "E-mail",
         "submitRequest": "Inzenden",
-        "sending": "Versturen..."
+        "sending": "Versturen...",
+        "freeMontageBalance": "Montage + balans gratis",
+        "lowStock": "Nog maar {count} op voorraad!",
+        "peopleViewing": "{count} mensen bekijken dit nu",
+        "soldRecently": "{count}x verkocht in het afgelopen uur",
+        "lastChance": "Laatste kans",
+        "hurryUp": "Beslis snel – bijna uitverkocht",
+        "popularItem": "Populair item",
+        "keyFeatures": "Belangrijkste kenmerken"
     },
     "Contact": {
         "title": "Neem Contact Op",

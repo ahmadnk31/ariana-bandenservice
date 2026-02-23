@@ -97,7 +97,15 @@
         "phone": "Telefono (opzionale)",
         "email": "Email",
         "submitRequest": "Invia Richiesta",
-        "sending": "Invio in corso..."
+        "sending": "Invio in corso...",
+        "freeMontageBalance": "Montaggio + bilanciamento gratuito",
+        "lowStock": "Solo {count} rimasti in magazzino!",
+        "peopleViewing": "{count} persone stanno guardando questo ora",
+        "soldRecently": "Venduto {count}x nell'ultima ora",
+        "lastChance": "Ultima occasione",
+        "hurryUp": "Sbrigati – quasi esaurito",
+        "popularItem": "Articolo popolare",
+        "keyFeatures": "Caratteristiche principali"
     },
     "Contact": {
         "title": "Contattaci",

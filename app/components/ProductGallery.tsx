@@ -114,17 +114,52 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
     };
 
     return (
-        <div className="flex flex-col gap-4 group">
-            {/* Main Image */}
-            <div
-                ref={galleryRef}
-                className="aspect-square w-full relative bg-transparent rounded-lg overflow-hidden border border-muted cursor-zoom-in select-none"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}
-            >
+        <div className="flex flex-row gap-3 group">
+            {/* Vertical Thumbnails (left side) */}
+            {images.length > 1 && (
+                <div className="hidden sm:flex flex-col gap-2 overflow-y-auto max-h-[400px] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted-foreground/20 hover:scrollbar-thumb-muted-foreground/40 pr-1">
+                    {images.map((image, index) => (
+                        <button
+                            key={image.id}
+                            onClick={() => {
+                                if (!isTransitioning) {
+                                    setIsTransitioning(true);
+                                    setSelectedIndex(index);
+                                    setTimeout(() => setIsTransitioning(false), 300);
+                                }
+                            }}
+                            onMouseEnter={() => {
+                                if (!isTransitioning) {
+                                    setSelectedIndex(index);
+                                }
+                            }}
+                            className={`relative w-14 h-14 md:w-16 md:h-16 flex-shrink-0 rounded-md overflow-hidden border-2 transition-all duration-200 disabled:opacity-50 ${
+                                index === selectedIndex ? "border-primary scale-105" : "border-transparent opacity-70 hover:opacity-100"
+                            }`}
+                            disabled={isTransitioning}
+                        >
+                            <img
+                                src={image.url}
+                                alt={`${name} thumbnail ${index + 1}`}
+                                className="w-full h-full object-contain"
+                                draggable={false}
+                            />
+                        </button>
+                    ))}
+                </div>
+            )}
+
+            <div className="flex flex-col gap-3 flex-1 min-w-0">
+                {/* Main Image */}
+                <div
+                    ref={galleryRef}
+                    className="aspect-square w-full max-h-[400px] relative bg-transparent rounded-lg overflow-hidden border border-muted cursor-zoom-in select-none"
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                >
                 {/* Image Container with Transitions */}
                 <div className="w-full h-full relative">
                     {images.map((image, index) => (
@@ -196,48 +231,37 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
                 )}
             </div>
 
-            {/* Thumbnails */}
-            {images.length > 1 && (
-                <div className="relative">
-                    <div className="flex gap-1 sm:gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted-foreground/20 hover:scrollbar-thumb-muted-foreground/40">
-                        {images.map((image, index) => (
-                            <button
-                                key={image.id}
-                                onClick={() => {
-                                    if (!isTransitioning) {
-                                        setIsTransitioning(true);
-                                        setSelectedIndex(index);
-                                        setTimeout(() => setIsTransitioning(false), 300);
-                                    }
-                                }}
-                                onMouseEnter={() => {
-                                    if (!isTransitioning) {
-                                        setSelectedIndex(index);
-                                    }
-                                }}
-                                className={`relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex-shrink-0 rounded-md overflow-hidden border-2 transition-all duration-200 disabled:opacity-50 ${
-                                    index === selectedIndex ? "border-primary scale-105" : "border-transparent opacity-70 hover:opacity-100"
+                {/* Mobile-only horizontal thumbnails */}
+                {images.length > 1 && (
+                    <div className="sm:hidden relative">
+                        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted-foreground/20 hover:scrollbar-thumb-muted-foreground/40">
+                            {images.map((image, index) => (
+                                <button
+                                    key={image.id}
+                                    onClick={() => {
+                                        if (!isTransitioning) {
+                                            setIsTransitioning(true);
+                                            setSelectedIndex(index);
+                                            setTimeout(() => setIsTransitioning(false), 300);
+                                        }
+                                    }}
+                                    className={`relative w-12 h-12 flex-shrink-0 rounded-md overflow-hidden border-2 transition-all duration-200 disabled:opacity-50 ${
+                                        index === selectedIndex ? "border-primary scale-105" : "border-transparent opacity-70 hover:opacity-100"
                                     }`}
-                                disabled={isTransitioning}
-                            >
-                                <img
-                                    src={image.url}
-                                    alt={`${name} thumbnail ${index + 1}`}
-                                    className="w-full h-full object-contain"
-                                    draggable={false}
-                                />
-                            </button>
-                        ))}
+                                    disabled={isTransitioning}
+                                >
+                                    <img
+                                        src={image.url}
+                                        alt={`${name} thumbnail ${index + 1}`}
+                                        className="w-full h-full object-contain"
+                                        draggable={false}
+                                    />
+                                </button>
+                            ))}
+                        </div>
                     </div>
-                    {/* Scroll indicators */}
-                    {images.length > 5 && (
-                        <>
-                            <div className="absolute left-0 top-0 bottom-2 w-3 sm:w-4 bg-gradient-to-r from-background via-background/80 to-transparent pointer-events-none" />
-                            <div className="absolute right-0 top-0 bottom-2 w-3 sm:w-4 bg-gradient-to-l from-background via-background/80 to-transparent pointer-events-none" />
-                        </>
-                    )}
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
 }

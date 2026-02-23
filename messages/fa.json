@@ -98,7 +98,15 @@
         "email": "ایمیل",
         "submitRequest": "ثبت درخواست",
         "sending": "در حال ارسال...",
-        "relatedProducts": "محصولات مرتبط"
+        "relatedProducts": "محصولات مرتبط",
+        "freeMontageBalance": "نصب + بالانس رایگان",
+        "lowStock": "فقط {count} عدد در انبار باقی مانده!",
+        "peopleViewing": "{count} نفر در حال مشاهده این محصول هستند",
+        "soldRecently": "{count}x در ساعت گذشته فروخته شده",
+        "lastChance": "آخرین فرصت",
+        "hurryUp": "عجله کنید – تقریباً تمام شده",
+        "popularItem": "محصول محبوب",
+        "keyFeatures": "ویژگی‌های کلیدی"
     },
     "Contact": {
         "title": "تماس با ما",

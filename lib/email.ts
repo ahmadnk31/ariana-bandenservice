@@ -2,6 +2,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const fromAddress = process.env.FROM_EMAIL || "contact@gentbandenservice.be";
+const salesEmail = "Gent bandenservice <sales@gentbandenservice.be>";
 const fromEmail = `Gent bandenservice <${fromAddress}>`;
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://gentbandenservice.be";
 
@@ -270,6 +271,81 @@ export async function sendBackInStockEmail(data: { email: string; name?: string 
         return { success: true };
     } catch (error) {
         console.error("Failed to send back-in-stock email:", error);
+        return { success: false, error: "Failed to send email" };
+    }
+}
+
+interface AbandonedCartItem {
+    name: string;
+    size?: string;
+    price: number;
+    quantity: number;
+    image?: string;
+}
+
+export async function sendAbandonedCheckoutEmail(data: {
+    email: string;
+    firstName?: string | null;
+    cartItems: AbandonedCartItem[];
+    subtotal: number;
+}): Promise<{ success: boolean; error?: string }> {
+    try {
+        const checkoutUrl = `${siteUrl}/checkout`;
+        const customerName = data.firstName || "Klant";
+
+        // Build cart items HTML
+        const cartItemsHtml = data.cartItems.map(item => `
+          <tr>
+            <td style="padding:12px;font-size:14px;color:#18181b;border-bottom:1px solid #e4e4e7;">
+              <strong>${item.name}</strong>
+              ${item.size ? `<br/><span style="font-size:12px;color:#71717a;">${item.size}</span>` : ""}
+            </td>
+            <td style="padding:12px;font-size:14px;color:#71717a;text-align:center;border-bottom:1px solid #e4e4e7;">${item.quantity}x</td>
+            <td style="padding:12px;font-size:14px;color:#18181b;text-align:right;border-bottom:1px solid #e4e4e7;font-weight:600;">€${(item.price * item.quantity).toFixed(2)}</td>
+          </tr>
+        `).join("");
+
+        const html = emailLayout(`
+            <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">Je bent er bijna! 🛒</h2>
+            <p style="margin:0 0 4px;font-size:15px;color:#3f3f46;line-height:1.6;">Beste ${customerName},</p>
+            <p style="margin:0 0 24px;font-size:15px;color:#3f3f46;line-height:1.6;">Je was bezig met het bestellen van banden, maar hebt de betaling nog niet afgerond. Geen zorgen — je winkelwagen staat nog klaar!</p>
+
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e4e7;border-radius:8px;overflow:hidden;margin:0 0 20px;">
+              <tr style="background-color:#f4f4f5;">
+                <td style="padding:10px 12px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Artikel</td>
+                <td style="padding:10px 12px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;text-align:center;">Aantal</td>
+                <td style="padding:10px 12px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;text-align:right;">Prijs</td>
+              </tr>
+              ${cartItemsHtml}
+              <tr>
+                <td colspan="2" style="padding:12px;font-size:15px;font-weight:700;color:#18181b;">Subtotaal</td>
+                <td style="padding:12px;font-size:15px;font-weight:700;color:#18181b;text-align:right;">€${data.subtotal.toFixed(2)}</td>
+              </tr>
+            </table>
+
+            ${highlightBox(`
+              <p style="margin:0;font-size:14px;color:#18181b;line-height:1.6;">
+                <strong>✅ Montage + balans gratis</strong> inbegrepen bij elke bestelling!
+              </p>
+            `)}
+
+            ${ctaButton("Bestelling afronden →", checkoutUrl)}
+
+            <p style="margin:0 0 8px;font-size:14px;color:#71717a;text-align:center;">Je banden liggen klaar. Rond je bestelling af voordat ze uitverkocht zijn!</p>
+
+            <p style="margin:24px 0 0;font-size:15px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
+        `, `${customerName}, je hebt nog items in je winkelwagen!`);
+
+        await resend.emails.send({
+            from: salesEmail,
+            to: [data.email],
+            subject: `${customerName}, je bent er bijna! Rond je bestelling af 🛞`,
+            html,
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error("Failed to send abandoned checkout email:", error);
         return { success: false, error: "Failed to send email" };
     }
 }
