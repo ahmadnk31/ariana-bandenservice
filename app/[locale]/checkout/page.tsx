@@ -78,11 +78,8 @@ export default function CheckoutPage() {
                 body: JSON.stringify({
                     ...formData,
                     cartItems: items.map(item => ({
-                        name: item.name,
-                        size: item.size,
-                        price: item.price,
+                        id: item.id,
                         quantity: item.quantity,
-                        image: item.image,
                     })),
                     subtotal,
                 }),
@@ -120,11 +117,8 @@ export default function CheckoutPage() {
                 const payload = JSON.stringify({
                     ...formData,
                     cartItems: items.map(item => ({
-                        name: item.name,
-                        size: item.size,
-                        price: item.price,
+                        id: item.id,
                         quantity: item.quantity,
-                        image: item.image,
                     })),
                     subtotal,
                 });

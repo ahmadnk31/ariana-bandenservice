@@ -1,8 +1,7 @@
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const fromAddress = process.env.FROM_EMAIL || "contact@gentbandenservice.be";
-const salesEmail = "Gent bandenservice <sales@gentbandenservice.be>";
+const fromAddress = process.env.FROM_EMAIL || "sales@gentbandenservice.be";
 const fromEmail = `Gent bandenservice <${fromAddress}>`;
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://gentbandenservice.be";
 
@@ -337,7 +336,7 @@ export async function sendAbandonedCheckoutEmail(data: {
         `, `${customerName}, je hebt nog items in je winkelwagen!`);
 
         await resend.emails.send({
-            from: salesEmail,
+            from: fromEmail,
             to: [data.email],
             subject: `${customerName}, je bent er bijna! Rond je bestelling af 🛞`,
             html,
