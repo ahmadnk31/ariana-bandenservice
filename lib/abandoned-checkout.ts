@@ -8,8 +8,8 @@ import { sendAbandonedCheckoutEmail } from '@/lib/email';
  * Called by cron-job.org via /api/cron/abandoned-emails every 5 minutes.
  */
 export async function processPendingAbandonedEmails() {
+    const stats = { found: 0, sent: 0, failed: 0, skipped: 0, errors: [] as string[] };
     try {
-        const thirtyMinutesAgo = new Date(Date.now() - 30 * 60 * 1000);
         const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
         const pending = await prisma.abandonedCheckout.findMany({
@@ -17,12 +17,14 @@ export async function processPendingAbandonedEmails() {
                 emailSent: false,
                 recovered: false,
                 updatedAt: {
-                    lte: thirtyMinutesAgo,
                     gte: twentyFourHoursAgo,
                 },
             },
             take: 5,
         });
+
+        stats.found = pending.length;
+        console.log(`[abandoned-checkout] Found ${pending.length} pending checkouts (since: ${twentyFourHoursAgo.toISOString()})`);
 
         for (const checkout of pending) {
             try {
@@ -77,7 +79,10 @@ export async function processPendingAbandonedEmails() {
                     );
                 }
 
-                if (cartItems.length === 0) continue;
+                if (cartItems.length === 0) {
+                    stats.skipped++;
+                    continue;
+                }
 
                 const result = await sendAbandonedCheckoutEmail({
                     email: checkout.email,
@@ -92,12 +97,22 @@ export async function processPendingAbandonedEmails() {
                         where: { id: checkout.id },
                         data: { emailSent: true, emailSentAt: new Date() },
                     });
+                    stats.sent++;
+                    console.log(`[abandoned-checkout] Email sent to ${checkout.email}`);
+                } else {
+                    stats.failed++;
+                    console.log(`[abandoned-checkout] Email failed for ${checkout.email}`);
                 }
             } catch (err) {
+                stats.failed++;
+                stats.errors.push(`${checkout.id}: ${err instanceof Error ? err.message : String(err)}`);
                 console.error(`Failed to send abandoned email ${checkout.id}:`, err);
             }
         }
     } catch (err) {
+        stats.errors.push(err instanceof Error ? err.message : String(err));
         console.error('processPendingAbandonedEmails error:', err);
     }
+    return stats;
+}
 }

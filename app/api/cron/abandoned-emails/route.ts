@@ -19,8 +19,8 @@ export async function GET(request: NextRequest) {
     }
 
     try {
-        await processPendingAbandonedEmails();
-        return NextResponse.json({ ok: true, timestamp: new Date().toISOString() });
+        const stats = await processPendingAbandonedEmails();
+        return NextResponse.json({ ok: true, timestamp: new Date().toISOString(), ...stats });
     } catch (error) {
         console.error('Cron abandoned-emails error:', error);
         return NextResponse.json({ error: 'Processing failed' }, { status: 500 });
