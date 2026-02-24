@@ -413,7 +413,7 @@ export async function sendOrderConfirmationEmail(data: {
             : [];
 
         await resend.emails.send({
-            from: fromEmail,
+            from: salesEmail,
             to: [data.email],
             subject: `Bevestiging bestelling ${data.orderNumber}${data.invoicePdf ? ' + factuur' : ''}`,
             html,
