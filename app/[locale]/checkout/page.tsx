@@ -29,6 +29,7 @@ export default function CheckoutPage() {
     const [selectedRate, setSelectedRate] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [isRecovering, setIsRecovering] = useState(false);
+    const [abandonedCheckoutId, setAbandonedCheckoutId] = useState<string | null>(null);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -47,6 +48,7 @@ export default function CheckoutPage() {
         if (!recoverId || recoveredRef.current) return;
         recoveredRef.current = true;
         setIsRecovering(true);
+        setAbandonedCheckoutId(recoverId);
 
         fetch(`/api/checkout/recover?id=${recoverId}`)
             .then(res => res.json())
@@ -112,7 +114,7 @@ export default function CheckoutPage() {
         if (!emailRegex.test(formData.email)) return;
 
         try {
-            await fetch('/api/checkout/abandoned', {
+            const res = await fetch('/api/checkout/abandoned', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -124,6 +126,10 @@ export default function CheckoutPage() {
                     subtotal,
                 }),
             });
+            const data = await res.json();
+            if (data?.id) {
+                setAbandonedCheckoutId(data.id);
+            }
             hasSavedRef.current = true;
         } catch {
             // Silently fail – don't disrupt checkout flow
@@ -199,6 +205,7 @@ export default function CheckoutPage() {
                         deliveryDays: selectedShippingRate.deliveryDays,
                     },
                     shippingAddress: formData,
+                    abandonedCheckoutId,
                 }),
             });
 

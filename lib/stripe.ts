@@ -34,6 +34,7 @@ export async function createCheckoutSession({
     shippingAddress,
     successUrl,
     cancelUrl,
+    abandonedCheckoutId,
 }: {
     cartItems: CartItem[];
     shippingOption: ShippingOption;
@@ -49,6 +50,7 @@ export async function createCheckoutSession({
     };
     successUrl: string;
     cancelUrl: string;
+    abandonedCheckoutId?: string;
 }) {
     const stripe = getStripe();
 
@@ -89,6 +91,7 @@ export async function createCheckoutSession({
                 quantity: item.quantity,
                 price: item.price,
             }))),
+            abandonedCheckoutId: abandonedCheckoutId || '',
             shippingCarrier: shippingOption.carrier,
             shippingMethod: shippingOption.method,
             shippingCost: shippingOption.price.toString(),
