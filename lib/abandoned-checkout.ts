@@ -10,6 +10,7 @@ import { sendAbandonedCheckoutEmail } from '@/lib/email';
 export async function processPendingAbandonedEmails() {
     const stats = { found: 0, sent: 0, failed: 0, skipped: 0, errors: [] as string[] };
     try {
+        const thirtyMinutesAgo = new Date(Date.now() - 30 * 60 * 1000);
         const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
         const pending = await prisma.abandonedCheckout.findMany({
@@ -17,6 +18,7 @@ export async function processPendingAbandonedEmails() {
                 emailSent: false,
                 recovered: false,
                 updatedAt: {
+                    lte: thirtyMinutesAgo,
                     gte: twentyFourHoursAgo,
                 },
             },
@@ -24,7 +26,7 @@ export async function processPendingAbandonedEmails() {
         });
 
         stats.found = pending.length;
-        console.log(`[abandoned-checkout] Found ${pending.length} pending checkouts (since: ${twentyFourHoursAgo.toISOString()})`);
+        console.log(`[abandoned-checkout] Found ${pending.length} pending checkouts (idle > 30min, last 24h)`);
 
         for (const checkout of pending) {
             try {

@@ -92,6 +92,7 @@ export async function createCheckoutSession({
             shippingCarrier: shippingOption.carrier,
             shippingMethod: shippingOption.method,
             shippingCost: shippingOption.price.toString(),
+            email: shippingAddress.email,
             firstName: shippingAddress.firstName,
             lastName: shippingAddress.lastName,
             phone: shippingAddress.phone || '',
