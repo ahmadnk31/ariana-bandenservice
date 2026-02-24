@@ -38,6 +38,17 @@ export async function POST(request: NextRequest) {
         console.log('Session metadata:', session.metadata);
 
         try {
+            // Check if order already exists (idempotency - webhooks can be called multiple times)
+            const existingOrder = await prisma.order.findUnique({
+                where: { stripeSessionId: session.id },
+            });
+
+            if (existingOrder) {
+                console.log('⏭️ Order already exists for this session:', existingOrder.orderNumber);
+                console.log('Skipping duplicate webhook processing');
+                return NextResponse.json({ received: true, skipped: true });
+            }
+
             const metadata = session.metadata || {};
             const cartItems = JSON.parse(metadata.cartItems || '[]');
 
@@ -126,68 +137,88 @@ export async function POST(request: NextRequest) {
                 console.log('[webhook] Abandoned checkouts marked completed by email:', result.count);
             }
 
-            const orderWithDetails = await prisma.order.findUnique({
-                where: { id: order.id },
-                include: {
-                    shippingAddress: true,
-                    items: {
-                        include: {
-                            tire: {
-                                select: {
-                                    name: true,
-                                    size: true,
+            // Send confirmation email with invoice PDF
+            try {
+                console.log('[webhook] Fetching order details for email...');
+                const orderWithDetails = await prisma.order.findUnique({
+                    where: { id: order.id },
+                    include: {
+                        shippingAddress: true,
+                        items: {
+                            include: {
+                                tire: {
+                                    select: {
+                                        name: true,
+                                        size: true,
+                                    },
                                 },
                             },
                         },
                     },
-                },
-            });
+                });
 
-            if (orderWithDetails && orderWithDetails.shippingAddress) {
-                const customerName = `${orderWithDetails.shippingAddress.firstName} ${orderWithDetails.shippingAddress.lastName}`.trim() || 'Klant';
-                const invoicePdf = await generateInvoicePdf({
-                    invoiceNumber: `INV-${orderWithDetails.orderNumber}`,
-                    issueDate: new Date(),
-                    orderNumber: orderWithDetails.orderNumber,
-                    customerName,
-                    customerEmail: orderWithDetails.email,
-                    customerPhone: orderWithDetails.phone,
-                    shippingAddress: {
-                        street: orderWithDetails.shippingAddress.street,
-                        city: orderWithDetails.shippingAddress.city,
-                        postalCode: orderWithDetails.shippingAddress.postalCode,
-                        country: orderWithDetails.shippingAddress.country,
-                    },
-                    items: orderWithDetails.items.map(item => ({
+                if (!orderWithDetails) {
+                    console.error('[webhook] Order not found after creation:', order.id);
+                } else if (!orderWithDetails.shippingAddress) {
+                    console.error('[webhook] Order has no shipping address:', order.id);
+                } else {
+                    const customerName = `${orderWithDetails.shippingAddress.firstName} ${orderWithDetails.shippingAddress.lastName}`.trim() || 'Klant';
+                    const emailItems = orderWithDetails.items.map(item => ({
                         name: item.tire?.name || 'Band',
                         size: item.tire?.size || undefined,
                         quantity: item.quantity,
                         unitPrice: item.price,
-                    })),
-                    subtotal: orderWithDetails.subtotal,
-                    shippingCost: orderWithDetails.shippingCost,
-                    total: orderWithDetails.total,
-                });
+                    }));
 
-                const confirmationResult = await sendOrderConfirmationEmail({
-                    email: orderWithDetails.email,
-                    customerName,
-                    orderNumber: orderWithDetails.orderNumber,
-                    items: orderWithDetails.items.map(item => ({
-                        name: item.tire?.name || 'Band',
-                        size: item.tire?.size || undefined,
-                        quantity: item.quantity,
-                        unitPrice: item.price,
-                    })),
-                    subtotal: orderWithDetails.subtotal,
-                    shippingCost: orderWithDetails.shippingCost,
-                    total: orderWithDetails.total,
-                    invoicePdf,
-                });
+                    // Try generating invoice PDF, but don't let it block the email
+                    let invoicePdfBase64: string | null = null;
+                    try {
+                        console.log('[webhook] Generating invoice PDF...');
+                        const invoicePdf = await generateInvoicePdf({
+                            invoiceNumber: `INV-${orderWithDetails.orderNumber}`,
+                            issueDate: new Date(),
+                            orderNumber: orderWithDetails.orderNumber,
+                            customerName,
+                            customerEmail: orderWithDetails.email,
+                            customerPhone: orderWithDetails.phone,
+                            shippingAddress: {
+                                street: orderWithDetails.shippingAddress.street,
+                                city: orderWithDetails.shippingAddress.city,
+                                postalCode: orderWithDetails.shippingAddress.postalCode,
+                                country: orderWithDetails.shippingAddress.country,
+                            },
+                            items: emailItems,
+                            subtotal: orderWithDetails.subtotal,
+                            shippingCost: orderWithDetails.shippingCost,
+                            total: orderWithDetails.total,
+                        });
+                        invoicePdfBase64 = invoicePdf.toString('base64');
+                        console.log('[webhook] ✅ Invoice PDF generated, size:', invoicePdf.length, 'bytes');
+                    } catch (pdfError) {
+                        console.error('[webhook] ⚠️ PDF generation failed, sending email without attachment:', pdfError);
+                    }
 
-                if (!confirmationResult.success) {
-                    console.error('[webhook] Failed to send confirmation/invoice email:', confirmationResult.error);
+                    console.log('[webhook] Sending confirmation email to', orderWithDetails.email, '(with PDF:', !!invoicePdfBase64, ')');
+                    const confirmationResult = await sendOrderConfirmationEmail({
+                        email: orderWithDetails.email,
+                        customerName,
+                        orderNumber: orderWithDetails.orderNumber,
+                        items: emailItems,
+                        subtotal: orderWithDetails.subtotal,
+                        shippingCost: orderWithDetails.shippingCost,
+                        total: orderWithDetails.total,
+                        invoicePdf: invoicePdfBase64,
+                    });
+
+                    if (confirmationResult.success) {
+                        console.log('[webhook] ✅ Confirmation email sent successfully to', orderWithDetails.email);
+                    } else {
+                        console.error('[webhook] ❌ Failed to send confirmation email:', confirmationResult.error);
+                    }
                 }
+            } catch (emailError) {
+                console.error('[webhook] ❌ Error sending confirmation/invoice:', emailError);
+                // Don't fail the webhook - order was created successfully
             }
         } catch (error) {
             console.error('Failed to create order:', error);

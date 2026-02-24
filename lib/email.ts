@@ -328,7 +328,7 @@ export async function sendOrderStatusUpdateEmail(data: {
     `, `Statusupdate voor bestelling ${data.orderNumber}: ${statusLabel}`);
 
     await resend.emails.send({
-      from: fromEmail,
+      from: salesEmail,
       to: [data.email],
       subject: `Bestelling ${data.orderNumber} status: ${statusLabel}`,
       html,
@@ -349,7 +349,7 @@ export async function sendOrderConfirmationEmail(data: {
     subtotal: number;
     shippingCost: number;
     total: number;
-    invoicePdf: Buffer;
+    invoicePdf: string | null;
 }): Promise<{ success: boolean; error?: string }> {
     try {
         const rows = data.items
@@ -363,6 +363,10 @@ export async function sendOrderConfirmationEmail(data: {
                 </tr>
             `)
             .join('');
+
+        const invoiceNote = data.invoicePdf
+            ? `<p style="margin:0 0 10px;font-size:14px;color:#3f3f46;">Je factuur zit als PDF in de bijlage van deze e-mail.</p>`
+            : `<p style="margin:0 0 10px;font-size:14px;color:#3f3f46;">Je factuur wordt zo snel mogelijk apart verstuurd.</p>`;
 
         const html = emailLayout(`
             <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">Betaling geslaagd ✅</h2>
@@ -394,27 +398,32 @@ export async function sendOrderConfirmationEmail(data: {
               </tr>
             </table>
 
-            <p style="margin:0 0 10px;font-size:14px;color:#3f3f46;">Je factuur zit als PDF in de bijlage van deze e-mail.</p>
+            ${invoiceNote}
             <p style="margin:0;font-size:14px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
         `, `Betaling ontvangen voor bestelling ${data.orderNumber}`);
+
+        // Build attachments only if PDF was generated
+        const attachments = data.invoicePdf
+            ? [
+                {
+                    filename: `factuur-${data.orderNumber}.pdf`,
+                    content: Buffer.from(data.invoicePdf, 'base64'),
+                },
+            ]
+            : [];
 
         await resend.emails.send({
             from: fromEmail,
             to: [data.email],
-            subject: `Bevestiging bestelling ${data.orderNumber} + factuur`,
+            subject: `Bevestiging bestelling ${data.orderNumber}${data.invoicePdf ? ' + factuur' : ''}`,
             html,
-            attachments: [
-                {
-                    filename: `factuur-${data.orderNumber}.pdf`,
-                    content: data.invoicePdf,
-                },
-            ],
+            attachments,
         });
 
         return { success: true };
     } catch (error) {
         console.error('Failed to send order confirmation email:', error);
-        return { success: false, error: 'Failed to send order confirmation email' };
+        return { success: false, error: String(error) };
     }
 }
 
