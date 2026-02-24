@@ -328,7 +328,7 @@ export async function sendOrderStatusUpdateEmail(data: {
     `, `Statusupdate voor bestelling ${data.orderNumber}: ${statusLabel}`);
 
     await resend.emails.send({
-      from: fromEmail,
+      from: salesEmail,
       to: [data.email],
       subject: `Bestelling ${data.orderNumber} status: ${statusLabel}`,
       html,
