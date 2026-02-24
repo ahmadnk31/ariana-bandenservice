@@ -4,7 +4,7 @@ import { createCheckoutSession } from '@/lib/stripe';
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { cartItems, shippingOption, shippingAddress } = body;
+        const { cartItems, shippingOption, shippingAddress, abandonedCheckoutId } = body;
 
         if (!cartItems || cartItems.length === 0) {
             return NextResponse.json(
@@ -36,6 +36,7 @@ export async function POST(request: NextRequest) {
             shippingAddress,
             successUrl: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
             cancelUrl: `${origin}/checkout/cancel`,
+            abandonedCheckoutId,
         });
 
         return NextResponse.json({ url: session.url });

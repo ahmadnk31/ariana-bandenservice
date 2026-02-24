@@ -284,6 +284,140 @@ interface AbandonedCartItem {
     image?: string;
 }
 
+interface OrderConfirmationItem {
+    name: string;
+    size?: string;
+    quantity: number;
+    unitPrice: number;
+}
+
+export async function sendOrderStatusUpdateEmail(data: {
+  email: string;
+  customerName: string;
+  orderNumber: string;
+  status: string;
+  trackingNumber?: string | null;
+}): Promise<{ success: boolean; error?: string }> {
+  try {
+    const statusLabelMap: Record<string, string> = {
+      pending: 'In behandeling',
+      paid: 'Betaald',
+      shipped: 'Verzonden',
+      delivered: 'Geleverd',
+      cancelled: 'Geannuleerd',
+    };
+
+    const statusLabel = statusLabelMap[data.status] || data.status;
+    const trackingBlock = data.trackingNumber
+      ? highlightBox(`<p style="margin:0;font-size:14px;color:#18181b;"><strong>Trackingnummer:</strong> ${data.trackingNumber}</p>`)
+      : '';
+
+    const html = emailLayout(`
+      <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">Update over je bestelling</h2>
+      <p style="margin:0 0 8px;font-size:15px;color:#3f3f46;line-height:1.6;">Beste ${data.customerName},</p>
+      <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">De status van je bestelling is bijgewerkt.</p>
+
+      ${highlightBox(`
+        <p style="margin:0 0 8px;font-size:14px;color:#18181b;"><strong>Bestelnummer:</strong> ${data.orderNumber}</p>
+        <p style="margin:0;font-size:14px;color:#18181b;"><strong>Nieuwe status:</strong> ${statusLabel}</p>
+      `)}
+
+      ${trackingBlock}
+
+      <p style="margin:0;font-size:14px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
+    `, `Statusupdate voor bestelling ${data.orderNumber}: ${statusLabel}`);
+
+    await resend.emails.send({
+      from: fromEmail,
+      to: [data.email],
+      subject: `Bestelling ${data.orderNumber} status: ${statusLabel}`,
+      html,
+    });
+
+    return { success: true };
+  } catch (error) {
+    console.error('Failed to send order status update email:', error);
+    return { success: false, error: 'Failed to send order status update email' };
+  }
+}
+
+export async function sendOrderConfirmationEmail(data: {
+    email: string;
+    customerName: string;
+    orderNumber: string;
+    items: OrderConfirmationItem[];
+    subtotal: number;
+    shippingCost: number;
+    total: number;
+    invoicePdf: Buffer;
+}): Promise<{ success: boolean; error?: string }> {
+    try {
+        const rows = data.items
+            .map(item => `
+                <tr>
+                  <td style="padding:10px 12px;font-size:14px;color:#18181b;border-bottom:1px solid #e4e4e7;">
+                    ${item.name}${item.size ? `<br/><span style="font-size:12px;color:#71717a;">${item.size}</span>` : ''}
+                  </td>
+                  <td style="padding:10px 12px;font-size:14px;color:#71717a;text-align:center;border-bottom:1px solid #e4e4e7;">${item.quantity}x</td>
+                  <td style="padding:10px 12px;font-size:14px;color:#18181b;text-align:right;border-bottom:1px solid #e4e4e7;">€${(item.unitPrice * item.quantity).toFixed(2)}</td>
+                </tr>
+            `)
+            .join('');
+
+        const html = emailLayout(`
+            <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">Betaling geslaagd ✅</h2>
+            <p style="margin:0 0 8px;font-size:15px;color:#3f3f46;line-height:1.6;">Beste ${data.customerName},</p>
+            <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">Bedankt voor je bestelling. We hebben je betaling succesvol ontvangen.</p>
+
+            ${highlightBox(`
+                <p style="margin:0;font-size:14px;color:#18181b;"><strong>Bestelnummer:</strong> ${data.orderNumber}</p>
+            `)}
+
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e4e7;border-radius:8px;overflow:hidden;margin:0 0 20px;">
+              <tr style="background-color:#f4f4f5;">
+                <td style="padding:10px 12px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Artikel</td>
+                <td style="padding:10px 12px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;text-align:center;">Aantal</td>
+                <td style="padding:10px 12px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;text-align:right;">Prijs</td>
+              </tr>
+              ${rows}
+              <tr>
+                <td colspan="2" style="padding:10px 12px;font-size:14px;color:#18181b;">Subtotaal</td>
+                <td style="padding:10px 12px;font-size:14px;color:#18181b;text-align:right;">€${data.subtotal.toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td colspan="2" style="padding:10px 12px;font-size:14px;color:#18181b;">Verzending</td>
+                <td style="padding:10px 12px;font-size:14px;color:#18181b;text-align:right;">€${data.shippingCost.toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td colspan="2" style="padding:12px;font-size:16px;font-weight:700;color:#18181b;">Totaal</td>
+                <td style="padding:12px;font-size:16px;font-weight:700;color:#18181b;text-align:right;">€${data.total.toFixed(2)}</td>
+              </tr>
+            </table>
+
+            <p style="margin:0 0 10px;font-size:14px;color:#3f3f46;">Je factuur zit als PDF in de bijlage van deze e-mail.</p>
+            <p style="margin:0;font-size:14px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
+        `, `Betaling ontvangen voor bestelling ${data.orderNumber}`);
+
+        await resend.emails.send({
+            from: fromEmail,
+            to: [data.email],
+            subject: `Bevestiging bestelling ${data.orderNumber} + factuur`,
+            html,
+            attachments: [
+                {
+                    filename: `factuur-${data.orderNumber}.pdf`,
+                    content: data.invoicePdf,
+                },
+            ],
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error('Failed to send order confirmation email:', error);
+        return { success: false, error: 'Failed to send order confirmation email' };
+    }
+}
+
 export async function sendAbandonedCheckoutEmail(data: {
     email: string;
     firstName?: string | null;

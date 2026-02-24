@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { constructWebhookEvent } from '@/lib/stripe';
 import { prisma } from '@/lib/db';
 import { generateOrderNumber } from '@/lib/shipping';
+import { generateInvoicePdf } from '@/lib/invoice';
+import { sendOrderConfirmationEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
     console.log('🔔 Webhook received!');
@@ -94,10 +96,22 @@ export async function POST(request: NextRequest) {
 
             console.log('Order created:', order.orderNumber);
 
-            // Mark any abandoned checkout for this email as recovered
+            // Mark abandoned checkout as completed to stop reminders
+            const abandonedCheckoutId = metadata.abandonedCheckoutId || null;
             const customerEmail = session.customer_email || metadata.email;
-            console.log('[webhook] Marking abandoned checkout as recovered for:', customerEmail);
-            if (customerEmail) {
+            console.log('[webhook] Completing abandoned checkout:', { abandonedCheckoutId, customerEmail });
+
+            if (abandonedCheckoutId) {
+                await prisma.abandonedCheckout.update({
+                    where: { id: abandonedCheckoutId },
+                    data: {
+                        recovered: true,
+                        emailSent: true,
+                        emailSentAt: new Date(),
+                    },
+                });
+                console.log('[webhook] Abandoned checkout marked completed by id');
+            } else if (customerEmail) {
                 const result = await prisma.abandonedCheckout.updateMany({
                     where: {
                         email: customerEmail,
@@ -105,9 +119,75 @@ export async function POST(request: NextRequest) {
                     },
                     data: {
                         recovered: true,
+                        emailSent: true,
+                        emailSentAt: new Date(),
                     },
                 });
-                console.log('[webhook] Abandoned checkouts marked recovered:', result.count);
+                console.log('[webhook] Abandoned checkouts marked completed by email:', result.count);
+            }
+
+            const orderWithDetails = await prisma.order.findUnique({
+                where: { id: order.id },
+                include: {
+                    shippingAddress: true,
+                    items: {
+                        include: {
+                            tire: {
+                                select: {
+                                    name: true,
+                                    size: true,
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+
+            if (orderWithDetails && orderWithDetails.shippingAddress) {
+                const customerName = `${orderWithDetails.shippingAddress.firstName} ${orderWithDetails.shippingAddress.lastName}`.trim() || 'Klant';
+                const invoicePdf = await generateInvoicePdf({
+                    invoiceNumber: `INV-${orderWithDetails.orderNumber}`,
+                    issueDate: new Date(),
+                    orderNumber: orderWithDetails.orderNumber,
+                    customerName,
+                    customerEmail: orderWithDetails.email,
+                    customerPhone: orderWithDetails.phone,
+                    shippingAddress: {
+                        street: orderWithDetails.shippingAddress.street,
+                        city: orderWithDetails.shippingAddress.city,
+                        postalCode: orderWithDetails.shippingAddress.postalCode,
+                        country: orderWithDetails.shippingAddress.country,
+                    },
+                    items: orderWithDetails.items.map(item => ({
+                        name: item.tire?.name || 'Band',
+                        size: item.tire?.size || undefined,
+                        quantity: item.quantity,
+                        unitPrice: item.price,
+                    })),
+                    subtotal: orderWithDetails.subtotal,
+                    shippingCost: orderWithDetails.shippingCost,
+                    total: orderWithDetails.total,
+                });
+
+                const confirmationResult = await sendOrderConfirmationEmail({
+                    email: orderWithDetails.email,
+                    customerName,
+                    orderNumber: orderWithDetails.orderNumber,
+                    items: orderWithDetails.items.map(item => ({
+                        name: item.tire?.name || 'Band',
+                        size: item.tire?.size || undefined,
+                        quantity: item.quantity,
+                        unitPrice: item.price,
+                    })),
+                    subtotal: orderWithDetails.subtotal,
+                    shippingCost: orderWithDetails.shippingCost,
+                    total: orderWithDetails.total,
+                    invoicePdf,
+                });
+
+                if (!confirmationResult.success) {
+                    console.error('[webhook] Failed to send confirmation/invoice email:', confirmationResult.error);
+                }
             }
         } catch (error) {
             console.error('Failed to create order:', error);
