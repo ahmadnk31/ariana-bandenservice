@@ -34,9 +34,11 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     const description = `Buy ${tire.brand} ${tire.name} (${tire.size}) - ${tire.season} tire. Price: €${tire.price}. Professional fitting available.`;
     const siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be";
     const fallbackImage = `${siteUrl}/gentbandenservice/android-chrome-512x512.png`;
-    const ogImages = tire.images.length > 0
-        ? tire.images.map(img => img.url.startsWith("http") ? img.url : `${siteUrl}${img.url}`)
-        : [fallbackImage];
+
+    // Use only the first image for OG/Twitter - social platforms prefer a single clear image
+    const firstImage = tire.images.length > 0
+        ? (tire.images[0].url.startsWith("http") ? tire.images[0].url : `${siteUrl}${tire.images[0].url}`)
+        : fallbackImage;
 
     return {
         title,
@@ -44,7 +46,14 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         openGraph: {
             title,
             description,
-            images: ogImages,
+            images: [
+                {
+                    url: firstImage,
+                    width: 1200,
+                    height: 630,
+                    alt: `${tire.brand} ${tire.name} - ${tire.size}`,
+                },
+            ],
             type: "website",
             url: `${siteUrl}/${locale}/tires/${slug}`,
         },
@@ -52,7 +61,12 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
             card: "summary_large_image",
             title,
             description,
-            images: ogImages,
+            images: [
+                {
+                    url: firstImage,
+                    alt: `${tire.brand} ${tire.name} - ${tire.size}`,
+                },
+            ],
         },
         alternates: {
             canonical: `/${locale}/tires/${slug}`,
