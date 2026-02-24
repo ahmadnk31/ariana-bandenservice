@@ -77,6 +77,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         alternates: {
             languages: getAlternateLanguages(''),
         },
+        verification: {
+            google: '_PLFmwgxEgbZbHUg4aKRWYqdfrO-MwSe_TXAiWkHBvA',
+        },
     };
 }
 
