@@ -79,7 +79,7 @@ export async function createCheckoutSession({
     });
 
     const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card', 'ideal', 'bancontact'],
+        payment_method_types: ['card', 'bancontact','klarna','samsung_pay','link'],
         line_items: lineItems,
         mode: 'payment',
         success_url: successUrl,
