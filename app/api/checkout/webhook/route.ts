@@ -162,47 +162,52 @@ export async function POST(request: NextRequest) {
                 } else if (!orderWithDetails.shippingAddress) {
                     console.error('[webhook] Order has no shipping address:', order.id);
                 } else {
-                    console.log('[webhook] Generating invoice PDF...');
                     const customerName = `${orderWithDetails.shippingAddress.firstName} ${orderWithDetails.shippingAddress.lastName}`.trim() || 'Klant';
-                    const invoicePdf = await generateInvoicePdf({
-                        invoiceNumber: `INV-${orderWithDetails.orderNumber}`,
-                        issueDate: new Date(),
-                        orderNumber: orderWithDetails.orderNumber,
-                        customerName,
-                        customerEmail: orderWithDetails.email,
-                        customerPhone: orderWithDetails.phone,
-                        shippingAddress: {
-                            street: orderWithDetails.shippingAddress.street,
-                            city: orderWithDetails.shippingAddress.city,
-                            postalCode: orderWithDetails.shippingAddress.postalCode,
-                            country: orderWithDetails.shippingAddress.country,
-                        },
-                        items: orderWithDetails.items.map(item => ({
-                            name: item.tire?.name || 'Band',
-                            size: item.tire?.size || undefined,
-                            quantity: item.quantity,
-                            unitPrice: item.price,
-                        })),
-                        subtotal: orderWithDetails.subtotal,
-                        shippingCost: orderWithDetails.shippingCost,
-                        total: orderWithDetails.total,
-                    });
+                    const emailItems = orderWithDetails.items.map(item => ({
+                        name: item.tire?.name || 'Band',
+                        size: item.tire?.size || undefined,
+                        quantity: item.quantity,
+                        unitPrice: item.price,
+                    }));
 
-                    console.log('[webhook] Sending confirmation email...');
+                    // Try generating invoice PDF, but don't let it block the email
+                    let invoicePdfBase64: string | null = null;
+                    try {
+                        console.log('[webhook] Generating invoice PDF...');
+                        const invoicePdf = await generateInvoicePdf({
+                            invoiceNumber: `INV-${orderWithDetails.orderNumber}`,
+                            issueDate: new Date(),
+                            orderNumber: orderWithDetails.orderNumber,
+                            customerName,
+                            customerEmail: orderWithDetails.email,
+                            customerPhone: orderWithDetails.phone,
+                            shippingAddress: {
+                                street: orderWithDetails.shippingAddress.street,
+                                city: orderWithDetails.shippingAddress.city,
+                                postalCode: orderWithDetails.shippingAddress.postalCode,
+                                country: orderWithDetails.shippingAddress.country,
+                            },
+                            items: emailItems,
+                            subtotal: orderWithDetails.subtotal,
+                            shippingCost: orderWithDetails.shippingCost,
+                            total: orderWithDetails.total,
+                        });
+                        invoicePdfBase64 = invoicePdf.toString('base64');
+                        console.log('[webhook] ✅ Invoice PDF generated, size:', invoicePdf.length, 'bytes');
+                    } catch (pdfError) {
+                        console.error('[webhook] ⚠️ PDF generation failed, sending email without attachment:', pdfError);
+                    }
+
+                    console.log('[webhook] Sending confirmation email to', orderWithDetails.email, '(with PDF:', !!invoicePdfBase64, ')');
                     const confirmationResult = await sendOrderConfirmationEmail({
                         email: orderWithDetails.email,
                         customerName,
                         orderNumber: orderWithDetails.orderNumber,
-                        items: orderWithDetails.items.map(item => ({
-                            name: item.tire?.name || 'Band',
-                            size: item.tire?.size || undefined,
-                            quantity: item.quantity,
-                            unitPrice: item.price,
-                        })),
+                        items: emailItems,
                         subtotal: orderWithDetails.subtotal,
                         shippingCost: orderWithDetails.shippingCost,
                         total: orderWithDetails.total,
-                        invoicePdf,
+                        invoicePdf: invoicePdfBase64,
                     });
 
                     if (confirmationResult.success) {
