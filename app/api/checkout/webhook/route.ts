@@ -96,8 +96,9 @@ export async function POST(request: NextRequest) {
 
             // Mark any abandoned checkout for this email as recovered
             const customerEmail = session.customer_email || metadata.email;
+            console.log('[webhook] Marking abandoned checkout as recovered for:', customerEmail);
             if (customerEmail) {
-                await prisma.abandonedCheckout.updateMany({
+                const result = await prisma.abandonedCheckout.updateMany({
                     where: {
                         email: customerEmail,
                         recovered: false,
@@ -106,6 +107,7 @@ export async function POST(request: NextRequest) {
                         recovered: true,
                     },
                 });
+                console.log('[webhook] Abandoned checkouts marked recovered:', result.count);
             }
         } catch (error) {
             console.error('Failed to create order:', error);
