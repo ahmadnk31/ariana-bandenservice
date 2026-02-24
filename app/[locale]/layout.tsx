@@ -9,7 +9,6 @@ import CartDrawer from '../components/CartDrawer';
 import DevBanner from '../components/DevBanner';
 import { getAlternateLanguages } from "@/lib/utils";
 import CookieConsent from '../components/CookieConsent';
-import AbandonedCheckoutHeartbeat from '../components/AbandonedCheckoutHeartbeat';
 
 const outfit = Outfit({
     subsets: ["latin"],
@@ -147,7 +146,6 @@ export default async function LocaleLayout({
                         {children}
                         <CartDrawer />
                         <CookieConsent />
-                        <AbandonedCheckoutHeartbeat />
                     </CartProvider>
                 </NextIntlClientProvider>
             </body>

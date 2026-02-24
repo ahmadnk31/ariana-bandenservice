@@ -5,12 +5,11 @@ import { sendAbandonedCheckoutEmail } from '@/lib/email';
  * Process pending abandoned checkout emails.
  * Fetches fresh product data from the database so emails always
  * show up-to-date names, prices, and images.
- * Called as a fire-and-forget side-effect from various API routes
- * so we don't need paid cron jobs.
+ * Called by cron-job.org via /api/cron/abandoned-emails every 5 minutes.
  */
 export async function processPendingAbandonedEmails() {
     try {
-        const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+        const thirtyMinutesAgo = new Date(Date.now() - 30 * 60 * 1000);
         const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
         const pending = await prisma.abandonedCheckout.findMany({
@@ -18,7 +17,7 @@ export async function processPendingAbandonedEmails() {
                 emailSent: false,
                 recovered: false,
                 updatedAt: {
-                    lte: fiveMinutesAgo,
+                    lte: thirtyMinutesAgo,
                     gte: twentyFourHoursAgo,
                 },
             },
