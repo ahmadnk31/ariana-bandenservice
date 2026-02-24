@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
             where: { id },
         });
 
-        if (!checkout || checkout.recovered) {
+        if (!checkout) {
             return NextResponse.json({ error: 'Not found' }, { status: 404 });
         }
 
