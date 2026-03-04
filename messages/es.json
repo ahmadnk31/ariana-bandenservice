@@ -272,7 +272,9 @@
         "termsTitle": "Términos de Servicio | Gent Bandenservice",
         "termsDescription": "Términos de servicio de Gent bandenservice. Lea nuestros términos y condiciones para el uso de nuestros servicios de neumáticos.",
         "cookiesTitle": "Política de Cookies | Gent Bandenservice",
-        "cookiesDescription": "Aprenda cómo Gent bandenservice usa cookies y cómo puede gestionar sus preferencias."
+        "cookiesDescription": "Aprenda cómo Gent bandenservice usa cookies y cómo puede gestionar sus preferencias.",
+        "returnPolicyTitle": "Política de Devolución | Gent Bandenservice",
+        "returnPolicyDescription": "Política de devolución para compras de neumáticos en línea en Gent bandenservice. Conozca nuestro plazo de devolución de 14 días, condiciones y proceso de reembolso."
     },
     "DevBanner": {
         "message": "Todavía estamos en modo de desarrollo. Todos los neumáticos no son reales; es solo para fines de demostración. Los neumáticos reales llegarán pronto."
@@ -456,5 +458,62 @@
         "reject": "Rechazar",
         "manage": "Administrar cookies",
         "policy": "Política de cookies"
+    },
+    "ReturnPolicy": {
+        "title": "Política de Devolución",
+        "subtitle": "Nuestra política de devolución para compras de neumáticos en línea",
+        "eligibility": {
+            "title": "Elegibilidad",
+            "content": "Esta política de devolución se aplica a los neumáticos comprados en línea a través de nuestro sitio web. Los neumáticos comprados e instalados en la tienda no son elegibles para devolución."
+        },
+        "timeframe": {
+            "title": "Plazo de Devolución",
+            "content": "Tiene 14 días desde la fecha de entrega para solicitar una devolución, de acuerdo con la legislación belga y europea de protección al consumidor.",
+            "startDate": "El período de 14 días comienza el día en que recibe los neumáticos."
+        },
+        "conditions": {
+            "title": "Condiciones de Devolución",
+            "content": "Para ser elegibles para una devolución, los neumáticos deben cumplir las siguientes condiciones:",
+            "unused": "Los neumáticos no deben haber sido usados ni rodados",
+            "unmounted": "Los neumáticos no deben haber sido montados en una llanta",
+            "originalPackaging": "Los neumáticos deben estar en su embalaje original",
+            "withReceipt": "Debe proporcionar su confirmación de pedido o recibo"
+        },
+        "process": {
+            "title": "Proceso de Devolución",
+            "content": "Para iniciar una devolución, siga estos pasos:",
+            "step1": "Contáctenos por correo electrónico a info@gentbandenservice.be o llame al +32 466 19 56 22",
+            "step2": "Proporcione su número de pedido y el motivo de la devolución",
+            "step3": "Le proporcionaremos instrucciones de devolución y una dirección de retorno"
+        },
+        "refunds": {
+            "title": "Reembolsos",
+            "content": "Una vez que recibamos e inspeccionemos los neumáticos devueltos, procesaremos su reembolso dentro de los 14 días.",
+            "method": "El reembolso se realizará a través del mismo método de pago utilizado para la compra original."
+        },
+        "exceptions": {
+            "title": "Excepciones",
+            "content": "Los siguientes artículos no pueden ser devueltos:",
+            "mounted": "Neumáticos que han sido montados en una llanta",
+            "used": "Neumáticos que muestran signos de uso o desgaste",
+            "customOrders": "Neumáticos pedidos a medida o tamaños especiales pedidos específicamente para usted",
+            "damaged": "Neumáticos dañados por almacenamiento o manipulación inadecuada por parte del cliente"
+        },
+        "shippingCosts": {
+            "title": "Costos de Envío de Devolución",
+            "content": "El cliente es responsable de los costos de envío de devolución, a menos que los neumáticos sean defectuosos o se haya entregado el producto incorrecto. También puede devolver los neumáticos en persona en nuestra ubicación."
+        },
+        "exchanges": {
+            "title": "Intercambios",
+            "content": "Si desea cambiar sus neumáticos por un tamaño o modelo diferente, contáctenos. Los intercambios están sujetos a disponibilidad y cualquier diferencia de precio se cobrará o reembolsará en consecuencia."
+        },
+        "contact": {
+            "title": "Contáctenos",
+            "content": "Si tiene alguna pregunta sobre nuestra política de devolución, no dude en contactarnos:",
+            "email": "Correo electrónico: info@gentbandenservice.be",
+            "phone": "Teléfono: +32 466 19 56 22"
+        },
+        "lastUpdated": "Última actualización",
+        "lastUpdatedDate": "4 de marzo de 2026"
     }
 }

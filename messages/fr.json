@@ -272,7 +272,9 @@
         "termsTitle": "Conditions d'Utilisation | Gent Bandenservice",
         "termsDescription": "Conditions d'utilisation de Gent bandenservice. Lisez nos termes et conditions pour l'utilisation de nos services de pneumatiques.",
         "cookiesTitle": "Politique des cookies | Gent Bandenservice",
-        "cookiesDescription": "Découvrez comment Gent bandenservice utilise les cookies et comment gérer vos préférences."
+        "cookiesDescription": "Découvrez comment Gent bandenservice utilise les cookies et comment gérer vos préférences.",
+        "returnPolicyTitle": "Politique de Retour | Gent Bandenservice",
+        "returnPolicyDescription": "Politique de retour pour les achats de pneus en ligne chez Gent bandenservice. Découvrez notre délai de retour de 14 jours, les conditions et le processus de remboursement."
     },
     "DevBanner": {
         "message": "Nous sommes encore en mode développement. Tous les pneus ne sont pas réels ; c'est uniquement à des fins de démonstration. Les vrais pneus arrivent bientôt."
@@ -298,7 +300,8 @@
         "views": "vues",
         "backToBlog": "Retour au Blog",
         "share": "Partager ce post",
-        "relatedPosts": "Articles connexes"    },
+        "relatedPosts": "Articles connexes"
+    },
     "Privacy": {
         "title": "Politique de Confidentialité",
         "subtitle": "Comment nous collectons, utilisons et protégeons vos informations personnelles",
@@ -455,5 +458,62 @@
         "reject": "Refuser",
         "manage": "Gérer les cookies",
         "policy": "Politique des cookies"
+    },
+    "ReturnPolicy": {
+        "title": "Politique de Retour",
+        "subtitle": "Notre politique de retour pour les achats de pneus en ligne",
+        "eligibility": {
+            "title": "Éligibilité",
+            "content": "Cette politique de retour s'applique aux pneus achetés en ligne via notre site web. Les pneus achetés et installés en magasin ne sont pas éligibles au retour."
+        },
+        "timeframe": {
+            "title": "Délai de Retour",
+            "content": "Vous disposez de 14 jours à compter de la date de livraison pour demander un retour, conformément à la législation belge et européenne de protection des consommateurs.",
+            "startDate": "Le délai de 14 jours commence le jour où vous recevez les pneus."
+        },
+        "conditions": {
+            "title": "Conditions de Retour",
+            "content": "Pour être éligibles au retour, les pneus doivent remplir les conditions suivantes :",
+            "unused": "Les pneus ne doivent pas avoir été utilisés ni roulés",
+            "unmounted": "Les pneus ne doivent pas avoir été montés sur une jante",
+            "originalPackaging": "Les pneus doivent être dans leur emballage d'origine",
+            "withReceipt": "Vous devez fournir votre confirmation de commande ou reçu"
+        },
+        "process": {
+            "title": "Procédure de Retour",
+            "content": "Pour initier un retour, veuillez suivre ces étapes :",
+            "step1": "Contactez-nous par e-mail à info@gentbandenservice.be ou appelez le +32 466 19 56 22",
+            "step2": "Indiquez votre numéro de commande et la raison du retour",
+            "step3": "Nous vous fournirons les instructions de retour et une adresse de retour"
+        },
+        "refunds": {
+            "title": "Remboursements",
+            "content": "Une fois que nous avons reçu et inspecté les pneus retournés, nous traiterons votre remboursement dans les 14 jours.",
+            "method": "Le remboursement sera effectué via le même mode de paiement que l'achat initial."
+        },
+        "exceptions": {
+            "title": "Exceptions",
+            "content": "Les articles suivants ne peuvent pas être retournés :",
+            "mounted": "Pneus ayant été montés sur une jante",
+            "used": "Pneus présentant des signes d'utilisation ou d'usure",
+            "customOrders": "Pneus commandés sur mesure ou tailles spéciales commandées spécifiquement pour vous",
+            "damaged": "Pneus endommagés en raison d'un stockage ou d'une manipulation inappropriée par le client"
+        },
+        "shippingCosts": {
+            "title": "Frais de Retour",
+            "content": "Le client est responsable des frais de retour, sauf si les pneus sont défectueux ou si le mauvais produit a été livré. Vous pouvez également retourner les pneus en personne à notre emplacement."
+        },
+        "exchanges": {
+            "title": "Échanges",
+            "content": "Si vous souhaitez échanger vos pneus contre une taille ou un modèle différent, veuillez nous contacter. Les échanges sont soumis à la disponibilité et toute différence de prix sera facturée ou remboursée en conséquence."
+        },
+        "contact": {
+            "title": "Contactez-nous",
+            "content": "Si vous avez des questions sur notre politique de retour, n'hésitez pas à nous contacter :",
+            "email": "E-mail : info@gentbandenservice.be",
+            "phone": "Téléphone : +32 466 19 56 22"
+        },
+        "lastUpdated": "Dernière mise à jour",
+        "lastUpdatedDate": "4 mars 2026"
     }
 }

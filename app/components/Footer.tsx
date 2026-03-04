@@ -50,6 +50,8 @@ export default function Footer() {
                         <span>•</span>
                         <a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a>
                         <span>•</span>
+                        <a href="/return-policy" className="hover:text-primary transition-colors">Return Policy</a>
+                        <span>•</span>
                         <a href="/cookies" className="hover:text-primary transition-colors">{cookieT('policy')}</a>
                         <span>•</span>
                         <button

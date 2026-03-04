@@ -268,7 +268,9 @@
         "faqTitle": "SSS | Fiyatlar ve Çalışma Saatleri",
         "faqDescription": "Lastik fiyatları, çalışma saatleri, montaj ve daha fazlası hakkında SSS. Lastik merkezi pazar açık mı? Evet, randevu ile!",
         "cookiesTitle": "Cerez Politikasi | Gent Bandenservice",
-        "cookiesDescription": "Gent bandenservice'in cerezleri nasil kullandigini ve tercihlerinizi nasil yoneteceginizi ogrenin."
+        "cookiesDescription": "Gent bandenservice'in cerezleri nasil kullandigini ve tercihlerinizi nasil yoneteceginizi ogrenin.",
+        "returnPolicyTitle": "İade Politikası | Gent Bandenservice",
+        "returnPolicyDescription": "Gent bandenservice'te online lastik alışverişleri için iade politikası. 14 günlük iade süremiz, koşullar ve geri ödeme süreci hakkında bilgi edinin."
     },
     "DevBanner": {
         "message": "Hala geliştirme aşamasındayız. Tüm lastikler gerçek değildir; sadece demo amaçlıdır. Gerçek lastikler yakında gelecek."
@@ -452,5 +454,62 @@
         "reject": "Reddet",
         "manage": "Çerezleri yönet",
         "policy": "Çerez politikası"
+    },
+    "ReturnPolicy": {
+        "title": "İade Politikası",
+        "subtitle": "Online lastik alışverişleri için iade politikamız",
+        "eligibility": {
+            "title": "Uygunluk",
+            "content": "Bu iade politikası web sitemiz üzerinden online satın alınan lastikler için geçerlidir. Mağazada satın alınıp monte edilen lastikler iade kapsamında değildir."
+        },
+        "timeframe": {
+            "title": "İade Süresi",
+            "content": "Belçika ve AB tüketici koruma mevzuatı uyarınca, teslimat tarihinden itibaren 14 gün içinde iade talebinde bulunabilirsiniz.",
+            "startDate": "14 günlük süre lastikleri teslim aldığınız gün başlar."
+        },
+        "conditions": {
+            "title": "İade Koşulları",
+            "content": "İade için uygun olması için lastiklerin aşağıdaki koşulları karşılaması gerekir:",
+            "unused": "Lastikler kullanılmamış ve sürülmemiş olmalıdır",
+            "unmounted": "Lastikler janta takılmamış olmalıdır",
+            "originalPackaging": "Lastikler orijinal ambalajında olmalıdır",
+            "withReceipt": "Sipariş onayınızı veya fişinizi sunmanız gerekmektedir"
+        },
+        "process": {
+            "title": "İade Süreci",
+            "content": "İade başlatmak için şu adımları izleyin:",
+            "step1": "info@gentbandenservice.be adresine e-posta gönderin veya +32 466 19 56 22 numarasını arayın",
+            "step2": "Sipariş numaranızı ve iade nedeninizi belirtin",
+            "step3": "Size iade talimatları ve iade adresi göndereceğiz"
+        },
+        "refunds": {
+            "title": "Geri Ödemeler",
+            "content": "İade edilen lastikleri aldıktan ve inceledikten sonra, geri ödemenizi 14 gün içinde işleme alacağız.",
+            "method": "Geri ödeme, orijinal satın alma işleminde kullanılan ödeme yöntemine yapılacaktır."
+        },
+        "exceptions": {
+            "title": "İstisnalar",
+            "content": "Aşağıdaki ürünler iade edilemez:",
+            "mounted": "Janta takılmış lastikler",
+            "used": "Kullanım veya yol aşınması belirtileri gösteren lastikler",
+            "customOrders": "Özel sipariş lastikler veya sizin için özel olarak sipariş edilen ebatlar",
+            "damaged": "Müşteri tarafından uygunsuz depolama veya kullanım nedeniyle hasar görmüş lastikler"
+        },
+        "shippingCosts": {
+            "title": "İade Kargo Maliyetleri",
+            "content": "Lastikler kusurlu olmadıkça veya yanlış ürün teslim edilmedikçe, iade kargo maliyeti müşteriye aittir. Lastikleri şahsen de konumumuza getirebilirsiniz."
+        },
+        "exchanges": {
+            "title": "Değişim",
+            "content": "Lastiklerinizi farklı bir ebat veya modelle değiştirmek istiyorsanız, lütfen bizimle iletişime geçin. Değişimler stok durumuna bağlıdır ve fiyat farkları buna göre tahsil edilir veya iade edilir."
+        },
+        "contact": {
+            "title": "Bize Ulaşın",
+            "content": "İade politikamız hakkında sorularınız varsa, bizimle iletişime geçmekten çekinmeyin:",
+            "email": "E-posta: info@gentbandenservice.be",
+            "phone": "Telefon: +32 466 19 56 22"
+        },
+        "lastUpdated": "Son güncelleme",
+        "lastUpdatedDate": "4 Mart 2026"
     }
 }
