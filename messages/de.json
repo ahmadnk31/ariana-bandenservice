@@ -273,7 +273,9 @@
         "termsTitle": "Nutzungsbedingungen | Gent Bandenservice",
         "termsDescription": "Nutzungsbedingungen von Gent bandenservice. Lesen Sie unsere Allgemeinen Geschäftsbedingungen für die Nutzung unserer Reifendienstleistungen.",
         "cookiesTitle": "Cookie-Richtlinie | Gent Bandenservice",
-        "cookiesDescription": "Erfahren Sie, wie Gent bandenservice Cookies verwendet und wie Sie Ihre Einstellungen verwalten."
+        "cookiesDescription": "Erfahren Sie, wie Gent bandenservice Cookies verwendet und wie Sie Ihre Einstellungen verwalten.",
+        "returnPolicyTitle": "Rückgaberichtlinie | Gent Bandenservice",
+        "returnPolicyDescription": "Rückgaberichtlinie für Online-Reifenkäufe bei Gent bandenservice. Erfahren Sie mehr über unsere 14-Tage-Rückgabefrist, Bedingungen und Erstattungsverfahren."
     },
     "DevBanner": {
         "message": "Wir befinden uns im Entwicklungsmodus. Alle Reifen sind nicht echt; sie dienen nur zu Demonstrationszwecken. Echte Reifen kommen bald."
@@ -299,7 +301,8 @@
         "views": "Aufrufe",
         "backToBlog": "Zurück zum Blog",
         "share": "Diesen Beitrag teilen",
-        "relatedPosts": "Ähnliche Beiträge"    },
+        "relatedPosts": "Ähnliche Beiträge"
+    },
     "Privacy": {
         "title": "Datenschutzerklärung",
         "subtitle": "Wie wir Ihre persönlichen Daten sammeln, verwenden und schützen",
@@ -456,5 +459,62 @@
         "reject": "Ablehnen",
         "manage": "Cookies verwalten",
         "policy": "Cookie-Richtlinie"
+    },
+    "ReturnPolicy": {
+        "title": "Rückgaberichtlinie",
+        "subtitle": "Unsere Rückgaberichtlinie für Online-Reifenkäufe",
+        "eligibility": {
+            "title": "Geltungsbereich",
+            "content": "Diese Rückgaberichtlinie gilt für Reifen, die online über unsere Website gekauft wurden. Im Geschäft gekaufte und montierte Reifen sind von der Rückgabe ausgeschlossen."
+        },
+        "timeframe": {
+            "title": "Rückgabefrist",
+            "content": "Sie haben 14 Tage ab dem Lieferdatum, um eine Rückgabe zu beantragen, gemäß dem belgischen und EU-Verbraucherschutzrecht.",
+            "startDate": "Die 14-Tage-Frist beginnt am Tag des Erhalts der Reifen."
+        },
+        "conditions": {
+            "title": "Rückgabebedingungen",
+            "content": "Für eine Rückgabe müssen die Reifen folgende Bedingungen erfüllen:",
+            "unused": "Die Reifen dürfen nicht benutzt oder befahren worden sein",
+            "unmounted": "Die Reifen dürfen nicht auf eine Felge montiert gewesen sein",
+            "originalPackaging": "Die Reifen müssen sich in der Originalverpackung befinden",
+            "withReceipt": "Sie müssen Ihre Bestellbestätigung oder Quittung vorlegen"
+        },
+        "process": {
+            "title": "Rückgabeprozess",
+            "content": "Um eine Rückgabe einzuleiten, folgen Sie diesen Schritten:",
+            "step1": "Kontaktieren Sie uns per E-Mail an info@gentbandenservice.be oder rufen Sie +32 466 19 56 22 an",
+            "step2": "Geben Sie Ihre Bestellnummer und den Grund für die Rückgabe an",
+            "step3": "Wir senden Ihnen Rücksendeanweisungen und eine Rücksendeadresse"
+        },
+        "refunds": {
+            "title": "Erstattungen",
+            "content": "Sobald wir die zurückgesendeten Reifen erhalten und geprüft haben, bearbeiten wir Ihre Erstattung innerhalb von 14 Tagen.",
+            "method": "Die Erstattung erfolgt über dieselbe Zahlungsmethode wie der ursprüngliche Kauf."
+        },
+        "exceptions": {
+            "title": "Ausnahmen",
+            "content": "Folgende Artikel können nicht zurückgegeben werden:",
+            "mounted": "Reifen, die auf eine Felge montiert waren",
+            "used": "Reifen mit Gebrauchsspuren oder Straßenabnutzung",
+            "customOrders": "Sonderbestellungen oder Sondergrößen, die speziell für Sie bestellt wurden",
+            "damaged": "Reifen, die durch unsachgemäße Lagerung oder Handhabung durch den Kunden beschädigt wurden"
+        },
+        "shippingCosts": {
+            "title": "Rücksendekosten",
+            "content": "Der Kunde trägt die Kosten für die Rücksendung, es sei denn, die Reifen sind defekt oder es wurde das falsche Produkt geliefert. Sie können die Reifen auch persönlich an unserem Standort zurückbringen."
+        },
+        "exchanges": {
+            "title": "Umtausch",
+            "content": "Wenn Sie Ihre Reifen gegen eine andere Größe oder ein anderes Modell umtauschen möchten, kontaktieren Sie uns bitte. Der Umtausch hängt von der Verfügbarkeit ab und eventuelle Preisunterschiede werden berechnet oder erstattet."
+        },
+        "contact": {
+            "title": "Kontakt",
+            "content": "Wenn Sie Fragen zu unserer Rückgaberichtlinie haben, zögern Sie nicht, uns zu kontaktieren:",
+            "email": "E-Mail: info@gentbandenservice.be",
+            "phone": "Telefon: +32 466 19 56 22"
+        },
+        "lastUpdated": "Zuletzt aktualisiert",
+        "lastUpdatedDate": "4. März 2026"
     }
 }

@@ -272,7 +272,9 @@
         "termsTitle": "Servicevoorwaarden | Gent Bandenservice",
         "termsDescription": "Servicevoorwaarden van Gent bandenservice. Lees onze algemene voorwaarden voor het gebruik van onze bandendiensten.",
         "cookiesTitle": "Cookiebeleid | Gent Bandenservice",
-        "cookiesDescription": "Lees hoe Gent bandenservice cookies gebruikt en hoe u uw voorkeuren beheert."
+        "cookiesDescription": "Lees hoe Gent bandenservice cookies gebruikt en hoe u uw voorkeuren beheert.",
+        "returnPolicyTitle": "Retourbeleid | Gent Bandenservice",
+        "returnPolicyDescription": "Retourbeleid voor online bandenaankopen bij Gent bandenservice. Lees over onze 14-dagen retourtermijn, voorwaarden en terugbetalingsproces."
     },
     "DevBanner": {
         "message": "We bevinden ons nog in de ontwikkelingsfase. Alle banden zijn niet echt; het is alleen voor demonstratiedoeleinden. Echte banden komen eraan."
@@ -456,5 +458,62 @@
         "reject": "Weigeren",
         "manage": "Cookies beheren",
         "policy": "Cookiebeleid"
+    },
+    "ReturnPolicy": {
+        "title": "Retourbeleid",
+        "subtitle": "Ons retourbeleid voor online bandenaankopen",
+        "eligibility": {
+            "title": "Toepasselijkheid",
+            "content": "Dit retourbeleid geldt voor banden die online via onze website zijn gekocht. Banden die in de winkel zijn gekocht en gemonteerd, komen niet in aanmerking voor retour."
+        },
+        "timeframe": {
+            "title": "Retourtermijn",
+            "content": "U heeft 14 dagen vanaf de datum van levering om een retour aan te vragen, conform de Belgische en Europese consumentenbeschermingswetgeving.",
+            "startDate": "De 14-dagenperiode begint op de dag dat u de banden ontvangt."
+        },
+        "conditions": {
+            "title": "Retourvoorwaarden",
+            "content": "Om in aanmerking te komen voor een retour, moeten de banden aan de volgende voorwaarden voldoen:",
+            "unused": "De banden mogen niet gebruikt zijn en er mag niet mee gereden zijn",
+            "unmounted": "De banden mogen niet op een velg gemonteerd zijn geweest",
+            "originalPackaging": "De banden moeten in hun originele verpakking zitten",
+            "withReceipt": "U moet uw orderbevestiging of bon meesturen"
+        },
+        "process": {
+            "title": "Retourprocedure",
+            "content": "Om een retour te starten, volgt u deze stappen:",
+            "step1": "Neem contact met ons op via e-mail op info@gentbandenservice.be of bel +32 466 19 56 22",
+            "step2": "Vermeld uw bestelnummer en de reden voor de retour",
+            "step3": "Wij sturen u retourinstructies en een retouradres"
+        },
+        "refunds": {
+            "title": "Terugbetalingen",
+            "content": "Zodra wij de geretourneerde banden hebben ontvangen en gecontroleerd, verwerken wij uw terugbetaling binnen 14 dagen.",
+            "method": "De terugbetaling gebeurt via dezelfde betaalmethode als de oorspronkelijke aankoop."
+        },
+        "exceptions": {
+            "title": "Uitzonderingen",
+            "content": "De volgende artikelen kunnen niet worden geretourneerd:",
+            "mounted": "Banden die op een velg gemonteerd zijn geweest",
+            "used": "Banden die tekenen van gebruik of slijtage vertonen",
+            "customOrders": "Op maat bestelde banden of speciale maten die specifiek voor u besteld zijn",
+            "damaged": "Banden die beschadigd zijn door onjuiste opslag of behandeling door de klant"
+        },
+        "shippingCosts": {
+            "title": "Retourverzendkosten",
+            "content": "De klant is verantwoordelijk voor de retourverzendkosten, tenzij de banden defect zijn of het verkeerde product is geleverd. U kunt de banden ook persoonlijk terugbrengen naar onze locatie."
+        },
+        "exchanges": {
+            "title": "Omruilen",
+            "content": "Als u uw banden wilt omruilen voor een ander formaat of model, neem dan contact met ons op. Omruilen is afhankelijk van beschikbaarheid en eventuele prijsverschillen worden in rekening gebracht of terugbetaald."
+        },
+        "contact": {
+            "title": "Contact",
+            "content": "Als u vragen heeft over ons retourbeleid, aarzel dan niet om contact met ons op te nemen:",
+            "email": "E-mail: info@gentbandenservice.be",
+            "phone": "Telefoon: +32 466 19 56 22"
+        },
+        "lastUpdated": "Laatst bijgewerkt",
+        "lastUpdatedDate": "4 maart 2026"
     }
 }

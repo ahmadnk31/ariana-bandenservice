@@ -14,6 +14,7 @@ interface SearchResult {
     brand: string;
     size: string;
     condition?: string;
+    season?: string;
     price: number;
     image?: string;
 }
@@ -35,6 +36,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
     const inputRef = useRef<HTMLInputElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const t = useTranslations('SearchOverlay');
+    const tiresT = useTranslations('Tires');
 
     useEffect(() => {
         setMounted(true);
@@ -227,6 +229,16 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                                         {result.condition === 'used' && (
                                                             <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-500 text-white uppercase tracking-wider shrink-0">
                                                                 {t('used')}
+                                                            </span>
+                                                        )}
+                                                        {result.season && (
+                                                            <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider shrink-0 ${result.season === 'winter' ? 'bg-blue-500 text-white' :
+                                                                    result.season === 'summer' ? 'bg-orange-500 text-white' :
+                                                                        'bg-green-600 text-white'
+                                                                }`}>
+                                                                {result.season === 'winter' ? tiresT('seasonWinter') :
+                                                                    result.season === 'summer' ? tiresT('seasonSummer') :
+                                                                        tiresT('seasonAllSeason')}
                                                             </span>
                                                         )}
                                                     </div>

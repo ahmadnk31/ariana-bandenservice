@@ -273,7 +273,9 @@
         "termsTitle": "Terms of Service | Gent Bandenservice",
         "termsDescription": "Terms of service for Gent bandenservice. Read our terms and conditions for using our tire services.",
         "cookiesTitle": "Cookie Policy | Gent Bandenservice",
-        "cookiesDescription": "Learn how Gent bandenservice uses cookies and how you can manage your preferences."
+        "cookiesDescription": "Learn how Gent bandenservice uses cookies and how you can manage your preferences.",
+        "returnPolicyTitle": "Return Policy | Gent Bandenservice",
+        "returnPolicyDescription": "Return policy for online tire purchases at Gent bandenservice. Learn about our 14-day return period, conditions, and refund process."
     },
     "DevBanner": {
         "message": "We are in development mode. All tires are not real; it is only for demo purposes. Real tires will arrive soon."
@@ -457,5 +459,62 @@
         "reject": "Reject",
         "manage": "Manage cookies",
         "policy": "Cookie policy"
+    },
+    "ReturnPolicy": {
+        "title": "Return Policy",
+        "subtitle": "Our return policy for online tire purchases",
+        "eligibility": {
+            "title": "Eligibility",
+            "content": "This return policy applies to tires purchased online through our website. Tires purchased and installed in-store are not eligible for return."
+        },
+        "timeframe": {
+            "title": "Return Period",
+            "content": "You have 14 days from the date of delivery to request a return, in accordance with Belgian and EU consumer protection law.",
+            "startDate": "The 14-day period begins on the day you receive the tires."
+        },
+        "conditions": {
+            "title": "Return Conditions",
+            "content": "To be eligible for a return, the tires must meet the following conditions:",
+            "unused": "The tires must be unused and not driven on",
+            "unmounted": "The tires must not have been mounted on a rim",
+            "originalPackaging": "The tires must be in their original packaging",
+            "withReceipt": "You must provide your order confirmation or receipt"
+        },
+        "process": {
+            "title": "Return Process",
+            "content": "To initiate a return, please follow these steps:",
+            "step1": "Contact us via email at info@gentbandenservice.be or call +32 466 19 56 22",
+            "step2": "Provide your order number and reason for the return",
+            "step3": "We will provide you with return instructions and a return address"
+        },
+        "refunds": {
+            "title": "Refunds",
+            "content": "Once we receive and inspect the returned tires, we will process your refund within 14 days.",
+            "method": "The refund will be issued to the same payment method used for the original purchase."
+        },
+        "exceptions": {
+            "title": "Exceptions",
+            "content": "The following items cannot be returned:",
+            "mounted": "Tires that have been mounted on a rim",
+            "used": "Tires that show signs of use or road wear",
+            "customOrders": "Custom-ordered tires or special sizes ordered specifically for you",
+            "damaged": "Tires damaged due to improper storage or handling by the customer"
+        },
+        "shippingCosts": {
+            "title": "Return Shipping Costs",
+            "content": "The customer is responsible for the cost of return shipping unless the tires are defective or the wrong product was delivered. You may also return the tires in person at our location."
+        },
+        "exchanges": {
+            "title": "Exchanges",
+            "content": "If you wish to exchange your tires for a different size or model, please contact us. Exchanges are subject to availability and any price differences will be charged or refunded accordingly."
+        },
+        "contact": {
+            "title": "Contact Us",
+            "content": "If you have any questions about our return policy, please don't hesitate to contact us:",
+            "email": "Email: info@gentbandenservice.be",
+            "phone": "Phone: +32 466 19 56 22"
+        },
+        "lastUpdated": "Last updated",
+        "lastUpdatedDate": "March 4, 2026"
     }
 }

@@ -271,7 +271,9 @@
         "termsTitle": "Termini di Servizio | Gent Bandenservice",
         "termsDescription": "Termini di servizio di Gent bandenservice. Leggi i nostri termini e condizioni per l'utilizzo dei nostri servizi pneumatici.",
         "cookiesTitle": "Informativa sui cookie | Gent Bandenservice",
-        "cookiesDescription": "Scopri come Gent bandenservice utilizza i cookie e come gestire le tue preferenze."
+        "cookiesDescription": "Scopri come Gent bandenservice utilizza i cookie e come gestire le tue preferenze.",
+        "returnPolicyTitle": "Politica di Reso | Gent Bandenservice",
+        "returnPolicyDescription": "Politica di reso per gli acquisti di pneumatici online presso Gent bandenservice. Scopri il nostro periodo di reso di 14 giorni, le condizioni e il processo di rimborso."
     },
     "DevBanner": {
         "message": "Siamo in modalità sviluppo. Tutti i pneumatici non sono reali; sono solo a scopo dimostrativo. I pneumatici reali arriveranno presto."
@@ -455,5 +457,62 @@
         "reject": "Rifiuta",
         "manage": "Gestisci cookie",
         "policy": "Informativa sui cookie"
+    },
+    "ReturnPolicy": {
+        "title": "Politica di Reso",
+        "subtitle": "La nostra politica di reso per gli acquisti di pneumatici online",
+        "eligibility": {
+            "title": "Idoneità",
+            "content": "Questa politica di reso si applica ai pneumatici acquistati online tramite il nostro sito web. I pneumatici acquistati e installati in negozio non sono idonei al reso."
+        },
+        "timeframe": {
+            "title": "Periodo di Reso",
+            "content": "Hai 14 giorni dalla data di consegna per richiedere un reso, in conformità con la legislazione belga ed europea sulla protezione dei consumatori.",
+            "startDate": "Il periodo di 14 giorni inizia il giorno in cui ricevi i pneumatici."
+        },
+        "conditions": {
+            "title": "Condizioni di Reso",
+            "content": "Per essere idonei al reso, i pneumatici devono soddisfare le seguenti condizioni:",
+            "unused": "I pneumatici non devono essere stati utilizzati né guidati",
+            "unmounted": "I pneumatici non devono essere stati montati su un cerchio",
+            "originalPackaging": "I pneumatici devono essere nel loro imballaggio originale",
+            "withReceipt": "Devi fornire la conferma dell'ordine o la ricevuta"
+        },
+        "process": {
+            "title": "Procedura di Reso",
+            "content": "Per avviare un reso, segui questi passaggi:",
+            "step1": "Contattaci via email a info@gentbandenservice.be o chiama il +32 466 19 56 22",
+            "step2": "Fornisci il numero d'ordine e il motivo del reso",
+            "step3": "Ti forniremo le istruzioni per il reso e un indirizzo di restituzione"
+        },
+        "refunds": {
+            "title": "Rimborsi",
+            "content": "Una volta ricevuti e ispezionati i pneumatici restituiti, elaboreremo il rimborso entro 14 giorni.",
+            "method": "Il rimborso verrà effettuato tramite lo stesso metodo di pagamento utilizzato per l'acquisto originale."
+        },
+        "exceptions": {
+            "title": "Eccezioni",
+            "content": "I seguenti articoli non possono essere restituiti:",
+            "mounted": "Pneumatici che sono stati montati su un cerchio",
+            "used": "Pneumatici che mostrano segni di utilizzo o usura stradale",
+            "customOrders": "Pneumatici su ordinazione o misure speciali ordinate specificamente per te",
+            "damaged": "Pneumatici danneggiati a causa di stoccaggio o manipolazione impropria da parte del cliente"
+        },
+        "shippingCosts": {
+            "title": "Costi di Spedizione del Reso",
+            "content": "Il cliente è responsabile dei costi di spedizione del reso, a meno che i pneumatici siano difettosi o sia stato consegnato il prodotto sbagliato. Puoi anche restituire i pneumatici di persona presso la nostra sede."
+        },
+        "exchanges": {
+            "title": "Scambi",
+            "content": "Se desideri scambiare i tuoi pneumatici con una misura o un modello diverso, contattaci. Gli scambi sono soggetti a disponibilità e le eventuali differenze di prezzo verranno addebitate o rimborsate di conseguenza."
+        },
+        "contact": {
+            "title": "Contattaci",
+            "content": "Se hai domande sulla nostra politica di reso, non esitare a contattarci:",
+            "email": "Email: info@gentbandenservice.be",
+            "phone": "Telefono: +32 466 19 56 22"
+        },
+        "lastUpdated": "Ultimo aggiornamento",
+        "lastUpdatedDate": "4 marzo 2026"
     }
 }

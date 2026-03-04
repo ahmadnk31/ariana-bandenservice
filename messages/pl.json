@@ -268,7 +268,9 @@
         "faqTitle": "FAQ | Ceny i Godziny",
         "faqDescription": "FAQ o cenach opon, godzinach, montażu i więcej. Centrum opon czynne w niedzielę? Tak, po umówieniu!",
         "cookiesTitle": "Polityka plików cookie | Gent Bandenservice",
-        "cookiesDescription": "Dowiedz się, jak Gent bandenservice używa plików cookie i jak zarządzać preferencjami."
+        "cookiesDescription": "Dowiedz się, jak Gent bandenservice używa plików cookie i jak zarządzać preferencjami.",
+        "returnPolicyTitle": "Polityka Zwrotów | Gent Bandenservice",
+        "returnPolicyDescription": "Polityka zwrotów dla zakupów opon online w Gent bandenservice. Dowiedz się o naszym 14-dniowym okresie zwrotu, warunkach i procesie zwrotu pieniędzy."
     },
     "DevBanner": {
         "message": "Nadal jesteśmy w trybie programowania. Wszystkie opony nie są prawdziwe; służą wyłącznie do celów demonstracyjnych. Prawdziwe opony wkrótce."
@@ -294,7 +296,8 @@
         "views": "wyświetleń",
         "backToBlog": "Powrót do Bloga",
         "share": "Udostępnij ten wpis",
-        "relatedPosts": "Powiązane wpisy"    },
+        "relatedPosts": "Powiązane wpisy"
+    },
     "Privacy": {
         "title": "Polityka Prywatności",
         "subtitle": "Jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe",
@@ -451,5 +454,62 @@
         "reject": "Odrzuć",
         "manage": "Zarządzaj plikami cookie",
         "policy": "Polityka plików cookie"
+    },
+    "ReturnPolicy": {
+        "title": "Polityka Zwrotów",
+        "subtitle": "Nasza polityka zwrotów dla zakupów opon online",
+        "eligibility": {
+            "title": "Kwalifikowalność",
+            "content": "Niniejsza polityka zwrotów dotyczy opon zakupionych online za pośrednictwem naszej strony internetowej. Opony zakupione i zamontowane w sklepie nie podlegają zwrotowi."
+        },
+        "timeframe": {
+            "title": "Okres Zwrotu",
+            "content": "Masz 14 dni od daty dostawy na złożenie wniosku o zwrot, zgodnie z belgijskim i unijnym prawem ochrony konsumentów.",
+            "startDate": "14-dniowy okres rozpoczyna się w dniu otrzymania opon."
+        },
+        "conditions": {
+            "title": "Warunki Zwrotu",
+            "content": "Aby kwalifikować się do zwrotu, opony muszą spełniać następujące warunki:",
+            "unused": "Opony nie mogą być używane ani jeżdżone",
+            "unmounted": "Opony nie mogą być montowane na feldze",
+            "originalPackaging": "Opony muszą być w oryginalnym opakowaniu",
+            "withReceipt": "Musisz dostarczyć potwierdzenie zamówienia lub paragon"
+        },
+        "process": {
+            "title": "Proces Zwrotu",
+            "content": "Aby zainicjować zwrot, wykonaj następujące kroki:",
+            "step1": "Skontaktuj się z nami e-mailem na info@gentbandenservice.be lub zadzwoń pod +32 466 19 56 22",
+            "step2": "Podaj numer zamówienia i powód zwrotu",
+            "step3": "Prześlemy Ci instrukcje zwrotu i adres zwrotny"
+        },
+        "refunds": {
+            "title": "Zwroty Pieniędzy",
+            "content": "Po otrzymaniu i sprawdzeniu zwróconych opon, przetworzymy Twój zwrot pieniędzy w ciągu 14 dni.",
+            "method": "Zwrot pieniędzy nastąpi tą samą metodą płatności, która została użyta przy pierwotnym zakupie."
+        },
+        "exceptions": {
+            "title": "Wyjątki",
+            "content": "Następujące artykuły nie mogą być zwrócone:",
+            "mounted": "Opony, które były montowane na feldze",
+            "used": "Opony wykazujące ślady użytkowania lub zużycia drogowego",
+            "customOrders": "Opony zamówione na specjalne zamówienie lub niestandardowe rozmiary zamówione specjalnie dla Ciebie",
+            "damaged": "Opony uszkodzone z powodu niewłaściwego przechowywania lub obchodzenia się przez klienta"
+        },
+        "shippingCosts": {
+            "title": "Koszty Zwrotu",
+            "content": "Klient ponosi koszty przesyłki zwrotnej, chyba że opony są wadliwe lub dostarczono niewłaściwy produkt. Możesz również zwrócić opony osobiście w naszej lokalizacji."
+        },
+        "exchanges": {
+            "title": "Wymiana",
+            "content": "Jeśli chcesz wymienić opony na inny rozmiar lub model, skontaktuj się z nami. Wymiana zależy od dostępności, a różnice w cenie zostaną naliczone lub zwrócone odpowiednio."
+        },
+        "contact": {
+            "title": "Kontakt",
+            "content": "Jeśli masz pytania dotyczące naszej polityki zwrotów, nie wahaj się z nami skontaktować:",
+            "email": "E-mail: info@gentbandenservice.be",
+            "phone": "Telefon: +32 466 19 56 22"
+        },
+        "lastUpdated": "Ostatnia aktualizacja",
+        "lastUpdatedDate": "4 marca 2026"
     }
 }

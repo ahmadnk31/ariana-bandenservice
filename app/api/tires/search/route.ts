@@ -45,7 +45,8 @@ export async function GET(request: Request) {
                 brand: true,
                 size: true,
                 price: true,
-                condition: true, // Add condition
+                condition: true,
+                season: true,
                 images: {
                     take: 1,
                     orderBy: { order: "asc" },
@@ -62,6 +63,7 @@ export async function GET(request: Request) {
             brand: tire.brand,
             size: tire.size,
             condition: tire.condition,
+            season: tire.season,
             price: tire.price,
             image: tire.images[0]?.url,
         }));
