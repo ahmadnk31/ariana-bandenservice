@@ -45,15 +45,15 @@ export default function Footer() {
             <div className="container mx-auto px-4 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
                 <div className="flex flex-col items-center sm:items-start gap-4">
                     <p>&copy; {year || 2025} Gent bandenservice. {t('rights')}</p>
-                    <div className="flex gap-4 text-xs">
+                    <div className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 text-xs">
                         <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
-                        <span>•</span>
+                        <span className="hidden sm:inline">•</span>
                         <a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a>
-                        <span>•</span>
+                        <span className="hidden sm:inline">•</span>
                         <a href="/return-policy" className="hover:text-primary transition-colors">Return Policy</a>
-                        <span>•</span>
+                        <span className="hidden sm:inline">•</span>
                         <a href="/cookies" className="hover:text-primary transition-colors">{cookieT('policy')}</a>
-                        <span>•</span>
+                        <span className="hidden sm:inline">•</span>
                         <button
                             type="button"
                             onClick={() => window.dispatchEvent(new Event('cookie-consent-open'))}
