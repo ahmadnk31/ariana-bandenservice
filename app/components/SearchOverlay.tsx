@@ -139,6 +139,30 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
         }
     };
 
+    if (!mounted) {
+        return (
+            <>
+                {triggerType === "input" ? (
+                    <button
+                        className="hidden md:flex items-center w-64 h-9 px-3 rounded-md border border-input bg-muted/50 text-sm text-muted-foreground transition-colors"
+                        disabled
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <span className="flex-1 text-left">{t('searchPlaceholder')}</span>
+                    </button>
+                ) : (
+                    <button
+                        className="p-2 text-muted-foreground transition-colors"
+                        disabled
+                        aria-label="Open search"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                )}
+            </>
+        );
+    }
+
     return (
         <>
             {triggerType === "input" ? (
@@ -160,7 +184,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                 </button>
             )}
 
-            {mounted && isOpen && createPortal(
+            {isOpen && createPortal(
                 <div className="fixed inset-0 z-[100] flex items-start justify-center pt-20 px-4">
                     {/* Backdrop */}
                     <div
