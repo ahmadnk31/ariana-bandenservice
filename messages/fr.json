@@ -106,7 +106,9 @@
         "lastChance": "Dernière chance",
         "hurryUp": "Dépêchez-vous – bientôt épuisé",
         "popularItem": "Article populaire",
-        "keyFeatures": "Caractéristiques principales"
+        "keyFeatures": "Caractéristiques principales",
+        "seeMore": "Voir plus",
+        "seeLess": "Voir moins"
     },
     "Contact": {
         "title": "Contactez-nous",

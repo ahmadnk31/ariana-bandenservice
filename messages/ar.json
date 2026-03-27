@@ -105,7 +105,9 @@
         "lastChance": "فرصة أخيرة",
         "hurryUp": "أسرع – يكاد ينفد",
         "popularItem": "منتج شائع",
-        "keyFeatures": "الميزات الرئيسية"
+        "keyFeatures": "الميزات الرئيسية",
+        "seeMore": "عرض المزيد",
+        "seeLess": "عرض أقل"
     },
     "Contact": {
         "title": "اتصل بنا",

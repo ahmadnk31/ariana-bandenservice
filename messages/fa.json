@@ -106,7 +106,9 @@
         "lastChance": "آخرین فرصت",
         "hurryUp": "عجله کنید – تقریباً تمام شده",
         "popularItem": "محصول محبوب",
-        "keyFeatures": "ویژگی‌های کلیدی"
+        "keyFeatures": "ویژگی‌های کلیدی",
+        "seeMore": "بیشتر ببینید",
+        "seeLess": "کمتر ببینید"
     },
     "Contact": {
         "title": "تماس با ما",

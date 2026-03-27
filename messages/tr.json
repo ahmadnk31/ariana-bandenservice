@@ -106,7 +106,9 @@
         "lastChance": "Son şans",
         "hurryUp": "Acele edin – neredeyse tükendi",
         "popularItem": "Popüler ürün",
-        "keyFeatures": "Temel Özellikler"
+        "keyFeatures": "Temel Özellikler",
+        "seeMore": "Daha fazla gör",
+        "seeLess": "Daha az gör"
     },
     "Contact": {
         "title": "Bize Ulaşın",

@@ -8,6 +8,7 @@ import Link from "next/link";
 import TireCard from "@/app/components/TireCard";
 import { getTranslations } from "next-intl/server";
 import ProductAddToCart from "@/app/components/ProductAddToCart";
+import ExpandableDescription from "@/app/components/ExpandableDescription";
 import SocialProofBadge from "@/app/components/SocialProofBadge";
 import Price from "@/app/components/Price";
 import { getAlternateLanguages } from "@/lib/utils";
@@ -31,7 +32,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     }
 
     const title = `${tire.name} | Gent bandenservice`;
-    const description = `Buy ${tire.brand} ${tire.name} (${tire.size}) - ${tire.season} tire. Price: €${tire.price}. Professional fitting available.`;
+    const ogTitle = `${tire.brand} ${tire.name} - €${tire.price.toFixed(2)} | Gent bandenservice`;
+    const description = `€${tire.price.toFixed(2)} incl. mounting & balancing ✓ ${tire.brand} ${tire.name} (${tire.size}) - ${tire.season} tire. Professional fitting available.`;
     const siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be";
     const fallbackImage = `${siteUrl}/gentbandenservice/android-chrome-512x512.png`;
 
@@ -44,7 +46,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         title,
         description,
         openGraph: {
-            title,
+            title: ogTitle,
             description,
             images: [
                 {
@@ -59,7 +61,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         },
         twitter: {
             card: "summary_large_image",
-            title,
+            title: ogTitle,
             description,
             images: [
                 {
@@ -249,23 +251,25 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
                             <div className="prose prose-sm max-w-none text-muted-foreground mb-8">
                                 {tire.description ? (
-                                    <p>{tire.description}</p>
+                                    <ExpandableDescription description={tire.description} />
                                 ) : (
                                     <p>{t('noDescription')}</p>
                                 )}
                             </div>
 
-                            <div className="mb-8">
-                                <h3 className="font-semibold text-foreground mb-4">{t('keyFeatures')}</h3>
-                                <ul className="grid sm:grid-cols-2 gap-3">
-                                    {features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mt-0.5 shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                            {features.length > 0 && (
+                                <div className="mb-8">
+                                    <h3 className="font-semibold text-foreground mb-4">{t('keyFeatures')}</h3>
+                                    <ul className="grid sm:grid-cols-2 gap-3">
+                                        {features.map((feature, idx) => (
+                                            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mt-0.5 shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
 
                             <div className="mt-auto">
                                 <ProductAddToCart

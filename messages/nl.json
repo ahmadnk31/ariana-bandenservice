@@ -107,7 +107,9 @@
         "lastChance": "Laatste kans",
         "hurryUp": "Beslis snel – bijna uitverkocht",
         "popularItem": "Populair item",
-        "keyFeatures": "Belangrijkste kenmerken"
+        "keyFeatures": "Belangrijkste kenmerken",
+        "seeMore": "Meer lezen",
+        "seeLess": "Minder lezen"
     },
     "Contact": {
         "title": "Neem Contact Op",
