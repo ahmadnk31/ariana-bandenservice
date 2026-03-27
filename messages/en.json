@@ -9,8 +9,8 @@
         "blog": "Blog"
     },
     "Hero": {
-        "title1": "Tire Center",
-        "title2": "Ghent",
+        "title1": "Bandenservice",
+        "title2": "Gent",
         "title3": "Since 2020",
         "subtitle": "Buy tires with fitting from €25. Cheapest tire shop in Ghent. Open Mon-Sat 9-18h.",
         "cta": "View Tires",
@@ -107,7 +107,9 @@
         "lastChance": "Last chance",
         "hurryUp": "Hurry up – almost sold out",
         "popularItem": "Popular item",
-        "keyFeatures": "Key Features"
+        "keyFeatures": "Key Features",
+        "seeMore": "See more",
+        "seeLess": "See less"
     },
     "Contact": {
         "title": "Contact Us",

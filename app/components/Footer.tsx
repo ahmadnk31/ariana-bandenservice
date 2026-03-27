@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Feedback } from './Feedback';
 
@@ -42,7 +43,64 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-            <div className="container mx-auto px-4 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
+
+            {/* Payment & Shipping */}
+            <div className="container mx-auto px-4 mt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-muted-foreground">
+                {/* Payment Methods */}
+                <div className="flex flex-col items-center sm:items-start gap-2">
+                    <span className="font-semibold text-foreground/70 uppercase tracking-wider">Payment</span>
+                    <div className="flex flex-wrap items-center gap-2">
+                        {[
+                            { src: "/visa.png", alt: "Visa" },
+                            { src: "/mastercard.png", alt: "Mastercard" },
+                            { src: "/bancontact.png", alt: "Bancontact" },
+                            { src: "/apply-pay.png", alt: "Apple Pay" },
+                            { src: "/google-pay.png", alt: "Google Pay" },
+                            { src: "/wero.png", alt: "Wero" },
+                        ].map((method) => (
+                            <span
+                                key={method.alt}
+                                className="inline-flex items-center justify-center h-11 px-2 bg-white border border-gray-200"
+                                title={method.alt}
+                            >
+                                <Image
+                                    src={method.src}
+                                    alt={method.alt}
+                                    width={48}
+                                    height={30}
+                                    className="object-contain h-8 w-auto"
+                                />
+                            </span>
+                        ))}
+                    </div>
+                </div>
+                {/* Shipping Partners */}
+                <div className="flex flex-col items-center sm:items-end gap-2">
+                    <span className="font-semibold text-foreground/70 uppercase tracking-wider">Shipping</span>
+                    <div className="flex items-center gap-2">
+                        {[
+                            { src: "/dpd.png", alt: "DPD" },
+                            { src: "/gls.png", alt: "GLS" },
+                        ].map((partner) => (
+                            <span
+                                key={partner.alt}
+                                className="inline-flex items-center justify-center h-11 px-3 bg-white border border-gray-200"
+                                title={partner.alt}
+                            >
+                                <Image
+                                    src={partner.src}
+                                    alt={partner.alt}
+                                    width={60}
+                                    height={30}
+                                    className="object-contain h-8 w-auto"
+                                />
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <div className="container mx-auto px-4 mt-8 pt-8 border-t border-muted/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
                 <div className="flex flex-col items-center sm:items-start gap-4">
                     <p>&copy; {year || 2025} Gent bandenservice. {t('rights')}</p>
                     <div className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 text-xs">
