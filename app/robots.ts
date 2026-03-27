@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-    let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be'
+    let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be'
     // Ensure baseUrl starts with https://
     if (!baseUrl.startsWith('http://') && !baseUrl.startsWith('https://')) {
         baseUrl = `https://${baseUrl}`

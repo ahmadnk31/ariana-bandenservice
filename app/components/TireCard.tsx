@@ -5,7 +5,7 @@ import { Link } from "@/src/i18n/routing";
 import { useState, useRef, useCallback, useEffect } from "react";
 import { useTranslations } from 'next-intl';
 import { useCart } from './CartContext';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, Flame } from 'lucide-react';
 import StockRequestModal from "./StockRequestModal";
 
 interface TireImage {
@@ -306,7 +306,27 @@ export default function TireCard({
                         {t('outOfStock')}
                     </div>
                 )}
+                {inStock && stock > 0 && stock <= 5 && (
+                    <div className="absolute top-2 right-2 px-2 py-0.5 bg-orange-500 text-white text-[10px] font-bold rounded z-10 animate-pulse">
+                        {t('lastChance')}
+                    </div>
+                )}
             </div>
+
+            {/* Low stock urgency bar */}
+            {inStock && stock > 0 && stock <= 5 && (
+                <div className="mb-2">
+                    <div className="flex items-center justify-between mb-1">
+                        <span className="text-[10px] font-semibold text-orange-600">{t('hurryUp')}</span>
+                    </div>
+                    <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
+                        <div 
+                            className="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-500"
+                            style={{ width: `${Math.max((stock / 10) * 100, 10)}%` }}
+                        />
+                    </div>
+                </div>
+            )}
 
             {/* Season Badge */}
             <div className="flex items-center gap-2 mb-3">
@@ -343,7 +363,14 @@ export default function TireCard({
             <div className="flex items-center justify-between mt-auto pt-4 border-t border-muted">
                 <div>
                     <span className="text-xl font-bold">€{price}</span>
-                    {stock > 0 && (
+                    <p className="text-[10px] text-green-600 font-medium">{t('freeMontageBalance')}</p>
+                    {stock > 0 && stock <= 5 && (
+                        <p className="text-[10px] text-orange-600 font-semibold flex items-center gap-0.5 animate-pulse">
+                            <Flame className="w-3 h-3" />
+                            {t('lowStock', { count: stock })}
+                        </p>
+                    )}
+                    {stock > 5 && (
                         <p className="text-[10px] text-green-600">{t('stockCount', { count: stock })}</p>
                     )}
                 </div>

@@ -18,7 +18,7 @@ export default function Header() {
                 {/* Left: Logo */}
                 <div className="flex-1 flex justify-start">
                     <Link href="/" className="flex items-center gap-2">
-                        <Image src="/icon.png" alt="Logo" width={50} height={50} />
+                        <Image src="/logo.JPG" alt="Logo" width={60} height={60} />
                         <span className="text-xl hidden lg:block font-bold uppercase tracking-wider text-foreground">
                             Gent <span className="text-primary">bandenservice</span>
                         </span>

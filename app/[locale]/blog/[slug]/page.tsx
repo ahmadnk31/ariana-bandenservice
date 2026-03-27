@@ -21,7 +21,7 @@ export async function generateMetadata({
 
     if (!post) return { title: 'Not Found' };
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
     const postUrl = `${baseUrl}/${locale}/blog/${slug}`;
     const defaultImage = `${baseUrl}/banden-service/android-chrome-512x512.png`;
     
@@ -113,7 +113,7 @@ export default async function BlogPostPage({
         }).format(new Date(post.publishedAt))
         : null;
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
     const shareUrl = `${baseUrl}/${locale}/blog/${slug}`;
 
     // JSON-LD structured data

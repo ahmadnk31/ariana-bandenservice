@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useCart } from '@/app/components/CartContext';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/src/i18n/routing';
@@ -8,6 +8,7 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 import { ShoppingCart, Truck, CreditCard, ArrowLeft, Package, Store } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 
 interface ShippingRate {
     id: string;
@@ -20,11 +21,13 @@ interface ShippingRate {
 }
 
 export default function CheckoutPage() {
-    const { items, subtotal, clearCart } = useCart();
+    const { items, subtotal, clearCart, addToCart } = useCart();
     const t = useTranslations('Checkout');
+    const searchParams = useSearchParams();
     const [shippingRates, setShippingRates] = useState<ShippingRate[]>([]);
     const [selectedRate, setSelectedRate] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isRecovering, setIsRecovering] = useState(false);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -36,22 +39,135 @@ export default function CheckoutPage() {
         country: 'BE',
     });
 
-    // Fetch shipping rates
+    // Recover abandoned checkout if ?recover=ID is in the URL
+    const recoveredRef = useRef(false);
+    useEffect(() => {
+        const recoverId = searchParams.get('recover');
+        if (!recoverId || recoveredRef.current) return;
+        recoveredRef.current = true;
+        setIsRecovering(true);
+
+        fetch(`/api/checkout/recover?id=${recoverId}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.cartItems && data.cartItems.length > 0) {
+                    // Clear existing cart and add recovered items
+                    clearCart();
+                    for (const item of data.cartItems) {
+                        addToCart({
+                            id: item.id,
+                            name: item.name,
+                            slug: item.slug,
+                            brand: item.brand,
+                            size: item.size,
+                            price: item.price,
+                            image: item.image,
+                            stock: item.stock,
+                            incrementBy: 1,
+                        }, item.quantity);
+                    }
+                }
+                if (data.formData) {
+                    setFormData(data.formData);
+                }
+            })
+            .catch(() => {})
+            .finally(() => setIsRecovering(false));
+    }, [searchParams, clearCart, addToCart]);
+
+    // Total tire count across all cart items
+    const tireCount = items.reduce((sum, item) => sum + item.quantity, 0);
+
+    // Fetch shipping rates when country or tire count changes
     useEffect(() => {
         async function fetchRates() {
             try {
-                const res = await fetch(`/api/shipping/rates?country=${formData.country}`);
+                const res = await fetch(`/api/shipping/rates?country=${formData.country}&tireCount=${tireCount}`);
                 const data = await res.json();
                 setShippingRates(data.rates || []);
-                if (data.rates?.length > 0 && !selectedRate) {
+                // Always select the first rate when rates change
+                if (data.rates?.length > 0) {
                     setSelectedRate(data.rates[0].id);
+                } else {
+                    setSelectedRate('');
                 }
             } catch (error) {
                 console.error('Failed to fetch shipping rates', error);
             }
         }
         fetchRates();
-    }, [formData.country]);
+    }, [formData.country, tireCount]);
+
+    // Auto-save abandoned checkout data (debounced)
+    const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const hasSavedRef = useRef(false);
+
+    const saveAbandonedCheckout = useCallback(async () => {
+        // Only save if email is provided and cart has items
+        if (!formData.email || items.length === 0) return;
+
+        // Basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) return;
+
+        try {
+            await fetch('/api/checkout/abandoned', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    ...formData,
+                    cartItems: items.map(item => ({
+                        id: item.id,
+                        quantity: item.quantity,
+                    })),
+                    subtotal,
+                }),
+            });
+            hasSavedRef.current = true;
+        } catch {
+            // Silently fail – don't disrupt checkout flow
+        }
+    }, [formData, items, subtotal]);
+
+    useEffect(() => {
+        if (!formData.email || items.length === 0) return;
+
+        if (saveTimeoutRef.current) {
+            clearTimeout(saveTimeoutRef.current);
+        }
+
+        // Save 5 seconds after last form change
+        saveTimeoutRef.current = setTimeout(() => {
+            saveAbandonedCheckout();
+        }, 5000);
+
+        return () => {
+            if (saveTimeoutRef.current) {
+                clearTimeout(saveTimeoutRef.current);
+            }
+        };
+    }, [formData, items, subtotal, saveAbandonedCheckout]);
+
+    // Also save when user tries to leave the page
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            if (formData.email && items.length > 0 && !hasSavedRef.current) {
+                // Use sendBeacon for reliable save on page unload
+                const payload = JSON.stringify({
+                    ...formData,
+                    cartItems: items.map(item => ({
+                        id: item.id,
+                        quantity: item.quantity,
+                    })),
+                    subtotal,
+                });
+                navigator.sendBeacon('/api/checkout/abandoned', new Blob([payload], { type: 'application/json' }));
+            }
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+        return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+    }, [formData, items, subtotal]);
 
     const selectedShippingRate = shippingRates.find(r => r.id === selectedRate);
     const shippingCost = selectedShippingRate?.price || 0;
@@ -98,6 +214,21 @@ export default function CheckoutPage() {
             setIsLoading(false);
         }
     };
+
+    if (isRecovering) {
+        return (
+            <div className="min-h-screen flex flex-col">
+                <Header />
+                <main className="flex-1 flex items-center justify-center">
+                    <div className="text-center">
+                        <div className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto mb-4" />
+                        <p className="text-muted-foreground">Je winkelwagen wordt hersteld...</p>
+                    </div>
+                </main>
+                <Footer />
+            </div>
+        );
+    }
 
     if (items.length === 0) {
         return (
@@ -318,6 +449,7 @@ export default function CheckoutPage() {
                                                 </div>
                                                 <div className="flex-1 min-w-0">
                                                     <p className="font-medium text-sm line-clamp-1">{item.name}</p>
+                                                    <p className="text-xs text-muted-foreground">{item.size}</p>
                                                     <p className="text-xs text-muted-foreground">Qty: {item.quantity}</p>
                                                 </div>
                                                 <p className="font-medium text-sm">€{(item.price * item.quantity).toFixed(2)}</p>

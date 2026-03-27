@@ -99,7 +99,15 @@
         "phone": "Telefon (optional)",
         "email": "E-Mail",
         "submitRequest": "Anfrage senden",
-        "sending": "Wird gesendet..."
+        "sending": "Wird gesendet...",
+        "freeMontageBalance": "Montage + Auswuchten gratis",
+        "lowStock": "Nur noch {count} auf Lager!",
+        "peopleViewing": "{count} Personen sehen sich das gerade an",
+        "soldRecently": "{count}x in der letzten Stunde verkauft",
+        "lastChance": "Letzte Chance",
+        "hurryUp": "Beeilen Sie sich – fast ausverkauft",
+        "popularItem": "Beliebter Artikel",
+        "keyFeatures": "Hauptmerkmale"
     },
     "Contact": {
         "title": "Kontaktieren Sie uns",
@@ -225,7 +233,7 @@
             "why_us": "Warum Gent Reifenservice wählen?",
             "why_us_text": "✅ Günstigste Reifenpreise in der Region\n✅ Schneller Service – erledigt während Sie warten\n✅ Qualitätsreifen von Top-Marken\n✅ Montage und Auswuchten inklusive\n✅ Großes Lager in allen Größen",
             "contact": "Kontakt & Standort",
-            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gent)\n📞 Mobil: +32 466 19 56 22\n📧 E-Mail: contact@arianabandenservice.be\n📘 Facebook: Gent bandenservice",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gent)\n📞 Mobil: +32 466 19 56 22\n📧 E-Mail: contact@gentbandenservice.be\n📘 Facebook: Gent bandenservice",
             "openingHours": "Öffnungszeiten",
             "openingHoursText": "Montag - Samstag: 9:00 - 18:00 Uhr",
             "openingHoursText2": "Sonntag: 10:00 - 18:00 Uhr (nur mit Termin, Tel. 0466 19 56 22)",

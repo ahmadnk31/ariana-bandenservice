@@ -98,7 +98,15 @@
         "email": "E-mail",
         "submitRequest": "Envoyer la demande",
         "sending": "Envoi en cours...",
-        "relatedProducts": "Produits associés"
+        "relatedProducts": "Produits associés",
+        "freeMontageBalance": "Montage + équilibrage gratuit",
+        "lowStock": "Plus que {count} en stock !",
+        "peopleViewing": "{count} personnes consultent cet article",
+        "soldRecently": "Vendu {count}x au cours de la dernière heure",
+        "lastChance": "Dernière chance",
+        "hurryUp": "Dépêchez-vous – bientôt épuisé",
+        "popularItem": "Article populaire",
+        "keyFeatures": "Caractéristiques principales"
     },
     "Contact": {
         "title": "Contactez-nous",
@@ -224,7 +232,7 @@
             "why_us": "Pourquoi choisir Gent bandenservice ?",
             "why_us_text": "✅ Les pneus les moins chers de la région\n✅ Service rapide – effectué pendant que vous attendez\n✅ Pneus de qualité des meilleures marques\n✅ Montage et équilibrage inclus\n✅ Grand stock dans toutes les tailles",
             "contact": "Contact & localisation",
-            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gand)\n📞 GSM : +32 466 19 56 22\n📧 E-mail : contact@arianabandenservice.be\n📘 Facebook : Gent bandenservice",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gand)\n📞 GSM : +32 466 19 56 22\n📧 E-mail : contact@gentbandenservice.be\n📘 Facebook : Gent bandenservice",
             "openingHours": "Heures d’ouverture",
             "openingHoursText": "Lundi - Samedi : 9h00 - 18h00",
             "openingHoursText2": "Dimanche : 10h00 - 18h00",

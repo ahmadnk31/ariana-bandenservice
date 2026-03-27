@@ -8,6 +8,7 @@ import Link from "next/link";
 import TireCard from "@/app/components/TireCard";
 import { getTranslations } from "next-intl/server";
 import ProductAddToCart from "@/app/components/ProductAddToCart";
+import SocialProofBadge from "@/app/components/SocialProofBadge";
 import { getAlternateLanguages } from "@/lib/utils";
 
 interface ProductPageProps {
@@ -97,7 +98,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         "all-season": t('seasonAllSeason'),
     };
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arianabandenservice.be';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
 
     // Product JSON-LD
     const productJsonLd = {
@@ -202,9 +203,26 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                 )}
                             </div>
 
-                            <div className="text-3xl font-bold mb-6">
+                            <div className="text-3xl font-bold mb-4">
                                 €{tire.price.toFixed(2)}
                                 {tire.stock > 0 && <span className="text-sm font-normal text-muted-foreground ml-3">({tire.stock} in stock)</span>}
+                            </div>
+
+                            {/* Urgency: Low stock alert */}
+                            {tire.stock > 0 && tire.stock <= 5 && (
+                                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-600 text-sm font-semibold mb-4 animate-pulse">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                                    {t('lowStock', { count: tire.stock })}
+                                </div>
+                            )}
+
+                            {/* Social proof badges */}
+                            <div className="flex flex-col gap-2 mb-4">
+                                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-600 text-sm font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    {t('freeMontageBalance')}
+                                </div>
+                                <SocialProofBadge stock={tire.stock} />
                             </div>
 
                             <hr className="border-muted mb-8" />
@@ -218,7 +236,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                             </div>
 
                             <div className="mb-8">
-                                <h3 className="font-semibold text-foreground mb-4">Key Features</h3>
+                                <h3 className="font-semibold text-foreground mb-4">{t('keyFeatures')}</h3>
                                 <ul className="grid sm:grid-cols-2 gap-3">
                                     {features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
