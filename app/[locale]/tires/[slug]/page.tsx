@@ -32,7 +32,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     }
 
     const title = `${tire.name} | Gent bandenservice`;
-    const description = `Buy ${tire.brand} ${tire.name} (${tire.size}) - ${tire.season} tire. Price: €${tire.price}. Professional fitting available.`;
+    const ogTitle = `${tire.brand} ${tire.name} - €${tire.price.toFixed(2)} | Gent bandenservice`;
+    const description = `€${tire.price.toFixed(2)} incl. mounting & balancing ✓ ${tire.brand} ${tire.name} (${tire.size}) - ${tire.season} tire. Professional fitting available.`;
     const siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be";
     const fallbackImage = `${siteUrl}/gentbandenservice/android-chrome-512x512.png`;
 
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         title,
         description,
         openGraph: {
-            title,
+            title: ogTitle,
             description,
             images: [
                 {
@@ -60,7 +61,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         },
         twitter: {
             card: "summary_large_image",
-            title,
+            title: ogTitle,
             description,
             images: [
                 {
