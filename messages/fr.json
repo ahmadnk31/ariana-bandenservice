@@ -108,7 +108,8 @@
         "popularItem": "Article populaire",
         "keyFeatures": "Caractéristiques principales",
         "seeMore": "Voir plus",
-        "seeLess": "Voir moins"
+        "seeLess": "Voir moins",
+        "makeAppointment": "Prendre rendez-vous"
     },
     "Contact": {
         "title": "Contactez-nous",
@@ -521,5 +522,31 @@
         },
         "lastUpdated": "Dernière mise à jour",
         "lastUpdatedDate": "4 mars 2026"
+    },
+    "Appointment": {
+        "title": "Prendre un rendez-vous",
+        "subtitle": "Sélectionnez un pneu et un créneau horaire.",
+        "formTitle": "Vos coordonnées",
+        "date": "Date",
+        "time": "Heure",
+        "notes": "Notes supplémentaires",
+        "book": "Réserver",
+        "success": "Rendez-vous réservé avec succès !",
+        "noSlots": "Aucun créneau disponible à cette date.",
+        "selectDateFirst": "Veuillez d'abord sélectionner une date.",
+        "manageTitle": "Gérer le RDV",
+        "manageSubtitle": "Consultez, modifiez ou annulez votre rendez-vous.",
+        "confirmCancel": "Voulez-vous vraiment annuler ?",
+        "cancelSuccess": "Rendez-vous annulé.",
+        "rescheduleSuccess": "Rendez-vous déplacé !",
+        "cancelledStatus": "Rendez-vous annulé",
+        "customerName": "Client",
+        "tireInfo": "Pneu",
+        "dateLabel": "Date",
+        "timeLabel": "Heure",
+        "rescheduleBtn": "Déplacer le RDV",
+        "cancelBtn": "Annuler le RDV",
+        "confirmReschedule": "Confirmer la nouvelle heure",
+        "backBtn": "Retour"
     }
 }

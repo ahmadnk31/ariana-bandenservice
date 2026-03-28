@@ -109,7 +109,8 @@
         "popularItem": "Popular item",
         "keyFeatures": "Key Features",
         "seeMore": "See more",
-        "seeLess": "See less"
+        "seeLess": "See less",
+        "makeAppointment": "Make Appointment"
     },
     "Contact": {
         "title": "Contact Us",
@@ -522,5 +523,31 @@
         },
         "lastUpdated": "Last updated",
         "lastUpdatedDate": "March 4, 2026"
+    },
+    "Appointment": {
+        "title": "Book an Appointment",
+        "subtitle": "Select a tire and choose an available timeslot.",
+        "formTitle": "Your Details",
+        "date": "Date",
+        "time": "Time",
+        "notes": "Additional Notes",
+        "book": "Book Appointment",
+        "success": "Appointment booked successfully!",
+        "noSlots": "No available slots for this date.",
+        "selectDateFirst": "Please select a date first.",
+        "manageTitle": "Manage Appointment",
+        "manageSubtitle": "Review your booking details, reschedule your time, or cancel your appointment.",
+        "confirmCancel": "Are you sure you want to cancel this appointment?",
+        "cancelSuccess": "Appointment has been cancelled.",
+        "rescheduleSuccess": "Appointment successfully rescheduled!",
+        "cancelledStatus": "Appointment Cancelled",
+        "customerName": "Customer",
+        "tireInfo": "Tire",
+        "dateLabel": "Date",
+        "timeLabel": "Time",
+        "rescheduleBtn": "Reschedule Appointment",
+        "cancelBtn": "Cancel Appointment",
+        "confirmReschedule": "Confirm New Time",
+        "backBtn": "Go Back"
     }
 }

@@ -108,7 +108,8 @@
         "popularItem": "Popüler ürün",
         "keyFeatures": "Temel Özellikler",
         "seeMore": "Daha fazla gör",
-        "seeLess": "Daha az gör"
+        "seeLess": "Daha az gör",
+        "makeAppointment": "Randevu Al"
     },
     "Contact": {
         "title": "Bize Ulaşın",
@@ -517,5 +518,31 @@
         },
         "lastUpdated": "Son güncelleme",
         "lastUpdatedDate": "4 Mart 2026"
+    },
+    "Appointment": {
+        "title": "Randevu Alın",
+        "subtitle": "Bir lastik ve uygun bir zaman dilimi seçin.",
+        "formTitle": "Bilgileriniz",
+        "date": "Tarih",
+        "time": "Saat",
+        "notes": "Ek notlar",
+        "book": "Randevu Al",
+        "success": "Randevunuz başarıyla oluşturuldu!",
+        "noSlots": "Bu tarih için boş saat bulunmuyor.",
+        "selectDateFirst": "Lütfen önce bir tarih seçin.",
+        "manageTitle": "Randevu Yönet",
+        "manageSubtitle": "Randevu detaylarınızı inceleyin, değiştirin veya iptal edin.",
+        "confirmCancel": "Bu randevuyu iptal etmek istediğinize emin misiniz?",
+        "cancelSuccess": "Randevu iptal edildi.",
+        "rescheduleSuccess": "Randevu başarıyla yeniden planlandı!",
+        "cancelledStatus": "Randevu İptal Edildi",
+        "customerName": "Müşteri",
+        "tireInfo": "Lastik",
+        "dateLabel": "Tarih",
+        "timeLabel": "Saat",
+        "rescheduleBtn": "Yeniden Planla",
+        "cancelBtn": "İptal Et",
+        "confirmReschedule": "Yeni Saati Onayla",
+        "backBtn": "Geri Dön"
     }
 }

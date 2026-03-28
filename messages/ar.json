@@ -107,7 +107,8 @@
         "popularItem": "منتج شائع",
         "keyFeatures": "الميزات الرئيسية",
         "seeMore": "عرض المزيد",
-        "seeLess": "عرض أقل"
+        "seeLess": "عرض أقل",
+        "makeAppointment": "احجز موعدا"
     },
     "Contact": {
         "title": "اتصل بنا",
@@ -511,5 +512,31 @@
         },
         "lastUpdated": "آخر تحديث",
         "lastUpdatedDate": "4 مارس 2026"
+    },
+    "Appointment": {
+        "title": "حجز موعد",
+        "subtitle": "اختر إطارًا ووقتًا متاحًا.",
+        "formTitle": "تفاصيلك",
+        "date": "التاريخ",
+        "time": "الوقت",
+        "notes": "ملاحظات إضافية",
+        "book": "حجز الموعد",
+        "success": "تم حجز الموعد بنجاح!",
+        "noSlots": "لا توجد أوقات متاحة في هذا التاريخ.",
+        "selectDateFirst": "يرجى تحديد تاريخ أولاً.",
+        "manageTitle": "إدارة الموعد",
+        "manageSubtitle": "راجع تفاصيل الحجز، أعد الجدولة أو ألغِ موعدك.",
+        "confirmCancel": "هل أنت متأكد أنك تريد إلغاء هذا الموعد؟",
+        "cancelSuccess": "تم إلغاء الموعد.",
+        "rescheduleSuccess": "تمت إعادة جدولة الموعد بنجاح!",
+        "cancelledStatus": "تم إلغاء الموعد",
+        "customerName": "العميل",
+        "tireInfo": "الإطار",
+        "dateLabel": "التاريخ",
+        "timeLabel": "الوقت",
+        "rescheduleBtn": "إعادة جدولة",
+        "cancelBtn": "إلغاء الموعد",
+        "confirmReschedule": "تأكيد الوقت الجديد",
+        "backBtn": "رجوع"
     }
 }

@@ -109,7 +109,8 @@
         "popularItem": "Beliebter Artikel",
         "keyFeatures": "Hauptmerkmale",
         "seeMore": "Mehr anzeigen",
-        "seeLess": "Weniger anzeigen"
+        "seeLess": "Weniger anzeigen",
+        "makeAppointment": "Termin vereinbaren"
     },
     "Contact": {
         "title": "Kontaktieren Sie uns",
@@ -522,5 +523,31 @@
         },
         "lastUpdated": "Zuletzt aktualisiert",
         "lastUpdatedDate": "4. März 2026"
+    },
+    "Appointment": {
+        "title": "Termin vereinbaren",
+        "subtitle": "Wählen Sie einen Reifen und ein Zeitfenster.",
+        "formTitle": "Ihre Daten",
+        "date": "Datum",
+        "time": "Uhrzeit",
+        "notes": "Zusätzliche Notizen",
+        "book": "Termin buchen",
+        "success": "Termin erfolgreich gebucht!",
+        "noSlots": "Keine freien Termine an diesem Datum.",
+        "selectDateFirst": "Bitte wählen Sie zuerst ein Datum.",
+        "manageTitle": "Termin verwalten",
+        "manageSubtitle": "Überprüfen Sie Ihre Buchungsdetails, verschieben Sie Ihre Zeit oder stornieren Sie Ihren Termin.",
+        "confirmCancel": "Möchten Sie diesen Termin wirklich absagen?",
+        "cancelSuccess": "Termin abgesagt.",
+        "rescheduleSuccess": "Termin erfolgreich verschoben!",
+        "cancelledStatus": "Termin abgesagt",
+        "customerName": "Kunde",
+        "tireInfo": "Reifen",
+        "dateLabel": "Datum",
+        "timeLabel": "Zeit",
+        "rescheduleBtn": "Termin verschieben",
+        "cancelBtn": "Termin absagen",
+        "confirmReschedule": "Neue Zeit bestätigen",
+        "backBtn": "Zurück"
     }
 }
