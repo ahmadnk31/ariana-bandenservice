@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { parseISO, isBefore } from "date-fns";
+import { sendAppointmentCancelledEmail, sendAppointmentRescheduledEmail } from "@/lib/email";
 
 export async function DELETE(
     request: NextRequest,
@@ -22,7 +23,17 @@ export async function DELETE(
             data: { status: "cancelled" }
         });
 
-        // Optional: Could send an email to admin saying an appointment was cancelled here.
+        // Send email to Customer & Admin
+        try {
+            await sendAppointmentCancelledEmail({
+                email: existing.email,
+                customerName: `${existing.firstName} ${existing.lastName}`,
+                date: existing.date,
+                cancelledBy: "customer"
+            });
+        } catch (emailError) {
+            console.error("Failed to send cancellation email:", emailError);
+        }
 
         return NextResponse.json({ success: true });
     } catch (error) {
@@ -88,7 +99,18 @@ export async function PUT(
             }
         });
 
-        // Optional: Send email to Admin saying an appointment was rescheduled.
+        // Send email to Customer & Admin
+        try {
+            await sendAppointmentRescheduledEmail({
+                email: existing.email,
+                customerName: `${existing.firstName} ${existing.lastName}`,
+                oldDate: existing.date,
+                newDate: requestedDate,
+                appointmentId: id
+            });
+        } catch (emailError) {
+            console.error("Failed to send rescheduled email:", emailError);
+        }
 
         return NextResponse.json({ success: true, appointment: updated });
     } catch (error) {

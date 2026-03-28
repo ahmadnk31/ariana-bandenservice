@@ -540,3 +540,161 @@ export async function sendAppointmentConfirmationEmail(data: {
         return { success: false, error: "Failed to send email" };
     }
 }
+
+export async function sendNewAppointmentAdminEmail(data: {
+    customerName: string;
+    customerEmail: string;
+    customerPhone?: string;
+    tireName: string | null;
+    date: Date;
+    notes: string | null;
+}): Promise<{ success: boolean; error?: string }> {
+    try {
+        const dateStr = data.date.toLocaleDateString("nl-BE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const timeStr = data.date.toLocaleTimeString("nl-BE", { hour: '2-digit', minute: '2-digit' });
+
+        const html = emailLayout(`
+            <h2 style="margin:0 0 8px;font-size:20px;font-weight:700;color:#18181b;">📅 Nieuwe Afspraak Geboekt</h2>
+            <p style="margin:0 0 24px;font-size:14px;color:#71717a;">Er is een nieuwe afspraak ingepland.</p>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e4e7;border-radius:8px;overflow:hidden;">
+              <tr style="background-color:#f4f4f5;">
+                <td colspan="2" style="padding:10px 12px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Afspraak Details</td>
+              </tr>
+              ${infoRow("Klant", data.customerName)}
+              ${infoRow("E-mail", `<a href="mailto:${data.customerEmail}" style="color:#2563eb;text-decoration:none;">${data.customerEmail}</a>`)}
+              ${infoRow("Telefoon", data.customerPhone || "<span style='color:#a1a1aa;'>Niet opgegeven</span>")}
+              ${infoRow("Band", data.tireName ? `<strong>${data.tireName}</strong>` : "<span style='color:#a1a1aa;'>Geen specifieke band gekozen</span>")}
+              ${infoRow("Datum", `<strong>${dateStr}</strong>`)}
+              ${infoRow("Tijd", `<strong>${timeStr}</strong>`)}
+            </table>
+            ${data.notes ? highlightBox(`
+              <p style="margin:0 0 6px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Opmerkingen van de klant</p>
+              <p style="margin:0;font-size:14px;color:#18181b;line-height:1.6;white-space:pre-wrap;">${data.notes}</p>
+            `) : ''}
+            ${ctaButton("Bekijk in Dashboard →", `${siteUrl}/nl/admin/appointments`)}
+        `, `Nieuwe afspraak op ${dateStr} om ${timeStr}`);
+
+        await resend.emails.send({
+            from: fromEmail,
+            to: [fromAddress],
+            replyTo: data.customerEmail,
+            subject: `📅 Nieuwe afspraak: ${data.customerName} op ${dateStr}`,
+            html,
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error("Failed to send new appointment admin email:", error);
+        return { success: false, error: "Failed to send email" };
+    }
+}
+
+export async function sendAppointmentCancelledEmail(data: {
+    email: string;
+    customerName: string;
+    date: Date;
+    cancelledBy: "customer" | "admin";
+}): Promise<{ success: boolean; error?: string }> {
+    try {
+        const dateStr = data.date.toLocaleDateString("nl-BE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const timeStr = data.date.toLocaleTimeString("nl-BE", { hour: '2-digit', minute: '2-digit' });
+
+        const html = emailLayout(`
+            <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#dc2626;">❌ Afspraak Geannuleerd</h2>
+            <p style="margin:0 0 4px;font-size:15px;color:#3f3f46;line-height:1.6;">Beste ${data.customerName},</p>
+            <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">De afspraak gepland op <strong>${dateStr} om ${timeStr}</strong> is geannuleerd.</p>
+            
+            <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">Mocht dit een vergissing zijn, of als je een nieuwe afspraak wilt inboeken, kun je dat op ieder moment doen via onze website.</p>
+            ${ctaButton("Nieuwe Afspraak Maken →", `${siteUrl}/appointment`)}
+            
+            <p style="margin:24px 0 0;font-size:15px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
+        `, `Je afspraak is geannuleerd`);
+
+        // Send to Customer
+        await resend.emails.send({
+            from: fromEmail,
+            to: [data.email],
+            subject: `Afspraak geannuleerd: ${dateStr}`,
+            html,
+        });
+
+        // Send internal copy to Admin
+        await resend.emails.send({
+            from: fromEmail,
+            to: [fromAddress],
+            subject: `❌ Afspraak geannuleerd door ${data.cancelledBy}: ${data.customerName}`,
+            html: emailLayout(`
+                <h2 style="margin:0 0 8px;font-size:20px;font-weight:700;color:#dc2626;">❌ Afspraak Geannuleerd</h2>
+                <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">De afspraak voor <strong>${data.customerName}</strong> op <strong>${dateStr} om ${timeStr}</strong> is geannuleerd door de <strong>${data.cancelledBy}</strong>.</p>
+                <p style="margin:0;font-size:14px;color:#71717a;">Dit tijdslot is per direct weer vrijgegeven voor nieuwe boekingen.</p>
+                ${ctaButton("Bekijk in Dashboard →", `${siteUrl}/nl/admin/appointments`)}
+            `),
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error("Failed to send appointment cancellation email:", error);
+        return { success: false, error: "Failed to send email" };
+    }
+}
+
+export async function sendAppointmentRescheduledEmail(data: {
+    email: string;
+    customerName: string;
+    oldDate: Date;
+    newDate: Date;
+    appointmentId: string;
+}): Promise<{ success: boolean; error?: string }> {
+    try {
+        const oldDateStr = data.oldDate.toLocaleDateString("nl-BE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const oldTimeStr = data.oldDate.toLocaleTimeString("nl-BE", { hour: '2-digit', minute: '2-digit' });
+        const newDateStr = data.newDate.toLocaleDateString("nl-BE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const newTimeStr = data.newDate.toLocaleTimeString("nl-BE", { hour: '2-digit', minute: '2-digit' });
+        
+        const manageUrl = `${siteUrl}/appointment/manage/${data.appointmentId}`;
+
+        const html = emailLayout(`
+            <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">🔄 Afspraak Gewijzigd</h2>
+            <p style="margin:0 0 4px;font-size:15px;color:#3f3f46;line-height:1.6;">Beste ${data.customerName},</p>
+            <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">Jouw afspraak is succesvol verplaatst. Let goed op de nieuwe datum en tijd!</p>
+            
+            ${highlightBox(`
+              <p style="margin:0 0 8px;font-size:14px;color:#71717a;text-decoration:line-through;"><strong>Oude tijd:</strong> ${oldDateStr} om ${oldTimeStr}</p>
+              <p style="margin:0;font-size:15px;color:#18181b;"><strong>Nieuwe tijd:</strong> ✨ ${newDateStr} om ${newTimeStr}</p>
+            `)}
+
+            ${ctaButton("Afspraak Beheren →", manageUrl)}
+
+            <p style="margin:24px 0 0;font-size:15px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
+        `, `Je afspraak is verplaatst naar ${newDateStr}`);
+
+        // Send to Customer
+        await resend.emails.send({
+            from: fromEmail,
+            to: [data.email],
+            subject: `Afspraak verplaatst naar: ${newDateStr} om ${newTimeStr}`,
+            html,
+        });
+
+        // Send internal copy to Admin
+        await resend.emails.send({
+            from: fromEmail,
+            to: [fromAddress],
+            subject: `🔄 Afspraak verplaatst: ${data.customerName}`,
+            html: emailLayout(`
+                <h2 style="margin:0 0 8px;font-size:20px;font-weight:700;color:#18181b;">🔄 Afspraak Gewijzigd</h2>
+                <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;"><strong>${data.customerName}</strong> heeft zijn/haar afspraak succesvol verplaatst.</p>
+                ${highlightBox(`
+                    <p style="margin:0 0 8px;font-size:14px;color:#18181b;"><strong>Van:</strong> ${oldDateStr} om ${oldTimeStr}</p>
+                    <p style="margin:0;font-size:14px;color:#18181b;"><strong>Naar:</strong> ${newDateStr} om ${newTimeStr}</p>
+                `)}
+                ${ctaButton("Bekijk in Dashboard →", `${siteUrl}/nl/admin/appointments`)}
+            `),
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error("Failed to send appointment rescheduled email:", error);
+        return { success: false, error: "Failed to send email" };
+    }
+}

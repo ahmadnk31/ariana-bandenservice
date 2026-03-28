@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { parseISO, isBefore, format } from "date-fns";
-import { sendContactEmail, sendAppointmentConfirmationEmail } from "@/lib/email";
+import { parseISO, isBefore } from "date-fns";
+import { sendNewAppointmentAdminEmail, sendAppointmentConfirmationEmail } from "@/lib/email";
 
 export async function POST(request: NextRequest) {
     try {
@@ -57,17 +57,15 @@ export async function POST(request: NextRequest) {
             }
         });
 
-        // Send email notification to admin by faking it as a Contact service
+        // Send email notification to admin using the dedicated appointment template
         try {
-            await sendContactEmail({
-                firstName: data.firstName,
-                lastName: data.lastName,
-                email: data.email,
-                phone: data.phone,
-                service: "APPOINTMENT BOOKING",
-                message: `📅 Requested Date: ${format(requestedDate, "dd/MM/yyyy HH:mm")}\n` +
-                         `🔧 Tire: ${data.tireName || "None selected"}\n\n` +
-                         `📝 Notes: ${data.notes || "No notes"}`
+            await sendNewAppointmentAdminEmail({
+                customerName: `${data.firstName} ${data.lastName}`,
+                customerEmail: data.email,
+                customerPhone: data.phone,
+                tireName: data.tireName || null,
+                date: requestedDate,
+                notes: data.notes || null
             });
 
             // Send confirmation email to the customer with management link
