@@ -168,7 +168,11 @@
             "googleTrusted": "Verificato Google",
             "viewAll": "Vedi tutte le recensioni su Google",
             "postedOnGoogle": "Pubblicato su Google"
-        }
+        },
+        "topBrandsTitle": "Marchi Principali",
+        "topBrandsSubtitle": "Offriamo pneumatici dei produttori più affidabili al mondo.",
+        "topSizesTitle": "Misure Popolari",
+        "topSizesSubtitle": "Trova pneumatici nelle misure più popolari — clicca per cercare."
     },
     "Cart": {
         "title": "Carrello",

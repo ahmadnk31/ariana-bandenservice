@@ -169,7 +169,11 @@
             "googleTrusted": "Google Güvenilir",
             "viewAll": "Google'daki tüm yorumları görüntüle",
             "postedOnGoogle": "Google'da yayınlandı"
-        }
+        },
+        "topBrandsTitle": "En İyi Markalar",
+        "topBrandsSubtitle": "Dünyanın en güvenilir üreticilerinden lastik sunuyoruz.",
+        "topSizesTitle": "Popüler Ebatlar",
+        "topSizesSubtitle": "En popüler ebatlarda lastik bulun — aramak için tıklayın."
     },
     "Cart": {
         "title": "Alışveriş Sepeti",

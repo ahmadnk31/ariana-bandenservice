@@ -169,7 +169,11 @@
             "googleTrusted": "Google Approuvé",
             "viewAll": "Voir tous les avis sur Google",
             "postedOnGoogle": "Publié sur Google"
-        }
+        },
+        "topBrandsTitle": "Marques Populaires",
+        "topBrandsSubtitle": "Nous proposons des pneus des fabricants les plus fiables au monde.",
+        "topSizesTitle": "Tailles Populaires",
+        "topSizesSubtitle": "Trouvez des pneus dans les tailles les plus populaires — cliquez pour rechercher."
     },
     "Cart": {
         "title": "Panier",

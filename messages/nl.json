@@ -169,7 +169,11 @@
             "googleTrusted": "Google Trusted",
             "viewAll": "Bekijk alle reviews op Google",
             "postedOnGoogle": "Gepost op Google"
-        }
+        },
+        "topBrandsTitle": "Top Merken",
+        "topBrandsSubtitle": "Wij leveren banden van de meest vertrouwde fabrikanten ter wereld.",
+        "topSizesTitle": "Populaire Maten",
+        "topSizesSubtitle": "Vind banden in de meest populaire maten — klik om te zoeken."
     },
     "Cart": {
         "title": "Winkelwagen",

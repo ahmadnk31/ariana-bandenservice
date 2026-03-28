@@ -169,7 +169,11 @@
             "googleTrusted": "Довіра Google",
             "viewAll": "Переглянути всі відгуки в Google",
             "postedOnGoogle": "Опубліковано в Google"
-        }
+        },
+        "topBrandsTitle": "Провідні Бренди",
+        "topBrandsSubtitle": "Ми пропонуємо шини від найнадійніших виробників світу.",
+        "topSizesTitle": "Популярні Розміри",
+        "topSizesSubtitle": "Знайдіть шини найпопулярніших розмірів — натисніть для пошуку."
     },
     "Cart": {
         "title": "Кошик",

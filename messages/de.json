@@ -170,7 +170,11 @@
             "googleTrusted": "Google Verifiziert",
             "viewAll": "Alle Bewertungen auf Google anzeigen",
             "postedOnGoogle": "Auf Google veröffentlicht"
-        }
+        },
+        "topBrandsTitle": "Top-Marken",
+        "topBrandsSubtitle": "Wir führen Reifen der weltweit vertrauenswürdigsten Hersteller.",
+        "topSizesTitle": "Beliebte Größen",
+        "topSizesSubtitle": "Finden Sie Reifen in den beliebtesten Größen — klicken Sie zum Suchen."
     },
     "Cart": {
         "title": "Warenkorb",

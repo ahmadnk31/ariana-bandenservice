@@ -169,7 +169,11 @@
             "googleTrusted": "Zaufane przez Google",
             "viewAll": "Zobacz wszystkie opinie w Google",
             "postedOnGoogle": "Opublikowano w Google"
-        }
+        },
+        "topBrandsTitle": "Najlepsze Marki",
+        "topBrandsSubtitle": "Oferujemy opony od najbardziej zaufanych producentów na świecie.",
+        "topSizesTitle": "Popularne Rozmiary",
+        "topSizesSubtitle": "Znajdź opony w najpopularniejszych rozmiarach — kliknij, aby wyszukać."
     },
     "Cart": {
         "title": "Koszyk",
