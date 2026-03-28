@@ -8,6 +8,7 @@ import { useCart } from './CartContext';
 import Price from './Price';
 import { ShoppingCart, Flame } from 'lucide-react';
 import StockRequestModal from "./StockRequestModal";
+import TireLabel from "./TireLabel";
 
 interface TireImage {
     id: string;
@@ -32,6 +33,10 @@ interface TireCardProps {
     stock?: number;
     inStock?: boolean;
     description?: string | null;
+    efficiency?: string | null;
+    grip?: string | null;
+    noise?: string | null;
+    noiseDb?: number | null;
 }
 
 export default function TireCard({
@@ -49,7 +54,11 @@ export default function TireCard({
     speedRating,
     stock = 0,
     inStock = true,
-    description
+    description,
+    efficiency,
+    grip,
+    noise,
+    noiseDb
 }: TireCardProps) {
     const t = useTranslations('Tires');
     const { addToCart } = useCart();
@@ -349,6 +358,19 @@ export default function TireCard({
 
             {/* Size */}
             <p className="text-xs text-muted-foreground mb-4">{t('size')}: {size}</p>
+
+            {/* EU Label */}
+            {(efficiency || grip || noise || noiseDb) && (
+                <div className="mb-4">
+                    <TireLabel 
+                        efficiency={efficiency} 
+                        grip={grip} 
+                        noise={noise} 
+                        noiseDb={noiseDb} 
+                        size="sm" 
+                    />
+                </div>
+            )}
 
             {/* Features */}
             <ul className="text-xs text-muted-foreground mb-4 space-y-1 flex-1">

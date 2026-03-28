@@ -32,6 +32,10 @@ interface Tire {
     rimSize?: number | null;
     loadIndex?: string | null;
     speedRating?: string | null;
+    efficiency?: string | null;
+    grip?: string | null;
+    noise?: string | null;
+    noiseDb?: number | null;
 }
 
 interface FilterState {

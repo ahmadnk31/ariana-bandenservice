@@ -31,6 +31,10 @@ export default async function TiresPage() {
         stock: tire.stock,
         inStock: tire.inStock,
         images: tire.images,
+        efficiency: tire.efficiency,
+        grip: tire.grip,
+        noise: tire.noise,
+        noiseDb: tire.noiseDb,
     }));
 
     return (

@@ -41,6 +41,10 @@ interface TireData {
     inStock: boolean;
     features: string[];
     images: UploadedImage[];
+    efficiency?: string | null;
+    grip?: string | null;
+    noise?: string | null;
+    noiseDb?: number | null;
 }
 
 export default function EditTirePage() {
@@ -72,6 +76,10 @@ export default function EditTirePage() {
         stock: "0",
         inStock: true,
         features: [""],
+        efficiency: "",
+        grip: "",
+        noise: "",
+        noiseDb: "",
     });
 
     useEffect(() => {
@@ -99,6 +107,10 @@ export default function EditTirePage() {
                     stock: data.stock.toString(),
                     inStock: data.inStock,
                     features: data.features.length > 0 ? data.features : [""],
+                    efficiency: data.efficiency || "",
+                    grip: data.grip || "",
+                    noise: data.noise || "",
+                    noiseDb: data.noiseDb?.toString() || "",
                 });
                 setImages(data.images);
             } catch {
@@ -149,6 +161,10 @@ export default function EditTirePage() {
                     aspectRatio: formData.aspectRatio ? parseInt(formData.aspectRatio) : null,
                     rimSize: formData.rimSize ? parseInt(formData.rimSize) : null,
                     stock: parseInt(formData.stock) || 0,
+                    efficiency: formData.efficiency || null,
+                    grip: formData.grip || null,
+                    noise: formData.noise || null,
+                    noiseDb: formData.noiseDb ? parseInt(formData.noiseDb) : null,
                     features: formData.features.filter((f) => f.trim() !== ""),
                     images,
                 }),
@@ -438,6 +454,78 @@ export default function EditTirePage() {
                                 onChange={(e) => setFormData((prev) => ({ ...prev, dot: e.target.value }))}
                                 className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                                 placeholder="2324"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                {/* EU Labeling */}
+                <div className="bg-background rounded-lg border border-muted p-6 space-y-4">
+                    <h2 className="font-bold text-lg mb-4">EU Tire Label (Optional)</h2>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div>
+                            <label htmlFor="efficiency" className="block text-sm font-medium mb-2">
+                                Fuel Efficiency
+                            </label>
+                            <select
+                                id="efficiency"
+                                value={formData.efficiency}
+                                onChange={(e) => setFormData((prev) => ({ ...prev, efficiency: e.target.value }))}
+                                className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                            >
+                                <option value="">Select Grade</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="grip" className="block text-sm font-medium mb-2">
+                                Wet Grip
+                            </label>
+                            <select
+                                id="grip"
+                                value={formData.grip}
+                                onChange={(e) => setFormData((prev) => ({ ...prev, grip: e.target.value }))}
+                                className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                            >
+                                <option value="">Select Grade</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="noise" className="block text-sm font-medium mb-2">
+                                Noise Level
+                            </label>
+                            <select
+                                id="noise"
+                                value={formData.noise}
+                                onChange={(e) => setFormData((prev) => ({ ...prev, noise: e.target.value }))}
+                                className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                            >
+                                <option value="">Select Level</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="noiseDb" className="block text-sm font-medium mb-2">
+                                Noise (dB)
+                            </label>
+                            <input
+                                type="number"
+                                id="noiseDb"
+                                value={formData.noiseDb}
+                                onChange={(e) => setFormData((prev) => ({ ...prev, noiseDb: e.target.value }))}
+                                className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                placeholder="e.g. 71"
                             />
                         </div>
                     </div>

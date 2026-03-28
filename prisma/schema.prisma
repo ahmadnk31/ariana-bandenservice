@@ -38,6 +38,12 @@ model Tire {
   stock   Int     @default(0)
   inStock Boolean @default(true)
 
+  // EU Tire Labeling
+  efficiency  String? // Fuel efficiency (A-E)
+  grip        String? // Wet grip (A-E)
+  noise       String? // Noise level (A-C)
+  noiseDb     Int?    // Noise level in dB
+
   images        TireImage[]
   orderItems    OrderItem[]
   stockRequests StockRequest[]

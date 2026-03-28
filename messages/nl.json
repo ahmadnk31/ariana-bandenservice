@@ -110,7 +110,11 @@
         "keyFeatures": "Belangrijkste kenmerken",
         "seeMore": "Meer lezen",
         "seeLess": "Minder lezen",
-        "makeAppointment": "Maak een afspraak"
+        "makeAppointment": "Maak een afspraak",
+        "efficiency": "Brandstofefficiëntie",
+        "grip": "Grip op nat wegdek",
+        "noise": "Geluidsniveau",
+        "noiseDb": "Geluid (dB)"
     },
     "Contact": {
         "title": "Neem Contact Op",

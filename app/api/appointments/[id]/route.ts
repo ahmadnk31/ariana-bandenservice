@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { parseISO, isBefore } from "date-fns";
-import { sendAppointmentCancelledEmail, sendAppointmentRescheduledEmail } from "@/lib/email";
+import { sendAppointmentCancelledEmail, sendAppointmentRescheduledEmail, sendAppointmentStatusUpdateEmail } from "@/lib/email";
 
 export async function DELETE(
     request: NextRequest,
@@ -17,10 +17,9 @@ export async function DELETE(
             return NextResponse.json({ error: "Appointment not found" }, { status: 404 });
         }
         
-        // We set status to cancelled instead of hard deleting
-        await prisma.appointment.update({
-            where: { id },
-            data: { status: "cancelled" }
+        // Hard delete for admin cleanup
+        await prisma.appointment.delete({
+            where: { id }
         });
 
         // Send email to Customer & Admin
@@ -29,7 +28,7 @@ export async function DELETE(
                 email: existing.email,
                 customerName: `${existing.firstName} ${existing.lastName}`,
                 date: existing.date,
-                cancelledBy: "customer"
+                cancelledBy: "admin"
             });
         } catch (emailError) {
             console.error("Failed to send cancellation email:", emailError);
@@ -116,5 +115,43 @@ export async function PUT(
     } catch (error) {
         console.error("Failed to reschedule appointment:", error);
         return NextResponse.json({ error: "Failed to reschedule appointment" }, { status: 500 });
+    }
+}
+
+export async function PATCH(
+    request: NextRequest,
+    { params }: { params: Promise<{ id: string }> }
+) {
+    try {
+        const { id } = await params;
+        const { status } = await request.json();
+
+        if (!["pending", "confirmed", "cancelled"].includes(status)) {
+            return NextResponse.json({ error: "Invalid status" }, { status: 400 });
+        }
+
+        const appointment = await prisma.appointment.update({
+            where: { id },
+            data: { status }
+        });
+
+        // Send email if confirmed or cancelled by admin
+        if (status === "confirmed" || status === "cancelled") {
+            try {
+                await sendAppointmentStatusUpdateEmail({
+                    email: appointment.email,
+                    customerName: `${appointment.firstName} ${appointment.lastName}`,
+                    status: status as any,
+                    date: appointment.date
+                });
+            } catch (emailError) {
+                console.error("Failed to send status update email:", emailError);
+            }
+        }
+
+        return NextResponse.json({ success: true, appointment });
+    } catch (error) {
+        console.error("Failed to update appointment status:", error);
+        return NextResponse.json({ error: "Failed to update status" }, { status: 500 });
     }
 }

@@ -740,3 +740,59 @@ export async function sendAppointmentReminderEmail(data: {
         return { success: false, error: "Failed to send email" };
     }
 }
+
+export async function sendAppointmentStatusUpdateEmail(data: {
+    email: string;
+    customerName: string;
+    status: "confirmed" | "cancelled" | "pending";
+    date: Date;
+}): Promise<{ success: boolean; error?: string }> {
+    try {
+        const dateStr = data.date.toLocaleDateString("nl-BE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const timeStr = data.date.toLocaleTimeString("nl-BE", { hour: '2-digit', minute: '2-digit' });
+
+        const statusLabelMap = {
+            confirmed: "Bevestigd ✅",
+            cancelled: "Geannuleerd ❌",
+            pending: "In Afwachting ⏳"
+        };
+
+        const statusColorMap = {
+            confirmed: "#16a34a",
+            cancelled: "#dc2626",
+            pending: "#ca8a04"
+        };
+
+        const html = emailLayout(`
+            <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">Update: Jouw Afspraak status</h2>
+            <p style="margin:0 0 4px;font-size:15px;color:#3f3f46;line-height:1.6;">Beste ${data.customerName},</p>
+            <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">De status van je afspraak op <strong>${dateStr} om ${timeStr}</strong> is bijgewerkt:</p>
+            
+            ${highlightBox(`
+              <p style="margin:0;font-size:18px;font-weight:700;color:${statusColorMap[data.status]};text-align:center;">
+                ${statusLabelMap[data.status]}
+              </p>
+            `)}
+
+            ${data.status === 'confirmed' ? `
+                <p style="margin:20px 0 0;font-size:15px;color:#3f3f46;line-height:1.6;">We kijken ernaar uit om je te zien in onze garage!</p>
+            ` : data.status === 'cancelled' ? `
+                <p style="margin:20px 0 0;font-size:15px;color:#3f3f46;line-height:1.6;">Mocht dit een vergissing zijn, neem dan contact met ons op of maak een nieuwe afspraak via de website.</p>
+            ` : ''}
+            
+            <p style="margin:24px 0 0;font-size:15px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
+        `, `Status update voor je afspraak: ${statusLabelMap[data.status]}`);
+
+        await resend.emails.send({
+            from: fromEmail,
+            to: [data.email],
+            subject: `Update: Afspraak ${statusLabelMap[data.status]}`,
+            html,
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error("Failed to send appointment status update email:", error);
+        return { success: false, error: "Failed to send email" };
+    }
+}
