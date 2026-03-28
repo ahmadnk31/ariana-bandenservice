@@ -503,7 +503,7 @@ export async function sendAppointmentConfirmationEmail(data: {
     tireName: string | null;
 }): Promise<{ success: boolean; error?: string }> {
     try {
-        const manageUrl = `${siteUrl}/appointment/manage/${data.appointmentId}`;
+        const manageUrl = `${siteUrl}/nl/appointment/manage/${data.appointmentId}`;
         
         const dateStr = data.date.toLocaleDateString("nl-BE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         const timeStr = data.date.toLocaleTimeString("nl-BE", { hour: '2-digit', minute: '2-digit' });
@@ -605,7 +605,7 @@ export async function sendAppointmentCancelledEmail(data: {
             <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">De afspraak gepland op <strong>${dateStr} om ${timeStr}</strong> is geannuleerd.</p>
             
             <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">Mocht dit een vergissing zijn, of als je een nieuwe afspraak wilt inboeken, kun je dat op ieder moment doen via onze website.</p>
-            ${ctaButton("Nieuwe Afspraak Maken →", `${siteUrl}/appointment`)}
+            ${ctaButton("Nieuwe Afspraak Maken →", `${siteUrl}/nl/appointment`)}
             
             <p style="margin:24px 0 0;font-size:15px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
         `, `Je afspraak is geannuleerd`);
@@ -651,7 +651,7 @@ export async function sendAppointmentRescheduledEmail(data: {
         const newDateStr = data.newDate.toLocaleDateString("nl-BE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         const newTimeStr = data.newDate.toLocaleTimeString("nl-BE", { hour: '2-digit', minute: '2-digit' });
         
-        const manageUrl = `${siteUrl}/appointment/manage/${data.appointmentId}`;
+        const manageUrl = `${siteUrl}/nl/appointment/manage/${data.appointmentId}`;
 
         const html = emailLayout(`
             <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">🔄 Afspraak Gewijzigd</h2>
@@ -695,6 +695,48 @@ export async function sendAppointmentRescheduledEmail(data: {
         return { success: true };
     } catch (error) {
         console.error("Failed to send appointment rescheduled email:", error);
+        return { success: false, error: "Failed to send email" };
+    }
+}
+
+export async function sendAppointmentReminderEmail(data: {
+    email: string;
+    customerName: string;
+    date: Date;
+    appointmentId: string;
+}): Promise<{ success: boolean; error?: string }> {
+    try {
+        const dateStr = data.date.toLocaleDateString("nl-BE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const timeStr = data.date.toLocaleTimeString("nl-BE", { hour: '2-digit', minute: '2-digit' });
+        
+        const manageUrl = `${siteUrl}/nl/appointment/manage/${data.appointmentId}`;
+
+        const html = emailLayout(`
+            <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">⏰ Herinnering: Je afspraak is morgen!</h2>
+            <p style="margin:0 0 4px;font-size:15px;color:#3f3f46;line-height:1.6;">Beste ${data.customerName},</p>
+            <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">Dit is een automatische herinnering. Wij verwachten je morgen, <strong>${dateStr} om ${timeStr}</strong>, in onze garage.</p>
+            
+            ${highlightBox(`
+              <p style="margin:0 0 8px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Jouw Afspraak</p>
+              <p style="margin:0;font-size:16px;color:#18181b;font-weight:600;">Tot morgen om ${timeStr}!</p>
+            `)}
+
+            <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">Mocht je onverhoopt toch niet kunnen, dan kun je de afspraak altijd nog wijzigen of annuleren via de onderstaande knop.</p>
+            ${ctaButton("Afspraak Beheren →", manageUrl)}
+
+            <p style="margin:24px 0 0;font-size:15px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
+        `, `Herinnering: Je afspraak is morgen om ${timeStr}`);
+
+        await resend.emails.send({
+            from: fromEmail,
+            to: [data.email],
+            subject: `⏰ Herinnering: Je afspraak is morgen om ${timeStr}`,
+            html,
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error("Failed to send appointment reminder email:", error);
         return { success: false, error: "Failed to send email" };
     }
 }
