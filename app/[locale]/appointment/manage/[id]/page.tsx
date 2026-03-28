@@ -10,9 +10,26 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string, id: string }> }): Promise<Metadata> {
     const { locale, id } = await params;
     
+    const title = "Beheer Je Afspraak | Gent Bandenservice";
+    const description = "Bekijk, verplaats of annuleer je gemaakte afspraak bij Gent Bandenservice.";
+
     return {
-        title: "Manage Appointment",
-        description: "Review, reschedule, or cancel your appointment.",
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            url: `/${locale}/appointment/manage/${id}`,
+            siteName: "Gent Bandenservice",
+            type: "website",
+            images: [{ url: "/gentbandenservice/android-chrome-512x512.png", width: 512, height: 512, alt: "Gent Bandenservice Logo" }],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: ["/gentbandenservice/android-chrome-512x512.png"],
+        },
         alternates: {
             canonical: `/${locale}/appointment/manage/${id}`,
             languages: getAlternateLanguages(`/appointment/manage/${id}`),

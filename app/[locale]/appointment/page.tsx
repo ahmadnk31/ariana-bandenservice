@@ -8,9 +8,26 @@ import { getTranslations } from 'next-intl/server';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     
+    const title = "Maak een Afspraak | Gent Bandenservice";
+    const description = "Plan eenvoudig je bandenwissel of service bij Gent Bandenservice. Kies je banden en reserveer direct een vrij tijdslot.";
+
     return {
-        title: "Book an Appointment",
-        description: "Book an appointment with Gent bandenservice. Select a tire and pick an available timeslot.",
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            url: `/${locale}/appointment`,
+            siteName: "Gent Bandenservice",
+            type: "website",
+            images: [{ url: "/gentbandenservice/android-chrome-512x512.png", width: 512, height: 512, alt: "Gent Bandenservice Logo" }],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: ["/gentbandenservice/android-chrome-512x512.png"],
+        },
         alternates: {
             canonical: `/${locale}/appointment`,
             languages: getAlternateLanguages('/appointment'),

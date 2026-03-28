@@ -189,7 +189,7 @@ model BlogPost {
   readingTime Int @default(0)
 
   // View tracking
-  viewCount Int @default(0)
+  viewCount    Int       @default(0)
   lastViewedAt DateTime?
 
   createdAt DateTime @default(now())
@@ -256,20 +256,21 @@ model AbandonedCheckout {
 
 // Appointment Bookings
 model Appointment {
-  id        String   @id @default(cuid())
+  id        String @id @default(cuid())
   firstName String
   lastName  String
   email     String
   phone     String
-  
-  // Optional relation to a Specific Tire
-  tireId    String?
-  tire      Tire?    @relation(fields: [tireId], references: [id], onDelete: SetNull)
-  tireName  String?  // Stored for redundancy in case tire is deleted
 
-  date      DateTime // Exact reserved time block
-  notes     String?
-  status    String   @default("pending") // pending, confirmed, cancelled
+  // Optional relation to a Specific Tire
+  tireId   String?
+  tire     Tire?   @relation(fields: [tireId], references: [id], onDelete: SetNull)
+  tireName String? // Stored for redundancy in case tire is deleted
+
+  date         DateTime // Exact reserved time block
+  notes        String?
+  status       String   @default("pending") // pending, confirmed, cancelled
+  reminderSent Boolean  @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
