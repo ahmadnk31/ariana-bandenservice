@@ -67,6 +67,10 @@ export async function POST(request: NextRequest) {
                 description: data.description || null,
                 stock: data.stock || 0,
                 inStock: data.inStock ?? true,
+                efficiency: data.efficiency || null,
+                grip: data.grip || null,
+                noise: data.noise || null,
+                noiseDb: data.noiseDb ? parseInt(data.noiseDb) : null,
                 features: JSON.stringify(data.features),
                 images: {
                     create: data.images?.map((img: { url: string; key: string }, index: number) => ({

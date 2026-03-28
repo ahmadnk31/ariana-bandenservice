@@ -38,6 +38,10 @@ export interface TireRow {
     stock: number
     inStock: boolean
     images: TireImage[]
+    efficiency?: string | null
+    grip?: string | null
+    noise?: string | null
+    noiseDb?: number | null
 }
 
 const seasonLabels: Record<string, string> = {
@@ -221,6 +225,42 @@ export const columns: ColumnDef<TireRow>[] = [
             )
         },
         meta: { className: "hidden lg:table-cell" },
+    },
+    {
+        accessorKey: "efficiency",
+        header: "Eff.",
+        cell: ({ row }) => (
+            <span className={`inline-block w-6 h-6 leading-6 text-center rounded text-[10px] font-black text-white ${row.getValue("efficiency") ? "bg-primary" : "bg-muted text-muted-foreground"}`}>
+                {row.getValue("efficiency") || "—"}
+            </span>
+        ),
+        meta: { className: "hidden xl:table-cell" },
+    },
+    {
+        accessorKey: "grip",
+        header: "Grip",
+        cell: ({ row }) => (
+            <span className={`inline-block w-6 h-6 leading-6 text-center rounded text-[10px] font-black text-white ${row.getValue("grip") ? "bg-blue-600" : "bg-muted text-muted-foreground"}`}>
+                {row.getValue("grip") || "—"}
+            </span>
+        ),
+        meta: { className: "hidden xl:table-cell" },
+    },
+    {
+        id: "noise_info",
+        header: "Noise",
+        cell: ({ row }) => {
+            const noise = row.original.noise
+            const noiseDb = row.original.noiseDb
+            if (!noise && !noiseDb) return <span className="text-muted-foreground/30">—</span>
+            return (
+                <div className="flex flex-col text-[10px] leading-tight">
+                    {noise && <span className="font-bold text-green-600">{noise}</span>}
+                    {noiseDb && <span className="text-muted-foreground">{noiseDb}dB</span>}
+                </div>
+            )
+        },
+        meta: { className: "hidden 2xl:table-cell" },
     },
     {
         accessorKey: "inStock",

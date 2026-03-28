@@ -12,6 +12,7 @@ import ExpandableDescription from "@/app/components/ExpandableDescription";
 import SocialProofBadge from "@/app/components/SocialProofBadge";
 import Price from "@/app/components/Price";
 import { getAlternateLanguages } from "@/lib/utils";
+import TireLabel from "@/app/components/TireLabel";
 
 interface ProductPageProps {
     params: Promise<{ slug: string; locale: string }>;
@@ -107,7 +108,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
         take: 4,
         include: { images: { orderBy: { order: "asc" }, take: 1 } },
         orderBy: {
-            // Prioritize matching brand
             brand: 'asc'
         }
     });
@@ -224,6 +224,20 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                     </span>
                                 )}
                             </div>
+
+                            {/* EU Tire Label */}
+                            {(tire.efficiency || tire.grip || tire.noise || tire.noiseDb) && (
+                                <div className="mb-6 p-4 rounded-xl bg-muted/50 border border-muted">
+                                    <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">EU Tire Label</h3>
+                                    <TireLabel 
+                                        efficiency={tire.efficiency} 
+                                        grip={tire.grip} 
+                                        noise={tire.noise} 
+                                        noiseDb={tire.noiseDb} 
+                                        size="md" 
+                                    />
+                                </div>
+                            )}
 
                             <div className="text-3xl font-bold mb-4">
                                 <Price amount={tire.price} size="xl" />

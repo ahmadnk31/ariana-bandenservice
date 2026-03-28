@@ -2,6 +2,16 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations } from 'next-intl';
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover";
 
 interface AppointmentFormProps {
     tireId?: string | null;
@@ -13,7 +23,7 @@ export default function AppointmentForm({ tireId, tireName }: AppointmentFormPro
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
-    const [selectedDate, setSelectedDate] = useState("");
+    const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
     const [slots, setSlots] = useState<string[]>([]);
     const [fetchingSlots, setFetchingSlots] = useState(false);
     
@@ -22,8 +32,7 @@ export default function AppointmentForm({ tireId, tireName }: AppointmentFormPro
         lastName: "",
         email: "",
         phone: "",
-        date: "",
-        time: "", // We combine Date and Time before submit
+        time: "",
         notes: "",
     });
 
@@ -36,7 +45,8 @@ export default function AppointmentForm({ tireId, tireName }: AppointmentFormPro
         const fetchSlots = async () => {
             setFetchingSlots(true);
             try {
-                const res = await fetch(`/api/appointments/available-slots?date=${selectedDate}`);
+                const formattedDate = format(selectedDate, "yyyy-MM-dd");
+                const res = await fetch(`/api/appointments/available-slots?date=${formattedDate}`);
                 if (res.ok) {
                     const data = await res.json();
                     setSlots(data.slots || []);
@@ -94,11 +104,10 @@ export default function AppointmentForm({ tireId, tireName }: AppointmentFormPro
                 lastName: "",
                 email: "",
                 phone: "",
-                date: "",
                 time: "",
                 notes: "",
             });
-            setSelectedDate("");
+            setSelectedDate(undefined);
         } catch (err) {
             setError(err instanceof Error ? err.message : "An error occurred");
         } finally {
@@ -114,10 +123,6 @@ export default function AppointmentForm({ tireId, tireName }: AppointmentFormPro
             </div>
         );
     }
-
-    // Determine min date (today)
-    const today = new Date();
-    const minDateStr = today.toISOString().split('T')[0];
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -181,17 +186,34 @@ export default function AppointmentForm({ tireId, tireName }: AppointmentFormPro
             <hr className="border-muted my-6" />
 
             <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                    <label htmlFor="date" className="block text-sm font-medium mb-2">{t('date')} *</label>
-                    <input
-                        type="date"
-                        id="date"
-                        min={minDateStr}
-                        value={selectedDate}
-                        onChange={(e) => setSelectedDate(e.target.value)}
-                        required
-                        className="w-full px-4 py-3 rounded-md border border-muted bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 appearance-none"
-                    />
+                <div className="flex flex-col">
+                    <label className="block text-sm font-medium mb-2">{t('date')} *</label>
+                    <Popover>
+                        <PopoverTrigger asChild>
+                            <Button
+                                type="button"
+                                variant={"outline"}
+                                className={cn(
+                                    "w-full justify-start text-left font-normal h-12 px-4 rounded-md border-muted",
+                                    !selectedDate && "text-muted-foreground"
+                                )}
+                            >
+                                <CalendarIcon className="mr-2 h-4 w-4" />
+                                {selectedDate ? format(selectedDate, "PPP") : <span>Select a date</span>}
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                            <Calendar
+                                mode="single"
+                                selected={selectedDate}
+                                onSelect={setSelectedDate}
+                                disabled={(date) =>
+                                    date < new Date(new Date().setHours(0, 0, 0, 0))
+                                }
+                                initialFocus
+                            />
+                        </PopoverContent>
+                    </Popover>
                 </div>
 
                 <div>
