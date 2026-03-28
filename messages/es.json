@@ -169,7 +169,11 @@
             "googleTrusted": "Google de confianza",
             "viewAll": "Ver todas las reseñas en Google",
             "postedOnGoogle": "Publicado en Google"
-        }
+        },
+        "topBrandsTitle": "Marcas Principales",
+        "topBrandsSubtitle": "Ofrecemos neumáticos de los fabricantes más confiables del mundo.",
+        "topSizesTitle": "Tamaños Populares",
+        "topSizesSubtitle": "Encuentra neumáticos en los tamaños más populares — haz clic para buscar."
     },
     "Cart": {
         "title": "Carrito de compras",

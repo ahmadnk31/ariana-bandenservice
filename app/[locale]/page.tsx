@@ -4,6 +4,8 @@ import Hero from "@/app/components/Hero";
 import Footer from "@/app/components/Footer";
 import TireCard from "@/app/components/TireCard";
 import ReviewsSection from "@/app/components/ReviewsSection";
+import TopBrands from "@/app/components/TopBrands";
+import TopSizes from "@/app/components/TopSizes";
 
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/src/i18n/routing';
@@ -76,6 +78,9 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Top Sizes Section */}
+        <TopSizes />
+
         {/* Features Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
@@ -104,6 +109,9 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        {/* Top Brands Section */}
+        <TopBrands />
 
         {/* Reviews Section */}
         <ReviewsSection />

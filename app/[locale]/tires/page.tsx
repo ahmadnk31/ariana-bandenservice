@@ -74,10 +74,38 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
         if (maxPrice !== null) where.price.lte = maxPrice;
     }
 
-    // Dimensions
-    if (width) where.width = width;
-    if (aspectRatio) where.aspectRatio = aspectRatio;
-    if (rimSize) where.rimSize = rimSize;
+    // Dimensions (allow fallback to the string `size` field to match unstructured data)
+    if (width || aspectRatio || rimSize) {
+        where.AND = where.AND || [];
+        
+        if (width) {
+            where.AND.push({
+                OR: [
+                    { width: width },
+                    { size: { contains: String(width), mode: "insensitive" } }
+                ]
+            });
+        }
+        
+        if (aspectRatio) {
+            where.AND.push({
+                OR: [
+                    { aspectRatio: aspectRatio },
+                    { size: { contains: String(aspectRatio), mode: "insensitive" } }
+                ]
+            });
+        }
+        
+        if (rimSize) {
+            // Also match "16" alone to be safe, sometimes "R16" is written differently
+            where.AND.push({
+                OR: [
+                    { rimSize: rimSize },
+                    { size: { contains: String(rimSize), mode: "insensitive" } }
+                ]
+            });
+        }
+    }
 
     // Specs
     if (loadIndex && loadIndex !== "all") where.loadIndex = loadIndex;

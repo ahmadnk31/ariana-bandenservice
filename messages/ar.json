@@ -168,7 +168,11 @@
             "googleTrusted": "موثوق من Google",
             "viewAll": "عرض جميع المراجعات على Google",
             "postedOnGoogle": "تم النشر على Google"
-        }
+        },
+        "topBrandsTitle": "أفضل العلامات التجارية",
+        "topBrandsSubtitle": "نوفر إطارات من أكثر الشركات المصنعة موثوقية في العالم.",
+        "topSizesTitle": "الأحجام الشائعة",
+        "topSizesSubtitle": "ابحث عن إطارات بالأحجام الأكثر شيوعًا — انقر للبحث."
     },
     "Cart": {
         "title": "سلة التسوق",
