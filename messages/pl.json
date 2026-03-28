@@ -108,7 +108,8 @@
         "popularItem": "Popularny produkt",
         "keyFeatures": "Kluczowe cechy",
         "seeMore": "Więcej",
-        "seeLess": "Mniej"
+        "seeLess": "Mniej",
+        "makeAppointment": "Umów się na wizytę"
     },
     "Contact": {
         "title": "Skontaktuj się z nami",
@@ -517,5 +518,31 @@
         },
         "lastUpdated": "Ostatnia aktualizacja",
         "lastUpdatedDate": "4 marca 2026"
+    },
+    "Appointment": {
+        "title": "Zarezerwuj wizytę",
+        "subtitle": "Wybierz oponę i dogodny termin.",
+        "formTitle": "Twoje dane",
+        "date": "Data",
+        "time": "Godzina",
+        "notes": "Dodatkowe uwagi",
+        "book": "Zarezerwuj",
+        "success": "Wizyta zarezerwowana pomyślnie!",
+        "noSlots": "Brak wolnych terminów w tym dniu.",
+        "selectDateFirst": "Najpierw wybierz datę.",
+        "manageTitle": "Zarządzaj wizytą",
+        "manageSubtitle": "Przejrzyj szczegóły, zmień termin lub anuluj rezerwację.",
+        "confirmCancel": "Czy na pewno chcesz anulować tę wizytę?",
+        "cancelSuccess": "Wizyta anulowana.",
+        "rescheduleSuccess": "Pomyślnie zmieniono termin!",
+        "cancelledStatus": "Wizyta anulowana",
+        "customerName": "Klient",
+        "tireInfo": "Opona",
+        "dateLabel": "Data",
+        "timeLabel": "Godzina",
+        "rescheduleBtn": "Zmień termin",
+        "cancelBtn": "Anuluj wizytę",
+        "confirmReschedule": "Potwierdź nowy czas",
+        "backBtn": "Wróć"
     }
 }

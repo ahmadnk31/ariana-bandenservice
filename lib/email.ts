@@ -494,3 +494,49 @@ export async function sendAbandonedCheckoutEmail(data: {
         return { success: false, error: "Failed to send email" };
     }
 }
+
+export async function sendAppointmentConfirmationEmail(data: {
+    email: string;
+    firstName: string;
+    appointmentId: string;
+    date: Date;
+    tireName: string | null;
+}): Promise<{ success: boolean; error?: string }> {
+    try {
+        const manageUrl = `${siteUrl}/appointment/manage/${data.appointmentId}`;
+        
+        const dateStr = data.date.toLocaleDateString("nl-BE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const timeStr = data.date.toLocaleTimeString("nl-BE", { hour: '2-digit', minute: '2-digit' });
+
+        const html = emailLayout(`
+            <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">Jouw Afspraak is Bevestigd! 🎉</h2>
+            <p style="margin:0 0 4px;font-size:15px;color:#3f3f46;line-height:1.6;">Beste ${data.firstName},</p>
+            <p style="margin:0 0 24px;font-size:15px;color:#3f3f46;line-height:1.6;">Bedankt voor het maken van een afspraak bij Gent bandenservice! Hier zijn de details van je afspraak:</p>
+
+            ${highlightBox(`
+              <p style="margin:0 0 8px;font-size:14px;color:#18181b;"><strong>📅 Datum:</strong> ${dateStr}</p>
+              <p style="margin:0 0 8px;font-size:14px;color:#18181b;"><strong>⏰ Tijd:</strong> ${timeStr}</p>
+              ${data.tireName ? `<p style="margin:0;font-size:14px;color:#18181b;"><strong>🛞 Band:</strong> ${data.tireName}</p>` : ''}
+            `)}
+
+            <p style="margin:0 0 8px;font-size:15px;color:#3f3f46;line-height:1.6;">Komt er iets tussen? Je kan je afspraak eenvoudig online verzetten of annuleren via de onderstaande knop:</p>
+
+            ${ctaButton("Afspraak Beheren of Annuleren →", manageUrl)}
+
+            <p style="margin:0 0 8px;font-size:14px;color:#71717a;text-align:center;">Gelieve ten minste 24 uur op voorhand te annuleren indien mogelijk.</p>
+            <p style="margin:24px 0 0;font-size:15px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
+        `, `Bevestiging van je afspraak op ${dateStr} om ${timeStr}!`);
+
+        await resend.emails.send({
+            from: fromEmail,
+            to: [data.email],
+            subject: `Bevestiging van je afspraak: ${dateStr} om ${timeStr}`,
+            html,
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error("Failed to send appointment confirmation email:", error);
+        return { success: false, error: "Failed to send email" };
+    }
+}

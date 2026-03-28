@@ -108,7 +108,8 @@
         "popularItem": "محصول محبوب",
         "keyFeatures": "ویژگی‌های کلیدی",
         "seeMore": "بیشتر ببینید",
-        "seeLess": "کمتر ببینید"
+        "seeLess": "کمتر ببینید",
+        "makeAppointment": "تعیین وقت قبلی"
     },
     "Contact": {
         "title": "تماس با ما",
@@ -516,5 +517,31 @@
         },
         "lastUpdated": "آخرین به‌روزرسانی",
         "lastUpdatedDate": "۴ مارس ۲۰۲۶"
+    },
+    "Appointment": {
+        "title": "رزرو وقت",
+        "subtitle": "یک لاستیک و زمان آزاد انتخاب کنید.",
+        "formTitle": "جزئیات شما",
+        "date": "تاریخ",
+        "time": "زمان",
+        "notes": "یادداشت‌های اضافی",
+        "book": "رزرو وقت",
+        "success": "وقت با موفقیت رزرو شد!",
+        "noSlots": "هیچ زمان آزادی در این تاریخ وجود ندارد.",
+        "selectDateFirst": "لطفاً ابتدا تاریخ را انتخاب کنید.",
+        "manageTitle": "مدیریت وقت",
+        "manageSubtitle": "جزئیات خود را مرور کنید، تغییر دهید یا لغو کنید.",
+        "confirmCancel": "آیا برای لغو این وقت مطمئن هستید؟",
+        "cancelSuccess": "وقت لغو شد.",
+        "rescheduleSuccess": "وقت با موفقیت تغییر کرد!",
+        "cancelledStatus": "وقت لغو شد",
+        "customerName": "مشتری",
+        "tireInfo": "لاستیک",
+        "dateLabel": "تاریخ",
+        "timeLabel": "زمان",
+        "rescheduleBtn": "تغییر زمان",
+        "cancelBtn": "لغو وقت",
+        "confirmReschedule": "تأیید زمان جدید",
+        "backBtn": "بازگشت"
     }
 }

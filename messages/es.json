@@ -108,7 +108,8 @@
         "popularItem": "Artículo popular",
         "keyFeatures": "Características principales",
         "seeMore": "Ver más",
-        "seeLess": "Ver menos"
+        "seeLess": "Ver menos",
+        "makeAppointment": "Hacer una cita"
     },
     "Contact": {
         "title": "Contáctanos",
@@ -521,5 +522,31 @@
         },
         "lastUpdated": "Última actualización",
         "lastUpdatedDate": "4 de marzo de 2026"
+    },
+    "Appointment": {
+        "title": "Reservar una cita",
+        "subtitle": "Seleccione un neumático y un horario disponible.",
+        "formTitle": "Tus datos",
+        "date": "Fecha",
+        "time": "Hora",
+        "notes": "Notas adicionales",
+        "book": "Reservar cita",
+        "success": "¡Cita reservada con éxito!",
+        "noSlots": "No hay horarios disponibles para esta fecha.",
+        "selectDateFirst": "Por favor seleccione una fecha primero.",
+        "manageTitle": "Gestionar cita",
+        "manageSubtitle": "Revise los detalles, reprograme o cancele su cita.",
+        "confirmCancel": "¿Seguro que quieres cancelar?",
+        "cancelSuccess": "Cita cancelada.",
+        "rescheduleSuccess": "¡Cita reprogramada con éxito!",
+        "cancelledStatus": "Cita cancelada",
+        "customerName": "Cliente",
+        "tireInfo": "Neumático",
+        "dateLabel": "Fecha",
+        "timeLabel": "Hora",
+        "rescheduleBtn": "Reprogramar",
+        "cancelBtn": "Cancelar Cita",
+        "confirmReschedule": "Confirmar nueva hora",
+        "backBtn": "Atrás"
     }
 }

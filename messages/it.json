@@ -107,7 +107,8 @@
         "popularItem": "Articolo popolare",
         "keyFeatures": "Caratteristiche principali",
         "seeMore": "Vedi di più",
-        "seeLess": "Vedi meno"
+        "seeLess": "Vedi meno",
+        "makeAppointment": "Prendi un appuntamento"
     },
     "Contact": {
         "title": "Contattaci",
@@ -520,5 +521,31 @@
         },
         "lastUpdated": "Ultimo aggiornamento",
         "lastUpdatedDate": "4 marzo 2026"
+    },
+    "Appointment": {
+        "title": "Prenota un appuntamento",
+        "subtitle": "Seleziona uno pneumatico e un orario disponibile.",
+        "formTitle": "I tuoi dettagli",
+        "date": "Data",
+        "time": "Ora",
+        "notes": "Note aggiuntive",
+        "book": "Prenota",
+        "success": "Appuntamento prenotato con successo!",
+        "noSlots": "Nessun orario disponibile per questa data.",
+        "selectDateFirst": "Seleziona prima una data.",
+        "manageTitle": "Gestisci Appuntamento",
+        "manageSubtitle": "Controlla, riprogramma o cancella il tuo appuntamento.",
+        "confirmCancel": "Sei sicuro di voler annullare?",
+        "cancelSuccess": "Appuntamento annullato.",
+        "rescheduleSuccess": "Appuntamento riprogrammato!",
+        "cancelledStatus": "Appuntamento Annullato",
+        "customerName": "Cliente",
+        "tireInfo": "Pneumatico",
+        "dateLabel": "Data",
+        "timeLabel": "Ora",
+        "rescheduleBtn": "Riprogramma",
+        "cancelBtn": "Annulla Appuntamento",
+        "confirmReschedule": "Conferma nuovo orario",
+        "backBtn": "Indietro"
     }
 }

@@ -109,7 +109,8 @@
         "popularItem": "Populair item",
         "keyFeatures": "Belangrijkste kenmerken",
         "seeMore": "Meer lezen",
-        "seeLess": "Minder lezen"
+        "seeLess": "Minder lezen",
+        "makeAppointment": "Maak een afspraak"
     },
     "Contact": {
         "title": "Neem Contact Op",
@@ -521,5 +522,31 @@
         },
         "lastUpdated": "Laatst bijgewerkt",
         "lastUpdatedDate": "4 maart 2026"
+    },
+    "Appointment": {
+        "title": "Maak een afspraak",
+        "subtitle": "Selecteer een band en kies een beschikbaar tijdslot.",
+        "formTitle": "Uw gegevens",
+        "date": "Datum",
+        "time": "Tijd",
+        "notes": "Extra opmerkingen",
+        "book": "Afspraak maken",
+        "success": "Afspraak succesvol geboekt!",
+        "noSlots": "Geen beschikbare tijden voor deze datum.",
+        "selectDateFirst": "Selecteer eerst een datum aub.",
+        "manageTitle": "Afspraak Beheren",
+        "manageSubtitle": "Bekijk je afspraak, verplaats de tijd of annuleer je boeking.",
+        "confirmCancel": "Weet je zeker dat je deze afspraak wilt annuleren?",
+        "cancelSuccess": "Afspraak is succesvol geannuleerd.",
+        "rescheduleSuccess": "Afspraak succesvol verplaatst!",
+        "cancelledStatus": "Afspraak Geannuleerd",
+        "customerName": "Klant",
+        "tireInfo": "Band",
+        "dateLabel": "Datum",
+        "timeLabel": "Tijd",
+        "rescheduleBtn": "Afspraak Verplaatsen",
+        "cancelBtn": "Afspraak Annuleren",
+        "confirmReschedule": "Nieuwe Tijd Bevestigen",
+        "backBtn": "Terug"
     }
 }

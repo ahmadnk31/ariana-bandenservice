@@ -108,7 +108,8 @@
         "popularItem": "Популярний товар",
         "keyFeatures": "Ключові характеристики",
         "seeMore": "Показати більше",
-        "seeLess": "Показати менше"
+        "seeLess": "Показати менше",
+        "makeAppointment": "Записатися на прийом"
     },
     "Contact": {
         "title": "Зв’яжіться з нами",
@@ -512,5 +513,31 @@
         },
         "lastUpdated": "Останнє оновлення",
         "lastUpdatedDate": "4 березня 2026"
+    },
+    "Appointment": {
+        "title": "Забронювати зустріч",
+        "subtitle": "Виберіть шину та вільний час.",
+        "formTitle": "Ваші дані",
+        "date": "Дата",
+        "time": "Час",
+        "notes": "Додаткові нотатки",
+        "book": "Забронювати",
+        "success": "Зустріч успішно заброньована!",
+        "noSlots": "Немає вільних місць на цю дату.",
+        "selectDateFirst": "Спочатку виберіть дату.",
+        "manageTitle": "Управління прийомом",
+        "manageSubtitle": "Перевірте деталі, змініть час або скасуйте запис.",
+        "confirmCancel": "Ви впевнені, що хочете скасувати?",
+        "cancelSuccess": "Прийом скасовано.",
+        "rescheduleSuccess": "Успішно перенесено!",
+        "cancelledStatus": "Прийом скасовано",
+        "customerName": "Клієнт",
+        "tireInfo": "Шина",
+        "dateLabel": "Дата",
+        "timeLabel": "Час",
+        "rescheduleBtn": "Змінити час",
+        "cancelBtn": "Скасувати",
+        "confirmReschedule": "Підтвердити",
+        "backBtn": "Назад"
     }
 }
