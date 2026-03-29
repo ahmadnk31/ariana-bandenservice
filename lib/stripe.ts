@@ -18,6 +18,7 @@ export interface CartItem {
     price: number;
     quantity: number;
     image?: string;
+    withMounting?: boolean;
 }
 
 export interface ShippingOption {
@@ -54,17 +55,21 @@ export async function createCheckoutSession({
 }) {
     const stripe = getStripe();
 
-    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = cartItems.map(item => ({
-        price_data: {
-            currency: 'eur',
-            product_data: {
-                name: item.name,
-                images: item.image ? [item.image] : [],
+    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = cartItems.map(item => {
+        const mountingFee = item.withMounting ? 19.85 : 0;
+        return {
+            price_data: {
+                currency: 'eur',
+                product_data: {
+                    name: item.withMounting ? `${item.name} (+ ${item.withMounting ? 'Montage' : ''})` : item.name,
+                    images: item.image ? [item.image] : [],
+                    description: item.withMounting ? 'Inclusief montage en balanceren (€19.85 per band)' : undefined,
+                },
+                unit_amount: Math.round((item.price + mountingFee) * 100), // Stripe uses cents
             },
-            unit_amount: Math.round(item.price * 100), // Stripe uses cents
-        },
-        quantity: item.quantity,
-    }));
+            quantity: item.quantity,
+        };
+    });
 
     // Add shipping as a line item
     lineItems.push({
@@ -90,6 +95,7 @@ export async function createCheckoutSession({
                 id: item.id,
                 quantity: item.quantity,
                 price: item.price,
+                withMounting: item.withMounting || false,
             }))),
             abandonedCheckoutId: abandonedCheckoutId || '',
             shippingCarrier: shippingOption.carrier,

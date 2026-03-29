@@ -6,6 +6,7 @@ import { X, Minus, Plus, ShoppingCart, Trash2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import SeasonIcon from './SeasonIcon';
 
 export default function CartDrawer() {
     const {
@@ -15,10 +16,12 @@ export default function CartDrawer() {
         removeFromCart,
         incrementQuantity,
         decrementQuantity,
+        toggleMounting,
         subtotal,
         cartCount
     } = useCart();
     const t = useTranslations('Cart');
+    const tTires = useTranslations('Tires');
 
     if (!isOpen) return null;
 
@@ -95,8 +98,14 @@ export default function CartDrawer() {
                                             >
                                                 {item.name}
                                             </Link>
-                                            <p className="text-xs text-muted-foreground mt-0.5">
-                                                {item.brand} • {item.size}
+                                            <p className="text-xs text-muted-foreground mt-0.5 flex flex-wrap items-center gap-1.5 uppercase tracking-wide">
+                                                <div className="flex items-center gap-1 bg-muted px-1.5 py-0.5 rounded">
+                                                    <SeasonIcon season={item.season} size="md" />
+                                                    <span className="text-[10px] font-bold">
+                                                        {item.season === 'summer' ? 'Zomer' : item.season === 'winter' ? 'Winter' : '4-Seizoen'}
+                                                    </span>
+                                                </div>
+                                                <span>{item.brand} • {item.size}</span>
                                             </p>
                                             <p className="font-semibold mt-1"><Price amount={item.price} size="base" /></p>
 
@@ -138,6 +147,35 @@ export default function CartDrawer() {
                                                     {t('incrementBy', { count: increment }) || `Increments of ${increment}`}
                                                 </p>
                                             )}
+
+                                            {/* Mounting status */}
+                                            <div className="mt-3 p-2 rounded border border-primary/20 bg-primary/5">
+                                                <label className="flex items-center gap-2 cursor-pointer group">
+                                                    <div className="relative flex items-center">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={item.withMounting}
+                                                            onChange={() => toggleMounting(item.id)}
+                                                            className="peer h-4 w-4 cursor-pointer appearance-none rounded border border-primary transition-all checked:bg-primary"
+                                                        />
+                                                        <svg
+                                                            className="pointer-events-none absolute h-4 w-4 p-0.5 text-white opacity-0 peer-checked:opacity-100"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            strokeWidth="4"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        >
+                                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span className="text-[10px] font-bold text-foreground group-hover:text-primary transition-colors uppercase">
+                                                        {t('mountingService')} (+<Price amount={19.85 * item.quantity} size="sm" />)
+                                                    </span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </li>
                                 );

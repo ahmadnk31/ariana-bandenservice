@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { ShoppingCart, Truck, CreditCard, ArrowLeft, Package, Store } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import Price from '@/app/components/Price';
+import SeasonIcon from '@/app/components/SeasonIcon';
 
 interface ShippingRate {
     id: string;
@@ -66,6 +67,7 @@ export default function CheckoutPage() {
                             price: item.price,
                             image: item.image,
                             stock: item.stock,
+                            season: item.season || 'summer', // Fallback for old checkouts
                             incrementBy: 1,
                         }, item.quantity);
                     }
@@ -196,6 +198,7 @@ export default function CheckoutPage() {
                         price: item.price,
                         quantity: item.quantity,
                         image: item.image,
+                        withMounting: item.withMounting,
                     })),
                     shippingOption: {
                         carrier: selectedShippingRate.carrier,
@@ -457,10 +460,30 @@ export default function CheckoutPage() {
                                                 </div>
                                                 <div className="flex-1 min-w-0">
                                                     <p className="font-medium text-sm line-clamp-1">{item.name}</p>
-                                                    <p className="text-xs text-muted-foreground">{item.size}</p>
+                                                    <div className="flex flex-wrap items-center gap-2 mt-1 uppercase tracking-wide">
+                                                        <div className="flex items-center gap-1 bg-muted px-1.5 py-0.5 rounded leading-none">
+                                                            <SeasonIcon season={item.season} size="sm" />
+                                                            <span className="text-[10px] font-bold">
+                                                                {item.season === 'summer' ? 'Zomer' : item.season === 'winter' ? 'Winter' : '4-Seizoen'}
+                                                            </span>
+                                                        </div>
+                                                        <p className="text-xs text-muted-foreground">{item.brand} • {item.size}</p>
+                                                    </div>
                                                     <p className="text-xs text-muted-foreground">Qty: {item.quantity}</p>
+                                                    {item.withMounting && (
+                                                        <p className="text-[10px] text-primary font-bold uppercase mt-1">
+                                                            + Montage service
+                                                        </p>
+                                                    )}
                                                 </div>
-                                                <Price amount={item.price * item.quantity} size="sm" />
+                                                <div className="text-right">
+                                                    <Price amount={(item.price + (item.withMounting ? 19.85 : 0)) * item.quantity} size="sm" />
+                                                    {item.withMounting && (
+                                                        <p className="text-[10px] text-muted-foreground mt-0.5">
+                                                            Incl. €{(19.85 * item.quantity).toFixed(2)} montage
+                                                        </p>
+                                                    )}
+                                                </div>
                                             </div>
                                         ))}
                                     </div>

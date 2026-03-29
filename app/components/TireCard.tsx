@@ -9,6 +9,7 @@ import Price from './Price';
 import { ShoppingCart, Flame } from 'lucide-react';
 import StockRequestModal from "./StockRequestModal";
 import TireLabel from "./TireLabel";
+import SeasonIcon from "./SeasonIcon";
 
 interface TireImage {
     id: string;
@@ -340,11 +341,16 @@ export default function TireCard({
 
             {/* Season Badge */}
             <div className="flex items-center gap-2 mb-3">
-                <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-medium ${seasonColors[season] || "bg-gray-500/10 text-gray-600"}`}>
+                <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide border shadow-sm ${
+                    season === 'summer' ? 'bg-amber-500/10 text-amber-600 border-amber-200/50' :
+                    season === 'winter' ? 'bg-blue-500/10 text-blue-600 border-blue-200/50' :
+                    'bg-green-500/10 text-green-600 border-green-200/50'
+                }`}>
+                    <SeasonIcon season={season} size="sm" />
                     {seasonLabels[season] || season}
                 </span>
                 {(loadIndex || speedRating) && (
-                    <span className="text-[10px] text-muted-foreground">
+                    <span className="text-[10px] text-muted-foreground font-medium bg-muted/50 px-1.5 py-0.5 rounded border border-muted/50">
                         {loadIndex && speedRating ? `${loadIndex}${speedRating}` : loadIndex || speedRating}
                     </span>
                 )}
@@ -386,7 +392,6 @@ export default function TireCard({
             <div className="flex items-center justify-between mt-auto pt-4 border-t border-muted">
                 <div>
                     <Price amount={price} size="lg" />
-                    <p className="text-[10px] text-green-600 font-medium">{t('freeMontageBalance')}</p>
                     {stock > 0 && stock <= 5 && (
                         <p className="text-[10px] text-orange-600 font-semibold flex items-center gap-0.5 animate-pulse">
                             <Flame className="w-3 h-3" />
@@ -409,6 +414,7 @@ export default function TireCard({
                                 size,
                                 price,
                                 stock,
+                                season,
                                 image: images[0]?.url,
                             });
                         }}

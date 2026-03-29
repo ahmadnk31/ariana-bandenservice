@@ -13,6 +13,7 @@ import SocialProofBadge from "@/app/components/SocialProofBadge";
 import Price from "@/app/components/Price";
 import { getAlternateLanguages } from "@/lib/utils";
 import TireLabel from "@/app/components/TireLabel";
+import SeasonIcon from "@/app/components/SeasonIcon";
 
 interface ProductPageProps {
     params: Promise<{ slug: string; locale: string }>;
@@ -212,7 +213,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                         {t('secondHand')}
                                     </span>
                                 )}
-                                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-muted">
+                                <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wide border shadow-sm ${
+                                    tire.season === 'summer' ? 'bg-amber-500/10 text-amber-600 border-amber-200/50' :
+                                    tire.season === 'winter' ? 'bg-blue-500/10 text-blue-600 border-blue-200/50' :
+                                    'bg-green-500/10 text-green-600 border-green-200/50'
+                                }`}>
+                                    <SeasonIcon season={tire.season} size="md" />
                                     {seasonLabels[tire.season] || tire.season}
                                 </span>
                                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-muted">
@@ -254,10 +260,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
                             {/* Social proof badges */}
                             <div className="flex flex-col gap-2 mb-4">
-                                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-600 text-sm font-medium">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    {t('freeMontageBalance')}
-                                </div>
                                 <SocialProofBadge stock={tire.stock} />
                             </div>
 

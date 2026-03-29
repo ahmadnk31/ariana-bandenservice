@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import ImageDropzone from "@/app/components/ImageDropzone";
+import SeasonIcon from "@/app/components/SeasonIcon";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -319,20 +320,33 @@ export default function EditTirePage() {
                                 <option value="used">Used</option>
                             </select>
                         </div>
-                        <div>
-                            <label htmlFor="season" className="block text-sm font-medium mb-2">
+                        <div className="col-span-full">
+                            <label className="block text-sm font-medium mb-3">
                                 Season *
                             </label>
-                            <select
-                                id="season"
-                                value={formData.season}
-                                onChange={(e) => setFormData((prev) => ({ ...prev, season: e.target.value }))}
-                                className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
-                            >
-                                <option value="summer">Summer</option>
-                                <option value="winter">Winter</option>
-                                <option value="all-season">All-Season</option>
-                            </select>
+                            <div className="grid grid-cols-3 gap-3">
+                                {[
+                                    { id: 'summer', label: 'Summer' },
+                                    { id: 'winter', label: 'Winter' },
+                                    { id: 'all-season', label: 'All-Season' }
+                                ].map((s) => (
+                                    <button
+                                        key={s.id}
+                                        type="button"
+                                        onClick={() => setFormData(prev => ({ ...prev, season: s.id }))}
+                                        className={`flex flex-col items-center justify-center gap-2 p-3 rounded-lg border transition-all ${
+                                            formData.season === s.id
+                                                ? s.id === 'summer' ? 'bg-amber-500/10 border-amber-500 text-amber-600 shadow-sm' :
+                                                  s.id === 'winter' ? 'bg-blue-500/10 border-blue-500 text-blue-600 shadow-sm' :
+                                                  'bg-green-500/10 border-green-500 text-green-600 shadow-sm'
+                                                : 'bg-background border-muted hover:border-muted-foreground/30 text-muted-foreground'
+                                        }`}
+                                    >
+                                        <SeasonIcon season={s.id} size="lg" />
+                                        <span className="text-xs font-bold uppercase tracking-wider">{s.label}</span>
+                                    </button>
+                                ))}
+                            </div>
                         </div>
                         <div>
                             <label htmlFor="size" className="block text-sm font-medium mb-2">

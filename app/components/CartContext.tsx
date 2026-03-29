@@ -12,12 +12,15 @@ export interface CartItem {
     quantity: number;
     image?: string;
     stock: number;
+    season: string; // summer, winter, all-season
     incrementBy?: number; // Default: 2 for tires, can be 1 or 4
+    withMounting?: boolean; // Optional mounting fee: 19.85 per tire
 }
 
 interface CartContextType {
     items: CartItem[];
-    addToCart: (item: Omit<CartItem, 'quantity'>, quantity?: number) => void;
+    addToCart: (item: Omit<CartItem, 'quantity' | 'withMounting'>, quantity?: number, withMounting?: boolean) => void;
+    toggleMounting: (itemId: string) => void;
     removeFromCart: (itemId: string) => void;
     updateQuantity: (itemId: string, quantity: number) => void;
     incrementQuantity: (itemId: string) => void;
@@ -46,7 +49,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         if (stored) {
             try {
                 const parsedItems = JSON.parse(stored);
-                setItems(parsedItems);
+                // Ensure all items have a season property (for backward compatibility)
+                const sanitizedItems = parsedItems.map((item: any) => ({
+                    ...item,
+                    season: item.season || 'summer'
+                }));
+                setItems(sanitizedItems);
             } catch (e) {
                 console.error('Failed to parse cart from localStorage', e);
                 localStorage.removeItem(CART_STORAGE_KEY);
@@ -63,9 +71,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }, [items, isLoaded]);
 
     // Add item to cart
-    const addToCart = useCallback((item: Omit<CartItem, 'quantity'>, quantity?: number) => {
+    const addToCart = useCallback((item: Omit<CartItem, 'quantity' | 'withMounting'>, quantity?: number, withMounting: boolean = false) => {
         setItems(current => {
-            const existing = current.find(i => i.id === item.id);
+            const existing = current.find(i => i.id === item.id && i.withMounting === withMounting);
             const increment = item.incrementBy || 2; // Default to 2 for tires
             const addQuantity = quantity !== undefined ? quantity : increment;
 
@@ -80,15 +88,24 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
                 setIsOpen(true);
                 return current.map(i =>
-                    i.id === item.id ? { ...i, quantity: newQuantity } : i
+                    (i.id === item.id && i.withMounting === withMounting) ? { ...i, quantity: newQuantity } : i
                 );
             }
 
             // New item - start with specified quantity or increment amount
             const initialQuantity = Math.min(addQuantity, item.stock);
             setIsOpen(true);
-            return [...current, { ...item, quantity: initialQuantity }];
+            return [...current, { ...item, quantity: initialQuantity, withMounting }];
         });
+    }, []);
+
+    // Toggle mounting for an item in the cart
+    const toggleMounting = useCallback((itemId: string) => {
+        setItems(current =>
+            current.map(item =>
+                item.id === itemId ? { ...item, withMounting: !item.withMounting } : item
+            )
+        );
     }, []);
 
     // Remove item from cart
@@ -158,7 +175,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
     // Calculate totals
     const cartCount = items.reduce((sum, item) => sum + item.quantity, 0);
-    const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const subtotal = items.reduce((sum, item) => {
+        const mountingFee = item.withMounting ? 19.85 : 0;
+        return sum + (item.price + mountingFee) * item.quantity;
+    }, 0);
 
     // Cart drawer controls
     const openCart = useCallback(() => setIsOpen(true), []);
@@ -170,6 +190,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
             value={{
                 items,
                 addToCart,
+                toggleMounting,
                 removeFromCart,
                 updateQuantity,
                 incrementQuantity,

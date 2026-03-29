@@ -123,13 +123,14 @@ model Order {
 }
 
 model OrderItem {
-  id       String  @id @default(cuid())
-  order    Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  orderId  String
-  tire     Tire?   @relation(fields: [tireId], references: [id], onDelete: SetNull)
-  tireId   String?
-  quantity Int
-  price    Float // Price at time of purchase
+  id           String  @id @default(cuid())
+  order        Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId      String
+  tire         Tire?   @relation(fields: [tireId], references: [id], onDelete: SetNull)
+  tireId       String?
+  quantity     Int
+  price        Float // Price at time of purchase
+  withMounting Boolean @default(false)
 }
 
 model ShippingAddress {
