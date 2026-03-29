@@ -23,7 +23,7 @@ interface ShippingRate {
 }
 
 export default function CheckoutPage() {
-    const { items, subtotal, clearCart, addToCart } = useCart();
+    const { items, subtotal, clearCart, addToCart, toggleMounting } = useCart();
     const t = useTranslations('Checkout');
     const searchParams = useSearchParams();
     const [shippingRates, setShippingRates] = useState<ShippingRate[]>([]);
@@ -475,6 +475,34 @@ export default function CheckoutPage() {
                                                             + Montage service
                                                         </p>
                                                     )}
+                                                    {/* Mounting toggle */}
+                                                    <div className="mt-2 p-2 rounded border border-primary/20 bg-primary/5">
+                                                        <label className="flex items-center gap-2 cursor-pointer group">
+                                                            <div className="relative flex items-center">
+                                                                <input
+                                                                    type="checkbox"
+                                                                    checked={!!item.withMounting}
+                                                                    onChange={() => toggleMounting(item.id)}
+                                                                    className="peer h-4 w-4 cursor-pointer appearance-none rounded border border-primary transition-all checked:bg-primary"
+                                                                />
+                                                                <svg
+                                                                    className="pointer-events-none absolute h-4 w-4 p-0.5 text-white opacity-0 peer-checked:opacity-100"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24"
+                                                                    fill="none"
+                                                                    stroke="currentColor"
+                                                                    strokeWidth="4"
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                >
+                                                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                                                </svg>
+                                                            </div>
+                                                            <span className="text-[10px] font-bold text-foreground group-hover:text-primary transition-colors uppercase">
+                                                                Montage (+€{(19.85 * item.quantity).toFixed(2)})
+                                                            </span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                                 <div className="text-right">
                                                     <Price amount={(item.price + (item.withMounting ? 19.85 : 0)) * item.quantity} size="sm" />

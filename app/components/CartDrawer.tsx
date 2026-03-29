@@ -98,15 +98,15 @@ export default function CartDrawer() {
                                             >
                                                 {item.name}
                                             </Link>
-                                            <p className="text-xs text-muted-foreground mt-0.5 flex flex-wrap items-center gap-1.5 uppercase tracking-wide">
-                                                <div className="flex items-center gap-1 bg-muted px-1.5 py-0.5 rounded">
+                                            <div className="text-xs text-muted-foreground mt-0.5 flex flex-wrap items-center gap-1.5 uppercase tracking-wide">
+                                                <div className="flex items-center gap-1 bg-muted px-1.5 py-0.5 rounded leading-none">
                                                     <SeasonIcon season={item.season} size="md" />
                                                     <span className="text-[10px] font-bold">
                                                         {item.season === 'summer' ? 'Zomer' : item.season === 'winter' ? 'Winter' : '4-Seizoen'}
                                                     </span>
                                                 </div>
                                                 <span>{item.brand} • {item.size}</span>
-                                            </p>
+                                            </div>
                                             <p className="font-semibold mt-1"><Price amount={item.price} size="base" /></p>
 
                                             {/* Quantity Controls */}
