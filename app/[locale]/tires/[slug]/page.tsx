@@ -297,6 +297,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                         size: tire.size,
                                         price: tire.price,
                                         stock: tire.stock,
+                                        season: tire.season,
                                         image: tire.images[0]?.url,
                                     }}
                                 />
