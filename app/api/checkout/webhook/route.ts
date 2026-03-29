@@ -54,8 +54,10 @@ export async function POST(request: NextRequest) {
 
             // Calculate subtotal from cart items
             const subtotal = cartItems.reduce(
-                (sum: number, item: { price: number; quantity: number }) =>
-                    sum + item.price * item.quantity,
+                (sum: number, item: { price: number; quantity: number; withMounting?: boolean }) => {
+                    const mountingFee = item.withMounting ? 19.85 : 0;
+                    return sum + (item.price + mountingFee) * item.quantity;
+                },
                 0
             );
             const shippingCost = parseFloat(metadata.shippingCost || '0');
@@ -86,10 +88,11 @@ export async function POST(request: NextRequest) {
                         },
                     },
                     items: {
-                        create: cartItems.map((item: { id: string; quantity: number; price: number }) => ({
+                        create: cartItems.map((item: { id: string; quantity: number; price: number; withMounting?: boolean }) => ({
                             tireId: item.id,
                             quantity: item.quantity,
                             price: item.price,
+                            withMounting: item.withMounting || false,
                         })),
                     },
                 },
@@ -164,10 +167,10 @@ export async function POST(request: NextRequest) {
                 } else {
                     const customerName = `${orderWithDetails.shippingAddress.firstName} ${orderWithDetails.shippingAddress.lastName}`.trim() || 'Klant';
                     const emailItems = orderWithDetails.items.map(item => ({
-                        name: item.tire?.name || 'Band',
+                        name: `${item.tire?.name || 'Band'}${item.withMounting ? ' (Incl. Montage)' : ''}`,
                         size: item.tire?.size || undefined,
                         quantity: item.quantity,
-                        unitPrice: item.price,
+                        unitPrice: item.price + (item.withMounting ? 19.85 : 0),
                     }));
 
                     // Try generating invoice PDF, but don't let it block the email

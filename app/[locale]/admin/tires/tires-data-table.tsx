@@ -16,6 +16,7 @@ import {
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import { useState } from "react"
+import SeasonIcon from "@/app/components/SeasonIcon"
 
 interface TireImage {
     id: string
@@ -150,7 +151,8 @@ export const columns: ColumnDef<TireRow>[] = [
         cell: ({ row }) => {
             const season = row.getValue("season") as string
             return (
-                <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${seasonColors[season] || "bg-gray-500/10 text-gray-600"}`}>
+                <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide border ${seasonColors[season] || "bg-gray-500/10 text-gray-600 border-gray-200"}`}>
+                    <SeasonIcon season={season} size="sm" />
                     {seasonLabels[season] || season}
                 </span>
             )

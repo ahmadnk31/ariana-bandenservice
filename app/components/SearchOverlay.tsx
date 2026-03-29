@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTranslations } from 'next-intl';
 import Price from '@/app/components/Price';
+import SeasonIcon from '@/app/components/SeasonIcon';
 
 interface SearchResult {
     id: string;
@@ -255,19 +256,24 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                                                 {t('used')}
                                                             </span>
                                                         )}
+                                                    </div>
+                                                    <div className="flex items-center gap-2 mt-1">
                                                         {result.season && (
-                                                            <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider shrink-0 ${result.season === 'winter' ? 'bg-blue-500 text-white' :
-                                                                    result.season === 'summer' ? 'bg-orange-500 text-white' :
-                                                                        'bg-green-600 text-white'
-                                                                }`}>
-                                                                {result.season === 'winter' ? tiresT('seasonWinter') :
-                                                                    result.season === 'summer' ? tiresT('seasonSummer') :
-                                                                        tiresT('seasonAllSeason')}
+                                                            <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase ${
+                                                                result.season === 'summer' ? 'bg-amber-500/10 text-amber-600 border border-amber-200/50' :
+                                                                result.season === 'winter' ? 'bg-blue-500/10 text-blue-600 border border-blue-200/50' :
+                                                                'bg-green-500/10 text-green-600 border border-green-200/50'
+                                                            }`}>
+                                                                <SeasonIcon season={result.season} size="sm" className="w-2.5 h-2.5" />
+                                                                {result.season}
                                                             </span>
                                                         )}
+                                                        <span className="text-[10px] text-muted-foreground font-medium bg-muted/50 px-1 py-0.5 rounded border border-muted/50 uppercase">
+                                                            {result.size}
+                                                        </span>
                                                     </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        {result.brand} <span className="mx-1.5 opacity-50">•</span> {result.size}
+                                                    <p className="text-sm text-muted-foreground mt-0.5">
+                                                        {result.brand}
                                                     </p>
                                                 </div>
                                                 <div><Price amount={result.price} size="base" /></div>

@@ -12,7 +12,7 @@
         "title1": "Bandenservice",
         "title2": "Gent",
         "title3": "Since 2020",
-        "subtitle": "Buy tires with fitting from €25. Cheapest tire shop in Ghent. Open Mon-Sat 9-18h.",
+        "subtitle": "Buy car tires from €25. Cheapest tire shop in Ghent and surroundings. Open Mon-Sat 9-18h.",
         "cta": "View Tires",
         "contact": "Contact Us"
     },
@@ -114,7 +114,8 @@
         "efficiency": "Fuel Efficiency",
         "grip": "Wet Grip",
         "noise": "Noise Level",
-        "noiseDb": "Noise (dB)"
+        "noiseDb": "Noise (dB)",
+        "mountingOption": "Have tires mounted (+ €19.85 p.t.)"
     },
     "Contact": {
         "title": "Contact Us",
@@ -196,7 +197,9 @@
         "decrease": "Decrease quantity",
         "increase": "Increase quantity",
         "incrementBy": "Increment by {count}",
-        "decrementBy": "Decrement by {count}"
+        "decrementBy": "Decrease count by {count}",
+        "mountingService": "Tire mounting",
+        "mountingPrice": "€19.85 per tire"
     },
     "Checkout": {
         "title": "Checkout",

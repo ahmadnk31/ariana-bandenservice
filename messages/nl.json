@@ -12,7 +12,7 @@
         "title1": "Bandenservice",
         "title2": "Gent",
         "title3": "Sinds 2020",
-        "subtitle": "Autobanden kopen met montage vanaf €25. Goedkoopste bandencentrale in Gent en omstreken. Open ma-za 9-18u.",
+        "subtitle": "Autobanden kopen vanaf €25. Goedkoopste bandencentrale in Gent en omstreken. Open ma-za 9-18u.",
         "cta": "Banden Bekijken",
         "contact": "Contacteer Ons"
     },
@@ -114,7 +114,8 @@
         "efficiency": "Brandstofefficiëntie",
         "grip": "Grip op nat wegdek",
         "noise": "Geluidsniveau",
-        "noiseDb": "Geluid (dB)"
+        "noiseDb": "Geluid (dB)",
+        "mountingOption": "Banden laten monteren (+ €19.85 p.b.)"
     },
     "Contact": {
         "title": "Neem Contact Op",
@@ -195,7 +196,9 @@
         "decrease": "Verminder aantal",
         "increase": "Verhoog aantal",
         "incrementBy": "Verhoog aantal met {count}",
-        "decrementBy": "Verlaag aantal met {count}"
+        "decrementBy": "Verlaag aantal met {count}",
+        "mountingService": "Banden monteren",
+        "mountingPrice": "€19.85 per band"
     },
     "Checkout": {
         "title": "Afrekenen",
