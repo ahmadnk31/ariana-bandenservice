@@ -20,9 +20,12 @@ export default function Footer() {
             <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm border-b border-muted/50 pb-8">
                 <div>
                     <h3 className="font-bold text-lg mb-4">Gent bandenservice</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground mb-4">
                         {t('aboutText')}
                     </p>
+                    <a href="/b2b" className="text-primary font-medium hover:underline transition-all">
+                        B2B / Insurance Partners
+                    </a>
                 </div>
                 <div>
                     <h3 className="font-bold text-lg mb-4">{t('contact')}</h3>

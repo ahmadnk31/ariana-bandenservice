@@ -6,7 +6,8 @@
         "contact": "Kontakt",
         "admin": "Admin",
         "searchPlaceholder": "Reifen suchen...",
-        "blog": "Blog"
+        "blog": "Blog",
+        "b2b": "B2B / Versicherungen"
     },
     "Hero": {
         "title1": "Bandenservice",
@@ -282,7 +283,9 @@
         "cookiesTitle": "Cookie-Richtlinie | Gent Bandenservice",
         "cookiesDescription": "Erfahren Sie, wie Gent bandenservice Cookies verwendet und wie Sie Ihre Einstellungen verwalten.",
         "returnPolicyTitle": "Rückgaberichtlinie | Gent Bandenservice",
-        "returnPolicyDescription": "Rückgaberichtlinie für Online-Reifenkäufe bei Gent bandenservice. Erfahren Sie mehr über unsere 14-Tage-Rückgabefrist, Bedingungen und Erstattungsverfahren."
+        "returnPolicyDescription": "Rückgaberichtlinie für Online-Reifenkäufe bei Gent bandenservice. Erfahren Sie mehr über unsere 14-Tage-Rückgabefrist, Bedingungen und Erstattungsverfahren.",
+        "b2bTitle": "B2B-Partnerschaften | Gent Bandenservice",
+        "b2bDescription": "Zuverlässige Reifenlösungen nach Maß für Autoversicherungen und Firmenflotten. Arbeiten Sie mit uns zusammen für Prioritätsservice, Top-Marken und einfache Verwaltung."
     },
     "DevBanner": {
         "message": "Wir befinden uns im Entwicklungsmodus. Alle Reifen sind nicht echt; sie dienen nur zu Demonstrationszwecken. Echte Reifen kommen bald."
@@ -549,5 +552,27 @@
         "cancelBtn": "Termin absagen",
         "confirmReschedule": "Neue Zeit bestätigen",
         "backBtn": "Zurück"
+    },
+    "B2B": {
+        "title": "Partner von Gent Bandenservice werden",
+        "subtitle": "Zuverlässige Reifenlösungen nach Maß für Autoversicherungen und Firmenflotten.",
+        "whyPartner": "Warum mit uns zusammenarbeiten?",
+        "feature1Title": "Prioritätsservice",
+        "feature1Desc": "Minimieren Sie die Ausfallzeit für Ihre versicherten Kunden mit unserer Express-Montage und Auswuchtung.",
+        "feature2Title": "Zertifizierte Techniker",
+        "feature2Desc": "Garantierte handwerkliche Qualität unter Verwendung modernster Ausricht- und Auswuchtgeräte.",
+        "feature3Title": "Riesiges Inventar",
+        "feature3Desc": "Wir führen eine große Auswahl an Top-Reifenmarken für alle Marken, Modelle und Jahreszeiten.",
+        "feature4Title": "Einfache Verwaltung",
+        "feature4Desc": "Optimierte Rechnungsstellung und engagierter B2B-Support für eine problemlose Abwicklung.",
+        "ctaTitle": "Bereit für eine Zusammenarbeit?",
+        "ctaDesc": "Kontaktieren Sie uns noch heute, um zu besprechen, wie wir Ihren Kunden erstklassigen Service bieten können.",
+        "ctaBtn": "Kontakt aufnehmen",
+        "trustedBy": "Vertraut von führenden Versicherungsunternehmen",
+        "statsTitle": "Unsere Zahlen sprechen für sich",
+        "stat1Label": "Jahre Erfahrung",
+        "stat2Label": "B2B-Partner",
+        "stat3Label": "Jährlich bearbeitete Reifen",
+        "stat4Label": "Kundenzufriedenheit"
     }
 }

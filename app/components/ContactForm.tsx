@@ -167,6 +167,9 @@ export default function ContactForm({ services = [], initialService = "" }: Cont
                             <option value="other">Other</option>
                         </>
                     )}
+                    {initialService && !services.some((s) => s.name === initialService) && (
+                        <option value={initialService}>{initialService}</option>
+                    )}
                 </select>
             </div>
             <div>

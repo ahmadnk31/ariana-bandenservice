@@ -6,7 +6,8 @@
         "contact": "Contatti",
         "admin": "Admin",
         "searchPlaceholder": "Cerca pneumatici...",
-        "blog": "Blog"
+        "blog": "Blog",
+        "b2b": "B2B / Assicurazioni"
     },
     "Hero": {
         "title1": "Bandenservice",
@@ -280,7 +281,9 @@
         "cookiesTitle": "Informativa sui cookie | Gent Bandenservice",
         "cookiesDescription": "Scopri come Gent bandenservice utilizza i cookie e come gestire le tue preferenze.",
         "returnPolicyTitle": "Politica di Reso | Gent Bandenservice",
-        "returnPolicyDescription": "Politica di reso per gli acquisti di pneumatici online presso Gent bandenservice. Scopri il nostro periodo di reso di 14 giorni, le condizioni e il processo di rimborso."
+        "returnPolicyDescription": "Politica di reso per gli acquisti di pneumatici online presso Gent bandenservice. Scopri il nostro periodo di reso di 14 giorni, le condizioni e il processo di rimborso.",
+        "b2bTitle": "Partnership B2B | Gent Bandenservice",
+        "b2bDescription": "Soluzioni affidabili per pneumatici per compagnie di assicurazione e flotte aziendali. Collabora con noi per un servizio prioritario."
     },
     "DevBanner": {
         "message": "Siamo in modalità sviluppo. Tutti i pneumatici non sono reali; sono solo a scopo dimostrativo. I pneumatici reali arriveranno presto."
@@ -547,5 +550,27 @@
         "cancelBtn": "Annulla Appuntamento",
         "confirmReschedule": "Conferma nuovo orario",
         "backBtn": "Indietro"
+    },
+    "B2B": {
+        "title": "Diventa partner di Gent Bandenservice",
+        "subtitle": "Soluzioni per pneumatici affidabili su misura per compagnie di assicurazione auto e flotte aziendali.",
+        "whyPartner": "Perché collaborare con noi?",
+        "feature1Title": "Servizio Prioritario",
+        "feature1Desc": "Riduci al minimo i tempi di inattività per i tuoi clienti assicurati con il nostro montaggio ed equilibratura express.",
+        "feature2Title": "Tecnici Certificati",
+        "feature2Desc": "Manodopera di qualità garantita, utilizzando attrezzature di allineamento ed equilibratura all'avanguardia.",
+        "feature3Title": "Vasto Inventario",
+        "feature3Desc": "Abbiamo un'ampia selezione di pneumatici delle migliori marche per tutte le marche, modelli e stagioni.",
+        "feature4Title": "Amministrazione Semplice",
+        "feature4Desc": "Fatturazione semplificata e supporto B2B dedicato per un'elaborazione senza problemi.",
+        "ctaTitle": "Pronto a lavorare insieme?",
+        "ctaDesc": "Contattaci oggi per discutere su come possiamo fornire un servizio di altissimo livello ai tuoi clienti.",
+        "ctaBtn": "Contattaci",
+        "trustedBy": "Scelto dalle Principali Compagnie di Assicurazione",
+        "statsTitle": "I Nostri Numeri Parlano da Soli",
+        "stat1Label": "Anni di Esperienza",
+        "stat2Label": "Partner B2B",
+        "stat3Label": "Pneumatici Gestiti Annualmente",
+        "stat4Label": "Tasso di Soddisfazione"
     }
 }

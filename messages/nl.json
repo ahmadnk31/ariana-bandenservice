@@ -6,7 +6,8 @@
         "contact": "Contact",
         "admin": "Admin",
         "searchPlaceholder": "Zoek banden...",
-        "blog": "Blog"
+        "blog": "Blog",
+        "b2b": "B2B / Verzekeringen"
     },
     "Hero": {
         "title1": "Bandenservice",
@@ -288,7 +289,9 @@
         "cookiesTitle": "Cookiebeleid | Gent Bandenservice",
         "cookiesDescription": "Lees hoe Gent bandenservice cookies gebruikt en hoe u uw voorkeuren beheert.",
         "returnPolicyTitle": "Retourbeleid | Gent Bandenservice",
-        "returnPolicyDescription": "Retourbeleid voor online bandenaankopen bij Gent bandenservice. Lees over onze 14-dagen retourtermijn, voorwaarden en terugbetalingsproces."
+        "returnPolicyDescription": "Retourbeleid voor online bandenaankopen bij Gent bandenservice. Lees over onze 14-dagen retourtermijn, voorwaarden en terugbetalingsproces.",
+        "b2bTitle": "B2B Partnerschappen | Gent Bandenservice",
+        "b2bDescription": "Betrouwbare bandenoplossingen op maat voor autoverzekeringsmaatschappijen en wagenparken. Werk met ons samen voor voorrangsservice, topmerken en eenvoudige administratie."
     },
     "DevBanner": {
         "message": "We bevinden ons nog in de ontwikkelingsfase. Alle banden zijn niet echt; het is alleen voor demonstratiedoeleinden. Echte banden komen eraan."
@@ -555,5 +558,27 @@
         "cancelBtn": "Afspraak Annuleren",
         "confirmReschedule": "Nieuwe Tijd Bevestigen",
         "backBtn": "Terug"
+    },
+    "B2B": {
+        "title": "Partner worden van Gent Bandenservice",
+        "subtitle": "Betrouwbare bandenoplossingen op maat voor autoverzekeringsmaatschappijen en wagenparken.",
+        "whyPartner": "Waarom met ons samenwerken?",
+        "feature1Title": "Voorrangsservice",
+        "feature1Desc": "Minimaliseer de stilstandtijd voor uw verzekerde klanten met onze snelle montage en uitlijning.",
+        "feature2Title": "Gecertificeerde Technici",
+        "feature2Desc": "Gegarandeerd vakmanschap met gebruik van de modernste uitlijn- en balanceerapparatuur.",
+        "feature3Title": "Enorme Voorraad",
+        "feature3Desc": "We hebben een brede selectie van topmerken banden voor alle merken, modellen en seizoenen.",
+        "feature4Title": "Eenvoudige Administratie",
+        "feature4Desc": "Gestroomlijnde facturatie en toegewijde B2B-ondersteuning voor een vlotte verwerking.",
+        "ctaTitle": "Klaar om samen te werken?",
+        "ctaDesc": "Neem vandaag nog contact met ons op om te bespreken hoe we uw klanten de beste service kunnen bieden.",
+        "ctaBtn": "Neem contact op",
+        "trustedBy": "Vertrouwd door Toonaangevende Verzekeringsmaatschappijen",
+        "statsTitle": "Onze Cijfers Spreken voor Zich",
+        "stat1Label": "Jaren Ervaring",
+        "stat2Label": "B2B Partners",
+        "stat3Label": "Banden per Jaar Verwerkt",
+        "stat4Label": "Klanttevredenheid"
     }
 }

@@ -6,7 +6,8 @@
         "contact": "Contact",
         "admin": "Admin",
         "searchPlaceholder": "Rechercher des pneus...",
-        "blog": "blog"
+        "blog": "blog",
+        "b2b": "B2B / Assurances"
     },
     "Hero": {
         "title1": "Centre Pneus",
@@ -281,7 +282,9 @@
         "cookiesTitle": "Politique des cookies | Gent Bandenservice",
         "cookiesDescription": "Découvrez comment Gent bandenservice utilise les cookies et comment gérer vos préférences.",
         "returnPolicyTitle": "Politique de Retour | Gent Bandenservice",
-        "returnPolicyDescription": "Politique de retour pour les achats de pneus en ligne chez Gent bandenservice. Découvrez notre délai de retour de 14 jours, les conditions et le processus de remboursement."
+        "returnPolicyDescription": "Politique de retour pour les achats de pneus en ligne chez Gent bandenservice. Découvrez notre délai de retour de 14 jours, les conditions et le processus de remboursement.",
+        "b2bTitle": "Partenariats B2B | Gent Bandenservice",
+        "b2bDescription": "Solutions de pneus fiables pour les compagnies d'assurance et les flottes d'entreprises. Associez-vous à nous pour un service prioritaire et des grandes marques."
     },
     "DevBanner": {
         "message": "Nous sommes encore en mode développement. Tous les pneus ne sont pas réels ; c'est uniquement à des fins de démonstration. Les vrais pneus arrivent bientôt."
@@ -548,5 +551,27 @@
         "cancelBtn": "Annuler le RDV",
         "confirmReschedule": "Confirmer la nouvelle heure",
         "backBtn": "Retour"
+    },
+    "B2B": {
+        "title": "Devenez partenaire de Gent Bandenservice",
+        "subtitle": "Solutions de pneus fiables, adaptées aux compagnies d'assurance automobile et aux flottes d'entreprises.",
+        "whyPartner": "Pourquoi s'associer avec nous ?",
+        "feature1Title": "Service Prioritaire",
+        "feature1Desc": "Minimisez les temps d'arrêt pour vos clients assurés grâce à notre montage et équilibrage express.",
+        "feature2Title": "Techniciens Certifiés",
+        "feature2Desc": "Un travail de qualité garanti, avec un équipement d'alignement et d'équilibrage de pointe.",
+        "feature3Title": "Vaste Inventaire",
+        "feature3Desc": "Nous avons une large sélection de pneus de grandes marques pour tous les modèles et toutes les saisons.",
+        "feature4Title": "Administration Facile",
+        "feature4Desc": "Facturation simplifiée et support B2B dédié pour un traitement sans tracas.",
+        "ctaTitle": "Prêt à travailler ensemble ?",
+        "ctaDesc": "Contactez-nous dès aujourd'hui pour discuter de la façon dont nous pouvons offrir un service de premier ordre à vos clients.",
+        "ctaBtn": "Contactez-nous",
+        "trustedBy": "Approuvé par les Principales Compagnies d'Assurance",
+        "statsTitle": "Nos Chiffres Parlent d'Eux-Mêmes",
+        "stat1Label": "Années d'Expérience",
+        "stat2Label": "Partenaires B2B",
+        "stat3Label": "Pneus Traités par An",
+        "stat4Label": "Taux de Satisfaction"
     }
 }
