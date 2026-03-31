@@ -6,7 +6,8 @@
         "contact": "Contact",
         "admin": "Admin",
         "searchPlaceholder": "Search tires...",
-        "blog": "Blog"
+        "blog": "Blog",
+        "b2b": "B2B / Insurance"
     },
     "Hero": {
         "title1": "Bandenservice",
@@ -289,7 +290,9 @@
         "cookiesTitle": "Cookie Policy | Gent Bandenservice",
         "cookiesDescription": "Learn how Gent bandenservice uses cookies and how you can manage your preferences.",
         "returnPolicyTitle": "Return Policy | Gent Bandenservice",
-        "returnPolicyDescription": "Return policy for online tire purchases at Gent bandenservice. Learn about our 14-day return period, conditions, and refund process."
+        "returnPolicyDescription": "Return policy for online tire purchases at Gent bandenservice. Learn about our 14-day return period, conditions, and refund process.",
+        "b2bTitle": "B2B Partnerships | Gent Bandenservice",
+        "b2bDescription": "Reliable tire solutions tailored for car insurance companies and corporate fleets. Partner with us for priority service, top brands, and easy administration."
     },
     "DevBanner": {
         "message": "We are in development mode. All tires are not real; it is only for demo purposes. Real tires will arrive soon."
@@ -556,5 +559,27 @@
         "cancelBtn": "Cancel Appointment",
         "confirmReschedule": "Confirm New Time",
         "backBtn": "Go Back"
+    },
+    "B2B": {
+        "title": "Partner with Gent Bandenservice",
+        "subtitle": "Reliable tire solutions tailored for car insurance companies and corporate fleets.",
+        "whyPartner": "Why Partner With Us?",
+        "feature1Title": "Priority Service",
+        "feature1Desc": "Minimize downtime for your insured clients with our express mounting and balancing.",
+        "feature2Title": "Certified Technicians",
+        "feature2Desc": "Quality workmanship guaranteed, using state-of-the-art alignment and balancing equipment.",
+        "feature3Title": "Huge Inventory",
+        "feature3Desc": "We carry a wide selection of top-brand tires for all makes, models, and seasons.",
+        "feature4Title": "Easy Administration",
+        "feature4Desc": "Streamlined invoicing and dedicated B2B support for hassle-free processing.",
+        "ctaTitle": "Ready to work together?",
+        "ctaDesc": "Contact us today to discuss how we can provide top-tier service for your clients.",
+        "ctaBtn": "Get in Touch",
+        "trustedBy": "Trusted by Leading Insurance Companies",
+        "statsTitle": "Our Numbers Speak for Themselves",
+        "stat1Label": "Years Experience",
+        "stat2Label": "B2B Partners",
+        "stat3Label": "Tires Handled Yearly",
+        "stat4Label": "Satisfaction Rate"
     }
 }

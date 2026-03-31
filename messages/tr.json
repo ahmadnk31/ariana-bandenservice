@@ -6,7 +6,8 @@
         "contact": "İletişim",
         "admin": "Admin",
         "searchPlaceholder": "Lastik ara...",
-        "blog": "blog"
+        "blog": "blog",
+        "b2b": "B2B / Sigorta"
     },
     "Hero": {
         "title1": "Lastik Merkezi",
@@ -277,7 +278,9 @@
         "cookiesTitle": "Cerez Politikasi | Gent Bandenservice",
         "cookiesDescription": "Gent bandenservice'in cerezleri nasil kullandigini ve tercihlerinizi nasil yoneteceginizi ogrenin.",
         "returnPolicyTitle": "İade Politikası | Gent Bandenservice",
-        "returnPolicyDescription": "Gent bandenservice'te online lastik alışverişleri için iade politikası. 14 günlük iade süremiz, koşullar ve geri ödeme süreci hakkında bilgi edinin."
+        "returnPolicyDescription": "Gent bandenservice'te online lastik alışverişleri için iade politikası. 14 günlük iade süremiz, koşullar ve geri ödeme süreci hakkında bilgi edinin.",
+        "b2bTitle": "B2B Ortaklıkları | Gent Bandenservice",
+        "b2bDescription": "Sigorta şirketleri ve filolar için güvenilir lastik çözümleri."
     },
     "DevBanner": {
         "message": "Hala geliştirme aşamasındayız. Tüm lastikler gerçek değildir; sadece demo amaçlıdır. Gerçek lastikler yakında gelecek."
@@ -544,5 +547,27 @@
         "cancelBtn": "İptal Et",
         "confirmReschedule": "Yeni Saati Onayla",
         "backBtn": "Geri Dön"
+    },
+    "B2B": {
+        "title": "Gent Bandenservice ile Ortak Olun",
+        "subtitle": "Kasko şirketleri ve kurumsal filolar için güvenilir lastik çözümleri.",
+        "whyPartner": "Neden Bizimle Çalışmalısınız?",
+        "feature1Title": "Öncelikli Hizmet",
+        "feature1Desc": "Hızlı montaj ve balans ayarımızla sigortalı müşterileriniz için bekleme süresini en aza indirin.",
+        "feature2Title": "Sertifikalı Teknisyenler",
+        "feature2Desc": "En son rot ve balans ekipmanlarını kullanan garantili kaliteli işçilik.",
+        "feature3Title": "Geniş Envanter",
+        "feature3Desc": "Tüm marka, model ve mevsimler için geniş bir marka seçeneğimiz mevcuttur.",
+        "feature4Title": "Kolay Yönetim",
+        "feature4Desc": "Sorunsuz işlemler için basitleştirilmiş faturalandırma ve özel B2B desteği.",
+        "ctaTitle": "Birlikte çalışmaya hazır mısınız?",
+        "ctaDesc": "Müşterilerinize nasıl birinci sınıf hizmet sunabileceğimizi görüşmek için bugün bize ulaşın.",
+        "ctaBtn": "Bize Ulaşın",
+        "trustedBy": "Önde Gelen Sigorta Şirketleri Tarafından Güveniliyor",
+        "statsTitle": "Rakamlarımız Kendini Anlatıyor",
+        "stat1Label": "Yıllık Deneyim",
+        "stat2Label": "B2B Ortakları",
+        "stat3Label": "Yıllık İşlenen Lastik",
+        "stat4Label": "Müşteri Memnuniyeti"
     }
 }

@@ -50,6 +50,9 @@ export default function Header() {
                         <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">
                             {t('blog')}
                         </Link>
+                        <Link href="/b2b" className="text-sm font-medium hover:text-primary transition-colors">
+                            {t('b2b')}
+                        </Link>
                     </nav>
 
                     {/* Cart Button */}
@@ -114,6 +117,13 @@ export default function Header() {
                         onClick={() => setIsMenuOpen(false)}
                     >
                         {t('blog')}
+                    </Link>
+                    <Link
+                        href="/b2b"
+                        className="text-sm font-medium hover:text-primary transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        {t('b2b')}
                     </Link>
                 </nav>
             </div>

@@ -6,10 +6,50 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { useTranslations } from 'next-intl';
 import { useCart } from './CartContext';
 import Price from './Price';
-import { ShoppingCart, Flame } from 'lucide-react';
+import { ShoppingCart, Flame, Info } from 'lucide-react';
 import StockRequestModal from "./StockRequestModal";
 import TireLabel from "./TireLabel";
 import SeasonIcon from "./SeasonIcon";
+
+function FeatureTooltip({ description }: { description: string }) {
+    const [show, setShow] = useState(false);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    const handleMouseEnter = () => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        setShow(true);
+    };
+
+    const handleMouseLeave = () => {
+        timeoutRef.current = setTimeout(() => setShow(false), 150);
+    };
+
+    return (
+        <span
+            className="relative inline-flex items-center"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setShow(!show);
+            }}
+        >
+            <Info className="w-3.5 h-3.5 text-muted-foreground/60 hover:text-primary cursor-help transition-colors flex-shrink-0" />
+            {show && (
+                <span
+                    className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-[11px] leading-relaxed text-popover-foreground bg-popover border border-border rounded-lg shadow-lg z-50 w-56 animate-in fade-in-0 zoom-in-95 duration-200"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    {description}
+                    <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-px border-4 border-transparent border-t-border" />
+                    <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-[5px] border-4 border-transparent border-t-popover" />
+                </span>
+            )}
+        </span>
+    );
+}
 
 interface TireImage {
     id: string;
@@ -379,13 +419,29 @@ export default function TireCard({
             )}
 
             {/* Features */}
-            <ul className="text-xs text-muted-foreground mb-4 space-y-1 flex-1">
-                {features.slice(0, 3).map((feature, index) => (
-                    <li key={index} className="flex items-center gap-1.5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        {feature}
-                    </li>
-                ))}
+            <ul className="text-xs text-muted-foreground mb-4 space-y-1.5 flex-1">
+                {features.slice(0, 3).map((feature, index) => {
+                    const colonIndex = feature.indexOf(':');
+                    if (colonIndex !== -1) {
+                        const label = feature.substring(0, colonIndex).trim();
+                        const description = feature.substring(colonIndex + 1).trim();
+                        return (
+                            <li key={index} className="flex items-center gap-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span className="font-medium text-foreground">{label}</span>
+                                {description && (
+                                    <FeatureTooltip description={description} />
+                                )}
+                            </li>
+                        );
+                    }
+                    return (
+                        <li key={index} className="flex items-center gap-1.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            {feature}
+                        </li>
+                    );
+                })}
             </ul>
 
             {/* Price & CTA */}

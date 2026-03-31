@@ -6,7 +6,8 @@
         "contact": "Kontakt",
         "admin": "Admin",
         "searchPlaceholder": "Szukaj opon...",
-        "blog": "Blog"
+        "blog": "Blog",
+        "b2b": "B2B / Ubezpieczenia"
     },
     "Hero": {
         "title1": "Centrum Opon",
@@ -277,7 +278,9 @@
         "cookiesTitle": "Polityka plików cookie | Gent Bandenservice",
         "cookiesDescription": "Dowiedz się, jak Gent bandenservice używa plików cookie i jak zarządzać preferencjami.",
         "returnPolicyTitle": "Polityka Zwrotów | Gent Bandenservice",
-        "returnPolicyDescription": "Polityka zwrotów dla zakupów opon online w Gent bandenservice. Dowiedz się o naszym 14-dniowym okresie zwrotu, warunkach i procesie zwrotu pieniędzy."
+        "returnPolicyDescription": "Polityka zwrotów dla zakupów opon online w Gent bandenservice. Dowiedz się o naszym 14-dniowym okresie zwrotu, warunkach i procesie zwrotu pieniędzy.",
+        "b2bTitle": "Partnerstwa B2B | Gent Bandenservice",
+        "b2bDescription": "Niezawodne opony i usługi dla firm ubezpieczeniowych i flot."
     },
     "DevBanner": {
         "message": "Nadal jesteśmy w trybie programowania. Wszystkie opony nie są prawdziwe; służą wyłącznie do celów demonstracyjnych. Prawdziwe opony wkrótce."
@@ -544,5 +547,27 @@
         "cancelBtn": "Anuluj wizytę",
         "confirmReschedule": "Potwierdź nowy czas",
         "backBtn": "Wróć"
+    },
+    "B2B": {
+        "title": "Zostań partnerem Gent Bandenservice",
+        "subtitle": "Niezawodne opony dostosowane do potrzeb firm ubezpieczeniowych i flot korporacyjnych.",
+        "whyPartner": "Dlaczego warto z nami współpracować?",
+        "feature1Title": "Obsługa Priorytetowa",
+        "feature1Desc": "Zminimalizuj przestoje dla swoich ubezpieczonych klientów dzięki naszemu ekspresowemu montażowi.",
+        "feature2Title": "Certyfikowani Technicy",
+        "feature2Desc": "Gwarantowana jakość wykonania przy użyciu najnowocześniejszego sprzętu do wyważania.",
+        "feature3Title": "Ogromny Asortyment",
+        "feature3Desc": "Posiadamy szeroki wybór opon najlepszych marek dla wszystkich modeli.",
+        "feature4Title": "Łatwa Administracja",
+        "feature4Desc": "Usprawnione fakturowanie i dedykowane wsparcie B2B dla bezproblemowej obróbki.",
+        "ctaTitle": "Gotowi do współpracy?",
+        "ctaDesc": "Skontaktuj się z nami już dziś, aby omówić, w jaki sposób możemy zapewnić doskonałą obsługę Twoim klientom.",
+        "ctaBtn": "Skontaktuj się z nami",
+        "trustedBy": "Zaufali nam wiodący ubezpieczyciele",
+        "statsTitle": "Nasze liczby mówią same za siebie",
+        "stat1Label": "Lata Doświadczenia",
+        "stat2Label": "Partnerzy B2B",
+        "stat3Label": "Opony Obsługiwane Rocznie",
+        "stat4Label": "Wskaźnik Zadowolenia"
     }
 }
