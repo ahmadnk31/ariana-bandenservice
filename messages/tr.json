@@ -110,7 +110,13 @@
         "keyFeatures": "Temel Özellikler",
         "seeMore": "Daha fazla gör",
         "seeLess": "Daha az gör",
-        "makeAppointment": "Randevu Al"
+        "makeAppointment": "Randevu Al",
+        "efficiency": "Yakıt Verimliliği",
+        "grip": "Islak Yol Tutuşu",
+        "noise": "Gürültü Seviyesi",
+        "noiseDb": "Gürültü (dB)",
+        "mountingOption": "Lastik montajı yaptır (+ €19.85 adet başı)",
+        "description": "Açıklama"
     },
     "Contact": {
         "title": "Bize Ulaşın",
@@ -150,7 +156,12 @@
         "searchPlaceholder": "Lastik ara...",
         "noResults": "Kriterlerinize uygun lastik bulunamadı.",
         "loading": "Yükleniyor...",
-        "used": "İkinci El"
+        "used": "İkinci El",
+        "howToFind": "Lastik ebadınız nasıl okunur?",
+        "howToDesc": "Bu numaraları bulmak için mevcut lastiklerinizin yanağına bakın:",
+        "generalSearch": "Genel Arama",
+        "searchBySize": "Boyuta Göre Ara",
+        "searchBtn": "Lastik Bul"
     },
     "Home": {
         "quality": "Kalite",

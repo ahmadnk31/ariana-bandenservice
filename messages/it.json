@@ -109,7 +109,13 @@
         "keyFeatures": "Caratteristiche principali",
         "seeMore": "Vedi di più",
         "seeLess": "Vedi meno",
-        "makeAppointment": "Prendi un appuntamento"
+        "makeAppointment": "Prendi un appuntamento",
+        "efficiency": "Efficienza del carburante",
+        "grip": "Aderenza sul bagnato",
+        "noise": "Livello di rumore",
+        "noiseDb": "Rumore (dB)",
+        "mountingOption": "Montaggio pneumatici (+ €19.85 p.p.)",
+        "description": "Descrizione"
     },
     "Contact": {
         "title": "Contattaci",
@@ -149,7 +155,12 @@
         "searchPlaceholder": "Cerca pneumatici...",
         "noResults": "Nessun pneumatico trovato corrispondente ai tuoi criteri.",
         "loading": "Caricamento...",
-        "used": "Usato"
+        "used": "Usato",
+        "howToFind": "Come leggere la misura del pneumnatico?",
+        "howToDesc": "Guarda il fianco dei tuoi pneumatici attuali per trovare questi numeri:",
+        "generalSearch": "Ricerca generale",
+        "searchBySize": "Ricerca per misura",
+        "searchBtn": "Trova pneumatici"
     },
     "Home": {
         "quality": "Qualità",

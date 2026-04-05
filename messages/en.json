@@ -116,7 +116,8 @@
         "grip": "Wet Grip",
         "noise": "Noise Level",
         "noiseDb": "Noise (dB)",
-        "mountingOption": "Have tires mounted (+ €19.85 p.t.)"
+        "mountingOption": "Have tires mounted (+ €19.85 p.t.)",
+        "description": "Description"
     },
     "Contact": {
         "title": "Contact Us",
@@ -156,7 +157,12 @@
         "searchPlaceholder": "Search tires...",
         "noResults": "No tires found matching your criteria.",
         "loading": "Loading...",
-        "used": "Used"
+        "used": "Used",
+        "howToFind": "How to read your tire size?",
+        "howToDesc": "Look at the sidewall of your current tires to find these numbers:",
+        "generalSearch": "General Search",
+        "searchBySize": "Search by Size",
+        "searchBtn": "Find Tires"
     },
     "Home": {
         "quality": "Quality",

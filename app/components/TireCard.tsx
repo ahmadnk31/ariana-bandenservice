@@ -10,6 +10,7 @@ import { ShoppingCart, Flame, Info } from 'lucide-react';
 import StockRequestModal from "./StockRequestModal";
 import TireLabel from "./TireLabel";
 import SeasonIcon from "./SeasonIcon";
+import { getBrandLogo } from "@/lib/utils";
 
 function FeatureTooltip({ description }: { description: string }) {
     const [show, setShow] = useState(false);
@@ -357,7 +358,7 @@ export default function TireCard({
                         {t('outOfStock')}
                     </div>
                 )}
-                {inStock && stock > 0 && stock <= 5 && (
+                {inStock && stock > 0 && stock <= 3 && (
                     <div className="absolute top-2 right-2 px-2 py-0.5 bg-orange-500 text-white text-[10px] font-bold rounded z-10 animate-pulse">
                         {t('lastChance')}
                     </div>
@@ -365,7 +366,7 @@ export default function TireCard({
             </div>
 
             {/* Low stock urgency bar */}
-            {inStock && stock > 0 && stock <= 5 && (
+            {inStock && stock > 0 && stock <= 3 && (
                 <div className="mb-2">
                     <div className="flex items-center justify-between mb-1">
                         <span className="text-[10px] font-semibold text-orange-600">{t('hurryUp')}</span>
@@ -397,7 +398,16 @@ export default function TireCard({
             </div>
 
             {/* Brand & Name */}
-            <p className="text-xs text-muted-foreground">{brand}</p>
+            {(() => {
+                const logo = getBrandLogo(brand);
+                return logo ? (
+                    <div className="mb-2 h-8 sm:h-10 w-full flex justify-start">
+                        <img src={logo} alt={brand} className="h-full max-w-[120px] object-contain object-left" />
+                    </div>
+                ) : (
+                    <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mb-1">{brand}</p>
+                );
+            })()}
             <Link href={`/tires/${slug}`} className="block group-hover:text-primary transition-colors">
                 <h3 className="text-base font-bold mb-2 leading-tight">{name}</h3>
             </Link>
@@ -448,14 +458,11 @@ export default function TireCard({
             <div className="flex items-center justify-between mt-auto pt-4 border-t border-muted">
                 <div>
                     <Price amount={price} size="lg" />
-                    {stock > 0 && stock <= 5 && (
+                    {stock > 0 && stock <= 3 && (
                         <p className="text-[10px] text-orange-600 font-semibold flex items-center gap-0.5 animate-pulse">
                             <Flame className="w-3 h-3" />
                             {t('lowStock', { count: stock })}
                         </p>
-                    )}
-                    {stock > 5 && (
-                        <p className="text-[10px] text-green-600">{t('stockCount', { count: stock })}</p>
                     )}
                 </div>
                 {stock > 0 ? (

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useTranslations } from 'next-intl';
 import Price from '@/app/components/Price';
 import SeasonIcon from '@/app/components/SeasonIcon';
+import { getBrandLogo } from "@/lib/utils";
 
 interface SearchResult {
     id: string;
@@ -26,6 +27,10 @@ interface SearchOverlayProps {
 
 export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const [searchMode, setSearchMode] = useState<"general" | "size">("general");
+    const [sizeWidth, setSizeWidth] = useState("");
+    const [sizeRatio, setSizeRatio] = useState("");
+    const [sizeRim, setSizeRim] = useState("");
     const [query, setQuery] = useState("");
     const [results, setResults] = useState<SearchResult[]>([]);
     const [loading, setLoading] = useState(false);
@@ -35,6 +40,9 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
     const [mounted, setMounted] = useState(false);
     const router = useRouter();
     const inputRef = useRef<HTMLInputElement>(null);
+    const widthRef = useRef<HTMLInputElement>(null);
+    const ratioRef = useRef<HTMLInputElement>(null);
+    const rimRef = useRef<HTMLInputElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const t = useTranslations('SearchOverlay');
     const tiresT = useTranslations('Tires');
@@ -42,6 +50,14 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    let activeQuery = query;
+    if (searchMode === "size") {
+        activeQuery = sizeWidth;
+        if (sizeRatio) activeQuery += `/${sizeRatio}`;
+        if (sizeRim) activeQuery += ` R${sizeRim}`;
+        activeQuery = activeQuery.trim();
+    }
 
     // Close on escape
     useEffect(() => {
@@ -73,12 +89,12 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
     // Initial search
     useEffect(() => {
         const timer = setTimeout(async () => {
-            if (query.length > 2) {
+            if (activeQuery.length > 2) {
                 setLoading(true);
                 setPage(1);
                 setHasMore(true);
                 try {
-                    const res = await fetch(`/api/tires/search?q=${encodeURIComponent(query)}&page=1&limit=10`);
+                    const res = await fetch(`/api/tires/search?q=${encodeURIComponent(activeQuery)}&page=1&limit=10`);
                     if (res.ok) {
                         const data = await res.json();
                         setResults(data);
@@ -96,7 +112,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
         }, 300);
 
         return () => clearTimeout(timer);
-    }, [query]);
+    }, [activeQuery]);
 
     // Load more results
     const loadMore = async () => {
@@ -105,7 +121,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
         setLoadingMore(true);
         const nextPage = page + 1;
         try {
-            const res = await fetch(`/api/tires/search?q=${encodeURIComponent(query)}&page=${nextPage}&limit=10`);
+            const res = await fetch(`/api/tires/search?q=${encodeURIComponent(activeQuery)}&page=${nextPage}&limit=10`);
             if (res.ok) {
                 const data = await res.json();
                 if (data.length === 0) {
@@ -132,10 +148,16 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
         }
     };
 
-    const handleSearch = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (query) {
-            setIsOpen(false);
+    const handleSearch = (e?: React.FormEvent) => {
+        if (e) e.preventDefault();
+        setIsOpen(false);
+        if (searchMode === "size") {
+            const params = new URLSearchParams();
+            if (sizeWidth) params.set("width", sizeWidth);
+            if (sizeRatio) params.set("aspectRatio", sizeRatio);
+            if (sizeRim) params.set("rimSize", sizeRim);
+            router.push(`/tires?${params.toString()}`);
+        } else if (query) {
             router.push(`/tires?search=${encodeURIComponent(query)}`);
         }
     };
@@ -194,37 +216,135 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                     />
 
                     {/* Search Container */}
-                    <div className="relative w-full max-w-2xl max-h-[85vh] md:max-h-[600px] bg-card border border-muted rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col">
-                        <form onSubmit={handleSearch} className="flex items-center border-b border-muted p-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground mr-3"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                            <input
-                                ref={inputRef}
-                                type="text"
-                                placeholder={t('searchPlaceholder')}
-                                className="flex-1 bg-transparent border-none text-lg outline-none placeholder:text-muted-foreground"
-                                value={query}
-                                onChange={(e) => setQuery(e.target.value)}
-                            />
-                            {query && (
-                                <button
-                                    type="button"
-                                    onClick={() => setQuery("")}
-                                    className="p-1 text-muted-foreground hover:text-foreground"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                                </button>
-                            )}
+                    <div className={`relative w-full max-w-2xl ${searchMode === "size" ? "max-h-[90vh] md:max-h-[800px]" : "max-h-[85vh] md:max-h-[600px]"} bg-card border border-muted rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col`}>
+                        
+                        {/* Search Toggles */}
+                        <div className={`flex bg-muted/50 p-1 mx-4 mt-4 ${searchMode === "size" ? "mb-4" : ""} rounded-lg flex-shrink-0 relative z-20`}>
+                            <button
+                                type="button"
+                                onClick={() => setSearchMode("general")}
+                                className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-colors ${searchMode === "general" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
+                            >
+                                {t('generalSearch')}
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => setSearchMode("size")}
+                                className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-colors ${searchMode === "size" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
+                            >
+                                {t('searchBySize')}
+                            </button>
                             <button
                                 type="button"
                                 onClick={() => setIsOpen(false)}
-                                className="ml-4 px-2 py-1 text-xs font-medium bg-muted text-muted-foreground rounded hover:bg-muted/80"
+                                className="ml-2 px-3 text-muted-foreground hover:text-foreground bg-transparent border-l border-muted/50"
                             >
-                                {t('close')}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                             </button>
-                        </form>
+                        </div>
+
+                        {searchMode === "general" ? (
+                            <form onSubmit={handleSearch} className="flex flex-shrink-0 items-center border-b border-muted/50 p-4 relative z-20 bg-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground mr-3"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                <input
+                                    ref={inputRef}
+                                    type="text"
+                                    placeholder={t('searchPlaceholder')}
+                                    className="flex-1 bg-transparent border-none text-lg outline-none placeholder:text-muted-foreground"
+                                    value={query}
+                                    onChange={(e) => setQuery(e.target.value)}
+                                />
+                                {query && (
+                                    <button
+                                        type="button"
+                                        onClick={() => setQuery("")}
+                                        className="p-1 text-muted-foreground hover:text-foreground"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    </button>
+                                )}
+                            </form>
+                        ) : (
+                            <div className="flex-shrink-0 relative overflow-hidden border-b border-muted min-h-[220px] sm:min-h-[280px] flex flex-col justify-center items-center bg-white dark:bg-[#1a1c23]">
+                                <div 
+                                    className="absolute left-1/2 -bottom-[40%] sm:-bottom-[60%] -translate-x-1/2 w-[180%] sm:w-[900px] aspect-square pointer-events-none opacity-15 dark:opacity-20 blend-luminosity"
+                                    style={{
+                                        backgroundImage: "url(/hero-tire.png)",
+                                        backgroundSize: "100% auto",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundPosition: "top center"
+                                    }}
+                                />
+                                
+                                <div className="flex items-end justify-center relative z-10 pt-6 sm:pt-10 pb-2 w-full px-4">
+                                    <div className="flex flex-col items-center group">
+                                        <input
+                                            ref={widthRef}
+                                            type="number"
+                                            value={sizeWidth}
+                                            onChange={(e) => {
+                                                setSizeWidth(e.target.value);
+                                                if(e.target.value.length === 3) ratioRef.current?.focus();
+                                            }}
+                                            placeholder="175"
+                                            className="w-24 sm:w-40 text-center bg-transparent border-b-2 border-transparent focus:border-primary/50 text-primary font-black text-5xl sm:text-[80px] leading-none py-1 outline-none transition-all placeholder:text-primary/20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                        />
+                                        <span className="text-[10px] sm:text-[12px] text-primary/60 uppercase tracking-widest font-bold mt-3 group-hover:text-primary transition-colors">{tiresT('width') || 'Width'}</span>
+                                    </div>
+                                    
+                                    <span className="text-primary/40 font-light text-5xl sm:text-[80px] leading-none mb-7 sm:mb-8 mx-1 sm:mx-3">/</span>
+                                    
+                                    <div className="flex flex-col items-center group">
+                                        <input
+                                            ref={ratioRef}
+                                            type="number"
+                                            value={sizeRatio}
+                                            onChange={(e) => {
+                                                setSizeRatio(e.target.value);
+                                                if(e.target.value.length === 2 && sizeRatio.length !== 2) rimRef.current?.focus();
+                                            }}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Backspace' && !sizeRatio) widthRef.current?.focus();
+                                            }}
+                                            placeholder="55"
+                                            className="w-20 sm:w-32 text-center bg-transparent border-b-2 border-transparent focus:border-primary/50 text-primary font-black text-5xl sm:text-[80px] leading-none py-1 outline-none transition-all placeholder:text-primary/20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                        />
+                                        <span className="text-[10px] sm:text-[12px] text-primary/60 uppercase tracking-widest font-bold mt-3 group-hover:text-primary transition-colors">{tiresT('ratio') || 'Ratio'}</span>
+                                    </div>
+                                    
+                                    <span className="text-primary font-black text-4xl sm:text-[60px] leading-none mb-7 sm:mb-8 mx-1 sm:mx-4 tracking-tighter">R</span>
+                                    
+                                    <div className="flex flex-col items-center group">
+                                        <input
+                                            ref={rimRef}
+                                            type="number"
+                                            value={sizeRim}
+                                            onChange={(e) => setSizeRim(e.target.value)}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Backspace' && !sizeRim) ratioRef.current?.focus();
+                                            }}
+                                            placeholder="20"
+                                            className="w-20 sm:w-32 text-center bg-transparent border-b-2 border-transparent focus:border-primary/50 text-primary font-black text-5xl sm:text-[80px] leading-none py-1 outline-none transition-all placeholder:text-primary/20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                        />
+                                        <span className="text-[10px] sm:text-[12px] text-primary/60 uppercase tracking-widest font-bold mt-3 group-hover:text-primary transition-colors">{tiresT('rim') || 'Rim'}</span>
+                                    </div>
+                                </div>
+
+                                <div className="mt-4 sm:mt-8 flex justify-center relative z-10 w-full mb-4">
+                                    <button
+                                        type="button"
+                                        onClick={() => handleSearch()}
+                                        className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 px-10 rounded-full shadow-lg transition-all hover:shadow-xl active:scale-95 flex items-center gap-3 text-base sm:text-lg"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                        {t('searchBtn')}
+                                    </button>
+                                </div>
+                            </div>
+                        )}
 
                         {/* Results */}
-                        {(results.length > 0 || loading) && (
+                        {(results.length > 0 || loading) ? (
                             <div
                                 ref={scrollContainerRef}
                                 onScroll={handleScroll}
@@ -272,9 +392,18 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                                             {result.size}
                                                         </span>
                                                     </div>
-                                                    <p className="text-sm text-muted-foreground mt-0.5">
-                                                        {result.brand}
-                                                    </p>
+                                                    <div className="mt-1.5">
+                                                        {(() => {
+                                                            const logo = getBrandLogo(result.brand);
+                                                            return logo ? (
+                                                                <div className="h-4 md:h-5 w-full flex justify-start">
+                                                                    <img src={logo} alt={result.brand} className="h-full max-w-[80px] object-contain object-left" />
+                                                                </div>
+                                                            ) : (
+                                                                <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">{result.brand}</p>
+                                                            );
+                                                        })()}
+                                                    </div>
                                                 </div>
                                                 <div><Price amount={result.price} size="base" /></div>
                                             </Link>
@@ -287,12 +416,49 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                     </>
                                 )}
                             </div>
-                        )}
-
-                        {query && results.length === 0 && !loading && (
-                            <div className="p-8 text-center text-muted-foreground">
-                                {t('noResults')}
-                            </div>
+                        ) : (
+                            activeQuery ? (
+                                !loading && (
+                                    <div className="p-8 text-center text-muted-foreground">
+                                        {t('noResults')}
+                                    </div>
+                                )
+                            ) : (
+                                /* Helpful Empty State */
+                                searchMode === "general" ? (
+                                    <div className="flex-1 min-h-0 overflow-y-auto p-8 text-center bg-muted/10">
+                                        <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg>
+                                        </div>
+                                        <h3 className="text-lg font-bold mb-2">{(t as any)('howToFind') || "How to read your tire size?"}</h3>
+                                        <p className="text-sm text-muted-foreground mb-6">{(t as any)('howToDesc') || "Look at the sidewall of your current tires to find these numbers:"}</p>
+                                        
+                                        <div className="flex items-center justify-center gap-3 sm:gap-4 text-sm font-semibold max-w-sm mx-auto p-4 md:p-6 rounded-2xl bg-card border border-muted shadow-sm">
+                                            <div className="text-center group">
+                                                <div className="text-2xl sm:text-3xl font-black text-foreground group-hover:text-primary transition-colors duration-300">205</div>
+                                                <div className="text-[9px] sm:text-[10px] text-muted-foreground uppercase tracking-widest mt-1">Width</div>
+                                            </div>
+                                            <div className="text-xl sm:text-2xl text-muted-foreground font-light">/</div>
+                                            <div className="text-center group">
+                                                <div className="text-2xl sm:text-3xl font-black text-foreground group-hover:text-primary transition-colors duration-300">55</div>
+                                                <div className="text-[9px] sm:text-[10px] text-muted-foreground uppercase tracking-widest mt-1">Profile</div>
+                                            </div>
+                                            <div className="text-xl sm:text-2xl text-muted-foreground font-light">R</div>
+                                            <div className="text-center group">
+                                                <div className="text-2xl sm:text-3xl font-black text-foreground group-hover:text-primary transition-colors duration-300">16</div>
+                                                <div className="text-[9px] sm:text-[10px] text-muted-foreground uppercase tracking-widest mt-1">Rim Size</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="mt-8 flex flex-wrap justify-center gap-2">
+                                            <button onClick={() => setQuery("205/55 R16")} className="px-3 py-1.5 text-xs font-medium bg-background hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all duration-300 rounded-full border border-muted shadow-sm">Try "205/55 R16"</button>
+                                            <button onClick={() => setQuery("225/45 R17")} className="px-3 py-1.5 text-xs font-medium bg-background hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all duration-300 rounded-full border border-muted shadow-sm">Try "225/45 R17"</button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="flex-1 min-h-[0px] bg-muted/5"></div>
+                                )
+                            )
                         )}
                     </div>
                 </div>,

@@ -63,3 +63,65 @@ export function getAlternateLanguages(path: string = '') {
 
   return languages;
 }
+
+export function getBrandLogo(brandName?: string | null): string | null {
+  if (!brandName) return null;
+  const brand = brandName.trim().toLowerCase();
+  const logos: Record<string, string> = {
+    michelin: '/michelin.png',
+    bridgestone: '/bridgestone.png',
+    continental: '/continental.png',
+    pirelli: '/pirelli.png',
+    goodride: '/goodride.png',
+    hankook: '/hankook.png',
+    dunlop: '/dunlop.png',
+    goodyear: '/goodyear.png',
+    kumho: '/kumho.png',
+    nexen: '/nexen.png',
+    kleber: '/kleber.png',
+    toyo: '/toyo.png',
+    nankang: '/nankang.png',
+    ceat: '/ceat.png',
+    tracmax: '/tracmax.png',
+    rotalla: '/rotalla.png',
+    minerva: '/minerva.png',
+    leao: '/Leao.png',
+    trazano: '/trazano.png',
+    westlake: '/westlake.png',
+    berlin: '/berlin.png',
+    falken: '/falken.png',
+    firestone: '/firestone.png',
+    fulda: '/fulda.png',
+    doublestar: '/doublestar.png',
+    tomket: '/tomket.png',
+    blackarrow: '/blackarrow.png',
+    vredestein: '/vredestein.png',
+    landspider: '/landspider.png',
+    uniroyal: '/uniroyal.png',
+    imperial: '/imperial.png',
+    kpatos: '/kpatos.png',
+    aptany: '/aptany.png',
+    windforce: '/windforce.png',
+    maxxis: '/maxxis.png',
+    fortuna: '/fortuna.png',
+    tristar: '/tristar.png',
+    lykeen: '/lykeen.png',
+    mazzini: '/mazzini.png',
+    yokohama: '/yokohama.png',
+    delmax: '/delmax.png',
+    superia: '/superia.png',
+    kenda: '/kenda.png',
+    lanvigator: '/lanvigator.png',
+    rockblade: '/rockblade.png',
+    accelera: '/accelera.png',
+    goodtrip: '/goodtrip.png',
+    ovation: '/ovation.png',
+    rapid: '/rapid.png',
+    gtradial: '/gtradial.png',
+    security: '/security.png',
+    sailun: '/sailun.png',
+
+
+  };
+  return logos[brand] || null;
+}

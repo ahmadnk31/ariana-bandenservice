@@ -110,7 +110,13 @@
         "keyFeatures": "Características principales",
         "seeMore": "Ver más",
         "seeLess": "Ver menos",
-        "makeAppointment": "Hacer una cita"
+        "makeAppointment": "Hacer una cita",
+        "efficiency": "Eficiencia de combustible",
+        "grip": "Agarre en mojado",
+        "noise": "Nivel de ruido",
+        "noiseDb": "Ruido (dB)",
+        "mountingOption": "Montaje de neumáticos (+ €19.85 p.u.)",
+        "description": "Descripción"
     },
     "Contact": {
         "title": "Contáctanos",
@@ -150,7 +156,12 @@
         "searchPlaceholder": "Buscar neumáticos...",
         "noResults": "No se encontraron neumáticos que coincidan con tus criterios.",
         "loading": "Cargando...",
-        "used": "Usado"
+        "used": "Usado",
+        "howToFind": "¿Cómo leer el tamaño de su neumático?",
+        "howToDesc": "Mire la pared lateral de sus neumáticos actuales para encontrar estos números:",
+        "generalSearch": "Búsqueda general",
+        "searchBySize": "Búsqueda por tamaño",
+        "searchBtn": "Buscar neumáticos"
     },
     "Home": {
         "quality": "Calidad",

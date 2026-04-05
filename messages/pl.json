@@ -110,7 +110,13 @@
         "keyFeatures": "Kluczowe cechy",
         "seeMore": "Więcej",
         "seeLess": "Mniej",
-        "makeAppointment": "Umów się na wizytę"
+        "makeAppointment": "Umów się na wizytę",
+        "efficiency": "Efektywność paliwowa",
+        "grip": "Przyczepność na mokrym",
+        "noise": "Poziom hałasu",
+        "noiseDb": "Hałas (dB)",
+        "mountingOption": "Zamontuj opony (+ €19.85 za szt.)",
+        "description": "Opis"
     },
     "Contact": {
         "title": "Skontaktuj się z nami",
@@ -150,7 +156,12 @@
         "searchPlaceholder": "Szukaj opon...",
         "noResults": "Nie znaleziono opon spełniających Twoje kryteria.",
         "loading": "Ładowanie...",
-        "used": "Używane"
+        "used": "Używane",
+        "howToFind": "Jak odczytać rozmiar opony?",
+        "howToDesc": "Spójrz na ścianę boczną swoich obecnych opon, aby znaleźć te liczby:",
+        "generalSearch": "Wyszukiwanie ogólne",
+        "searchBySize": "Szukaj według rozmiaru",
+        "searchBtn": "Znajdź opony"
     },
     "Home": {
         "quality": "Jakość",

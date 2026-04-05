@@ -116,7 +116,8 @@
         "grip": "Grip op nat wegdek",
         "noise": "Geluidsniveau",
         "noiseDb": "Geluid (dB)",
-        "mountingOption": "Banden laten monteren (+ €19.85 p.b.)"
+        "mountingOption": "Banden laten monteren (+ €19.85 p.b.)",
+        "description": "Beschrijving"
     },
     "Contact": {
         "title": "Neem Contact Op",
@@ -155,7 +156,12 @@
         "searchPlaceholder": "Zoek banden...",
         "noResults": "Geen banden gevonden die aan uw criteria voldoen.",
         "loading": "Laden...",
-        "used": "Tweedehands"
+        "used": "Tweedehands",
+        "howToFind": "Hoe lees je jouw bandenmaat?",
+        "howToDesc": "Kijk op de zijkant van je huidige banden om deze nummers te vinden:",
+        "generalSearch": "Algemeen zoeken",
+        "searchBySize": "Zoeken op maat",
+        "searchBtn": "Voorraad Bekijken"
     },
     "Home": {
         "quality": "Kwaliteit",

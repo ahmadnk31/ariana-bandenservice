@@ -2,7 +2,7 @@
 
 import { useRouter, usePathname } from "@/src/i18n/routing";
 import { useSearchParams } from "next/navigation";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import TireCard from "./TireCard";
 import { useTranslations } from 'next-intl';
 
@@ -70,6 +70,10 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
     const [filters, setFilters] = useState<FilterState>(initialFilters);
     const [localFilters, setLocalFilters] = useState<FilterState>(initialFilters);
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
+    const widthRef = useRef<HTMLInputElement>(null);
+    const ratioRef = useRef<HTMLInputElement>(null);
+    const rimRef = useRef<HTMLInputElement>(null);
 
     const updateParams = useCallback((newFilters: Partial<FilterState>) => {
         const params = new URLSearchParams(searchParams.toString());
@@ -281,22 +285,37 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                         <label className="text-sm font-medium">{t('dimensions')}</label>
                         <div className="grid grid-cols-3 gap-2">
                             <input
+                                ref={widthRef}
                                 type="number"
                                 placeholder={t('width')}
                                 value={localFilters.width || ""}
-                                onChange={(e) => handleFilterChange("width", e.target.value ? Number(e.target.value) : null)}
+                                onChange={(e) => {
+                                    const val = e.target.value;
+                                    handleFilterChange("width", val ? Number(val) : null);
+                                    if (val.length === 3) {
+                                        ratioRef.current?.focus();
+                                    }
+                                }}
                                 className="px-2 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                                 title="Width (mm)"
                             />
                             <input
+                                ref={ratioRef}
                                 type="number"
                                 placeholder={t('ratio')}
                                 value={localFilters.aspectRatio || ""}
-                                onChange={(e) => handleFilterChange("aspectRatio", e.target.value ? Number(e.target.value) : null)}
+                                onChange={(e) => {
+                                    const val = e.target.value;
+                                    handleFilterChange("aspectRatio", val ? Number(val) : null);
+                                    if (val.length === 2 && localFilters.aspectRatio?.toString().length !== 2) {
+                                        rimRef.current?.focus();
+                                    }
+                                }}
                                 className="px-2 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
                                 title="Aspect Ratio"
                             />
                             <input
+                                ref={rimRef}
                                 type="number"
                                 placeholder={t('rim')}
                                 value={localFilters.rimSize || ""}
