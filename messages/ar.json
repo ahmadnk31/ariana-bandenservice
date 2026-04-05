@@ -109,7 +109,14 @@
         "keyFeatures": "الميزات الرئيسية",
         "seeMore": "عرض المزيد",
         "seeLess": "عرض أقل",
-        "makeAppointment": "احجز موعدا"
+        "makeAppointment": "احجز موعدا",
+        "efficiency": "كفاءة الوقود",
+        "grip": "الثبات على الرطب",
+        "noise": "مستوى الضوضاء",
+        "noiseDb": "الضوضاء (ديسيبل)",
+        "mountingOption": "تركيب الإطارات (+ 19.85 يورو للقطعة)",
+        "description": "وصف",
+        "relatedProducts": "منتجات ذات صلة"
     },
     "Contact": {
         "title": "اتصل بنا",
@@ -149,7 +156,12 @@
         "searchPlaceholder": "ابحث عن الإطارات...",
         "noResults": "لم يتم العثور على إطارات تطابق معاييرك.",
         "loading": "جارٍ التحميل...",
-        "used": "مستعمل"
+        "used": "مستعمل",
+        "howToFind": "كيف تقرأ حجم إطارك؟",
+        "howToDesc": "انظر إلى الجدار الجانبي لإطاراتك الحالية للعثور على هذه الأرقام:",
+        "generalSearch": "بحث عام",
+        "searchBySize": "البحث حسب الحجم",
+        "searchBtn": "ابحث عن الإطارات"
     },
     "Home": {
         "quality": "الجودة",

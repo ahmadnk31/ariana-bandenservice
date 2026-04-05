@@ -5,6 +5,8 @@ import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import ImageDropzone from "@/app/components/ImageDropzone";
 import SeasonIcon from "@/app/components/SeasonIcon";
+import TiptapEditor from "@/app/components/blog/TiptapEditor";
+import { parseTireSize } from "@/lib/utils";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -356,7 +358,22 @@ export default function EditTirePage() {
                                 type="text"
                                 id="size"
                                 value={formData.size}
-                                onChange={(e) => setFormData((prev) => ({ ...prev, size: e.target.value }))}
+                                onChange={(e) => {
+                                    const value = e.target.value;
+                                    setFormData((prev) => {
+                                        const newFormData = { ...prev, size: value };
+                                        
+                                        // Auto-fill size details if they can be parsed
+                                        const parsed = parseTireSize(value);
+                                        if (parsed) {
+                                            if (parsed.width) newFormData.width = parsed.width.toString();
+                                            if (parsed.aspectRatio) newFormData.aspectRatio = parsed.aspectRatio.toString();
+                                            if (parsed.rimSize) newFormData.rimSize = parsed.rimSize.toString();
+                                        }
+                                        
+                                        return newFormData;
+                                    });
+                                }}
                                 className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                                 placeholder="225/45 R17"
                                 required
@@ -548,11 +565,9 @@ export default function EditTirePage() {
                 {/* Description */}
                 <div className="bg-background rounded-lg border border-muted p-6 space-y-4">
                     <h2 className="font-bold text-lg mb-4">Description (Optional)</h2>
-                    <textarea
-                        id="description"
-                        value={formData.description}
-                        onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
-                        className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors min-h-[100px]"
+                    <TiptapEditor
+                        content={formData.description}
+                        onChange={(content) => setFormData((prev) => ({ ...prev, description: content }))}
                         placeholder="Enter a detailed description of the tire..."
                     />
                 </div>

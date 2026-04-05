@@ -8,10 +8,10 @@ import Link from "next/link";
 import TireCard from "@/app/components/TireCard";
 import { getTranslations } from "next-intl/server";
 import ProductAddToCart from "@/app/components/ProductAddToCart";
-import ExpandableDescription from "@/app/components/ExpandableDescription";
+import ProductTabs from "@/app/components/ProductTabs";
 import SocialProofBadge from "@/app/components/SocialProofBadge";
 import Price from "@/app/components/Price";
-import { getAlternateLanguages } from "@/lib/utils";
+import { getAlternateLanguages, getBrandLogo } from "@/lib/utils";
 import TireLabel from "@/app/components/TireLabel";
 import SeasonIcon from "@/app/components/SeasonIcon";
 
@@ -194,16 +194,25 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 </div>
 
                 <section className="container mx-auto px-4 pb-20">
-                    <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+                    <div className="grid md:grid-cols-2 gap-12 lg:gap-16 overflow-visible">
                         {/* Left: Gallery */}
-                        <div>
+                        <div className="relative" style={{ zIndex: 20 }}>
                             <ProductGallery images={tire.images} name={tire.name} />
                         </div>
 
                         {/* Right: Details */}
                         <div className="flex flex-col">
-                            <div className="mb-2">
-                                <span className="text-sm font-medium text-primary uppercase tracking-wider">{tire.brand}</span>
+                            <div className="mb-4">
+                                {(() => {
+                                    const logo = getBrandLogo(tire.brand);
+                                    return logo ? (
+                                        <div className="h-12 md:h-14 w-full flex justify-start mb-2">
+                                            <img src={logo} alt={tire.brand} className="h-full max-w-[180px] object-contain object-left" />
+                                        </div>
+                                    ) : (
+                                        <span className="text-sm font-medium text-primary uppercase tracking-wider">{tire.brand}</span>
+                                    );
+                                })()}
                             </div>
                             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{tire.name}</h1>
 
@@ -247,11 +256,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
                             <div className="text-3xl font-bold mb-4">
                                 <Price amount={tire.price} size="xl" />
-                                {tire.stock > 0 && <span className="text-sm font-normal text-muted-foreground ml-3">({tire.stock} in stock)</span>}
+                                {tire.stock > 0 && tire.stock <= 3 && <span className="text-sm font-normal text-muted-foreground ml-3">({tire.stock} in stock)</span>}
                             </div>
 
                             {/* Urgency: Low stock alert */}
-                            {tire.stock > 0 && tire.stock <= 5 && (
+                            {tire.stock > 0 && tire.stock <= 3 && (
                                 <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-600 text-sm font-semibold mb-4 animate-pulse">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
                                     {t('lowStock', { count: tire.stock })}
@@ -264,28 +273,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
                             </div>
 
                             <hr className="border-muted mb-8" />
-
-                            <div className="prose prose-sm max-w-none text-muted-foreground mb-8">
-                                {tire.description ? (
-                                    <ExpandableDescription description={tire.description} />
-                                ) : (
-                                    <p>{t('noDescription')}</p>
-                                )}
-                            </div>
-
-                            {features.length > 0 && (
-                                <div className="mb-8">
-                                    <h3 className="font-semibold text-foreground mb-4">{t('keyFeatures')}</h3>
-                                    <ul className="grid sm:grid-cols-2 gap-3">
-                                        {features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mt-0.5 shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                {feature}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
 
                             <div className="mt-auto">
                                 <ProductAddToCart
@@ -306,23 +293,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     </div>
                 </section>
 
-                {/* Related Products */}
-                {relatedTires.length > 0 && (
-                    <section className="bg-muted py-16">
-                        <div className="container mx-auto px-4">
-                            <h2 className="text-2xl font-bold mb-8">{t('relatedProducts')}</h2>
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                {relatedTires.map((relatedTire) => (
-                                    <TireCard
-                                        key={relatedTire.id}
-                                        {...relatedTire}
-                                        features={JSON.parse(relatedTire.features)}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
+                <ProductTabs 
+                    description={tire.description} 
+                    features={features} 
+                    relatedTires={relatedTires} 
+                />
             </main>
             <Footer />
         </div>

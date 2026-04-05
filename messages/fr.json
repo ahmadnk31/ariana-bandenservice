@@ -110,7 +110,13 @@
         "keyFeatures": "Caractéristiques principales",
         "seeMore": "Voir plus",
         "seeLess": "Voir moins",
-        "makeAppointment": "Prendre rendez-vous"
+        "makeAppointment": "Prendre rendez-vous",
+        "efficiency": "Efficacité énergétique",
+        "grip": "Adhérence sur sol mouillé",
+        "noise": "Niveau sonore",
+        "noiseDb": "Bruit (dB)",
+        "mountingOption": "Montage des pneus (+ €19.85 p.p.)",
+        "description": "Description"
     },
     "Contact": {
         "title": "Contactez-nous",
@@ -150,7 +156,12 @@
         "searchPlaceholder": "Rechercher des pneus...",
         "noResults": "Aucun pneu ne correspond à vos critères.",
         "loading": "Chargement...",
-        "used": "D'occasion"
+        "used": "D'occasion",
+        "howToFind": "Comment lire la taille de vos pneus ?",
+        "howToDesc": "Regardez le flanc de vos pneus actuels pour trouver ces chiffres :",
+        "generalSearch": "Recherche générale",
+        "searchBySize": "Recherche par taille",
+        "searchBtn": "Trouver des pneus"
     },
     "Home": {
         "quality": "Qualité",

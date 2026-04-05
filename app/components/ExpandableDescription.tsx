@@ -12,7 +12,7 @@ export default function ExpandableDescription({ description, maxLines = 3 }: Exp
     const t = useTranslations("Tires");
     const [isExpanded, setIsExpanded] = useState(false);
     const [needsTruncation, setNeedsTruncation] = useState(false);
-    const contentRef = useRef<HTMLParagraphElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const el = contentRef.current;
@@ -26,18 +26,24 @@ export default function ExpandableDescription({ description, maxLines = 3 }: Exp
 
     return (
         <div>
-            <p
-                ref={contentRef}
-                className="expandable-description-text"
+            <div
+                ref={contentRef as React.RefObject<HTMLDivElement>}
+                className="expandable-description-text prose prose-sm dark:prose-invert max-w-none
+                    prose-headings:font-bold prose-headings:text-foreground
+                    prose-p:text-muted-foreground prose-p:leading-relaxed
+                    prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                    prose-img:rounded-lg prose-img:shadow-md prose-img:my-4
+                    prose-ul:list-disc prose-ul:pl-6
+                    prose-ol:list-decimal prose-ol:pl-6
+                    prose-li:text-muted-foreground"
                 style={{
                     display: "-webkit-box",
                     WebkitLineClamp: isExpanded ? "unset" : maxLines,
                     WebkitBoxOrient: "vertical",
                     overflow: isExpanded ? "visible" : "hidden",
                 }}
-            >
-                {description}
-            </p>
+                dangerouslySetInnerHTML={{ __html: description }}
+            />
             {needsTruncation && (
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}

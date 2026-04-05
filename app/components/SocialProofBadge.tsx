@@ -16,7 +16,7 @@ export default function SocialProofBadge({ stock }: SocialProofBadgeProps) {
     useEffect(() => {
         // Generate a realistic-looking viewer count based on stock scarcity
         // Lower stock = higher perceived interest
-        const baseViewers = stock <= 5 ? 8 : stock <= 15 ? 5 : 3;
+        const baseViewers = stock <= 3 ? 8 : stock <= 15 ? 5 : 3;
         const variance = Math.floor(Math.random() * 6); // 0-5
         setViewerCount(baseViewers + variance);
 
@@ -27,7 +27,7 @@ export default function SocialProofBadge({ stock }: SocialProofBadgeProps) {
 
         // Periodically update viewer count to feel "live"
         const interval = setInterval(() => {
-            const newBase = stock <= 5 ? 8 : stock <= 15 ? 5 : 3;
+            const newBase = stock <= 3 ? 8 : stock <= 15 ? 5 : 3;
             const newVariance = Math.floor(Math.random() * 6);
             setViewerCount(newBase + newVariance);
         }, 30000); // Update every 30s

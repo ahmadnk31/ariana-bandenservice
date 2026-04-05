@@ -111,7 +111,13 @@
         "keyFeatures": "Hauptmerkmale",
         "seeMore": "Mehr anzeigen",
         "seeLess": "Weniger anzeigen",
-        "makeAppointment": "Termin vereinbaren"
+        "makeAppointment": "Termin vereinbaren",
+        "efficiency": "Kraftstoffeffizienz",
+        "grip": "Nasshaftung",
+        "noise": "Geräuschpegel",
+        "noiseDb": "Geräusch (dB)",
+        "mountingOption": "Reifen montieren lassen (+ €19.85 p.Stk.)",
+        "description": "Beschreibung"
     },
     "Contact": {
         "title": "Kontaktieren Sie uns",
@@ -151,7 +157,12 @@
         "searchPlaceholder": "Reifen suchen...",
         "noResults": "Keine Reifen gefunden, die Ihren Kriterien entsprechen.",
         "loading": "Laden...",
-        "used": "Gebraucht"
+        "used": "Gebraucht",
+        "howToFind": "Wie liest man die Reifengröße?",
+        "howToDesc": "Schauen Sie auf die Seitenwand Ihrer aktuellen Reifen, um diese Zahlen zu finden:",
+        "generalSearch": "Allgemeine Suche",
+        "searchBySize": "Suche nach Größe",
+        "searchBtn": "Reifen finden"
     },
     "Home": {
         "quality": "Qualität",
