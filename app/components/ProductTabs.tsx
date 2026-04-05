@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import TireCard from "@/app/components/TireCard";
-import type { Tire } from "@prisma/client";
 
 interface ProductTabsProps {
     description: string | null;
@@ -22,11 +21,10 @@ export default function ProductTabs({ description, features, relatedTires }: Pro
                 <div className="flex items-center gap-6 border-b border-muted mb-8">
                     <button
                         onClick={() => setActiveTab("description")}
-                        className={`pb-4 text-lg font-bold transition-all relative ${
-                            activeTab === "description"
+                        className={`pb-4 text-lg font-bold transition-all relative ${activeTab === "description"
                                 ? "text-primary"
                                 : "text-muted-foreground hover:text-foreground"
-                        }`}
+                            }`}
                     >
                         {t('description') || 'Description'}
                         {activeTab === "description" && (
@@ -36,11 +34,10 @@ export default function ProductTabs({ description, features, relatedTires }: Pro
                     {relatedTires.length > 0 && (
                         <button
                             onClick={() => setActiveTab("related")}
-                            className={`pb-4 text-lg font-bold transition-all relative ${
-                                activeTab === "related"
+                            className={`pb-4 text-lg font-bold transition-all relative ${activeTab === "related"
                                     ? "text-primary"
                                     : "text-muted-foreground hover:text-foreground"
-                            }`}
+                                }`}
                         >
                             {t('relatedProducts')}
                             {activeTab === "related" && (
