@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import Image from "next/image";
+
 
 interface ProductGalleryProps {
     images: { url: string; id: string }[];
@@ -92,11 +92,9 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
     if (!images || images.length === 0) {
         return (
             <div className="aspect-square w-full bg-transparent rounded-lg flex items-center justify-center">
-                <Image
+                <img
                     src="/tire-placeholder.svg"
                     alt="Tire placeholder"
-                    width={400}
-                    height={400}
                     className="w-full h-full object-contain p-8 opacity-30"
                 />
             </div>
