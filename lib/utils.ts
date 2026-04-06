@@ -120,7 +120,7 @@ export function getBrandLogo(brandName?: string | null): string | null {
     gtradial: '/gtradial.png',
     security: '/security.png',
     sailun: '/sailun.png',
-
+    laufenn: '/laufenn.png',
 
   };
   return logos[brand] || null;
