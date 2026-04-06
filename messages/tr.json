@@ -25,8 +25,8 @@
         "address": "Gent, Belçika",
         "rights": "Tüm hakları saklıdır.",
         "openingHours": "Çalışma Saatleri",
-        "openingHoursText": "Pazartesi - Cuma: 09:00 - 18:00",
-        "openingHoursText2": "Cumartesi - Pazar: Kapalı",
+        "openingHoursText": "Pazartesi - Cumartesi: 09:00 - 18:00",
+        "openingHoursText2": "Pazar: Kapalı",
         "visitUs": "Bizi ziyaret edin",
         "visitUsText": "Gent, Belçika"
     },
@@ -274,10 +274,10 @@
         }
     },
     "Metadata": {
-        "title": "Lastik Merkezi Gent | Montaj Dahil Lastik Alın",
-        "description": "✓ Gent'in en ucuz lastik merkezi! Yeni ve ikinci el lastikler 25€'dan montaj dahil. Pts-Cmt 9-18, Pazar randevu ile. ☎ +32 466 19 56 22",
-        "ogDescription": "Lastik Merkezi Gent - Yeni ve ikinci el lastikler. Montaj, balans ve rot ayarı dahil. En iyi fiyatlar!",
-        "keywords": "lastik merkezi gent, lastik satın al, lastik montajı, rot ayarı, lastik merkezi belçika, ikinci el lastik, yeni lastik, ucuz lastik, kış lastiği, yaz lastiği, Sint-Amandsberg",
+        "title": "Lastik Merkezi Gent | Montaj Dahil Yeni & İkinci El Lastikler",
+        "description": "✓ Gent'in en ucuz lastik merkezi! Yeni ve ikinci el lastikler 25€'dan başlayan fiyatlarla. Montaj ve balans dahil. Pts-Cmt 9-18, Sint-Amandsberg. ☎ +32 466 19 56 22",
+        "ogDescription": "Lastik Merkezi Gent - Yeni ve ikinci el lastikler. Montaj, balans ve rot ayarı dahil. Bölgedeki en iyi fiyatlar! Sint-Amandsberg, Oostakker.",
+        "keywords": "lastik merkezi gent, lastik satın al, lastik montajı, rot ayarı, lastik merkezi belçika, ikinci el lastik, yeni lastik, ucuz lastik, kış lastiği, yaz lastiği, dört mevsim lastik, Sint-Amandsberg, Oostakker, Destelbergen, Gentbrugge, ariana bandenservice, gent bandenservice",
         "tiresTitle": "Lastik Al | Yeni ve İkinci El",
         "tiresDescription": "Gent'te lastik mi arıyorsunuz? Kış, yaz ve dört mevsim lastiklerimizi görün. Montaj dahil. 25€'dan başlayan fiyatlar.",
         "servicesTitle": "Lastik Servisleri | Montaj ve Rot Ayarı",

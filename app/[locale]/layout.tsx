@@ -116,6 +116,22 @@ export default async function LocaleLayout({
             "latitude": 51.0566,
             "longitude": 3.7663
         },
+        "areaServed": [
+            { "@type": "City", "name": "Gent" },
+            { "@type": "City", "name": "Sint-Amandsberg" },
+            { "@type": "City", "name": "Destelbergen" },
+            { "@type": "City", "name": "Lochristi" },
+            { "@type": "City", "name": "Gentbrugge" },
+            { "@type": "City", "name": "Ledeberg" },
+            { "@type": "City", "name": "Oostakker" },
+            { "@type": "City", "name": "Wondelgem" },
+            { "@type": "City", "name": "Mariakerke" },
+            { "@type": "City", "name": "Drongen" },
+            { "@type": "City", "name": "Merelbeke" },
+            { "@type": "City", "name": "Melle" },
+            { "@type": "City", "name": "Sint-Denijs-Westrem" },
+            { "@type": "City", "name": "Zwijnaarde" }
+        ],
         "openingHoursSpecification": [
             {
                 "@type": "OpeningHoursSpecification",
@@ -129,8 +145,56 @@ export default async function LocaleLayout({
                 ],
                 "opens": "09:00",
                 "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "10:00",
+                "closes": "16:00",
+                "description": "By appointment only"
             }
         ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Bandendiensten",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Bandenmontage"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Balanceren"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Wieluitlijning"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Nieuwe banden"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Tweedehands banden"
+                    }
+                }
+            ]
+        },
         "priceRange": "$$"
     };
 
