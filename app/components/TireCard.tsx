@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+
 import { Link } from "@/src/i18n/routing";
 import { useState, useRef, useCallback, useEffect } from "react";
 import { useTranslations } from 'next-intl';
@@ -109,7 +109,7 @@ export default function TireCard({
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
-    
+
     // Touch handling for swipe gestures
     const touchStartX = useRef<number>(0);
     const touchEndX = useRef<number>(0);
@@ -131,10 +131,10 @@ export default function TireCard({
     const nextImage = useCallback((e?: React.MouseEvent) => {
         if (e) e.preventDefault(); // Prevent link click
         if (isTransitioning) return; // Prevent rapid clicking
-        
+
         setIsTransitioning(true);
         setCurrentImageIndex((prev) => (prev + 1) % images.length);
-        
+
         // Reset transition state after animation
         setTimeout(() => setIsTransitioning(false), 300);
     }, [images.length, isTransitioning]);
@@ -142,10 +142,10 @@ export default function TireCard({
     const prevImage = useCallback((e?: React.MouseEvent) => {
         if (e) e.preventDefault(); // Prevent link click
         if (isTransitioning) return; // Prevent rapid clicking
-        
+
         setIsTransitioning(true);
         setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-        
+
         // Reset transition state after animation
         setTimeout(() => setIsTransitioning(false), 300);
     }, [images.length, isTransitioning]);
@@ -160,10 +160,10 @@ export default function TireCard({
     const handleTouchMove = useCallback((e: React.TouchEvent) => {
         if (images.length <= 1) return;
         touchEndX.current = e.touches[0].clientX;
-        
+
         // Calculate distance moved
         const distance = Math.abs(touchStartX.current - touchEndX.current);
-        
+
         // Mark as dragging if moved more than 10px
         if (distance > 10) {
             isDragging.current = true;
@@ -172,13 +172,13 @@ export default function TireCard({
 
     const handleTouchEnd = useCallback((e: React.TouchEvent) => {
         if (images.length <= 1 || !isDragging.current) return;
-        
+
         const swipeThreshold = 50; // Minimum distance for a swipe
         const swipeDistance = touchStartX.current - touchEndX.current;
 
         if (Math.abs(swipeDistance) > swipeThreshold) {
             e.preventDefault(); // Prevent link navigation
-            
+
             if (swipeDistance > 0) {
                 // Swiped left - next image
                 nextImage();
@@ -187,7 +187,7 @@ export default function TireCard({
                 prevImage();
             }
         }
-        
+
         // Reset touch state
         isDragging.current = false;
         touchStartX.current = 0;
@@ -241,13 +241,13 @@ export default function TireCard({
     }, [images.length]);
 
     return (
-        <div 
+        <div
             className="p-4 rounded-lg border border-muted bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col group relative"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             {/* Image Carousel */}
-            <div 
+            <div
                 ref={carouselRef}
                 className="relative w-full h-48 bg-transparent rounded-md mb-4 overflow-hidden select-none"
                 onTouchStart={handleTouchStart}
@@ -262,22 +262,18 @@ export default function TireCard({
                                 {images.map((image, index) => (
                                     <div
                                         key={image.id}
-                                        className={`absolute inset-0 w-full h-full transition-all duration-300 ease-in-out ${
-                                            index === currentImageIndex 
-                                                ? 'opacity-100 scale-100 translate-x-0' 
+                                        className={`absolute inset-0 w-full h-full transition-all duration-300 ease-in-out ${index === currentImageIndex
+                                                ? 'opacity-100 scale-100 translate-x-0'
                                                 : index < currentImageIndex
                                                     ? 'opacity-0 scale-95 -translate-x-full'
                                                     : 'opacity-0 scale-95 translate-x-full'
-                                        }`}
+                                            }`}
                                     >
-                                        <Image
+                                        <img
                                             src={image.url}
                                             alt={`${name} - Image ${index + 1}`}
-                                            width={500}
-                                            height={500}
                                             className="w-full h-full object-contain aspect-square transition-transform duration-500 group-hover:scale-105"
                                             draggable={false}
-                                            priority={index === 0}
                                         />
                                     </div>
                                 ))}
@@ -285,11 +281,9 @@ export default function TireCard({
                         </div>
                     ) : (
                         <div className="w-full h-full flex flex-col items-center justify-center bg-transparent">
-                            <Image
+                            <img
                                 src="/tire-placeholder.svg"
                                 alt="Tire placeholder"
-                                width={200}
-                                height={200}
                                 className="w-full h-full object-contain opacity-30"
                                 draggable={false}
                             />
@@ -332,8 +326,8 @@ export default function TireCard({
                             {images.map((_, index) => (
                                 <button
                                     key={index}
-                                    onClick={(e) => { 
-                                        e.preventDefault(); 
+                                    onClick={(e) => {
+                                        e.preventDefault();
                                         if (!isTransitioning) {
                                             setIsTransitioning(true);
                                             setCurrentImageIndex(index);
@@ -341,9 +335,8 @@ export default function TireCard({
                                             setTimeout(() => setIsTransitioning(false), 300);
                                         }
                                     }}
-                                    className={`w-1.5 h-1.5 rounded-full transition-all duration-200 disabled:opacity-50 ${
-                                        index === currentImageIndex ? "bg-primary scale-125" : "bg-background/60 hover:bg-background/80"
-                                    }`}
+                                    className={`w-1.5 h-1.5 rounded-full transition-all duration-200 disabled:opacity-50 ${index === currentImageIndex ? "bg-primary scale-125" : "bg-background/60 hover:bg-background/80"
+                                        }`}
                                     aria-label={`Go to image ${index + 1}`}
                                     disabled={isTransitioning}
                                 />
@@ -372,7 +365,7 @@ export default function TireCard({
                         <span className="text-[10px] font-semibold text-orange-600">{t('hurryUp')}</span>
                     </div>
                     <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
-                        <div 
+                        <div
                             className="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-500"
                             style={{ width: `${Math.max((stock / 10) * 100, 10)}%` }}
                         />
@@ -382,11 +375,10 @@ export default function TireCard({
 
             {/* Season Badge */}
             <div className="flex items-center gap-2 mb-3">
-                <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide border shadow-sm ${
-                    season === 'summer' ? 'bg-amber-500/10 text-amber-600 border-amber-200/50' :
-                    season === 'winter' ? 'bg-blue-500/10 text-blue-600 border-blue-200/50' :
-                    'bg-green-500/10 text-green-600 border-green-200/50'
-                }`}>
+                <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide border shadow-sm ${season === 'summer' ? 'bg-amber-500/10 text-amber-600 border-amber-200/50' :
+                        season === 'winter' ? 'bg-blue-500/10 text-blue-600 border-blue-200/50' :
+                            'bg-green-500/10 text-green-600 border-green-200/50'
+                    }`}>
                     <SeasonIcon season={season} size="sm" />
                     {seasonLabels[season] || season}
                 </span>
@@ -418,12 +410,12 @@ export default function TireCard({
             {/* EU Label */}
             {(efficiency || grip || noise || noiseDb) && (
                 <div className="mb-4">
-                    <TireLabel 
-                        efficiency={efficiency} 
-                        grip={grip} 
-                        noise={noise} 
-                        noiseDb={noiseDb} 
-                        size="sm" 
+                    <TireLabel
+                        efficiency={efficiency}
+                        grip={grip}
+                        noise={noise}
+                        noiseDb={noiseDb}
+                        size="sm"
                     />
                 </div>
             )}
