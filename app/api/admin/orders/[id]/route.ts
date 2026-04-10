@@ -34,11 +34,20 @@ export async function PATCH(
             },
         });
 
-        const statusChanged = !!status && status !== existingOrder.status;
-        if (statusChanged) {
+        const statusChanged = status !== undefined && status !== existingOrder.status;
+        const trackingChanged = trackingNumber !== undefined && trackingNumber !== (existingOrder.trackingNumber || "");
+
+        console.log(`[Order Update] ID: ${id}`);
+        console.log(`[Order Update] Incoming - Status: ${status}, Tracking: ${trackingNumber}`);
+        console.log(`[Order Update] Current - Status: ${existingOrder.status}, Tracking: ${existingOrder.trackingNumber}`);
+        console.log(`[Order Update] Trigger - StatusChanged: ${statusChanged}, TrackingChanged: ${trackingChanged}`);
+
+        if (statusChanged || trackingChanged) {
             const customerName = order.shippingAddress
                 ? `${order.shippingAddress.firstName} ${order.shippingAddress.lastName}`.trim()
                 : 'Klant';
+
+            console.log(`[Order Update] Attempting to send email to: ${order.email}`);
 
             const emailResult = await sendOrderStatusUpdateEmail({
                 email: order.email,
@@ -49,7 +58,9 @@ export async function PATCH(
             });
 
             if (!emailResult.success) {
-                console.error('Order updated but status email failed:', emailResult.error);
+                console.error('[Order Update] Email FAILED:', emailResult.error);
+            } else {
+                console.log('[Order Update] Email SENT SUCCESSFULLY');
             }
         }
 

@@ -3,7 +3,7 @@ import { constructWebhookEvent } from '@/lib/stripe';
 import { prisma } from '@/lib/db';
 import { generateOrderNumber } from '@/lib/shipping';
 import { generateInvoicePdf } from '@/lib/invoice';
-import { sendOrderConfirmationEmail } from '@/lib/email';
+import { sendOrderConfirmationEmail, sendNewOrderAdminEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
     console.log('🔔 Webhook received!');
@@ -61,7 +61,8 @@ export async function POST(request: NextRequest) {
                 0
             );
             const shippingCost = parseFloat(metadata.shippingCost || '0');
-            const total = subtotal + shippingCost;
+            const paymentFee = parseFloat(metadata.paymentFee || '0');
+            const total = subtotal + shippingCost + paymentFee;
 
             // Create order
             const order = await prisma.order.create({
@@ -75,6 +76,8 @@ export async function POST(request: NextRequest) {
                     shippingCost,
                     stripeSessionId: session.id,
                     stripePaymentId: session.payment_intent as string || null,
+                    paymentMethod: 'stripe',
+                    paymentFee,
                     subtotal,
                     total,
                     shippingAddress: {
@@ -193,6 +196,7 @@ export async function POST(request: NextRequest) {
                             items: emailItems,
                             subtotal: orderWithDetails.subtotal,
                             shippingCost: orderWithDetails.shippingCost,
+                            paymentFee: orderWithDetails.paymentFee,
                             total: orderWithDetails.total,
                         });
                         invoicePdfBase64 = invoicePdf.toString('base64');
@@ -209,6 +213,7 @@ export async function POST(request: NextRequest) {
                         items: emailItems,
                         subtotal: orderWithDetails.subtotal,
                         shippingCost: orderWithDetails.shippingCost,
+                        paymentFee: orderWithDetails.paymentFee,
                         total: orderWithDetails.total,
                         invoicePdf: invoicePdfBase64,
                     });
@@ -217,6 +222,24 @@ export async function POST(request: NextRequest) {
                         console.log('[webhook] ✅ Confirmation email sent successfully to', orderWithDetails.email);
                     } else {
                         console.error('[webhook] ❌ Failed to send confirmation email:', confirmationResult.error);
+                    }
+
+                    console.log('[webhook] Sending admin notification email...');
+                    const adminResult = await sendNewOrderAdminEmail({
+                        orderNumber: orderWithDetails.orderNumber,
+                        customerName,
+                        customerEmail: orderWithDetails.email,
+                        customerPhone: orderWithDetails.phone,
+                        total: orderWithDetails.total,
+                        shippingMethod: orderWithDetails.shippingMethod,
+                        paymentFee: orderWithDetails.paymentFee,
+                        invoicePdf: invoicePdfBase64,
+                    });
+
+                    if (adminResult.success) {
+                        console.log('[webhook] ✅ Admin notification email sent successfully');
+                    } else {
+                        console.error('[webhook] ❌ Failed to send admin notification email:', adminResult.error);
                     }
                 }
             } catch (emailError) {

@@ -69,6 +69,9 @@
             "new": "Nieuw",
             "used": "Gebruikt"
         },
+        "brands": {
+            "all": "Alle"
+        },
         "specs": "Specificaties",
         "pleaseContactUs": "Neem contact op met ons",
         "inquireOrderNow": "Bestel nu",
@@ -212,6 +215,8 @@
         "orderSummary": "Besteloverzicht",
         "shippingAddress": "Verzendadres",
         "shippingMethod": "Verzendmethode",
+        "paymentMethod": "Betaalmethode",
+        "paymentSurcharge": "Transactiekosten (1.5% + €0,25)",
         "firstName": "Voornaam",
         "lastName": "Achternaam",
         "email": "E-mail",
@@ -230,11 +235,24 @@
         "backToShop": "Terug naar Winkel",
         "successTitle": "Bestelling Bevestigd!",
         "successMessage": "Bedankt voor uw bestelling. U ontvangt binnenkort een bevestigingsmail.",
+        "successTitleBank": "Bestelling Geplaatst!",
+        "successMessageBank": "Bedankt voor je bestelling. Voltooi de betaling handmatig om je bestelling te bevestigen.",
         "orderNumber": "Bestelnummer",
         "continueShopping": "Verder Winkelen",
         "cancelTitle": "Betaling Geannuleerd",
         "cancelMessage": "Uw betaling is geannuleerd. Uw winkelwagen items zijn nog steeds opgeslagen.",
-        "tryAgain": "Opnieuw Proberen"
+        "tryAgain": "Opnieuw Proberen",
+        "onlinePayment": "Online Betalen (Kosten: 1.5% + €0,25)",
+        "onlinePaymentDesc": "Credit Card, iDeal, Bancontact",
+        "bankTransfer": "Bankoverschrijving (Gratis)",
+        "bankTransferDesc": "Betaal handmatig via een overschrijving",
+        "free": "Gratis",
+        "scanToPay": "Scan om te betalen",
+        "scanBankApp": "Scan met bank app",
+        "manualTransfer": "Handmatig overschrijven:",
+        "accountHolder": "Rekeninghouder",
+        "reference": "Mededeling (Verplicht)",
+        "bankInstruction": "Let op: Gebruik exact het bovenstaande bestelnummer als mededeling. Zodra we de betaling ontvangen, wordt je bestelling verwerkt."
     },
     "FAQ": {
         "title": "Veelgestelde Vragen",

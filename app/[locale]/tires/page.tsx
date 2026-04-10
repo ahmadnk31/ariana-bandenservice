@@ -137,8 +137,12 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
     // Let's do a quick grouping to get available options if needed, 
     // but for now let's stick to the main query to keep it fast.
 
+    // Copy the where clause but remove the brand filter, so we see all brands available for the current search/size
+    const whereWithoutBrand = { ...where };
+    delete whereWithoutBrand.brand;
+
     // Parallel fetch: get total count, paginated data, and absolute price range for filters
-    const [totalCount, tires, priceRange] = await Promise.all([
+    const [totalCount, tires, priceRange, brandQuery] = await Promise.all([
         prisma.tire.count({ where }),
         prisma.tire.findMany({
             where,
@@ -150,8 +154,16 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
         prisma.tire.aggregate({
             _min: { price: true },
             _max: { price: true },
+        }),
+        prisma.tire.findMany({
+            where: whereWithoutBrand,
+            select: { brand: true },
+            distinct: ['brand'],
+            orderBy: { brand: 'asc' },
         })
     ]);
+
+    const availableBrands = brandQuery.map(b => b.brand).filter(Boolean);
 
     const totalPages = Math.ceil(totalCount / itemsPerPage);
 
@@ -166,6 +178,7 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
             <main className="flex-1 bg-background">
                 <TireFilters
                     tires={tiresWithParsedFeatures}
+                    availableBrands={availableBrands}
                     currentPage={page}
                     totalPages={totalPages}
                     initialFilters={{

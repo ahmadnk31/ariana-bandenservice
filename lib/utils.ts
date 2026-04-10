@@ -121,7 +121,7 @@ export function getBrandLogo(brandName?: string | null): string | null {
     security: '/security.png',
     sailun: '/sailun.png',
     laufenn: '/laufenn.png',
-
+    roadx: '/roadx.png',
   };
   return logos[brand] || null;
 }

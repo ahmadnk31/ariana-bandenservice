@@ -20,11 +20,16 @@ function SuccessContent() {
         clearCart();
 
         const sessionId = searchParams.get('session_id');
+        const bankOrder = searchParams.get('order');
+        
         if (sessionId) {
-            // Optionally fetch order details
             setOrderNumber(sessionId.slice(-8).toUpperCase());
+        } else if (bankOrder) {
+            setOrderNumber(bankOrder.replace('AB-', ''));
         }
-    }, []);
+    }, [searchParams, clearCart]);
+
+    const isBankTransfer = searchParams.get('method') === 'bank_transfer';
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -34,15 +39,88 @@ function SuccessContent() {
                     <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
                         <CheckCircle className="w-10 h-10 text-green-600" />
                     </div>
-                    <h1 className="text-3xl font-bold mb-4">{t('successTitle')}</h1>
+                    <h1 className="text-3xl font-bold mb-4">
+                        {isBankTransfer ? t('successTitleBank') : t('successTitle')}
+                    </h1>
                     <p className="text-muted-foreground mb-6">
-                        {t('successMessage')}
+                        {isBankTransfer 
+                            ? t('successMessageBank')
+                            : t('successMessage')}
                     </p>
 
                     {orderNumber && (
-                        <div className="bg-muted rounded-lg p-4 mb-6">
-                            <p className="text-sm text-muted-foreground">{t('orderNumber')}</p>
+                        <div className="bg-muted rounded-lg p-4 mb-6 text-left">
+                            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{t('orderNumber')}</p>
                             <p className="text-lg font-mono font-bold">AB-{orderNumber}</p>
+                            
+                            {isBankTransfer && (
+                                <div className="mt-4 pt-4 border-t border-muted-foreground/10">
+                                    <div className="flex flex-col md:flex-row gap-6">
+                                        {/* QR Code Section */}
+                                        <div className="flex-shrink-0 flex flex-col items-center gap-2 p-3 bg-white rounded-lg border border-muted">
+                                            {(() => {
+                                                const amount = searchParams.get('amount') || '0';
+                                                const epcData = [
+                                                    'BCD',
+                                                    '002',
+                                                    '1',
+                                                    'SCT',
+                                                    '', // BIC optional
+                                                    'Elyas Nekzad',
+                                                    'BE48950227454827',
+                                                    `EUR${parseFloat(amount).toFixed(2)}`,
+                                                    '', // Purpose optional
+                                                    `AB-${orderNumber}`,
+                                                    '', // Unstructured
+                                                    ''  // Info
+                                                ].join('\n');
+                                                const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(epcData)}`;
+                                                
+                                                return (
+                                                    <div className="relative group">
+                                                        <img 
+                                                            src={qrUrl} 
+                                                            alt="Payment QR Code" 
+                                                            className="w-40 h-40"
+                                                        />
+                                                        <div className="absolute inset-0 bg-background/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                                            <span className="text-[10px] bg-background/80 px-2 py-1 rounded shadow-sm">{t('scanBankApp')}</span>
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })()}
+                                            <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-tighter text-center">
+                                                {t('scanToPay')}
+                                            </p>
+                                        </div>
+
+                                        {/* Manual Details Section */}
+                                        <div className="flex-1 space-y-3">
+                                            <p className="text-sm font-semibold text-primary">{t('manualTransfer')}</p>
+                                            <div className="grid grid-cols-1 gap-3">
+                                                <div>
+                                                    <p className="text-xs text-muted-foreground">{t('accountHolder')}</p>
+                                                    <p className="text-sm font-medium">Elyas Nekzad</p>
+                                                </div>
+                                                <div>
+                                                    <p className="text-xs text-muted-foreground">IBAN</p>
+                                                    <p className="text-sm font-mono font-bold select-all">BE48 9502 2745 4827</p>
+                                                </div>
+                                                <div>
+                                                    <p className="text-xs text-muted-foreground">{t('reference')}</p>
+                                                    <p className="text-sm font-mono font-bold select-all">AB-{orderNumber}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="mt-4 p-3 bg-amber-50 rounded-md border border-amber-100">
+                                        <p className="text-[11px] text-amber-800 leading-relaxed italic">
+                                            {t('bankInstruction')}
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     )}
 
