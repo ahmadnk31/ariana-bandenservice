@@ -28,14 +28,22 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
     if (!tire) {
         return {
-            title: "Tire Not Found",
-            description: "The requested tire could not be found.",
+            title: locale === 'nl' ? "Band niet gevonden" : "Tire Not Found",
+            description: locale === 'nl' ? "De opgevraagde band kon niet worden gevonden." : "The requested tire could not be found.",
         };
     }
 
     const title = `${tire.name} | Gent bandenservice`;
     const ogTitle = `${tire.brand} ${tire.name} - €${tire.price.toFixed(2)} | Gent bandenservice`;
-    const description = `€${tire.price.toFixed(2)} incl. mounting & balancing ✓ ${tire.brand} ${tire.name} (${tire.size}) - ${tire.season} tire. Professional fitting available.`;
+
+    const seasonMap: Record<string, string> = {
+        nl: tire.season === 'summer' ? 'zomerband' : tire.season === 'winter' ? 'winterband' : '4-seizoenenband',
+        en: tire.season === 'summer' ? 'summer tire' : tire.season === 'winter' ? 'winter tire' : 'all-season tire'
+    };
+
+    const description = locale === 'nl'
+        ? `€${tire.price.toFixed(2)} incl. montage & balanceren ✓ ${tire.brand} ${tire.name} (${tire.size}) - ${seasonMap.nl}. Professionele montage beschikbaar.`
+        : `€${tire.price.toFixed(2)} incl. mounting & balancing ✓ ${tire.brand} ${tire.name} (${tire.size}) - ${seasonMap.en}. Professional fitting available.`;
     const siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be";
     const fallbackImage = `${siteUrl}/gentbandenservice/android-chrome-512x512.png`;
 

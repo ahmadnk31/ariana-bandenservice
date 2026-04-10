@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const metadata = messages.Metadata || {};
 
     return {
-        title: metadata.b2bTitle || "B2B Partnerships",
-        description: metadata.b2bDescription || "Partner with us for reliable tire solutions for checking and servicing fleet vehicles.",
+        title: metadata.b2bTitle || "B2B Partnerschappen",
+        description: metadata.b2bDescription || "Werk met ons samen voor betrouwbare bandenoplossingen voor het controleren en onderhouden van bedrijfswagens.",
         alternates: {
             canonical: `/${locale}/b2b`,
             languages: getAlternateLanguages('/b2b'),

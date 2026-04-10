@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
     return {
         title: metadata.contactTitle || "Contact",
-        description: metadata.contactDescription || "Get in touch with Gent bandenservice. Book an appointment or request a quote for tire services.",
+        description: metadata.contactDescription || "Neem contact op met Gent bandenservice. Maak een afspraak of vraag een offerte aan voor bandenservice.",
         alternates: {
             canonical: `/${locale}/contact`,
             languages: getAlternateLanguages('/contact'),
