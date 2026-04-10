@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             siteName: "Gent Bandenservice",
             locale: localeMap[locale] || 'nl_NL',
             type: "website",
-            images: [{ url: "/gentbandenservice/android-chrome-512x512.png", width: 512, height: 512, alt: "Gent Bandenservice Logo" }],
+            images: [{ url: "/gentbandenservice/android-chrome-512x512.png", width: 512, height: 512, alt: locale === 'nl' ? "Gent Bandenservice Logo" : "Gent Bandenservice Logo" }],
         },
         twitter: {
             card: "summary_large_image",
@@ -151,7 +151,7 @@ export default async function LocaleLayout({
                 "dayOfWeek": "Sunday",
                 "opens": "10:00",
                 "closes": "16:00",
-                "description": "By appointment only"
+                "description": locale === 'nl' ? "Enkel op afspraak" : "By appointment only"
             }
         ],
         "hasOfferCatalog": {
