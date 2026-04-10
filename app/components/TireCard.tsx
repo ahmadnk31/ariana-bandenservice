@@ -79,6 +79,7 @@ interface TireCardProps {
     grip?: string | null;
     noise?: string | null;
     noiseDb?: number | null;
+    viewMode?: "grid" | "list";
 }
 
 export default function TireCard({
@@ -100,7 +101,8 @@ export default function TireCard({
     efficiency,
     grip,
     noise,
-    noiseDb
+    noiseDb,
+    viewMode = "grid"
 }: TireCardProps) {
     const t = useTranslations('Tires');
     const { addToCart } = useCart();
@@ -242,14 +244,16 @@ export default function TireCard({
 
     return (
         <div
-            className="p-4 rounded-lg border border-muted bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col group relative"
+            className={`p-3 rounded-lg border border-muted bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex group relative ${viewMode === "list" ? "flex-col sm:flex-row items-stretch gap-6" : "flex-col"
+                }`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             {/* Image Carousel */}
             <div
                 ref={carouselRef}
-                className="relative w-full h-48 bg-transparent rounded-md mb-4 overflow-hidden select-none"
+                className={`relative bg-transparent rounded-md overflow-hidden select-none flex-shrink-0 ${viewMode === "list" ? "w-full sm:w-48 h-48 sm:h-auto min-h-[192px] mb-4 sm:mb-0" : "w-full h-48 mb-3"
+                    }`}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
@@ -263,10 +267,10 @@ export default function TireCard({
                                     <div
                                         key={image.id}
                                         className={`absolute inset-0 w-full h-full transition-all duration-300 ease-in-out ${index === currentImageIndex
-                                                ? 'opacity-100 scale-100 translate-x-0'
-                                                : index < currentImageIndex
-                                                    ? 'opacity-0 scale-95 -translate-x-full'
-                                                    : 'opacity-0 scale-95 translate-x-full'
+                                            ? 'opacity-100 scale-100 translate-x-0'
+                                            : index < currentImageIndex
+                                                ? 'opacity-0 scale-95 -translate-x-full'
+                                                : 'opacity-0 scale-95 translate-x-full'
                                             }`}
                                     >
                                         <img
@@ -358,100 +362,109 @@ export default function TireCard({
                 )}
             </div>
 
-            {/* Low stock urgency bar */}
-            {inStock && stock > 0 && stock <= 3 && (
-                <div className="mb-2">
-                    <div className="flex items-center justify-between mb-1">
-                        <span className="text-[10px] font-semibold text-orange-600">{t('hurryUp')}</span>
+            <div className="flex flex-col flex-1 min-w-0">
+                {/* Low stock urgency bar */}
+                {inStock && stock > 0 && stock <= 3 && (
+                    <div className="mb-2">
+                        <div className="flex items-center justify-between mb-1">
+                            <span className="text-[10px] font-semibold text-orange-600">{t('hurryUp')}</span>
+                        </div>
+                        <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
+                            <div
+                                className="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-500"
+                                style={{ width: `${Math.max((stock / 10) * 100, 10)}%` }}
+                            />
+                        </div>
                     </div>
-                    <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
-                        <div
-                            className="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-500"
-                            style={{ width: `${Math.max((stock / 10) * 100, 10)}%` }}
-                        />
-                    </div>
-                </div>
-            )}
+                )}
 
-            {/* Season Badge */}
-            <div className="flex items-center gap-2 mb-3">
-                <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide border shadow-sm ${season === 'summer' ? 'bg-amber-500/10 text-amber-600 border-amber-200/50' :
+                {/* Season Badge */}
+                <div className="flex items-center gap-2 mb-3">
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide border shadow-sm ${season === 'summer' ? 'bg-amber-500/10 text-amber-600 border-amber-200/50' :
                         season === 'winter' ? 'bg-blue-500/10 text-blue-600 border-blue-200/50' :
                             'bg-green-500/10 text-green-600 border-green-200/50'
-                    }`}>
-                    <SeasonIcon season={season} size="sm" />
-                    {seasonLabels[season] || season}
-                </span>
-                {(loadIndex || speedRating) && (
-                    <span className="text-[10px] text-muted-foreground font-medium bg-muted/50 px-1.5 py-0.5 rounded border border-muted/50">
-                        {loadIndex && speedRating ? `${loadIndex}${speedRating}` : loadIndex || speedRating}
+                        }`}>
+                        <SeasonIcon season={season} size="sm" />
+                        {seasonLabels[season] || season}
                     </span>
-                )}
-            </div>
-
-            {/* Brand & Name */}
-            {(() => {
-                const logo = getBrandLogo(brand);
-                return logo ? (
-                    <div className="mb-2 h-8 sm:h-10 w-full flex justify-start">
-                        <img src={logo} alt={brand} className="h-full max-w-[120px] object-contain object-left" />
-                    </div>
-                ) : (
-                    <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mb-1">{brand}</p>
-                );
-            })()}
-            <Link href={`/tires/${slug}`} className="block group-hover:text-primary transition-colors">
-                <h3 className="text-base font-bold mb-2 leading-tight">{name}</h3>
-            </Link>
-
-            {/* Size */}
-            <p className="text-xs text-muted-foreground mb-4">{t('size')}: {size}</p>
-
-            {/* EU Label */}
-            {(efficiency || grip || noise || noiseDb) && (
-                <div className="mb-4">
-                    <TireLabel
-                        efficiency={efficiency}
-                        grip={grip}
-                        noise={noise}
-                        noiseDb={noiseDb}
-                        size="sm"
-                    />
+                    {(loadIndex || speedRating) && (
+                        <span className="text-[10px] text-muted-foreground font-medium bg-muted/50 px-1.5 py-0.5 rounded border border-muted/50">
+                            {loadIndex && speedRating ? `${loadIndex}${speedRating}` : loadIndex || speedRating}
+                        </span>
+                    )}
                 </div>
-            )}
 
-            {/* Features */}
-            <ul className="text-xs text-muted-foreground mb-4 space-y-1.5 flex-1">
-                {features.slice(0, 3).map((feature, index) => {
-                    const colonIndex = feature.indexOf(':');
-                    if (colonIndex !== -1) {
-                        const label = feature.substring(0, colonIndex).trim();
-                        const description = feature.substring(colonIndex + 1).trim();
+                {/* Brand & Name */}
+                {(() => {
+                    const logo = getBrandLogo(brand);
+                    return logo ? (
+                        <div className="mb-2 h-8 sm:h-10 w-full flex justify-start">
+                            <img src={logo} alt={brand} className="h-full max-w-[120px] object-contain object-left" />
+                        </div>
+                    ) : (
+                        <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mb-1">{brand}</p>
+                    );
+                })()}
+                <Link href={`/tires/${slug}`} className="block group-hover:text-primary transition-colors">
+                    <h3 className="text-base font-bold mb-2 leading-tight">{name}</h3>
+                </Link>
+
+                {/* Size */}
+                <p className="text-xs text-muted-foreground mb-4">{t('size')}: {size}</p>
+
+                {/* EU Label */}
+                {(efficiency || grip || noise || noiseDb) && (
+                    <div className="mb-4">
+                        <TireLabel
+                            efficiency={efficiency}
+                            grip={grip}
+                            noise={noise}
+                            noiseDb={noiseDb}
+                            size="sm"
+                        />
+                    </div>
+                )}
+
+                {/* Features */}
+                <ul className="text-xs text-muted-foreground mb-4 space-y-1.5 flex-1">
+                    {features.slice(0, 3).map((feature, index) => {
+                        const colonIndex = feature.indexOf(':');
+                        if (colonIndex !== -1) {
+                            const label = feature.substring(0, colonIndex).trim();
+                            const description = feature.substring(colonIndex + 1).trim();
+                            return (
+                                <li key={index} className="flex items-center gap-1.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span className="font-medium text-foreground">{label}</span>
+                                    {description && (
+                                        <FeatureTooltip description={description} />
+                                    )}
+                                </li>
+                            );
+                        }
                         return (
                             <li key={index} className="flex items-center gap-1.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span className="font-medium text-foreground">{label}</span>
-                                {description && (
-                                    <FeatureTooltip description={description} />
-                                )}
+                                {feature}
                             </li>
                         );
-                    }
-                    return (
-                        <li key={index} className="flex items-center gap-1.5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            {feature}
-                        </li>
-                    );
-                })}
-            </ul>
+                    })}
+                </ul>
+
+            </div>
 
             {/* Price & CTA */}
-            <div className="flex items-center justify-between mt-auto pt-4 border-t border-muted">
-                <div>
-                    <Price amount={price} size="lg" />
+            <div className={`pt-4 border-muted transition-all duration-300 ${viewMode === "list"
+                    ? "mt-4 sm:mt-0 sm:w-48 sm:pl-6 border-t sm:border-t-0 sm:border-l flex flex-col justify-center sm:items-end items-center gap-3 flex-shrink-0"
+                    : "mt-auto border-t flex items-center justify-between"
+                }`}>
+                <div className={viewMode === "list" ? "text-center sm:text-right" : ""}>
+                    <div className={`flex items-baseline gap-1 ${viewMode === "list" ? "justify-center sm:justify-end" : "justify-start"}`}>
+                        <Price amount={price} size="lg" />
+                        <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">excl. BTW</span>
+                    </div>
                     {stock > 0 && stock <= 3 && (
-                        <p className="text-[10px] text-orange-600 font-semibold flex items-center gap-0.5 animate-pulse">
+                        <p className={`text-[10px] text-orange-600 font-semibold flex items-center gap-0.5 animate-pulse mt-0.5 ${viewMode === "list" ? "justify-center sm:justify-end" : ""}`}>
                             <Flame className="w-3 h-3" />
                             {t('lowStock', { count: stock })}
                         </p>
@@ -473,9 +486,10 @@ export default function TireCard({
                                 image: images[0]?.url,
                             });
                         }}
-                        className="inline-flex h-8 items-center justify-center gap-2 rounded-md px-3 text-xs font-medium shadow transition-colors bg-primary text-primary-foreground hover:bg-primary/90"
+                        className={`inline-flex h-9 items-center justify-center gap-2 rounded-md px-4 text-sm font-medium shadow transition-colors bg-primary text-primary-foreground hover:bg-primary/90 whitespace-nowrap ${viewMode === "list" ? "w-full" : ""
+                            }`}
                     >
-                        <ShoppingCart className="w-3.5 h-3.5" />
+                        <ShoppingCart className="w-4 h-4" />
                         {t('addToCart')}
                     </button>
                 ) : (
@@ -484,7 +498,8 @@ export default function TireCard({
                             e.preventDefault();
                             setIsRequestModalOpen(true);
                         }}
-                        className="inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium shadow transition-colors bg-primary text-primary-foreground hover:bg-primary/90"
+                        className={`inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium shadow transition-colors bg-primary text-primary-foreground hover:bg-primary/90 whitespace-nowrap ${viewMode === "list" ? "w-full" : ""
+                            }`}
                     >
                         {t('requestStock')}
                     </button>

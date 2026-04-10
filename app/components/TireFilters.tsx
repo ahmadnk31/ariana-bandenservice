@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useState, useCallback, useEffect, useRef } from "react";
 import TireCard from "./TireCard";
 import { useTranslations } from 'next-intl';
+import { Combobox } from "./ui/Combobox";
 
 interface TireImage {
     id: string;
@@ -54,6 +55,7 @@ interface FilterState {
 
 interface TireFiltersProps {
     tires: Tire[];
+    availableBrands: string[];
     currentPage: number;
     totalPages: number;
     initialFilters: FilterState;
@@ -61,8 +63,9 @@ interface TireFiltersProps {
 }
 
 import { DualRangeSlider } from "./ui/DualRangeSlider";
+import { LayoutGrid, List, Filter } from "lucide-react";
 
-export default function TireFilters({ tires, currentPage, totalPages, initialFilters, priceRange }: TireFiltersProps) {
+export default function TireFilters({ tires, availableBrands, currentPage, totalPages, initialFilters, priceRange }: TireFiltersProps) {
     const t = useTranslations('Tires');
     const router = useRouter();
     const pathname = usePathname();
@@ -70,6 +73,8 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
     const [filters, setFilters] = useState<FilterState>(initialFilters);
     const [localFilters, setLocalFilters] = useState<FilterState>(initialFilters);
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+    const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+    const [isFiltersVisible, setIsFiltersVisible] = useState(true);
 
     const widthRef = useRef<HTMLInputElement>(null);
     const ratioRef = useRef<HTMLInputElement>(null);
@@ -114,13 +119,13 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
     // Handle immediate updates for selection-based filters
     useEffect(() => {
         // Only update URL for selection-based changes (not search/price which are debounced)
-        const hasSelectionChange = localFilters.season !== filters.season || 
-                                 localFilters.condition !== filters.condition ||
-                                 localFilters.width !== filters.width ||
-                                 localFilters.aspectRatio !== filters.aspectRatio ||
-                                 localFilters.rimSize !== filters.rimSize ||
-                                 localFilters.loadIndex !== filters.loadIndex ||
-                                 localFilters.speedRating !== filters.speedRating;
+        const hasSelectionChange = localFilters.season !== filters.season ||
+            localFilters.condition !== filters.condition ||
+            localFilters.width !== filters.width ||
+            localFilters.aspectRatio !== filters.aspectRatio ||
+            localFilters.rimSize !== filters.rimSize ||
+            localFilters.loadIndex !== filters.loadIndex ||
+            localFilters.speedRating !== filters.speedRating;
 
         if (hasSelectionChange) {
             updateParams(localFilters);
@@ -184,7 +189,7 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                 </div>
 
                 {/* Sidebar Filters */}
-                <aside className={`w-full lg:w-64 flex-shrink-0 space-y-8 lg:sticky lg:top-8 lg:self-start ${mobileFiltersOpen ? "block" : "hidden lg:block"}`}>
+                <aside className={`w-full lg:w-64 flex-shrink-0 space-y-8 lg:sticky lg:top-8 lg:self-start lg:max-h-[calc(100vh-4rem)] lg:overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-muted-foreground/20 hover:scrollbar-thumb-muted-foreground/40 ${mobileFiltersOpen ? "block" : "hidden lg:block"} ${!isFiltersVisible && "lg:hidden"}`}>
                     <div className="flex items-center justify-between">
                         <h2 className="text-lg font-bold">{t('filters')}</h2>
                         <button onClick={clearFilters} className="text-sm text-muted-foreground hover:text-primary underline">
@@ -329,12 +334,13 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                     {/* Brand */}
                     <div className="space-y-3">
                         <label className="text-sm font-medium">{t('brand')}</label>
-                        <input
-                            type="text"
-                            placeholder="e.g. Michelin"
-                            value={localFilters.brand === "all" ? "" : localFilters.brand}
-                            onChange={(e) => handleFilterChange("brand", e.target.value || "all")}
-                            className="w-full px-3 py-2 text-sm rounded-md border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary"
+                        <Combobox
+                            options={availableBrands}
+                            value={localFilters.brand}
+                            onChange={(value: string) => handleFilterChange("brand", value)}
+                            placeholder={t('seasons.all')}
+                            searchPlaceholder={t('searchPlaceholder')}
+                            emptyMessage={t('noResults')}
                         />
                     </div>
 
@@ -367,11 +373,40 @@ export default function TireFilters({ tires, currentPage, totalPages, initialFil
                         <p className="text-sm text-muted-foreground">
                             {t('foundResults', { count: tires.length })} ({t('totalPages', { count: totalPages })})
                         </p>
+                        <div className="flex items-center gap-1 bg-muted/50 p-1 rounded-lg border border-muted">
+                            <button
+                                onClick={() => setIsFiltersVisible(!isFiltersVisible)}
+                                className={`hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 rounded-md transition-all ${isFiltersVisible ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                                title={isFiltersVisible ? "Hide Filters" : "Show Filters"}
+                            >
+                                <Filter className="w-4 h-4" />
+                                <span className="text-xs font-medium">{isFiltersVisible ? "Hide Filters" : "Show Filters"}</span>
+                            </button>
+                            <div className="hidden lg:block w-px h-4 bg-muted mx-1" />
+                            <button
+                                onClick={() => setViewMode("grid")}
+                                className={`p-1.5 rounded-md transition-all ${viewMode === "grid" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                                title="Grid View"
+                            >
+                                <LayoutGrid className="w-4 h-4" />
+                            </button>
+                            <button
+                                onClick={() => setViewMode("list")}
+                                className={`p-1.5 rounded-md transition-all ${viewMode === "list" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                                title="List View"
+                            >
+                                <List className="w-4 h-4" />
+                            </button>
+                        </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className={
+                        viewMode === "grid"
+                            ? `grid gap-2 ${isFiltersVisible ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"}`
+                            : "flex flex-col gap-2"
+                    }>
                         {tires.map((tire) => (
-                            <TireCard key={tire.id} {...tire} />
+                            <TireCard key={tire.id} {...tire} viewMode={viewMode} />
                         ))}
                     </div>
 

@@ -87,6 +87,8 @@ model Order {
   trackingNumber  String?
   stripeSessionId String?          @unique
   stripePaymentId String?
+  paymentMethod   String           @default("stripe")
+  paymentFee      Float            @default(0)
   subtotal        Float
   total           Float
   createdAt       DateTime         @default(now())

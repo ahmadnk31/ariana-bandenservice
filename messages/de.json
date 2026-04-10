@@ -69,6 +69,9 @@
             "new": "Neu",
             "used": "Gebraucht"
         },
+        "brands": {
+            "all": "Alle"
+        },
         "specs": "Spezifikationen",
         "loadIndex": "Last-Idx",
         "speedRating": "Geschw.",
@@ -210,6 +213,8 @@
         "title": "Kasse",
         "orderSummary": "Bestellübersicht",
         "shippingAddress": "Lieferadresse",
+        "paymentMethod": "Zahlungsmethode",
+        "paymentSurcharge": "Transaktionsgebühren (1,5 % + 0,25 €)",
         "shippingMethod": "Versandmethode",
         "firstName": "Vorname",
         "lastName": "Nachname",
@@ -233,7 +238,20 @@
         "continueShopping": "Weiter einkaufen",
         "cancelTitle": "Zahlung abgebrochen",
         "cancelMessage": "Ihre Zahlung wurde abgebrochen. Ihre Warenkorbartikel sind noch gespeichert.",
-        "tryAgain": "Erneut versuchen"
+        "tryAgain": "Erneut versuchen",
+        "onlinePayment": "Online-Zahlung (Gebühren: 1,5 % + 0,25 €)",
+        "onlinePaymentDesc": "Kreditkarte, iDeal, Bancontact",
+        "bankTransfer": "Banküberweisung (Kostenlos)",
+        "bankTransferDesc": "Manuell per Banküberweisung bezahlen",
+        "free": "Kostenlos",
+        "successTitleBank": "Bestellung aufgegeben!",
+        "successMessageBank": "Vielen Dank für Ihre Bestellung. Bitte schießen Sie die Zahlung manuell ab, um Ihre Bestellung zu bestätigen.",
+        "scanToPay": "Zum Bezahlen scannen",
+        "scanBankApp": "Mit Bank-App scannen",
+        "manualTransfer": "Manuelle Überweisung:",
+        "accountHolder": "Kontoinhaber",
+        "reference": "Verwendungszweck (Pflichtfeld)",
+        "bankInstruction": "Hinweis: Verwenden Sie exakt die Bestellnummer als Verwendungszweck. Sobald wir die Zahlung erhalten, wird Ihre Bestellung bearbeitet."
     },
     "FAQ": {
         "title": "Häufig gestellte Fragen",

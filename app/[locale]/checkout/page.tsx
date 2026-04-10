@@ -7,7 +7,7 @@ import { Link } from '@/src/i18n/routing';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Image from 'next/image';
-import { ShoppingCart, Truck, CreditCard, ArrowLeft, Package, Store } from 'lucide-react';
+import { ShoppingCart, Truck, CreditCard, ArrowLeft, Package, Store, Banknote } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import Price from '@/app/components/Price';
 import SeasonIcon from '@/app/components/SeasonIcon';
@@ -41,6 +41,7 @@ export default function CheckoutPage() {
         postalCode: '',
         country: 'BE',
     });
+    const [paymentMethod, setPaymentMethod] = useState<'stripe' | 'bank_transfer'>('stripe');
 
     // Recover abandoned checkout if ?recover=ID is in the URL
     const recoveredRef = useRef(false);
@@ -180,7 +181,13 @@ export default function CheckoutPage() {
 
     const selectedShippingRate = shippingRates.find(r => r.id === selectedRate);
     const shippingCost = selectedShippingRate?.price || 0;
-    const total = subtotal + shippingCost;
+    
+    // Stripe fee: 1.5% + €0.25
+    const stripePercentageFee = (subtotal + shippingCost) * 0.015;
+    const stripeFixedFee = 0.25;
+    const paymentFee = paymentMethod === 'stripe' ? (stripePercentageFee + stripeFixedFee) : 0;
+    
+    const total = subtotal + shippingCost + paymentFee;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -209,6 +216,7 @@ export default function CheckoutPage() {
                     },
                     shippingAddress: formData,
                     abandonedCheckoutId,
+                    paymentMethod,
                 }),
             });
 
@@ -428,6 +436,76 @@ export default function CheckoutPage() {
                                         ))}
                                     </div>
                                 </div>
+
+                                {/* Payment Method */}
+                                <div className="bg-background rounded-xl p-6 shadow-sm">
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                            <CreditCard className="w-5 h-5 text-primary" />
+                                        </div>
+                                        <h2 className="text-xl font-semibold">{t('paymentMethod')}</h2>
+                                    </div>
+                                    
+                                    <div className="space-y-3">
+                                        {/* Stripe Option */}
+                                        <label
+                                            className={`flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all ${paymentMethod === 'stripe'
+                                                ? 'border-primary bg-primary/5'
+                                                : 'border-muted hover:border-muted-foreground/30'
+                                                }`}
+                                        >
+                                            <input
+                                                type="radio"
+                                                name="payment"
+                                                value="stripe"
+                                                checked={paymentMethod === 'stripe'}
+                                                onChange={() => setPaymentMethod('stripe')}
+                                                className="sr-only"
+                                            />
+                                            <div className="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center">
+                                                <CreditCard className="w-6 h-6 text-indigo-600" />
+                                            </div>
+                                            <div className="flex-1">
+                                                <p className="font-medium">{t('onlinePayment')}</p>
+                                                <p className="text-sm text-muted-foreground">{t('onlinePaymentDesc')}</p>
+                                            </div>
+                                            {paymentMethod === 'stripe' && (
+                                                <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+                                                    <div className="w-2 h-2 rounded-full bg-white" />
+                                                </div>
+                                            )}
+                                        </label>
+
+                                        {/* Bank Transfer Option */}
+                                        <label
+                                            className={`flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all ${paymentMethod === 'bank_transfer'
+                                                ? 'border-primary bg-primary/5'
+                                                : 'border-muted hover:border-muted-foreground/30'
+                                                }`}
+                                        >
+                                            <input
+                                                type="radio"
+                                                name="payment"
+                                                value="bank_transfer"
+                                                checked={paymentMethod === 'bank_transfer'}
+                                                onChange={() => setPaymentMethod('bank_transfer')}
+                                                className="sr-only"
+                                            />
+                                            <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                                                <Banknote className="w-6 h-6 text-amber-600" />
+                                            </div>
+                                            <div className="flex-1">
+                                                <p className="font-medium">{t('bankTransfer')}</p>
+                                                <p className="text-sm text-muted-foreground">{t('bankTransferDesc')}</p>
+                                            </div>
+                                            {paymentMethod === 'bank_transfer' && (
+                                                <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+                                                    <div className="w-2 h-2 rounded-full bg-white" />
+                                                </div>
+                                            )}
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Right Column: Order Summary */}
@@ -527,6 +605,12 @@ export default function CheckoutPage() {
                                             <span className="text-muted-foreground">{t('shipping')}</span>
                                             <Price amount={shippingCost} size="sm" />
                                         </div>
+                                        {paymentMethod === 'stripe' && (
+                                            <div className="flex justify-between text-primary font-medium">
+                                                <span>{t('paymentSurcharge')}</span>
+                                                <Price amount={paymentFee} size="sm" />
+                                            </div>
+                                        )}
                                     </div>
 
                                     <hr className="border-muted my-4" />
@@ -548,8 +632,8 @@ export default function CheckoutPage() {
                                             </>
                                         ) : (
                                             <>
-                                                <CreditCard className="w-5 h-5" />
-                                                {t('payNow')}
+                                                {paymentMethod === 'stripe' ? <CreditCard className="w-5 h-5" /> : <Banknote className="w-5 h-5" />}
+                                                {paymentMethod === 'stripe' ? t('payNow') : 'Bestelling afronden'}
                                             </>
                                         )}
                                     </button>

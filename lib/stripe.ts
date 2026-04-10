@@ -36,9 +36,11 @@ export async function createCheckoutSession({
     successUrl,
     cancelUrl,
     abandonedCheckoutId,
+    paymentFee,
 }: {
     cartItems: CartItem[];
     shippingOption: ShippingOption;
+    paymentFee?: number;
     shippingAddress: {
         firstName: string;
         lastName: string;
@@ -83,6 +85,21 @@ export async function createCheckoutSession({
         quantity: 1,
     });
 
+    // Add payment fee if present
+    if (paymentFee && paymentFee > 0) {
+        lineItems.push({
+            price_data: {
+                currency: 'eur',
+                product_data: {
+                    name: 'Transactiekosten (Stripe)',
+                    description: 'Kosten voor online betaling (1.5% + €0,25)',
+                },
+                unit_amount: Math.round(paymentFee * 100),
+            },
+            quantity: 1,
+        });
+    }
+
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card', 'bancontact'],
         line_items: lineItems,
@@ -101,6 +118,7 @@ export async function createCheckoutSession({
             shippingCarrier: shippingOption.carrier,
             shippingMethod: shippingOption.method,
             shippingCost: shippingOption.price.toString(),
+            paymentFee: (paymentFee || 0).toString(),
             email: shippingAddress.email,
             firstName: shippingAddress.firstName,
             lastName: shippingAddress.lastName,

@@ -69,6 +69,9 @@
             "new": "New",
             "used": "Used"
         },
+        "brands": {
+            "all": "All"
+        },
         "specs": "Specs",
         "loadIndex": "Load Idx",
         "speedRating": "Speed",
@@ -213,6 +216,8 @@
         "orderSummary": "Order Summary",
         "shippingAddress": "Shipping Address",
         "shippingMethod": "Shipping Method",
+        "paymentMethod": "Payment Method",
+        "paymentSurcharge": "Transaction Fees (1.5% + €0.25)",
         "firstName": "First Name",
         "lastName": "Last Name",
         "email": "Email",
@@ -231,11 +236,24 @@
         "backToShop": "Back to Shop",
         "successTitle": "Order Confirmed!",
         "successMessage": "Thank you for your order. You will receive a confirmation email shortly.",
+        "successTitleBank": "Order Placed!",
+        "successMessageBank": "Complete the payment manually via bank transfer to confirm your order.",
         "orderNumber": "Order Number",
         "continueShopping": "Continue Shopping",
         "cancelTitle": "Payment Cancelled",
         "cancelMessage": "Your payment was cancelled. Your cart items are still saved.",
-        "tryAgain": "Try Again"
+        "tryAgain": "Try Again",
+        "onlinePayment": "Online Payment (Fees: 1.5% + €0.25)",
+        "onlinePaymentDesc": "Credit Card, iDeal, Bancontact",
+        "bankTransfer": "Bank Transfer (Free)",
+        "bankTransferDesc": "Pay manually via bank transfer",
+        "free": "Free",
+        "scanToPay": "Scan to pay",
+        "scanBankApp": "Scan with bank app",
+        "manualTransfer": "Manual transfer:",
+        "accountHolder": "Account holder",
+        "reference": "Reference (Mandatory)",
+        "bankInstruction": "Note: Use exactly the order number as reference. Your order will be processed once payment is received."
     },
     "FAQ": {
         "title": "Frequently Asked Questions",

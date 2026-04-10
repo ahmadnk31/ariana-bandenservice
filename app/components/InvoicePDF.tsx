@@ -24,6 +24,7 @@ export interface InvoiceData {
     items: InvoiceLineItem[];
     subtotal: number;
     shippingCost: number;
+    paymentFee?: number;
     total: number;
 }
 
@@ -208,6 +209,12 @@ export function InvoicePDF({ data }: { data: InvoiceData }) {
                         <Text style={styles.totalsLabel}>Verzending</Text>
                         <Text style={styles.totalsValue}>{euro(data.shippingCost)}</Text>
                     </View>
+                    {data.paymentFee && data.paymentFee > 0 ? (
+                        <View style={styles.totalsRow}>
+                            <Text style={styles.totalsLabel}>Transactiekosten</Text>
+                            <Text style={styles.totalsValue}>{euro(data.paymentFee)}</Text>
+                        </View>
+                    ) : null}
                     <View style={[styles.totalsRow, { marginTop: 6 }]}>
                         <Text style={[styles.totalsLabel, styles.totalsBold]}>Totaal</Text>
                         <Text style={[styles.totalsValue, styles.totalsBold]}>{euro(data.total)}</Text>

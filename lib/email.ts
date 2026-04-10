@@ -299,6 +299,7 @@ export async function sendOrderStatusUpdateEmail(data: {
   trackingNumber?: string | null;
 }): Promise<{ success: boolean; error?: string }> {
   try {
+    console.log(`[lib/email] Sending status update email to ${data.email} with status: ${data.status}`);
     const statusLabelMap: Record<string, string> = {
       pending: 'In behandeling',
       paid: 'Betaald',
@@ -308,9 +309,21 @@ export async function sendOrderStatusUpdateEmail(data: {
     };
 
     const statusLabel = statusLabelMap[data.status] || data.status;
-    const trackingBlock = data.trackingNumber
-      ? highlightBox(`<p style="margin:0;font-size:14px;color:#18181b;"><strong>Trackingnummer:</strong> ${data.trackingNumber}</p>`)
-      : '';
+    let trackingBlock = '';
+    if (data.trackingNumber) {
+      const trackingItems = data.trackingNumber.split(/[\n,;]+/).map(s => s.trim()).filter(Boolean);
+      const linksHtml = trackingItems.map(item => {
+        if (item.startsWith('http://') || item.startsWith('https://')) {
+          return `<a href="${item}" style="color:#2563eb;text-decoration:underline;" target="_blank">${item}</a>`;
+        }
+        return item;
+      }).join('<br/>');
+
+      trackingBlock = highlightBox(`
+        <p style="margin:0 0 4px;font-size:14px;color:#18181b;"><strong>Trackinginformatie:</strong></p>
+        <p style="margin:0;font-size:14px;color:#18181b;line-height:1.6;word-break:break-all;">${linksHtml}</p>
+      `);
+    }
 
     const html = emailLayout(`
       <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">Update over je bestelling</h2>
@@ -348,8 +361,10 @@ export async function sendOrderConfirmationEmail(data: {
     items: OrderConfirmationItem[];
     subtotal: number;
     shippingCost: number;
+    paymentFee?: number;
     total: number;
     invoicePdf: string | null;
+    paymentMethod?: 'stripe' | 'bank_transfer';
 }): Promise<{ success: boolean; error?: string }> {
     try {
         const rows = data.items
@@ -368,10 +383,29 @@ export async function sendOrderConfirmationEmail(data: {
             ? `<p style="margin:0 0 10px;font-size:14px;color:#3f3f46;">Je factuur zit als PDF in de bijlage van deze e-mail.</p>`
             : `<p style="margin:0 0 10px;font-size:14px;color:#3f3f46;">Je factuur wordt zo snel mogelijk apart verstuurd.</p>`;
 
+        const isBankTransfer = data.paymentMethod === 'bank_transfer';
+        const title = isBankTransfer ? 'Bestelling geplaatst' : 'Betaling geslaagd ✅';
+        const message = isBankTransfer 
+            ? 'Bedankt voor je bestelling. Je kunt de betaling nu handmatig overmaken via een bankoverschrijving.'
+            : 'Bedankt voor je bestelling. We hebben je betaling succesvol ontvangen.';
+
+        const bankDetailsBox = isBankTransfer ? highlightBox(`
+            <p style="margin:0 0 12px;font-size:15px;color:#18181b;"><strong>Betalingsinstructies:</strong></p>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+              ${infoRow("Rekeninghouder", "Elyas Nekzad")}
+              ${infoRow("IBAN", "<strong>BE48 9502 2745 4827</strong>")}
+              ${infoRow("Bedrag", `<strong>€${data.total.toFixed(2)}</strong>`)}
+              ${infoRow("Mededeling", `<strong>${data.orderNumber}</strong>`)}
+            </table>
+            <p style="margin:12px 0 0;font-size:13px;color:#71717a;">Zodra we de betaling hebben ontvangen, wordt je bestelling in behandeling genomen.</p>
+        `) : '';
+
         const html = emailLayout(`
-            <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">Betaling geslaagd ✅</h2>
+            <h2 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#18181b;">${title}</h2>
             <p style="margin:0 0 8px;font-size:15px;color:#3f3f46;line-height:1.6;">Beste ${data.customerName},</p>
-            <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">Bedankt voor je bestelling. We hebben je betaling succesvol ontvangen.</p>
+            <p style="margin:0 0 20px;font-size:15px;color:#3f3f46;line-height:1.6;">${message}</p>
+
+            ${bankDetailsBox}
 
             ${highlightBox(`
                 <p style="margin:0;font-size:14px;color:#18181b;"><strong>Bestelnummer:</strong> ${data.orderNumber}</p>
@@ -392,6 +426,12 @@ export async function sendOrderConfirmationEmail(data: {
                 <td colspan="2" style="padding:10px 12px;font-size:14px;color:#18181b;">Verzending</td>
                 <td style="padding:10px 12px;font-size:14px;color:#18181b;text-align:right;">€${data.shippingCost.toFixed(2)}</td>
               </tr>
+              ${data.paymentFee && data.paymentFee > 0 ? `
+              <tr>
+                <td colspan="2" style="padding:10px 12px;font-size:14px;color:#18181b;">Transactiekosten</td>
+                <td style="padding:10px 12px;font-size:14px;color:#18181b;text-align:right;">€${data.paymentFee.toFixed(2)}</td>
+              </tr>
+              ` : ''}
               <tr>
                 <td colspan="2" style="padding:12px;font-size:16px;font-weight:700;color:#18181b;">Totaal</td>
                 <td style="padding:12px;font-size:16px;font-weight:700;color:#18181b;text-align:right;">€${data.total.toFixed(2)}</td>
@@ -400,7 +440,7 @@ export async function sendOrderConfirmationEmail(data: {
 
             ${invoiceNote}
             <p style="margin:0;font-size:14px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
-        `, `Betaling ontvangen voor bestelling ${data.orderNumber}`);
+        `, isBankTransfer ? `Bestelling geplaatst: ${data.orderNumber}` : `Betaling ontvangen voor bestelling ${data.orderNumber}`);
 
         // Build attachments only if PDF was generated
         const attachments = data.invoicePdf
@@ -793,6 +833,66 @@ export async function sendAppointmentStatusUpdateEmail(data: {
         return { success: true };
     } catch (error) {
         console.error("Failed to send appointment status update email:", error);
+        return { success: false, error: "Failed to send email" };
+    }
+}
+
+export async function sendNewOrderAdminEmail(data: {
+    orderNumber: string;
+    customerName: string;
+    customerEmail: string;
+    customerPhone: string | null;
+    total: number;
+    shippingMethod: string | null;
+    paymentFee?: number;
+    invoicePdf: string | null;
+    paymentMethod?: 'stripe' | 'bank_transfer';
+}): Promise<{ success: boolean; error?: string }> {
+    try {
+        const isBankTransfer = data.paymentMethod === 'bank_transfer';
+        const html = emailLayout(`
+            <h2 style="margin:0 0 8px;font-size:20px;font-weight:700;color:#18181b;">🛒 Nieuwe Bestelling!</h2>
+            <p style="margin:0 0 24px;font-size:14px;color:#71717a;">Er is een nieuwe bestelling ${isBankTransfer ? 'geplaatst (Bankoverschrijving)' : 'succesvol afgerond en betaald'}.</p>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e4e7;border-radius:8px;overflow:hidden;">
+              <tr style="background-color:#f4f4f5;">
+                <td colspan="2" style="padding:10px 12px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Bestelling Details</td>
+              </tr>
+              ${infoRow("Bestelnummer", `<strong>${data.orderNumber}</strong>`)}
+              ${infoRow("Klant", data.customerName)}
+              ${infoRow("E-mail", `<a href="mailto:${data.customerEmail}" style="color:#2563eb;text-decoration:none;">${data.customerEmail}</a>`)}
+              ${infoRow("Telefoon", data.customerPhone || "<span style='color:#a1a1aa;'>Niet opgegeven</span>")}
+              ${data.paymentFee && data.paymentFee > 0 ? infoRow("Transactiekosten", `€${data.paymentFee.toFixed(2)}`) : ''}
+              ${infoRow("Totaalbedrag", `<strong>€${data.total.toFixed(2)}</strong>`)}
+              ${infoRow("Betaalmethode", isBankTransfer ? "Bankoverschrijving" : "Online (Stripe)")}
+              ${infoRow("Verzendmethode", data.shippingMethod || "<span style='color:#a1a1aa;'>Standaard</span>")}
+            </table>
+            ${data.invoicePdf ? highlightBox(`
+              <p style="margin:0;font-size:14px;color:#18181b;">De factuur voor deze bestelling zit in de bijlage.</p>
+            `) : ''}
+            ${ctaButton("Bekijk in Dashboard →", `${siteUrl}/nl/admin/orders`)}
+        `, `Nieuwe bestelling: ${data.orderNumber}`);
+
+        const attachments = data.invoicePdf
+            ? [
+                {
+                    filename: `factuur-${data.orderNumber}.pdf`,
+                    content: Buffer.from(data.invoicePdf, 'base64'),
+                },
+            ]
+            : [];
+
+        await resend.emails.send({
+            from: fromEmail,
+            to: [fromAddress],
+            replyTo: data.customerEmail,
+            subject: `🛒 Nieuwe bestelling: ${data.orderNumber} (${data.customerName})`,
+            html,
+            attachments,
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error("Failed to send new order admin email:", error);
         return { success: false, error: "Failed to send email" };
     }
 }
