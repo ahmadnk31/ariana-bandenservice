@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { sendOrderStatusUpdateEmail } from '@/lib/email';
+import { sendOrderStatusUpdateEmail, sendOrderConfirmationEmail } from '@/lib/email';
+import { generateInvoicePdf } from '@/lib/invoice';
 
 export async function PATCH(
     request: NextRequest,
@@ -47,20 +48,105 @@ export async function PATCH(
                 ? `${order.shippingAddress.firstName} ${order.shippingAddress.lastName}`.trim()
                 : 'Klant';
 
-            console.log(`[Order Update] Attempting to send email to: ${order.email}`);
+            // SPECIAL CASE: Status changed to 'paid' (manual confirmation of payment/bank transfer)
+            // We want to send a full confirmation email with invoice PDF, similar to Stripe checkout
+            if (status === 'paid' && existingOrder.status !== 'paid') {
+                console.log(`[Order Update] Status changed to PAID. Generating invoice and sending confirmation email...`);
+                
+                try {
+                    // Fetch full order details for invoice
+                    const orderWithDetails = await prisma.order.findUnique({
+                        where: { id },
+                        include: {
+                            shippingAddress: true,
+                            items: {
+                                include: {
+                                    tire: {
+                                        select: {
+                                            name: true,
+                                            size: true,
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    });
 
-            const emailResult = await sendOrderStatusUpdateEmail({
-                email: order.email,
-                customerName,
-                orderNumber: order.orderNumber,
-                status: order.status,
-                trackingNumber: order.trackingNumber,
-            });
+                    if (orderWithDetails && orderWithDetails.shippingAddress) {
+                        const emailItems = orderWithDetails.items.map(item => ({
+                            name: `${item.tire?.name || 'Band'}${item.withMounting ? ' (Incl. Montage)' : ''}`,
+                            size: item.tire?.size || undefined,
+                            quantity: item.quantity,
+                            unitPrice: item.price + (item.withMounting ? 19.85 : 0),
+                        }));
 
-            if (!emailResult.success) {
-                console.error('[Order Update] Email FAILED:', emailResult.error);
+                        // Generate Invoice PDF
+                        let invoicePdfBase64: string | null = null;
+                        try {
+                            const invoicePdf = await generateInvoicePdf({
+                                invoiceNumber: `INV-${orderWithDetails.orderNumber}`,
+                                issueDate: new Date(),
+                                orderNumber: orderWithDetails.orderNumber,
+                                customerName,
+                                customerEmail: orderWithDetails.email,
+                                customerPhone: orderWithDetails.phone,
+                                shippingAddress: {
+                                    street: orderWithDetails.shippingAddress.street,
+                                    city: orderWithDetails.shippingAddress.city,
+                                    postalCode: orderWithDetails.shippingAddress.postalCode,
+                                    country: orderWithDetails.shippingAddress.country,
+                                },
+                                items: emailItems,
+                                subtotal: orderWithDetails.subtotal,
+                                shippingCost: orderWithDetails.shippingCost,
+                                paymentFee: orderWithDetails.paymentFee,
+                                total: orderWithDetails.total,
+                            });
+                            invoicePdfBase64 = invoicePdf.toString('base64');
+                        } catch (pdfError) {
+                            console.error('[Order Update] PDF generation failed:', pdfError);
+                        }
+
+                        // Send confirmation email
+                        const confirmationResult = await sendOrderConfirmationEmail({
+                            email: orderWithDetails.email,
+                            customerName,
+                            orderNumber: orderWithDetails.orderNumber,
+                            items: emailItems,
+                            subtotal: orderWithDetails.subtotal,
+                            shippingCost: orderWithDetails.shippingCost,
+                            paymentFee: orderWithDetails.paymentFee,
+                            total: orderWithDetails.total,
+                            invoicePdf: invoicePdfBase64,
+                            paymentMethod: orderWithDetails.paymentMethod as any,
+                        });
+
+                        if (confirmationResult.success) {
+                            console.log(`[Order Update] Confirmation email (paid) sent to ${orderWithDetails.email}`);
+                        } else {
+                            console.error(`[Order Update] Failed to send confirmation email:`, confirmationResult.error);
+                        }
+                    }
+                } catch (error) {
+                    console.error(`[Order Update] Error during paid status transition processing:`, error);
+                }
             } else {
-                console.log('[Order Update] Email SENT SUCCESSFULLY');
+                // REGULAR CASE: Status updated (e.g. to 'shipped') or tracking changed
+                console.log(`[Order Update] Attempting to send status update email to: ${order.email}`);
+
+                const emailResult = await sendOrderStatusUpdateEmail({
+                    email: order.email,
+                    customerName,
+                    orderNumber: order.orderNumber,
+                    status: order.status,
+                    trackingNumber: order.trackingNumber,
+                });
+
+                if (!emailResult.success) {
+                    console.error('[Order Update] Status update email FAILED:', emailResult.error);
+                } else {
+                    console.log('[Order Update] Status update email SENT SUCCESSFULLY');
+                }
             }
         }
 

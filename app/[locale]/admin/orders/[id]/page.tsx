@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Package, Truck, User, MapPin, CreditCard } from "lucide-react";
+import { ArrowLeft, Package, Truck, User, MapPin, CreditCard, FileText } from "lucide-react";
 import OrderStatusForm from "./OrderStatusForm";
 
 interface OrderDetailPageProps {
@@ -37,18 +37,32 @@ export default async function OrderDetailPage({ params }: OrderDetailPageProps) 
     return (
         <div className="p-8 space-y-6">
             {/* Header */}
-            <div className="flex items-center gap-4">
-                <Link
-                    href="/admin/orders"
-                    className="p-2 hover:bg-muted rounded-full transition-colors"
-                >
-                    <ArrowLeft className="w-5 h-5" />
-                </Link>
-                <div>
-                    <h1 className="text-2xl font-bold">Order {order.orderNumber}</h1>
-                    <p className="text-muted-foreground">
-                        Created {new Date(order.createdAt).toLocaleString()}
-                    </p>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                    <Link
+                        href="/admin/orders"
+                        className="p-2 hover:bg-muted rounded-full transition-colors"
+                    >
+                        <ArrowLeft className="w-5 h-5" />
+                    </Link>
+                    <div>
+                        <h1 className="text-2xl font-bold">Order {order.orderNumber}</h1>
+                        <p className="text-muted-foreground">
+                            Created {new Date(order.createdAt).toLocaleString()}
+                        </p>
+                    </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                    <a
+                        href={`/api/admin/orders/${id}/invoice`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-background border hover:bg-muted transition-colors font-medium shadow-sm"
+                    >
+                        <FileText className="w-4 h-4" />
+                        Download Invoice
+                    </a>
                 </div>
             </div>
 
