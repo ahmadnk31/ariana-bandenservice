@@ -122,6 +122,7 @@ export function getBrandLogo(brandName?: string | null): string | null {
     sailun: '/sailun.png',
     laufenn: '/laufenn.png',
     roadx: '/roadx.png',
+    kustone: '/kustone.png',
   };
   return logos[brand] || null;
 }

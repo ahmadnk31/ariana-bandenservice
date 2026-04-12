@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     }
 
     const title = `${tire.name} | Gent bandenservice`;
-    const ogTitle = `${tire.brand} ${tire.name} - €${tire.price.toFixed(2)} | Gent bandenservice`;
+    const ogTitle = `${tire.name} (${tire.size}) - €${tire.price.toFixed(2)} | Gent bandenservice`;
 
     const seasonMap: Record<string, string> = {
         nl: tire.season === 'summer' ? 'zomerband' : tire.season === 'winter' ? 'winterband' : '4-seizoenenband',
@@ -42,8 +42,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     };
 
     const description = locale === 'nl'
-        ? `€${tire.price.toFixed(2)} incl. montage & balanceren ✓ ${tire.brand} ${tire.name} (${tire.size}) - ${seasonMap.nl}. Professionele montage beschikbaar.`
-        : `€${tire.price.toFixed(2)} incl. mounting & balancing ✓ ${tire.brand} ${tire.name} (${tire.size}) - ${seasonMap.en}. Professional fitting available.`;
+        ? `€${tire.price.toFixed(2)} incl. montage & balanceren ✓ ${tire.name} (${tire.size}) - ${seasonMap.nl}. Professionele montage beschikbaar.`
+        : `€${tire.price.toFixed(2)} incl. mounting & balancing ✓ ${tire.name} (${tire.size}) - ${seasonMap.en}. Professional fitting available.`;
     const siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be";
     const fallbackImage = `${siteUrl}/gentbandenservice/android-chrome-512x512.png`;
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 
 interface InvoiceLineItem {
     name: string;
@@ -41,6 +40,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 20,
+    },
+    logo: {
+        width: 140,
+        height: 100,
+
     },
     title: {
         fontSize: 22,
@@ -154,6 +158,10 @@ export function InvoicePDF({ data }: { data: InvoiceData }) {
                         <Text style={styles.infoValue}>Ordernummer: {data.orderNumber}</Text>
                     </View>
                     <View style={{ alignItems: 'flex-end' }}>
+                        <Image
+                            src="https://gentbandenservice.be/gentbandenservice/android-chrome-512x512.png"
+                            style={styles.logo}
+                        />
                         <Text style={styles.companyName}>Gent bandenservice</Text>
                         <Text style={styles.companyDetail}>Dendermondsesteenweg 428</Text>
                         <Text style={styles.companyDetail}>9040 Sint-Amandsberg</Text>
