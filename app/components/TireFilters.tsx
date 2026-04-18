@@ -112,7 +112,7 @@ export default function TireFilters({ tires, availableBrands, currentPage, total
             params.set("page", "1");
         }
 
-        router.push(`/tires?${params.toString()}`, { scroll: false });
+        router.push(`/tires?${params.toString()}` as any, { scroll: false });
         setFilters(updated as FilterState);
     }, [filters, router, searchParams]);
 
@@ -167,7 +167,7 @@ export default function TireFilters({ tires, availableBrands, currentPage, total
     const handlePageChange = (page: number) => {
         const params = new URLSearchParams(searchParams.toString());
         params.set("page", String(page));
-        router.push(`/tires?${params.toString()}`, { scroll: true });
+        router.push(`/tires?${params.toString()}` as any, { scroll: true });
     };
 
     const clearFilters = () => {

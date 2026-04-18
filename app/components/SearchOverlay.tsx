@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { useRouter, Link } from '@/src/i18n/routing';
 import { useTranslations } from 'next-intl';
 import Price from '@/app/components/Price';
 import SeasonIcon from '@/app/components/SeasonIcon';
@@ -156,9 +155,9 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
             if (sizeWidth) params.set("width", sizeWidth);
             if (sizeRatio) params.set("aspectRatio", sizeRatio);
             if (sizeRim) params.set("rimSize", sizeRim);
-            router.push(`/tires?${params.toString()}`);
+            router.push(`/tires?${params.toString()}` as any);
         } else if (query) {
-            router.push(`/tires?search=${encodeURIComponent(query)}`);
+            router.push(`/tires?search=${encodeURIComponent(query)}` as any);
         }
     };
 
@@ -357,7 +356,7 @@ export default function SearchOverlay({ triggerType = "icon" }: SearchOverlayPro
                                         {results.map((result) => (
                                             <Link
                                                 key={result.id}
-                                                href={`/tires/${result.slug}`}
+                                                href={{ pathname: '/tires/[slug]', params: { slug: result.slug } }}
                                                 onClick={() => setIsOpen(false)}
                                                 className="flex items-center gap-4 p-3 rounded-lg hover:bg-muted transition-colors group"
                                             >

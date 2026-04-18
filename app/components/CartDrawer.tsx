@@ -4,7 +4,8 @@ import { useCart } from './CartContext';
 import Price from './Price';
 import { X, Minus, Plus, ShoppingCart, Trash2 } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/src/i18n/routing';
+
 import { useTranslations } from 'next-intl';
 import SeasonIcon from './SeasonIcon';
 
@@ -92,7 +93,7 @@ export default function CartDrawer() {
                                         {/* Details */}
                                         <div className="flex-1 min-w-0">
                                             <Link
-                                                href={`/tires/${item.slug}`}
+                                                href={{ pathname: '/tires/[slug]', params: { slug: item.slug } }}
                                                 className="font-medium text-sm hover:text-primary line-clamp-1"
                                                 onClick={closeCart}
                                             >

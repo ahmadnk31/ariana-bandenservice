@@ -6,7 +6,78 @@ export const routing = defineRouting({
     locales: ['en', 'nl', 'fr', 'es', 'tr', 'pl', 'gr', 'ar', 'fa', 'uk', 'de', 'it'],
 
     // Used when no locale matches
-    defaultLocale: 'nl'
+    defaultLocale: 'nl',
+    
+    pathnames: {
+        '/': '/',
+        '/checkout': '/checkout',
+        '/contact': '/contact',
+        '/faq': '/faq',
+        '/services': '/services',
+        '/b2b': '/b2b',
+        '/blog': '/blog',
+        '/blog/[slug]': '/blog/[slug]',
+        '/admin': '/admin',
+        '/admin/login': '/admin/login',
+        '/admin/orders': '/admin/orders',
+        '/admin/tires': '/admin/tires',
+        '/appointment': {
+            en: '/appointment',
+            nl: '/afspraak',
+            fr: '/rendez-vous',
+            es: '/cita',
+            tr: '/randevu',
+            pl: '/wizyta',
+            gr: '/rantevou',
+            ar: '/maweid',
+            fa: '/noghteh',
+            uk: '/pryyom',
+            de: '/termin',
+            it: '/appuntamento'
+        },
+        '/appointment/manage/[id]': {
+            en: '/appointment/manage/[id]',
+            nl: '/afspraak/beheren/[id]',
+            fr: '/rendez-vous/gerer/[id]',
+            es: '/cita/gestionar/[id]',
+            tr: '/randevu/yonet/[id]',
+            pl: '/wizyta/zarzadzaj/[id]',
+            gr: '/rantevou/diaxeirisi/[id]',
+            ar: '/maweid/idara/[id]',
+            fa: '/noghteh/modiriat/[id]',
+            uk: '/pryyom/keruvannya/[id]',
+            de: '/termin/verwalten/[id]',
+            it: '/appuntamento/gestisci/[id]'
+        },
+        '/tires': {
+            en: '/tires',
+            nl: '/banden',
+            fr: '/pneus',
+            es: '/neumaticos',
+            tr: '/lastikler',
+            pl: '/opony',
+            gr: '/elastika',
+            ar: '/iitarat',
+            fa: '/lasthikha',
+            uk: '/shyny',
+            de: '/reifen',
+            it: '/pneumatici'
+        },
+        '/tires/[slug]': {
+            en: '/tires/[slug]',
+            nl: '/banden/[slug]',
+            fr: '/pneus/[slug]',
+            es: '/neumaticos/[slug]',
+            tr: '/lastikler/[slug]',
+            pl: '/opony/[slug]',
+            gr: '/elastika/[slug]',
+            ar: '/iitarat/[slug]',
+            fa: '/lasthikha/[slug]',
+            uk: '/shyny/[slug]',
+            de: '/reifen/[slug]',
+            it: '/pneumatici/[slug]'
+        }
+    }
 });
 
 // Lightweight wrappers around Next.js' navigation APIs
