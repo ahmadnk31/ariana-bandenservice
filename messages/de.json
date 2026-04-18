@@ -10,10 +10,10 @@
         "b2b": "B2B / Versicherungen"
     },
     "Hero": {
-        "title1": "Bandenservice",
-        "title2": "Gent",
-        "title3": "Seit 2020",
-        "subtitle": "Reifen kaufen inkl. Montage ab 25€. Günstigstes Reifencenter in Gent. Offen Mo-Sa 9-18h.",
+        "title1": "Gent",
+        "title2": "Reifenservice",
+        "title3": "Ihr Reifenzentrum in Gent",
+        "subtitle": "Das günstigste Reifenzentrum in Gent für neue und gebrauchte Reifen. Montage und Auswuchten ab 25 €. Wir bedienen Gent, Sint-Amandsberg, Oostakker, Destelbergen und Umgebung.",
         "cta": "Reifen Ansehen",
         "contact": "Kontaktieren Sie uns"
     },
@@ -120,7 +120,11 @@
         "noise": "Geräuschpegel",
         "noiseDb": "Geräusch (dB)",
         "mountingOption": "Reifen montieren lassen (+ €19.85 p.Stk.)",
-        "description": "Beschreibung"
+        "description": "Beschreibung",
+        "guarantee": "2 Jahre Garantie",
+        "fastInstall": "Schnelle Montage",
+        "expertAdvice": "Kostenlose Beratung",
+        "easyReturn": "Einfache Rückgabe"
     },
     "Contact": {
         "title": "Kontaktieren Sie uns",
@@ -190,7 +194,14 @@
         "topBrandsTitle": "Top-Marken",
         "topBrandsSubtitle": "Wir führen Reifen der weltweit vertrauenswürdigsten Hersteller.",
         "topSizesTitle": "Beliebte Größen",
-        "topSizesSubtitle": "Finden Sie Reifen in den beliebtesten Größen — klicken Sie zum Suchen."
+        "topSizesSubtitle": "Finden Sie Reifen in den beliebtesten Größen — klicken Sie zum Suchen.",
+        "workshop": {
+            "tagline": "Unsere Zahlen sprechen für sich",
+            "yearsExperience": "Jahre Erfahrung",
+            "happyCustomers": "Zufriedene Kunden",
+            "brands": "Reifenmarken",
+            "googleRating": "Google-Bewertung"
+        }
     },
     "Cart": {
         "title": "Warenkorb",
@@ -293,18 +304,18 @@
         }
     },
     "Metadata": {
-        "title": "Reifencenter Gent | Reifen Kaufen mit Montage",
-        "description": "✓ Günstigstes Reifencenter in Gent! Neu- & Gebrauchtreifen ab 25€ inkl. Montage. Offen Mo-Sa 9-18h, Sonntag nach Vereinbarung. ☎ +32 466 19 56 22",
-        "ogDescription": "Reifencenter Gent - Neue & gebrauchte Reifen. Montage, Auswuchten & Spureinstellung inklusive. Beste Preise!",
-        "keywords": "reifencenter gent, reifen kaufen, reifenmontage, spureinstellung, reifencenter belgien, gebrauchte reifen, neue reifen, günstige reifen, winterreifen, sommerreifen, ganzjahresreifen, Sint-Amandsberg, reifencenter sonntag offen",
-        "tiresTitle": "Reifen Kaufen | Neu & Gebraucht",
-        "tiresDescription": "Reifen kaufen in Gent? Sehen Sie unsere Winter-, Sommer- & Ganzjahresreifen. Montage inklusive. Ab 25€ pro Reifen.",
-        "servicesTitle": "Reifenservice | Montage & Spureinstellung",
-        "servicesDescription": "Professionelle Reifenmontage, Auswuchten und Spureinstellung in Gent. Schneller Service, gute Preise. Samstags offen!",
+        "title": "Reifen kaufen & montieren Gent | Günstigstes Reifencenter | Gent Bandenservice",
+        "description": "Das günstigste Reifencenter in Gent (Sint-Amandsberg). Wir montieren und wuchten neue und gebrauchte Reifen ab 25€. Sehen Sie sich unser Angebot an!",
+        "ogDescription": "Gent bandenservice - Ihr Reifencenter in Gent für neue & gebrauchte Reifen. Montage und Auswuchten. Die günstigsten in der Region !",
+        "keywords": "gent bandenservice, reifencenter, reifencenter gent, autoreifen, reifen gent, reifen kaufen gent, günstigstes reifencenter, reifenservice gent, Sint-Amandsberg, Oostakker",
+        "tiresTitle": "Günstigste Reifen Kaufen & Montieren | Gent Bandenservice",
+        "tiresDescription": "Autoreifen kaufen bei Gent bandenservice (Sint-Amandsberg). Winterreifen, Sommerreifen & Ganzjahresreifen ab 25€ inkl. Montage. Die günstigsten in Gent!",
+        "servicesTitle": "Reifendienste | Montage & Spureinstellung",
+        "servicesDescription": "Professionelle Reifenmontage, Auswuchten und Spureinstellung in Gent. Schneller Service, faire Preise. Auch samstags geöffnet!",
         "contactTitle": "Kontakt | Reifencenter Gent",
-        "contactDescription": "Kontaktieren Sie unser Reifencenter in Gent. Rufen Sie an: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
-        "faqTitle": "FAQ | Preise & Öffnungszeiten",
-        "faqDescription": "FAQ zu Reifenpreisen, Öffnungszeiten, Montage und mehr. Reifencenter Sonntag offen? Ja, nach Vereinbarung!",
+        "contactDescription": "Reifencenter Gent kontaktieren? Rufen Sie 0466 19 56 22 an oder besuchen Sie uns. Dendermondsesteenweg 428, Sint-Amandsberg. Mo-Sa 9-18 Uhr.",
+        "faqTitle": "Häufig gestellte Fragen | Preise & Öffnungszeiten",
+        "faqDescription": "FAQ zu Reifenpreisen, Öffnungszeiten, Montage und mehr. Reifencenter auch sonntags offen? Ja, nach Vereinbarung!",
         "privacyTitle": "Datenschutzerklärung | Gent Bandenservice",
         "privacyDescription": "Datenschutzerklärung von Gent bandenservice. Erfahren Sie, wie wir Ihre persönlichen Daten sammeln, verwenden und schützen.",
         "termsTitle": "Nutzungsbedingungen | Gent Bandenservice",

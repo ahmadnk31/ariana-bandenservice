@@ -10,10 +10,10 @@
         "b2b": "B2B / Assicurazioni"
     },
     "Hero": {
-        "title1": "Bandenservice",
-        "title2": "Gent",
-        "title3": "Dal 2020",
-        "subtitle": "Acquista pneumatici con montaggio da 25€. Il centro pneumatici più economico a Gent. Aperto lun-sab 9-18h.",
+        "title1": "Gand",
+        "title2": "Centro Pneumatici",
+        "title3": "Il Tuo Centro Pneumatici a Gand",
+        "subtitle": "Il centro pneumatici più economico di Gand per pneumatici nuovi e usati. Montaggio e equilibratura a partire da 25 €. Serviamo Gand, Sint-Amandsberg, Oostakker, Destelbergen e dintorni.",
         "cta": "Vedi Pneumatici"
     },
     "Footer": {
@@ -115,7 +115,11 @@
         "noise": "Livello di rumore",
         "noiseDb": "Rumore (dB)",
         "mountingOption": "Montaggio pneumatici (+ €19.85 p.p.)",
-        "description": "Descrizione"
+        "description": "Descrizione",
+        "guarantee": "Garanzia 2 anni",
+        "fastInstall": "Montaggio rapido",
+        "expertAdvice": "Consulenza gratuita",
+        "easyReturn": "Reso facile"
     },
     "Contact": {
         "title": "Contattaci",
@@ -185,7 +189,14 @@
         "topBrandsTitle": "Marchi Principali",
         "topBrandsSubtitle": "Offriamo pneumatici dei produttori più affidabili al mondo.",
         "topSizesTitle": "Misure Popolari",
-        "topSizesSubtitle": "Trova pneumatici nelle misure più popolari — clicca per cercare."
+        "topSizesSubtitle": "Trova pneumatici nelle misure più popolari — clicca per cercare.",
+        "workshop": {
+            "tagline": "I nostri numeri parlano da soli",
+            "yearsExperience": "Anni di esperienza",
+            "happyCustomers": "Clienti soddisfatti",
+            "brands": "Marchi di pneumatici",
+            "googleRating": "Valutazione Google"
+        }
     },
     "Cart": {
         "title": "Carrello",
@@ -288,28 +299,28 @@
         }
     },
     "Metadata": {
-        "title": "Centro Pneumatici Gent | Acquista Pneumatici con Montaggio",
-        "description": "✓ Il centro pneumatici più economico a Gent! Pneumatici nuovi e usati da 25€ montaggio incl. Aperto lun-sab 9-18h, domenica su appuntamento. ☎ +32 466 19 56 22",
-        "ogDescription": "Centro Pneumatici Gent - Pneumatici nuovi e usati. Montaggio, bilanciatura e convergenza inclusi. Migliori prezzi!",
-        "keywords": "centro pneumatici gent, comprare pneumatici, montaggio pneumatici, convergenza, centro pneumatici belgio, pneumatici usati, pneumatici nuovi, pneumatici economici, pneumatici invernali, pneumatici estivi, Sint-Amandsberg",
-        "tiresTitle": "Acquista Pneumatici | Nuovi e Usati",
-        "tiresDescription": "Comprare pneumatici a Gent? Scopri i nostri pneumatici invernali, estivi e 4 stagioni. Montaggio incluso. Da 25€.",
+        "title": "Acquisto & Montaggio Pneumatici Gand | Centro Pneumatici più Economico | Gent Bandenservice",
+        "description": "Il centro pneumatici più economico a Gent (Sint-Amandsberg). Montiamo e bilanciamo pneumatici nuovi e usati a partire da 25€. Scopri la nostra offerta!",
+        "ogDescription": "Gent bandenservice - Il tuo centro pneumatici a Gent per pneumatici nuovi e usati. Montaggio e bilanciatura. I più economici della zona!",
+        "keywords": "gent bandenservice, centro pneumatici, centro pneumatici gent, pneumatici auto, pneumatici gent, acquisto pneumatici gent, centro pneumatici più economico, servizio pneumatici gent, Sint-Amandsberg, Oostakker",
+        "tiresTitle": "Acquisto Pneumatici più Economico & Montaggio | Gent Bandenservice",
+        "tiresDescription": "Acquista pneumatici per auto da Gent bandenservice (Sint-Amandsberg). Pneumatici invernali, estivi e 4 stagioni a partire da 25€ con montaggio. Il più economico a Gent!",
         "servicesTitle": "Servizi Pneumatici | Montaggio e Convergenza",
-        "servicesDescription": "Montaggio pneumatici professionale, bilanciatura e convergenza a Gent. Servizio veloce, ottimi prezzi. Aperti il sabato!",
+        "servicesDescription": "Montaggio pneumatici professionale, bilanciatura e convergenza a Gent. Servizio veloce, prezzi competitivi. Aperti anche il sabato!",
         "contactTitle": "Contatti | Centro Pneumatici Gent",
-        "contactDescription": "Contattaci. Chiama +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
-        "faqTitle": "FAQ | Prezzi e Orari",
-        "faqDescription": "FAQ su prezzi pneumatici, orari, montaggio e altro. Centro pneumatici aperto domenica? Sì, su appuntamento!",
+        "contactDescription": "Vuoi contattare il Centro Pneumatici Gent? Chiama il numero 0466 19 56 22 o vieni a trovarci. Dendermondsesteenweg 428, Sint-Amandsberg. Lun-Sab 9-18.",
+        "faqTitle": "Domande Frequenti | Prezzi e Orari",
+        "faqDescription": "Domande frequenti su prezzi pneumatici, orari, montaggio e altro. Centro pneumatici aperto la domenica? Sì, su appuntamento!",
         "privacyTitle": "Informativa sulla Privacy | Gent Bandenservice",
         "privacyDescription": "Informativa sulla privacy di Gent bandenservice. Scopri come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali.",
         "termsTitle": "Termini di Servizio | Gent Bandenservice",
-        "termsDescription": "Termini di servizio di Gent bandenservice. Leggi i nostri termini e condizioni per l'utilizzo dei nostri servizi pneumatici.",
-        "cookiesTitle": "Informativa sui cookie | Gent Bandenservice",
-        "cookiesDescription": "Scopri come Gent bandenservice utilizza i cookie e come gestire le tue preferenze.",
+        "termsDescription": "Termini di servizio di Gent bandenservice. Leggi i nostri termini e condizioni generali per l'utilizzo dei nostri servizi pneumatici.",
+        "cookiesTitle": "Informativa sui Cookie | Gent Bandenservice",
+        "cookiesDescription": "Scopri come Gent bandenservice utilizza i cookie e come puoi gestire le tue preferenze.",
         "returnPolicyTitle": "Politica di Reso | Gent Bandenservice",
         "returnPolicyDescription": "Politica di reso per gli acquisti di pneumatici online presso Gent bandenservice. Scopri il nostro periodo di reso di 14 giorni, le condizioni e il processo di rimborso.",
         "b2bTitle": "Partnership B2B | Gent Bandenservice",
-        "b2bDescription": "Soluzioni affidabili per pneumatici per compagnie di assicurazione e flotte aziendali. Collabora con noi per un servizio prioritario."
+        "b2bDescription": "Soluzioni affidabili e personalizzate per pneumatici per compagnie assicurative e flotte aziendali. Collabora con noi per un servizio prioritario, marchi prestigiosi e una gestione semplice."
     },
     "DevBanner": {
         "message": "Siamo in modalità sviluppo. Tutti i pneumatici non sono reali; sono solo a scopo dimostrativo. I pneumatici reali arriveranno presto."

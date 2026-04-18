@@ -1,4 +1,5 @@
 "use client";
+import { Star } from "lucide-react";
 
 import { useState, useEffect } from "react";
 import { useTranslations } from 'next-intl';
@@ -120,6 +121,25 @@ export default function AppointmentForm({ tireId, tireName }: AppointmentFormPro
             <div className="p-8 rounded-lg border border-green-500/50 bg-green-500/10 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500 mx-auto mb-4"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                 <h3 className="text-xl font-bold mb-2">{t('success')}</h3>
+                
+                {/* Google Review CTA */}
+                <div className="mt-8 p-6 rounded-2xl border-2 border-primary/20 bg-card shadow-sm relative overflow-hidden group text-left">
+                    <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <Star className="w-12 h-12 fill-primary text-primary rotate-12" />
+                    </div>
+                    <h4 className="text-base font-bold mb-2 relative z-10 text-foreground">
+                        {useTranslations('Home')('reviews.successCTA')}
+                    </h4>
+                    <a 
+                        href="https://www.google.com/maps/place/ARIANA+Bandenservice/@51.0516972,3.7536583,748m/data=!3m1!1e3!4m8!3m7!1s0x47c37700051d85b7:0xcde1d6416f99d9f2!8m2!3d51.0516972!4d3.7562332!9m1!1b1!16s%2Fg%2F11y4yrfhx1?authuser=0&entry=ttu" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-[#F59E0B] text-white font-bold hover:bg-[#D97706] transition-all shadow-md hover:shadow-lg active:scale-95"
+                    >
+                        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.5l3.09 6.26L22 8.74l-5 4.87 1.18 6.88L12 17.25l-6.18 3.24L7 13.61l-5-4.87 6.91-0.98L12 1.5z"/></svg>
+                        {useTranslations('Home')('reviews.reviewUs')}
+                    </a>
+                </div>
             </div>
         );
     }

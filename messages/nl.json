@@ -121,7 +121,11 @@
         "noise": "Geluidsniveau",
         "noiseDb": "Geluid (dB)",
         "mountingOption": "Banden laten monteren (+ €19.85 p.b.)",
-        "description": "Beschrijving"
+        "description": "Beschrijving",
+        "guarantee": "2 jaar garantie",
+        "fastInstall": "Snel gemonteerd",
+        "expertAdvice": "Gratis advies",
+        "easyReturn": "Makkelijk retour"
     },
     "Contact": {
         "title": "Neem Contact Op",
@@ -185,12 +189,21 @@
             "subtitle": "Bekijk wat onze tevreden klanten te zeggen hebben over onze service.",
             "googleTrusted": "Google Trusted",
             "viewAll": "Bekijk alle reviews op Google",
+            "reviewUs": "Review ons op Google",
+            "successCTA": "Tevreden over onze passie voor uw auto? Laat een Google Review achter!",
             "postedOnGoogle": "Gepost op Google"
         },
         "topBrandsTitle": "Top Merken",
         "topBrandsSubtitle": "Wij leveren banden van de meest vertrouwde fabrikanten ter wereld.",
         "topSizesTitle": "Populaire Maten",
-        "topSizesSubtitle": "Vind banden in de meest populaire maten — klik om te zoeken."
+        "topSizesSubtitle": "Vind banden in de meest populaire maten — klik om te zoeken.",
+        "workshop": {
+            "tagline": "Onze cijfers spreken voor zich",
+            "yearsExperience": "Jaar ervaring",
+            "happyCustomers": "Tevreden klanten",
+            "brands": "Banden merken",
+            "googleRating": "Google-beoordeling"
+        }
     },
     "Cart": {
         "title": "Winkelwagen",
@@ -295,7 +308,7 @@
         }
     },
     "Metadata": {
-        "title": "Banden kopen & monteren Gent | Goedkoopste bandencentrale | Gent Bandenservice",
+        "title": "Banden Kopen & Monteren Gent | Goedkoopste Bandencentrale | Gent Bandenservice",
         "description": "De goedkoopste bandencentrale in Gent (Sint-Amandsberg). Wij monteren en balanceren nieuwe en tweedehands banden vanaf €25. Bekijk ons aanbod!",
         "ogDescription": "Gent bandenservice - Uw bandencentrale in Gent voor nieuwe & tweedehands banden. Montage en balanceren. De goedkoopste van de regio!",
         "keywords": "gent bandenservice, bandencentrale, bandencentrale gent, autobanden, banden gent, banden kopen gent, goedkoopste bandencentrale, bandenservice gent, Sint-Amandsberg, Oostakker",
@@ -330,15 +343,18 @@
         "thanks": "Bedankt voor je hulp."
     },
     "Blog": {
-        "pageTitle": "Onze Blog | Gent Bandenservice",
-        "pageDescription": "Lees het laatste nieuws, tips en informatie over autobanden en onderhoud bij Gent Bandenservice.",
+        "pageTitle": "Blog & Nieuws | Gent Bandenservice",
+        "pageDescription": "Lees het laatste nieuws, onderhoudstips en veiligheidsinformatie over autobanden van Gent Bandenservice.",
         "badge": "Blog",
         "title": "Nieuws & Tips",
         "subtitle": "Blijf op de hoogte van de laatste ontwikkelingen en krijg handige tips voor uw banden.",
         "allCategories": "Alle Categorieën",
         "noPosts": "Geen berichten gevonden",
         "noPostsDescription": "Er zijn momenteel geen blogberichten in deze categorie.",
+        "readMore": "Lees Meer",
         "readTime": "leestijd",
+        "publishedAt": "Gepubliceerd op",
+        "readingTime": "{minutes} min leestijd",
         "views": "weergaven",
         "backToBlog": "Terug naar Blog",
         "share": "Deel dit bericht",

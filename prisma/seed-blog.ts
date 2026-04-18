@@ -13,11 +13,11 @@ async function main() {
     console.log('Start seeding blog categories...');
 
     const categories = [
-        { name: 'News', description: 'Latest updates and news about Gent Bandenservice' },
-        { name: 'Maintenance', description: 'Tips and guides for tire and car maintenance' },
-        { name: 'Tips', description: 'Helpful tips for choosing and caring for tires' },
-        { name: 'Safety', description: 'Important safety information for drivers' },
-        { name: 'Promotions', description: 'Special offers and seasonal promotions' },
+        { name: 'Nieuws', description: 'Laatste updates en nieuws over Gent Bandenservice' },
+        { name: 'Onderhoud', description: 'Tips en handleidingen voor banden- en auto-onderhoud' },
+        { name: 'Tips', description: 'Handige tips voor het kiezen en verzorgen van banden' },
+        { name: 'Veiligheid', description: 'Belangrijke veiligheidsinformatie voor bestuurders' },
+        { name: 'Promoties', description: 'Speciale aanbiedingen en seizoensgebonden promoties' },
     ];
 
     for (const category of categories) {

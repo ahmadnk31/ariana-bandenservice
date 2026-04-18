@@ -6,6 +6,7 @@ import TireCard from "@/app/components/TireCard";
 import ReviewsSection from "@/app/components/ReviewsSection";
 import TopBrands from "@/app/components/TopBrands";
 import TopSizes from "@/app/components/TopSizes";
+import WorkshopStrip from "@/app/components/WorkshopStrip";
 
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/src/i18n/routing';
@@ -18,7 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return {
-    title: t('title'),
+    title: {
+      absolute: t('title'),
+    },
     description: t('description'),
     alternates: {
       canonical: `/${locale}`,
@@ -49,6 +52,9 @@ export default async function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+
+        {/* Workshop stats strip */}
+        <WorkshopStrip />
 
         {/* Recent Tires Section */}
         <section className="py-16 bg-muted/30">
