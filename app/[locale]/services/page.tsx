@@ -94,7 +94,7 @@ export default async function ServicesPage() {
                                                 )}
                                             </div>
                                             <Link
-                                                href={`/contact?service=${encodeURIComponent(service.name)}`}
+                                                href={{ pathname: '/contact', query: { service: service.name } }}
                                                 className="mt-6 w-full inline-flex items-center justify-center rounded-md bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 transition-colors"
                                             >
                                                 {t('bookNow')}

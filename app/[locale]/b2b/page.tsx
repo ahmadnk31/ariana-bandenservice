@@ -140,7 +140,7 @@ export default async function B2BPage() {
                             {t('ctaDesc')}
                         </p>
                         <Link
-                            href="/contact?service=B2B+Partnership"
+                            href={{ pathname: '/contact', query: { service: 'B2B Partnership' } }}
                             className="inline-flex h-14 items-center justify-center rounded-xl bg-background px-10 text-lg font-bold text-foreground shadow hover:bg-muted transition-colors"
                         >
                             {t('ctaBtn')}
