@@ -10,10 +10,10 @@
         "b2b": "B2B / Seguros"
     },
     "Hero": {
-        "title1": "Centro de Neumáticos",
-        "title2": "Gante",
-        "title3": "Desde 2020",
-        "subtitle": "Compra neumáticos con montaje desde 25€. El centro de neumáticos más barato de Gante. Abierto lun-sáb 9-18h.",
+        "title1": "Gante",
+        "title2": "Centro de Neumáticos",
+        "title3": "Su Centro de Neumáticos en Gante",
+        "subtitle": "El centro de neumáticos más barato de Gante para neumáticos nuevos y de segunda mano. Montaje y equilibrado desde 25 €. Servimos a Gante, Sint-Amandsberg, Oostakker, Destelbergen y alrededores.",
         "cta": "Ver Neumáticos",
         "contact": "Contáctanos"
     },
@@ -116,7 +116,11 @@
         "noise": "Nivel de ruido",
         "noiseDb": "Ruido (dB)",
         "mountingOption": "Montaje de neumáticos (+ €19.85 p.u.)",
-        "description": "Descripción"
+        "description": "Descripción",
+        "guarantee": "Garantía 2 años",
+        "fastInstall": "Montaje rápido",
+        "expertAdvice": "Asesoramiento gratuito",
+        "easyReturn": "Devoluciones fáciles"
     },
     "Contact": {
         "title": "Contáctanos",
@@ -186,7 +190,14 @@
         "topBrandsTitle": "Marcas Principales",
         "topBrandsSubtitle": "Ofrecemos neumáticos de los fabricantes más confiables del mundo.",
         "topSizesTitle": "Tamaños Populares",
-        "topSizesSubtitle": "Encuentra neumáticos en los tamaños más populares — haz clic para buscar."
+        "topSizesSubtitle": "Encuentra neumáticos en los tamaños más populares — haz clic para buscar.",
+        "workshop": {
+            "tagline": "Nuestras cifras hablan por sí solas",
+            "yearsExperience": "Años de experiencia",
+            "happyCustomers": "Clientes satisfechos",
+            "brands": "Marcas de neumáticos",
+            "googleRating": "Valoración Google"
+        }
     },
     "Cart": {
         "title": "Carrito de compras",
@@ -289,28 +300,28 @@
         }
     },
     "Metadata": {
-        "title": "Centro Neumáticos Gante | Comprar Neumáticos con Montaje",
-        "description": "✓ El centro de neumáticos más barato de Gante! Neumáticos nuevos y usados desde 25€ montaje incl. Abierto lun-sáb 9-18h, domingos con cita. ☎ +32 466 19 56 22",
-        "ogDescription": "Centro Neumáticos Gante - Neumáticos nuevos y usados. Montaje, equilibrado y alineación incluidos. ¡Mejores precios!",
-        "keywords": "centro neumáticos gante, comprar neumáticos, montaje neumáticos, alineación, centro neumáticos bélgica, neumáticos usados, neumáticos nuevos, neumáticos baratos, neumáticos invierno, neumáticos verano, Sint-Amandsberg",
-        "tiresTitle": "Comprar Neumáticos | Nuevos y Usados",
-        "tiresDescription": "¿Comprar neumáticos en Gante? Descubre nuestros neumáticos de invierno, verano y 4 estaciones. Montaje incluido. Desde 25€.",
-        "servicesTitle": "Servicios Neumáticos | Montaje y Alineación",
-        "servicesDescription": "Montaje de neumáticos profesional, equilibrado y alineación en Gante. Servicio rápido, buenos precios. ¡Abiertos sábados!",
-        "contactTitle": "Contacto | Centro Neumáticos Gante",
-        "contactDescription": "Contáctanos. Llama al +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
-        "faqTitle": "FAQ | Precios y Horarios",
-        "faqDescription": "FAQ sobre precios de neumáticos, horarios, montaje y más. ¿Centro de neumáticos abierto domingo? ¡Sí, con cita!",
+        "title": "Compra & Montaje de Neumáticos Gante | Centro de Neumáticos Más Barato | Gent Bandenservice",
+        "description": "El centro de neumáticos más barato de Gante (Sint-Amandsberg). Montamos y equilibramos neumáticos nuevos y usados desde 25€. ¡Vea nuestra oferta!",
+        "ogDescription": "Gent bandenservice - Su centro de neumáticos en Gante para neumáticos nuevos y de segunda mano. Montaje y equilibrado. ¡Los más baratos de la región!",
+        "keywords": "gent bandenservice, centro neumáticos, centró neumáticos gante, neumáticos coche, neumáticos gante, comprar neumáticos gante, centro neumáticos más barato, servicio neumáticos gante, Sint-Amandsberg, Oostakker",
+        "tiresTitle": "Comprar Neumáticos más Baratos & Montaje | Gent Bandenservice",
+        "tiresDescription": "Compre neumáticos en Gent bandenservice (Sint-Amandsberg). Neumáticos de invierno, verano y todas las estaciones desde 25€ con montaje incluido. ¡Los más baratos de Gante!",
+        "servicesTitle": "Servicios de Neumáticos | Montaje y Alineación",
+        "servicesDescription": "Montaje profesional de neumáticos, equilibrado y alineación de ruedas en Gante. Servicio rápido, precios competitivos. ¡Abierto también los sábados!",
+        "contactTitle": "Contacto | Centro de Neumáticos Gante",
+        "contactDescription": "¿Contactar con el Centro de Neumáticos Gante? Llame al 0466 19 56 22 o visítenos. Dendermondsesteenweg 428, Sint-Amandsberg. Lun-Sáb 9-18h.",
+        "faqTitle": "Preguntas Frecuentes | Precios y Horarios",
+        "faqDescription": "Preguntas frecuentes sobre precios de neumáticos, horarios, montaje y más. ¿Centro de neumáticos abierto los domingos? ¡Sí, con cita previa!",
         "privacyTitle": "Política de Privacidad | Gent Bandenservice",
         "privacyDescription": "Política de privacidad de Gent bandenservice. Aprenda cómo recopilamos, utilizamos y protegemos su información personal.",
         "termsTitle": "Términos de Servicio | Gent Bandenservice",
-        "termsDescription": "Términos de servicio de Gent bandenservice. Lea nuestros términos y condiciones para el uso de nuestros servicios de neumáticos.",
+        "termsDescription": "Términos de servicio de Gent bandenservice. Lea nuestras condiciones generales para el uso de nuestros servicios de neumáticos.",
         "cookiesTitle": "Política de Cookies | Gent Bandenservice",
         "cookiesDescription": "Aprenda cómo Gent bandenservice usa cookies y cómo puede gestionar sus preferencias.",
         "returnPolicyTitle": "Política de Devolución | Gent Bandenservice",
         "returnPolicyDescription": "Política de devolución para compras de neumáticos en línea en Gent bandenservice. Conozca nuestro plazo de devolución de 14 días, condiciones y proceso de reembolso.",
         "b2bTitle": "Asociaciones B2B | Gent Bandenservice",
-        "b2bDescription": "Soluciones de neumáticos fiables a medida para compañías de seguros y flotas. Asóciese con nosotros para un servicio prioritario y marcas de primer nivel."
+        "b2bDescription": "Soluciones fiables de neumáticos a medida para compañías de seguros y flotas. Colabore con nosotros para un servicio prioritario, primeras marcas y gestión sencilla."
     },
     "DevBanner": {
         "message": "Todavía estamos en modo de desarrollo. Todos los neumáticos no son reales; es solo para fines de demostración. Los neumáticos reales llegarán pronto."

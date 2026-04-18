@@ -10,10 +10,10 @@
         "b2b": "B2B / Ubezpieczenia"
     },
     "Hero": {
-        "title1": "Centrum Opon",
-        "title2": "Gandawa",
-        "title3": "Od 2020",
-        "subtitle": "Kup opony z montażem od 25€. Najtańsze centrum opon w Gandawie. Pn-Sb 9-18.",
+        "title1": "Gandawa",
+        "title2": "Centrum Opon",
+        "title3": "Twoje Centrum Opon w Gandawie",
+        "subtitle": "Najtańsze centrum opon w Gandawie z oponami nowymi i używanymi. Montaż i wyważanie od 25 €. Obsługujemy Gandawę, Sint-Amandsberg, Oostakker, Destelbergen i okolice.",
         "cta": "Zobacz Opony",
         "contact": "Skontaktuj się z nami"
     },
@@ -116,7 +116,11 @@
         "noise": "Poziom hałasu",
         "noiseDb": "Hałas (dB)",
         "mountingOption": "Zamontuj opony (+ €19.85 za szt.)",
-        "description": "Opis"
+        "description": "Opis",
+        "guarantee": "Gwarancja 2 lata",
+        "fastInstall": "Szybki montaż",
+        "expertAdvice": "Bezpłatne doradztwo",
+        "easyReturn": "Łatwy zwrot"
     },
     "Contact": {
         "title": "Skontaktuj się z nami",
@@ -186,7 +190,14 @@
         "topBrandsTitle": "Najlepsze Marki",
         "topBrandsSubtitle": "Oferujemy opony od najbardziej zaufanych producentów na świecie.",
         "topSizesTitle": "Popularne Rozmiary",
-        "topSizesSubtitle": "Znajdź opony w najpopularniejszych rozmiarach — kliknij, aby wyszukać."
+        "topSizesSubtitle": "Znajdź opony w najpopularniejszych rozmiarach — kliknij, aby wyszukać.",
+        "workshop": {
+            "tagline": "Nasze liczby mówią same za siebie",
+            "yearsExperience": "Lat doświadczenia",
+            "happyCustomers": "Zadowolonych klientów",
+            "brands": "Marek opon",
+            "googleRating": "Ocena w Google"
+        }
     },
     "Cart": {
         "title": "Koszyk",
@@ -289,24 +300,28 @@
         }
     },
     "Metadata": {
-        "title": "Centrum Opon Gandawa | Kup Opony z Montażem",
-        "description": "✓ Najtańsze centrum opon w Gandawie! Nowe i używane opony od 25€ z montażem. Pn-Sb 9-18, niedziela po umówieniu. ☎ +32 466 19 56 22",
-        "ogDescription": "Centrum Opon Gandawa - Nowe i używane opony. Montaż, wyważanie i geometria w cenie. Najlepsze ceny!",
-        "keywords": "centrum opon gandawa, kup opony, montaż opon, geometria kół, centrum opon belgia, opony używane, opony nowe, opony tanie, opony zimowe, opony letnie, Sint-Amandsberg",
-        "tiresTitle": "Kup Opony | Nowe i Używane",
-        "tiresDescription": "Kupujesz opony w Gandawie? Zobacz nasze opony zimowe, letnie i całoroczne. Montaż w cenie. Od 25€.",
-        "servicesTitle": "Serwis Opon | Montaż i Geometria",
-        "servicesDescription": "Profesjonalny montaż opon, wyważanie i geometria w Gandawie. Szybki serwis, świetne ceny. Otwarte w soboty!",
+        "title": "Kupno & Montaż Opon Gandawa | Najtańsze Centrum Opon | Gent Bandenservice",
+        "description": "Najtańsze centrum opon w Gandawie (Sint-Amandsberg). Montujemy i wyważamy opony nowe i używane od 25€. Sprawdź naszą ofertę!",
+        "ogDescription": "Gent bandenservice - Twoje centrum opon w Gandawie dla nowych i używanych opon. Montaż i wyważanie. Najtaniej w okolicy!",
+        "keywords": "gent bandenservice, centrum opon, centrum opon gandawa, opony samochodowe, opony gandawa, kup opony gandawa, najtańsze centrum opon, serwis opon gandawa, Sint-Amandsberg, Oostakker",
+        "tiresTitle": "Najtańszy Zakup Opon & Montaż | Gent Bandenservice",
+        "tiresDescription": "Kup opony w Gent bandenservice (Sint-Amandsberg). Opony zimowe, letnie i całoroczne od 25€ z montażem. Najtaniej w Gandawie!",
+        "servicesTitle": "Usługi Oponiarskie | Montaż i Geometria",
+        "servicesDescription": "Profesjonalny montaż opon, wyważanie i geometria kół w Gandawie. Szybki serwis, konkurencyjne ceny. Otwarte również w soboty!",
         "contactTitle": "Kontakt | Centrum Opon Gandawa",
-        "contactDescription": "Skontaktuj się z nami. Zadzwoń: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
-        "faqTitle": "FAQ | Ceny i Godziny",
-        "faqDescription": "FAQ o cenach opon, godzinach, montażu i więcej. Centrum opon czynne w niedzielę? Tak, po umówieniu!",
-        "cookiesTitle": "Polityka plików cookie | Gent Bandenservice",
-        "cookiesDescription": "Dowiedz się, jak Gent bandenservice używa plików cookie i jak zarządzać preferencjami.",
+        "contactDescription": "Chcesz skontaktować się z Centrum Opon Gandawa? Zadzwoń pod numer 0466 19 56 22 lub odwiedź nas. Dendermondsesteenweg 428, Sint-Amandsberg. Pon-Sob 9-18.",
+        "faqTitle": "Często Zadawane Pytania | Ceny i Godziny Otwarcia",
+        "faqDescription": "FAQ o cenach opon, godzinach otwarcia, montażu i więcej. Centrum opon otwarte w niedzielę? Tak, po umówieniu!",
+        "privacyTitle": "Polityka Prywatności | Gent Bandenservice",
+        "privacyDescription": "Polityka prywatności Gent bandenservice. Dowiedz się, jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe.",
+        "termsTitle": "Warunki Świadczenia Usług | Gent Bandenservice",
+        "termsDescription": "Warunki świadczenia usług Gent bandenservice. Przeczytaj nasze ogólne warunki korzystania z naszych usług oponiarskich.",
+        "cookiesTitle": "Polityka Plików Cookie | Gent Bandenservice",
+        "cookiesDescription": "Dowiedz się, jak Gent bandenservice używa plików cookie i jak zarządzać swoimi preferencjami.",
         "returnPolicyTitle": "Polityka Zwrotów | Gent Bandenservice",
         "returnPolicyDescription": "Polityka zwrotów dla zakupów opon online w Gent bandenservice. Dowiedz się o naszym 14-dniowym okresie zwrotu, warunkach i procesie zwrotu pieniędzy.",
         "b2bTitle": "Partnerstwa B2B | Gent Bandenservice",
-        "b2bDescription": "Niezawodne opony i usługi dla firm ubezpieczeniowych i flot."
+        "b2bDescription": "Niezawodne, skrojone na miarę rozwiązania oponiarskie dla firm ubezpieczeniowych i flot. Współpracuj z nami, aby uzyskać priorytetową obsługę, topowe marki i prostą administrację."
     },
     "DevBanner": {
         "message": "Nadal jesteśmy w trybie programowania. Wszystkie opony nie są prawdziwe; służą wyłącznie do celów demonstracyjnych. Prawdziwe opony wkrótce."

@@ -10,10 +10,10 @@
         "b2b": "B2B / Assurances"
     },
     "Hero": {
-        "title1": "Centre Pneus",
-        "title2": "Gand",
-        "title3": "Depuis 2020",
-        "subtitle": "Achetez des pneus avec montage dès 25€. Le centre de pneus le moins cher à Gand. Ouvert lun-sam 9h-18h.",
+        "title1": "Gand",
+        "title2": "Centre Pneus",
+        "title3": "Votre Centre de Pneus à Gand",
+        "subtitle": "Le centre de pneus le moins cher à Gand pour les pneus neufs et d'occasion. Montage et équilibrage à partir de 25 €. Nous servons Gand, Sint-Amandsberg, Oostakker, Destelbergen et les environs.",
         "cta": "Voir les Pneus",
         "contact": "Contactez-Nous"
     },
@@ -116,7 +116,11 @@
         "noise": "Niveau sonore",
         "noiseDb": "Bruit (dB)",
         "mountingOption": "Montage des pneus (+ €19.85 p.p.)",
-        "description": "Description"
+        "description": "Description",
+        "guarantee": "Garantie 2 ans",
+        "fastInstall": "Montage rapide",
+        "expertAdvice": "Conseil gratuit",
+        "easyReturn": "Retour facile"
     },
     "Contact": {
         "title": "Contactez-nous",
@@ -186,7 +190,14 @@
         "topBrandsTitle": "Marques Populaires",
         "topBrandsSubtitle": "Nous proposons des pneus des fabricants les plus fiables au monde.",
         "topSizesTitle": "Tailles Populaires",
-        "topSizesSubtitle": "Trouvez des pneus dans les tailles les plus populaires — cliquez pour rechercher."
+        "topSizesSubtitle": "Trouvez des pneus dans les tailles les plus populaires — cliquez pour rechercher.",
+        "workshop": {
+            "tagline": "Nos chiffres parlent d'eux-mêmes",
+            "yearsExperience": "Ans d'expérience",
+            "happyCustomers": "Clients satisfaits",
+            "brands": "Marques de pneus",
+            "googleRating": "Note Google"
+        }
     },
     "Cart": {
         "title": "Panier",
@@ -289,28 +300,28 @@
         }
     },
     "Metadata": {
-        "title": "Centre Pneus Gand | Pneus neufs & occasion avec montage inclus",
-        "description": "✓ Centre pneus le moins cher à Gand! Pneus neufs & occasion dès 25€ montage et équilibrage inclus. Ouvert lun-sam 9h-18h, Sint-Amandsberg. ☎ +32 466 19 56 22",
-        "ogDescription": "Centre Pneus Gand - Pneus neufs & d'occasion. Montage, équilibrage et parallélisme inclusions. Les meilleurs prix! Sint-Amandsberg, Oostakker, Destelbergen.",
-        "keywords": "centre pneus gand, pneus gand, acheter pneus, montage pneus, parallélisme, centre pneus belgique, pneus occasion, pneus neufs, pneus pas cher, pneus hiver, pneus été, pneus 4 saisons, Sint-Amandsberg, Oostakker, Destelbergen, Gentbrugge, centre pneus ouvert dimanche",
-        "tiresTitle": "Acheter Pneus | Neufs & Occasion",
-        "tiresDescription": "Acheter des pneus à Gand? Découvrez nos pneus hiver, été et 4 saisons. Montage inclus. Dès 25€ par pneu.",
-        "servicesTitle": "Services Pneus | Montage & Parallélisme",
-        "servicesDescription": "Montage de pneus professionnel, équilibrage et parallélisme à Gand. Service rapide, bons prix. Ouvert le samedi!",
+        "title": "Achat & Montage de Pneus Gand | Centre de Pneus le Moins Cher | Gent Bandenservice",
+        "description": "Le centre de pneus le moins cher à Gand (Sint-Amandsberg). Nous montons et équilibrons des pneus neufs et d'occasion à partir de 25€. Consultez notre offre !",
+        "ogDescription": "Gent bandenservice - Votre centre de pneus à Gand pour pneus neufs et d'occasion. Montage et équilibrage. Le moins cher de la région !",
+        "keywords": "gent bandenservice, centre pneus, centre pneus gand, pneus voiture, pneus gand, acheter pneus gand, centre pneus le moins cher, service pneus gand, Sint-Amandsberg, Oostakker",
+        "tiresTitle": "Acheter Pneus moins Chers & Montage | Gent Bandenservice",
+        "tiresDescription": "Achetez des pneus chez Gent bandenservice (Sint-Amandsberg). Pneus hiver, été & toutes saisons à partir de 25€ montage inclus. Le moins cher de Gand !",
+        "servicesTitle": "Services Pneus | Montage & Alignement",
+        "servicesDescription": "Montage de pneus professionnel, équilibrage et alignement des roues à Gand. Service rapide, prix compétitifs. Ouvert aussi le samedi !",
         "contactTitle": "Contact | Centre Pneus Gand",
-        "contactDescription": "Contactez notre centre pneus à Gand. Appelez +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
-        "faqTitle": "FAQ | Prix & Horaires",
-        "faqDescription": "FAQ sur les prix des pneus, horaires, montage et plus. Centre pneus ouvert dimanche? Oui, sur rendez-vous!",
+        "contactDescription": "Contacter le Centre Pneus Gand ? Appelez le 0466 19 56 22 ou visitez-nous. Dendermondsesteenweg 428, Sint-Amandsberg. Lun-Sam 9-18h.",
+        "faqTitle": "Questions Fréquemment Posées | Tarifs & Horaires",
+        "faqDescription": "FAQ sur les prix des pneus, les heures d'ouverture, le montage et plus. Centre de pneus ouvert le dimanche ? Oui, sur rendez-vous !",
         "privacyTitle": "Politique de Confidentialité | Gent Bandenservice",
         "privacyDescription": "Politique de confidentialité de Gent bandenservice. Découvrez comment nous collectons, utilisons et protégeons vos informations personnelles.",
-        "termsTitle": "Conditions d'Utilisation | Gent Bandenservice",
-        "termsDescription": "Conditions d'utilisation de Gent bandenservice. Lisez nos termes et conditions pour l'utilisation de nos services de pneumatiques.",
-        "cookiesTitle": "Politique des cookies | Gent Bandenservice",
+        "termsTitle": "Conditions de Service | Gent Bandenservice",
+        "termsDescription": "Conditions de service de Gent bandenservice. Lisez nos conditions générales pour l'utilisation de nos services de pneus.",
+        "cookiesTitle": "Politique de Cookies | Gent Bandenservice",
         "cookiesDescription": "Découvrez comment Gent bandenservice utilise les cookies et comment gérer vos préférences.",
         "returnPolicyTitle": "Politique de Retour | Gent Bandenservice",
-        "returnPolicyDescription": "Politique de retour pour les achats de pneus en ligne chez Gent bandenservice. Découvrez notre délai de retour de 14 jours, les conditions et le processus de remboursement.",
+        "returnPolicyDescription": "Politique de retour pour les achats de pneus en ligne chez Gent bandenservice. Découvrez notre délai de retour de 14 jours, nos conditions et le processus de remboursement.",
         "b2bTitle": "Partenariats B2B | Gent Bandenservice",
-        "b2bDescription": "Solutions de pneus fiables pour les compagnies d'assurance et les flottes d'entreprises. Associez-vous à nous pour un service prioritaire et des grandes marques."
+        "b2bDescription": "Solutions de pneus fiables sur mesure pour les compagnies d'assurance automobile et les flottes. Collaborez avec nous pour un service prioritaire, des marques de premier plan et une gestion simple."
     },
     "DevBanner": {
         "message": "Nous sommes encore en mode développement. Tous les pneus ne sont pas réels ; c'est uniquement à des fins de démonstration. Les vrais pneus arrivent bientôt."

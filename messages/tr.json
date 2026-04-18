@@ -10,10 +10,10 @@
         "b2b": "B2B / Sigorta"
     },
     "Hero": {
-        "title1": "Lastik Merkezi",
-        "title2": "Gent",
-        "title3": "2020'den Beri",
-        "subtitle": "Montaj dahil lastik alın 25€'dan. Gent'in en ucuz lastik merkezi. Pts-Cmt 9-18 açık.",
+        "title1": "Gent",
+        "title2": "Lastik Merkezi",
+        "title3": "Gent'teki Lastik Merkeziniz",
+        "subtitle": "Yeni ve ikinci el lastikler için Gent'teki en ucuz lastik merkezi. 25€'dan başlayan fiyatlarla montaj ve balans. Gent, Sint-Amandsberg, Oostakker, Destelbergen ve çevresine hizmet veriyoruz.",
         "cta": "Lastikleri Gör",
         "contact": "Bize Ulaşın"
     },
@@ -116,7 +116,11 @@
         "noise": "Gürültü Seviyesi",
         "noiseDb": "Gürültü (dB)",
         "mountingOption": "Lastik montajı yaptır (+ €19.85 adet başı)",
-        "description": "Açıklama"
+        "description": "Açıklama",
+        "guarantee": "2 yıl garanti",
+        "fastInstall": "Hızlı montaj",
+        "expertAdvice": "Cretsiz danışmanlık",
+        "easyReturn": "Kolay iade"
     },
     "Contact": {
         "title": "Bize Ulaşın",
@@ -186,7 +190,14 @@
         "topBrandsTitle": "En İyi Markalar",
         "topBrandsSubtitle": "Dünyanın en güvenilir üreticilerinden lastik sunuyoruz.",
         "topSizesTitle": "Popüler Ebatlar",
-        "topSizesSubtitle": "En popüler ebatlarda lastik bulun — aramak için tıklayın."
+        "topSizesSubtitle": "En popüler ebatlarda lastik bulun — aramak için tıklayın.",
+        "workshop": {
+            "tagline": "Rakamlarımız her şeyi anlatıyor",
+            "yearsExperience": "Yıllık deneyim",
+            "happyCustomers": "Mutlu müşteri",
+            "brands": "Lastik markası",
+            "googleRating": "Google puanı"
+        }
     },
     "Cart": {
         "title": "Alışveriş Sepeti",
@@ -289,24 +300,28 @@
         }
     },
     "Metadata": {
-        "title": "Lastik Merkezi Gent | Montaj Dahil Yeni & İkinci El Lastikler",
-        "description": "✓ Gent'in en ucuz lastik merkezi! Yeni ve ikinci el lastikler 25€'dan başlayan fiyatlarla. Montaj ve balans dahil. Pts-Cmt 9-18, Sint-Amandsberg. ☎ +32 466 19 56 22",
-        "ogDescription": "Lastik Merkezi Gent - Yeni ve ikinci el lastikler. Montaj, balans ve rot ayarı dahil. Bölgedeki en iyi fiyatlar! Sint-Amandsberg, Oostakker.",
-        "keywords": "lastik merkezi gent, lastik satın al, lastik montajı, rot ayarı, lastik merkezi belçika, ikinci el lastik, yeni lastik, ucuz lastik, kış lastiği, yaz lastiği, dört mevsim lastik, Sint-Amandsberg, Oostakker, Destelbergen, Gentbrugge, ariana bandenservice, gent bandenservice",
-        "tiresTitle": "Lastik Al | Yeni ve İkinci El",
-        "tiresDescription": "Gent'te lastik mi arıyorsunuz? Kış, yaz ve dört mevsim lastiklerimizi görün. Montaj dahil. 25€'dan başlayan fiyatlar.",
-        "servicesTitle": "Lastik Servisleri | Montaj ve Rot Ayarı",
-        "servicesDescription": "Gent'te profesyonel lastik montajı, balans ve rot ayarı. Hızlı servis, uygun fiyatlar. Cumartesi açığız!",
+        "title": "Gent Lastik Alım & Montaj | En Ucuz Lastik Merkezi | Gent Bandenservice",
+        "description": "Gent'in (Sint-Amandsberg) en ucuz lastik merkezi! Yeni ve ikinci el lastikleri 25€'dan başlayan fiyatlarla monte edip balans yapıyoruz. Teklifimizi inceleyin!",
+        "ogDescription": "Gent bandenservice - Yeni ve ikinci el lastikler için Gent'teki lastik merkeziniz. Montaj ve balans. Bölgedeki en ucuz!",
+        "keywords": "gent bandenservice, lastik merkezi, lastik merkezi gent, araba lastikleri, lastik gent, lastik satın al gent, en ucuz lastik merkezi, lastik servisi gent, Sint-Amandsberg, Oostakker",
+        "tiresTitle": "En Ucuz Lastik Alımı & Montajı | Gent Bandenservice",
+        "tiresDescription": "Gent bandenservice'den (Sint-Amandsberg) araba lastiği satın alın. Kış, yaz ve dört mevsim lastikleri montaj dahil 25€'dan başlayan fiyatlarla. Gent'in en ucuzu!",
+        "servicesTitle": "Lastik Hizmetleri | Montaj ve Rot Ayarı",
+        "servicesDescription": "Gent'te profesyonel lastik montajı, balans ve tekerlek rot ayarı. Hızlı servis, rekabetçi fiyatlar. Cumartesi günleri de açığız!",
         "contactTitle": "İletişim | Lastik Merkezi Gent",
-        "contactDescription": "Bize ulaşın. Arayın: +32 466 19 56 22. Dendermondsesteenweg 428, Sint-Amandsberg.",
-        "faqTitle": "SSS | Fiyatlar ve Çalışma Saatleri",
-        "faqDescription": "Lastik fiyatları, çalışma saatleri, montaj ve daha fazlası hakkında SSS. Lastik merkezi pazar açık mı? Evet, randevu ile!",
-        "cookiesTitle": "Cerez Politikasi | Gent Bandenservice",
-        "cookiesDescription": "Gent bandenservice'in cerezleri nasil kullandigini ve tercihlerinizi nasil yoneteceginizi ogrenin.",
+        "contactDescription": "Lastik Merkezi Gent ile iletişime mi geçmek istiyorsunuz? 0466 19 56 22 numaralı telefonu arayın veya bizi ziyaret edin. Dendermondsesteenweg 428, Sint-Amandsberg. Pts-Cmt 9-18.",
+        "faqTitle": "Sıkça Sorulan Sorular | Fiyatlar ve Çalışma Saatleri",
+        "faqDescription": "Lastik fiyatları, çalışma saatleri, montaj ve daha fazlası hakkında SSS. Lastik merkezi pazar günleri açık mı? Evet, randevu ile!",
+        "privacyTitle": "Gizlilik Politikası | Gent Bandenservice",
+        "privacyDescription": "Gent bandenservice gizlilik politikası. Kişisel bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu öğrenin.",
+        "termsTitle": "Hizmet Şartları | Gent Bandenservice",
+        "termsDescription": "Gent bandenservice hizmet şartları. Lastik hizmetlerimizin kullanımıyla ilgili genel şartlarımızı ve koşullarımızı okuyun.",
+        "cookiesTitle": "Çerez Politikası | Gent Bandenservice",
+        "cookiesDescription": "Gent bandenservice'in çerezleri nasıl kullandığını ve tercihlerinizi nasıl yöneteceğinizi öğrenin.",
         "returnPolicyTitle": "İade Politikası | Gent Bandenservice",
-        "returnPolicyDescription": "Gent bandenservice'te online lastik alışverişleri için iade politikası. 14 günlük iade süremiz, koşullar ve geri ödeme süreci hakkında bilgi edinin.",
+        "returnPolicyDescription": "Gent bandenservice'den online lastik alımları için iade politikası. 14 günlük iade süremiz, koşullarımız ve geri ödeme sürecimiz hakkında bilgi edinin.",
         "b2bTitle": "B2B Ortaklıkları | Gent Bandenservice",
-        "b2bDescription": "Sigorta şirketleri ve filolar için güvenilir lastik çözümleri."
+        "b2bDescription": "Otomobil sigorta şirketleri ve filolar için güvenilir, size özel lastik çözümleri. Öncelikli hizmet, en iyi markalar ve basit yönetim için bizimle ortak olun."
     },
     "DevBanner": {
         "message": "Hala geliştirme aşamasındayız. Tüm lastikler gerçek değildir; sadece demo amaçlıdır. Gerçek lastikler yakında gelecek."
