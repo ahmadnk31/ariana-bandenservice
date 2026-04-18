@@ -13,7 +13,7 @@
         "title1": "Gent",
         "title2": "Bandenservice",
         "title3": "Uw Bandencentrale in Gent",
-        "subtitle": "De goedkoopste bandencentrale in Gent voor nieuwe en tweedehands banden. Montage en balanceren vanaf €25.",
+        "subtitle": "De goedkoopste bandencentrale in Gent voor nieuwe en tweedehands banden. Montage en balanceren vanaf €25. Wij bedienen Gent, Sint-Amandsberg, Oostakker, Destelbergen en omstreken.",
         "cta": "Banden Bekijken",
         "contact": "Contacteer Ons"
     },
@@ -42,6 +42,7 @@
     "Tires": {
         "title": "Ons Bandenaanbod",
         "subtitle": "Bekijk ons ruime assortiment nieuwe en gebruikte banden.",
+        "seoSubTitle": "Goedkoop {brand} {season} banden kopen en monteren in Gent",
         "filters": "Filters",
         "clearAll": "Alles wissen",
         "price": "Prijs",
@@ -294,12 +295,12 @@
         }
     },
     "Metadata": {
-        "title": "Gent Bandenservice | Uw Bandencentrale in Gent",
-        "description": "✓ Gent bandenservice is de goedkoopste bandencentrale in Gent! Banden kopen incl. montage vanaf €25. Sint-Amandsberg, Oostakker. ☎ 0466 19 56 22",
-        "ogDescription": "Gent bandenservice - Uw bandencentrale voor nieuwe & tweedehands banden. Montage, balanceren en uitlijning inbegrepen. De goedkoopste van de regio!",
-        "keywords": "gent bandenservice, bandencentrale, bandencentrale gent, autobanden, banden gent, ariana bandenservice, banden kopen gent, goedkoopste bandencentrale, bandenservice gent, Sint-Amandsberg, Oostakker",
-        "tiresTitle": "Banden Kopen | Gent Bandenservice",
-        "tiresDescription": "Koop autobanden bij Gent bandenservice, uw bandencentrale in Gent. Winterbanden, zomerbanden & all-season vanaf €25 incl. montage.",
+        "title": "Banden kopen & monteren Gent | Goedkoopste bandencentrale | Gent Bandenservice",
+        "description": "De goedkoopste bandencentrale in Gent (Sint-Amandsberg). Wij monteren en balanceren nieuwe en tweedehands banden vanaf €25. Bekijk ons aanbod!",
+        "ogDescription": "Gent bandenservice - Uw bandencentrale in Gent voor nieuwe & tweedehands banden. Montage en balanceren. De goedkoopste van de regio!",
+        "keywords": "gent bandenservice, bandencentrale, bandencentrale gent, autobanden, banden gent, banden kopen gent, goedkoopste bandencentrale, bandenservice gent, Sint-Amandsberg, Oostakker",
+        "tiresTitle": "Goedkoopste Banden Kopen & Monteren | Gent Bandenservice",
+        "tiresDescription": "Koop autobanden bij Gent bandenservice (Sint-Amandsberg). Winterbanden, zomerbanden & all-season vanaf €25 incl. montage. De goedkoopste van Gent!",
         "servicesTitle": "Bandendiensten | Montage & Uitlijning",
         "servicesDescription": "Professionele bandenmontage, balanceren en wieluitlijning in Gent. Snelle service, scherpe prijzen. Ook open op zaterdag!",
         "contactTitle": "Contact | Bandencentrale Gent",

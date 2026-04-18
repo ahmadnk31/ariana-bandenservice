@@ -4,7 +4,7 @@ import { prisma } from "@/lib/db";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import ProductGallery from "@/app/components/ProductGallery";
-import Link from "next/link";
+import { Link } from "@/src/i18n/routing";
 import TireCard from "@/app/components/TireCard";
 import { getTranslations } from "next-intl/server";
 import ProductAddToCart from "@/app/components/ProductAddToCart";
@@ -222,7 +222,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                     );
                                 })()}
                             </div>
-                            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{tire.name}</h1>
+                            <h1 className="text-3xl md:text-4xl font-bold mb-1 text-foreground">{tire.name}</h1>
+                            <h2 className="text-sm md:text-base text-muted-foreground mb-4 font-normal">
+                                {t('seoSubTitle', { brand: tire.brand, season: seasonLabels[tire.season] || tire.season })}
+                            </h2>
 
                             <div className="flex flex-wrap items-center gap-4 mb-6">
                                 {tire.condition === "used" && (
@@ -262,10 +265,36 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                 </div>
                             )}
 
-                            <div className="text-3xl font-bold mb-4">
-                                <Price amount={tire.price} size="xl" />
-                                {tire.stock > 0 && tire.stock <= 3 && <span className="text-sm font-normal text-muted-foreground ml-3">({tire.stock} in stock)</span>}
-                            </div>
+                            {(() => {
+                                const originalPrice = tire.originalPrice as number | null;
+                                const hasDiscount = originalPrice && originalPrice > tire.price;
+                                const discountPercentage = hasDiscount ? Math.round(((originalPrice - tire.price) / originalPrice) * 100) : 0;
+                                
+                                return (
+                                    <div className="mb-4">
+                                        {hasDiscount && (
+                                            <div className="flex items-center gap-3 mb-1">
+                                                <span className="text-xl line-through text-muted-foreground font-medium">
+                                                    €{originalPrice?.toFixed(2)}
+                                                </span>
+                                                <span className="px-2.5 py-1 bg-red-600 text-white text-sm font-black uppercase tracking-wider rounded shadow-sm transform -rotate-1">
+                                                    -{discountPercentage}% SALE
+                                                </span>
+                                            </div>
+                                        )}
+                                        <div className="flex items-baseline gap-2">
+                                            {hasDiscount ? (
+                                                <span className="text-4xl font-bold tracking-tight text-red-600 leading-none">
+                                                    €{tire.price.toFixed(2)}
+                                                </span>
+                                            ) : (
+                                                <Price amount={tire.price} size="xl" />
+                                            )}
+                                            {tire.stock > 0 && tire.stock <= 3 && <span className="text-sm font-normal text-muted-foreground ml-3">({tire.stock} in stock)</span>}
+                                        </div>
+                                    </div>
+                                );
+                            })()}
 
                             {/* Urgency: Low stock alert */}
                             {tire.stock > 0 && tire.stock <= 3 && (

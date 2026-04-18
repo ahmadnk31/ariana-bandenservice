@@ -39,6 +39,7 @@ interface TireData {
     speedRating: string | null;
     dot: string | null;
     price: number;
+    originalPrice: number | null;
     description: string | null;
     stock: number;
     inStock: boolean;
@@ -75,6 +76,7 @@ export default function EditTirePage() {
         speedRating: "",
         dot: "",
         price: "",
+        originalPrice: "",
         description: "",
         stock: "0",
         inStock: true,
@@ -106,6 +108,7 @@ export default function EditTirePage() {
                     speedRating: data.speedRating || "",
                     dot: data.dot || "",
                     price: data.price.toString(),
+                    originalPrice: data.originalPrice?.toString() || "",
                     description: data.description || "",
                     stock: data.stock.toString(),
                     inStock: data.inStock,
@@ -159,6 +162,7 @@ export default function EditTirePage() {
                 body: JSON.stringify({
                     ...formData,
                     price: parseFloat(formData.price),
+                    originalPrice: formData.originalPrice ? parseFloat(formData.originalPrice) : null,
                     barcode: formData.barcode || null,
                     width: formData.width ? parseInt(formData.width) : null,
                     aspectRatio: formData.aspectRatio ? parseInt(formData.aspectRatio) : null,
@@ -393,6 +397,21 @@ export default function EditTirePage() {
                                 className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                                 placeholder="149.99"
                                 required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="originalPrice" className="block text-sm font-medium mb-2">
+                                Original Price (€) (Sale)
+                            </label>
+                            <input
+                                type="number"
+                                id="originalPrice"
+                                step="0.01"
+                                min="0"
+                                value={formData.originalPrice}
+                                onChange={(e) => setFormData((prev) => ({ ...prev, originalPrice: e.target.value }))}
+                                className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                placeholder="199.99"
                             />
                         </div>
                     </div>

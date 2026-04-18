@@ -28,6 +28,7 @@ export default async function TiresPage() {
         loadIndex: tire.loadIndex,
         speedRating: tire.speedRating,
         price: tire.price,
+        originalPrice: tire.originalPrice,
         stock: tire.stock,
         inStock: tire.inStock,
         images: tire.images,

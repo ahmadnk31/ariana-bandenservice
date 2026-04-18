@@ -33,6 +33,7 @@ export default function NewTirePage() {
         speedRating: "",
         dot: "",
         price: "",
+        originalPrice: "",
         description: "",
         stock: "0",
         inStock: true,
@@ -77,6 +78,7 @@ export default function NewTirePage() {
                     ...formData,
                     stock: parseInt(formData.stock) || 0,
                     price: parseFloat(formData.price),
+                    originalPrice: formData.originalPrice ? parseFloat(formData.originalPrice) : null,
                     barcode: formData.barcode || null,
                     width: formData.width ? parseInt(formData.width) : null,
                     aspectRatio: formData.aspectRatio ? parseInt(formData.aspectRatio) : null,
@@ -249,6 +251,21 @@ export default function NewTirePage() {
                                 className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                                 placeholder="149.99"
                                 required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="originalPrice" className="block text-sm font-medium mb-2">
+                                Original Price (€) (Sale)
+                            </label>
+                            <input
+                                type="number"
+                                id="originalPrice"
+                                step="0.01"
+                                min="0"
+                                value={formData.originalPrice}
+                                onChange={(e) => setFormData((prev) => ({ ...prev, originalPrice: e.target.value }))}
+                                className="w-full px-4 py-3 rounded-md border border-muted bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                placeholder="199.99"
                             />
                         </div>
                     </div>

@@ -68,6 +68,7 @@ interface TireCardProps {
     condition?: string; // Add condition
     size: string;
     price: number;
+    originalPrice?: number | null;
     features: string[];
     images: TireImage[];
     loadIndex?: string | null;
@@ -91,6 +92,7 @@ export default function TireCard({
     condition = "new", // Default
     size,
     price,
+    originalPrice,
     features,
     images,
     loadIndex,
@@ -117,6 +119,9 @@ export default function TireCard({
     const touchEndX = useRef<number>(0);
     const isDragging = useRef<boolean>(false);
     const carouselRef = useRef<HTMLDivElement>(null);
+
+    const hasDiscount = originalPrice && originalPrice > price;
+    const discountPercentage = hasDiscount ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
 
     const seasonLabels: Record<string, string> = {
         summer: t('seasons.summer'),
@@ -259,7 +264,7 @@ export default function TireCard({
                 onTouchEnd={handleTouchEnd}
                 onClick={handleCarouselClick}
             >
-                <Link href={`/tires/${slug}`}>
+                <Link href={{ pathname: '/tires/[slug]', params: { slug: slug } }}>
                     {images.length > 0 ? (
                         <div className="w-full h-full relative">
                             <div className="w-full h-full relative">
@@ -350,14 +355,20 @@ export default function TireCard({
                 )}
 
                 {/* Stock Badge */}
-                {!inStock && (
+                {!inStock ? (
                     <div className="absolute top-2 right-2 px-2 py-0.5 bg-red-500 text-white text-[10px] font-medium rounded z-10">
                         {t('outOfStock')}
                     </div>
-                )}
-                {inStock && stock > 0 && stock <= 3 && (
-                    <div className="absolute top-2 right-2 px-2 py-0.5 bg-orange-500 text-white text-[10px] font-bold rounded z-10 animate-pulse">
+                ) : stock > 0 && stock <= 3 ? (
+                    <div className={`absolute right-2 px-2 py-0.5 bg-orange-500 text-white text-[10px] font-bold rounded z-10 animate-pulse ${hasDiscount ? 'top-9' : 'top-2'}`}>
                         {t('lastChance')}
+                    </div>
+                ) : null}
+
+                {/* Sale Badge */}
+                {hasDiscount && (
+                    <div className="absolute top-2 right-2 px-2 py-0.5 bg-red-600 text-white text-xs font-black uppercase tracking-wider rounded z-10 shadow-sm transform -rotate-2">
+                        -{discountPercentage}% SALE
                     </div>
                 )}
             </div>
@@ -405,7 +416,7 @@ export default function TireCard({
                         <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mb-1">{brand}</p>
                     );
                 })()}
-                <Link href={`/tires/${slug}`} className="block group-hover:text-primary transition-colors">
+                <Link href={{ pathname: '/tires/[slug]', params: { slug: slug } }} className="block group-hover:text-primary transition-colors">
                     <h3 className="text-base font-bold mb-2 leading-tight">{name}</h3>
                 </Link>
 
@@ -459,8 +470,19 @@ export default function TireCard({
                     : "mt-auto border-t flex items-center justify-between"
                 }`}>
                 <div className={viewMode === "list" ? "text-center sm:text-right" : ""}>
+                    {hasDiscount && (
+                        <div className={`text-[11px] text-muted-foreground line-through font-medium mb-0.5 ${viewMode === "list" ? "text-center sm:text-right" : "text-left"}`}>
+                            €{originalPrice?.toFixed(2)}
+                        </div>
+                    )}
                     <div className={`flex items-baseline gap-1 ${viewMode === "list" ? "justify-center sm:justify-end" : "justify-start"}`}>
-                        <Price amount={price} size="lg" />
+                        {hasDiscount ? (
+                            <span className="text-lg sm:text-xl font-bold tracking-tight text-red-600 leading-none">
+                                €{price.toFixed(2)}
+                            </span>
+                        ) : (
+                            <Price amount={price} size="lg" />
+                        )}
                         <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">excl. BTW</span>
                     </div>
                     {stock > 0 && stock <= 3 && (

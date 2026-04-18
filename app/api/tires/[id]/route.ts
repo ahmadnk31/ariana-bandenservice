@@ -87,6 +87,7 @@ export async function PUT(
                 speedRating: data.speedRating || null,
                 dot: data.dot || null,
                 price: data.price,
+                originalPrice: data.originalPrice || null,
                 description: data.description || null,
                 stock: data.stock || 0,
                 inStock: data.inStock ?? true,

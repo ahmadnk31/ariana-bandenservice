@@ -123,6 +123,9 @@ export function getBrandLogo(brandName?: string | null): string | null {
     laufenn: '/laufenn.png',
     roadx: '/roadx.png',
     kustone: '/kustone.png',
+    dovroad: '/dovroad.png',
+    sonix: '/sonix.png',
+    arivo: '/arivo.png',
   };
   return logos[brand] || null;
 }

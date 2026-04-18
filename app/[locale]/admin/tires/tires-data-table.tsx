@@ -36,6 +36,7 @@ export interface TireRow {
     loadIndex: string | null
     speedRating: string | null
     price: number
+    originalPrice?: number | null
     stock: number
     inStock: boolean
     images: TireImage[]
@@ -200,7 +201,24 @@ export const columns: ColumnDef<TireRow>[] = [
                 </button>
             )
         },
-        cell: ({ row }) => <span className="font-bold">€{row.getValue("price")}</span>,
+        cell: ({ row }) => {
+            const price = row.getValue("price") as number
+            const originalPrice = row.original.originalPrice
+            const hasDiscount = originalPrice && originalPrice > price
+
+            return (
+                <div className="flex flex-col">
+                    {hasDiscount && (
+                        <span className="text-xs text-muted-foreground line-through decoration-red-500/50">
+                            €{originalPrice?.toFixed(2)}
+                        </span>
+                    )}
+                    <span className={hasDiscount ? "font-bold text-red-600" : "font-bold"}>
+                        €{price.toFixed(2)}
+                    </span>
+                </div>
+            )
+        },
     },
     {
         accessorKey: "stock",
