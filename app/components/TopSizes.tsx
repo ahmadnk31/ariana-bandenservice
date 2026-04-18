@@ -33,19 +33,17 @@ export default async function TopSizes() {
                     {sizes.map((size) => {
                         // Parse "205/55R16" into parts
                         const match = size.match(/^(\d+)\/(\d+)\s*[R]?(\d+)$/i);
-                        let href = `/tires?search=${encodeURI(size)}`;
+                        let query: Record<string, string> = { search: size };
                         
                         if (match) {
                             const [_, width, ratio, rim] = match;
-                            // Include both the 'search' text (to match full size string in DB)
-                            // AND the individual dimensions (to populate the form and match structured data)
-                            href = `/tires?search=${encodeURI(size)}&width=${width}&aspectRatio=${ratio}&rimSize=${rim}`;
+                            query = { search: size, width, aspectRatio: ratio, rimSize: rim };
                         }
 
                         return (
                             <Link
                                 key={size}
-                                href={href}
+                                href={{ pathname: '/tires', query }}
                                 className="group relative px-5 py-3 rounded-lg border border-border bg-background text-foreground font-semibold text-sm hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-200 hover:shadow-md"
                             >
                             <span className="flex items-center gap-2">
