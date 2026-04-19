@@ -34,13 +34,13 @@ export default function Footer() {
                         <li>+32 466 19 56 22</li>
                         <li>info@gentbandenservice.be</li>
                         <li>
-                            <a 
-                                href="https://www.google.com/maps?cid=1677093375836208111" 
-                                target="_blank" 
+                            <a
+                                href="https://www.google.com/maps/place/Gent+bandenservice/@51.0517705,3.7562035,17z/data=!4m8!3m7!1s0x47c3770072e640f9:0x174644c00e4bbfef!8m2!3d51.0517705!4d3.7562035!9m1!1b1!16s%2Fg%2F11xyq3j47q?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 hover:text-primary transition-colors text-[#F59E0B]"
                             >
-                                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.5l3.09 6.26L22 8.74l-5 4.87 1.18 6.88L12 17.25l-6.18 3.24L7 13.61l-5-4.87 6.91-0.98L12 1.5z"/></svg>
+                                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.5l3.09 6.26L22 8.74l-5 4.87 1.18 6.88L12 17.25l-6.18 3.24L7 13.61l-5-4.87 6.91-0.98L12 1.5z" /></svg>
                                 {useTranslations('Home')('reviews.reviewUs')}
                             </a>
                         </li>
