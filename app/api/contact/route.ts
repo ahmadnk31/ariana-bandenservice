@@ -4,8 +4,30 @@ import { sendContactEmail, sendContactConfirmationEmail } from "@/lib/email";
 
 import { prisma } from "@/lib/db";
 
+// Memory-based rate limiting (simple implementation for basic spam protection)
+const rateLimitMap = new Map<string, { count: number; lastReset: number }>();
+const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
+const MAX_SUBMISSIONS = 3;
+
 export async function POST(request: NextRequest) {
     try {
+        const ip = request.headers.get("x-forwarded-for") || "anonymous";
+        const now = Date.now();
+        
+        // Rate limiting check
+        const limitData = rateLimitMap.get(ip);
+        if (limitData && now - limitData.lastReset < RATE_LIMIT_WINDOW) {
+            if (limitData.count >= MAX_SUBMISSIONS) {
+                return NextResponse.json(
+                    { error: "Too many submissions. Please try again in 15 minutes." },
+                    { status: 429 }
+                );
+            }
+            limitData.count++;
+        } else {
+            rateLimitMap.set(ip, { count: 1, lastReset: now });
+        }
+
         const data = await request.json();
 
         // Basic validation

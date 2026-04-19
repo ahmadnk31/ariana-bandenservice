@@ -25,6 +25,20 @@ export async function POST(request: NextRequest) {
             );
         }
 
+        // Security Hardening: Validate tireId if provided (Anti-Enumeration/Integrity)
+        if (data.tireId) {
+            const tireExists = await prisma.tire.findUnique({
+                where: { id: data.tireId },
+                select: { id: true }
+            });
+            if (!tireExists) {
+                return NextResponse.json(
+                    { error: "Invalid tire selection" },
+                    { status: 400 }
+                );
+            }
+        }
+
         // Check if the slot is already booked (Concurrency Check)
         const existingAppointment = await prisma.appointment.findFirst({
             where: {

@@ -35,7 +35,7 @@ export default function Footer() {
                         <li>info@gentbandenservice.be</li>
                         <li>
                             <a 
-                                href="https://www.google.com/maps/place/ARIANA+Bandenservice/@51.0516972,3.7536583,748m/data=!3m1!1e3!4m8!3m7!1s0x47c37700051d85b7:0xcde1d6416f99d9f2!8m2!3d51.0516972!4d3.7562332!9m1!1b1!16s%2Fg%2F11y4yrfhx1?authuser=0&entry=ttu" 
+                                href="https://www.google.com/maps?cid=1677093375836208111" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 hover:text-primary transition-colors text-[#F59E0B]"
