@@ -55,11 +55,11 @@ export default function Header() {
                         <Link href="/contact" className="text-sm font-semibold hover:text-primary transition-colors">
                             {t('contact')}
                         </Link>
-                        
+
                         <DropdownMenu>
                             <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-semibold hover:text-primary transition-colors focus:outline-none">
                                 {t('more')}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="m6 9 6 6 6-6"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="m6 9 6 6 6-6" /></svg>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="w-48 p-2">
                                 <DropdownMenuItem asChild>

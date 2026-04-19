@@ -126,6 +126,7 @@ export function getBrandLogo(brandName?: string | null): string | null {
     dovroad: '/dovroad.png',
     sonix: '/sonix.png',
     arivo: '/arivo.png',
+    triangle: '/triangle.png'
   };
   return logos[brand] || null;
 }
