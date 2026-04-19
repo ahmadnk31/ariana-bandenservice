@@ -72,7 +72,7 @@ export default function ReviewsSection() {
 
                 <div className="text-center">
                     <a
-                        href="https://www.google.com/maps/place/ARIANA+Bandenservice/@51.0516972,3.7536583,748m/data=!3m1!1e3!4m8!3m7!1s0x47c37700051d85b7:0xcde1d6416f99d9f2!8m2!3d51.0516972!4d3.7562332!9m1!1b1!16s%2Fg%2F11y4yrfhx1?authuser=0&entry=ttu"
+                        href="https://www.google.com/maps/place/Gent+bandenservice/@51.0517705,3.7562035,17z/data=!3m1!4b1!4m6!3m5!1s0x47c3770072e640f9:0x174644c00e4bbfef!8m2!3d51.0517705!4d3.7562035!16s%2Fg%2F11xyq3j47q"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors group"

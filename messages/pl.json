@@ -7,7 +7,9 @@
         "admin": "Admin",
         "searchPlaceholder": "Szukaj opon...",
         "blog": "Blog",
-        "b2b": "B2B / Ubezpieczenia"
+        "b2b": "B2B / Ubezpieczenia",
+        "about": "O nas",
+        "more": "Więcej"
     },
     "Hero": {
         "title1": "Gandawa",
@@ -185,7 +187,10 @@
             "subtitle": "Zobacz, co nasi zadowoleni klienci mają do powiedzenia na temat naszej usługi.",
             "googleTrusted": "Zaufane przez Google",
             "viewAll": "Zobacz wszystkie opinie w Google",
-            "postedOnGoogle": "Opublikowano w Google"
+            "postedOnGoogle": "Opublikowano w Google",
+            "reviews": "Opinie",
+            "noReviews": "Jeszcze nie ma opinii.",
+            "reviewUs": "Zostaw opinię"
         },
         "topBrandsTitle": "Najlepsze Marki",
         "topBrandsSubtitle": "Oferujemy opony od najbardziej zaufanych producentów na świecie.",
@@ -594,13 +599,13 @@
         "subtitle": "Niezawodne opony dostosowane do potrzeb firm ubezpieczeniowych i flot korporacyjnych.",
         "whyPartner": "Dlaczego warto z nami współpracować?",
         "feature1Title": "Obsługa Priorytetowa",
-        "feature1Desc": "Zminimalizuj przestoje dla swoich ubezpieczonych klientów dzięki naszemu ekspresowemu montażowi.",
+        "feature1Desc": "Zminimalizuj przestoje dla swoich ubezpieczonych klientów dzięki naszemu ekspresowemu montażowi i wyważaniu.",
         "feature2Title": "Certyfikowani Technicy",
-        "feature2Desc": "Gwarantowana jakość wykonania przy użyciu najnowocześniejszego sprzętu do wyważania.",
+        "feature2Desc": "Gwarantowana jakość wykonania przy użyciu najnowocześniejszego sprzętu do wyważania i ustawiania zbieżności.",
         "feature3Title": "Ogromny Asortyment",
-        "feature3Desc": "Posiadamy szeroki wybór opon najlepszych marek dla wszystkich modeli.",
+        "feature3Desc": "Posiadamy szeroki wybór opon najlepszych marek dla wszystkich marek, modeli i pór roku.",
         "feature4Title": "Łatwa Administracja",
-        "feature4Desc": "Usprawnione fakturowanie i dedykowane wsparcie B2B dla bezproblemowej obróbki.",
+        "feature4Desc": "Usprawnione fakturowanie i dedykowane wsparcie B2B dla bezproblemowej obsługi.",
         "ctaTitle": "Gotowi do współpracy?",
         "ctaDesc": "Skontaktuj się z nami już dziś, aby omówić, w jaki sposób możemy zapewnić doskonałą obsługę Twoim klientom.",
         "ctaBtn": "Skontaktuj się z nami",
@@ -610,5 +615,26 @@
         "stat2Label": "Partnerzy B2B",
         "stat3Label": "Opony Obsługiwane Rocznie",
         "stat4Label": "Wskaźnik Zadowolenia"
+    },
+    "About": {
+        "title": "O nas",
+        "subtitle": "Twój zaufany partner w zakresie opon samochodowych w Gandawie i okolicach.",
+        "storyTitle": "Nasza Historia",
+        "storyHeading": "Wysoka jakość usług od pierwszego dnia",
+        "storyText": "Gent Bandenservice powstało z pasji do samochodów i prostej misji: uczynić profesjonalną obsługę opon dostępną dla każdego w Gandawie. Położeni w sercu Sint-Amandsberg, staliśmy się ulubionym centrum opon dla klientów szukających jakości bez przepłacania.",
+        "locationText": "Nasza lokalizacja w Sint-Amandsberg, Gandawa",
+        "missionTitle": "Nasza Misja",
+        "missionHeading": "Twoje bezpieczeństwo to nasz priorytet",
+        "missionText": "Dążymy do tego, aby każdy klient bezpiecznie i bez obaw wyruszał w drogę. Niezależnie od tego, czy szukasz nowych opon premium, czy wysokiej jakości używanego kompletu, nasz zespół certyfikowanych mechaników jest gotowy służyć fachową poradą i szybką obsługą.",
+        "valuesTitle": "Nasze Wartości",
+        "valueQualityTitle": "Jakość",
+        "valueQualityDesc": "Pracujemy tylko z najlepszymi markami i starannie sprawdzonymi oponami używanymi.",
+        "valuePriceTitle": "Przystępna cena",
+        "valuePriceDesc": "Najtańsze w Gandawie, z przejrzystymi cenami obejmującymi montaż.",
+        "valueServiceTitle": "Szybkość i obsługa",
+        "valueServiceDesc": "Gotowe, gdy czekasz, z lub bez rezerwacji.",
+        "ctaTitle": "Gotowi na nowe opony?",
+        "ctaBtn": "Sprawdź naszą ofertę",
+        "ctaContactBtn": "Skontaktuj się z nami"
     }
 }

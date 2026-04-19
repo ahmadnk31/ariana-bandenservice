@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AppointmentForm from "../../components/AppointmentForm";
 import { getTranslations } from 'next-intl/server';
+import { prisma } from "@/lib/db";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
@@ -40,8 +41,22 @@ export default async function AppointmentPage({
 }: {
     searchParams: Promise<{ tireId?: string, tireName?: string }>;
 }) {
-    const { tireId, tireName } = await searchParams;
+    const { tireId, tireName: urlTireName } = await searchParams;
     const t = await getTranslations('Appointment');
+
+    let displayTireName = urlTireName;
+
+    // Security Hardening: Fetch tire name from DB if ID is provided
+    // This prevents "Link Manipulation" where an attacker could put fake names in the URL.
+    if (tireId) {
+        const tire = await prisma.tire.findUnique({
+            where: { id: tireId },
+            select: { name: true, brand: true }
+        });
+        if (tire) {
+            displayTireName = `${tire.brand} ${tire.name}`;
+        }
+    }
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -64,7 +79,7 @@ export default async function AppointmentPage({
                     <div className="container mx-auto px-4 max-w-3xl">
                         <div className="bg-card shadow-sm border border-border rounded-xl p-6 md:p-8">
                             <h2 className="text-2xl font-bold mb-6">{t('formTitle')}</h2>
-                            <AppointmentForm tireId={tireId} tireName={tireName} />
+                            <AppointmentForm tireId={tireId} tireName={displayTireName} />
                         </div>
                     </div>
                 </section>

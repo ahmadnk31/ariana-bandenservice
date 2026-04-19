@@ -7,7 +7,9 @@
         "admin": "Admin",
         "searchPlaceholder": "Zoek banden...",
         "blog": "Blog",
-        "b2b": "B2B / Verzekeringen"
+        "b2b": "B2B / Verzekeringen",
+        "about": "Over Ons",
+        "more": "Meer"
     },
     "Hero": {
         "title1": "Gent",
@@ -19,7 +21,7 @@
     },
     "Footer": {
         "about": "Over Ons",
-        "aboutText": "Gent bandenservice is een bandencentrale in Gent en omstreken zoals Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, Merelbeke, Melle, Sint-Denijs-Westrem, Zwijnaarde, en heel Vlaanderen. We bieden professionele bandenservice en auto reparatie door gecertificeerde monteurs.",
+        "aboutText": "Gent bandenservice is een bandencentrale in Gent in uw buurt en omstreken zoals Sint-Amandsberg, Destelbergen, Lochristi, Gentbrugge, Ledeberg, Oostakker, Wondelgem, Mariakerke, Drongen, Merelbeke, Melle, Sint-Denijs-Westrem, Zwijnaarde, en heel Vlaanderen. We bieden professionele bandenservice en auto reparatie door gecertificeerde monteurs.",
         "quickLinks": "Snelle Links",
         "contact": "Contact Info",
         "address": "Gent, België",
@@ -308,14 +310,14 @@
         }
     },
     "Metadata": {
-        "title": "Banden Kopen & Monteren Gent | Goedkoopste Bandencentrale | Gent Bandenservice",
-        "description": "De goedkoopste bandencentrale in Gent (Sint-Amandsberg). Wij monteren en balanceren nieuwe en tweedehands banden vanaf €25. Bekijk ons aanbod!",
-        "ogDescription": "Gent bandenservice - Uw bandencentrale in Gent voor nieuwe & tweedehands banden. Montage en balanceren. De goedkoopste van de regio!",
-        "keywords": "gent bandenservice, bandencentrale, bandencentrale gent, autobanden, banden gent, banden kopen gent, goedkoopste bandencentrale, bandenservice gent, Sint-Amandsberg, Oostakker",
-        "tiresTitle": "Goedkoopste Banden Kopen & Monteren | Gent Bandenservice",
-        "tiresDescription": "Koop autobanden bij Gent bandenservice (Sint-Amandsberg). Winterbanden, zomerbanden & all-season vanaf €25 incl. montage. De goedkoopste van Gent!",
-        "servicesTitle": "Bandendiensten | Montage & Uitlijning",
-        "servicesDescription": "Professionele bandenmontage, balanceren en wieluitlijning in Gent. Snelle service, scherpe prijzen. Ook open op zaterdag!",
+        "title": "Bandencentrale in uw buurt Gent | Banden Kopen & Monteren | Goedkoopste | Gent Bandenservice",
+        "description": "Zoekt u een bandencentrale in uw buurt in Gent? Gent Bandenservice is de goedkoopste! Nieuwe en tweedehands banden vanaf €25 incl. montage. Bekijk ons aanbod!",
+        "ogDescription": "Gent bandenservice - De beste bandencentrale in uw buurt in Gent voor nieuwe & tweedehands banden. Montage en balanceren. De goedkoopste van de regio!",
+        "keywords": "bandencentrale in de buurt, bandencentrale in uw buurt, gent bandenservice, bandencentrale, bandencentrale gent, autobanden, banden gent, banden kopen gent, goedkoopste bandencentrale, bandenservice gent, Sint-Amandsberg, Oostakker",
+        "tiresTitle": "Bandencentrale in uw buurt | Goedkoopste Banden Kopen & Monteren | Gent Bandenservice",
+        "tiresDescription": "De beste bandencentrale in uw buurt in Gent (Sint-Amandsberg). Winterbanden, zomerbanden & all-season vanaf €25 incl. montage. De goedkoopste van Gent!",
+        "servicesTitle": "Bandendiensten in uw buurt | Montage & Uitlijning | Gent Bandenservice",
+        "servicesDescription": "Professionele bandenmontage, balanceren en wieluitlijning bij de bandencentrale in uw buurt in Gent. Snelle service, scherpe prijzen. Ook open op zaterdag!",
         "contactTitle": "Contact | Bandencentrale Gent",
         "contactDescription": "Bandencentrale Gent contacteren? Bel 0466 19 56 22 of kom langs. Dendermondsesteenweg 428, Sint-Amandsberg. Ma-Za 9-18u.",
         "faqTitle": "Veelgestelde Vragen | Prijzen & Openingsuren",
@@ -592,13 +594,7 @@
         "rescheduleSuccess": "Afspraak succesvol verplaatst!",
         "cancelledStatus": "Afspraak Geannuleerd",
         "customerName": "Klant",
-        "tireInfo": "Band",
-        "dateLabel": "Datum",
-        "timeLabel": "Tijd",
-        "rescheduleBtn": "Afspraak Verplaatsen",
-        "cancelBtn": "Afspraak Annuleren",
-        "confirmReschedule": "Nieuwe Tijd Bevestigen",
-        "backBtn": "Terug"
+        "tireInfo": "Band"
     },
     "B2B": {
         "title": "Partner worden van Gent Bandenservice",
@@ -621,5 +617,26 @@
         "stat2Label": "B2B Partners",
         "stat3Label": "Banden per Jaar Verwerkt",
         "stat4Label": "Klanttevredenheid"
+    },
+    "About": {
+        "title": "Over Gent Bandenservice",
+        "subtitle": "Uw vertrouwde partner voor autobanden in Gent en omstreken.",
+        "storyTitle": "Ons Verhaal",
+        "storyHeading": "Kwaliteitsservice sinds de eerste dag",
+        "storyText": "Gent Bandenservice is ontstaan uit een passie voor auto's en een simpele missie: professionele bandenservice betaalbaar maken voor iedereen in Gent. Gelegen in het hart van Sint-Amandsberg, zijn we uitgegroeid tot de favoriete bandencentrale voor klanten die op zoek zijn naar kwaliteit zonder de hoofdprijs te betalen.",
+        "locationText": "Onze locatie in Sint-Amandsberg, Gent",
+        "missionTitle": "Onze Missie",
+        "missionHeading": "Uw veiligheid, onze prioriteit",
+        "missionText": "Wij streven ernaar om elke klant veilig en met een gerust hart de weg op te sturen. Of u nu op zoek bent naar nieuwe premium banden of een kwalitatieve tweedehands set, ons team van gecertificeerde monteurs staat klaar met deskundig advies en snelle service.",
+        "valuesTitle": "Onze Kernwaarden",
+        "valueQualityTitle": "Kwaliteit",
+        "valueQualityDesc": "Wij werken enkel met topmerken en zorgvuldig gecontroleerde tweedehands banden.",
+        "valuePriceTitle": "Betaalbaarheid",
+        "valuePriceDesc": "De goedkoopste van Gent, met transparante prijzen inclusief montage.",
+        "valueServiceTitle": "Snelheid & Service",
+        "valueServiceDesc": "Klaar terwijl u wacht, met of zonder afspraak.",
+        "ctaTitle": "Klaar voor nieuwe banden?",
+        "ctaBtn": "Bekijk ons aanbod",
+        "ctaContactBtn": "Neem contact op"
     }
 }
