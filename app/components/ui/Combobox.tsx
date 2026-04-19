@@ -84,7 +84,7 @@ export function Combobox({
                             </button>
                         )}
                     </div>
-                    <div className="max-h-60 overflow-y-auto overflow-x-hidden p-1">
+                    <div className="max-h-60 overflow-y-auto overflow-x-hidden p-1 overscroll-contain pointer-events-auto relative z-50">
                         {filteredOptions.length === 0 ? (
                             <div className="py-6 text-center text-sm text-muted-foreground">
                                 {emptyMessage}

@@ -45,6 +45,8 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
     const rimSize = params.rimSize ? Number(params.rimSize) : null;
     const loadIndex = (params.loadIndex as string) || "all";
     const speedRating = (params.speedRating as string) || "all";
+    const featureParam = (params.feature as string) || "";
+    const selectedFeatures = featureParam ? featureParam.split(',').filter(Boolean) : [];
 
     // Build where clause based on filter
     const where: any = {};
@@ -111,6 +113,14 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
     if (loadIndex && loadIndex !== "all") where.loadIndex = loadIndex;
     if (speedRating && speedRating !== "all") where.speedRating = speedRating;
 
+    // Features
+    if (selectedFeatures.length > 0) {
+        if (!where.AND) where.AND = [];
+        selectedFeatures.forEach(f => {
+            where.AND.push({ features: { contains: f, mode: "insensitive" } });
+        });
+    }
+
     // Search filter
     if (search) {
         const parsedSize = parseTireSize(search);
@@ -142,7 +152,7 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
     delete whereWithoutBrand.brand;
 
     // Parallel fetch: get total count, paginated data, and absolute price range for filters
-    const [totalCount, tires, priceRange, brandQuery] = await Promise.all([
+    const [totalCount, tires, priceRange, brandQuery, specQuery] = await Promise.all([
         prisma.tire.count({ where }),
         prisma.tire.findMany({
             where,
@@ -160,17 +170,58 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
             select: { brand: true },
             distinct: ['brand'],
             orderBy: { brand: 'asc' },
+        }),
+        prisma.tire.findMany({
+            where: {}, // Get all available specs globally for now to ensure dropdowns are populated
+            select: { loadIndex: true, speedRating: true, features: true },
+            distinct: ['loadIndex', 'speedRating'], // We still want distinct specs, features will be processed manually
         })
     ]);
 
-    const availableBrands = brandQuery.map(b => b.brand).filter(Boolean);
+    const availableBrands = brandQuery.map(b => b.brand).filter((b): b is string => !!b);
+    const availableLoadIndices = Array.from(new Set(specQuery.map(s => s.loadIndex).filter((idx): idx is string => !!idx))).sort();
+    const availableSpeedRatings = Array.from(new Set(specQuery.map(s => s.speedRating).filter((r): r is string => !!r))).sort();
+    
+    // Extract unique features
+    const allFeatures = new Set<string>();
+    specQuery.forEach(s => {
+        if (s.features) {
+            try {
+                const parsed = JSON.parse(s.features);
+                if (Array.isArray(parsed)) {
+                    parsed.forEach(f => {
+                        // Skip test features
+                        if (f.toLowerCase().includes('test')) return;
+                        
+                        // Extract part before colon if exists
+                        const cleanFeature = f.includes(':') ? f.split(':')[0].trim() : f.trim();
+                        if (cleanFeature) {
+                            allFeatures.add(cleanFeature);
+                        }
+                    });
+                }
+            } catch (e) {
+                // Ignore parse errors
+            }
+        }
+    });
+    const availableFeatures = Array.from(allFeatures).sort();
 
     const totalPages = Math.ceil(totalCount / itemsPerPage);
 
-    const tiresWithParsedFeatures = tires.map((tire) => ({
-        ...tire,
-        features: JSON.parse(tire.features) as string[],
-    }));
+    const tiresWithParsedFeatures = tires.map((tire) => {
+        let parsedFeatures: string[] = [];
+        try {
+            parsedFeatures = tire.features ? JSON.parse(tire.features) : [];
+        } catch (e) {
+            console.error(`Failed to parse features for tire ${tire.id}:`, e);
+        }
+        
+        return {
+            ...tire,
+            features: parsedFeatures,
+        };
+    });
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -179,6 +230,9 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
                 <TireFilters
                     tires={tiresWithParsedFeatures}
                     availableBrands={availableBrands}
+                    availableLoadIndices={availableLoadIndices}
+                    availableSpeedRatings={availableSpeedRatings}
+                    availableFeatures={availableFeatures}
                     currentPage={page}
                     totalPages={totalPages}
                     initialFilters={{
@@ -192,7 +246,8 @@ export default async function TiresPage({ searchParams }: TiresPageProps) {
                         aspectRatio,
                         rimSize,
                         loadIndex,
-                        speedRating
+                        speedRating,
+                        features: selectedFeatures
                     }}
                     priceRange={{
                         min: priceRange._min.price || 0,
