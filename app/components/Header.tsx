@@ -2,6 +2,7 @@
 
 
 import { useState } from "react";
+import Image from "next/image";
 import SearchOverlay from "./SearchOverlay";
 import { useTranslations } from 'next-intl';
 import { Link } from "@/src/i18n/routing";
@@ -24,7 +25,7 @@ export default function Header() {
                 <div className="flex-1 flex justify-start">
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="relative overflow-hidden rounded-lg transition-transform group-hover:scale-105">
-                            <img src="/logo.jpg" alt="Logo" width={48} height={48} className="object-cover" />
+                            <Image src="/logo.jpg" alt="Logo" width={48} height={48} className="object-cover" />
                         </div>
                         <span className="text-lg hidden lg:block font-bold uppercase tracking-tight text-foreground">
                             Gent <span className="text-primary">bandenservice</span>
