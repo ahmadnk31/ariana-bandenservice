@@ -7,7 +7,9 @@
         "admin": "Admin",
         "searchPlaceholder": "Cerca pneumatici...",
         "blog": "Blog",
-        "b2b": "B2B / Assicurazioni"
+        "b2b": "B2B / Assicurazioni",
+        "about": "Chi Siamo",
+        "more": "Altro"
     },
     "Hero": {
         "title1": "Gand",
@@ -184,7 +186,10 @@
             "subtitle": "Scopri cosa dicono i nostri clienti soddisfatti del nostro servizio verificato.",
             "googleTrusted": "Verificato Google",
             "viewAll": "Vedi tutte le recensioni su Google",
-            "postedOnGoogle": "Pubblicato su Google"
+            "postedOnGoogle": "Pubblicato su Google",
+            "reviews": "Recensioni",
+            "noReviews": "Nessuna recensione trovata.",
+            "reviewUs": "Lascia una recensione"
         },
         "topBrandsTitle": "Marchi Principali",
         "topBrandsSubtitle": "Offriamo pneumatici dei produttori più affidabili al mondo.",
@@ -609,5 +614,26 @@
         "stat2Label": "Partner B2B",
         "stat3Label": "Pneumatici Gestiti Annualmente",
         "stat4Label": "Tasso di Soddisfazione"
+    },
+    "About": {
+        "title": "Chi Siamo",
+        "subtitle": "Il vostro partner di fiducia per pneumatici auto a Gand e dintorni.",
+        "storyTitle": "La Nostra Storia",
+        "storyHeading": "Servizio di qualità dal primo giorno",
+        "storyText": "Gent Bandenservice è nata da una passione per le auto e una semplice missione: rendere il servizio professionale di pneumatici accessibile a tutti a Gand. Situati nel cuore di Sint-Amandsberg, siamo diventati la scelta preferita per i clienti che cercano qualità senza spendere una fortuna.",
+        "locationText": "La nostra sede a Sint-Amandsberg, Gand",
+        "missionTitle": "La Nostra Missione",
+        "missionHeading": "La vostra sicurezza, la nostra priorità",
+        "missionText": "Ci impegniamo a mandare ogni cliente sulla strada in modo sicuro e con tranquillità. Che siate alla ricerca di pneumatici nuovi di alta gamma o di un set di pneumatici usati di qualità, il nostro team di meccanici certificati è pronto a offrirvi consulenza esperta e un servizio rapido.",
+        "valuesTitle": "I Nostri Valori",
+        "valueQualityTitle": "Qualità",
+        "valueQualityDesc": "Lavoriamo solo con i migliori marchi e pneumatici usati attentamente controllati.",
+        "valuePriceTitle": "Prezzo",
+        "valuePriceDesc": "I più economici di Gand, con prezzi trasparenti inclusa la montatura.",
+        "valueServiceTitle": "Velocità & Servizio",
+        "valueServiceDesc": "Pronti mentre aspettate, con o senza appuntamento.",
+        "ctaTitle": "Pronti per pneumatici nuovi?",
+        "ctaBtn": "Scopri la nostra offerta",
+        "ctaContactBtn": "Contattaci"
     }
 }

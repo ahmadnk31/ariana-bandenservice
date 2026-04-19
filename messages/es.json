@@ -7,7 +7,9 @@
         "admin": "Admin",
         "searchPlaceholder": "Buscar neumáticos...",
         "blog": "Blog",
-        "b2b": "B2B / Seguros"
+        "b2b": "B2B / Seguros",
+        "more": "Más",
+        "about": "Sobre nosotros"
     },
     "Hero": {
         "title1": "Gante",
@@ -185,7 +187,10 @@
             "subtitle": "Vea lo que dicen nuestros clientes satisfechos sobre nuestro servicio.",
             "googleTrusted": "Google de confianza",
             "viewAll": "Ver todas las reseñas en Google",
-            "postedOnGoogle": "Publicado en Google"
+            "postedOnGoogle": "Publicado en Google",
+            "reviews": "Reseñas",
+            "noReviews": "No se encontraron reseñas.",
+            "reviewUs": "Deja una reseña"
         },
         "topBrandsTitle": "Marcas Principales",
         "topBrandsSubtitle": "Ofrecemos neumáticos de los fabricantes más confiables del mundo.",
@@ -610,5 +615,26 @@
         "stat2Label": "Socios B2B",
         "stat3Label": "Neumáticos Manejados Anualmente",
         "stat4Label": "Tasa de Satisfacción"
+    },
+    "About": {
+        "title": "Sobre Gent Bandenservice",
+        "subtitle": "Su socio de confianza para neumáticos de automóvil en Gante y sus alrededores.",
+        "storyTitle": "Nuestra Historia",
+        "storyHeading": "Servicio de calidad desde el primer día",
+        "storyText": "Gent Bandenservice nació de una pasión por los coches y una misión sencilla: hacer que el servicio profesional de neumáticos sea asequible para todos en Gante. Ubicados en el corazón de Sint-Amandsberg, nos hemos convertido en el taller de neumáticos favorito de los clientes que buscan calidad sin pagar precios desorbitados.",
+        "locationText": "Nuestra ubicación en Sint-Amandsberg, Gante",
+        "missionTitle": "Nuestra Misión",
+        "missionHeading": "Su seguridad, nuestra prioridad",
+        "missionText": "Nos esforzamos por enviar a cada cliente a la carretera de forma segura y con tranquilidad. Tanto si busca neumáticos nuevos de primera calidad como un juego de segunda mano de calidad, nuestro equipo de mecánicos certificados está listo con asesoramiento experto y servicio rápido.",
+        "valuesTitle": "Nuestros Valores Fundamentales",
+        "valueQualityTitle": "Calidad",
+        "valueQualityDesc": "Trabajamos únicamente con las mejores marcas y neumáticos de segunda mano cuidadosamente inspeccionados.",
+        "valuePriceTitle": "Asequibilidad",
+        "valuePriceDesc": "Los más baratos de Gante, con precios transparentes que incluyen el montaje.",
+        "valueServiceTitle": "Velocidad y Servicio",
+        "valueServiceDesc": "Listos mientras espera, con o sin cita previa.",
+        "ctaTitle": "¿Listo para neumáticos nuevos?",
+        "ctaBtn": "Ver nuestra oferta",
+        "ctaContactBtn": "Contáctenos"
     }
 }

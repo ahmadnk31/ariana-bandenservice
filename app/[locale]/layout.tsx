@@ -39,6 +39,14 @@ const supportedLocales = ['en', 'nl', 'fr', 'de', 'it', 'es', 'tr', 'pl', 'gr', 
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
+    
+    // Guard against non-supported locales (prevents error when assets 404 and hit catch-all route)
+    if (!supportedLocales.includes(locale)) {
+        return {
+            title: "Gent Bandenservice",
+        };
+    }
+
     const messages = (await import(`../../messages/${locale}.json`)).default;
     const metadata = messages.Metadata || {};
 

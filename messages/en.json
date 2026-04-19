@@ -7,7 +7,9 @@
         "admin": "Admin",
         "searchPlaceholder": "Search tires...",
         "blog": "Blog",
-        "b2b": "B2B / Insurance"
+        "b2b": "B2B / Insurance",
+        "about": "About Us",
+        "more": "More"
     },
     "Hero": {
         "title1": "Ghent",
@@ -194,7 +196,9 @@
             "viewAll": "View all reviews on Google",
             "reviewUs": "Review us on Google",
             "successCTA": "Happy with our service? Leave a Google Review!",
-            "postedOnGoogle": "Posted on Google"
+            "postedOnGoogle": "Posted on Google",
+            "reviews": "Reviews",
+            "noReviews": "No reviews found."
         },
         "topSizesTitle": "Popular Sizes",
         "topSizesSubtitle": "Find tires in the most popular sizes — click to search.",
@@ -591,9 +595,6 @@
         "confirmCancel": "Are you sure you want to cancel this appointment?",
         "cancelSuccess": "Appointment has been cancelled.",
         "rescheduleSuccess": "Appointment successfully rescheduled!",
-        "cancelledStatus": "Appointment Cancelled",
-        "customerName": "Customer",
-        "tireInfo": "Tire",
         "dateLabel": "Date",
         "timeLabel": "Time",
         "rescheduleBtn": "Reschedule Appointment",
@@ -622,5 +623,26 @@
         "stat2Label": "B2B Partners",
         "stat3Label": "Tires Handled Yearly",
         "stat4Label": "Satisfaction Rate"
+    },
+    "About": {
+        "title": "About Gent Bandenservice",
+        "subtitle": "Your trusted partner for car tires in Ghent and surroundings.",
+        "storyTitle": "Our Story",
+        "storyHeading": "Quality Service Since Day One",
+        "storyText": "Gent Bandenservice was born from a passion for cars and a simple mission: making professional tire service affordable for everyone in Ghent. Located in the heart of Sint-Amandsberg, we have become the go-to tire center for customers looking for quality without paying premium prices.",
+        "locationText": "Our location in Sint-Amandsberg, Ghent",
+        "missionTitle": "Our Mission",
+        "missionHeading": "Your Safety, Our Priority",
+        "missionText": "We strive to send every customer onto the road safely and with peace of mind. Whether you are looking for new premium tires or a high-quality second-hand set, our team of certified technicians is ready with expert advice and fast service.",
+        "valuesTitle": "Our Core Values",
+        "valueQualityTitle": "Quality",
+        "valueQualityDesc": "We only work with top brands and carefully inspected second-hand tires.",
+        "valuePriceTitle": "Affordability",
+        "valuePriceDesc": "The cheapest in Ghent, with transparent prices including mounting.",
+        "valueServiceTitle": "Speed & Service",
+        "valueServiceDesc": "Ready while you wait, with or without an appointment.",
+        "ctaTitle": "Ready for new tires?",
+        "ctaBtn": "Browse our selection",
+        "ctaContactBtn": "Contact Us"
     }
 }

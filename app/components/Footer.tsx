@@ -45,6 +45,9 @@ export default function Footer() {
                             </a>
                         </li>
                         <li>
+                            <a href="/about" className="hover:text-primary transition-colors">{t('about')}</a>
+                        </li>
+                        <li>
                             <a href="/faq" className="hover:text-primary transition-colors">FAQ</a>
                         </li>
                     </ul>

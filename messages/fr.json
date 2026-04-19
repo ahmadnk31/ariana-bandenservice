@@ -7,7 +7,9 @@
         "admin": "Admin",
         "searchPlaceholder": "Rechercher des pneus...",
         "blog": "blog",
-        "b2b": "B2B / Assurances"
+        "b2b": "B2B / Assurances",
+        "about": "À propos",
+        "more": "Plus"
     },
     "Hero": {
         "title1": "Gand",
@@ -185,7 +187,10 @@
             "subtitle": "Découvrez ce que nos clients satisfaits disent de nos services.",
             "googleTrusted": "Google Approuvé",
             "viewAll": "Voir tous les avis sur Google",
-            "postedOnGoogle": "Publié sur Google"
+            "postedOnGoogle": "Publié sur Google",
+            "reviewUs": "Laissez-nous un avis",
+            "noReviews": "Aucune critique trouvée.",
+            "reviewUsText": "Votre avis nous aide à améliorer nos services et à aider d'autres clients à faire des choix éclairés."
         },
         "topBrandsTitle": "Marques Populaires",
         "topBrandsSubtitle": "Nous proposons des pneus des fabricants les plus fiables au monde.",
@@ -610,5 +615,26 @@
         "stat2Label": "Partenaires B2B",
         "stat3Label": "Pneus Traités par An",
         "stat4Label": "Taux de Satisfaction"
+    },
+    "About": {
+        "title": "À propos de Gent Bandenservice",
+        "subtitle": "Votre partenaire de confiance pour vos pneus à Gand et dans les environs.",
+        "storyTitle": "Notre Histoire",
+        "storyHeading": "Un service de qualité depuis le premier jour",
+        "storyText": "Gent Bandenservice est né d'une passion pour l'automobile et d'une mission simple : rendre le service professionnel des pneus abordable pour tous à Gand. Situé au cœur de Sint-Amandsberg, nous sommes devenus le centre de pneus privilégié des clients à la recherche de qualité sans payer le prix fort.",
+        "locationText": "Notre emplacement à Sint-Amandsberg, Gand",
+        "missionTitle": "Notre Mission",
+        "missionHeading": "Votre sécurité, notre priorité",
+        "missionText": "Nous nous efforçons de renvoyer chaque client sur la route en toute sécurité et avec sérénité. Que vous recherchiez des pneus neufs de qualité supérieure ou un ensemble d'occasion de qualité, notre équipe de mécaniciens certifiés est prête à vous conseiller et à vous servir rapidement.",
+        "valuesTitle": "Nos Valeurs Fondamentales",
+        "valueQualityTitle": "Qualité",
+        "valueQualityDesc": "Nous ne travaillons qu'avec les meilleures marques et des pneus d'occasion soigneusement inspectés.",
+        "valuePriceTitle": "Prix Abordable",
+        "valuePriceDesc": "Les moins chers de Gand, avec des prix transparents incluant le montage.",
+        "valueServiceTitle": "Rapidité & Service",
+        "valueServiceDesc": "Prêt pendant que vous attendez, avec ou sans rendez-vous.",
+        "ctaTitle": "Prêt pour de nouveaux pneus ?",
+        "ctaBtn": "Découvrez notre offre",
+        "ctaContactBtn": "Contactez-nous"
     }
 }

@@ -7,7 +7,9 @@
         "admin": "Admin",
         "searchPlaceholder": "Reifen suchen...",
         "blog": "Blog",
-        "b2b": "B2B / Versicherungen"
+        "b2b": "B2B / Versicherungen",
+        "about": "Über uns",
+        "more": "Mehr"
     },
     "Hero": {
         "title1": "Gent",
@@ -189,7 +191,10 @@
             "subtitle": "Sehen Sie, was unsere zufriedenen Kunden über unseren geprüften Service sagen.",
             "googleTrusted": "Google Verifiziert",
             "viewAll": "Alle Bewertungen auf Google anzeigen",
-            "postedOnGoogle": "Auf Google veröffentlicht"
+            "postedOnGoogle": "Auf Google veröffentlicht",
+            "reviewUs": "Bewerten Sie uns",
+            "noReviews": "Keine Bewertungen gefunden.",
+            "reviews": "Bewertungen"
         },
         "topBrandsTitle": "Top-Marken",
         "topBrandsSubtitle": "Wir führen Reifen der weltweit vertrauenswürdigsten Hersteller.",
@@ -614,5 +619,22 @@
         "stat2Label": "B2B-Partner",
         "stat3Label": "Jährlich bearbeitete Reifen",
         "stat4Label": "Kundenzufriedenheit"
+    },
+    "About": {
+        "title": "Über Gent Bandenservice",
+        "subtitle": "Ihr vertrauenswürdiger Partner für Autoreifen in Gent und Umgebung.",
+        "storyTitle": "Unsere Geschichte",
+        "storyText": "Gent Bandenservice entstand aus einer Leidenschaft für Autos und einer einfachen Mission: professionellen Reifenservice für jedermann in Gent erschwinglich zu machen. Im Herzen von Sint-Amandsberg gelegen, haben wir uns zur bevorzugten Reifenwerkstatt für Kunden entwickelt, die Qualität ohne hohen Preis suchen.",
+        "missionTitle": "Unsere Mission",
+        "missionText": "Wir bemühen uns, jeden Kunden sicher und beruhigt auf die Straße zu bringen. Egal, ob Sie neue Premium-Reifen oder ein hochwertiges Gebrauchtreifenset suchen, unser Team von zertifizierten Mechanikern steht bereit mit fachkundiger Beratung und schnellem Service.",
+        "valuesTitle": "Unsere Kernwerte",
+        "valueQualityTitle": "Kwaliteit",
+        "valueQualityDesc": "Wir arbeiten nur mit Top-Marken und sorgfältig geprüften Gebrauchtreifen.",
+        "valuePriceTitle": "Betaalbaarheid",
+        "valuePriceDesc": "De goedkoopste van Gent, met transparante prijzen inclusief montage.",
+        "valueServiceTitle": "Snelheid & Service",
+        "valueServiceDesc": "Klaar terwijl u wacht, met of zonder afspraak.",
+        "ctaTitle": "Klaar voor nieuwe banden?",
+        "ctaBtn": "Bekijk ons aanbod"
     }
 }

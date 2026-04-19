@@ -7,7 +7,9 @@
         "admin": "Admin",
         "searchPlaceholder": "Lastik ara...",
         "blog": "blog",
-        "b2b": "B2B / Sigorta"
+        "b2b": "B2B / Sigorta",
+        "about": "Hakkımızda",
+        "more": "Daha Fazla"
     },
     "Hero": {
         "title1": "Gent",
@@ -185,7 +187,10 @@
             "subtitle": "Memnun müşterilerimizin hizmetimiz hakkında neler söylediğini görün.",
             "googleTrusted": "Google Güvenilir",
             "viewAll": "Google'daki tüm yorumları görüntüle",
-            "postedOnGoogle": "Google'da yayınlandı"
+            "postedOnGoogle": "Google'da yayınlandı",
+            "reviews": "Yorumlar",
+            "noReviews": "Henüz yorum yok.",
+            "reviewUs": "Bize Yorum Yapın"
         },
         "topBrandsTitle": "En İyi Markalar",
         "topBrandsSubtitle": "Dünyanın en güvenilir üreticilerinden lastik sunuyoruz.",
@@ -610,5 +615,23 @@
         "stat2Label": "B2B Ortakları",
         "stat3Label": "Yıllık İşlenen Lastik",
         "stat4Label": "Müşteri Memnuniyeti"
+    },
+    "About": {
+        "title": "Gent Bandenservice Hakkında",
+        "subtitle": "Gent ve çevresindeki otomobil lastikleri için güvenilir iş ortağınız.",
+        "storyTitle": "Hikayemiz",
+        "storyText": "Gent Bandenservice, otomobillere olan tutkudan ve basit bir misyondan doğdu: Gent'teki herkes için profesyonel lastik hizmetini uygun fiyatlı hale getirmek. Sint-Amandsberg'in kalbinde yer alan tesisimiz, yüksek fiyat ödemeden kalite arayan müşteriler için favori lastik merkezimiz haline geldi.",
+        "missionTitle": "Misyonumuz",
+        "missionText": "Her müşteriyi güvenli ve gönül rahatlığıyla yola çıkarmayı hedefliyoruz. İster yeni premium lastikler ister kaliteli ikinci el set arıyor olun, sertifikalı teknisyenlerden oluşan ekibimiz uzman tavsiyesi ve hızlı hizmet için hazır.",
+        "valuesTitle": "Temel Değerlerimiz",
+        "valueQualityTitle": "Kalite",
+        "valueQualityDesc": "Sadece en iyi markalarla ve özenle kontrol edilmiş ikinci el lastiklerle çalışıyoruz.",
+        "valuePriceTitle": "Uygun Fiyat",
+        "valuePriceDesc": "Montaj dahil şeffaf fiyatlarla Gent'in en uygunu.",
+        "valueServiceTitle": "Hızlı & Güvenilir Hizmet",
+        "valueServiceDesc": "Randevulu veya randevusuz, beklerken hazır.",
+        "ctaTitle": "Yeni lastiklere hazır mısınız?",
+        "ctaBtn": "Lastiklerimizi Görüntüleyin",
+        "ctaContactBtn": "Bize Ulaşın"
     }
 }
