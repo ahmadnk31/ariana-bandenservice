@@ -2,7 +2,6 @@
 
 
 import { useState } from "react";
-import Image from "next/image";
 import SearchOverlay from "./SearchOverlay";
 import { useTranslations } from 'next-intl';
 import { Link } from "@/src/i18n/routing";
@@ -25,7 +24,7 @@ export default function Header() {
                 <div className="flex-1 flex justify-start">
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="relative overflow-hidden rounded-lg transition-transform group-hover:scale-105">
-                            <Image src="/logo.jpg" alt="Logo" width={48} height={48} className="object-cover" />
+                            <img src="/logo.jpg" alt="Logo" width={48} height={48} className="object-cover" />
                         </div>
                         <span className="text-lg hidden lg:block font-bold uppercase tracking-tight text-foreground">
                             Gent <span className="text-primary">bandenservice</span>
@@ -55,11 +54,11 @@ export default function Header() {
                         <Link href="/contact" className="text-sm font-semibold hover:text-primary transition-colors">
                             {t('contact')}
                         </Link>
-                        
+
                         <DropdownMenu>
                             <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-semibold hover:text-primary transition-colors focus:outline-none">
                                 {t('more')}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="m6 9 6 6 6-6"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="m6 9 6 6 6-6" /></svg>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="w-48 p-2">
                                 <DropdownMenuItem asChild>
