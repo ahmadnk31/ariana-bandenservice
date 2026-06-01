@@ -8,6 +8,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (!baseUrl.startsWith('http://') && !baseUrl.startsWith('https://')) {
         baseUrl = `https://${baseUrl}`
     }
+    // Force non-www domain to prevent 307/308 redirect chains in sitemap
+    baseUrl = baseUrl.replace('https://www.', 'https://').replace('http://www.', 'http://');
 
     const locales = routing.locales;
 

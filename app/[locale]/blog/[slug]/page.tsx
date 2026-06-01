@@ -21,7 +21,8 @@ export async function generateMetadata({
 
     if (!post) return { title: 'Not Found' };
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
+    let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
+    baseUrl = baseUrl.replace('https://www.', 'https://').replace('http://www.', 'http://');
     const postUrl = `${baseUrl}/${locale}/blog/${slug}`;
     const defaultImage = `${baseUrl}/banden-service/android-chrome-512x512.png`;
     
@@ -113,7 +114,8 @@ export default async function BlogPostPage({
         }).format(new Date(post.publishedAt))
         : null;
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
+    let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
+    baseUrl = baseUrl.replace('https://www.', 'https://').replace('http://www.', 'http://');
     const shareUrl = `${baseUrl}/${locale}/blog/${slug}`;
 
     // JSON-LD structured data
