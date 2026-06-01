@@ -81,6 +81,7 @@ interface TireCardProps {
     noise?: string | null;
     noiseDb?: number | null;
     viewMode?: "grid" | "list";
+    primaryAction?: "cart" | "appointment";
 }
 
 export default function TireCard({
@@ -104,7 +105,8 @@ export default function TireCard({
     grip,
     noise,
     noiseDb,
-    viewMode = "grid"
+    viewMode = "grid",
+    primaryAction = "cart"
 }: TireCardProps) {
     const t = useTranslations('Tires');
     const { addToCart } = useCart();
@@ -493,27 +495,38 @@ export default function TireCard({
                     )}
                 </div>
                 {stock > 0 ? (
-                    <button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            addToCart({
-                                id,
-                                name,
-                                slug,
-                                brand,
-                                size,
-                                price,
-                                stock,
-                                season,
-                                image: images[0]?.url,
-                            });
-                        }}
-                        className={`inline-flex h-9 items-center justify-center gap-2 rounded-md px-4 text-sm font-medium shadow transition-colors bg-primary text-primary-foreground hover:bg-primary/90 whitespace-nowrap ${viewMode === "list" ? "w-full" : ""
-                            }`}
-                    >
-                        <ShoppingCart className="w-4 h-4" />
-                        {t('addToCart')}
-                    </button>
+                    primaryAction === "appointment" ? (
+                        <Link
+                            href={{ pathname: '/appointment', query: { tireId: id, tireName: name } }}
+                            className={`inline-flex h-9 items-center justify-center gap-2 rounded-md px-4 text-sm font-medium shadow transition-colors bg-primary text-primary-foreground hover:bg-primary/90 whitespace-nowrap ${viewMode === "list" ? "w-full" : ""
+                                }`}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {t('makeAppointment')}
+                        </Link>
+                    ) : (
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                addToCart({
+                                    id,
+                                    name,
+                                    slug,
+                                    brand,
+                                    size,
+                                    price,
+                                    stock,
+                                    season,
+                                    image: images[0]?.url,
+                                });
+                            }}
+                            className={`inline-flex h-9 items-center justify-center gap-2 rounded-md px-4 text-sm font-medium shadow transition-colors bg-primary text-primary-foreground hover:bg-primary/90 whitespace-nowrap ${viewMode === "list" ? "w-full" : ""
+                                }`}
+                        >
+                            <ShoppingCart className="w-4 h-4" />
+                            {t('addToCart')}
+                        </button>
+                    )
                 ) : (
                     <button
                         onClick={(e) => {

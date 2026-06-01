@@ -17,6 +17,7 @@ import {
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const t = useTranslations('Header');
+    const tTires = useTranslations('Tires');
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -70,6 +71,11 @@ export default function Header() {
                                 <DropdownMenuItem asChild>
                                     <Link href="/b2b" className="w-full cursor-pointer rounded-md px-2 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground">
                                         {t('b2b')}
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href="/secondhand-tires" className="w-full cursor-pointer rounded-md px-2 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground">
+                                        {tTires('secondHand')}
                                     </Link>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
@@ -155,6 +161,13 @@ export default function Header() {
                         onClick={() => setIsMenuOpen(false)}
                     >
                         {t('b2b')}
+                    </Link>
+                    <Link
+                        href="/secondhand-tires"
+                        className="text-base font-medium hover:text-primary transition-colors px-2 py-1"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        {tTires('secondHand')}
                     </Link>
                 </nav>
             </div>

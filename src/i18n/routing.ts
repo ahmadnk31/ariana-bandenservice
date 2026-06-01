@@ -90,6 +90,34 @@ export const routing = defineRouting({
             uk: '/shyny/[slug]',
             de: '/reifen/[slug]',
             it: '/pneumatici/[slug]'
+        },
+        '/secondhand-tires': {
+            en: '/secondhand-tires',
+            nl: '/tweedehands-banden',
+            fr: '/pneus-doccasion',
+            es: '/neumaticos-de-segunda-mano',
+            tr: '/ikinci-el-lastikler',
+            pl: '/uzywane-opony',
+            gr: '/metaxeirismena-elastika',
+            ar: '/iitarat-mustaemala',
+            fa: '/lasthikha-dovom',
+            uk: '/vzhivani-shyny',
+            de: '/gebrauchte-reifen',
+            it: '/pneumatici-usati'
+        },
+        '/secondhand-tires/[rimSize]': {
+            en: '/secondhand-tires/[rimSize]',
+            nl: '/tweedehands-banden/[rimSize]',
+            fr: '/pneus-doccasion/[rimSize]',
+            es: '/neumaticos-de-segunda-mano/[rimSize]',
+            tr: '/ikinci-el-lastikler/[rimSize]',
+            pl: '/uzywane-opony/[rimSize]',
+            gr: '/metaxeirismena-elastika/[rimSize]',
+            ar: '/iitarat-mustaemala/[rimSize]',
+            fa: '/lasthikha-dovom/[rimSize]',
+            uk: '/vzhivani-shyny/[rimSize]',
+            de: '/gebrauchte-reifen/[rimSize]',
+            it: '/pneumatici-usati/[rimSize]'
         }
     }
 });

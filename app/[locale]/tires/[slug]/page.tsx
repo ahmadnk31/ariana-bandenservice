@@ -44,7 +44,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     const description = locale === 'nl'
         ? `€${tire.price.toFixed(2)} incl. montage & balanceren ✓ ${tire.name} (${tire.size}) - ${seasonMap.nl}. Professionele montage beschikbaar.`
         : `€${tire.price.toFixed(2)} incl. mounting & balancing ✓ ${tire.name} (${tire.size}) - ${seasonMap.en}. Professional fitting available.`;
-    const siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be";
+    let siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be";
+    siteUrl = siteUrl.replace('https://www.', 'https://').replace('http://www.', 'http://');
     const fallbackImage = `${siteUrl}/gentbandenservice/android-chrome-512x512.png`;
 
     // Use only the first image for OG/Twitter - social platforms prefer a single clear image
@@ -129,7 +130,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
         "all-season": t('seasonAllSeason'),
     };
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
+    let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gentbandenservice.be';
+    baseUrl = baseUrl.replace('https://www.', 'https://').replace('http://www.', 'http://');
 
     // Product JSON-LD
     const productJsonLd = {

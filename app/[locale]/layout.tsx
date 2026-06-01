@@ -54,8 +54,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const description = metadata.description || "Professionele bandenservice en autoreparatie in Gent.";
     const keywords = metadata.keywords || "";
 
+    let siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be";
+    siteUrl = siteUrl.replace('https://www.', 'https://').replace('http://www.', 'http://');
+
     return {
-        metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://gentbandenservice.be"),
+        metadataBase: new URL(siteUrl),
         title: {
             default: title,
             template: "%s | Gent Bandenservice",
