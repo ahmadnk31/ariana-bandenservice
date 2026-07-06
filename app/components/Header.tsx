@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import SearchOverlay from "./SearchOverlay";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from "@/src/i18n/routing";
 import CartButton from "./CartButton";
 import {
@@ -14,13 +14,103 @@ import {
     DropdownMenuTrigger,
 } from "../../components/ui/dropdown-menu";
 
+const priceWarningFallbacks: Record<string, { warning: string; actionText: string; orText: string; appointmentText: string }> = {
+    nl: {
+        warning: "Sommige bandenprijzen kunnen veranderen. Voor meer duidelijkheid:",
+        actionText: "stuur een bericht",
+        orText: "of",
+        appointmentText: "een afspraak maken"
+    },
+    en: {
+        warning: "Some tire prices may change. For more clarity:",
+        actionText: "send a message",
+        orText: "or",
+        appointmentText: "make an appointment"
+    },
+    fr: {
+        warning: "Certains prix des pneus peuvent changer. Pour plus de clarté :",
+        actionText: "envoyez un message",
+        orText: "ou",
+        appointmentText: "prenez rendez-vous"
+    },
+    de: {
+        warning: "Einige Reifenpreise können sich ändern. Für mehr Klarheit:",
+        actionText: "senden Sie eine Nachricht",
+        orText: "oder",
+        appointmentText: "einen Termin vereinbaren"
+    },
+    es: {
+        warning: "Algunos precios de los neumáticos pueden cambiar. Para mayor claridad:",
+        actionText: "envíe un mensaje",
+        orText: "o",
+        appointmentText: "reserve una cita"
+    },
+    it: {
+        warning: "Alcuni prezzi dei pneumatici potrebbero variare. Per maggiore chiarezza:",
+        actionText: "invia un messaggio",
+        orText: "o",
+        appointmentText: "fissa un appuntamento"
+    },
+    pl: {
+        warning: "Niektóre ceny opon mogą ulec zmianie. Aby uzyskać więcej informacji:",
+        actionText: "wyślij wiadomość",
+        orText: "lub",
+        appointmentText: "umów się na spotkanie"
+    },
+    tr: {
+        warning: "Bazı lastik fiyatları değişebilir. Daha fazla bilgi için:",
+        actionText: "mesaj gönderin",
+        orText: "veya",
+        appointmentText: "randevu alın"
+    },
+    uk: {
+        warning: "Деякі ціни на шини можуть змінюватися. Для уточнення:",
+        actionText: "надішліть повідомлення",
+        orText: "або",
+        appointmentText: "запишіться на прийом"
+    },
+    ar: {
+        warning: "قد تتغير بعض أسعار الإطارات. لمزيد من الوضوح:",
+        actionText: "أرسل رسالة",
+        orText: "أو",
+        appointmentText: "احجز موعدًا"
+    },
+    fa: {
+        warning: "برخی از قیمت‌های لاستیک ممکن است تغییر کند. برای وضوح بیشتر:",
+        actionText: "پیام بفرستید",
+        orText: "یا",
+        appointmentText: "نوبت بگیرید"
+    },
+    gr: {
+        warning: "Ορισμένες τιμές ελαστικών ενδέχεται να αλλάξουν. Για περισσότερες λεπτομέρειες:",
+        actionText: "στείλτε μήνυμα",
+        orText: "ή",
+        appointmentText: "κλείστε ραντεβού"
+    }
+};
+
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const t = useTranslations('Header');
     const tTires = useTranslations('Tires');
+    const locale = useLocale();
+    const tWarning = priceWarningFallbacks[locale] || priceWarningFallbacks.nl;
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            {/* Top Announcement Bar */}
+            <div className="w-full bg-amber-500/10 dark:bg-amber-500/5 text-amber-800 dark:text-amber-300 py-1.5 px-4 text-center text-xs font-medium border-b border-muted transition-colors">
+                <div className="container mx-auto flex items-center justify-center gap-1 flex-wrap">
+                    <span>{tWarning.warning}</span>
+                    <Link href="/contact" className="underline hover:text-amber-900 dark:hover:text-amber-200 transition-colors mx-0.5">
+                        {tWarning.actionText}
+                    </Link>
+                    <span>{tWarning.orText}</span>
+                    <Link href="/appointment" className="underline hover:text-amber-900 dark:hover:text-amber-200 transition-colors mx-0.5">
+                        {tWarning.appointmentText}
+                    </Link>
+                </div>
+            </div>
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 {/* Left: Logo */}
                 <div className="flex-1 flex justify-start">

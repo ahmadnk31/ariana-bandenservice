@@ -9,7 +9,11 @@
         "blog": "Blog",
         "b2b": "B2B / Insurance",
         "about": "About Us",
-        "more": "More"
+        "more": "More",
+        "priceWarning": "Some tire prices may change. For more clarity:",
+        "sendAMessage": "send a message",
+        "or": "or",
+        "makeAppointment": "make an appointment"
     },
     "Hero": {
         "title1": "Ghent",
