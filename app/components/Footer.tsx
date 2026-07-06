@@ -117,6 +117,43 @@ export default function Footer() {
                 </div>
             </div>
 
+            {/* Partner Badges */}
+            <div className="container mx-auto px-4 mt-8 flex justify-center">
+                <div className="flex flex-col items-center gap-2">
+                    <span className="font-semibold text-foreground/70 uppercase tracking-wider text-xs">Partners</span>
+                    <div className="flex flex-wrap items-center justify-center gap-2">
+                        <a
+                            href="https://www.banden-pneus-online.be"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center h-11 px-3 bg-white border border-gray-200 hover:border-primary transition-colors"
+                            title="Banden Pneus Online"
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="https://cdn-img1.pneus-online.com/pol/logo_nl.png"
+                                alt="Banden Pneus Online"
+                                className="h-8 w-auto object-contain"
+                            />
+                        </a>
+                        <a
+                            href="https://www.bandenleader.be"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center h-11 px-3 bg-white border border-gray-200 hover:border-primary transition-colors"
+                            title="Bandenleader.be montagepartnerstation"
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="https://cdn.tiresleader.com/static/sites/bandenleader.be/img/banners/Banner_15.jpg"
+                                alt="Bandenleader.be montagepartnerstation"
+                                className="h-8 w-auto object-contain"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div className="container mx-auto px-4 mt-8 pt-8 border-t border-muted/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
                 <div className="flex flex-col items-center sm:items-start gap-4">
                     <p>&copy; {year || 2025} Gent bandenservice. {t('rights')}</p>

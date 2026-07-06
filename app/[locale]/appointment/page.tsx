@@ -51,10 +51,12 @@ export default async function AppointmentPage({
     if (tireId) {
         const tire = await prisma.tire.findUnique({
             where: { id: tireId },
-            select: { name: true, brand: true }
+            select: { name: true, brand: true, size: true }
         });
         if (tire) {
-            displayTireName = `${tire.brand} ${tire.name}`;
+            const nameStartsWithBrand = tire.name.toLowerCase().startsWith(tire.brand.toLowerCase());
+            const fullName = nameStartsWithBrand ? tire.name : `${tire.brand} ${tire.name}`;
+            displayTireName = `${fullName}${tire.size ? ` ${tire.size}` : ''}`;
         }
     }
 

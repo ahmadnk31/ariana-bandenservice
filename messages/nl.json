@@ -9,7 +9,11 @@
         "blog": "Blog",
         "b2b": "B2B / Verzekeringen",
         "about": "Over Ons",
-        "more": "Meer"
+        "more": "Meer",
+        "priceWarning": "Sommige bandenprijzen kunnen veranderen. Voor meer duidelijkheid:",
+        "sendAMessage": "stuur een bericht",
+        "or": "of",
+        "makeAppointment": "een afspraak maken"
     },
     "Hero": {
         "title1": "Gent",
