@@ -137,7 +137,7 @@ export default function Footer() {
                             />
                         </a>
                         <a
-                            href="https://www.bandenleader.be"
+                            href="https://montage.bandenleader.be/oost-vlaanderen/sint-amandsberg/42685"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center h-11 px-3 bg-white border border-gray-200 hover:border-primary transition-colors"
