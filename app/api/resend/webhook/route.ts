@@ -25,6 +25,35 @@ function parseSender(fromStr: string) {
     }
 }
 
+/**
+ * Strips quoted email history from plain-text email bodies.
+ * Removes:
+ * - Lines starting with ">"
+ * - Gmail/Outlook attribution lines: "Op [date] schreef ..." / "On [date] ... wrote:"
+ * - Everything after those patterns
+ */
+function extractLatestReply(body: string): string {
+    const lines = body.split('\n');
+    const cutoffPatterns = [
+        /^>\s*/,                                          // Quoted lines starting with >
+        /^Op\s.+schreef\s/i,                             // Dutch Gmail: "Op za 18 jul ... schreef ..."
+        /^On\s.+wrote:\s*$/i,                            // English Gmail: "On Mon, Jan 1 ... wrote:"
+        /^-{3,}\s*(Original Message|Origineel bericht)/i, // Outlook dividers
+        /^_{5,}$/,                                        // Outlook underscore divider
+    ];
+
+    let cutIndex = lines.length;
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (cutoffPatterns.some(pattern => pattern.test(line))) {
+            cutIndex = i;
+            break;
+        }
+    }
+
+    return lines.slice(0, cutIndex).join('\n').trim();
+}
+
 export async function POST(req: NextRequest) {
     console.log('🔔 Resend Webhook received!');
 
@@ -96,9 +125,40 @@ export async function POST(req: NextRequest) {
         const parsed = parseSender(fromStr);
         const subject = emailData.subject || '(No Subject)';
         const bodyText = emailData.text || emailData.html || '(No content)';
-        const message = `Subject: ${subject}\n\n${bodyText}`;
+        const isReply = /^re:/i.test(subject.trim());
 
-        // Save to database
+        // Threading: if this is a reply, try to append to an existing contact thread
+        if (isReply) {
+            const fourteenDaysAgo = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
+            const existing = await prisma.contact.findFirst({
+                where: {
+                    email: parsed.email,
+                    createdAt: { gte: fourteenDaysAgo },
+                },
+                orderBy: { createdAt: 'desc' },
+            });
+
+            if (existing) {
+                const timestamp = new Date().toLocaleString('nl-BE', { timeZone: 'Europe/Brussels' });
+                const cleanReply = extractLatestReply(bodyText);
+                const appendedMessage = `${existing.message}\n\n---\n📨 Klant antwoordde op ${timestamp}:\n\n${cleanReply}`;
+
+                const updated = await prisma.contact.update({
+                    where: { id: existing.id },
+                    data: {
+                        message: appendedMessage,
+                        status: 'unread',
+                    },
+                });
+
+                console.log(`✅ Appended reply to existing contact ID: ${updated.id}`);
+                return NextResponse.json({ success: true, contactId: updated.id, threaded: true });
+            }
+        }
+
+        // No matching thread found, or it's a new inquiry — create a new contact
+        const cleanBody = extractLatestReply(bodyText);
+        const message = `${subject}\n\n${cleanBody}`;
         const contact = await prisma.contact.create({
             data: {
                 firstName: parsed.firstName,
@@ -111,8 +171,8 @@ export async function POST(req: NextRequest) {
             }
         });
 
-        console.log(`✅ Saved contact from inbound email. Contact ID: ${contact.id}`);
-        return NextResponse.json({ success: true, contactId: contact.id });
+        console.log(`✅ Saved new contact from inbound email. Contact ID: ${contact.id}`);
+        return NextResponse.json({ success: true, contactId: contact.id, threaded: false });
     } catch (error) {
         console.error('❌ Error processing inbound email webhook:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
