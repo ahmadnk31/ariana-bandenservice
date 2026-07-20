@@ -3,6 +3,7 @@ import { isAuthenticated } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import Link from "next/link";
 import ReplyForm from "./ReplyForm";
+import DeleteContactButton from "./DeleteContactButton";
 
 export default async function ContactDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const authenticated = await isAuthenticated();
@@ -30,11 +31,14 @@ export default async function ContactDetailPage({ params }: { params: Promise<{ 
                 </Link>
                 <div className="flex items-center justify-between">
                     <h1 className="text-2xl font-bold">Message from {contact.firstName} {contact.lastName}</h1>
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium capitalize 
-                        ${contact.status === 'replied' ? 'bg-green-100 text-green-700' :
-                            contact.status === 'read' ? 'bg-gray-100 text-gray-700' : 'bg-blue-100 text-blue-700'}`}>
-                        {contact.status}
-                    </span>
+                    <div className="flex items-center gap-3">
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium capitalize 
+                            ${contact.status === 'replied' ? 'bg-green-100 text-green-700' :
+                                contact.status === 'read' ? 'bg-gray-100 text-gray-700' : 'bg-blue-100 text-blue-700'}`}>
+                            {contact.status}
+                        </span>
+                        <DeleteContactButton contactId={contact.id} />
+                    </div>
                 </div>
             </div>
 
