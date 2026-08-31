@@ -129,10 +129,10 @@ export default function ManageAppointmentClient({ appointment: initialAppointmen
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
                 </div>
                 <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-rose-500 mb-2">
-                    {t('cancelledStatus') || "Appointment Cancelled"}
+                    {t('cancelledStatus')}
                 </h3>
                 <p className="text-muted-foreground">
-                    This appointment has been cancelled and is no longer active.
+                    {t('cancelledDesc')}
                 </p>
             </div>
         );
@@ -191,7 +191,7 @@ export default function ManageAppointmentClient({ appointment: initialAppointmen
                             disabled={loading}
                             className="flex-1 py-3 px-6 bg-transparent border-2 border-red-500 text-red-500 font-bold rounded-md hover:bg-red-500/10 transition-colors disabled:opacity-50"
                         >
-                            {loading ? "Processing..." : (t('cancelBtn') || "Cancel Appointment")}
+                            {loading ? t('processing') : t('cancelBtn')}
                         </button>
                     </div>
                 </>
@@ -200,7 +200,7 @@ export default function ManageAppointmentClient({ appointment: initialAppointmen
             {view === "reschedule" && (
                 <div className="space-y-6">
                     <div className="p-4 border-l-4 border-primary bg-primary/5 rounded-r-md">
-                        <p className="font-medium text-primary">Pick a new date and time for your appointment.</p>
+                        <p className="font-medium text-primary">{t('pickNewDateTime')}</p>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -226,7 +226,7 @@ export default function ManageAppointmentClient({ appointment: initialAppointmen
                                 className="w-full px-4 py-3 rounded-md border border-muted bg-background focus:ring-2 focus:ring-primary/50 disabled:opacity-50"
                             >
                                 <option value="">
-                                    {!selectedDate ? "Select a date first" : fetchingSlots ? "Loading..." : slots.length === 0 ? "No available slots" : "Select time"}
+                                    {!selectedDate ? t('selectDateFirst') : fetchingSlots ? t('loading') : slots.length === 0 ? t('noAvailableSlots') : t('selectTime')}
                                 </option>
                                 {slots.map((slot) => {
                                     const dateObj = new Date(slot);
@@ -247,7 +247,7 @@ export default function ManageAppointmentClient({ appointment: initialAppointmen
                             disabled={loading || !selectedDate || !selectedTime}
                             className="flex-1 py-3 px-6 bg-primary text-primary-foreground font-bold rounded-md hover:bg-primary/90 transition-colors disabled:opacity-50"
                         >
-                            {loading ? "Processing..." : (t('confirmReschedule') || "Confirm New Time")}
+                            {loading ? t('processing') : t('confirmReschedule')}
                         </button>
                         <button
                             onClick={() => {
@@ -258,7 +258,7 @@ export default function ManageAppointmentClient({ appointment: initialAppointmen
                             }}
                             className="py-3 px-6 bg-muted text-muted-foreground font-bold rounded-md hover:bg-muted/80 transition-colors"
                         >
-                            {t('backBtn') || "Go Back"}
+                            {t('backBtn')}
                         </button>
                     </div>
                 </div>

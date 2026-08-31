@@ -30,7 +30,14 @@
         "openingHoursText": "Lunes - Viernes: 9:00 - 17:00",
         "openingHoursText2": "Sábado - Domingo: Cerrado",
         "visitUs": "Visítanos",
-        "visitUsText": "Gante, Bélgica"
+        "visitUsText": "Gante, Bélgica",
+        "b2bLink": "B2B / Socios de seguros",
+        "payment": "Pago",
+        "shipping": "Envío",
+        "partners": "Socios",
+        "privacyPolicy": "Política de privacidad",
+        "termsOfService": "Términos de servicio",
+        "returnPolicy": "Política de devoluciones"
     },
     "Services": {
         "title": "Nuestros servicios",
@@ -585,6 +592,7 @@
         "cancelSuccess": "Cita cancelada.",
         "rescheduleSuccess": "¡Cita reprogramada con éxito!",
         "cancelledStatus": "Cita cancelada",
+        "cancelledDesc": "Esta cita ha sido cancelada y ya no está activa.",
         "customerName": "Cliente",
         "tireInfo": "Neumático",
         "dateLabel": "Fecha",
@@ -592,7 +600,12 @@
         "rescheduleBtn": "Reprogramar",
         "cancelBtn": "Cancelar Cita",
         "confirmReschedule": "Confirmar nueva hora",
-        "backBtn": "Atrás"
+        "backBtn": "Atrás",
+        "processing": "Procesando...",
+        "pickNewDateTime": "Elige una nueva fecha y hora para tu cita.",
+        "loading": "Cargando...",
+        "noAvailableSlots": "No hay horarios disponibles",
+        "selectTime": "Seleccionar hora"
     },
     "B2B": {
         "title": "Conviértase en socio de Gent Bandenservice",

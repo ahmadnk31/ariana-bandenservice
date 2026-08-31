@@ -34,7 +34,14 @@
         "openingHoursText": "Monday - Saturday: 9:00 AM - 6:00 PM",
         "openingHoursText2": "Sunday: On Appointment",
         "visitUs": "Visit us",
-        "visitUsText": "Ghent, Belgium"
+        "visitUsText": "Ghent, Belgium",
+        "b2bLink": "B2B / Insurance Partners",
+        "payment": "Payment",
+        "shipping": "Shipping",
+        "partners": "Partners",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service",
+        "returnPolicy": "Return Policy"
     },
     "Services": {
         "title": "Our Services",
@@ -600,12 +607,21 @@
         "confirmCancel": "Are you sure you want to cancel this appointment?",
         "cancelSuccess": "Appointment has been cancelled.",
         "rescheduleSuccess": "Appointment successfully rescheduled!",
+        "cancelledStatus": "Appointment Cancelled",
+        "cancelledDesc": "This appointment has been cancelled and is no longer active.",
+        "customerName": "Customer",
+        "tireInfo": "Tire",
         "dateLabel": "Date",
         "timeLabel": "Time",
         "rescheduleBtn": "Reschedule Appointment",
         "cancelBtn": "Cancel Appointment",
         "confirmReschedule": "Confirm New Time",
-        "backBtn": "Go Back"
+        "backBtn": "Go Back",
+        "processing": "Processing...",
+        "pickNewDateTime": "Pick a new date and time for your appointment.",
+        "loading": "Loading...",
+        "noAvailableSlots": "No available slots",
+        "selectTime": "Select time"
     },
     "B2B": {
         "title": "Partner with Gent Bandenservice",

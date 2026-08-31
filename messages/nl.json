@@ -34,7 +34,14 @@
         "openingHoursText": "Maandag - Zaterdag: 9:00 - 18:00",
         "openingHoursText2": "Zondag: Enkel op afspraak",
         "visitUs": "Ons bezoeken",
-        "visitUsText": "Gent, België"
+        "visitUsText": "Gent, België",
+        "b2bLink": "B2B / Verzekeringspartners",
+        "payment": "Betaling",
+        "shipping": "Verzending",
+        "partners": "Partners",
+        "privacyPolicy": "Privacybeleid",
+        "termsOfService": "Algemene Voorwaarden",
+        "returnPolicy": "Retourbeleid"
     },
     "Services": {
         "title": "Onze Diensten",
@@ -598,8 +605,20 @@
         "cancelSuccess": "Afspraak is succesvol geannuleerd.",
         "rescheduleSuccess": "Afspraak succesvol verplaatst!",
         "cancelledStatus": "Afspraak Geannuleerd",
+        "cancelledDesc": "Deze afspraak is geannuleerd en niet langer actief.",
         "customerName": "Klant",
-        "tireInfo": "Band"
+        "tireInfo": "Band",
+        "dateLabel": "Datum",
+        "timeLabel": "Tijd",
+        "rescheduleBtn": "Afspraak Verzetten",
+        "cancelBtn": "Afspraak Annuleren",
+        "confirmReschedule": "Nieuwe Tijd Bevestigen",
+        "backBtn": "Terug",
+        "processing": "Bezig...",
+        "pickNewDateTime": "Kies een nieuwe datum en tijd voor je afspraak.",
+        "loading": "Laden...",
+        "noAvailableSlots": "Geen beschikbare tijden",
+        "selectTime": "Selecteer een tijd"
     },
     "B2B": {
         "title": "Partner worden van Gent Bandenservice",

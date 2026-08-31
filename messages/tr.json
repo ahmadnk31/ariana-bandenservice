@@ -30,7 +30,14 @@
         "openingHoursText": "Pazartesi - Cumartesi: 09:00 - 18:00",
         "openingHoursText2": "Pazar: Kapalı",
         "visitUs": "Bizi ziyaret edin",
-        "visitUsText": "Gent, Belçika"
+        "visitUsText": "Gent, Belçika",
+        "b2bLink": "B2B / Sigorta Ortakları",
+        "payment": "Ödeme",
+        "shipping": "Kargo",
+        "partners": "Ortaklar",
+        "privacyPolicy": "Gizlilik Politikası",
+        "termsOfService": "Hizmet Şartları",
+        "returnPolicy": "İade Politikası"
     },
     "Services": {
         "title": "Hizmetlerimiz",
@@ -585,6 +592,7 @@
         "cancelSuccess": "Randevu iptal edildi.",
         "rescheduleSuccess": "Randevu başarıyla yeniden planlandı!",
         "cancelledStatus": "Randevu İptal Edildi",
+        "cancelledDesc": "Bu randevu iptal edildi ve artık aktif değil.",
         "customerName": "Müşteri",
         "tireInfo": "Lastik",
         "dateLabel": "Tarih",
@@ -592,7 +600,12 @@
         "rescheduleBtn": "Yeniden Planla",
         "cancelBtn": "İptal Et",
         "confirmReschedule": "Yeni Saati Onayla",
-        "backBtn": "Geri Dön"
+        "backBtn": "Geri Dön",
+        "processing": "İşleniyor...",
+        "pickNewDateTime": "Randevunuz için yeni bir tarih ve saat seçin.",
+        "loading": "Yükleniyor...",
+        "noAvailableSlots": "Müsait slot yok",
+        "selectTime": "Saat seçin"
     },
     "B2B": {
         "title": "Gent Bandenservice ile Ortak Olun",
