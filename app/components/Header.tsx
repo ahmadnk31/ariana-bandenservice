@@ -118,12 +118,11 @@ export default function Header() {
                         <div className="relative overflow-hidden rounded-lg transition-transform group-hover:scale-105">
                             <Image src="/logo.jpg" alt="Logo" width={48} height={48} className="object-cover" />
                         </div>
-                        <span className="text-lg hidden lg:block font-bold uppercase tracking-tight text-foreground">
-                            Gent <span className="text-primary">bandenservice</span>
+                        <span className="text-lg hidden lg:block font-bold uppercase tracking-tight text-foreground text-amber-700">
+                            Gent <span className="text-primary text-amber-700">Bandenservice B.V.</span>
                         </span>
                     </Link>
                 </div>
-
                 {/* Center: Search Input (Desktop) */}
                 <div className="hidden lg:flex flex-1 justify-center max-w-lg mx-4">
                     <div className="w-full">

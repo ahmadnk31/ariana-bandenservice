@@ -29,7 +29,14 @@
         "openingHoursText": "Lunedì - Sabato: 9:00 - 18:00",
         "openingHoursText2": "Domenica: 9:00 - 16:00",
         "visitUs": "Vieni a trovarci",
-        "visitUsText": "Gent, Belgio"
+        "visitUsText": "Gent, Belgio",
+        "b2bLink": "B2B / Partner assicurativi",
+        "payment": "Pagamento",
+        "shipping": "Spedizione",
+        "partners": "Partner",
+        "privacyPolicy": "Informativa sulla privacy",
+        "termsOfService": "Termini di servizio",
+        "returnPolicy": "Politica di reso"
     },
     "Services": {
         "title": "I Nostri Servizi",
@@ -584,6 +591,7 @@
         "cancelSuccess": "Appuntamento annullato.",
         "rescheduleSuccess": "Appuntamento riprogrammato!",
         "cancelledStatus": "Appuntamento Annullato",
+        "cancelledDesc": "Questo appuntamento è stato annullato e non è più attivo.",
         "customerName": "Cliente",
         "tireInfo": "Pneumatico",
         "dateLabel": "Data",
@@ -591,7 +599,12 @@
         "rescheduleBtn": "Riprogramma",
         "cancelBtn": "Annulla Appuntamento",
         "confirmReschedule": "Conferma nuovo orario",
-        "backBtn": "Indietro"
+        "backBtn": "Indietro",
+        "processing": "Elaborazione...",
+        "pickNewDateTime": "Scegli una nuova data e orario per il tuo appuntamento.",
+        "loading": "Caricamento...",
+        "noAvailableSlots": "Nessuno slot disponibile",
+        "selectTime": "Seleziona orario"
     },
     "B2B": {
         "title": "Diventa partner di Gent Bandenservice",

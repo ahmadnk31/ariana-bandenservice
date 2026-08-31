@@ -30,7 +30,14 @@
         "openingHoursText": "دوشنبه تا جمعه: 9:00 تا 18:00",
         "openingHoursText2": "شنبه - یکشنبه: تعطیل",
         "visitUs": "از ما دیدن کنید",
-        "visitUsText": "گنت، بلژیک"
+        "visitUsText": "گنت، بلژیک",
+        "b2bLink": "B2B / شرکای بیمه",
+        "payment": "پرداخت",
+        "shipping": "حمل‌ونقل",
+        "partners": "شرکا",
+        "privacyPolicy": "سیاست حریم خصوصی",
+        "termsOfService": "شرایط خدمات",
+        "returnPolicy": "سیاست بازگشت"
     },
     "Services": {
         "title": "خدمات ما",
@@ -580,6 +587,7 @@
         "cancelSuccess": "وقت لغو شد.",
         "rescheduleSuccess": "وقت با موفقیت تغییر کرد!",
         "cancelledStatus": "وقت لغو شد",
+        "cancelledDesc": "این وقت لغو شده و دیگر فعال نیست.",
         "customerName": "مشتری",
         "tireInfo": "لاستیک",
         "dateLabel": "تاریخ",
@@ -587,7 +595,12 @@
         "rescheduleBtn": "تغییر زمان",
         "cancelBtn": "لغو وقت",
         "confirmReschedule": "تأیید زمان جدید",
-        "backBtn": "بازگشت"
+        "backBtn": "بازگشت",
+        "processing": "در حال پردازش...",
+        "pickNewDateTime": "تاریخ و زمان جدیدی برای وقت خود انتخاب کنید.",
+        "loading": "در حال بارگذاری...",
+        "noAvailableSlots": "زمان‌بندی موجود نیست",
+        "selectTime": "زمان را انتخاب کنید"
     },
     "B2B": {
         "title": "شریک Gent Bandenservice شوید",

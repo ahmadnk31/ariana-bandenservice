@@ -19,19 +19,19 @@ export default function Footer() {
         <footer className="border-t border-muted bg-muted/50 py-12">
             <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm border-b border-muted/50 pb-8">
                 <div>
-                    <h3 className="font-bold text-lg mb-4">Gent bandenservice</h3>
+                    <h3 className="font-bold text-lg mb-4">Gent Bandenservice B.V.</h3>
                     <p className="text-muted-foreground mb-4">
                         {t('aboutText')}
                     </p>
                     <a href="/b2b" className="text-primary font-medium hover:underline transition-all">
-                        B2B / Insurance Partners
+                        {t('b2bLink')}
                     </a>
                 </div>
                 <div>
                     <h3 className="font-bold text-lg mb-4">{t('contact')}</h3>
                     <ul className="space-y-2 text-muted-foreground">
                         <li>Dendermondsesteenweg 428,9040 {t('address')}</li>
-                        <li>+32 466 19 56 22</li>
+                        <li>+32 467 87 12 05</li>
                         <li>info@gentbandenservice.be</li>
                         <li>
                             <a
@@ -65,7 +65,7 @@ export default function Footer() {
             <div className="container mx-auto px-4 mt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-muted-foreground">
                 {/* Payment Methods */}
                 <div className="flex flex-col items-center sm:items-start gap-2">
-                    <span className="font-semibold text-foreground/70 uppercase tracking-wider">Payment</span>
+                    <span className="font-semibold text-foreground/70 uppercase tracking-wider">{t('payment')}</span>
                     <div className="flex flex-wrap items-center gap-2">
                         {[
                             { src: "/visa.png", alt: "Visa" },
@@ -93,7 +93,7 @@ export default function Footer() {
                 </div>
                 {/* Shipping Partners */}
                 <div className="flex flex-col items-center sm:items-end gap-2">
-                    <span className="font-semibold text-foreground/70 uppercase tracking-wider">Shipping</span>
+                    <span className="font-semibold text-foreground/70 uppercase tracking-wider">{t('shipping')}</span>
                     <div className="flex items-center gap-2">
                         {[
                             { src: "/dpd.png", alt: "DPD" },
@@ -120,7 +120,7 @@ export default function Footer() {
             {/* Partner Badges */}
             <div className="container mx-auto px-4 mt-8 flex justify-center">
                 <div className="flex flex-col items-center gap-2">
-                    <span className="font-semibold text-foreground/70 uppercase tracking-wider text-xs">Partners</span>
+                    <span className="font-semibold text-foreground/70 uppercase tracking-wider text-xs">{t('partners')}</span>
                     <div className="flex flex-wrap items-center justify-center gap-2">
                         <a
                             href="https://www.banden-pneus-online.be"
@@ -156,13 +156,13 @@ export default function Footer() {
 
             <div className="container mx-auto px-4 mt-8 pt-8 border-t border-muted/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground">
                 <div className="flex flex-col items-center sm:items-start gap-4">
-                    <p>&copy; {year || 2025} Gent bandenservice. {t('rights')}</p>
+                    <p>&copy; {year || 2025} Gent Bandenservice B.V. {t('rights')}</p>
                     <div className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 text-xs">
-                        <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
+                        <a href="/privacy" className="hover:text-primary transition-colors">{t('privacyPolicy')}</a>
                         <span className="hidden sm:inline">•</span>
-                        <a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a>
+                        <a href="/terms" className="hover:text-primary transition-colors">{t('termsOfService')}</a>
                         <span className="hidden sm:inline">•</span>
-                        <a href="/return-policy" className="hover:text-primary transition-colors">Return Policy</a>
+                        <a href="/return-policy" className="hover:text-primary transition-colors">{t('returnPolicy')}</a>
                         <span className="hidden sm:inline">•</span>
                         <a href="/cookies" className="hover:text-primary transition-colors">{cookieT('policy')}</a>
                         <span className="hidden sm:inline">•</span>

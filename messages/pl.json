@@ -30,7 +30,14 @@
         "openingHoursText": "Poniedziałek - Piątek: 9:00 - 18:00",
         "openingHoursText2": "Sobota - Niedziela: Zamknięte",
         "visitUs": "Odwiedź nas",
-        "visitUsText": "Gandawa, Belgia"
+        "visitUsText": "Gandawa, Belgia",
+        "b2bLink": "B2B / Partnerzy ubezpieczeniowi",
+        "payment": "Płatność",
+        "shipping": "Wysyłka",
+        "partners": "Partnerzy",
+        "privacyPolicy": "Polityka prywatności",
+        "termsOfService": "Warunki korzystania",
+        "returnPolicy": "Polityka zwrotów"
     },
     "Services": {
         "title": "Nasze usługi",
@@ -585,6 +592,7 @@
         "cancelSuccess": "Wizyta anulowana.",
         "rescheduleSuccess": "Pomyślnie zmieniono termin!",
         "cancelledStatus": "Wizyta anulowana",
+        "cancelledDesc": "Ta wizyta została anulowana i nie jest już aktywna.",
         "customerName": "Klient",
         "tireInfo": "Opona",
         "dateLabel": "Data",
@@ -592,7 +600,12 @@
         "rescheduleBtn": "Zmień termin",
         "cancelBtn": "Anuluj wizytę",
         "confirmReschedule": "Potwierdź nowy czas",
-        "backBtn": "Wróć"
+        "backBtn": "Wróć",
+        "processing": "Przetwarzanie...",
+        "pickNewDateTime": "Wybierz nową datę i godzinę wizyty.",
+        "loading": "Ładowanie...",
+        "noAvailableSlots": "Brak dostępnych terminów",
+        "selectTime": "Wybierz godzinę"
     },
     "B2B": {
         "title": "Zostań partnerem Gent Bandenservice",

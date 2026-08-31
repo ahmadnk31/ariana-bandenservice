@@ -30,7 +30,14 @@
         "openingHoursText": "الاثنين - السبت: 9:00 صباحًا - 6:00 مساءً",
         "openingHoursText2": " الأحد: 10:00 صباحًا - 6:00 مساءً",
         "visitUs": "زرنا",
-        "visitUsText": "غنت، بلجيكا"
+        "visitUsText": "غنت، بلجيكا",
+        "b2bLink": "B2B / شركاء التأمين",
+        "payment": "الدفع",
+        "shipping": "الشحن",
+        "partners": "الشركاء",
+        "privacyPolicy": "سياسة الخصوصية",
+        "termsOfService": "شروط الخدمة",
+        "returnPolicy": "سياسة الإرجاع"
     },
     "Services": {
         "title": "خدماتنا",
@@ -580,6 +587,7 @@
         "cancelSuccess": "تم إلغاء الموعد.",
         "rescheduleSuccess": "تمت إعادة جدولة الموعد بنجاح!",
         "cancelledStatus": "تم إلغاء الموعد",
+        "cancelledDesc": "تم إلغاء هذا الموعد ولم يعد نشطاً.",
         "customerName": "العميل",
         "tireInfo": "الإطار",
         "dateLabel": "التاريخ",
@@ -587,7 +595,12 @@
         "rescheduleBtn": "إعادة جدولة",
         "cancelBtn": "إلغاء الموعد",
         "confirmReschedule": "تأكيد الوقت الجديد",
-        "backBtn": "رجوع"
+        "backBtn": "رجوع",
+        "processing": "جارٍ المعالجة...",
+        "pickNewDateTime": "اختر تاريخاً ووقتاً جديداً لموعدك.",
+        "loading": "جارٍ التحميل...",
+        "noAvailableSlots": "لا توجد مواعيد متاحة",
+        "selectTime": "اختر وقتاً"
     },
     "B2B": {
         "title": "كن شريكاً لـ Gent Bandenservice",

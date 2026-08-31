@@ -30,7 +30,14 @@
         "openingHoursText": "Понеділок – Субота: 9:00 – 18:00",
         "openingHoursText2": "Неділя: За домовленістю",
         "visitUs": "Завітайте до нас",
-        "visitUsText": "Гент, Бельгія"
+        "visitUsText": "Гент, Бельгія",
+        "b2bLink": "B2B / Страхові партнери",
+        "payment": "Оплата",
+        "shipping": "Доставка",
+        "partners": "Партнери",
+        "privacyPolicy": "Політика конфіденційності",
+        "termsOfService": "Умови використання",
+        "returnPolicy": "Політика повернення"
     },
     "Services": {
         "title": "Наші послуги",
@@ -580,6 +587,7 @@
         "cancelSuccess": "Прийом скасовано.",
         "rescheduleSuccess": "Успішно перенесено!",
         "cancelledStatus": "Прийом скасовано",
+        "cancelledDesc": "Цей прийом скасовано і більше не активний.",
         "customerName": "Клієнт",
         "tireInfo": "Шина",
         "dateLabel": "Дата",
@@ -587,7 +595,12 @@
         "rescheduleBtn": "Змінити час",
         "cancelBtn": "Скасувати",
         "confirmReschedule": "Підтвердити",
-        "backBtn": "Назад"
+        "backBtn": "Назад",
+        "processing": "Обробка...",
+        "pickNewDateTime": "Виберіть нову дату і час для вашого прийому.",
+        "loading": "Завантаження...",
+        "noAvailableSlots": "Немає доступних слотів",
+        "selectTime": "Виберіть час"
     },
     "B2B": {
         "title": "Станьте партнером Gent Bandenservice",

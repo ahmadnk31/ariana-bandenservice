@@ -30,7 +30,14 @@
         "openingHoursText": "Montag - Samstag: 9:00 - 18:00 Uhr",
         "openingHoursText2": "Sonntag: Nach Vereinbarung",
         "visitUs": "Besuchen Sie uns",
-        "visitUsText": "Gent, Belgien"
+        "visitUsText": "Gent, Belgien",
+        "b2bLink": "B2B / Versicherungspartner",
+        "payment": "Zahlung",
+        "shipping": "Versand",
+        "partners": "Partner",
+        "privacyPolicy": "Datenschutzrichtlinie",
+        "termsOfService": "Nutzungsbedingungen",
+        "returnPolicy": "Rückgaberecht"
     },
     "Services": {
         "title": "Unsere Dienstleistungen",
@@ -589,6 +596,7 @@
         "cancelSuccess": "Termin abgesagt.",
         "rescheduleSuccess": "Termin erfolgreich verschoben!",
         "cancelledStatus": "Termin abgesagt",
+        "cancelledDesc": "Dieser Termin wurde storniert und ist nicht mehr aktiv.",
         "customerName": "Kunde",
         "tireInfo": "Reifen",
         "dateLabel": "Datum",
@@ -596,7 +604,12 @@
         "rescheduleBtn": "Termin verschieben",
         "cancelBtn": "Termin absagen",
         "confirmReschedule": "Neue Zeit bestätigen",
-        "backBtn": "Zurück"
+        "backBtn": "Zurück",
+        "processing": "Wird verarbeitet...",
+        "pickNewDateTime": "Wählen Sie ein neues Datum und eine neue Uhrzeit für Ihren Termin.",
+        "loading": "Laden...",
+        "noAvailableSlots": "Keine verfügbaren Termine",
+        "selectTime": "Zeit auswählen"
     },
     "B2B": {
         "title": "Partner von Gent Bandenservice werden",
