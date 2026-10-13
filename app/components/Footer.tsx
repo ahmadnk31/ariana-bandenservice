@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Feedback } from './Feedback';
+import { Link } from '@/src/i18n/routing';
 
 export default function Footer() {
     const t = useTranslations('Footer');
@@ -23,9 +24,15 @@ export default function Footer() {
                     <p className="text-muted-foreground mb-4">
                         {t('aboutText')}
                     </p>
-                    <a href="/b2b" className="text-primary font-medium hover:underline transition-all">
-                        {t('b2bLink')}
-                    </a>
+                    <div className="flex flex-col gap-2">
+                        <Link href="/b2b" className="text-primary font-medium hover:underline transition-all">
+                            {t('b2bLink')}
+                        </Link>
+                        <Link href="/mobile" className="text-primary font-medium hover:underline transition-all inline-flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            {t('mobileLink')}
+                        </Link>
+                    </div>
                 </div>
                 <div>
                     <h3 className="font-bold text-lg mb-4">{t('contact')}</h3>
@@ -43,6 +50,11 @@ export default function Footer() {
                                 <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.5l3.09 6.26L22 8.74l-5 4.87 1.18 6.88L12 17.25l-6.18 3.24L7 13.61l-5-4.87 6.91-0.98L12 1.5z" /></svg>
                                 {useTranslations('Home')('reviews.reviewUs')}
                             </a>
+                        </li>
+                        <li>
+                            <Link href="/mobile" className="hover:text-primary transition-colors">
+                                {t('mobileLink')}
+                            </Link>
                         </li>
                         <li>
                             <a href="/about" className="hover:text-primary transition-colors">{t('about')}</a>

@@ -485,7 +485,7 @@ export default function TireCard({
                         ) : (
                             <Price amount={price} size="lg" />
                         )}
-                        <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">excl. BTW</span>
+                        <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">incl. BTW</span>
                     </div>
                     {stock > 0 && stock <= 3 && (
                         <p className={`text-[10px] text-orange-600 font-semibold flex items-center gap-0.5 animate-pulse mt-0.5 ${viewMode === "list" ? "justify-center sm:justify-end" : ""}`}>
