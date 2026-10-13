@@ -31,6 +31,20 @@ export const routing = defineRouting({
             fa: '/dar-bareh-ma',
             uk: '/pro-nas'
         },
+        '/mobile': {
+            en: '/mobile',
+            nl: '/mobiel',
+            fr: '/service-mobile',
+            de: '/mobiler-dienst',
+            es: '/servicio-movil',
+            it: '/servizio-mobile',
+            tr: '/mobil-servis',
+            pl: '/mobilny-serwis',
+            gr: '/kiniti-ypiresia',
+            ar: '/khidma-mutanaqqila',
+            fa: '/khedmat-sayyar',
+            uk: '/mobilnyy-servis'
+        },
         '/admin': '/admin',
         '/admin/login': '/admin/login',
         '/admin/orders': '/admin/orders',

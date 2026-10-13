@@ -166,7 +166,7 @@ export function InvoicePDF({ data }: { data: InvoiceData }) {
                         <Text style={styles.companyDetail}>Dendermondsesteenweg 428</Text>
                         <Text style={styles.companyDetail}>9040 Sint-Amandsberg</Text>
                         <Text style={styles.companyDetail}>België</Text>
-                        <Text style={styles.companyDetail}>+32 466 19 56 22</Text>
+                        <Text style={styles.companyDetail}>+32 467 87 12 05</Text>
                     </View>
                 </View>
 

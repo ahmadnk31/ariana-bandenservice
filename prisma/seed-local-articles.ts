@@ -39,7 +39,7 @@ async function main() {
                 <h3>Wat kost een bandenwissel in Gent?</h3>
                 <p>Bij Gent Bandenservice hanteren we transparante prijzen. Montage en balanceren begint al vanaf <strong>€25 per band</strong>. Dit maakt ons een van de meest competitieve spelers in de regio.</p>
                 
-                <p>Wilt u direct een afspraak maken? Bezoek onze <a href="/nl/tires">bandenpagina</a> of neem telefonisch contact op via +32 466 19 56 22.</p>
+                <p>Wilt u direct een afspraak maken? Bezoek onze <a href="/nl/tires">bandenpagina</a> of neem telefonisch contact op via +32 467 87 12 05.</p>
             `,
             locale: 'nl',
             status: 'published',

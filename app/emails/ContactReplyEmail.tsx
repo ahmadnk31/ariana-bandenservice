@@ -75,10 +75,6 @@ export default function ContactReplyEmail({
                                     gentbandenservice.be
                                 </Link>
                                 <Text style={footerBull}>&nbsp;&bull;&nbsp;</Text>
-                                <Link href="tel:+32466195622" style={footerLink}>
-                                    +32 466 19 56 22
-                                </Link>
-                                <Text style={footerBull}>&nbsp;&bull;&nbsp;</Text>
                                 <Link href="tel:+32467871205" style={footerLink}>
                                     +32 467 87 12 05
                                 </Link>

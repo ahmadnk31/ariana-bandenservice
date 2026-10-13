@@ -63,8 +63,6 @@ function emailLayout(content: string, preheader?: string): string {
               <p style="margin:0;font-size:13px;">
                 <a href="${siteUrl}" style="color:#2563eb;text-decoration:none;">gentbandenservice.be</a>
                 &nbsp;&bull;&nbsp;
-                <a href="tel:+32466195622" style="color:#2563eb;text-decoration:none;">+32 466 19 56 22</a>
-                &nbsp;&bull;&nbsp;
                 <a href="tel:+32467871205" style="color:#2563eb;text-decoration:none;">+32 467 87 12 05</a>
               </p>
             </td>
@@ -143,7 +141,7 @@ export async function sendContactConfirmationEmail(data: ContactFormData): Promi
               <p style="margin:0 0 6px;font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Je bericht</p>
               <p style="margin:0;font-size:14px;color:#18181b;line-height:1.6;white-space:pre-wrap;">${data.message}</p>
             `)}
-            <p style="margin:0 0 8px;font-size:15px;color:#3f3f46;line-height:1.6;">We proberen binnen 24 uur te antwoorden. Als je vraag dringend is, bel ons gerust op <a href="tel:+32466195622" style="color:#2563eb;text-decoration:none;">+32 466 19 56 22</a> of <a href="tel:+32467871205" style="color:#2563eb;text-decoration:none;">+32 467 87 12 05</a>.</p>
+            <p style="margin:0 0 8px;font-size:15px;color:#3f3f46;line-height:1.6;">We proberen binnen 24 uur te antwoorden. Als je vraag dringend is, bel ons gerust op <a href="tel:+32467871205" style="color:#2563eb;text-decoration:none;">+32 467 87 12 05</a>.</p>
             ${ctaButton("Bekijk onze diensten →", `${siteUrl}/services`)}
             <p style="margin:24px 0 0;font-size:15px;color:#3f3f46;">Met vriendelijke groet,<br /><strong>Het Gent bandenservice team</strong></p>
         `, `Bedankt ${data.firstName}, we hebben je bericht ontvangen`);

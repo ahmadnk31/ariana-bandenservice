@@ -9,7 +9,8 @@
         "blog": "Blog",
         "b2b": "B2B / Ubezpieczenia",
         "about": "O nas",
-        "more": "Więcej"
+        "more": "Więcej",
+        "mobile": "Mobilny Serwis Opon"
     },
     "Hero": {
         "title1": "Gandawa",
@@ -37,7 +38,8 @@
         "partners": "Partnerzy",
         "privacyPolicy": "Polityka prywatności",
         "termsOfService": "Warunki korzystania",
-        "returnPolicy": "Polityka zwrotów"
+        "returnPolicy": "Polityka zwrotów",
+        "mobileLink": "Mobilny Serwis Opon"
     },
     "Services": {
         "title": "Nasze usługi",
@@ -285,11 +287,11 @@
             "prices_new": "Ceny początkowe opon nowych",
             "prices_new_text": "Ceny za sztukę, montaż i wyważanie w cenie:\n\n• 13”: 55 €\n• 14”: 60 €\n• 15”: 70 €\n• 16”: 75 €\n• 17”: 80 €\n• 18”: 85 €\n• 19”: 90 €\n• 20”: 100 €",
             "hours": "Godziny otwarcia",
-            "hours_text": "• Poniedziałek - Sobota: 09:00 – 18:00\n• Niedziela: 10:00 – 18:00 (tylko po wcześniejszym umówieniu, tel. 0466 19 56 22)",
+            "hours_text": "• Poniedziałek - Sobota: 09:00 – 18:00\n• Niedziela: 10:00 – 18:00 (tylko po wcześniejszym umówieniu, tel. 0467 87 12 05)",
             "why_us": "Dlaczego Gent bandenservice?",
             "why_us_text": "✅ Najniższe ceny opon w regionie\n✅ Szybka obsługa – na poczekaniu\n✅ Wysokiej jakości opony topowych marek\n✅ Montaż i wyważanie w cenie\n✅ Duży magazyn we wszystkich rozmiarach",
             "contact": "Kontakt i lokalizacja",
-            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gandawa)\n📞 GSM: +32 466 19 56 22\n📧 E-mail: contact@gentbandenservice.be\n📘 Facebook: Gent bandenservice",
+            "contact_text": "📍 Dendermondsesteenweg 428, 9040 Sint-Amandsberg (Gandawa)\n📞 GSM: +32 467 87 12 05\n📧 E-mail: contact@gentbandenservice.be\n📘 Facebook: Gent bandenservice",
             "openingHours": "Godziny otwarcia",
             "openingHoursText": "Poniedziałek - Piątek: 9:00 - 17:00",
             "openingHoursText2": "Sobota - Niedziela: Zamknięte",
@@ -321,7 +323,7 @@
         "servicesTitle": "Usługi Oponiarskie | Montaż i Geometria",
         "servicesDescription": "Profesjonalny montaż opon, wyważanie i geometria kół w Gandawie. Szybki serwis, konkurencyjne ceny. Otwarte również w soboty!",
         "contactTitle": "Kontakt | Centrum Opon Gandawa",
-        "contactDescription": "Chcesz skontaktować się z Centrum Opon Gandawa? Zadzwoń pod numer 0466 19 56 22 lub odwiedź nas. Dendermondsesteenweg 428, Sint-Amandsberg. Pon-Sob 9-18.",
+        "contactDescription": "Chcesz skontaktować się z Centrum Opon Gandawa? Zadzwoń pod numer 0467 87 12 05 lub odwiedź nas. Dendermondsesteenweg 428, Sint-Amandsberg. Pon-Sob 9-18.",
         "faqTitle": "Często Zadawane Pytania | Ceny i Godziny Otwarcia",
         "faqDescription": "FAQ o cenach opon, godzinach otwarcia, montażu i więcej. Centrum opon otwarte w niedzielę? Tak, po umówieniu!",
         "privacyTitle": "Polityka Prywatności | Gent Bandenservice",
@@ -333,7 +335,9 @@
         "returnPolicyTitle": "Polityka Zwrotów | Gent Bandenservice",
         "returnPolicyDescription": "Polityka zwrotów dla zakupów opon online w Gent bandenservice. Dowiedz się o naszym 14-dniowym okresie zwrotu, warunkach i procesie zwrotu pieniędzy.",
         "b2bTitle": "Partnerstwa B2B | Gent Bandenservice",
-        "b2bDescription": "Niezawodne, skrojone na miarę rozwiązania oponiarskie dla firm ubezpieczeniowych i flot. Współpracuj z nami, aby uzyskać priorytetową obsługę, topowe marki i prostą administrację."
+        "b2bDescription": "Niezawodne, skrojone na miarę rozwiązania oponiarskie dla firm ubezpieczeniowych i flot. Współpracuj z nami, aby uzyskać priorytetową obsługę, topowe marki i prostą administrację.",
+        "mobileTitle": "Mobilny Serwis Opon Gandawa | Wymiana i Naprawa Opon z Dojazdem",
+        "mobileDescription": "Mobilna wulkanizacja w Gandawie i Flandrii Wschodniej. Wymiana opon, naprawa przebić i montaż u klienta."
     },
     "DevBanner": {
         "message": "Nadal jesteśmy w trybie programowania. Wszystkie opony nie są prawdziwe; służą wyłącznie do celów demonstracyjnych. Prawdziwe opony wkrótce."
@@ -541,7 +545,7 @@
         "process": {
             "title": "Proces Zwrotu",
             "content": "Aby zainicjować zwrot, wykonaj następujące kroki:",
-            "step1": "Skontaktuj się z nami e-mailem na info@gentbandenservice.be lub zadzwoń pod +32 466 19 56 22",
+            "step1": "Skontaktuj się z nami e-mailem na info@gentbandenservice.be lub zadzwoń pod +32 467 87 12 05",
             "step2": "Podaj numer zamówienia i powód zwrotu",
             "step3": "Prześlemy Ci instrukcje zwrotu i adres zwrotny"
         },
@@ -570,7 +574,7 @@
             "title": "Kontakt",
             "content": "Jeśli masz pytania dotyczące naszej polityki zwrotów, nie wahaj się z nami skontaktować:",
             "email": "E-mail: info@gentbandenservice.be",
-            "phone": "Telefon: +32 466 19 56 22"
+            "phone": "Telefon: +32 467 87 12 05"
         },
         "lastUpdated": "Ostatnia aktualizacja",
         "lastUpdatedDate": "4 marca 2026"
@@ -649,5 +653,109 @@
         "ctaTitle": "Gotowi na nowe opony?",
         "ctaBtn": "Sprawdź naszą ofertę",
         "ctaContactBtn": "Skontaktuj się z nami"
+    },
+    "Mobile": {
+        "badge": "On-Site Service & Roadside Assistance • Ghent Region",
+        "title": "Mobile Tire Service Ghent",
+        "titleHighlight": "Tire Replacement & Repairs at Your Doorstep",
+        "subtitle": "No time to visit a garage or stranded with a flat tire? Our fully equipped mobile tire van comes directly to you – at home on your driveway, at your office, or roadside.",
+        "callNow": "Call Emergency: +32 467 87 12 05",
+        "whatsapp": "WhatsApp Us Directly",
+        "bookAppointment": "Schedule Appointment",
+        "statusActive": "Mobile service van currently operational in Ghent & surrounding areas",
+        "dispatchTime": "Within 30-60 min for emergencies",
+        "equipmentTag": "Fully equipped mobile workshop",
+        "priceTag": "Mounting & balancing from €25",
+        "ratingTag": "4.9/5 Customer Satisfaction",
+        "whyTitle": "Why Choose Our Mobile Tire Service?",
+        "whySubtitle": "Maximum convenience, time savings, and workshop-grade equipment right at your location.",
+        "benefits": {
+            "b1Title": "Save Valuable Time",
+            "b1Desc": "No more waiting in garages or taking time off work. Continue your day while our certified technicians change your tires in your driveway or parking lot.",
+            "b2Title": "Fully Equipped Workshop Van",
+            "b2Desc": "Our state-of-the-art van features heavy-duty tire changers, computer wheel balancers, and pneumatic equipment matching any professional garage.",
+            "b3Title": "Roadside Emergency Help",
+            "b3Desc": "Stranded with a blowout or flat tire? Call our emergency line and our mobile technician will be dispatched to get you safely back on the road.",
+            "b4Title": "Wide Selection of Tires",
+            "b4Desc": "Premium brand tires (Michelin, Continental, Bridgestone) and budget-friendly or quality tested second-hand tires brought directly to you.",
+            "b5Title": "B2B & Fleet Solutions",
+            "b5Desc": "Ideal for business fleets, vans, and lease cars. We service multiple vehicles on-site during downtime with zero disruption to your workflow.",
+            "b6Title": "Eco-Friendly Disposal",
+            "b6Desc": "We take your worn-out tires free of charge and dispose of them through certified Recytyre environmental recycling programs."
+        },
+        "howTitle": "How Mobile Tire Service Works",
+        "howSubtitle": "4 simple steps to have your tires mounted and balanced at your location.",
+        "steps": {
+            "s1Number": "01",
+            "s1Title": "Contact Us or Request Online",
+            "s1Desc": "Call, message via WhatsApp, or submit an appointment request specifying your tire size and location.",
+            "s2Number": "02",
+            "s2Title": "Pick Time & Location",
+            "s2Desc": "Choose when and where you want us: at home, your workplace, or emergency breakdown spot.",
+            "s3Number": "03",
+            "s3Title": "On-Site Mounting & Balancing",
+            "s3Desc": "Our technician mounts, balances, and inspects your tires in 30 to 45 minutes using professional mobile equipment.",
+            "s4Number": "04",
+            "s4Title": "Drive Away Safely",
+            "s4Desc": "Torque and pressure checks completed. Pay conveniently on-site via card, contactless, Bancontact, or cash."
+        },
+        "servicesTitle": "On-Site Services",
+        "servicesSubtitle": "Everything a fixed workshop does, brought straight to your doorstep.",
+        "servicesList": {
+            "srv1Title": "On-Site Tire Swap",
+            "srv1Desc": "Seasonal change from summer to winter tires (and vice versa) without carrying heavy wheels.",
+            "srv2Title": "Flat Tire Puncture Repair",
+            "srv2Desc": "Professional puncture repair for screws and nails with high-grade plugs or internal patches.",
+            "srv3Title": "New Tires Supply & Fitting",
+            "srv3Desc": "Order new tires online or by phone; we bring and install them on-site with new valves included.",
+            "srv4Title": "Digital Wheel Balancing",
+            "srv4Desc": "Eliminate steering wheel vibration and uneven wear with our calibrated mobile balancing machine.",
+            "srv5Title": "Second-Hand Tires Fitting",
+            "srv5Desc": "Quality tested pre-owned tires with generous tread at the most competitive rates in Ghent.",
+            "srv6Title": "Fleet & Commercial Van Care",
+            "srv6Desc": "Tailored fleet tire maintenance adapted to your commercial schedule and operational needs."
+        },
+        "coverageTitle": "Service Coverage in Ghent & Surroundings",
+        "coverageSubtitle": "Our mobile van operates across the following municipalities and surrounding areas:",
+        "coverageNotice": "Don't see your city? Get in touch. For fleet clients and special requests, we operate throughout all of East Flanders.",
+        "pricingTitle": "Transparent & Fair Pricing",
+        "pricingSubtitle": "Clear upfront pricing with no hidden charges. Always includes mounting and balancing.",
+        "pricing": {
+            "calloutTitle": "Call-out Fee (Ghent)",
+            "calloutPrice": "From €25",
+            "calloutDesc": "Varies by distance and urgency. Free when purchasing 4 new tires in selected zones.",
+            "punctureTitle": "Puncture Repair",
+            "puncturePrice": "From €30",
+            "punctureDesc": "Includes removal, professional plug/patch, inflation, and torque wrench tightening.",
+            "seasonalTitle": "Seasonal Swap (4 Wheels)",
+            "seasonalPrice": "From €50",
+            "seasonalDesc": "Complete swap of summer/winter sets on rims, including tire pressure check and balancing.",
+            "newTiresTitle": "New Tires + Mounting",
+            "newTiresPrice": "Best rates",
+            "newTiresDesc": "Top brands & budget options brought on-site at Ghent's most competitive prices."
+        },
+        "emergencyTitle": "Stuck with a flat tire right now?",
+        "emergencyDesc": "Don't stress. Call our emergency hotline directly for rapid roadside intervention across Ghent.",
+        "faqTitle": "Frequently Asked Questions",
+        "faqSubtitle": "Everything you need to know about our mobile tire service.",
+        "faqs": {
+            "q1": "How much space does the mobile van need?",
+            "a1": "A standard parking space or driveway with approximately 1 to 1.5 meters clearance around your vehicle is plenty. All we need is a flat and secure surface.",
+            "q2": "Can the mobile van enter an underground car park?",
+            "a2": "Our service van has a height of about 2.6 meters and typically cannot enter low underground garages. In that case, we can roll your vehicle outside or remove wheels and service them in our van outside.",
+            "q3": "How fast can you arrive in an emergency?",
+            "a3": "In the Greater Ghent area (Sint-Amandsberg, Destelbergen, Oostakker, Gentbrugge, etc.), we aim for a 30 to 60 minute arrival time depending on traffic.",
+            "q4": "How can I pay on-site?",
+            "a4": "You can pay easily on-site via mobile Bancontact/Payconiq, credit/debit card, or cash. Invoicing is available for commercial accounts.",
+            "q5": "What if I don't know my exact tire size?",
+            "a5": "No problem! Check the sidewall of your tire (e.g., 205/55 R16) or take a photo and send it via WhatsApp. We will identify the exact specification.",
+            "q6": "Do you work in rainy or bad weather?",
+            "a6": "Yes, our mobile workshop is completely sheltered inside the van. Only severe weather storms might require a quick reschedule."
+        },
+        "ctaTitle": "Need a Mobile Tire Technician Now?",
+        "ctaDesc": "Call immediately for urgent assistance or book a flexible appointment at a time that suits you best.",
+        "contactSupport": "Customer Support & Dispatch",
+        "phone": "+32 467 87 12 05",
+        "altPhone": "+32 467 87 12 05"
     }
 }

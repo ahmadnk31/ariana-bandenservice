@@ -113,7 +113,7 @@ export default async function LocaleLayout({
         "image": "https://gentbandenservice.be/gentbandenservice/android-chrome-512x512.png",
         "@id": "https://gentbandenservice.be",
         "url": "https://gentbandenservice.be",
-        "telephone": "+32 466 19 56 22",
+        "telephone": "+32 467 87 12 05",
         "email": "contact@gentbandenservice.be",
         "address": {
             "@type": "PostalAddress",

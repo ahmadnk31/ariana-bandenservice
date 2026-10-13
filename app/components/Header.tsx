@@ -167,6 +167,12 @@ export default function Header() {
                                         {tTires('secondHand')}
                                     </Link>
                                 </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href="/mobile" className="w-full cursor-pointer rounded-md px-2 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground flex items-center justify-between">
+                                        <span>{t('mobile')}</span>
+                                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                    </Link>
+                                </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </nav>
@@ -257,6 +263,14 @@ export default function Header() {
                         onClick={() => setIsMenuOpen(false)}
                     >
                         {tTires('secondHand')}
+                    </Link>
+                    <Link
+                        href="/mobile"
+                        className="text-base font-medium hover:text-primary transition-colors px-2 py-1 flex items-center justify-between"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        <span>{t('mobile')}</span>
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 font-semibold border border-emerald-500/20">Service op locatie</span>
                     </Link>
                 </nav>
             </div>
